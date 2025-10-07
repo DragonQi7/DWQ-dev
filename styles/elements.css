@@ -20,7 +20,7 @@
 }
 .element-card .element-name,
 .element-card .element-description {
-  color: #fff;
+  color: #fff !important;
   text-align: center;
   font-weight: 600;
 }
