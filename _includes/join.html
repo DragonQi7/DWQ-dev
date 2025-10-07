@@ -1,0 +1,51 @@
+<!-- Join Program Section -->
+<section class="join-section">
+    <div class="section">
+        <h2 class="section-title">Join an Upcoming Program</h2>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Ready to begin your journey of transformation? Choose the program that resonates with you and take the first step toward balance and vitality.</p>
+        <div class="upcoming-programs">
+            <div class="upcoming-card">
+                <h3>Foundation Path</h3>
+                <div class="program-date">Starting March 15, 2024</div>
+                <div class="program-time">Tuesdays & Thursdays, 7:00 PM</div>
+                <div class="program-price">$180 for 6 weeks</div>
+                <button class="join-button" onclick="registerProgram('foundation')">Register Now</button>
+            </div>
+            <div class="upcoming-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <h3>Elemental Journey</h3>
+                <div class="program-date">Starting March 20, 2024</div>
+                <div class="program-time">Saturdays, 10:00 AM</div>
+                <div class="program-price">$240 for 8 weeks</div>
+                <button class="join-button" onclick="registerProgram('elemental')">Register Now</button>
+            </div>
+            <div class="upcoming-card">
+                <h3>Transformative Path</h3>
+                <div class="program-date">Starting April 1, 2024</div>
+                <div class="program-time">Mondays & Wednesdays, 6:30 PM</div>
+                <div class="program-price">$360 for 12 weeks</div>
+                <button class="join-button" onclick="registerProgram('transformative')">Register Now</button>
+            </div>
+        </div>
+        <div class="registration-form" id="registrationForm" style="display: none;">
+            <h3>Registration Form</h3>
+            <form onsubmit="submitRegistration(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Program</option>
+                        <option value="foundation">Foundation Path</option>
+                        <option value="elemental">Elemental Journey</option>
+                        <option value="transformative">Transformative Path</option>
+                    </select>
+                </div>
+                <textarea placeholder="Any questions or special considerations?" rows="3"></textarea>
+                <button type="submit" class="submit-button">Complete Registration</button>
+            </form>
+        </div>
+    </div>
+</section>
