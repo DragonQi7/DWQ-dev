@@ -1,0 +1,41 @@
+/* 5 Element Card Styles */
+.elements-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.element-card {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  margin-bottom: 1rem;
+}
+.element-card .element-name,
+.element-card .element-description {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+.element-card.wood {
+  background: #2e7d32;
+}
+.element-card.fire {
+  background: #c62828;
+}
+.element-card.earth {
+  background: #a67c52;
+}
+.element-card.metal {
+  background: #607d8b;
+}
+.element-card.water {
+  background: #1565c0;
+}
