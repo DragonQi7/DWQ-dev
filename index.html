@@ -865,44 +865,17 @@ layout: none
     </style>
 </head>
 <body>
-    <div id="header"></div>
-    <div id="hero"></div>
-    <div id="about"></div>
-    <div id="gallery"></div>
-    <div id="video"></div>
-    <div id="movements"></div>
-    <div id="elements"></div>
-    <div id="faq"></div>
-    <div id="instructors"></div>
-    <div id="join"></div>
-    <div id="testimonials"></div>
-    <div id="contact"></div>
-
-    <script>
-        // Function to load external HTML into a div
-        function loadSection(id, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(id).innerHTML = data;
-                });
-        }
-
-        // Load all sections
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSection('header', 'header.html');
-            loadSection('hero', 'hero.html');
-            loadSection('about', 'about.html');
-            loadSection('gallery', 'gallery.html');
-            loadSection('video', 'video.html');
-            loadSection('movements', 'movements.html');
-            loadSection('elements', 'elements.html');
-            loadSection('faq', 'faq.html');
-            loadSection('instructors', 'instructors.html');
-            loadSection('join', 'join.html');
-            loadSection('testimonials', 'testimonials.html');
-            loadSection('contact', 'contact.html');
-        });
-    </script>
+    {% include header.html %}
+    {% include hero.html %}
+    {% include about.html %}
+    {% include gallery.html %}
+    {% include video.html %}
+    {% include movements.html %}
+    {% include elements.html %}
+    {% include faq.html %}
+    {% include instructors.html %}
+    {% include join.html %}
+    {% include testimonials.html %}
+    {% include contact.html %}
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98a03601602a2c11',t:'MTc1OTcwMTgyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
