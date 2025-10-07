@@ -2,7 +2,7 @@
     <div class="section">
         <h2 class="section-title">Meet Our Instructors</h2>
         <div class="instructors-grid">
-            <div class="instructor-card">
+            <div class="instructor-card" data-name="Tom Lee">
                 <div class="instructor-avatar">
                     <div class="avatar-placeholder">Tom</div>
                 </div>
@@ -14,22 +14,23 @@
                     <span>• 25+ Years Teaching Experience</span>
                     <span>• Certified Dragon's Way Instructor</span>
                 </div>
-                <button id="view-bio-tom" style="margin-top:1rem; padding:0.5rem 1.5rem; border-radius:8px; background:#C02026; color:#fff; border:none; cursor:pointer; font-size:1rem;">View Bio</button>
+                <button class="view-bio-btn" style="margin-top:1rem; padding:0.5rem 1.5rem; border-radius:8px; background:#C02026; color:#fff; border:none; cursor:pointer; font-size:1rem;">View Bio</button>
             </div>
-            <div class="instructor-card">
+            <div class="instructor-card" data-name="Co">
                 <div class="instructor-avatar">
                     <div class="avatar-placeholder">SC</div>
                 </div>
                 <h3 class="instructor-name">Co</h3>
-               <p class="instructor-title">Certified Yoga Instructor</p>
+                <p class="instructor-title">Certified Yoga Instructor</p>
                 <p class="instructor-bio">Sarah discovered Yoga during her own healing journey from chronic stress. Now a certified instructor, she specializes in helping busy professionals find balance and inner peace through gentle, accessible practice.</p>
                 <div class="instructor-credentials">
                     <span>• Certified Yoga Instructor</span>
                     <span>• Mindfulness & Meditation Teacher</span>
                     <span>• 8+ Years Personal Practice</span>
                 </div>
+                <button class="view-bio-btn" style="margin-top:1rem; padding:0.5rem 1.5rem; border-radius:8px; background:#C02026; color:#fff; border:none; cursor:pointer; font-size:1rem;">View Bio</button>
             </div>
-            <div class="instructor-card">
+            <div class="instructor-card" data-name="Dr. Michael Zhang">
                 <div class="instructor-avatar">
                     <div class="avatar-placeholder">DM</div>
                 </div>
@@ -41,11 +42,13 @@
                     <span>• TCM Diploma</span>
                     <span>• 15+ Years Clinical Experience</span>
                 </div>
+                <button class="view-bio-btn" style="margin-top:1rem; padding:0.5rem 1.5rem; border-radius:8px; background:#C02026; color:#fff; border:none; cursor:pointer; font-size:1rem;">View Bio</button>
             </div>
         </div>
         <div id="instructor-bio-detail" style="display:none; margin-top:2rem; padding:2rem; border-radius:12px; background:#f5f3ee; color:#2E241A;">
             <h3>Instructor Bio</h3>
             <div id="bio-content"></div>
+            <button id="close-bio-btn" style="margin-top:1rem; padding:0.5rem 1.5rem; border-radius:8px; background:#888; color:#fff; border:none; cursor:pointer; font-size:1rem;">Close</button>
         </div>
     </div>
 </section>
@@ -53,18 +56,39 @@
 <!-- Place script at the very end of the file for guaranteed DOM access -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('view-bio-tom').addEventListener('click', function() {
-        var bioDetail = document.getElementById('instructor-bio-detail');
-        var bioContent = document.getElementById('bio-content');
-        bioContent.innerHTML = `<strong>Tom Lee</strong><br>
+    // Dynamic bios for each instructor
+    const bios = {
+        "Tom Lee": `<strong>Tom Lee</strong><br>
             Tom is a certified Dragon’s Way Qigong® Instructor with over 15 years of study under Grandmaster Lu. A dedicated instructor teaches programs such as the Dragon's Way Qigong, Five Element Consciousness Framework Four Gates, 3 E’s, Tom brings deep wisdom, authenticity, and compassion to every session.<br><br>
             His journey into Qigong began as a personal exploration of energy, balance, and inner transformation. Over time, the practice became a powerful path of renewal — helping him cultivate resilience, clarity, and a profound sense of harmony between body, mind, and spirit.<br><br>
             Beyond the healing arts, Tom bridges worlds — drawing from a background in finance and technology to connect ancient wisdom with modern understanding. This integration of science, spirit, logic, and love defines Tom’s approach: grounded, heart-centered, and deeply human.<br><br>
             Often described as a modern mystic with a healer’s precision, Tom views imbalance not as a problem to fix but as a message to understand — a call to deeper awareness and authentic living. His teaching invites students to listen deeply, move with intention, and awaken the body’s natural intelligence.<br><br>
             Tom is also passionate about building a supportive community centered around Qi, where individuals can grow together through shared practice and connection. He is devoted to carrying forward the timeless wisdom of the masters, ensuring that both present and future generations can benefit from these ancient teachings in a way that uplifts modern life.<br><br>
-            Through Dragon’s Way Qigong®, Tom cultivates a vibrant, evolving space of balance, authenticity, and transformation. Each class is an invitation to rediscover vitality, awaken sensitivity, and experience the quiet miracle of being fully alive.`;
-        bioDetail.style.display = 'block';
-        bioDetail.scrollIntoView({ behavior: 'smooth' });
+            Through Dragon’s Way Qigong®, Tom cultivates a vibrant, evolving space of balance, authenticity, and transformation. Each class is an invitation to rediscover vitality, awaken sensitivity, and experience the quiet miracle of being fully alive.`,
+        "Co": `<strong>Co</strong><br>
+            Sarah discovered Yoga during her own healing journey from chronic stress. Now a certified instructor, she specializes in helping busy professionals find balance and inner peace through gentle, accessible practice.<br><br>
+            Her classes blend mindfulness, movement, and breathwork, creating a welcoming space for all levels. Sarah’s compassionate teaching style empowers students to reconnect with themselves and cultivate lasting well-being.`,
+        "Dr. Michael Zhang": `<strong>Dr. Michael Zhang</strong><br>
+            Dr. Zhang bridges Eastern and Western medicine, combining his medical background with deep knowledge of TCM. He helps students understand the scientific basis behind Qigong's healing effects while honoring its ancient wisdom.<br><br>
+            With 15+ years of clinical experience, Dr. Zhang is passionate about integrative health and empowering students to take charge of their healing journey.`
+    };
+
+    // Show bio popup
+    document.querySelectorAll('.view-bio-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const card = btn.closest('.instructor-card');
+            const name = card.getAttribute('data-name');
+            const bioDetail = document.getElementById('instructor-bio-detail');
+            const bioContent = document.getElementById('bio-content');
+            bioContent.innerHTML = bios[name] || (name + "'s bio goes here.");
+            bioDetail.style.display = 'block';
+            bioDetail.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Close bio popup
+    document.getElementById('close-bio-btn').addEventListener('click', function() {
+        document.getElementById('instructor-bio-detail').style.display = 'none';
     });
 });
 </script>
