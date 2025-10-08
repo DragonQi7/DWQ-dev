@@ -121,38 +121,43 @@ h2 { font-size: 2rem; color: var(--accent); font-weight: 600; text-transform: up
 </nav>
 
 <!-- Sections -->
-<div id="home"></div>
-<div id="about"></div>
-<div id="gallery"></div>
-<div id="movements"></div>
-<div id="elements"></div>
-<div id="video"></div>
-<div id="faq"></div>
-<div id="instructors"></div>
-<div id="join"></div>
-<div id="testimonials"></div>
-<div id="contact"></div>
+<div id="home" class="section"></div>
+<div id="about" class="section"></div>
+<div id="gallery" class="section"></div>
+<div id="movements" class="section"></div>
+<div id="elements" class="section"></div>
+<div id="video" class="section"></div>
+<div id="faq" class="section"></div>
+<div id="instructors" class="section"></div>
+<div id="join" class="section"></div>
+<div id="testimonials" class="section"></div>
+<div id="contact" class="section"></div>
 
 <div id="build-timestamp" style="font-size:0.8rem; text-align:center; color:#aaa; margin-top:2rem;"></div>
 
 <script>
 // Load sections via fetch
 function loadSection(divId, file) {
-    fetch(file).then(r => r.text()).then(html => document.getElementById(divId).innerHTML = html);
+    fetch(file)
+        .then(r => {
+            if (!r.ok) throw new Error('Failed to load ' + file);
+            return r.text();
+        })
+        .then(html => document.getElementById(divId).innerHTML = html)
+        .catch(err => console.error(err));
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // loadSection('home', 'home.html');
+    loadSection('home', 'home.html');
     loadSection('about', 'DWQ-about.html');
     loadSection('gallery', 'DWQ-programs.html');
     loadSection('movements', 'DWQ-Movements.html');
     loadSection('elements', 'DWQ-5elements.html');
     loadSection('video', 'DWQ-video.html');
-
-    // loadSection('faq', 'faq.html');
-    //loadSection('instructors', 'instructors.html');
-    //loadSection('join', 'join.html');
-    //loadSection('testimonials', 'testimonials.html');
+    loadSection('faq', 'faq.html');
+    loadSection('instructors', 'instructors.html');
+    loadSection('join', 'join.html');
+    loadSection('testimonials', 'testimonials.html');
     loadSection('contact', 'contact.html');
 
     // Scroll fade-in observer
@@ -165,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
+
     document.querySelectorAll('.section').forEach(section => observer.observe(section));
 });
 
