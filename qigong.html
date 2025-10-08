@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon's Way Qigong</title>
+</head>
+<body>
+    <h1>Dragon's Way Qigong</h1>
+    <div id="about"></div>
+    <div id="programs"></div>
+    <div id="movements"></div>
+    <div id="video"></div>
+    <div id="elements"></div>
+    <script>
+        // Load modular sections from DWQ-*.html files
+        function loadSection(divId, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(divId).innerHTML = html;
+                });
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSection('about', 'DWQ-about.html');
+            loadSection('programs', 'DWQ-programs.html');
+            loadSection('movements', 'DWQ-Movements.html');
+            loadSection('video', 'DWQ-video.html');
+            loadSection('elements', 'DWQ-5elements.html');
+        });
+    </script>
+</body>
+</html>
