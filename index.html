@@ -906,7 +906,7 @@
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
-    <a href="#qigong">Qigong</a>
+    <a href="qigong.html">Qigong</a>
     <a href="#contact">Contact</a>
     </nav>
 
@@ -973,22 +973,7 @@
         });
     });
 
-    // Qigong nav click
-    document.querySelector('a[href="#qigong"]').addEventListener('click', function(e){
-        e.preventDefault();
-        const qigongContainer = document.getElementById('qigong-sections');
-        qigongContainer.style.display = 'block';
-        // Load Qigong sections only when nav is clicked
-        const qigongSections = [
-            {id: 'video', file: 'DWQ-video.html'},
-            {id: 'movements', file: 'DWQ-Movements.html'},
-            {id: 'elements', file: 'DWQ-5elements.html'},
-            {id: 'qigong-about', file: 'DWQ-about.html'}
-        ];
-        qigongSections.forEach(section => loadSection(section.id, section.file));
-        // Scroll smoothly to the Qigong container
-        document.getElementById('qigong-sections').scrollIntoView({behavior:'smooth'});
-    });
+    // ...existing code...
 
     // FAQ toggle function
     function toggleFAQ(element) {
