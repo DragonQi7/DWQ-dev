@@ -30,27 +30,26 @@
         }
 
         .nav {
-            position: fixed;
-            top: 1.5rem;
-            right: 2rem;
-            display: flex;
-            gap: 1rem;
-            z-index: 10;
+              position: fixed;
+              top: 1.5rem;
+              right: 2rem; /* 👈 move nav to the top right */
+              display: flex;
+              gap: 1.5rem;
+              z-index: 1000;
         }
-
         .nav a {
             text-decoration: none;
-            font-weight: 600;
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border: 1px solid transparent;
-            border-radius: 12px;
-            transition: all 0.4s ease;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
-
         .nav a:hover {
-            border-color: var(--accent);
-            background: rgba(85, 22, 10, 0.1);
+            color: #0077cc;
+        }
+        .nav a.active {
+            color: #0077cc;
+            font-weight: 700;
+            border-bottom: 2px solid #0077cc;
         }
 
         section {
@@ -900,52 +899,41 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- Modular Sections -->
-    <div id="home"></div>
-    <div id="about"></div>
-    <div id="gallery"></div>
-    <div id="video"></div>
-    <div id="movements"></div>
-    <div id="elements"></div>
-    <div id="faq"></div>
-    <div id="instructors"></div>
-    <div id="join"></div>
-    <div id="testimonials"></div>
-    <div id="contact"></div>
-
-    <script>
-        // Helper to load HTML into a div
-        function loadSection(divId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById(divId).innerHTML = html;
-                });
-        }
-
-        // Load all sections
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSection('home', 'home.html');
-            loadSection('about', 'about.html');
-            loadSection('gallery', 'gallery.html');
-            loadSection('video', 'video.html');
-            loadSection('movements', 'movements.html');
-            loadSection('elements', 'elements.html');
-            loadSection('faq', 'faq.html');
-            loadSection('instructors', 'instructors.html');
-            loadSection('join', 'join.html');
-            loadSection('testimonials', 'testimonials.html');
-            loadSection('contact', 'contact.html');
-        });
-    </script>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="qigong.html">Qigong</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div id="home"></div>
+        <div id="gallery"></div>
+        <div id="movements"></div>
+        <div id="elements"></div>
+        <div id="faq"></div>
+        <div id="instructors"></div>
+        <div id="join"></div>
+        <div id="testimonials"></div>
+        <div id="contact"></div>
+        <script>
+            function loadSection(divId, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(divId).innerHTML = html;
+                    });
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                loadSection('home', 'home.html');
+                loadSection('gallery', 'gallery.html');
+                loadSection('movements', 'movements.html');
+                loadSection('elements', 'elements.html');
+                loadSection('faq', 'faq.html');
+                loadSection('instructors', 'instructors.html');
+                loadSection('join', 'join.html');
+                loadSection('testimonials', 'testimonials.html');
+                loadSection('contact', 'contact.html');
+                document.body.style.paddingTop = '4rem';
+            });
+        </script>
 
     <script>
         function playVideo() {
@@ -1033,5 +1021,15 @@
             });
         });
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".nav a").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98a03601602a2c11',t:'MTc1OTcwMTgyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
