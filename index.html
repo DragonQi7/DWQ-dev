@@ -928,6 +928,7 @@
     <div id="build-timestamp" style="font-size:0.8rem; text-align:center; color:#aaa; margin-top:2rem;"></div>
 
     <script>
+
     // Helper to load HTML into a div
     function loadSection(divId, file) {
         fetch(file)
@@ -937,8 +938,8 @@
             });
     }
 
-    // Load main sections on DOMContentLoaded
     document.addEventListener('DOMContentLoaded', function() {
+        // Load main sections (not Qigong)
         loadSection('home', 'home.html');
         loadSection('about', 'DWQ-about.html');
         loadSection('gallery', 'DWQ-programs.html');
@@ -948,17 +949,12 @@
         loadSection('testimonials', 'testimonials.html');
         loadSection('contact', 'contact.html');
 
-        // Hide Qigong sections initially
-        const qigongSections = ['video', 'movements', 'elements'];
-        qigongSections.forEach(id => {
-            document.getElementById(id).style.display = 'none';
-        });
+        // Hide Qigong container entirely
+        const qigongContainer = document.getElementById('qigong-sections');
+        qigongContainer.style.display = 'none';
 
-        // Smooth scrolling for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Optional: fade-in scroll observer for main sections
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -976,23 +972,25 @@
         });
     });
 
-    // Load Qigong sections on nav click
+    // Qigong nav click
     document.querySelector('a[href="#qigong"]').addEventListener('click', function(e){
         e.preventDefault();
 
+        const qigongContainer = document.getElementById('qigong-sections');
+
+        // Show container
+        qigongContainer.style.display = 'block';
+
+        // Load the three sections
         const qigongSections = [
             {id: 'video', file: 'DWQ-video.html'},
             {id: 'movements', file: 'DWQ-Movements.html'},
             {id: 'elements', file: 'DWQ-5elements.html'}
         ];
+        qigongSections.forEach(section => loadSection(section.id, section.file));
 
-        qigongSections.forEach(section => {
-            loadSection(section.id, section.file);
-            document.getElementById(section.id).style.display = 'block';
-        });
-
-        // Scroll to the top of first Qigong section
-        document.getElementById('video').scrollIntoView({behavior:'smooth'});
+        // Scroll to Qigong placeholder
+        document.getElementById('qigong').scrollIntoView({behavior:'smooth'});
     });
 
     // FAQ toggle function
