@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Healer - Tom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f3ee;
+      --accent: #55160a;
+      --text: #2e241a;
+    }
+
+    body {
+      box-sizing: border-box;
+      font-family: 'Cormorant Garamond', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(160deg, #f5f3ee, #e9e4da, #d5cfc4);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--accent) 0%, #3d0f07 100%);
+      color: var(--cream);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0 0 0;
+      opacity: 0.95;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0;
+      background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.4), transparent), var(--cream);
+      box-shadow: 0 4px 6px rgba(85, 22, 10, 0.1);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .healer-image {
+      text-align: center;
+    }
+
+    .healer-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--cream) 40%, rgba(85, 22, 10, 0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(85, 22, 10, 0.3);
+      border: 4px solid var(--accent);
+    }
+
+    .healer-intro h2 {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .healer-title {
+      font-size: 1.3rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .healer-intro p {
+      font-size: 1.1rem;
+      color: var(--text);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    /* Content Sections */
+    .section {
+      padding: 3rem 0;
+    }
+
+    .section:nth-child(even) {
+      background: rgba(85, 22, 10, 0.03);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #3d0f07);
+      border-radius: 2px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      color: var(--text);
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+      text-align: center;
+    }
+
+    /* Philosophy Quote */
+    .philosophy-quote {
+      background: linear-gradient(135deg, rgba(245, 243, 238, 0.8) 0%, rgba(233, 228, 218, 0.6) 100%);
+      border-left: 5px solid var(--accent);
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 700px;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    /* Credentials Grid */
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .credential-card {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(85, 22, 10, 0.1);
+      text-align: center;
+      border-top: 4px solid var(--accent);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .credential-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(85, 22, 10, 0.15);
+    }
+
+    .credential-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .credential-card h3 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .credential-card p {
+      color: var(--text);
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(135deg, var(--accent) 0%, #3d0f07 100%);
+      color: var(--cream);
+      padding: 4rem 0;
+    }
+
+    .testimonials h2 {
+      color: var(--cream);
+    }
+
+    .testimonials h2::after {
+      background: var(--cream);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial {
+      background: rgba(245, 243, 238, 0.1);
+      padding: 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(245, 243, 238, 0.2);
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: rgba(245, 243, 238, 0.95);
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: rgba(245, 243, 238, 0.8);
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent) 0%, #3d0f07 100%);
+      color: var(--cream);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(85, 22, 10, 0.3);
+      margin: 0 0.5rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(85, 22, 10, 0.4);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .cta-button.secondary:hover {
+      background: var(--accent);
+      color: var(--cream);
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr 1.5fr;
+        text-align: left;
+      }
+
+      .healer-intro h2,
+      .healer-title,
+      .healer-intro p {
+        text-align: left;
+      }
+
+      .healer-intro p {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .healer-photo {
+        width: 220px;
+        height: 220px;
+        font-size: 3rem;
+      }
+
+      .section {
+        padding: 2rem 0;
+      }
+
+      .cta-button {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>About Our Healer</h1>
+      <p>Discover the wisdom and experience behind your healing journey</p>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="healer-image">
+          <div class="healer-photo">🧘‍♂️</div>
+        </div>
+        <div class="healer-intro">
+          <h2>Meet Tom</h2>
+          <div class="healer-title">Certified Dragon's Way Qigong® Instructor</div>
+          <p>With over 15 years of dedicated practice and study, Tom brings ancient wisdom into modern healing. His compassionate approach helps individuals reconnect with their natural vitality and inner peace through the transformative power of Qi.</p>
+          <p>Tom's journey began as a personal quest for healing and has evolved into a calling to guide others toward balance, wellness, and spiritual growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Tom's Healing Journey</h2>
+      <p>Tom's path to becoming a healer wasn't traditional. After experiencing his own health challenges in his early thirties, he discovered Dragon's Way Qigong® and found not just physical healing, but a complete transformation of mind, body, and spirit.</p>
+      <p>Under the guidance of Grandmaster Nan Lu, Tom immersed himself in the ancient practices of Traditional Chinese Medicine and Qigong. What began as personal healing became a profound calling to share these life-changing practices with others.</p>
+      <p>Today, Tom combines his deep understanding of energy healing with a modern, accessible approach that meets people exactly where they are in their healing journey.</p>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Healing Philosophy</h2>
+      <div class="philosophy-quote">
+        "True healing happens when we align with the natural flow of Qi within us. Every person has an innate wisdom and healing capacity – my role is simply to help you remember and reconnect with that power."
+      </div>
+      <p>Tom believes that healing is not something that happens to you, but something that happens through you. His approach focuses on empowering individuals to become active participants in their own wellness journey.</p>
+      <p>Drawing from thousands of years of Traditional Chinese Medicine wisdom, Tom teaches that physical symptoms are often manifestations of deeper energetic imbalances. By addressing the root causes through Qigong practice, meditation, and lifestyle guidance, lasting transformation becomes possible.</p>
+    </div>
+  </section>
+
+  <!-- Credentials Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Qualifications & Training</h2>
+      <div class="credentials">
+        <div class="credential-card">
+          <div class="credential-icon">🎓</div>
+          <h3>Certified Instructor</h3>
+          <p>Dragon's Way Qigong® Certification from the Traditional Chinese Medicine World Foundation</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">🏮</div>
+          <h3>15+ Years Experience</h3>
+          <p>Extensive study under Grandmaster Nan Lu and continuous practice in Traditional Chinese Medicine principles</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">🌿</div>
+          <h3>Holistic Approach</h3>
+          <p>Specialized training in energy healing, meditation, and integrative wellness practices</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">👥</div>
+          <h3>Community Focus</h3>
+          <p>Dedicated to making ancient healing wisdom accessible to modern practitioners of all backgrounds</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Students Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"Tom's gentle guidance helped me find peace I didn't know was possible. His classes are a sanctuary where healing truly happens."</p>
+          <div class="testimonial-author">— Sarah M.</div>
+        </div>
+        <div class="testimonial">
+          <p>"After years of chronic pain, Tom's approach gave me tools that actually work. I feel more balanced and energized than I have in decades."</p>
+          <div class="testimonial-author">— Michael R.</div>
+        </div>
+        <div class="testimonial">
+          <p>"Tom creates such a safe, nurturing space for healing. His wisdom and compassion shine through in every session."</p>
+          <div class="testimonial-author">— Jennifer L.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Begin Your Healing Journey</h2>
+      <p>Ready to experience the transformative power of Dragon's Way Qigong® with Tom's expert guidance?</p>
+      <a href="#" class="cta-button" onclick="alert('Contact form would open here'); return false;">Schedule a Consultation</a>
+      <a href="#" class="cta-button secondary" onclick="alert('Class schedule would open here'); return false;">View Class Schedule</a>
+    </div>
+  </section>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98b18c0e11c090c2',t:'MTc1OTg4MzYwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
