@@ -914,25 +914,38 @@
         <div id="testimonials"></div>
         <div id="contact"></div>
         <script>
-            function loadSection(divId, file) {
-                fetch(file)
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById(divId).innerHTML = html;
-                    });
+        // === Load sections dynamically ===
+        function loadSection(divId, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(html => {
+                    const el = document.getElementById(divId);
+                    if(el) el.innerHTML = html;
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sections to load dynamically on the main page
+            const sections = ['home','gallery','movements','elements','faq','instructors','join','testimonials','contact'];
+            sections.forEach(id => loadSection(id, id + '.html'));
+
+            // Add Qigong only if on index.html, otherwise let qigong.html load normally
+            if(window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+                loadSection('qigong', 'qigong.html');
             }
-            document.addEventListener('DOMContentLoaded', function() {
-                loadSection('home', 'home.html');
-                loadSection('gallery', 'gallery.html');
-                loadSection('movements', 'movements.html');
-                loadSection('elements', 'elements.html');
-                loadSection('faq', 'faq.html');
-                loadSection('instructors', 'instructors.html');
-                loadSection('join', 'join.html');
-                loadSection('testimonials', 'testimonials.html');
-                loadSection('contact', 'contact.html');
-                document.body.style.paddingTop = '4rem';
+
+            // Smooth scroll padding
+            document.body.style.paddingTop = '4rem';
+
+            // === Highlight current nav link ===
+            const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+            document.querySelectorAll(".nav a").forEach(link => {
+                const href = link.getAttribute("href");
+                if(href === currentPage || (href === 'index.html' && currentPage === '')) {
+                    link.classList.add("active");
+                }
             });
+        });
         </script>
 
     <script>
