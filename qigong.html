@@ -6,102 +6,121 @@
 <title>Dragon's Way Qigong</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
-        :root {
-            --cream-light: #F5F3EE;
-            --cream-base: #E9E4DA;
-            --cream-deep: #D5CFC4;
-            --accent: #55160A;
-            --text-dark: #2E241A;
-        }
+:root {
+    --cream-light: #F5F3EE;
+    --cream-base: #E9E4DA;
+    --cream-deep: #D5CFC4;
+    --accent: #55160A;
+    --text-dark: #2E241A;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+/* Global */
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+    background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(--cream-deep));
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-            background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(--cream-deep));
-            background-attachment: fixed;
-            overflow-x: hidden;
-        }
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
 
-        .nav {
-            position: fixed;
-            top: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            z-index: 10;
-        }
+.nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
 
-        .nav a {
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border: 1px solid transparent;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-        }
+.nav a:hover {
+    border-color: var(--accent);
+    background: rgba(85, 22, 10, 0.1);
+}
 
-        .nav a:hover {
-            border-color: var(--accent);
-            background: rgba(85, 22, 10, 0.1);
-        }
+/* Sections */
+section, #home {
+    width: 100%;
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: background 3s ease-in-out;
+}
 
-        section {
-            width: 100%;
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            transition: background 3s ease-in-out;
-        }
+#home {
+    min-height: 140vh;
+    padding: 8rem 3rem 6rem;
+    background: radial-gradient(circle at 60% 40%, var(--cream-light), var(--cream-base), var(--cream-deep));
+    overflow: hidden;
+}
 
-        #home {
-            position: relative;
-            min-height: 140vh;
-            padding: 8rem 3rem 6rem;
-            text-align: center;
-            background: radial-gradient(circle at 60% 40%, var(--cream-light), var(--cream-base), var(--cream-deep));
-            overflow: hidden;
-        }
+#home::before {
+    content: "";
+    position: absolute;
+    top: -10%; left: -10%;
+    width: 120%; height: 120%;
+    background: radial-gradient(circle at 40% 60%, rgba(85, 22, 10, 0.08), transparent 70%);
+    animation: slowGlow 20s ease-in-out infinite alternate;
+    z-index: 0;
+}
 
-        #home::before {
-            content: "";
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            background: radial-gradient(circle at 40% 60%, rgba(85, 22, 10, 0.08), transparent 70%);
-            animation: slowGlow 20s ease-in-out infinite alternate;
-            z-index: 0;
-        }
+@keyframes slowGlow {
+    from { transform: scale(1) translateY(0px); opacity: 0.5; }
+    to { transform: scale(1.1) translateY(-10px); opacity: 0.7; }
+}
 
-        @keyframes slowGlow {
-            from { transform: scale(1) translateY(0px); opacity: 0.5; }
-            to { transform: scale(1.1) translateY(-10px); opacity: 0.7; }
-        }
+/* Typography */
+.hero-title { font-size: 3.8rem; margin-bottom: 1rem; color: var(--accent); letter-spacing: 1px; position: relative; z-index: 1; }
+.hero-subtitle { font-size: 1.6rem; font-style: italic; margin-bottom: 2.5rem; color: #3B2F24; position: relative; z-index: 1; }
+.hero-description { max-width: 900px; margin: 1rem auto; line-height: 1.75; font-size: 1.2rem; position: relative; z-index: 1; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--accent); letter-spacing: 0.5px; }
+p { max-width: 750px; margin: 0 auto 1.5rem; line-height: 1.7; font-size: 1.1rem; color: #4A3C31; }
+h1 { font-size: 3rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; }
+h2 { font-size: 2rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; }
 
-        /* Add additional styles from index.html for typography, layout, and sections as needed */
+/* Shared classes for cards, programs, instructors */
+.program-card, .feature-card, .instructor-card, .testimonial-card, .upcoming-card, .movement-card, .element-card {
+    border-radius: 12px; padding: 2rem; transition: all 0.3s ease;
+}
+
+/* Fade-in animation */
+.section {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+}
 </style>
 </head>
 <body>
 <!-- Navigation -->
 <nav class="nav">
-    <a href="/DWQ/index.html">Home</a>       <!-- Go back to the actual home page -->
+    <a href="/DWQ/index.html">Home</a>
     <a href="index.html#about">About</a>
     <a href="index.html#gallery">Gallery</a>
     <a href="qigong.html">Qigong</a>
     <a href="index.html#contact">Contact</a>
 </nav>
 
-<!-- Main Sections -->
+<!-- Sections -->
 <div id="home"></div>
 <div id="about"></div>
 <div id="gallery"></div>
@@ -114,17 +133,12 @@
 <div id="build-timestamp" style="font-size:0.8rem; text-align:center; color:#aaa; margin-top:2rem;"></div>
 
 <script>
-// Helper to load HTML into a div
+// Load sections via fetch
 function loadSection(divId, file) {
-    fetch(file)
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById(divId).innerHTML = html;
-        });
+    fetch(file).then(r => r.text()).then(html => document.getElementById(divId).innerHTML = html);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Load main sections only
     loadSection('home', 'home.html');
     loadSection('about', 'DWQ-about.html');
     loadSection('gallery', 'DWQ-programs.html');
@@ -134,9 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
     loadSection('testimonials', 'testimonials.html');
     loadSection('contact', 'contact.html');
 
-    // Fade-in scroll observer for sections
+    // Scroll fade-in observer
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -144,25 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-
-    document.querySelectorAll('.section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(section);
-    });
+    document.querySelectorAll('.section').forEach(section => observer.observe(section));
 });
 
 // Timestamp
 function updateTimestamp() {
     const now = new Date();
-    const formattedTime = now.getFullYear() + '-' +
-        String(now.getMonth() + 1).padStart(2, '0') + '-' +
-        String(now.getDate()).padStart(2, '0') + ' ' +
-        String(now.getHours()).padStart(2, '0') + ':' +
-        String(now.getMinutes()).padStart(2, '0') + ':' +
-        String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('build-timestamp').textContent = 'Page generated at: ' + formattedTime;
+    document.getElementById('build-timestamp').textContent =
+        'Page generated at: ' +
+        now.getFullYear() + '-' +
+        String(now.getMonth()+1).padStart(2,'0') + '-' +
+        String(now.getDate()).padStart(2,'0') + ' ' +
+        String(now.getHours()).padStart(2,'0') + ':' +
+        String(now.getMinutes()).padStart(2,'0') + ':' +
+        String(now.getSeconds()).padStart(2,'0');
 }
 updateTimestamp();
 setInterval(updateTimestamp, 1000);
