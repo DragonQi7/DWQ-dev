@@ -915,9 +915,11 @@
     <div id="about"></div>
     <div id="gallery"></div>
     <div id="qigong"></div>
-    <div id="video"></div>
-    <div id="movements"></div>
-    <div id="elements"></div>
+    <div id="qigong-sections" style="display:none;">
+        <div id="video"></div>
+        <div id="movements"></div>
+        <div id="elements"></div>
+    </div>
     <div id="faq"></div>
     <div id="instructors"></div>
     <div id="join"></div>
@@ -931,7 +933,14 @@
             fetch(file)
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById(divId).innerHTML = html;
+                    // If divId is video, movements, or elements, load into #qigong-sections
+                    if (["video", "movements", "elements"].includes(divId)) {
+                        const container = document.querySelector('#qigong-sections');
+                        const target = container.querySelector('#' + divId);
+                        if (target) target.innerHTML = html;
+                    } else {
+                        document.getElementById(divId).innerHTML = html;
+                    }
                 });
         }
 
@@ -941,9 +950,9 @@
             loadSection('about', 'DWQ-about.html');
             loadSection('gallery', 'DWQ-programs.html');
             loadSection('qigong', 'qigong.html'); // <-- new Qigong section
-            // loadSection('video', 'DWQ-video.html');
-            // loadSection('movements', 'DWQ-Movements.html');
-            // loadSection('elements', 'DWQ-5elements.html');
+            loadSection('video', 'DWQ-video.html');
+            loadSection('movements', 'DWQ-Movements.html');
+            loadSection('elements', 'DWQ-5elements.html');
             loadSection('faq', 'faq.html');
             loadSection('instructors', 'instructors.html');
             loadSection('join', 'join.html');
