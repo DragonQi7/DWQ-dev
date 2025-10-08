@@ -919,6 +919,7 @@
         <div id="video"></div>
         <div id="movements"></div>
         <div id="elements"></div>
+        <div id="qigong-about"></div>
     </div>
     <div id="faq"></div>
     <div id="instructors"></div>
@@ -939,7 +940,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Load main sections (not Qigong)
+        // Load only main sections (not Qigong)
         loadSection('home', 'home.html');
         loadSection('about', 'DWQ-about.html');
         loadSection('gallery', 'DWQ-programs.html');
@@ -953,7 +954,7 @@
         const qigongContainer = document.getElementById('qigong-sections');
         qigongContainer.style.display = 'none';
 
-        // Optional: fade-in scroll observer for main sections
+        // Fade-in scroll observer for main sections
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
@@ -975,22 +976,18 @@
     // Qigong nav click
     document.querySelector('a[href="#qigong"]').addEventListener('click', function(e){
         e.preventDefault();
-
         const qigongContainer = document.getElementById('qigong-sections');
-
-        // Show container
         qigongContainer.style.display = 'block';
-
-        // Load the three sections
+        // Load Qigong sections only when nav is clicked
         const qigongSections = [
             {id: 'video', file: 'DWQ-video.html'},
             {id: 'movements', file: 'DWQ-Movements.html'},
-            {id: 'elements', file: 'DWQ-5elements.html'}
+            {id: 'elements', file: 'DWQ-5elements.html'},
+            {id: 'qigong-about', file: 'DWQ-about.html'}
         ];
         qigongSections.forEach(section => loadSection(section.id, section.file));
-
-        // Scroll to Qigong placeholder
-        document.getElementById('qigong').scrollIntoView({behavior:'smooth'});
+        // Scroll smoothly to the Qigong container
+        document.getElementById('qigong-sections').scrollIntoView({behavior:'smooth'});
     });
 
     // FAQ toggle function
