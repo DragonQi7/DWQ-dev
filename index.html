@@ -928,37 +928,92 @@
     <div id="build-timestamp" style="font-size:0.8rem; text-align:center; color:#aaa; margin-top:2rem;"></div>
 
     <script>
-        // Helper to load HTML into a div
-        function loadSection(divId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(html => {
-                    // If divId is video, movements, or elements, load into #qigong-sections
-                    if (["video", "movements", "elements"].includes(divId)) {
-                        const container = document.querySelector('#qigong-sections');
-                        const target = container.querySelector('#' + divId);
-                        if (target) target.innerHTML = html;
-                    } else {
-                        document.getElementById(divId).innerHTML = html;
-                    }
-                });
-        }
+    // Helper to load HTML into a div
+    function loadSection(divId, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById(divId).innerHTML = html;
+            });
+    }
 
-        // Load all sections
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSection('home', 'home.html');
-            loadSection('about', 'DWQ-about.html');
-            loadSection('gallery', 'DWQ-programs.html');
-            loadSection('qigong', 'qigong.html'); // <-- new Qigong section
-            loadSection('video', 'DWQ-video.html');
-            loadSection('movements', 'DWQ-Movements.html');
-            loadSection('elements', 'DWQ-5elements.html');
-            loadSection('faq', 'faq.html');
-            loadSection('instructors', 'instructors.html');
-            loadSection('join', 'join.html');
-            loadSection('testimonials', 'testimonials.html');
-            loadSection('contact', 'contact.html');
+    // Load main sections on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+        loadSection('home', 'home.html');
+        loadSection('about', 'DWQ-about.html');
+        loadSection('gallery', 'DWQ-programs.html');
+        loadSection('faq', 'faq.html');
+        loadSection('instructors', 'instructors.html');
+        loadSection('join', 'join.html');
+        loadSection('testimonials', 'testimonials.html');
+        loadSection('contact', 'contact.html');
+
+        // Hide Qigong sections initially
+        const qigongSections = ['video', 'movements', 'elements'];
+        qigongSections.forEach(id => {
+            document.getElementById(id).style.display = 'none';
         });
+
+        // Smooth scrolling for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    });
+
+    // Load Qigong sections on nav click
+    document.querySelector('a[href="#qigong"]').addEventListener('click', function(e){
+        e.preventDefault();
+
+        const qigongSections = [
+            {id: 'video', file: 'DWQ-video.html'},
+            {id: 'movements', file: 'DWQ-Movements.html'},
+            {id: 'elements', file: 'DWQ-5elements.html'}
+        ];
+
+        qigongSections.forEach(section => {
+            loadSection(section.id, section.file);
+            document.getElementById(section.id).style.display = 'block';
+        });
+
+        // Scroll to the top of first Qigong section
+        document.getElementById('video').scrollIntoView({behavior:'smooth'});
+    });
+
+    // FAQ toggle function
+    function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const toggle = element.querySelector('.faq-toggle');
+        if (answer.classList.contains('active')) {
+            answer.classList.remove('active');
+            toggle.textContent = '+';
+            toggle.style.transform = 'rotate(0deg)';
+        } else {
+            document.querySelectorAll('.faq-answer.active').forEach(activeAnswer => {
+                activeAnswer.classList.remove('active');
+                activeAnswer.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+                activeAnswer.previousElementSibling.querySelector('.faq-toggle').style.transform = 'rotate(0deg)';
+            });
+            answer.classList.add('active');
+            toggle.textContent = '−';
+            toggle.style.transform = 'rotate(180deg)';
+        }
+    }
     </script>
 
     <script>
