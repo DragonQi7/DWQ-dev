@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon's Way Qigong</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon's Way Qigong</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+/* --- your existing CSS --- */
+/* For brevity, include all your styles here from index.html, minus Qigong-specific divs and scroll effects */
+</style>
 </head>
 <body>
-    <h1>Dragon's Way Qigong</h1>
-    <div id="about"></div>
-    <div id="programs"></div>
-    <div id="movements"></div>
-    <div id="video"></div>
-    <div id="elements"></div>
-    <script>
-        // Load modular sections from DWQ-*.html files
-        function loadSection(divId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById(divId).innerHTML = html;
-                });
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSection('about', 'DWQ-about.html');
-            loadSection('programs', 'DWQ-programs.html');
-            loadSection('movements', 'DWQ-Movements.html');
-            loadSection('video', 'DWQ-video.html');
-            loadSection('elements', 'DWQ-5elements.html');
+<!-- Navigation -->
+<nav class="nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="qigong.html">Qigong</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Main Sections -->
+<div id="home"></div>
+<div id="about"></div>
+<div id="gallery"></div>
+<div id="faq"></div>
+<div id="instructors"></div>
+<div id="join"></div>
+<div id="testimonials"></div>
+<div id="contact"></div>
+
+<div id="build-timestamp" style="font-size:0.8rem; text-align:center; color:#aaa; margin-top:2rem;"></div>
+
+<script>
+// Helper to load HTML into a div
+function loadSection(divId, file) {
+    fetch(file)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById(divId).innerHTML = html;
         });
-    </script>
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Load main sections only
+    loadSection('home', 'home.html');
+    loadSection('about', 'DWQ-about.html');
+    loadSection('gallery', 'DWQ-programs.html');
+    loadSection('faq', 'faq.html');
+    loadSection('instructors', 'instructors.html');
+    loadSection('join', 'join.html');
+    loadSection('testimonials', 'testimonials.html');
+    loadSection('contact', 'contact.html');
+
+    // Fade-in scroll observer for sections
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(section);
+    });
+});
+
+// Timestamp
+function updateTimestamp() {
+    const now = new Date();
+    const formattedTime = now.getFullYear() + '-' +
+        String(now.getMonth() + 1).padStart(2, '0') + '-' +
+        String(now.getDate()).padStart(2, '0') + ' ' +
+        String(now.getHours()).padStart(2, '0') + ':' +
+        String(now.getMinutes()).padStart(2, '0') + ':' +
+        String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('build-timestamp').textContent = 'Page generated at: ' + formattedTime;
+}
+updateTimestamp();
+setInterval(updateTimestamp, 1000);
+</script>
 </body>
 </html>
