@@ -33,8 +33,6 @@ jobs:
         run: |
           mkdir -p public
           cp index.html public/
-          if [ -f qigong.html ]; then cp qigong.html public/; fi
-          if [ -d images ]; then cp -r images public/; fi
 
       - name: Upload to Pages
         uses: actions/upload-pages-artifact@v3
