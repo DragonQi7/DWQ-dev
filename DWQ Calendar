@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon's Way Qigong Class Calendar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream-light: #F5F3EE;
+            --cream-base: #E9E4DA;
+            --cream-deep: #D5CFC4;
+            --accent: #55160A;
+            --text-dark: #2E241A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(--cream-deep));
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding: 20px;
+            min-height: 100%;
+        }
+
+        .calendar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .calendar-header {
+            background: linear-gradient(135deg, var(--accent), #7A2B1A);
+            color: var(--cream-light);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .calendar-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-btn {
+            background: rgba(245,243,238,0.2);
+            border: none;
+            color: var(--cream-light);
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(245,243,238,0.3);
+            transform: translateY(-2px);
+        }
+
+        .month-year {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .add-class-btn {
+            background: var(--accent);
+            border: none;
+            color: var(--cream-light);
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .add-class-btn:hover {
+            background: #3D0F07;
+            transform: translateY(-2px);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: var(--cream-deep);
+            margin: 0;
+        }
+
+        .day-header {
+            background: var(--cream-base);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        .calendar-day {
+            background: var(--cream-light);
+            min-height: 120px;
+            padding: 8px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .calendar-day:hover {
+            background: var(--cream-base);
+        }
+
+        .calendar-day.other-month {
+            background: #F0EDE8;
+            color: #8B7F73;
+        }
+
+        .calendar-day.today {
+            background: var(--cream-base);
+            border: 2px solid var(--accent);
+        }
+
+        .day-number {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .class-item {
+            background: linear-gradient(135deg, var(--accent), #3D0F07);
+            color: var(--cream-light);
+            padding: 4px 6px;
+            margin: 2px 0;
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .class-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 2px 8px rgba(85,22,10,0.3);
+        }
+
+        .class-item.zoom {
+            background: linear-gradient(135deg, #8B4513, #654321);
+        }
+
+        .class-item.in-person {
+            background: linear-gradient(135deg, #A0522D, #8B4513);
+        }
+
+        .holiday-item {
+            background: linear-gradient(135deg, #DC2626, #B91C1C);
+            color: var(--cream-light);
+            padding: 2px 4px;
+            margin: 1px 0;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .astronomical-item {
+            background: linear-gradient(135deg, #60A5FA, #3B82F6);
+            color: var(--cream-light);
+            padding: 2px 4px;
+            margin: 1px 0;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--cream-light);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--cream-deep);
+            border-radius: 8px;
+            font-size: 16px;
+            background: var(--cream-base);
+            color: var(--text-dark);
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--cream-light);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: #3D0F07;
+        }
+
+        .btn-danger {
+            background: #8B4513;
+            color: var(--cream-light);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .btn-danger:hover {
+            background: #654321;
+        }
+
+        .class-details {
+            margin-top: 10px;
+        }
+
+        .class-time {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .class-location {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .calendar-header {
+                padding: 20px;
+            }
+            
+            .month-year {
+                font-size: 24px;
+            }
+            
+            .calendar-day {
+                min-height: 100px;
+                padding: 6px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <h1 style="margin: 0 0 20px 0; font-size: 32px; font-weight: 700; color: var(--cream-light);">Dragon's Way Qigong Class Calendar</h1>
+            <div class="calendar-nav">
+                <button class="nav-btn" onclick="changeMonth(-1)">← Previous</button>
+                <div class="month-year" id="monthYear"></div>
+                <button class="nav-btn" onclick="changeMonth(1)">Next →</button>
+            </div>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <button class="nav-btn" onclick="goToToday()">Today</button>
+            </div>
+        </div>
+        
+        <div class="calendar-grid" id="calendarGrid">
+            <!-- Calendar will be generated here -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Class Modal -->
+    <div class="modal" id="classModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Add New Class</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="classForm" onsubmit="saveClass(event)">
+                <div class="form-group">
+                    <label class="form-label">Class Title</label>
+                    <input type="text" class="form-input" id="classTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Instructor Name</label>
+                    <input type="text" class="form-input" id="instructorName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-input" id="classDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Time</label>
+                        <input type="time" class="form-input" id="classTime" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Class Type</label>
+                    <select class="form-select" id="classType" onchange="toggleLocationField()" required>
+                        <option value="">Select type...</option>
+                        <option value="zoom">Zoom Class</option>
+                        <option value="in-person">In-Person Class</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="locationGroup">
+                    <label class="form-label" id="locationLabel">Location/Zoom Link</label>
+                    <input type="text" class="form-input" id="classLocation" placeholder="Enter location or Zoom link">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Instructions/Description</label>
+                    <textarea class="form-textarea" id="classInstructions" placeholder="Add any special instructions or class description..."></textarea>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button type="submit" class="btn-primary">Save Class</button>
+                    <button type="button" class="btn-danger" id="deleteBtn" onclick="deleteClass()" style="display: none;">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Class Details Modal -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="detailsTitle"></h2>
+                <button class="close-btn" onclick="closeDetailsModal()">&times;</button>
+            </div>
+            <div id="detailsContent"></div>
+            <div style="margin-top: 20px;">
+                <button class="btn-primary" onclick="editClass()">Edit Class</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentDate = new Date();
+        
+        // MANUAL CLASS ENTRY INSTRUCTIONS:
+        // To add classes manually, edit the 'classes' array below.
+        // Each class object should have this format:
+        // {
+        //     id: "unique_id_string",           // Any unique string (e.g., "class_001")
+        //     title: "Class Name",              // Display name for the class
+        //     instructor: "Instructor Name",    // Name of the instructor
+        //     date: "YYYY-MM-DD",              // Date in ISO format (e.g., "2025-01-15")
+        //     time: "HH:MM",                   // Time in 24-hour format (e.g., "14:30" for 2:30 PM)
+        //     type: "zoom" or "in-person",     // Class type (affects styling)
+        //     location: "Location or Zoom URL", // Physical location or Zoom meeting link
+        //     instructions: "Special notes"     // Optional additional information
+        // }
+        //
+        // EXAMPLE ENTRIES:
+        // {
+        //     id: "morning_qigong_jan15",
+        //     title: "Morning Qigong Flow",
+        //     instructor: "Master Chen",
+        //     date: "2025-01-15",
+        //     time: "09:00",
+        //     type: "zoom",
+        //     location: "https://zoom.us/j/123456789",
+        //     instructions: "Bring a yoga mat and water bottle"
+        // },
+        // {
+        //     id: "evening_practice_jan20",
+        //     title: "Evening Dragon's Way",
+        //     instructor: "Sarah Johnson",
+        //     date: "2025-01-20",
+        //     time: "18:30",
+        //     type: "in-person",
+        //     location: "Community Center, Room 101",
+        //     instructions: "Wear comfortable clothing"
+        // }
+        
+        let classes = [
+            // ADD YOUR CLASSES HERE - Follow the format shown in the comments above
+            
+        ];
+        
+        let editingClassId = null;
+        let selectedClassId = null;
+
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+        // US Holiday calculations
+        function getUSHolidays(year) {
+            const holidays = [];
+            
+            // Fixed date holidays
+            holidays.push({ date: new Date(year, 0, 1), name: "New Year's Day" });
+            holidays.push({ date: new Date(year, 6, 4), name: "Independence Day" });
+            holidays.push({ date: new Date(year, 10, 11), name: "Veterans Day" });
+            holidays.push({ date: new Date(year, 11, 25), name: "Christmas Day" });
+            
+            // Martin Luther King Jr. Day - 3rd Monday in January
+            holidays.push({ date: getNthWeekdayOfMonth(year, 0, 1, 3), name: "MLK Jr. Day" });
+            
+            // Presidents Day - 3rd Monday in February
+            holidays.push({ date: getNthWeekdayOfMonth(year, 1, 1, 3), name: "Presidents Day" });
+            
+            // Memorial Day - Last Monday in May
+            holidays.push({ date: getLastWeekdayOfMonth(year, 4, 1), name: "Memorial Day" });
+            
+            // Labor Day - 1st Monday in September
+            holidays.push({ date: getNthWeekdayOfMonth(year, 8, 1, 1), name: "Labor Day" });
+            
+            // Columbus Day - 2nd Monday in October
+            holidays.push({ date: getNthWeekdayOfMonth(year, 9, 1, 2), name: "Columbus Day" });
+            
+            // Thanksgiving - 4th Thursday in November
+            holidays.push({ date: getNthWeekdayOfMonth(year, 10, 4, 4), name: "Thanksgiving" });
+            
+            // Add Chinese New Year
+            const chineseNewYear = getChineseNewYear(year);
+            if (chineseNewYear) {
+                holidays.push(chineseNewYear);
+            }
+            
+            return holidays;
+        }
+
+        // Chinese New Year dates
+        function getChineseNewYear(year) {
+            const chineseNewYears = {
+                2025: { date: new Date(2025, 0, 29), name: "🐍 Chinese New Year (Snake)" },
+                2026: { date: new Date(2026, 1, 17), name: "🐎 Chinese New Year (Horse)" },
+                2027: { date: new Date(2027, 1, 6), name: "🐐 Chinese New Year (Goat)" },
+                2028: { date: new Date(2028, 0, 26), name: "🐒 Chinese New Year (Monkey)" },
+                2029: { date: new Date(2029, 1, 13), name: "🐓 Chinese New Year (Rooster)" }
+            };
+            
+            return chineseNewYears[year] || null;
+        }
+
+        // Astronomical events calculations
+        function getAstronomicalEvents(year) {
+            const events = [];
+            
+            // Get precise solstices and equinoxes
+            const seasonalEvents = getSeasonalEvents(year);
+            seasonalEvents.forEach(event => {
+                events.push(event);
+            });
+            
+            // Add all full moons for the year
+            const fullMoons = getFullMoons(year);
+            fullMoons.forEach(moonData => {
+                events.push({ 
+                    date: moonData.date, 
+                    name: moonData.name,
+                    time: moonData.time
+                });
+            });
+            
+            return events;
+        }
+
+        // Precise seasonal events with UTC times
+        function getSeasonalEvents(year) {
+            const events = [];
+            
+            if (year === 2025) {
+                events.push({ date: new Date(2025, 2, 20), name: "Spring Equinox", time: "09:01 UTC" });
+                events.push({ date: new Date(2025, 5, 20), name: "Summer Solstice", time: "22:42 UTC" });
+                events.push({ date: new Date(2025, 8, 22), name: "Autumn Equinox", time: "18:19 UTC" });
+                events.push({ date: new Date(2025, 11, 21), name: "Winter Solstice", time: "15:02 UTC" });
+            } else if (year === 2026) {
+                events.push({ date: new Date(2026, 2, 20), name: "Spring Equinox", time: "10:45 UTC" });
+                events.push({ date: new Date(2026, 5, 21), name: "Summer Solstice", time: "04:24 UTC" });
+                events.push({ date: new Date(2026, 8, 22), name: "Autumn Equinox", time: "20:05 UTC" });
+                events.push({ date: new Date(2026, 11, 21), name: "Winter Solstice", time: "15:50 UTC" });
+            } else if (year === 2027) {
+                events.push({ date: new Date(2027, 2, 20), name: "Spring Equinox", time: "16:24 UTC" });
+                events.push({ date: new Date(2027, 5, 21), name: "Summer Solstice", time: "10:10 UTC" });
+                events.push({ date: new Date(2027, 8, 23), name: "Autumn Equinox", time: "02:01 UTC" });
+                events.push({ date: new Date(2027, 11, 21), name: "Winter Solstice", time: "21:42 UTC" });
+            } else if (year === 2028) {
+                events.push({ date: new Date(2028, 2, 19), name: "Spring Equinox", time: "22:17 UTC" });
+                events.push({ date: new Date(2028, 5, 20), name: "Summer Solstice", time: "16:01 UTC" });
+                events.push({ date: new Date(2028, 8, 22), name: "Autumn Equinox", time: "07:45 UTC" });
+                events.push({ date: new Date(2028, 11, 21), name: "Winter Solstice", time: "03:19 UTC" });
+            }
+            
+            return events;
+        }
+
+        // Full Moon Calendar with traditional names and times
+        function getFullMoons(year) {
+            const fullMoons = {
+                2025: [
+                    { date: new Date(2025, 0, 13), name: "Wolf Moon", time: "5:27 PM" },
+                    { date: new Date(2025, 1, 12), name: "Snow Moon", time: "8:53 AM" },
+                    { date: new Date(2025, 2, 14), name: "Worm Moon", time: "2:55 AM" },
+                    { date: new Date(2025, 3, 12), name: "Pink Moon (supermoon)", time: "8:22 PM" },
+                    { date: new Date(2025, 4, 12), name: "Flower Moon (supermoon)", time: "12:56 PM" },
+                    { date: new Date(2025, 5, 11), name: "Strawberry Moon", time: "3:44 AM" },
+                    { date: new Date(2025, 6, 10), name: "Buck Moon", time: "4:37 PM" },
+                    { date: new Date(2025, 7, 9), name: "Sturgeon Moon", time: "3:55 AM" },
+                    { date: new Date(2025, 8, 7), name: "Corn Moon / Harvest Moon", time: "2:09 PM" },
+                    { date: new Date(2025, 9, 6), name: "Harvest Moon / Hunter's Moon", time: "11:48 PM" },
+                    { date: new Date(2025, 10, 5), name: "Beaver Moon", time: "8:19 AM" },
+                    { date: new Date(2025, 11, 4), name: "Cold Moon", time: "6:14 PM" }
+                ],
+                2026: [
+                    { date: new Date(2026, 0, 3), name: "Wolf Moon", time: "5:03 AM" },
+                    { date: new Date(2026, 1, 1), name: "Snow Moon", time: "12:09 PM" },
+                    { date: new Date(2026, 2, 3), name: "Worm Moon", time: "7:38 PM" },
+                    { date: new Date(2026, 3, 2), name: "Pink Moon", time: "3:13 AM" },
+                    { date: new Date(2026, 4, 1), name: "Flower Moon", time: "11:22 AM" },
+                    { date: new Date(2026, 4, 31), name: "Strawberry Moon", time: "8:45 PM" },
+                    { date: new Date(2026, 5, 30), name: "Buck Moon", time: "7:57 AM" },
+                    { date: new Date(2026, 6, 29), name: "Sturgeon Moon", time: "9:36 PM" },
+                    { date: new Date(2026, 7, 28), name: "Corn Moon", time: "12:35 PM" },
+                    { date: new Date(2026, 8, 27), name: "Harvest Moon", time: "4:49 AM" },
+                    { date: new Date(2026, 9, 26), name: "Hunter's Moon", time: "9:12 PM" },
+                    { date: new Date(2026, 10, 25), name: "Beaver Moon", time: "1:52 PM" },
+                    { date: new Date(2026, 11, 25), name: "Cold Moon", time: "5:14 AM" }
+                ],
+                2027: [
+                    { date: new Date(2027, 0, 23), name: "Wolf Moon", time: "7:18 PM" },
+                    { date: new Date(2027, 1, 22), name: "Snow Moon", time: "8:23 AM" },
+                    { date: new Date(2027, 2, 23), name: "Worm Moon", time: "8:02 PM" },
+                    { date: new Date(2027, 3, 22), name: "Pink Moon", time: "6:50 AM" },
+                    { date: new Date(2027, 4, 21), name: "Flower Moon", time: "5:03 PM" },
+                    { date: new Date(2027, 5, 20), name: "Strawberry Moon", time: "3:31 AM" },
+                    { date: new Date(2027, 6, 19), name: "Buck Moon", time: "2:14 PM" },
+                    { date: new Date(2027, 7, 18), name: "Sturgeon Moon", time: "1:26 AM" },
+                    { date: new Date(2027, 8, 16), name: "Corn Moon", time: "12:51 PM" },
+                    { date: new Date(2027, 9, 16), name: "Harvest Moon", time: "12:11 AM" },
+                    { date: new Date(2027, 10, 14), name: "Hunter's Moon", time: "11:26 AM" },
+                    { date: new Date(2027, 11, 13), name: "Cold Moon", time: "10:31 PM" }
+                ],
+                2028: [
+                    { date: new Date(2028, 0, 12), name: "Wolf Moon", time: "9:24 AM" },
+                    { date: new Date(2028, 1, 10), name: "Snow Moon", time: "8:03 PM" },
+                    { date: new Date(2028, 2, 11), name: "Worm Moon", time: "6:27 AM" },
+                    { date: new Date(2028, 3, 9), name: "Pink Moon", time: "4:30 PM" },
+                    { date: new Date(2028, 4, 9), name: "Flower Moon", time: "2:22 AM" },
+                    { date: new Date(2028, 5, 7), name: "Strawberry Moon", time: "12:23 PM" },
+                    { date: new Date(2028, 6, 6), name: "Buck Moon", time: "11:00 PM" },
+                    { date: new Date(2028, 7, 5), name: "Sturgeon Moon", time: "10:06 AM" },
+                    { date: new Date(2028, 8, 3), name: "Corn Moon", time: "10:55 PM" },
+                    { date: new Date(2028, 9, 3), name: "Harvest Moon", time: "12:03 PM" },
+                    { date: new Date(2028, 10, 2), name: "Hunter's Moon", time: "1:18 AM" },
+                    { date: new Date(2028, 11, 1), name: "Beaver Moon", time: "2:31 PM" },
+                    { date: new Date(2028, 11, 31), name: "Cold Moon", time: "3:47 AM" }
+                ]
+            };
+            
+            return fullMoons[year] || [];
+        }
+
+        function getNthWeekdayOfMonth(year, month, weekday, n) {
+            const firstDay = new Date(year, month, 1);
+            const firstWeekday = firstDay.getDay();
+            const offset = (weekday - firstWeekday + 7) % 7;
+            return new Date(year, month, 1 + offset + (n - 1) * 7);
+        }
+
+        function getLastWeekdayOfMonth(year, month, weekday) {
+            const lastDay = new Date(year, month + 1, 0);
+            const lastWeekday = lastDay.getDay();
+            const offset = (lastWeekday - weekday + 7) % 7;
+            return new Date(year, month + 1, 0 - offset);
+        }
+
+        function generateCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            document.getElementById('monthYear').textContent = `${monthNames[month]} ${year}`;
+            
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+            
+            // Add day headers
+            dayNames.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'day-header';
+                dayHeader.textContent = day;
+                calendarGrid.appendChild(dayHeader);
+            });
+            
+            // Generate calendar days
+            const today = new Date();
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                
+                if (date.getMonth() !== month) {
+                    dayElement.classList.add('other-month');
+                }
+                
+                if (date.toDateString() === today.toDateString()) {
+                    dayElement.classList.add('today');
+                }
+                
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'day-number';
+                dayNumber.textContent = date.getDate();
+                dayElement.appendChild(dayNumber);
+                
+                // Add holidays for this day
+                const holidays = getUSHolidays(year);
+                const dayHolidays = holidays.filter(holiday => {
+                    return holiday.date.toDateString() === date.toDateString();
+                });
+                
+                dayHolidays.forEach(holiday => {
+                    const holidayElement = document.createElement('div');
+                    holidayElement.className = 'holiday-item';
+                    holidayElement.textContent = holiday.name;
+                    holidayElement.title = holiday.name;
+                    dayElement.appendChild(holidayElement);
+                });
+
+                // Add astronomical events for this day
+                const astronomicalEvents = getAstronomicalEvents(year);
+                const dayAstronomical = astronomicalEvents.filter(event => {
+                    return event.date.toDateString() === date.toDateString();
+                });
+                
+                dayAstronomical.forEach(event => {
+                    const astroElement = document.createElement('div');
+                    astroElement.className = 'astronomical-item';
+                    astroElement.textContent = event.name;
+                    // Add time to tooltip if available
+                    const tooltipText = event.time ? `${event.name} - ${event.time} ET` : event.name;
+                    astroElement.title = tooltipText;
+                    dayElement.appendChild(astroElement);
+                });
+
+                // Add classes for this day
+                const dayClasses = classes.filter(cls => {
+                    const classDate = new Date(cls.date);
+                    return classDate.toDateString() === date.toDateString();
+                });
+                
+                dayClasses.forEach(cls => {
+                    const classElement = document.createElement('div');
+                    classElement.className = `class-item ${cls.type}`;
+                    classElement.textContent = cls.title;
+                    classElement.onclick = (e) => {
+                        e.stopPropagation();
+                        showClassDetails(cls.id);
+                    };
+                    dayElement.appendChild(classElement);
+                });
+                
+                dayElement.onclick = () => openAddClassModal(date);
+                calendarGrid.appendChild(dayElement);
+            }
+        }
+
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            generateCalendar();
+        }
+
+        function goToToday() {
+            currentDate = new Date();
+            generateCalendar();
+        }
+
+        function openAddClassModal(date = null) {
+            editingClassId = null;
+            document.getElementById('modalTitle').textContent = 'Add New Class';
+            document.getElementById('classForm').reset();
+            document.getElementById('deleteBtn').style.display = 'none';
+            
+            if (date) {
+                document.getElementById('classDate').value = date.toISOString().split('T')[0];
+            }
+            
+            document.getElementById('classModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('classModal').style.display = 'none';
+        }
+
+        function closeDetailsModal() {
+            document.getElementById('detailsModal').style.display = 'none';
+        }
+
+        function toggleLocationField() {
+            const classType = document.getElementById('classType').value;
+            const locationLabel = document.getElementById('locationLabel');
+            const locationInput = document.getElementById('classLocation');
+            
+            if (classType === 'zoom') {
+                locationLabel.textContent = 'Zoom Link';
+                locationInput.placeholder = 'Enter Zoom meeting link';
+            } else if (classType === 'in-person') {
+                locationLabel.textContent = 'Location';
+                locationInput.placeholder = 'Enter physical location';
+            } else {
+                locationLabel.textContent = 'Location/Zoom Link';
+                locationInput.placeholder = 'Enter location or Zoom link';
+            }
+        }
+
+        function saveClass(event) {
+            event.preventDefault();
+            
+            const classData = {
+                id: editingClassId || Date.now().toString(),
+                title: document.getElementById('classTitle').value,
+                instructor: document.getElementById('instructorName').value,
+                date: document.getElementById('classDate').value,
+                time: document.getElementById('classTime').value,
+                type: document.getElementById('classType').value,
+                location: document.getElementById('classLocation').value,
+                instructions: document.getElementById('classInstructions').value
+            };
+            
+            if (editingClassId) {
+                const index = classes.findIndex(cls => cls.id === editingClassId);
+                classes[index] = classData;
+            } else {
+                classes.push(classData);
+            }
+            
+            localStorage.setItem('calendarClasses', JSON.stringify(classes));
+            generateCalendar();
+            closeModal();
+        }
+
+        function showClassDetails(classId) {
+            const classData = classes.find(cls => cls.id === classId);
+            selectedClassId = classId;
+            
+            if (!classData) return;
+            
+            document.getElementById('detailsTitle').textContent = classData.title;
+            
+            const formatTime = (time) => {
+                const [hours, minutes] = time.split(':');
+                const hour = parseInt(hours);
+                const ampm = hour >= 12 ? 'PM' : 'AM';
+                const displayHour = hour % 12 || 12;
+                return `${displayHour}:${minutes} ${ampm}`;
+            };
+            
+            const formatDate = (dateStr) => {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            };
+            
+            const typeLabel = classData.type === 'zoom' ? 'Zoom Class' : 'In-Person Class';
+            const locationLabel = classData.type === 'zoom' ? 'Zoom Link' : 'Location';
+            
+            document.getElementById('detailsContent').innerHTML = `
+                <div class="class-details">
+                    <p><strong>Instructor:</strong> ${classData.instructor || 'Not specified'}</p>
+                    <p><strong>Date:</strong> ${formatDate(classData.date)}</p>
+                    <p><strong>Time:</strong> ${formatTime(classData.time)}</p>
+                    <p><strong>Type:</strong> ${typeLabel}</p>
+                    <p><strong>${locationLabel}:</strong> ${classData.location || 'Not specified'}</p>
+                    ${classData.instructions ? `<p><strong>Instructions:</strong></p><p>${classData.instructions}</p>` : ''}
+                </div>
+            `;
+            
+            document.getElementById('detailsModal').style.display = 'block';
+        }
+
+        function editClass() {
+            const classData = classes.find(cls => cls.id === selectedClassId);
+            if (!classData) return;
+            
+            closeDetailsModal();
+            
+            editingClassId = selectedClassId;
+            document.getElementById('modalTitle').textContent = 'Edit Class';
+            document.getElementById('classTitle').value = classData.title;
+            document.getElementById('instructorName').value = classData.instructor || '';
+            document.getElementById('classDate').value = classData.date;
+            document.getElementById('classTime').value = classData.time;
+            document.getElementById('classType').value = classData.type;
+            document.getElementById('classLocation').value = classData.location;
+            document.getElementById('classInstructions').value = classData.instructions;
+            document.getElementById('deleteBtn').style.display = 'inline-block';
+            
+            toggleLocationField();
+            document.getElementById('classModal').style.display = 'block';
+        }
+
+        function deleteClass() {
+            const classToDelete = editingClassId || selectedClassId;
+            if (classToDelete && confirm('Are you sure you want to delete this class?')) {
+                classes = classes.filter(cls => cls.id !== classToDelete);
+                localStorage.setItem('calendarClasses', JSON.stringify(classes));
+                generateCalendar();
+                closeModal();
+                closeDetailsModal();
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const classModal = document.getElementById('classModal');
+            const detailsModal = document.getElementById('detailsModal');
+            if (event.target === classModal) {
+                closeModal();
+            }
+            if (event.target === detailsModal) {
+                closeDetailsModal();
+            }
+        }
+
+        // Initialize calendar
+        generateCalendar();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98c05b8b36b18cb3',t:'MTc2MDAzODkwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
