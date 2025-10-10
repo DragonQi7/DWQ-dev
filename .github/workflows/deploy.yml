@@ -35,6 +35,7 @@ jobs:
           mkdir -p public/$BRANCH_NAME
           cp index.html public/$BRANCH_NAME/
           if [ -f qigong.html ]; then cp qigong.html public/$BRANCH_NAME/; fi
+          if [ -d images ]; then cp -r images public/$BRANCH_NAME/; fi
 
       - name: Upload to Pages
         uses: actions/upload-pages-artifact@v3
