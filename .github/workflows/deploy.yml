@@ -31,10 +31,10 @@ jobs:
 
       - name: Copy site files to public
         run: |
-          mkdir -p public
-          cp index.html public/
-          if [ -f qigong.html ]; then cp qigong.html public/; fi
-          if [ -d images ]; then cp -r images public/; fi
+          BRANCH_NAME=$(echo "${GITHUB_REF##*/}")
+          mkdir -p public/$BRANCH_NAME
+          cp index.html public/$BRANCH_NAME/
+          if [ -f qigong.html ]; then cp qigong.html public/$BRANCH_NAME/; fi
 
       - name: Upload to Pages
         uses: actions/upload-pages-artifact@v3
