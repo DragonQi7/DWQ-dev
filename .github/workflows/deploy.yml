@@ -8,7 +8,7 @@ on:
       - prod
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,7 +29,14 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Copy site files to public branch folder
+      # Keep previously deployed branch folders so we don't overwrite
+      - name: Download existing Pages artifact
+        run: |
+          git clone --depth=1 https://github.com/${{ github.repository }} temp-pages
+          mv temp-pages/public ./ || mkdir -p public
+          rm -rf temp-pages
+
+      - name: Copy current branch site files
         run: |
           BRANCH_NAME=$(echo "${GITHUB_REF##*/}")
           mkdir -p public/$BRANCH_NAME
