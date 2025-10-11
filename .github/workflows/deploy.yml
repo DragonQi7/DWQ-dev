@@ -7,12 +7,15 @@ on:
             - name: Setup Pages
               uses: actions/configure-pages@v3
 
-      - name: Copy site files to public
+      - name: Copy site files to public branch folder
         run: |
-          mkdir -p public
-          cp index.html public/
-          if [ -f qigong.html ]; then cp qigong.html public/; fi
-          if [ -d images ]; then cp -r images public/; fi
+          BRANCH_NAME=$(echo "${GITHUB_REF##*/}")
+          mkdir -p public/$BRANCH_NAME
+          cp index.html public/$BRANCH_NAME/
+          if [ -f qigong.html ]; then cp qigong.html public/$BRANCH_NAME/; fi
+          if [ -d images ]; then cp -r images public/$BRANCH_NAME/; fi
+          if [ -d css ]; then cp -r css public/$BRANCH_NAME/; fi
+          if [ -d js ]; then cp -r js public/$BRANCH_NAME/; fi
 
             - name: Upload to Pages
               uses: actions/upload-pages-artifact@v3
