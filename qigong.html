@@ -1598,8 +1598,9 @@
             <h2 class="section-title">Latest Insights</h2>
         </div>
 
-        <div class="blog-grid">
-            <article class="blog-card" onclick="openModal('modal1')" style="max-width: 500px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+            <!-- Blog Card 1 -->
+            <article class="blog-card" onclick="openModal('modal1')" style="box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
                 <div class="card-image" style="height: 220px; background: linear-gradient(45deg, #f4a261, #e76f51), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M50 150 Q100 100 150 150 T250 150 T350 150%22 stroke=%22%23fff%22 stroke-width=%222%22 fill=%22none%22 opacity=%220.3%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2230%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3C/svg%3E'); background-blend-mode: overlay; background-size: cover; border-top-left-radius: 18px; border-top-right-radius: 18px;"></div>
                 <div class="card-content" style="background: #fff; padding: 2.5rem 2rem 2rem 2rem; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
                     <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem; color: #243763;">Digital Detox: Reclaiming Your Inner Peace</h3>
@@ -1607,49 +1608,49 @@
                     <button class="read-more-btn" style="background: #f4a261; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Read More</button>
                 </div>
             </article>
-
-            <article class="blog-card" onclick="openModal('modal2')">
-                <div class="card-image" style="background: linear-gradient(45deg, #2a9d8f, #264653), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M0 150 Q200 50 400 150 L400 300 L0 300 Z%22 fill=%22%23fff%22 opacity=%220.1%22/%3E%3Ccircle cx=%22300%22 cy=%2280%22 r=%2240%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Sleepmaxxing: The Art of Restorative Rest</h3>
-                    <p class="card-excerpt">Transform your sleep into a healing sanctuary. Learn advanced sleep optimization techniques, circadian rhythm healing, and nighttime meditation practices for deep restoration.</p>
-                    <button class="read-more-btn">Read More</button>
+            <!-- Blog Card 2 -->
+            <article class="blog-card" onclick="openModal('modal2')" style="box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
+                <div class="card-image" style="height: 220px; background: linear-gradient(45deg, #2a9d8f, #264653), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M0 150 Q200 50 400 150 L400 300 L0 300 Z%22 fill=%22%23fff%22 opacity=%220.1%22/%3E%3Ccircle cx=%22300%22 cy=%2280%22 r=%2240%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3C/svg%3E'); background-blend-mode: overlay; background-size: cover; border-top-left-radius: 18px; border-top-right-radius: 18px;"></div>
+                <div class="card-content" style="background: #fff; padding: 2.5rem 2rem 2rem 2rem; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem; color: #243763;">Sleepmaxxing: The Art of Restorative Rest</h3>
+                    <p class="card-excerpt" style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Transform your sleep into a healing sanctuary. Learn advanced sleep optimization techniques, circadian rhythm healing, and nighttime meditation practices for deep restoration.</p>
+                    <button class="read-more-btn" style="background: #2a9d8f; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Read More</button>
                 </div>
             </article>
-
-            <article class="blog-card" onclick="openModal('modal3')">
-                <div class="card-image" style="background: linear-gradient(45deg, #6a4c93, #9d4edd), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2250%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%223%22 opacity=%220.4%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2230%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Intuitive Eating: Nourishment Beyond Diet Culture</h3>
-                    <p class="card-excerpt">Reject diet culture and embrace your body's wisdom. Discover mindful nutrition, eating for healing, and how to create a peaceful relationship with food that honors your true needs.</p>
-                    <button class="read-more-btn">Read More</button>
+            <!-- Blog Card 3 -->
+            <article class="blog-card" onclick="openModal('modal3')" style="box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
+                <div class="card-image" style="height: 220px; background: linear-gradient(45deg, #6a4c93, #9d4edd), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2250%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%223%22 opacity=%220.4%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2230%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3C/svg%3E'); background-blend-mode: overlay; background-size: cover; border-top-left-radius: 18px; border-top-right-radius: 18px;"></div>
+                <div class="card-content" style="background: #fff; padding: 2.5rem 2rem 2rem 2rem; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem; color: #243763;">Intuitive Eating: Nourishment Beyond Diet Culture</h3>
+                    <p class="card-excerpt" style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Reject diet culture and embrace your body's wisdom. Discover mindful nutrition, eating for healing, and how to create a peaceful relationship with food that honors your true needs.</p>
+                    <button class="read-more-btn" style="background: #6a4c93; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Read More</button>
                 </div>
             </article>
-
-            <article class="blog-card" onclick="openModal('modal4')">
-                <div class="card-image" style="background: linear-gradient(45deg, #f77f00, #fcbf49), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Ccircle cx=%22200%22 cy=%22120%22 r=%2260%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3Cpath d=%22M50 200 Q200 150 350 200 L350 300 L50 300 Z%22 fill=%22%23fff%22 opacity=%220.1%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Energy Healing: Balancing Your Life Force</h3>
-                    <p class="card-excerpt">Explore holistic healing modalities and consciousness work. Learn energy balancing techniques, integrative medicine approaches, and how to work with your body's natural healing intelligence.</p>
-                    <button class="read-more-btn">Read More</button>
+            <!-- Blog Card 4 -->
+            <article class="blog-card" onclick="openModal('modal4')" style="box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
+                <div class="card-image" style="height: 220px; background: linear-gradient(45deg, #f77f00, #fcbf49), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Ccircle cx=%22200%22 cy=%22120%22 r=%2260%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3Cpath d=%22M50 200 Q200 150 350 200 L350 300 L50 300 Z%22 fill=%22%23fff%22 opacity=%220.1%22/%3E%3C/svg%3E'); background-blend-mode: overlay; background-size: cover; border-top-left-radius: 18px; border-top-right-radius: 18px;"></div>
+                <div class="card-content" style="background: #fff; padding: 2.5rem 2rem 2rem 2rem; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem; color: #243763;">Energy Healing: Balancing Your Life Force</h3>
+                    <p class="card-excerpt" style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Explore holistic healing modalities and consciousness work. Learn energy balancing techniques, integrative medicine approaches, and how to work with your body's natural healing intelligence.</p>
+                    <button class="read-more-btn" style="background: #f77f00; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Read More</button>
                 </div>
             </article>
-
-            <article class="blog-card" onclick="openModal('modal5')">
-                <div class="card-image" style="background: linear-gradient(45deg, #e63946, #f77f00), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M100 50 Q200 100 300 50 Q350 100 400 50 L400 300 L0 300 L0 50 Q50 100 100 50%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3Ccircle cx=%22150%22 cy=%22120%22 r=%2225%22 fill=%22%23fff%22 opacity=%220.4%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Breathwork: The Gateway to Inner Transformation</h3>
-                    <p class="card-excerpt">Harness the power of conscious breathing to release trauma, reduce anxiety, and access deeper states of consciousness. Discover ancient pranayama techniques and modern breathwork practices for healing.</p>
-                    <button class="read-more-btn">Read More</button>
+            <!-- Blog Card 5 -->
+            <article class="blog-card" onclick="openModal('modal5')" style="box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
+                <div class="card-image" style="height: 220px; background: linear-gradient(45deg, #e63946, #f77f00), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M100 50 Q200 100 300 50 Q350 100 400 50 L400 300 L0 300 L0 50 Q50 100 100 50%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3Ccircle cx=%22150%22 cy=%22120%22 r=%2225%22 fill=%22%23fff%22 opacity=%220.4%22/%3E%3C/svg%3E'); background-blend-mode: overlay; background-size: cover; border-top-left-radius: 18px; border-top-right-radius: 18px;"></div>
+                <div class="card-content" style="background: #fff; padding: 2.5rem 2rem 2rem 2rem; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem; color: #243763;">Breathwork: The Gateway to Inner Transformation</h3>
+                    <p class="card-excerpt" style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Harness the power of conscious breathing to release trauma, reduce anxiety, and access deeper states of consciousness. Discover ancient pranayama techniques and modern breathwork practices for healing.</p>
+                    <button class="read-more-btn" style="background: #e63946; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Read More</button>
                 </div>
             </article>
-
-            <article class="blog-card" onclick="openModal('modal6')">
-                <div class="card-image" style="background: linear-gradient(45deg, #457b9d, #1d3557), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M0 100 Q100 50 200 100 T400 100 L400 300 L0 300 Z%22 fill=%22%23fff%22 opacity=%220.15%22/%3E%3Ccircle cx=%22320%22 cy=%22150%22 r=%2235%22 fill=%22%23fff%22 opacity=%220.25%22/%3E%3Ccircle cx=%2280%22 cy=%22180%22 r=%2220%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Nature Therapy: Healing Through Earth Connection</h3>
-                    <p class="card-excerpt">Reconnect with the healing power of nature through forest bathing, grounding practices, and seasonal living. Learn how spending time in natural environments can restore your nervous system and spiritual well-being.</p>
-                    <button class="read-more-btn">Read More</button>
+            <!-- Blog Card 6 -->
+            <article class="blog-card" onclick="openModal('modal6')" style="box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 18px; background: #fff; overflow: hidden;">
+                <div class="card-image" style="height: 220px; background: linear-gradient(45deg, #457b9d, #1d3557), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M0 100 Q100 50 200 100 T400 100 L400 300 L0 300 Z%22 fill=%22%23fff%22 opacity=%220.15%22/%3E%3Ccircle cx=%22320%22 cy=%22150%22 r=%2235%22 fill=%22%23fff%22 opacity=%220.25%22/%3E%3Ccircle cx=%2280%22 cy=%22180%22 r=%2220%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3C/svg%3E'); background-blend-mode: overlay; background-size: cover; border-top-left-radius: 18px; border-top-right-radius: 18px;"></div>
+                <div class="card-content" style="background: #fff; padding: 2.5rem 2rem 2rem 2rem; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem; color: #243763;">Nature Therapy: Healing Through Earth Connection</h3>
+                    <p class="card-excerpt" style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Reconnect with the healing power of nature through forest bathing, grounding practices, and seasonal living. Learn how spending time in natural environments can restore your nervous system and spiritual well-being.</p>
+                    <button class="read-more-btn" style="background: #457b9d; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Read More</button>
                 </div>
             </article>
         </div>
