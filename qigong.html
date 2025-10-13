@@ -776,16 +776,7 @@
             margin-top: 1rem;
         }
 
-          <title>Healing Journal - Latest Insights</title>
-    <style>
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100%;
-        }
+    <!-- Removed misplaced <title> and moved CSS to main <style> block in <head> -->
 
         .blog-section {
             max-width: 1200px;
@@ -973,7 +964,14 @@
             }
         }
     </style>
-</head>
+           body {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+              font-family: 'Georgia', serif;
+              background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+              min-height: 100%;
+           }
 
         /* ========================= */
         /* Testimonials Section Styles */
