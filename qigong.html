@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qigong - Dragon's Way Qigong</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
         <style>
         :root {
             --cream-light: #F5F3EE;
@@ -902,7 +902,111 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+
+    /* ...existing code... */
+/* ...existing code... */
+  #upcoming-events {
+    padding: 80px 20px;
+    background-color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  #upcoming-events .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  #upcoming-events .section-description {
+    font-size: 1rem;
+    margin-bottom: 50px;
+    color: #333;
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .event {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .event-date {
+    flex-shrink: 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 60px;
+  }
+
+  .event-date .month {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .event-date .day {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .event-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+  }
+
+  .event-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+
+  .event-description {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #b9985e; /* matches your gold buttons */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #a68548;
+  }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    .event {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .event-date {
+      width: 50px;
+      padding: 8px 10px;
+    }
+
+    .event-date .day {
+      font-size: 1.2rem;
+    }
+}
+</style>
 </head>
 <body>
     <nav class="nav">
@@ -916,7 +1020,7 @@
     <div class="section">
     <div>
         <h2 class="section-title">About Dragon's Way Qigong</h2>
-        <div class="about-content">
+    <div class="about-content">
             <p>The Dragon's Way Qigong system is a classical approach to energy cultivation based on the principles of Traditional Chinese Medicine (TCM).</p>
             <p>Developed by Grand Master Nan Lu, this practice teaches that health and transformation begin from within—when we align with the laws of nature and the rhythm of the universe.</p>
             <p>Through gentle yet powerful movements, food therapy, and energy awareness, practitioners learn to release stagnant emotions, awaken their body's natural wisdom, and reconnect to the flow of Qi.</p>
@@ -930,6 +1034,7 @@
                     “The Dragon Stand between Heaven and Earth—You are the Bridge!”
                 </div>
         </div>
+        </div>
     </div>
 
       <!-- Video Section -->
@@ -941,7 +1046,7 @@
             
             <div class="video-container">
                 <button class="play-button" onclick="playVideo()">
-                    <div class="play-icon"></div>
+                    <span class="play-icon">▶</span>
                 </button>
                 <p>🎥 Experience the Dragon's Way</p>
             </div>
@@ -1050,6 +1155,65 @@
                     <p>Flexible learning options to fit your lifestyle and schedule.</p>
                 </div>
             </div>
-            
+            <!-- Upcoming Events Section -->
+<section id="upcoming-events" class="section">
+  <div class="container">
+    <h2 class="section-title">Here’s what we’re up to!</h2>
+    <p class="section-description">
+      Everything is energy, and all energy possesses consciousness. In the cycles of life, there are no accidents; everything is interconnected. Discover how Qigong practice enhances these connections. Join us and experience a transformation that will enhance your life.
+    </p>
+
+    <div class="events-list">
+
+      <!-- Event 1 -->
+      <div class="event">
+        <div class="event-date">
+          <span class="month">JUL</span>
+          <span class="day">31</span>
+        </div>
+        <div class="event-details">
+          <h3>Qi Thursday: A Quantum Energy Practice</h3>
+          <p class="event-meta">Every Thursday | Virtual</p>
+          <p class="event-description">
+            Step into a quantum field of healing every Thursday night. It’s a free class so make the commitment to quality practice with a dedicated group. Qi is the foundation for your very existence and is the life force that allows you to heal from and prevent disease. The Qigong posture, Dragon Stands Between Heaven and Earth helps the body accumulate Qi.
+          </p>
+                    <a href="#" class="btn">LEARN MORE</a>
+                </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="event">
+                <div class="event-date">
+                    <span class="month">OCT</span>
+                    <span class="day">8</span>
+                </div>
+                <div class="event-details">
+                    <h3>Qigong and Breast Health</h3>
+                    <p class="event-meta">October 8–October 22 | Virtual</p>
+                    <p class="event-description">
+                        Prevention and healing are active processes that involve enhancing the body’s natural healing abilities. Qigong practices and strengthening the digestive system offer options that are commonly overlooked. Join us for three sessions and learn why/how traditional Chinese medicine, which includes Qigong, offers life-changing options you never thought possible. 6 PDAs are available through NCCAOM.
+                    </p>
+                    <a href="#" class="btn">LEARN MORE</a>
+                </div>
+            </div>
+
+      <!-- Event 3 -->
+      <div class="event">
+        <div class="event-date">
+          <span class="month">NOV</span>
+          <span class="day">8</span>
+        </div>
+        <div class="event-details">
+          <h3>Advanced Training Series Complimentary Workshop</h3>
+          <p class="event-meta">November 8 | Virtual</p>
+          <p class="event-description">
+            In this dynamic talk, Master Lu shares why beliefs shape outcomes and how shifting perspectives opens the path to true healing. This talk is based on the Xiao Dao system, which partners the practitioner with the client to support the body’s ability to receive, digest, transform, and remove. Ultimately, this process leads to better health without side effects.
+          </p>
+          <a href="#" class="btn">LEARN MORE</a>
+        </div>
+      </div>
+
+        </div>
+    </div>
+    <!-- Removed unexpected closing </section> -->
 </body>
 </html>
