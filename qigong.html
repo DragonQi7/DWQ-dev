@@ -990,6 +990,97 @@
     background-color: #a68548;
   }
 
+  /* ================================ */
+/* 🗓️ Upcoming Events Section Style */
+/* ================================ */
+#events {
+  background: inherit; /* Matches page background */
+  color: inherit; /* Inherit main text color */
+  padding: 60px 0;
+}
+
+#events .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.event-card {
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.event-date {
+  font-family: inherit;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.event-date .month {
+  display: block;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.event-date .day {
+  font-size: 2.5em;
+}
+
+/* ========================== */
+/* 💰 Pricing Section Styles */
+/* ========================== */
+#pricing {
+  background: inherit;
+  color: inherit;
+  padding: 60px 0;
+}
+
+#pricing .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.pricing-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.price {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
   /* Responsive */
   @media(max-width:768px) {
     .event {
@@ -1204,54 +1295,7 @@
         Stay tuned for our upcoming events and workshops designed to deepen your Qigong practice and enhance your well-being.
     </p>
 
-    <div class="events-list">
-
-      <!-- Event 1 -->
-      <div class="event">
-        <div class="event-date">
-          <span class="month">JUL</span>
-          <span class="day">31</span>
-        </div>
-        <div class="event-details">
-          <h3>Post here</h3>
-          <p class="event-meta">Every Thursday | Virtual</p>
-          <p class="event-description">
-            Post here
-                </div>
-            </div>
-            <!-- Event 2 -->
-            <div class="event">
-                <div class="event-date">
-                    <span class="month">OCT</span>
-                    <span class="day">8</span>
-                </div>
-                <div class="event-details">
-                    <h3>QPost here</h3>
-                    <p class="event-meta">October 8–October 22 | Virtual</p>
-                    <p class="event-description">
-                        Post here
-                    <a href="#" class="btn">LEARN MORE</a>
-                </div>
-            </div>
-
-      <!-- Event 3 -->
-      <div class="event">
-        <div class="event-date">
-          <span class="month">NOV</span>
-          <span class="day">8</span>
-        </div>
-        <div class="event-details">
-          <h3>Post here</h3>
-          <p class="event-meta">November 8 | Virtual</p>
-          <p class="event-description">
-            Post here
-          </p>
-          <a href="#" class="btn">LEARN MORE</a>
-        </div>
-      </div>
-
-        </div>
-    </div>
+        <!-- Events will be loaded dynamically below -->
 <!-- ========================= -->
 <!-- 🗓️ Upcoming Events Section -->
 <!-- ========================= -->
