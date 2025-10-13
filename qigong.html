@@ -975,6 +975,52 @@
     margin-bottom: 15px;
   }
 
+ 
+        .testimonials-section {
+            background: rgba(245, 245, 240, 0.95);
+            color: #2a1f1f;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(192, 32, 38, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(192, 32, 38, 0.3);
+        }
+
+        .testimonial-stars {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author strong {
+            color: #55160A;
+        }
+
+        .testimonial-author span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+ 
   .btn {
     display: inline-block;
     padding: 10px 25px;
@@ -1288,7 +1334,7 @@
 
 
     <!-- Upcoming Events Section -->
-< <!-- Upcoming Events Section -->
+<!-- Upcoming Events Section -->
     <section id="upcoming-events" class="section">
         <div class="container">
             <h2 class="section-title">Join an Upcoming Program</h2>
@@ -1477,5 +1523,51 @@
             </div>
         </div>
     </section>
+
+     <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section">
+            <h2 class="section-title">What Our Students Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Dragon's Way Qigong transformed my relationship with stress. After just 6 weeks, I feel more centered and peaceful than I have in years. The movements are gentle yet powerful."</p>
+                    <div class="testimonial-author">
+                        <strong>Jennifer M.</strong>
+                        <span>Marketing Executive</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I was skeptical at first, but the combination of movement and philosophy really works. My chronic back pain has improved significantly, and I sleep better than ever."</p>
+                    <div class="testimonial-author">
+                        <strong>Robert K.</strong>
+                        <span>Retired Teacher</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The instructors create such a welcoming environment. I've made wonderful friends and discovered a practice that brings joy to my daily life. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <strong>Maria S.</strong>
+                        <span>Nurse</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As someone dealing with anxiety, Dragon's Way Qigong gave me tools I use every day. The breathing techniques alone have been life-changing."</p>
+                    <div class="testimonial-author">
+                        <strong>David L.</strong>
+                        <span>Software Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
