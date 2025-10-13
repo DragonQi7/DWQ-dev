@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ========================= -->
-    <!-- Head & Styles Section     -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Head & Styles Section     -->
-    <!-- ========================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qigong - Dragon's Way Qigong</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
-    <style>
-    /* ========================= */
-    /* CSS Variables & Base      */
-    /* ========================= */
-    :root {
+        <style>
+        :root {
             --cream-light: #F5F3EE;
             --cream-base: #E9E4DA;
             --cream-deep: #D5CFC4;
@@ -38,10 +29,7 @@
             overflow-x: hidden;
         }
 
-    /* ========================= */
-    /* Navigation                */
-    /* ========================= */
-    .nav {
+        .nav {
             position: fixed;
             top: 1.5rem;
             left: 50%;
@@ -66,10 +54,7 @@
             background: rgba(85, 22, 10, 0.1);
         }
 
-    /* ========================= */
-    /* Section Base Styles       */
-    /* ========================= */
-    section {
+        section {
             width: 100%;
             padding: 6rem 2rem;
             text-align: center;
@@ -77,10 +62,7 @@
             transition: background 3s ease-in-out;
         }
 
-    /* ========================= */
-    /* Home Section Styles       */
-    /* ========================= */
-    #home {
+        #home {
             position: relative;
             min-height: 140vh;
             padding: 8rem 3rem 6rem;
@@ -108,10 +90,7 @@
 
 
 
-    /* ========================= */
-    /* Hero Section Styles       */
-    /* ========================= */
-    .hero-section::after {
+        .hero-section::after {
             content: "";
             position: absolute;
             bottom: 0;
@@ -123,20 +102,14 @@
             pointer-events: none;
         }
 
-    /* ========================= */
-    /* Dragon Symbol Styles      */
-    /* ========================= */
-    .dragon-symbol {
+        .dragon-symbol {
             width: 120px;
             height: 120px;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-    /* ========================= */
-    /* Hero Title Styles         */
-    /* ========================= */
-    .hero-title {
+        .hero-title {
             font-size: 3.8rem;
             margin-bottom: 1rem;
             color: var(--accent);
@@ -163,10 +136,7 @@
             position: relative;
         }
 
-    /* ========================= */
-    /* Divider Styles            */
-    /* ========================= */
-    .divider {
+        .divider {
             width: 80px;
             height: 2px;
             margin: 2rem auto;
@@ -174,10 +144,7 @@
             opacity: 0.6;
         }
 
-    /* ========================= */
-    /* Moon Graphic Styles       */
-    /* ========================= */
-    .moon-graphic {
+        .moon-graphic {
             position: absolute;
             top: 15%;
             left: 50%;
@@ -196,10 +163,7 @@
             to { transform: translateY(-20px); opacity: 1; }
         }
 
-    /* ========================= */
-    /* Section Container Styles  */
-    /* ========================= */
-    .section {
+        .section {
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -221,34 +185,22 @@
             pointer-events: none;
         }
 
-    /* ========================= */
-    /* About Section Styles      */
-    /* ========================= */
-    #about {
+        #about {
             min-height: 180vh;
             background: linear-gradient(170deg, var(--light-2), var(--mid-1));
         }
 
-    /* ========================= */
-    /* Gallery Section Styles    */
-    /* ========================= */
-    #gallery {
+        #gallery {
             min-height: 220vh;
             background: linear-gradient(180deg, var(--mid-1), var(--mid-2));
         }
 
-    /* ========================= */
-    /* Contact Section Styles    */
-    /* ========================= */
-    #contact {
+        #contact {
             min-height: 140vh;
             background: linear-gradient(160deg, var(--mid-2), var(--light-2));
         }
 
-    /* ========================= */
-    /* Headings                  */
-    /* ========================= */
-    section h1, section h2 {
+        section h1, section h2 {
             color: var(--accent);
             margin-bottom: 1rem;
             letter-spacing: 0.5px;
@@ -256,13 +208,10 @@
             text-transform: uppercase;
         }
 
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2rem; }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2rem; }
 
-    /* ========================= */
-    /* Paragraph Styles          */
-    /* ========================= */
-    p {
+        p {
             max-width: 750px;
             margin: 0 auto 1.5rem;
             line-height: 1.7;
@@ -270,10 +219,7 @@
             color: #4A3C31;
         }
 
-    /* ========================= */
-    /* Section Title Styles      */
-    /* ========================= */
-    .section-title {
+        .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             text-align: center;
@@ -282,10 +228,7 @@
             letter-spacing: 0.5px;
         }
 
-    /* ========================= */
-    /* About Content Styles      */
-    /* ========================= */
-    .about-content {
+        .about-content {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #4A3C31;
@@ -294,10 +237,7 @@
             text-align: center;
         }
 
-    /* ========================= */
-    /* Quote Styles              */
-    /* ========================= */
-    .quote {
+        .quote {
             font-style: italic;
             font-size: 1.2rem;
             color: var(--accent);
@@ -305,27 +245,18 @@
             text-align: center;
         }
 
-    /* ========================= */
-    /* Programs Section Styles   */
-    /* ========================= */
-    .programs-section {
+        .programs-section {
             background: linear-gradient(135deg, var(--mid-1), var(--mid-2));
         }
 
-    /* ========================= */
-    /* Programs Grid Styles      */
-    /* ========================= */
-    .programs-grid {
+        .programs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-    /* ========================= */
-    /* Program Card Styles       */
-    /* ========================= */
-    .program-card {
+        .program-card {
             background: rgba(255, 255, 255, 0.8);
             color: #2E241A;
             padding: 2rem;
@@ -362,10 +293,7 @@
             font-size: 0.95rem;
         }
 
-    /* ========================= */
-    /* Video Section Styles      */
-    /* ========================= */
-    .video-section {
+        .video-section {
             background: linear-gradient(135deg, var(--mid-2), var(--light-2));
             text-align: center;
         }
@@ -776,208 +704,6 @@
             margin-top: 1rem;
         }
 
-          <title>Healing Journal - Latest Insights</title>
-    <style>
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100%;
-        }
-
-        .blog-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-subtitle {
-            color: #6c757d;
-            font-size: 1rem;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin: 0;
-            font-weight: 300;
-            letter-spacing: -0.5px;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            color: #2d3748;
-            margin: 0 0 1rem 0;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .card-excerpt {
-            color: #4a5568;
-            line-height: 1.6;
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        .read-more-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .read-more-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80%;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-title {
-            font-size: 1.5rem;
-            color: #2d3748;
-            margin: 0;
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #6c757d;
-            padding: 0.5rem;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background: #f8f9fa;
-            color: #2d3748;
-        }
-
-        .modal-body {
-            color: #4a5568;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        .modal-body h3 {
-            color: #2d3748;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-body p {
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .blog-section {
-                padding: 2rem 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-                width: 95%;
-            }
-        }
-    </style>
-</head>
-
-        /* ========================= */
-        /* Testimonials Section Styles */
-        /* ========================= */
         .testimonials-section {
             background: rgba(245, 245, 240, 0.95);
             color: #2a1f1f;
@@ -1420,31 +1146,16 @@
 </style>
 </head>
 <body>
-    <!-- ========================= -->
-    <!-- Navigation                -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Navigation Section        -->
-    <!-- ========================= -->
+    <!-- Navigation -->
     <nav class="nav">
         <a href="index.html">Home</a>
     </nav>
 
-    <!-- ========================= -->
-    <!-- DWQ Head Logo Section     -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- DWQ Head Logo Section     -->
-    <!-- ========================= -->
+    <!-- DWQ Head Logo Section -->
     <section class="DWQ-head-logo" style="text-align: center; margin-top: 4rem;">
-        <img src="images/dragons_way_logo_tagline_red.png" alt="Dragon's Way Qigong Logo" style="width: 100%; max-width: 650px; height: auto;" />
+        <img src="images/dragons_way_logo_tagline_red.png" alt="Dragon's Way Qigong Logo" style="width: 100%; max-width: 650px; height: auto;">
     </section>
-    <!-- ========================= -->
-    <!-- About Section             -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- About Section             -->
-    <!-- ========================= -->
+    <!-- About Section -->
     <section class="section">
         <h2 class="section-title">About Dragon's Way Qigong</h2>
         <div class="about-content">
@@ -1463,46 +1174,7 @@
         </div>
     </section>
 
-    <!-- ========================= -->
-    <!-- Features and FAQ Section  -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Features and FAQ Section  -->
-    <!-- ========================= -->
-    <section class="faq-section">
-        <div class="section">
-            <h2 class="section-title">Program Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧘‍♀️</div>
-                    <h3>Dragon's Way Qigong® </h3>
-                    <p>10 Gentle Wu Ming Qigong exercises to release energy blocks</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌱</div>
-                    <h3>3E Qigong</h3>
-                    <p>Energy, Everday for Everyone</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>The 4 Energy Gates</h3>
-                    <p>Whole body self-care</p>
-                </div>
-             <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>Community Support</h3>
-                    <p>Join a supportive community of practitioners on the same journey.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ========================= -->
-    <!-- Video Section             -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Video Section             -->
-    <!-- ========================= -->
+    <!-- Video Section -->
     <section class="video-section">
         <div class="section">
             <h2 class="section-title">Discover Dragon's Way Qigong</h2>
@@ -1517,12 +1189,7 @@
         </div>
     </section>
 
-    <!-- ========================= -->
-    <!-- Movements Section         -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Movements Section         -->
-    <!-- ========================= -->
+    <!-- Movements Section -->
     <section class="movements-section">
         <div class="section">
             <h2 class="section-title">Qigong Movements</h2>
@@ -1552,12 +1219,7 @@
         </div>
     </section>
 
-    <!-- ========================= -->
-    <!-- Five Elements Section     -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Five Elements Section     -->
-    <!-- ========================= -->
+    <!-- Five Elements Section -->
     <section class="elements-section">
         <div class="section">
             <h2 class="section-title">The Five Elements</h2>
@@ -1585,285 +1247,41 @@
                 </div>
             </div>
             <div class="elements-image" style="display: flex; justify-content: center; margin-top: 2rem;">
-                <img src="images/5-Element-Framework.png" alt="5 Element Framework" style="width: 100%; max-width: 660px; height: auto; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);" />
+                <img src="images/5-Element-Framework.png" alt="5 Element Framework" style="width: 100%; max-width: 660px; height: auto; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
             </div>
             <p style="text-align: center; margin-top: 2rem; font-style: italic;">Together, they form the cosmic dance of energy that flows through all existence.</p>
         </div>
     </section>
 
-        <!-- ========================= -->
-        <!-- Blog Section              -->
-        <!-- ========================= -->
-        <section class="blog-section">
-        <div class="section-header">
-            <p class="section-subtitle">From Our Healing Journal</p>
-            <h2 class="section-title">Latest Insights</h2>
-        </div>
-
-        <div class="blog-grid">
-            <article class="blog-card" onclick="openModal('modal1')">
-                <div class="card-image" style="background: linear-gradient(45deg, #f4a261, #e76f51), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M50 150 Q100 100 150 150 T250 150 T350 150%22 stroke=%22%23fff%22 stroke-width=%222%22 fill=%22none%22 opacity=%220.3%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2230%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Digital Detox: Reclaiming Your Inner Peace</h3>
-                    <p class="card-excerpt">Break free from digital overwhelm and create conscious tech habits. Discover how screen detox and mindful digital boundaries can restore your mental clarity and emotional balance.</p>
-                    <button class="read-more-btn">Read More</button>
+    <!-- Features and FAQ Section -->
+    <section class="faq-section">
+        <div class="section">
+            <h2 class="section-title">Features and FAQ</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧘‍♀️</div>
+                    <h3>Gentle & Accessible</h3>
+                    <p>Suitable for all ages and fitness levels. No prior experience needed.</p>
                 </div>
-            </article>
-
-            <article class="blog-card" onclick="openModal('modal2')">
-                <div class="card-image" style="background: linear-gradient(45deg, #2a9d8f, #264653), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M0 150 Q200 50 400 150 L400 300 L0 300 Z%22 fill=%22%23fff%22 opacity=%220.1%22/%3E%3Ccircle cx=%22300%22 cy=%2280%22 r=%2240%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Sleepmaxxing: The Art of Restorative Rest</h3>
-                    <p class="card-excerpt">Transform your sleep into a healing sanctuary. Learn advanced sleep optimization techniques, circadian rhythm healing, and nighttime meditation practices for deep restoration.</p>
-                    <button class="read-more-btn">Read More</button>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Holistic Healing</h3>
+                    <p>Combines movement, breath work, and Traditional Chinese Medicine principles.</p>
                 </div>
-            </article>
-
-            <article class="blog-card" onclick="openModal('modal3')">
-                <div class="card-image" style="background: linear-gradient(45deg, #6a4c93, #9d4edd), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2250%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%223%22 opacity=%220.4%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2230%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Intuitive Eating: Nourishment Beyond Diet Culture</h3>
-                    <p class="card-excerpt">Reject diet culture and embrace your body's wisdom. Discover mindful nutrition, eating for healing, and how to create a peaceful relationship with food that honors your true needs.</p>
-                    <button class="read-more-btn">Read More</button>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Support</h3>
+                    <p>Join a supportive community of practitioners on the same journey.</p>
                 </div>
-            </article>
-
-            <article class="blog-card" onclick="openModal('modal4')">
-                <div class="card-image" style="background: linear-gradient(45deg, #f77f00, #fcbf49), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Ccircle cx=%22200%22 cy=%22120%22 r=%2260%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3Cpath d=%22M50 200 Q200 150 350 200 L350 300 L50 300 Z%22 fill=%22%23fff%22 opacity=%220.1%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Energy Healing: Balancing Your Life Force</h3>
-                    <p class="card-excerpt">Explore holistic healing modalities and consciousness work. Learn energy balancing techniques, integrative medicine approaches, and how to work with your body's natural healing intelligence.</p>
-                    <button class="read-more-btn">Read More</button>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Online & In-Person</h3>
+                    <p>Flexible learning options to fit your lifestyle and schedule.</p>
                 </div>
-            </article>
-
-            <article class="blog-card" onclick="openModal('modal5')">
-                <div class="card-image" style="background: linear-gradient(45deg, #e63946, #f77f00), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M100 50 Q200 100 300 50 Q350 100 400 50 L400 300 L0 300 L0 50 Q50 100 100 50%22 fill=%22%23fff%22 opacity=%220.2%22/%3E%3Ccircle cx=%22150%22 cy=%22120%22 r=%2225%22 fill=%22%23fff%22 opacity=%220.4%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Breathwork: The Gateway to Inner Transformation</h3>
-                    <p class="card-excerpt">Harness the power of conscious breathing to release trauma, reduce anxiety, and access deeper states of consciousness. Discover ancient pranayama techniques and modern breathwork practices for healing.</p>
-                    <button class="read-more-btn">Read More</button>
-                </div>
-            </article>
-
-            <article class="blog-card" onclick="openModal('modal6')">
-                <div class="card-image" style="background: linear-gradient(45deg, #457b9d, #1d3557), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Cpath d=%22M0 100 Q100 50 200 100 T400 100 L400 300 L0 300 Z%22 fill=%22%23fff%22 opacity=%220.15%22/%3E%3Ccircle cx=%22320%22 cy=%22150%22 r=%2235%22 fill=%22%23fff%22 opacity=%220.25%22/%3E%3Ccircle cx=%2280%22 cy=%22180%22 r=%2220%22 fill=%22%23fff%22 opacity=%220.3%22/%3E%3C/svg%3E'); background-blend-mode: overlay;" />
-                <div class="card-content">
-                    <h3 class="card-title">Nature Therapy: Healing Through Earth Connection</h3>
-                    <p class="card-excerpt">Reconnect with the healing power of nature through forest bathing, grounding practices, and seasonal living. Learn how spending time in natural environments can restore your nervous system and spiritual well-being.</p>
-                    <button class="read-more-btn">Read More</button>
-                </div>
-            </article>
+            </div>
         </div>
     </section>
-
-    <!-- Modals for each article -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Digital Detox: Reclaiming Your Inner Peace</h2>
-                <button class="close-btn" onclick="closeModal('modal1')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>In our hyperconnected world, digital overwhelm has become a silent epidemic affecting our mental health, relationships, and inner peace. The constant ping of notifications, endless scrolling, and digital multitasking create a state of chronic stress that disconnects us from our authentic selves.</p>
-                
-                <h3>The Hidden Cost of Digital Overwhelm</h3>
-                <p>Research shows that excessive screen time disrupts our natural circadian rhythms, increases cortisol levels, and fragments our attention span. This digital chaos creates a barrier between us and the present moment, making it difficult to access our inner wisdom and peace.</p>
-                
-                <h3>Creating Sacred Digital Boundaries</h3>
-                <p>True digital wellness isn't about completely abandoning technology—it's about creating conscious, intentional relationships with our devices. Start by establishing phone-free zones in your bedroom and during meals. Practice the "sunset ritual" by powering down devices an hour before sleep.</p>
-                
-                <h3>Mindful Tech Practices</h3>
-                <p>Transform your relationship with technology through mindful awareness. Before reaching for your phone, pause and ask: "What am I seeking right now?" Often, we're looking for connection, validation, or escape from uncomfortable emotions. By recognizing these patterns, we can choose more nourishing responses.</p>
-                
-                <p>Remember: Your attention is sacred. Protect it like the precious resource it is, and watch as your inner peace naturally returns.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Sleepmaxxing: The Art of Restorative Rest</h2>
-                <button class="close-btn" onclick="closeModal('modal2')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Sleep is not just rest—it's a sacred healing practice that restores our body, mind, and spirit. Sleepmaxxing goes beyond basic sleep hygiene to create a holistic approach to restorative rest that honors sleep as medicine.</p>
-                
-                <h3>Understanding Your Sleep Architecture</h3>
-                <p>Quality sleep involves cycling through different stages, each serving unique healing functions. Deep sleep repairs tissues and consolidates memories, while REM sleep processes emotions and enhances creativity. By understanding these cycles, we can optimize our sleep environment and timing.</p>
-                
-                <h3>Creating Your Sleep Sanctuary</h3>
-                <p>Transform your bedroom into a healing sanctuary. Keep temperatures between 65-68°F, eliminate blue light sources, and consider blackout curtains. Introduce calming scents like lavender or chamomile, and ensure your mattress and pillows support proper spinal alignment.</p>
-                
-                <h3>The Evening Wind-Down Ritual</h3>
-                <p>Begin your sleep preparation 2-3 hours before bedtime. Dim the lights, practice gentle stretching or restorative yoga, and engage in calming activities like reading or journaling. Consider a warm bath with Epsom salts to relax muscles and signal to your body that it's time to rest.</p>
-                
-                <h3>Morning Light Exposure</h3>
-                <p>Support your circadian rhythm by exposing yourself to natural sunlight within the first hour of waking. This helps regulate melatonin production and improves sleep quality the following night.</p>
-                
-                <p>Remember: Quality sleep is not a luxury—it's a fundamental pillar of health and healing.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Intuitive Eating: Nourishment Beyond Diet Culture</h2>
-                <button class="close-btn" onclick="closeModal('modal3')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Intuitive eating is a revolutionary approach that honors your body's innate wisdom about food and nourishment. It's about healing your relationship with food by rejecting diet culture's harmful messages and reconnecting with your body's natural hunger and satiety cues.</p>
-                
-                <h3>Breaking Free from Diet Culture</h3>
-                <p>Diet culture teaches us to distrust our bodies and follow external rules about what, when, and how much to eat. This creates a disconnection from our natural eating instincts and often leads to a cycle of restriction and overeating. Intuitive eating invites us to become the expert of our own body.</p>
-                
-                <h3>The Principles of Intuitive Eating</h3>
-                <p>Start by rejecting the diet mentality and giving yourself unconditional permission to eat. Honor your hunger by eating when your body signals it needs fuel, and respect your fullness by stopping when satisfied. Make peace with food by removing the "good" and "bad" labels.</p>
-                
-                <h3>Mindful Eating Practices</h3>
-                <p>Slow down and create sacred space around meals. Eat without distractions, chew thoroughly, and pay attention to flavors, textures, and how foods make you feel. Notice which foods energize you and which ones leave you feeling sluggish or uncomfortable.</p>
-                
-                <h3>Emotional Eating Awareness</h3>
-                <p>Learn to distinguish between physical hunger and emotional hunger. When you feel the urge to eat, pause and ask: "Am I physically hungry, or am I seeking comfort, distraction, or connection?" Both needs are valid, but they require different responses.</p>
-                
-                <p>Trust that your body knows what it needs. With patience and practice, you'll rediscover the joy and peace that comes from eating in harmony with your body's wisdom.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Energy Healing: Balancing Your Life Force</h2>
-                <button class="close-btn" onclick="closeModal('modal4')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Energy healing recognizes that we are more than just physical bodies—we are energetic beings with subtle energy systems that influence our health, emotions, and spiritual well-being. By working with these energy systems, we can facilitate profound healing and transformation.</p>
-                
-                <h3>Understanding Your Energy Body</h3>
-                <p>Ancient healing traditions recognize that we have multiple energy bodies beyond the physical. These include the emotional body, mental body, and spiritual body, all interconnected through energy centers (chakras) and pathways (meridians). When energy flows freely, we experience vitality and well-being.</p>
-                
-                <h3>Signs of Energy Imbalance</h3>
-                <p>Energy blockages can manifest as physical symptoms, emotional disturbances, or spiritual disconnection. You might experience chronic fatigue, recurring negative thought patterns, difficulty setting boundaries, or feeling disconnected from your purpose. These are invitations to explore energy healing.</p>
-                
-                <h3>Simple Energy Balancing Techniques</h3>
-                <p>Begin with breathwork—conscious breathing moves energy and releases blockages. Practice grounding by visualizing roots extending from your feet into the earth. Use your hands to sense and direct energy by placing them on different parts of your body and noticing sensations.</p>
-                
-                <h3>Working with Chakras</h3>
-                <p>The seven main chakras are energy centers that govern different aspects of our being. Spend time each day visualizing each chakra as a spinning wheel of light, starting from the root chakra at the base of your spine and moving up to the crown chakra at the top of your head.</p>
-                
-                <h3>Integrative Approaches</h3>
-                <p>Energy healing works beautifully alongside conventional medicine. Consider exploring modalities like acupuncture, Reiki, sound healing, or crystal therapy. Remember that you are your own best healer—trust your intuition about what feels right for your unique healing journey.</p>
-                
-                <p>Your body has an innate intelligence and capacity for healing. By working with your energy system, you're supporting this natural healing process and creating space for transformation on all levels.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Breathwork: The Gateway to Inner Transformation</h2>
-                <button class="close-btn" onclick="closeModal('modal5')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Breathwork is one of the most powerful and accessible tools for healing, transformation, and spiritual awakening. Through conscious breathing practices, we can release stored trauma, calm the nervous system, and access profound states of healing and insight.</p>
-                
-                <h3>The Science of Conscious Breathing</h3>
-                <p>When we breathe consciously, we activate the parasympathetic nervous system, shifting from fight-or-flight into rest-and-digest mode. This physiological change reduces cortisol, increases oxygen flow to the brain, and creates optimal conditions for healing and emotional processing.</p>
-                
-                <h3>Releasing Trauma Through Breath</h3>
-                <p>Trauma often gets stored in the body as restricted breathing patterns. Through specific breathwork techniques, we can gently release these patterns and allow trapped emotions to move through and out of our system. This process helps restore our natural breathing rhythm and emotional flow.</p>
-                
-                <h3>Basic Breathwork Techniques</h3>
-                <p>Start with the 4-7-8 breath: inhale for 4 counts, hold for 7, exhale for 8. This activates the relaxation response. For energy and clarity, try breath of fire: rapid, shallow breathing through the nose. Always practice in a safe, comfortable environment.</p>
-                
-                <h3>Pranayama: Ancient Wisdom</h3>
-                <p>Pranayama, the yogic science of breath, offers time-tested techniques for balancing energy and consciousness. Alternate nostril breathing balances the nervous system, while ujjayi breath creates inner heat and focus. These practices have been refined over thousands of years.</p>
-                
-                <h3>Creating a Daily Practice</h3>
-                <p>Begin with just 5-10 minutes daily. Find a quiet space, sit comfortably, and focus on your natural breath before moving into specific techniques. Consistency is more important than duration. Notice how different breathing patterns affect your energy, mood, and mental clarity.</p>
-                
-                <p>Your breath is always with you—a constant companion and healing tool. Through conscious breathing, you can transform your relationship with stress, emotions, and your own inner landscape.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Nature Therapy: Healing Through Earth Connection</h2>
-                <button class="close-btn" onclick="closeModal('modal6')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Nature therapy, also known as ecotherapy or forest bathing, recognizes the profound healing power of connecting with the natural world. In our increasingly urbanized lives, this ancient practice offers a pathway back to wholeness, grounding, and deep restoration.</p>
-                
-                <h3>The Science of Nature Connection</h3>
-                <p>Research shows that spending time in nature reduces cortisol levels, lowers blood pressure, and boosts immune function. The negative ions produced by moving water and forests increase serotonin levels, naturally improving mood and mental clarity. Even 20 minutes in nature can significantly reduce stress hormones.</p>
-                
-                <h3>Forest Bathing: Shinrin-Yoku</h3>
-                <p>This Japanese practice involves mindfully immersing yourself in a forest environment using all your senses. Walk slowly, breathe deeply, touch tree bark, listen to bird songs, and simply be present. The goal isn't exercise—it's conscious connection with the living world around you.</p>
-                
-                <h3>Grounding and Earthing</h3>
-                <p>Direct skin contact with the earth—walking barefoot on grass, sand, or soil—allows your body to absorb the earth's natural electrical charge. This practice, called grounding or earthing, has been shown to reduce inflammation, improve sleep, and balance the nervous system.</p>
-                
-                <h3>Seasonal Living and Circadian Rhythms</h3>
-                <p>Align your lifestyle with natural cycles by spending time outdoors during different seasons. Morning sunlight helps regulate your circadian rhythm, while evening darkness supports natural melatonin production. Honor the slower pace of winter and the active energy of summer.</p>
-                
-                <h3>Urban Nature Practices</h3>
-                <p>Even in cities, you can connect with nature. Tend to houseplants, visit local parks, watch clouds, or simply sit by a single tree. Create a small garden on a windowsill or balcony. The key is intentional, mindful connection with any natural element available to you.</p>
-                
-                <p>Remember: You are not separate from nature—you are nature. Reconnecting with the earth is really about coming home to your truest self and remembering your place in the web of life.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const modals = document.querySelectorAll('.modal');
-                modals.forEach(modal => {
-                    if (modal.style.display === 'block') {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e11ba614a15f74',t:'MTc2MDM4MjMyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-
-    
-    <!-- ========================= -->
-    <!-- Instructors Section        -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Instructors Section        -->
-    <!-- ========================= -->
+    <!-- Instructors Section -->
     <section class="instructors-section">
         <div class="section">
             <h2 class="section-title">Meet Our Instructors</h2>
@@ -1915,13 +1333,8 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- Upcoming Events Section    -->
-    <!-- ========================= -->
+    <!-- Upcoming Events Section -->
 <!-- Upcoming Events Section -->
-    <!-- ========================= -->
-    <!-- Upcoming Events Section    -->
-    <!-- ========================= -->
     <section id="upcoming-events" class="section">
         <div class="container">
             <h2 class="section-title">Join an Upcoming Program</h2>
@@ -1992,12 +1405,7 @@
         </div>
     </section>
 
-    <!-- ========================= -->
-    <!-- Pricing Section            -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Pricing Section            -->
-    <!-- ========================= -->
+    <!-- Pricing Section -->
     <section class="pricing-section section">
         <div class="container">
             <h2 class="section-title" style="font-family: 'Playfair Display', serif; color: #243763;">Join the Dragon's Way Qigong Journey</h2>
@@ -2036,9 +1444,6 @@
     </section>
 
     <!-- 3 E Qigong Section -->
-    <!-- ========================= -->
-    <!-- 3 E Qigong Section         -->
-    <!-- ========================= -->
     <section class="pricing-section section">
         <div class="container">
             <h2 class="section-title" style="font-family: 'Playfair Display', serif; color: #243763;">3 E Qigong Program</h2>
@@ -2079,9 +1484,6 @@
     </section>
 
     <!-- 4 Energy Gates Section -->
-    <!-- ========================= -->
-    <!-- 4 Energy Gates Section     -->
-    <!-- ========================= -->
     <section class="pricing-section section">
         <div class="container">
             <h2 class="section-title" style="font-family: 'Playfair Display', serif; color: #243763;">4 Energy Gates Program</h2>
@@ -2122,12 +1524,7 @@
         </div>
     </section>
 
-    <!-- ========================= -->
-    <!-- Testimonials Section        -->
-    <!-- ========================= -->
-    <!-- ========================= -->
-    <!-- Testimonials Section        -->
-    <!-- ========================= -->
+     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="section">
             <h2 class="section-title">What Our Students Say</h2>
