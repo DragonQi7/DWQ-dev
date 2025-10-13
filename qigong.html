@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ========================= -->
+    <!-- Head & Styles Section     -->
+    <!-- ========================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qigong - Dragon's Way Qigong</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
-        <style>
-        :root {
+    <style>
+    /* ========================= */
+    /* CSS Variables & Base      */
+    /* ========================= */
+    :root {
             --cream-light: #F5F3EE;
             --cream-base: #E9E4DA;
             --cream-deep: #D5CFC4;
@@ -29,7 +35,10 @@
             overflow-x: hidden;
         }
 
-        .nav {
+    /* ========================= */
+    /* Navigation                */
+    /* ========================= */
+    .nav {
             position: fixed;
             top: 1.5rem;
             left: 50%;
@@ -54,7 +63,10 @@
             background: rgba(85, 22, 10, 0.1);
         }
 
-        section {
+    /* ========================= */
+    /* Section Base Styles       */
+    /* ========================= */
+    section {
             width: 100%;
             padding: 6rem 2rem;
             text-align: center;
@@ -62,7 +74,10 @@
             transition: background 3s ease-in-out;
         }
 
-        #home {
+    /* ========================= */
+    /* Home Section Styles       */
+    /* ========================= */
+    #home {
             position: relative;
             min-height: 140vh;
             padding: 8rem 3rem 6rem;
@@ -90,7 +105,10 @@
 
 
 
-        .hero-section::after {
+    /* ========================= */
+    /* Hero Section Styles       */
+    /* ========================= */
+    .hero-section::after {
             content: "";
             position: absolute;
             bottom: 0;
@@ -102,14 +120,20 @@
             pointer-events: none;
         }
 
-        .dragon-symbol {
+    /* ========================= */
+    /* Dragon Symbol Styles      */
+    /* ========================= */
+    .dragon-symbol {
             width: 120px;
             height: 120px;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-        .hero-title {
+    /* ========================= */
+    /* Hero Title Styles         */
+    /* ========================= */
+    .hero-title {
             font-size: 3.8rem;
             margin-bottom: 1rem;
             color: var(--accent);
@@ -136,7 +160,10 @@
             position: relative;
         }
 
-        .divider {
+    /* ========================= */
+    /* Divider Styles            */
+    /* ========================= */
+    .divider {
             width: 80px;
             height: 2px;
             margin: 2rem auto;
@@ -144,7 +171,10 @@
             opacity: 0.6;
         }
 
-        .moon-graphic {
+    /* ========================= */
+    /* Moon Graphic Styles       */
+    /* ========================= */
+    .moon-graphic {
             position: absolute;
             top: 15%;
             left: 50%;
@@ -163,7 +193,10 @@
             to { transform: translateY(-20px); opacity: 1; }
         }
 
-        .section {
+    /* ========================= */
+    /* Section Container Styles  */
+    /* ========================= */
+    .section {
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -185,22 +218,34 @@
             pointer-events: none;
         }
 
-        #about {
+    /* ========================= */
+    /* About Section Styles      */
+    /* ========================= */
+    #about {
             min-height: 180vh;
             background: linear-gradient(170deg, var(--light-2), var(--mid-1));
         }
 
-        #gallery {
+    /* ========================= */
+    /* Gallery Section Styles    */
+    /* ========================= */
+    #gallery {
             min-height: 220vh;
             background: linear-gradient(180deg, var(--mid-1), var(--mid-2));
         }
 
-        #contact {
+    /* ========================= */
+    /* Contact Section Styles    */
+    /* ========================= */
+    #contact {
             min-height: 140vh;
             background: linear-gradient(160deg, var(--mid-2), var(--light-2));
         }
 
-        section h1, section h2 {
+    /* ========================= */
+    /* Headings                  */
+    /* ========================= */
+    section h1, section h2 {
             color: var(--accent);
             margin-bottom: 1rem;
             letter-spacing: 0.5px;
@@ -208,10 +253,13 @@
             text-transform: uppercase;
         }
 
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2rem; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
 
-        p {
+    /* ========================= */
+    /* Paragraph Styles          */
+    /* ========================= */
+    p {
             max-width: 750px;
             margin: 0 auto 1.5rem;
             line-height: 1.7;
@@ -219,7 +267,10 @@
             color: #4A3C31;
         }
 
-        .section-title {
+    /* ========================= */
+    /* Section Title Styles      */
+    /* ========================= */
+    .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             text-align: center;
@@ -228,7 +279,10 @@
             letter-spacing: 0.5px;
         }
 
-        .about-content {
+    /* ========================= */
+    /* About Content Styles      */
+    /* ========================= */
+    .about-content {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #4A3C31;
@@ -237,7 +291,10 @@
             text-align: center;
         }
 
-        .quote {
+    /* ========================= */
+    /* Quote Styles              */
+    /* ========================= */
+    .quote {
             font-style: italic;
             font-size: 1.2rem;
             color: var(--accent);
@@ -245,18 +302,27 @@
             text-align: center;
         }
 
-        .programs-section {
+    /* ========================= */
+    /* Programs Section Styles   */
+    /* ========================= */
+    .programs-section {
             background: linear-gradient(135deg, var(--mid-1), var(--mid-2));
         }
 
-        .programs-grid {
+    /* ========================= */
+    /* Programs Grid Styles      */
+    /* ========================= */
+    .programs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .program-card {
+    /* ========================= */
+    /* Program Card Styles       */
+    /* ========================= */
+    .program-card {
             background: rgba(255, 255, 255, 0.8);
             color: #2E241A;
             padding: 2rem;
@@ -293,7 +359,10 @@
             font-size: 0.95rem;
         }
 
-        .video-section {
+    /* ========================= */
+    /* Video Section Styles      */
+    /* ========================= */
+    .video-section {
             background: linear-gradient(135deg, var(--mid-2), var(--light-2));
             text-align: center;
         }
@@ -1146,16 +1215,22 @@
 </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- ========================= -->
+    <!-- Navigation                -->
+    <!-- ========================= -->
     <nav class="nav">
         <a href="index.html">Home</a>
     </nav>
 
-    <!-- DWQ Head Logo Section -->
+    <!-- ========================= -->
+    <!-- DWQ Head Logo Section     -->
+    <!-- ========================= -->
     <section class="DWQ-head-logo" style="text-align: center; margin-top: 4rem;">
         <img src="images/dragons_way_logo_tagline_red.png" alt="Dragon's Way Qigong Logo" style="width: 100%; max-width: 650px; height: auto;">
     </section>
-    <!-- About Section -->
+    <!-- ========================= -->
+    <!-- About Section             -->
+    <!-- ========================= -->
     <section class="section">
         <h2 class="section-title">About Dragon's Way Qigong</h2>
         <div class="about-content">
@@ -1174,7 +1249,9 @@
         </div>
     </section>
 
-    <!-- Video Section -->
+    <!-- ========================= -->
+    <!-- Video Section             -->
+    <!-- ========================= -->
     <section class="video-section">
         <div class="section">
             <h2 class="section-title">Discover Dragon's Way Qigong</h2>
@@ -1189,7 +1266,9 @@
         </div>
     </section>
 
-    <!-- Movements Section -->
+    <!-- ========================= -->
+    <!-- Movements Section         -->
+    <!-- ========================= -->
     <section class="movements-section">
         <div class="section">
             <h2 class="section-title">Qigong Movements</h2>
@@ -1219,7 +1298,9 @@
         </div>
     </section>
 
-    <!-- Five Elements Section -->
+    <!-- ========================= -->
+    <!-- Five Elements Section     -->
+    <!-- ========================= -->
     <section class="elements-section">
         <div class="section">
             <h2 class="section-title">The Five Elements</h2>
@@ -1253,7 +1334,9 @@
         </div>
     </section>
 
-    <!-- Features and FAQ Section -->
+    <!-- ========================= -->
+    <!-- Features and FAQ Section  -->
+    <!-- ========================= -->
     <section class="faq-section">
         <div class="section">
             <h2 class="section-title">Features and FAQ</h2>
@@ -1281,7 +1364,9 @@
             </div>
         </div>
     </section>
-    <!-- Instructors Section -->
+    <!-- ========================= -->
+    <!-- Instructors Section        -->
+    <!-- ========================= -->
     <section class="instructors-section">
         <div class="section">
             <h2 class="section-title">Meet Our Instructors</h2>
@@ -1333,7 +1418,9 @@
     </section>
 
 
-    <!-- Upcoming Events Section -->
+    <!-- ========================= -->
+    <!-- Upcoming Events Section    -->
+    <!-- ========================= -->
 <!-- Upcoming Events Section -->
     <section id="upcoming-events" class="section">
         <div class="container">
@@ -1405,7 +1492,9 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- ========================= -->
+    <!-- Pricing Section            -->
+    <!-- ========================= -->
     <section class="pricing-section section">
         <div class="container">
             <h2 class="section-title" style="font-family: 'Playfair Display', serif; color: #243763;">Join the Dragon's Way Qigong Journey</h2>
@@ -1524,7 +1613,9 @@
         </div>
     </section>
 
-     <!-- Testimonials Section -->
+    <!-- ========================= -->
+    <!-- Testimonials Section        -->
+    <!-- ========================= -->
     <section class="testimonials-section">
         <div class="section">
             <h2 class="section-title">What Our Students Say</h2>
