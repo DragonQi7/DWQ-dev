@@ -1323,6 +1323,93 @@
       font-size: 1.2rem;
     }
 }
+    #blog-section {
+      padding: 80px 20px;
+      background-color: #fafafa;
+      text-align: center;
+    }
+
+    #blog-section .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 50px;
+    }
+
+    .blog-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .blog-post {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: left;
+
+        text-decoration: none; /* remove underline */
+  color: inherit;        /* use normal text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+    .blog-image {
+      width: 40%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 25px;
+      flex: 1;
+    }
+
+    .blog-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .blog-content p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .read-more {
+      text-decoration: none;
+      color: #b9985e;
+      font-weight: 600;
+    }
+
+    .read-more:hover {
+      color: #a68548;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post {
+        flex-direction: column;
+      }
+
+      .blog-image {
+        width: 100%;
+        height: 200px;
+      }
+
+      .blog-content {
+        text-align: center;
+      }
+    }
 </style>
 </head>
 <body>
@@ -1456,7 +1543,7 @@
     <!-- ========================= -->
     <section class="elements-section">
         <div class="section">
-            <h2 class="section-title">The Five Elements</h2>
+            <h2 class="section-title">The Five Element Consciousness Framework</h2>
             <p style="text-align: center; margin-bottom: 2rem;">The Five Elements—Wood, Fire, Earth, Metal, and Water—are the foundation of all life and transformation in Traditional Chinese Medicine. In Dragon's Way Qigong, each movement and teaching harmonizes one or more of these elemental forces.</p>
             <div class="elements-container">
                 <div class="element-card wood">
@@ -1488,45 +1575,50 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- 📰 Latest Articles Blog Section -->
-    <!-- ========================= -->
-    <section class="blog-section">
-    <h2 class="section-title">Latest Articles</h2>
-    <div class="blog-container">
-
-        <!-- Article 1 -->
-        <div class="blog-article">
-            <img src="path-to-your-image1.jpg" alt="Article 1 Image">
-            <div class="blog-article-content">
-                <h3>Understanding Dragon's Way Qigong</h3>
-                <p>Explore the foundational techniques and benefits of Dragon's Way Qigong, designed to restore energy, balance, and vitality in your daily life...</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-        </div>
-
-        <!-- Article 2 -->
-        <div class="blog-article">
-            <img src="path-to-your-image2.jpg" alt="Article 2 Image">
-            <div class="blog-article-content">
-                <h3>5 Tips to Enhance Your Qigong Practice</h3>
-                <p>Learn practical tips and exercises to improve your Qigong sessions, deepen your mind-body connection, and maximize the flow of energy...</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-        </div>
-
-        <!-- Article 3 -->
-        <div class="blog-article">
-            <img src="path-to-your-image3.jpg" alt="Article 3 Image">
-            <div class="blog-article-content">
-                <h3>The Science Behind Energy Cultivation</h3>
-                <p>Discover how Qigong and other Chinese energy practices impact your physical and mental health, supported by modern research and traditional wisdom...</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-        </div>
-
+   <!-- 🌟 BLOG SECTION -->
+  <section id="blog-section">
+    <h2 class="section-title">Latest Blog Posts</h2>
+    <div class="blog-container" id="blog-container">
+      <!-- Blog posts will load here dynamically -->
     </div>
-</section>
+  </section>
+<!--remove start if it works-->
+<script>
+  const posts = [
+    {
+      title: "Finding Balance Through Qigong",
+      excerpt: "Discover how gentle Qigong movements can harmonize body and mind...",
+      image: "images/blogs/blog1.jpg",
+      link: "#"
+    },
+    {
+      title: "The Healing Power of Breath",
+      excerpt: "Breathing is the bridge between body and spirit...",
+      image: "images/blogs/blog2.jpg",
+      link: "#"
+    },
+    {
+      title: "Living with the Seasons",
+      excerpt: "In Chinese medicine, each season carries its own rhythm...",
+      image: "images/blogs/blog3.jpg",
+      link: "#"
+    }
+  ];
+
+  const container = document.getElementById('blog-container');
+  posts.forEach(post => {
+    const postHTML = `
+      <a href="${post.link}" class="blog-post">
+        <img src="${post.image}" alt="${post.title}" class="blog-image">
+        <div class="blog-content">
+          <h3>${post.title}</h3>
+          <p>${post.excerpt}</p>
+          <span class="read-more">Read More →</span>
+        </div>
+      </a>`;
+    container.insertAdjacentHTML('beforeend', postHTML);
+  });
+</script>
 
     <!-- ========================= -->
     <!-- 🧑‍🏫 Instructors Section -->
