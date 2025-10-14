@@ -1,0 +1,32 @@
+<!-- This is where all the events will be inserted dynamically -->
+<div id="events-container"></div>
+
+<script>
+  // Step 1: Fetch the JSON file that contains all event data
+  fetch('events.json') // 'events.json' should be in the same folder as this HTML file
+    .then(res => res.json()) // Step 2: Convert the response to JSON format
+    .then(events => { // Step 3: 'events' now holds an array of event objects
+      // Step 4: Find the container div where events will be displayed
+      const container = document.getElementById('events-container');
+
+      // Step 5: Loop through each event object in the array
+      events.forEach(e => {
+        // Step 6: Append HTML for each event inside the container
+        // Using template literals `${}` to insert data from the JSON
+        container.innerHTML += `
+          <div class="event"> <!-- Wrapper for each event -->
+            <div class="event-date"> <!-- Box showing month and day -->
+              <span class="month">${e.month}</span> <!-- Event month -->
+              <span class="day">${e.day}</span> <!-- Event day -->
+            </div>
+            <div class="event-details"> <!-- Details about the event -->
+              <h3>${e.title}</h3> <!-- Event title -->
+              <p class="event-meta">${e.meta}</p> <!-- Event date/time/location -->
+              <p class="event-description">${e.description}</p> <!-- Event description -->
+              <a href="${e.link}" class="btn">LEARN MORE</a> <!-- Link to more info -->
+            </div>
+          </div>
+        `;
+      });
+    });
+</script>

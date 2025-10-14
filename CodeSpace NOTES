@@ -1,0 +1,68 @@
+<!--
+The URL https://dragonqi7.github.io/DWQ-dev/ is called a GitHub Pages site. It is a static website hosted directly from your GitHub repository (DWQ-dev) under the user dragonqi7.
+
+This is the public web address where your site's index.html and other files are served.
+-->
+
+https://dragonqi7.github.io/DWQ-dev/
+
+
+<!--
+PUshing from DEV to prod
+-->
+
+git push prod main
+
+codespace for prod
+
+https://fuzzy-pancake-69xr67jqpw7pc49ww.github.dev/
+
+
+<--
+after manuualy uplading files to DWQ-prod to pull them into codespace explorer and /workspace/DWQ-prod
+
+:::: run git pull origina main
+
+@DragonQi7 ➜ /workspaces/DWQ-prod (main) $ git pull origin main
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 9 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 34.82 KiB | 1.51 MiB/s, done.
+From https://github.com/DragonQi7/DWQ-prod
+ * branch            main    
+
+-->
+
+
+
+Pushing to DWQ-prod (note i havent tried this yet)
+
+The difference is in which remote repository you are pushing your changes to:
+
+git push origin main pushes your changes to the "origin" remote, which is usually your main development repository (DWQ-dev).
+
+git push prod main pushes your changes to the "prod" remote, which is your production repository (DWQ-prod).
+Use origin to update your development repo, and prod to update your production repo. Let me know which one you want to push to!
+
+
+commiting vs pushing
+Committing saves your changes to the local git repository with a message, creating a snapshot. Pushing uploads those committed changes from your local repository to a remote repository (like GitHub), making them available to others.
+
+Committing is similar to saving a snapshot of your changes locally in your workspace's git repository. It tracks changes and history, but does not move files to any remote server until you push.
+
+
+<-- 
+commit and push
+-->
+
+
+git add qigong.html && git commit -m "Reduce blog articles to 3, decrease height by 20%, set brown background" && git push origin main
+
+--
+background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(--cream-deep));
+--cream-light: #F5F3EE
+--cream-base: #E9E4DA
+--cream-deep: #D5CFC4
+
+change font color to HEX 55160A
