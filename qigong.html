@@ -250,11 +250,83 @@
         }
         
 
+        #programs-events {
+            padding: 80px 20px;
+            background-color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+        }
+
+        #programs-events .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        /* Grid Layout */
         .programs-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Program Card Styles */
+        .program-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            background-color: #fafafa;
+            padding: 30px;
+            aspect-ratio: 1/1;
+            width: 100%; /* ✅ ensures it fills its grid cell */
+            max-width: 100%;
+        }
+
+        .program-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .program-card p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .program-card.dark {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .program-card.dark h3 {
+            color: #fff;
+        }
+
+        .program-card.dark p {
+            color: #ccc;
+        }
+
+        /* Button Style */
+        .program-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b9985e;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .program-card .btn:hover {
+            background-color: #a68548;
         }
 
         .program-card {
@@ -1288,85 +1360,9 @@
         </div>
     </section>
 <!-- Program Features -->
- #programs-events {
-      padding: 80px 20px;
-      background-color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      text-align: center;
-    }
 
-    #programs-events .section-title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 50px;
-      color: #222;
-    }
 
-    /* Grid Layout */
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
 
-    /* Program Card Styles */
-    .program-card {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: left;
-      background-color: #fafafa;
-      padding: 31.05px 25.88px;
-      width: 90%;
-      aspect-ratio: 1/1;
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .program-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .program-card p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-
-    .program-card.dark {
-      background-color: #222;
-      color: #fff;
-    }
-
-    .program-card.dark h3 {
-      color: #fff;
-    }
-
-    .program-card.dark p {
-      color: #ccc;
-    }
-
-    /* Button Style */
-    .program-card .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #b9985e;
-      color: #fff;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .program-card .btn:hover {
-      background-color: #a68548;
-    }
 
   <section id="programs-events" class="section">
     <div class="container">
