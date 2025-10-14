@@ -27,30 +27,10 @@ jobs:
           cp -r * public/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Copy current branch site files
-        run: |
-          BRANCH_NAME=$(echo "${GITHUB_REF##*/}")
-          mkdir -p public/$BRANCH_NAME
-          cp index.html public/$BRANCH_NAME/
-          if [ -f qigong.html ]; then cp qigong.html public/$BRANCH_NAME/; fi
-          if [ -d images ]; then cp -r images public/$BRANCH_NAME/; fi
-          if [ -d css ]; then cp -r css public/$BRANCH_NAME/; fi
-          if [ -d js ]; then cp -r js public/$BRANCH_NAME/; fi
-
-            - name: Upload to Pages
-              uses: actions/upload-pages-artifact@v3
-
-              with:
-                path: public
-
-            - name: Deploy
-              id: deployment
-              uses: actions/deploy-pages@v4
