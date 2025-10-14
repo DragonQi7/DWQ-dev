@@ -1,24 +1,39 @@
+
 name: Deploy to GitHub Pages
 
 on:
-  name: Deploy to GitHub Pages
+  push:
+    branches:
+      - main
 
-<<<<<<< HEAD
-=======
 permissions:
   contents: write
   pages: write
   id-token: write
->>>>>>> 122d062 (Preserve all branch folders in GitHub Pages deployment)
 
-            - name: Setup Pages
-              uses: actions/configure-pages@v3
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # Keep previously deployed branch folders so we don't overwrite
-      - name: Download existing Pages artifact
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Build static site
         run: |
-          git clone --depth=1 https://github.com/${{ github.repository }} temp-pages
-          mv temp-pages/public ./ || mkdir -p public
+          mkdir -p public
+          cp -r * public/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
           rm -rf temp-pages
 
       - name: Copy current branch site files
