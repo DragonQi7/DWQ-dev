@@ -34,7 +34,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-          rm -rf temp-pages
 
       - name: Copy current branch site files
         run: |
