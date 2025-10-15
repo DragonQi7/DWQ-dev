@@ -1573,6 +1573,10 @@
             </div>
             <div style="flex: 1.2; min-width: 340px; display: flex; justify-content: flex-end;">
                 <div class="movements-circle-container" style="position:relative;width:340px;height:340px;">
+                    <!-- SVG Circle: Connect all movement circles at their circumference -->
+                    <svg width="340" height="340" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="170" cy="170" r="140" stroke="#b9985e" stroke-width="3" fill="none" />
+                    </svg>
                     <div class="movement-card" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(0deg) translateY(-140px) rotate(0deg);">
                         <div class="movement-name">Dragon's Toe Dance</div>
                         <div class="movement-description">#1</div>
@@ -1727,7 +1731,7 @@
     <!-- ========================= -->
      <section id="instructors-section" class="instructors-section"></section>
         <div class="section">
-            <h2 class="section-title">Meet Our Instructors</h2>
+            <h2 class="section-title">OUR INSTRUCTORS</h2>
             
             <div class="instructors-grid">
                 <div class="instructor-card">
