@@ -1522,33 +1522,86 @@
 
       <div class="programs-grid">
 
-        <!-- Program 1 -->
-        <div class="program-card light">
-          <h3>4 Energy Gates</h3>
-          <p>An experience of letting go and transitioning from mind to flow. Join us for our most popular program.</p>
-          <a href="" class="btn" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
+                <!-- Program 1 -->
+                <div class="program-card light" data-idx="0">
+                    <h3>4 Energy Gates</h3>
+                    <p>An experience of letting go and transitioning from mind to flow. Join us for our most popular program.</p>
+                    <a href="#" class="btn program-learn-more">Learn More</a>
+                </div>
+                <!-- Program 2 -->
+                <div class="program-card light" data-idx="1">
+                    <h3>Dragon's Way Qigong®</h3>
+                    <p>A timeless Qigong system that awakens your body's energy flow, restoring balance and opening the path to lifelong healing. Join a class now.</p>
+                    <a href="#" class="btn program-learn-more">Learn More</a>
+                </div>
+                <!-- Program 3 -->
+                <div class="program-card light" data-idx="2">
+                    <h3>3 E Qigong</h3>
+                    <p>An advanced course that explores the deep consciousness of nature's elements and your inner energy.</p>
+                    <a href="#" class="btn program-learn-more">Learn More</a>
+                </div>
+                <!-- Program 4 -->
+                <div class="program-card light" data-idx="3">
+                    <h3>Our Community</h3>
+                    <p>Join our community for a free Qigong meditation practice. When you sign up for the newsletter, you'll receive the Zoom link.</p>
+                    <a href="#" class="btn program-learn-more">Learn More</a>
+                </div>
+            <!-- Program Modal Popup -->
+            <div id="program-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+                <div id="program-modal-content" style="background:#fff;color:#55160A;max-width:500px;width:90vw;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative;">
+                    <span id="program-modal-close" style="position:absolute;top:12px;right:18px;font-size:2rem;cursor:pointer;">&times;</span>
+                    <h3 id="program-modal-title"></h3>
+                    <div id="program-modal-article" style="white-space:pre-line;font-size:1.08rem;line-height:1.7;margin-top:1rem;"></div>
+                </div>
+            </div>
+</body>
+<script>
+// JSON structure for program events
+const programEvents = [
+    {
+        header: "4 Energy Gates",
+        article: "The 4 Energy Gates program is designed to help you release tension, restore flow, and reconnect with your body's natural wisdom. Through gentle Qigong movements and guided meditation, you'll experience a profound sense of letting go and renewal."
+    },
+    {
+        header: "Dragon's Way Qigong®",
+        article: "Dragon's Way Qigong® is a classical system rooted in Traditional Chinese Medicine. This program awakens your body's energy flow, restores balance, and opens the path to lifelong healing. Classes include movement, food therapy, and energy awareness."
+    },
+    {
+        header: "3 E Qigong",
+        article: "3 E Qigong is an advanced course that explores the deep consciousness of nature's elements and your inner energy. Discover how to harmonize with the universe and unlock your true potential."
+    },
+    {
+        header: "Our Community",
+        article: "Join our community for a free Qigong meditation practice. Sign up for the newsletter to receive the Zoom link and connect with fellow practitioners in a supportive environment."
+    }
+];
 
-        <!-- Program 2 -->
-        <div class="program-card light">
-          <h3>Dragon's Way Qigong®</h3>
-          <p>A timeless Qigong system that awakens your body's energy flow, restoring balance and opening the path to lifelong healing. Join a class now.</p>
-          <a href="" class="btn" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
+// Modal logic for program events
+const programModal = document.getElementById('program-modal');
+const programModalTitle = document.getElementById('program-modal-title');
+const programModalArticle = document.getElementById('program-modal-article');
+const programModalClose = document.getElementById('program-modal-close');
 
-        <!-- Program 3 -->
-        <div class="program-card light">
-          <h3>3 E Qigong</h3>
-          <p>An advanced course that explores the deep consciousness of nature's elements and your inner energy.</p>
-          <a href="" class="btn" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-
-        <!-- Program 4 -->
-        <div class="program-card light">
-          <h3>Our Community</h3>
-          <p>Join our community for a free Qigong meditation practice. When you sign up for the newsletter, you'll receive the Zoom link.</p>
-          <a href="" class="btn" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
+document.querySelectorAll('.program-learn-more').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const card = e.target.closest('.program-card');
+        const idx = card.getAttribute('data-idx');
+        const program = programEvents[idx];
+        programModalTitle.textContent = program.header;
+        programModalArticle.textContent = program.article;
+        programModal.style.display = 'flex';
+    });
+});
+programModalClose.addEventListener('click', function() {
+    programModal.style.display = 'none';
+});
+programModal.addEventListener('click', function(e) {
+    if (e.target === programModal) {
+        programModal.style.display = 'none';
+    }
+});
+</script>
 
       </div>
     </div>
