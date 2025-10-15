@@ -1576,47 +1576,86 @@
 
    <!-- 🌟 BLOG SECTION -->
   <section id="blog-section">
-    <h2 class="section-title">Latest Blog Posts</h2>
-    <div class="blog-container" id="blog-container">
-      <!-- Blog posts will load here dynamically -->
-    </div>
+        <h2 class="section-title">Latest Blog Posts</h2>
+        <div class="blog-container" id="blog-container">
+            <!-- Blog posts will load here dynamically -->
+        </div>
+        <!-- Blog Modal Popup -->
+        <div id="blog-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+            <div id="blog-modal-content" style="background:#fff;color:#55160A;max-width:500px;width:90vw;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative;">
+                <span id="blog-modal-close" style="position:absolute;top:12px;right:18px;font-size:2rem;cursor:pointer;">&times;</span>
+                <img id="blog-modal-image" src="" alt="" style="width:100%;height:auto;border-radius:8px;margin-bottom:1rem;">
+                <h3 id="blog-modal-title"></h3>
+                <p id="blog-modal-excerpt"></p>
+            </div>
+        </div>
   </section>
 <!--remove start if it works-->
 <script>
-  const posts = [
-    {
-      title: "Finding Balance Through Qigong",
-      excerpt: "Discover how gentle Qigong movements can harmonize body and mind...",
-      image: "images/blogs/Galaxy-1.png",
-      link: "#"
-    },
-    {
-      title: "The Healing Power of Breath",
-      excerpt: "Breathing is the bridge between body and spirit...",
-      image: "images/blogs/Garden-1.png",
-      link: "#"
-    },
-    {
-      title: "Living with the Seasons",
-      excerpt: "In Chinese medicine, each season carries its own rhythm...",
-      image: "images/blogs/Fall-1.png",
-      link: "#"
-    }
-  ];
+    const posts = [
+        {
+            title: "Finding Balance Through Qigong",
+            excerpt: "Discover how gentle Qigong movements can harmonize body and mind...",
+            image: "images/blogs/Galaxy-1.png",
+            link: "#"
+        },
+        {
+            title: "The Healing Power of Breath",
+            excerpt: "Breathing is the bridge between body and spirit...",
+            image: "images/blogs/Garden-1.png",
+            link: "#"
+        },
+        {
+            title: "Living with the Seasons",
+            excerpt: "In Chinese medicine, each season carries its own rhythm...",
+            image: "images/blogs/Fall-1.png",
+            link: "#"
+        }
+    ];
 
-  const container = document.getElementById('blog-container');
-  posts.forEach(post => {
-    const postHTML = `
-      <a href="${post.link}" class="blog-post">
-    <img src="${post.image}" alt="${post.title}" class="blog-image">
-        <div class="blog-content">
-          <h3>${post.title}</h3>
-          <p>${post.excerpt}</p>
-          <span class="read-more">Read More →</span>
-        </div>
-      </a>`;
-    container.insertAdjacentHTML('beforeend', postHTML);
-  });
+    const container = document.getElementById('blog-container');
+    posts.forEach((post, idx) => {
+        const postHTML = `
+            <a href="#" class="blog-post" data-idx="${idx}">
+                <img src="${post.image}" alt="${post.title}" class="blog-image">
+                <div class="blog-content">
+                    <h3>${post.title}</h3>
+                    <p>${post.excerpt}</p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>`;
+        container.insertAdjacentHTML('beforeend', postHTML);
+    });
+
+    // Modal logic
+    const modal = document.getElementById('blog-modal');
+    const modalImage = document.getElementById('blog-modal-image');
+    const modalTitle = document.getElementById('blog-modal-title');
+    const modalExcerpt = document.getElementById('blog-modal-excerpt');
+    const modalClose = document.getElementById('blog-modal-close');
+
+    container.addEventListener('click', function(e) {
+        const readMore = e.target.closest('.read-more');
+        if (readMore) {
+            e.preventDefault();
+            const postEl = e.target.closest('.blog-post');
+            const idx = postEl.getAttribute('data-idx');
+            const post = posts[idx];
+            modalImage.src = post.image;
+            modalTitle.textContent = post.title;
+            modalExcerpt.textContent = post.excerpt;
+            modal.style.display = 'flex';
+        }
+    });
+
+    modalClose.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 </script>
 
     <!-- ========================= -->
