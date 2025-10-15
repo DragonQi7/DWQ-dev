@@ -65,4 +65,4 @@ background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(-
 --cream-base: #E9E4DA
 --cream-deep: #D5CFC4
 
-change font color to HEX 55160A
+change font color to HEX #55160A
