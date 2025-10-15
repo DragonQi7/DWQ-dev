@@ -347,13 +347,17 @@
         }
 
         .movements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            position: relative;
+            width: 340px;
+            height: 340px;
+            margin: 3rem auto 0 auto;
         }
 
         .movement-card {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.8);
@@ -365,6 +369,23 @@
             justify-content: center;
             border: 2px solid rgba(85, 22, 10, 0.2);
             transition: all 0.3s ease;
+        }
+
+        .movement-card:nth-child(1) {
+            transform: translate(-50%, -50%) rotate(0deg) translateY(-140px) rotate(0deg);
+        }
+        .movement-card:nth-child(2) {
+            transform: translate(-50%, -50%) rotate(72deg) translateY(-140px) rotate(-72deg);
+        }
+        .movement-card:nth-child(3) {
+            transform: translate(-50%, -50%) rotate(144deg) translateY(-140px) rotate(-144deg);
+        }
+        .movement-card:nth-child(4) {
+            transform: translate(-50%, -50%) rotate(216deg) translateY(-140px) rotate(-216deg);
+        }
+        .movement-card:nth-child(5) {
+            transform: translate(-50%, -50%) rotate(288deg) translateY(-140px) rotate(-288deg);
+        }
         }
 
         .movement-card:hover {
