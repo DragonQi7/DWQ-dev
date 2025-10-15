@@ -24,7 +24,7 @@ jobs:
       - name: Build static site
         run: |
           mkdir -p public
-          cp -r * public/
+        #  cp -r * public/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
