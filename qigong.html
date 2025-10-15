@@ -473,13 +473,45 @@
         }
 
         .elements-container {
-              display: flex;
-              flex-wrap: nowrap;
-              justify-content: center;
-              gap: 2rem;
-              margin-top: 3rem;
-             align-items: center;
-             overflow-x: auto;
+            position: relative;
+            width: 340px;
+            height: 340px;
+            margin: 3rem auto 0 auto;
+        }
+
+        .element-card {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .element-card:nth-child(1) { /* Wood */
+            transform: translate(-50%, -50%) rotate(0deg) translateY(-140px) rotate(0deg);
+        }
+        .element-card:nth-child(2) { /* Fire */
+            transform: translate(-50%, -50%) rotate(72deg) translateY(-140px) rotate(-72deg);
+        }
+        .element-card:nth-child(3) { /* Earth */
+            transform: translate(-50%, -50%) rotate(144deg) translateY(-140px) rotate(-144deg);
+        }
+        .element-card:nth-child(4) { /* Metal */
+            transform: translate(-50%, -50%) rotate(216deg) translateY(-140px) rotate(-216deg);
+        }
+        .element-card:nth-child(5) { /* Water */
+            transform: translate(-50%, -50%) rotate(288deg) translateY(-140px) rotate(-288deg);
         }
 
         .element-card {
