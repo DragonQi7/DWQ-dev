@@ -1140,7 +1140,7 @@
     /* ...existing code... */
 /* ...existing code... */
     #upcoming-events {
-        padding: 160px 20px 80px; /* increased top padding to add more space above */
+        padding: 80px 20px;
         background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(--cream-deep));
         font-family: 'Cormorant Garamond', serif;
     }
@@ -1163,17 +1163,24 @@
     gap: 40px;
   }
 
-        @media (max-width: 768px) {
-            #upcoming-events {
-                padding: 110px 16px 40px; /* slightly less top padding on mobile */
-            }
-        }
-
   .event {
     display: flex;
     gap: 30px;
     align-items: flex-start;
   }
+
+/* Divider line after each event */
+.events-list .event {
+    border-bottom: 1px solid rgba(85,22,10,0.08);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.events-list .event:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
   .event-date {
     flex-shrink: 0;
