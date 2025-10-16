@@ -736,17 +736,6 @@
             background: transparent;
         }
 
-        /* Add extra vertical spacing between instructors and upcoming events */
-        #instructors-section + .section {
-            margin-top: 4rem; /* desktop spacing */
-        }
-
-        @media (max-width: 768px) {
-            #instructors-section + .section {
-                margin-top: 2rem; /* smaller on mobile */
-            }
-        }
-
         .instructors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1151,7 +1140,7 @@
     /* ...existing code... */
 /* ...existing code... */
     #upcoming-events {
-        padding: 80px 20px;
+        padding: 120px 20px 80px; /* increased top padding to add more space above */
         background: linear-gradient(160deg, var(--cream-light), var(--cream-base), var(--cream-deep));
         font-family: 'Cormorant Garamond', serif;
     }
@@ -1173,6 +1162,12 @@
     flex-direction: column;
     gap: 40px;
   }
+
+    @media (max-width: 768px) {
+        #upcoming-events {
+            padding: 80px 16px 40px; /* slightly less top padding on mobile */
+        }
+    }
 
   .event {
     display: flex;
