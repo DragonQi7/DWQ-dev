@@ -736,6 +736,17 @@
             background: transparent;
         }
 
+        /* Add extra vertical spacing between instructors and upcoming events */
+        #instructors-section + .section {
+            margin-top: 4rem; /* desktop spacing */
+        }
+
+        @media (max-width: 768px) {
+            #instructors-section + .section {
+                margin-top: 2rem; /* smaller on mobile */
+            }
+        }
+
         .instructors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1168,19 +1179,6 @@
     gap: 30px;
     align-items: flex-start;
   }
-
-/* Divider line after each event */
-.events-list .event {
-    border-bottom: 1px solid rgba(85,22,10,0.08);
-    padding-bottom: 24px;
-    margin-bottom: 24px;
-}
-
-.events-list .event:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
 
   .event-date {
     flex-shrink: 0;
