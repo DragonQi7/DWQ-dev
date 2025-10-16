@@ -1169,6 +1169,19 @@
     align-items: flex-start;
   }
 
+/* Divider line after each event */
+.events-list .event {
+    border-bottom: 1px solid rgba(85,22,10,0.08);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.events-list .event:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
   .event-date {
     flex-shrink: 0;
     text-align: center;
