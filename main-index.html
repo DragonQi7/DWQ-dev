@@ -1,0 +1,255 @@
+Perfect 👍 You want a **clean, modular HTML/CSS layout** that references the root design system — *and* includes clear, human-readable comments explaining what each part of the styling does.
+
+Below is your fully updated version. It uses **root variables** for global color, font, layout, and shadow settings, with each section inheriting them. Every CSS block is annotated line-by-line for clarity.
+
+---
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon’s Way Qigong</title>
+
+<style>
+  /* ================================================
+     🎨 GLOBAL THEME SETTINGS (ROOT VARIABLES)
+     Define all reusable color, font, and layout tokens
+     ================================================= */
+  :root {
+    /* --- Color Palette --- */
+    --b: #0e1921;   /* Background (deep blue-black) */
+    --a: #5f92c1;   /* Accent (cool glacier blue) */
+    --t: #aad7ef;   /* Primary text (light sky blue) */
+    --bt: #e6e9eb;  /* Light contrast (button/text highlight) */
+    --light: #ffffff; /* White base for cards/sections */
+    --shadow: rgba(0,0,0,0.07); /* Soft shadow for elevation */
+
+    /* --- Font & Typography --- */
+    --font-songti: "SimSong", "Songti SC", "宋体", serif; /* Classic Songti font for elegance */
+    
+    /* --- Layout --- */
+    --radius: 14px;           /* Rounded corner radius */
+    --max-width: 820px;       /* Content width limit */
+    --section-padding: 2.5rem;/* Inner spacing for sections */
+    --text-line-height: 1.7;  /* Default text spacing */
+  }
+
+  /* ================================================
+     🩵 GLOBAL BODY SETTINGS
+     Applies base font, background, and text color
+     ================================================= */
+  body {
+    background: var(--b);
+    color: var(--t);
+    font-family: var(--font-songti);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ================================================
+     🔝 HEADER + NAVIGATION BAR
+     Fixed top navigation with title and links
+     ================================================= */
+  header {
+    width: 100%;
+    background: var(--b); /* Same as body background */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Subtle bottom shadow */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Stays above all content */
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem; /* Inner spacing */
+  }
+
+  /* --- Logo/Title --- */
+  .nav-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--a);
+    letter-spacing: 0.03em;
+  }
+
+  /* --- Navigation Links --- */
+  .nav-list {
+    display: flex;
+    gap: 2.2rem; /* Even spacing between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--a);
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+  }
+
+  /* --- Hover effect for links --- */
+  .nav-list a:hover {
+    color: var(--t); /* Shifts to lighter tone */
+  }
+
+  /* ================================================
+     📜 MAIN CONTENT CONTAINER
+     Adds spacing below the fixed header
+     ================================================= */
+  main {
+    margin-top: 4.5rem;
+    padding: var(--section-padding);
+  }
+
+  /* ================================================
+     🧩 DEFAULT SECTION LAYOUT
+     Shared base styling for all sections
+     ================================================= */
+  section {
+    max-width: var(--max-width);
+    margin: 4rem auto 2.5rem auto;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 16px var(--shadow);
+    padding: var(--section-padding);
+    text-align: center;
+    font-family: var(--font-songti);
+    line-height: var(--text-line-height);
+  }
+
+  /* --- General Headings and Paragraphs --- */
+  h2, h3, p {
+    color: var(--t);
+  }
+
+  h2 {
+    color: var(--a); /* Accent tone for section titles */
+  }
+
+</style>
+</head>
+
+<body>
+  <!-- ========================= -->
+  <!-- 🔝 HEADER NAVIGATION -->
+  <!-- ========================= -->
+  <header>
+    <nav>
+      <div class="nav-title">Dragon's Way Qigong</div>
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#discover">Discover</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#upcoming">Upcoming</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========================= -->
+  <!-- 🌙 BLUE MOON SECTION -->
+  <!-- ========================= -->
+  <main>
+    <section id="blue-moon" style="
+      background: var(--b); /* Uses main dark background */
+      color: var(--bt);     /* Uses bright text color for contrast */
+    ">
+      <h1 style="
+        color: var(--a);
+        font-size: 2.5rem;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      ">
+        Blue Moon<br>Meditation & Healing
+      </h1>
+
+      <p style="
+        color: var(--t);
+        font-weight: 300;
+        letter-spacing: 0.1em;
+      ">
+        find your inner peace under the celestial light
+      </p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 🐉 ABOUT SECTION -->
+    <!-- ========================= -->
+    <section id="about" style="
+      background: var(--light); /* White background for clarity */
+      color: var(--t);
+    ">
+      <h2>About Dragon's Way Qigong®</h2>
+      <p>Dragon’s Way Qigong® helps you restore balance, allowing energy to flow freely. Experience Wu Ming Qigong, eat intuitively, and reconnect with your natural rhythm.</p>
+      <p style="
+        font-weight:600;
+        color:var(--a);
+        font-size:1.15rem;
+      ">
+        It's not exercise—it's a return to balance.
+      </p>
+      <p>Recharge your energy, handle stress, and cultivate lasting well-being through the flow of Qi.</p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- ☯ ONENESS SECTION -->
+    <!-- ========================= -->
+    <section id="oneness" style="
+      background: var(--light); /* Light tone for open feeling */
+      color: var(--t);
+    ">
+      <h2>Life in Balance is Oneness</h2>
+
+      <h3 style="color: var(--a);">
+        Everything is nothing; Nothing is everything
+      </h3>
+
+      <p>
+        When you return to your original oneness, life flows smoothly again.<br>
+        In duality, there is judgment; in oneness, there is peace.
+      </p>
+
+      <!-- Quote block with highlight border -->
+      <div style="
+        background: #f7f3ed;
+        border-left: 4px solid var(--a);
+        border-radius: 8px;
+        color: var(--a);
+        padding: 1.2rem;
+        margin: 2rem auto;
+        max-width: 520px;
+        font-style: italic;
+      ">
+        ☯ 道生一，一生二，二生三，三生萬物 ☯
+      </div>
+
+      <p style="font-style: italic;">
+        Embrace the unity of body, mind, and spirit through the Dragon's Way.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
+```
+
+---
+
+### 🧭 Explanation Summary
+
+* `:root` → holds your **design tokens**. Change `--a` or `--font-songti` once, and all sections update instantly.
+* `section {}` → applies consistent padding, shadow, and text alignment sitewide.
+* Local inline `style` attributes → use variables (`var(--a)`) for color & font reference.
+* Comments explain **what each section, property, and layout block does** — so Copilot or another dev can understand structure instantly.
+
+---
+
+Would you like me to extend this same documented structure to include your **Discover, Movements, and Contact sections** next?
