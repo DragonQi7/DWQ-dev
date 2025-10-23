@@ -1,10 +1,3 @@
-Perfect 👍 You want a **clean, modular HTML/CSS layout** that references the root design system — *and* includes clear, human-readable comments explaining what each part of the styling does.
-
-Below is your fully updated version. It uses **root variables** for global color, font, layout, and shadow settings, with each section inheriting them. Every CSS block is annotated line-by-line for clarity.
-
----
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +15,8 @@ Below is your fully updated version. It uses **root variables** for global color
     --b: #0e1921;   /* Background (deep blue-black) */
     --a: #5f92c1;   /* Accent (cool glacier blue) */
     --t: #aad7ef;   /* Primary text (light sky blue) */
-    --bt: #e6e9eb;  /* Light contrast (button/text highlight) */
-    --light: #ffffff; /* White base for cards/sections */
+    --bt: #415969;  /* Light contrast (button/text highlight) */
+    --light: #292938; /* White base for cards/sections */
     --shadow: rgba(0,0,0,0.07); /* Soft shadow for elevation */
 
     /* --- Font & Typography --- */
@@ -155,32 +148,237 @@ Below is your fully updated version. It uses **root variables** for global color
     </nav>
   </header>
 
-  <!-- ========================= -->
-  <!-- 🌙 BLUE MOON SECTION -->
-  <!-- ========================= -->
-  <main>
-    <section id="blue-moon" style="
-      background: var(--b); /* Uses main dark background */
-      color: var(--bt);     /* Uses bright text color for contrast */
-    ">
-      <h1 style="
-        color: var(--a);
-        font-size: 2.5rem;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-      ">
-        Blue Moon<br>Meditation & Healing
-      </h1>
+  <!-- START Blue Moon Mandala Section -->
+<section id="blue-moon-mandala">
+  <style>
+    /* ==========================
+       ROOT VARIABLES
+       Define colors, fonts, and accent styles
+    ========================== */
+    :root {
+      --bg: #0b132b; /* Dark blue background */
+      --accent: #87ceeb; /* Light blue accent for highlights */
+      --font-main: 'Playfair Display', serif; /* Main heading font */
+      --font-sub: 'Source Sans Pro', sans-serif; /* Subheading / tagline font */
+    }
 
-      <p style="
-        color: var(--t);
-        font-weight: 300;
-        letter-spacing: 0.1em;
-      ">
-        find your inner peace under the celestial light
-      </p>
-    </section>
+    /* ==========================
+       SECTION STYLING
+       The container for the entire mandala and text
+    ========================== */
+    #blue-moon-mandala {
+      background: var(--bg); /* solid dark background */
+      color: #e8f4fd; /* text color */
+      text-align: center; /* center everything */
+      padding: 4rem 1rem; /* spacing around content */
+      font-family: var(--font-main); /* use main font for text */
+    }
 
+    /* ==========================
+       LOGO CONTAINER
+       Centers mandala and text vertically
+    ========================== */
+    .logo-container {
+      display: flex;
+      flex-direction: column; /* stack mandala + text */
+      align-items: center; /* horizontally center */
+      gap: 1.2rem; /* spacing between elements */
+      position: relative; /* relative for positioning glow effects */
+    }
+
+    /* ==========================
+       MANDALA SYMBOL
+       Outer circle container for SVG mandala
+    ========================== */
+    .logo-symbol {
+      width: 90px; /* width of mandala */
+      height: 90px; /* height of mandala */
+      position: relative;
+      animation: gentle-glow 3s ease-in-out infinite alternate; /* glowing animation */
+      border-radius: 50%; /* circular container */
+      overflow: hidden; /* clip anything outside circle */
+      border: 2px solid rgba(135, 206, 235, 0.3); /* soft blue border */
+    }
+
+    /* ==========================
+       SVG MANDALA
+       The vector mandala itself, scales to container
+    ========================== */
+    .mandala-svg { 
+      width: 100%; 
+      height: 100%; 
+    }
+
+    /* ==========================
+       ROTATION CLASSES
+       Control speed and direction of mandala layers
+    ========================== */
+    .rotate-slow { animation: rotate-clockwise 20s linear infinite; }
+    .rotate-medium { animation: rotate-counter 15s linear infinite; }
+    .rotate-fast { animation: rotate-clockwise 10s linear infinite; }
+
+    @keyframes rotate-clockwise {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotate-counter {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    /* ==========================
+       GLOW ANIMATION
+       Creates soft pulsing glow around mandala
+    ========================== */
+    @keyframes gentle-glow {
+      0% { filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.6)); transform: scale(1); }
+      100% { filter: drop-shadow(0 0 25px rgba(135, 206, 235, 0.9)); transform: scale(1.05); }
+    }
+
+    /* ==========================
+       BRAND TEXT STYLING
+       Main heading and subtitle
+    ========================== */
+    .brand-name {
+      font-size: 3.2rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4); /* subtle shadow for depth */
+    }
+
+    .brand-subtitle {
+      font-size: 1.4rem;
+      color: var(--accent); /* light blue accent */
+      margin: 0.2rem 0 0 0;
+      font-weight: 300;
+      letter-spacing: 1px;
+      font-family: var(--font-sub);
+      text-transform: uppercase; /* all caps */
+    }
+
+    .tagline {
+      font-style: italic;
+      color: rgba(255,255,255,0.85); /* semi-transparent white */
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* subtle shadow for readability */
+      font-family: var(--font-sub);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================
+       RESPONSIVE STYLING
+       Adjust sizes for tablets and phones
+    ========================== */
+    @media (max-width: 768px) {
+      .brand-name { font-size: 2.8rem; letter-spacing: 2px; }
+      .brand-subtitle { font-size: 1.2rem; }
+      .tagline { font-size: 1rem; }
+      .logo-symbol { width: 80px; height: 80px; }
+    }
+
+    @media (max-width: 480px) {
+      #blue-moon-mandala { padding: 3rem 0.5rem; }
+      .logo-symbol { width: 70px; height: 70px; }
+      .brand-name { font-size: 2.2rem; letter-spacing: 1px; }
+      .brand-subtitle { font-size: 1rem; }
+      .tagline { font-size: 0.9rem; }
+    }
+  </style>
+
+  <!-- ==========================
+       LOGO + TEXT
+       SVG mandala and brand details
+  ========================== -->
+  <div class="logo-container">
+    <div class="logo-symbol">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="mandala-svg">
+        <defs>
+          <!-- Gradient for mandala petals -->
+          <linearGradient id="mandalaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#add8e6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e0f6ff;stop-opacity:1" />
+          </linearGradient>
+          <!-- Glow filter for center circle -->
+          <filter id="mandalaGlow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Outer ring of mandala -->
+        <circle cx="100" cy="100" r="95" fill="none" stroke="url(#mandalaGradient)" stroke-width="2" opacity="0.6"/>
+
+        <!-- Petal layer 1 (rotating slowly) -->
+        <g transform="translate(100,100)">
+          <g class="rotate-slow">
+            <!-- repeated petal shapes rotated around center -->
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(0)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(45)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(90)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(135)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(180)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(225)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(270)"/>
+            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(315)"/>
+          </g>
+        </g>
+
+        <!-- Middle ring circle -->
+        <circle cx="100" cy="100" r="60" fill="none" stroke="url(#mandalaGradient)" stroke-width="1.5" opacity="0.8"/>
+
+        <!-- Petal layer 2 (rotating medium) -->
+        <g transform="translate(100,100)">
+          <g class="rotate-medium">
+            <!-- small circles around center -->
+            <circle cx="0" cy="-50" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="35" cy="-35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="50" cy="0" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="35" cy="35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="0" cy="50" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="-35" cy="35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="-50" cy="0" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+            <circle cx="-35" cy="-35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+          </g>
+        </g>
+
+        <!-- Inner geometric pattern (rotating fast) -->
+        <g transform="translate(100,100)">
+          <g class="rotate-fast">
+            <polygon points="0,-30 15,-15 0,0 -15,-15" fill="url(#mandalaGradient)" opacity="0.9"/>
+            <polygon points="30,0 15,15 0,0 15,-15" fill="url(#mandalaGradient)" opacity="0.9"/>
+            <polygon points="0,30 -15,15 0,0 15,15" fill="url(#mandalaGradient)" opacity="0.9"/>
+            <polygon points="-30,0 -15,-15 0,0 -15,15" fill="url(#mandalaGradient)" opacity="0.9"/>
+          </g>
+        </g>
+
+        <!-- Center circle with glow -->
+        <circle cx="100" cy="100" r="15" fill="url(#mandalaGradient)" filter="url(#mandalaGlow)" opacity="0.9"/>
+        <circle cx="100" cy="100" r="8" fill="#ffffff" opacity="0.8"/>
+      </svg>
+    </div>
+
+    <!-- Brand name and subtitle -->
+  <h1 class="brand-name" style="text-align:center;">Blue Moon</h1>
+    <h1 class="brand-name" style="text-align:center;">Meditation & Healing</h1>
+
+  <p class="brand-subtitle"></p>
+
+    <!-- Tagline -->
+    <p class="tagline">find your inner peace under the celestial light</p>
+  </div>
+</section>
+<!-- END Blue Moon Mandala Section -->
+
+ 
     <!-- ========================= -->
     <!-- 🐉 ABOUT SECTION -->
     <!-- ========================= -->
@@ -239,17 +437,3 @@ Below is your fully updated version. It uses **root variables** for global color
   </main>
 </body>
 </html>
-```
-
----
-
-### 🧭 Explanation Summary
-
-* `:root` → holds your **design tokens**. Change `--a` or `--font-songti` once, and all sections update instantly.
-* `section {}` → applies consistent padding, shadow, and text alignment sitewide.
-* Local inline `style` attributes → use variables (`var(--a)`) for color & font reference.
-* Comments explain **what each section, property, and layout block does** — so Copilot or another dev can understand structure instantly.
-
----
-
-Would you like me to extend this same documented structure to include your **Discover, Movements, and Contact sections** next?
