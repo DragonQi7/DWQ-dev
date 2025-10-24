@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Elemental Transformation</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: radial-gradient(circle at center, #0a0a2e 0%, #000000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .cosmic-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .elemental-light {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: elementalOrbit 12s ease-in-out forwards;
+        }
+
+        .fire { 
+            background: radial-gradient(circle, #ff4444, #cc0000);
+            box-shadow: 0 0 20px #ff4444, 0 0 40px #ff2222;
+            animation-delay: 0s;
+        }
+        
+        .earth { 
+            background: radial-gradient(circle, #ffdd44, #cc9900);
+            box-shadow: 0 0 20px #ffdd44, 0 0 40px #ffcc22;
+            animation-delay: 0.5s;
+        }
+        
+        .water { 
+            background: radial-gradient(circle, #0626c6, #0000cc);
+            box-shadow: 0 0 20px #052d72, 0 0 40px #2222ff;
+            animation-delay: 1s;
+        }
+        
+        .nature { 
+            background: radial-gradient(circle, #44ff44, #00cc00);
+            box-shadow: 0 0 20px #44ff44, 0 0 40px #22ff22;
+            animation-delay: 1.5s;
+        }
+        
+        .spirit { 
+            background: radial-gradient(circle, #ffffff, #cccccc);
+            box-shadow: 0 0 20px #ffffff, 0 0 40px #eeeeee;
+            animation-delay: 2s;
+        }
+
+        .empty-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            opacity: 0;
+            animation: emptyCircleSequence 12s ease-in-out forwards;
+            animation-delay: 7s;
+        }
+
+        .moon {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #87ceeb;
+            opacity: 0;
+            animation: moonSequence 12s ease-in-out forwards;
+            animation-delay: 0s;
+            box-shadow: 
+                0 0 40px rgba(135, 206, 235, 0.8),
+                0 0 80px rgba(135, 206, 235, 0.6),
+                0 0 120px rgba(135, 206, 235, 0.4),
+                0 0 160px rgba(135, 206, 235, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .moon:hover {
+            transform: scale(1.1);
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite alternate;
+        }
+
+        .star:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 30%; left: 80%; animation-delay: 1s; }
+        .star:nth-child(3) { top: 60%; left: 10%; animation-delay: 2s; }
+        .star:nth-child(4) { top: 80%; left: 85%; animation-delay: 0.5s; }
+        .star:nth-child(5) { top: 10%; left: 60%; animation-delay: 1.5s; }
+
+        @keyframes elementalOrbit {
+            0% { 
+                opacity: 1; 
+                transform: rotate(0deg) translateX(120px) rotate(0deg) scale(1); 
+            }
+            15% { 
+                opacity: 1; 
+                transform: rotate(360deg) translateX(120px) rotate(-360deg) scale(1); 
+            }
+            30% {
+                opacity: 1;
+                transform: rotate(720deg) translateX(80px) rotate(-720deg) scale(1.2);
+            }
+            50% {
+                opacity: 1;
+                transform: rotate(1080deg) translateX(40px) rotate(-1080deg) scale(1.5);
+            }
+            70% {
+                opacity: 1;
+                transform: rotate(1440deg) translateX(0px) rotate(-1440deg) scale(2);
+            }
+            85% {
+                opacity: 0.8;
+                transform: rotate(1800deg) translateX(0px) rotate(-1800deg) scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: rotate(2160deg) translateX(0px) rotate(-2160deg) scale(0);
+            }
+        }
+
+        @keyframes emptyCircleSequence {
+            0% { opacity: 0; transform: scale(0); }
+            60% { opacity: 0; transform: scale(0); }
+            70% { opacity: 0.5; transform: scale(0.8); }
+            80% { opacity: 1; transform: scale(1); }
+            90% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+
+        @keyframes moonSequence {
+            0% { opacity: 0; transform: scale(0) rotate(0deg); }
+            70% { opacity: 0; transform: scale(0) rotate(0deg); }
+            80% { opacity: 0.8; transform: scale(0.8) rotate(180deg); }
+            90% { opacity: 1; transform: scale(1) rotate(360deg); }
+            100% { opacity: 1; transform: scale(1) rotate(360deg); }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body>
+    <main class="cosmic-container">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        
+        <div class="elemental-light fire"></div>
+        <div class="elemental-light earth"></div>
+        <div class="elemental-light water"></div>
+        <div class="elemental-light nature"></div>
+        <div class="elemental-light spirit"></div>
+        
+        <div class="empty-circle"></div>
+        <div class="moon" onclick="restartAnimation()"></div>
+    </main>
+
+    <script>
+        function restartAnimation() {
+            // Get all animated elements
+            const elementalLights = document.querySelectorAll('.elemental-light');
+            const emptyCircle = document.querySelector('.empty-circle');
+            const moon = document.querySelector('.moon');
+            
+            // Remove animations by cloning and replacing elements
+            elementalLights.forEach(light => {
+                const newLight = light.cloneNode(true);
+                light.parentNode.replaceChild(newLight, light);
+            });
+            
+            const newEmptyCircle = emptyCircle.cloneNode(true);
+            emptyCircle.parentNode.replaceChild(newEmptyCircle, emptyCircle);
+            
+            const newMoon = moon.cloneNode(true);
+            newMoon.onclick = restartAnimation;
+            moon.parentNode.replaceChild(newMoon, moon);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9935d9a006094382',t:'MTc2MTI3MDkwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
