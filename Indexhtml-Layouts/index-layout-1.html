@@ -124,11 +124,11 @@
 </head>
 <body>
 
-  <div style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:32px;">
-  <img src="../images/dragons_way_logo_tagline_red.png" alt="Dragon's Way Logo" style="max-width:600px;width:100%;height:auto;">
+  <div class="logo-bg">
+    <img src="../images/dragons_way_logo_tagline_red.png" alt="Dragon's Way Logo" style="max-width:600px;width:100%;height:auto;">
   </div>
   <section class="hero">
-    <h1>Dragon’s Way Qigong® – <span>The Secret to Perfect Flow</span></h1>
+  <h1>Dragon’s Way Qigong®<br><span>The Secret to Perfect Flow</span></h1>
     <p><strong>Dragon’s Way Qigong®</strong> helps you restore balance in your body, allowing your energy to flow freely.
          Experience the ancient practice of Wu Ming Qigong, eat intuitively, and learn to read your body’s signals to maintain health and harmony.
           Enjoy lifelong benefits from a practice that connects you to the natural flow of Qi.
@@ -163,6 +163,7 @@
   </section>
 
     <section class="content-section">
+        
     <h2>The Hidden Truth<br>About Energy and Timing Alignment</h2>
     <p>It’s not about how much effort you give — it’s about whether your body, mind, and spirit move with the rhythm of Heaven and Earth.</p>
     <p>Even a small movement, when done at the right time, can awaken powerful transformation in your health, relationships, and destiny.</p>
@@ -176,16 +177,16 @@
     <div class="qi-particle"></div>
     <div class="qi-particle"></div>
     <div class="qi-particle"></div>
-    <h2>Inside, You’ll Learn How To</h2>
-
-    <p><span class="arrow">↪</span> Despite your <span class="highlight">effort and intention</span>, life feels like it keeps flowing against you.</p>
-    <p><span class="arrow">↪</span> The <span class="highlight">wrong energies and people</span> keep appearing, no matter how mindful you are.</p>
-    <p><span class="arrow">↪</span> You feel <span class="highlight">disconnected from flow</span>, even when you practice calm and awareness.</p>
-    <p><span class="arrow">↪</span> You notice repeating <span class="highlight">emotional loops and patterns</span>, as if your spirit is stuck on replay.</p>
-    <p><span class="arrow">↪</span> You second-guess your intuition, <span class="highlight">afraid of taking the wrong step</span>.</p>
-    <p><span class="arrow">↪</span> You’ve <span class="highlight">lost the quiet joy</span> of feeling alive, moving through the days on autopilot.</p>
-    <p><span class="arrow">↪</span> The Universe feels <span class="highlight">silent and distant</span>—no signs, no guidance, no flow.</p>
-
+    <div class="center-learn">
+      <h2>Inside, You’ll Learn How To</h2>
+      <p><span class="arrow">↪</span> Despite your <span class="highlight">effort and intention</span>, life feels like it keeps flowing against you.</p>
+      <p><span class="arrow">↪</span> The <span class="highlight">wrong energies and people</span> keep appearing, no matter how mindful you are.</p>
+      <p><span class="arrow">↪</span> You feel <span class="highlight">disconnected from flow</span>, even when you practice calm and awareness.</p>
+      <p><span class="arrow">↪</span> You notice repeating <span class="highlight">emotional loops and patterns</span>, as if your spirit is stuck on replay.</p>
+      <p><span class="arrow">↪</span> You second-guess your intuition, <span class="highlight">afraid of taking the wrong step</span>.</p>
+      <p><span class="arrow">↪</span> You’ve <span class="highlight">lost the quiet joy</span> of feeling alive, moving through the days on autopilot.</p>
+      <p><span class="arrow">↪</span> The Universe feels <span class="highlight">silent and distant</span>—no signs, no guidance, no flow.</p>
+    </div>
     <div class="emphasis-box">
       <p>
         <strong>What if it’s not your fault, but you’ve simply fallen</strong><br />
@@ -205,6 +206,31 @@
   <title>The Dragon’s Way Qigong — Restore Your Flow</title>
 
   <style>
+      .logo-bg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        background: #fff;
+        padding: 32px 0;
+      }
+      .center-learn {
+        text-align: left;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 700px;
+      }
+      .center-learn h2 {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .center-learn p {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
     /* =============================
        GLOBAL SETTINGS
     ============================== */
@@ -228,7 +254,7 @@
       padding: 80px 20px 60px;
       text-align: left;
       color: #fff;
-      max-width: 900px;
+      max-width: none;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
@@ -300,7 +326,7 @@
       color: #111;
       padding: 80px 20px;
       text-align: center;
-      max-width: 900px;
+      max-width: none;
       margin: 0 auto;
       border-top: 4px solid #e0f2ff;
     }
@@ -381,13 +407,13 @@
 </section>
 
 
-```html
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Iverson Lee — The Heaven Code™</title>
+  <title> The Heaven Code™</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -480,13 +506,19 @@
     <div class="bio-wrap">
       <div class="portrait">
         <!-- Replace with actual portrait -->
-        <img src="portrait-placeholder.jpg" alt="Iverson Lee Portrait">
+  <img src="../images/me.jpg" alt="Tom Lee Portrait">
       </div>
       <div class="bio-text">
-        <h2>Who is Iverson Lee?</h2>
-        <p>Iverson Lee is a self‑made millionaire, entrepreneur, elite speaker, consultant, and trainer at Joey Yap Research International. He is recognized as a leading authority in Chinese Metaphysics, specializing in Feng Shui, BaZi (Astrology), Qi Men Dun Jia, I Ching, Face Reading, and Date Selection.</p>
-        <p>Through his work, Iverson has helped CEOs, entrepreneurs, professionals, and executives achieve success by aligning with metaphysical principles. His teachings emphasize clarity, timing, and synchronicity to unlock personal and professional breakthroughs.</p>
-        <p>He has shared his expertise with organizations such as KPMG, Sime Darby, Genting, HSBC Bank, Symantec, and many more, earning recognition for his ability to deliver transformation in a short time.</p>
+        <h2>Who is Tom Lee?</h2>
+        
+    <hr style="margin:32px 0;">
+    <h2>About Tom</h2>
+    <p>Tom is a certified Dragon’s Way Qigong® Instructor with over 15 years of study under Grandmaster Lu. A dedicated instructor teaches programs such as the Dragon's Way Qigong, Five Element Consciousness Framework Four Gates, 3 E’s, Tom brings deep wisdom, authenticity, and compassion to every session.</p>
+    <p>His journey into Qigong began as a personal exploration of energy, balance, and inner transformation. Over time, the practice became a powerful path of renewal — helping him cultivate resilience, clarity, and a profound sense of harmony between body, mind, and spirit.</p>
+    <p>Beyond the healing arts, Tom bridges worlds — drawing from a background in finance and technology to connect ancient wisdom with modern understanding. This integration of science, spirit, logic, and love defines Tom’s approach: grounded, heart-centered, and deeply human.</p>
+    <p>Often described as a modern mystic with a healer’s precision, Tom views imbalance not as a problem to fix but as a message to understand — a call to deeper awareness and authentic living. His teaching invites students to listen deeply, move with intention, and awaken the body’s natural intelligence.</p>
+    <p>Tom is also passionate about building a supportive community centered around Qi, where individuals can grow together through shared practice and connection. He is devoted to carrying forward the timeless wisdom of the masters, ensuring that both present and future generations can benefit from these ancient teachings in a way that uplifts modern life.</p>
+    <p>Through Dragon’s Way Qigong®, Tom cultivates a vibrant, evolving space of balance, authenticity, and transformation. Each class is an invitation to rediscover vitality, awaken sensitivity, and experience the quiet miracle of being fully alive.</p>
       </div>
     </div>
   </section>
@@ -499,7 +531,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dragon’s Way Qigong® — Early Enrollment Gifts</title>
+  <title>Dragon’s Way Qigong® — Early Enrollment </title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -724,10 +756,10 @@
     <section class="grid">
       <!-- Gift #1 -->
       <article class="card">
-        <span class="ribbon">Gift #1</span>
+        <span class="ribbon">FREE</span>
         <div class="headline">
-          <span class="tag">Energy Reawakening</span>
-          <h3>Exclusive Dragon’s Way Practice Session</h3>
+          <span class="tag">INtroduction to <br>Dragon's Way Qigong® </span>
+          <h3>2 Hour Online Zoom Session</h3>
         </div>
         <p class="lead">Experience energy flow like never before.</p>
         <p>Join a private guided session with certified instructors to reawaken your body’s natural healing energy and feel the Qi moving through every cell.</p>
@@ -737,10 +769,10 @@
 
       <!-- Gift #2 -->
       <article class="card">
-        <span class="ribbon">Gift #2</span>
+        <span class="ribbon">EXCLUSIVE</span>
         <div class="headline">
-          <span class="tag">Five Element Harmony</span>
-          <h3>Healing Food & Lifestyle Guide</h3>
+          <span class="tag">Dragon's Way Qigong® <br> 6 Week Program</span>
+          <h3>Online Zoom Session</h3>
         </div>
         <p class="lead">Bring ancient wisdom into your daily rhythm.</p>
         <p>Learn how to align your diet and lifestyle with the Five Elements to support emotional balance, organ harmony, and lasting energy flow.</p>
