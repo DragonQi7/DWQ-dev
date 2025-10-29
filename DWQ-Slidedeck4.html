@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon’s Way Qigong Workbook — Three Realms</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.4s ease;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 16px 0 8px 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .nav-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    margin: 0 2px;
+  }
+  .nav-btn.active {
+    background: #f39c12;
+    color: #fff;
+  }
+  .nav-btn:hover {
+    background: #f39c12;
+    color: #fff;
+  }
+  .slide {
+    max-width: 900px;
+    text-align: left;
+    padding: 48px 32px 32px 32px;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    display: none;
+  }
+  .slide.active {
+    display: block;
+    animation: fadeIn 0.8s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  h1, h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 800;
+  }
+  h1 { font-size: 2.1rem; margin-bottom: 1rem; text-transform: uppercase; }
+  h2 { font-size: 1.5rem; margin-top: 2rem; }
+  .highlight { color: #f39c12; }
+  ul { list-style: none; padding: 0; font-size: 1.2rem; line-height: 1.7; }
+  li { margin: 0.5rem 0; }
+  footer { position: fixed; bottom: 10px; font-size: 0.8rem; color: #999; }
+</style>
+</head>
+<body>
+  <div style="margin: 32px 0; text-align: center;">
+    <a href="index3.html" style="display: inline-block; padding: 12px 24px; background: #0073e6; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">&#8592; Back to Main</a>
+  </div>
+
+<!-- Top navigation -->
+<div style="display:flex;flex-direction:column;align-items:center;margin:18px 0 40px 0;">
+  <div id="pagination" style="font-size:1.1rem;margin-bottom:8px;color:#555;"></div>
+  <div class="nav-arrows" style="display:flex;justify-content:center;gap:2rem;">
+    <button id="prev" class="nav-btn" style="min-width:100px;">← Prev</button>
+    <button id="next" class="nav-btn" style="min-width:100px;">Next →</button>
+  </div>
+</div>
+
+<div id="slides">
+  <!-- Slide 1: Title -->
+  <div class="slide active">
+    <h1>🐉 The Three Realms of Health</h1>
+    <p>True well-being flows through three interconnected realms. <br><b>Dragon’s Way Qigong®</b> helps you align with all three.</p>
+  </div>
+
+  <!-- Slide 2: Heaven Realm -->
+  <div class="slide">
+    <h1>🌌 Heaven Realm</h1>
+    <h2>Timing & Seasons</h2>
+    <p><b>Principle:</b> Align with the natural rhythms of time and the seasons.</p>
+    <p>The right timing is essential for health, growth, and vitality. Acting in harmony with cycles allows Qi to flow smoothly.</p>
+    <h2>Dragon’s Way Qigong® Practice:</h2>
+    <ul>
+      <li>Movements and meditations harmonizing your body with seasonal energies and personal cycles</li>
+    </ul>
+    <h2>Focus:</h2>
+    <ul>
+      <li>Be aware of seasonal changes</li>
+      <li>Notice personal cycles</li>
+      <li>Recognize the right moments to act</li>
+    </ul>
+  </div>
+
+  <!-- Slide 3: Earth Realm -->
+  <div class="slide">
+    <h1>🌍 Earth Realm</h1>
+    <h2>Environment & Nature</h2>
+    <p><b>Principle:</b> Your surroundings carry energy that supports or hinders you.</p>
+    <p>Being in the right environment—close to nature, in spaces that nurture you—amplifies health and well-being.</p>
+    <h2>Dragon’s Way Qigong® Practice:</h2>
+    <ul>
+      <li>Exercises to sense, absorb, and harmonize with the energy of your environment</li>
+    </ul>
+    <h2>Focus:</h2>
+    <ul>
+      <li>Create or seek balanced environments</li>
+      <li>Choose spaces that energize you</li>
+      <li>Live in harmony with nature</li>
+    </ul>
+  </div>
+
+  <!-- Slide 4: Man Realm -->
+  <div class="slide">
+    <h1>👥 Man Realm</h1>
+    <h2>Relationships & Action</h2>
+    <p><b>Principle:</b> Prosperity and health arise from your actions and relationships.</p>
+    <p>Supportive communities, positive connections, and conscious effort bring opportunities and well-being.</p>
+    <h2>Dragon’s Way Qigong® Practice:</h2>
+    <ul>
+      <li>Strengthen personal energy and clarity</li>
+      <li>Enable wise decisions, effective actions, and harmonious interactions</li>
+    </ul>
+    <h2>Focus:</h2>
+    <ul>
+      <li>Cultivate positive relationships</li>
+      <li>Act wisely</li>
+      <li>Align your efforts with your goals</li>
+    </ul>
+  </div>
+
+  <!-- Slide 5: Summary -->
+  <div class="slide">
+    <h1>✨ In Essence</h1>
+    <ul>
+      <li><b>Heaven:</b> Right timing for health and opportunity</li>
+      <li><b>Earth:</b> Harmonious, natural environment</li>
+      <li><b>Man:</b> Conscious action and supportive relationships</li>
+    </ul>
+    <p><b>Dragon’s Way Principle:</b> By practicing Qigong, you align <b>body, mind, and environment</b> to harmonize Heaven, Earth, and Man — unlocking true health and balance.</p>
+  </div>
+</div>
+
+<footer>Dragon’s Way Qigong Workbook — Three Realms of Health</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+  const pagination = document.getElementById('pagination');
+  function updatePagination() { pagination.textContent = `Slide ${index + 1} of ${slides.length}`; }
+  function showSlide(i) {
+    slides[index].classList.remove('active');
+    index = i;
+    slides[index].classList.add('active');
+    updatePagination();
+  }
+  document.getElementById('next').onclick = () => showSlide((index + 1) % slides.length);
+  document.getElementById('prev').onclick = () => showSlide((index - 1 + slides.length) % slides.length);
+  window.addEventListener('keydown', e => { if (e.key === 'ArrowRight') document.getElementById('next').click(); if (e.key === 'ArrowLeft') document.getElementById('prev').click(); });
+  showSlide(0);
+</script>
+</body>
+</html>
