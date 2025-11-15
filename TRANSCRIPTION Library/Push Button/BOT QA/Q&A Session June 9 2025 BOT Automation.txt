@@ -1,0 +1,617 @@
+All right, so this is a Q&A session. Every Monday we're going to have Q&A sessions, and on Thursdays we have back test breakdown sessions. So I encourage all of you to make sure you take advantage of these sessions.
+
+These are your live opportunities to ask coaches for help, assistance, and get unstuck, that kind of thing. Again, this is a really key moment for everybody, you know, whether you succeed or not. If you don't ask for help, then, you know, when you run into trouble, it could just get worse and worse and worse.
+
+So I encourage you to use these opportunities to take advantage of them, all right? That being said, Matt and I are flipping week to week. So this is my week. Next week he'll take over again, and then the week after.
+
+So you get both of us throughout the month, which is kind of cool. You get different perspectives, and we do things a little bit differently, each of us. But hey, we're here to help, okay? So let's, this session is being recorded, and it'll be uploaded in the recording session.
+
+Now a couple announcements. We made some changes to the community for June 1st. Now we did put out some announcements, notifying everybody that we're going to do that, and there is a welcome video that I recommend that you all watch, because it kind of outlines, you know, where you can get around in the community.
+
+And what we've done is, if I just pull up the community, let me go into here. If I share that, the entire bot trading community is now in here. So everything that you need is inside the bot trading community.
+
+You'll find it on the left-hand side under community discussions. Bot trading community, the little orange circle. You click on that, and in here, what you've got, you've got your chat, you've got your live sessions along the top, and then your course and recordings.
+
+Now inside the course and recordings, you're going to find all the education. It's all laid out there. Some of the modules will be locked if you haven't done them.
+
+All you need to do is click into them and watch them. If you haven't watched them before, and then just scroll down to the very bottom and hit marked complete, it'll unlock the next lesson for you. In here, you'll also have all of your bot downloads, so you don't have to go anywhere else.
+
+You can get it. Everything that you need is right here in this one community now. You don't have to go to anything else that's in this left-hand side.
+
+In your bot downloads, if you click on the bot downloads, you'll see all the different bots with the videos that correspond with them. So if you click into any one of these, you'll see the latest download is right there along with the video. You'll find that all inside of the bot downloads.
+
+The trade copier, account dashboard, any of the additional stuff we provide for you will all be found in there. Same thing. You'll find the video right in here along with the links to access it.
+
+You've got all your live sessions below this line here. So if it's a Q&A session, it'll be inside of here. The bot or the backtest breakdowns, they'll be in this area as well.
+
+The other thing is we have a support center or a help center. Now this is limited at the moment. We are building it out, but this is where you're going to access any kind of help.
+
+This is kind of the place you want to go to first and see if you can find a solution to your answer. And when you're inside of that, if we just click inside this little link right here, it's going to take you to the help center. Now what you're going to do is you can pick a category.
+
+So if you want to find something on NinjaTrader, just click on NinjaTrader. And then these are all the different articles that we have. And if you want to narrow it down, you can just click into this little search button right here and type in, say, backtests, if I spelt right.
+
+And there you go. There's one article that has a backtest keyword in there. So you can take a look and just to narrow things down, or you can just scroll through and see if you can find it.
+
+If you can't find a solution to your question, then please click this button right here. It says submit your questions here. Submit the question to us.
+
+We'll do our very best to answer that as soon as possible. And it'll get added to this databank. So we will be submitting over the course of the time to make it better and better for everybody.
+
+So we just want to try and accumulate everything in one spot. If you want to report any technical issues, you do that by going to the reporting issues section right here. And this is the link that has the form to submit all of your technical issues.
+
+So it gets done through here. Any feature requests, there's a form inside of this as well for there. So please take a look.
+
+Get familiar with this. This is the place that you're going to go to for help and support, find your answers quicker than sometimes waiting for us to respond back. And where we can, we'll have a video and a document that goes hand in hand with it.
+
+All right. Any questions? Awesome. Okay.
+
+So now let's open this up for Q&A. So is there any questions that somebody has regarding the bot automation that you'd like me to cover right now? I have a question on the strategy analyzer. My strategy, it started doing doubles.
+
+So the profit was double, my stop loss was double, everything started out being double. Is there something that I did wrong on how I set it up or is it something that I need to reinstall and take it off? So what do you mean it started doing doubles? Like when you run the back test or when you load it? Back test. Back testing.
+
+Let's say I'm doing a back test on the orb. My risk was 500. All of a sudden, all my trades were a thousand, you know, or it just, it was just weird.
+
+Everything was just double. Yeah, I would encourage you to uninstall and reinstall and see if you still have that same issue. Was that after the recent update? Actually, it was.
+
+Okay. So I know, no, no, no, I didn't do the update and then do the update. So one, I would make sure that you've updated to the latest version of NinjaTrader.
+
+I would uninstall and reinstall the bot and see if you still have that issue. Okay. Yeah.
+
+And if you still have that issue, please take screenshots, report it in that area that I just mentioned. So go to the knowledge base, that help center that's inside of the bot trading community under the recordings and courses. Go into there, submit the issue to us with screenshots. 
+
+There'll be prompts through the form that'll ask you for as much detail as we can. But yeah, submit that because I've never even seen that. Okay. 
+
+All right. Yep. And if we can duplicate it, we'll be able to solve it. 
+
+So yeah. Okay. Okay. 
+
+All right. Thanks. Thanks, Pete. 
+
+All right. Anybody else have any questions that they need some clarification on or how to that kind of thing? So you guys are all profitable. You're all doing great. 
+
+Yep. Paul? No, I have a question. So Chris and I were just playing around with some of the backtesting. 
+
+Anyway, we didn't have the data series. No, no, that's not right. We had minutes instead of ticks. 
+
+Where was that, Kristen? And historical fill. Yep. Right. 
+
+Historical. Where can I find it? Oh, yeah. So we had standard instead of high, but numbers didn't come out that different. 
+
+So what is the difference? Why is it so important? Is it because we're creating futures? No, it's because of the data points. So let me share a whiteboard and I'll demonstrate what it is. Can everyone see this whiteboard right here? Yes. 
+
+Okay. So inside of a candle, you have your, let's just say open, let's just make this open, close, low and high. Okay. 
+
+Those are the points that you have. So if you use a standard and it's based off of like the fastest route, it's just using these data points. So here's the, here's the, let's assume this is a bullish candle. 
+
+There's the open, there's the close, there's the low, there's the high. Those are the data points. Now let's say that the candle before this is your opening range as an example. 
+
+Okay. So this is the opening range. This candle closes and as it closes, the bot sends out an order. 
+
+There's an order to go long above here and there's an order to go short above here. So now let's say that the very next candle looks like this and it basically went through the low. It also went through the high of that range. 
+
+You guys can all see that? Everybody give me a thumbs up if that's your, you're following me so far. Yeah. Okay. 
+
+The problem is, is that when we're in standard, we don't know whether it hit the low or it hit the high first. Okay. So in this particular event, we don't know whether you it would be long or whether it'd be short. 
+
+And so now if we take a look at tick data, the tick data is going to go, here's the open, but then what did it do? It went down this way. Then it maybe went up this way. Then it went down this way. 
+
+Then it went up like this. Then it went down. Then it went up. 
+
+Then it went up. Then it went up like this. Then it went like this. 
+
+Then it went like this. Then it went like this. Then it went like this. 
+
+Then it went like this. And then here it went all the way up to here and then it went back to the end of here and it closed. So now with tech data, we know, did it go low before it went high or did it go high before it went low? We can see that it crossed the low first, putting you into a short position and then hit the stop. 
+
+Do you see the difference? Where this candle doesn't give you that information, it could have easily gone long then short or short then long. And in some cases, if you have, here's the opening range and the candle does one of these, it just wicks this side and then it breaks out to the high side. So if we take this as an example, let's say we open here and let's say that we did this. 
+
+We went up, then we went down, then we went back up again like this. So in this particular case, this up move put us in long, the down move doesn't hit the stop because maybe your stop's like right here. Doesn't hit the stop and then heads off and hits your target. 
+
+You can see that. But in this particular event, if you're using standard, maybe it wicked you in short, registers the short and then hits your stop. So in reality, with the tick data, you got in with a long, but in the standard, it registers as a short. 
+
+That can be a huge difference in the results. Now, if you don't have a lot of candles that do this inside of a back test, then you're not going to see a lot of difference between the standard and the tick. The tick is going to come in when it's a close call.
+
+So think of the tick data as the second base umpire or the foul line umps that are going to act as a check for the main umpire. Was that a safe or was it not? They're giving a different perspective of it, which happened first. Does everyone understand that? Yeah, I think so. 
+
+Yes. Paul, you're a little hesitant, so do you need to... It's kind of the chicken and the egg, which came first. Did it hit the low before it hit the high or did it hit the high before it hit the low? And if you have a candle with four data points, you don't know which one came first.
+
+Okay. Yeah, I haven't been looking at the charts for my trades. So maybe if I look at the chart, I'll understand it better. 
+
+So the chart is going to show me the ticks if that's what I've chosen, right? No, it won't show you the ticks. Just the data that is used to calculate it has that tick data. So the data itself knows how this candle was created, okay? Because here's the reality.
+
+This candle right here, again, price starts here, it opens, it closes here, and it reaches a high and a low. In reality, price, because this is over time, so if you do let's say one minute time frame, if you opened here, there's a multitude of ways that you can get this candle to form. You can open, you could go straight down, then you could go straight up, then you can go back straight down, you could do that, that would form this exact candle.
+
+You could go open, you could go straight up, straight down, and then straight down, and then back up again, that would form this candle all in the same time frame. There's a million different ways that you could configure how this goes. So having these points, you don't know enough information. 
+
+The only way that you'll know that information is to know the exact tick data that built this candle. And that means that every tick, which is every price change, where was it at the time during the candle? So it's going to say at, like if we're looking at one minute time frame, so here's the start, there's 60 seconds later, every time the price changed inside of that time frame, it's going to say, where was it? So let's say that this is 5,000, this is 4,990 on the low, and let's say that this is 5,100 at the close, and 5,110 on the high, right? So at every price change, it's going to say, okay, well, it started at 5,000, then it went to 4,999, then it went to 5,000, then it went to 5,001, then it went to 5,000, then it went to 4,999, then to 9,8, then to 9,7, 9,6, 5,4,3,2,1,0, that's the low, then it went back up to 2,3,4, so it registers every price change in which order that it happened, okay? So maybe that explains it a little bit better. So will that, so does that decide when it's going to take the trade? So it might take the trade using the tick, where it might not use the trade if we're using the candle? That's correct, because if you have a candle, like I said, that is engulfing, so it covers both the opening range high and the opening range low. 
+
+So this candle has touched both entries, right? Mm-hmm. Which one did it hit first? Without tick data, you don't know. Right, so we want to give the bot as much information as possible.
+
+Exactly. Okay. Okay, now if you have a scenario like this, there's the opening range, and this is the candle, that next candle, it's obvious it went through the high, there's no question. 
+
+So the difference between standard and tick is going to be exactly the same, because there's no tick data needed to determine whether or not this went through the high. It's clearly the only data point that did, right? This is where it becomes unclear. Okay, that helped. 
+
+Okay, that's the importance of tick data. It's that granular, it's the smallest time frame view that you can see. It's the most granular, most detailed, and yes, it's the information. 
+
+Okay, great question. Yeah, you bet. Does anybody else have any other questions? Gracie, I am shopping for another VPS provider, because the trader VPS is a little bit more expensive, and I just, like, logged in to see when my billing is due, and apparently they bill every four weeks. 
+
+Okay. And I guess my billing is coming up in a couple days. Do you have any good suggestions? I don't know if I want to go back to Forex VPS, because they were, they kept trying to sell me on, like, the private server, and I don't want to pay that much. 
+
+Yeah, you don't need to, you just need a custom, you need the custom, so when you go to Forex, yeah, just go down to custom. So if I go to, and I, and I tried that, but they tried to sell me, like, private server. Yeah. 
+
+When I registered that. No. And another thing, because originally I signed up on the annual billing. 
+
+Yeah. And when I canceled, they didn't want to refund me the portion that I did not use. I had to go and charge them back through my credit card.
+
+So I don't know if I want to go back to them. Okay, well, that's, that's your, your call. This when you go in, and you, you go to sign up, so. 
+
+Yeah, I saw that the place where you can request customize your own VPS, you just click on customize, you don't need to talk to them. What you just need to customize, you're going to do is pick the cores that you want. So I want, first of all, you want more memory, I eight gigs isn't enough. 
+
+So I'd probably try 10. The cores, I went to six. And then the storage, I don't care about the storage, and then no daily backups. 
+
+And then you just, there's the total. But that's the, that's the monthly total. That's in Canadian dollars. 
+
+You decide if you're going to buy for the year. So if I change it to yearly, I save a little bit. And then of course, you could have picked clicked on that, that coupon code. 
+
+But that's, um, yeah, you just customize it, and you don't need to change it. And I would change this as well, too. So I would change it to Los Angeles for me, because that's on my side. 
+
+So it's just quicker. That's all. And I don't have any issues. 
+
+I haven't had any issues with them. The eight gig, I'm running into a little bit of memory. But it's, I think the 10 gig would be perfect. 
+
+That's, that's my opinion. So you don't need to call them, you don't need to talk to them, you can just hit that custom, build your own. And then, like I said, maybe sign up with a different email, so they know it's the same person. 
+
+For the different email, that would be fine. Because the new the new account protection works really good. Yeah, I noticed like today, I did not have any issues.
+
+So did you have it was the first day actually run it? Did you have anything show up in the log? So I don't know what happened today. I just tried to log in and then like he wouldn't sign me in. So I had to go to trader BPS website and see that apparently was shut down somehow. 
+
+So I have to reboot it. And I don't know where I can tell right now. If it wipes out all the messages.
+
+You know, I don't know what happened today. Okay. So because it'll have a log, it'll tell you whether or not you've had any disconnects, it'll show you the number of reconnects that it made.
+
+All that. So keep testing it. But it works great. 
+
+I've been using it for how long and my son uses it. He's had no issues with it. Okay, no, I'm super excited about it. 
+
+And I think it worked today except whatever happened with with the BPS provider. I don't think I accidentally shut it down. I don't even know how to shut it down.
+
+So I think something maybe happened on their end. So that's another issue when you're using BPS, make sure that you are because one of the things that it will do is auto update. And if it auto updates, it's going to restart your computer.
+
+I don't want it to do that when I trade. So well, I restarted on the weekend. Yeah, but not it's not just restarting. 
+
+It's making sure that you go into the to the settings and make sure that you check for updates. And if there are any updates in there, make sure that you install them and then restart. Because otherwise, it forces a restart. 
+
+So I do that once a week just to make sure that I'm giving myself the most opportunity where that thing's not going to interrupt at the worst possible time. Yeah, no. Okay. 
+
+All right. Okay, cool. Awesome.
+
+Anybody else with any other questions? Oh, since you talked about the account protection, mine's working. And I've got a log of when it, you know, tried to kick out. And I reconnected. 
+
+The one thing it did do, and I don't know if it's something that I need to do different, but the strategies, the bots. Yes. Got shut off.
+
+So did you follow the instructions? Did you read the user manual? I did. I did. I might not have followed it. 
+
+But did you go into the tools settings and set that that to keep running the strategies to keep running? Did you? Oh, yes. Yes. So the strategy, if I'm in a trade, it stayed running, kept running.
+
+Okay. But if, let's say I have a six o'clock strategy, that one got shut off. It stopped. 
+
+Okay. So that's good to know. I'm gonna have to come up with another solution for that. 
+
+Because I don't know how that's going to fix what that's going to do to fix. Yeah, because, I mean, okay. Do you have, do you have, because there's an, no, that's closing open orders. 
+
+Let's see here. Under strategies, do you have cancel entry orders or anything like that? Do you have that? And off. So yeah, you go to tools, settings, and then strategies. 
+
+And under ninja script, it says cancel entry order when strategy. Do you have either of those checkboxed? Cancel, no. Okay. 
+
+All right. So let me just find out what we can do about keeping the strategy itself running. So that's another issue that we need to resolve.
+
+Okay. Okay. And just one more quick question. 
+
+The bar, the bar timer, it works during like, you know, 830 to 330. Like right now, it's not on. How do I fix that? Or is that something I can't fix? No, you can fix it. 
+
+Can you share your screen? Perfect. Okay. So if you right click on the chart, and then go to indicators, uh, data series. 
+
+Okay. Close that out. Cancel. 
+
+And then right click on the chart and go to data series. Okay. No, it's actually an indicator. 
+
+It's called bar chart at bar time. Bar time. Yeah, I know. 
+
+I just wanted to see what his user settings are for the time training hours. Okay. So you're set to user set. 
+
+So that should be 24 hours. Okay. Hit, hit cancel. 
+
+Okay. And we're going to go back into indicators. I just want to make sure that your chart was set up for 24 hour. 
+
+Okay. And then the bar timer, let's, uh, same as input series. And it's using, yeah, it should be, uh, it should be on because you've got everything set up correctly.
+
+You can see it right now. It says currently just go ahead. Are you, are you connected to data right now? Yes. 
+
+Um, okay. Remove it. Remove this indicator for a second. 
+
+Hit remove. Yep. Hit apply and then go and add it again. 
+
+Uh, no, come back up at the top. It's like, yeah, right there. Double click and then hit up, hit apply. 
+
+Shouldn't have to change anything. There you go. So just got stuck. 
+
+Sometimes that happens. So just uninstall and reinstall it. Okay. 
+
+Okay. All right. The other time, sometimes it'll happen if you don't have 24 hours set on your data series. 
+
+So if you have it set to regular trading hours instead, that's only going to work during the time that it's supposed to be on. Uh, and then it won't show it for anything else. So, okay, cool. 
+
+You can stop your share. How do I stop share? It should be down at the bottom. Oh, there you go. 
+
+Cool. All right. Anybody else have any questions? You bet. 
+
+Tracy, if I change, uh, if you're bringing a stop loss into the money when the bot is running, will it still be okay for, um, like after that, that trade is done, will it still trigger a new trade? Right. Even though I kind of messed with the setting of the first trade. It will if, if the bot is done the trade that it should be. 
+
+So if it, if it registers and think it should, it should still be in a trade. So let's say that you move your stop and it hits the stop. You're exiting the trade before the bot would execute the trade.
+
+So what would happen is a strategy would sit yellow because it's still playing out the strategy. Once it's done playing out the strategy with either the stop or the target getting hit, then it'll initiate a new trade. Okay. 
+
+Okay. Yep. If it's not yellow, then it's fine. 
+
+If it stays green, then yes, it will initiate a trade. Where do you, where is it yellow or green? So right down in the actual, um, so right here, cause I kind of, um, mess with it. So right here, this is, this is white. 
+
+It's not enabled. It turns green. And if it's enabled and it's, it's logic is inside of a trade right now, it'll turn yellow. 
+
+Uh, and that means it's working. It's working through a logic because it's supposed to be in a trade right now, but it's not. So it's waiting until the, it plays it out. 
+
+Then it'll turn green. Then it'll be ready to take another trade. I see. 
+
+Okay. Okay. Good to know. 
+
+I never noticed that it turns yellow when it's in the trade. Yep. But it doesn't, while it's in a trade, if you're in the trade, it only turns yellow. 
+
+If it's, if the logic is in a trade, but you're not in the trade, so it won't, it won't initiate anything in the middle of what it's, if it's supposed to be in a trade. So if there's an active historical trade on and you're not in it, it'll turn yellow to tell you, Hey, I'm in an active trade right now, like an active historical trade. I need to wait until that plays out before I can initiate a new trade. 
+
+Okay. It's, it's in a true condition without being, without being active. Yeah. 
+
+Okay. So, and that'll happen if you turn your bot on late. Yeah. 
+
+It may turn yellow. You got to wait until it plays it out. Then it'll turn green and then yeah. 
+
+Ready to go. Okay. So if I, like I, it happened to me, like sometimes my computer would take a long time to turn on. 
+
+And I would turn it on about the time that bot supposed to start trading. That's probably when we will probably skip that first trade. Right. 
+
+If it may, if, if you turn it on and the trade is on, but hasn't been triggered yet, it'll immediately fill it'll immediately place the order. Okay. If it was recently triggered, if it should be triggered, then yeah, it'll turn yellow and it'll just wait it out.
+
+Hmm. Okay. Okay. 
+
+Okay. Yep. Thank you. 
+
+Any other questions? And there's no trailing stop right on the mega orb. Uh, yes, there is on the mega orb and the mega snap. There is a trailing stop. 
+
+It is the ATR trailing stop. So that's what the ATR does. Okay. 
+
+Okay. Okay. Do you know how that works? Yeah. 
+
+I remember now. Okay. Totally forgot.
+
+Okay. Because I was like, I was sitting and looking at that trade and I was like, I don't want to, I don't want it to roll back. So I just like brought in my stop loss because it wasn't triggering it. 
+
+Okay. I may have to like rerun different couple settings and see if it can trail a little bit closer. Yeah. 
+
+If you want it to trail closer, you need to reduce the multiplier. So use a two instead of a three multiplier. That'll get it. 
+
+Okay. Yep. Okay. 
+
+Okay. Yeah. Mine is up three right now. 
+
+I'm going to try it too. You can try it too. So, okay. 
+
+Jason, I think you were going to ask a question. Yeah. Is it fair to ask the group? Like, do they find that they make more money on gold versus oil versus the NASDAQ versus the Dow or whatever? You can ask the group. 
+
+I don't know if there'll be an answer to that, but you can ask the group. I know for myself that it varies. There's months and seasons and weeks where I'll make more money on gold than I make on NASDAQ.
+
+There's others where I make more money on NASDAQ than I make on MES. There's more that I'll make on oil. So it's just the nature of trading. 
+
+Sometimes the strategy works really well with one and not another. And that's my experience. Does anyone else want to offer their opinion? I know I'm trading M&Q. 
+
+That's all. There you go. What's that? You trade what? Only M&Q right now. 
+
+Okay. I'll do M&Q and gold. And I think I find that gold, well, first of all, gold is quicker through the strategy analyzer and stuff to get information back. 
+
+But it does, it seems like it's been more profitable for me overall. I find MYM has been most profitable for me. That's been my experience. 
+
+But like I said, it depends on the strategy. It depends on the time. And sometimes they'll work, sometimes they won't. 
+
+I was going to say it was MYM and gold have been my two best. There you go. Jason, what was that? No, I haven't done anything with MYM. 
+
+So I'll have to check on that. Yeah, I like MYM. So yep. 
+
+Okay. Any other questions? Are there any other plans for like NR7 to do anything with like a trailing staff in there as well? There may be down the road, but right now we're making sure that we're working on the protection side of stuff and getting all that working for everybody. There is in that knowledge base, that help center, there is a feature request section though. 
+
+And I highly recommend that if you have a feature like that, I recommend that you fill out that form and it gets thrown on our list of things. Not everything that gets requested will get executed, but at least we have some ideas and the more people request certain things, the more likely it is to get added on to any particular strategy. So that's one for sure that I would recommend that you submit the request. 
+
+Okay. Okay. You know where to find that? No. 
+
+So go to the bot trading community. I'll review that again. Go to the bot trading community and let me just screen share this. 
+
+So on the left-hand side, bot trading community, click on that and then go to course recordings, scroll down and you'll see support help center, click on that. And here's the link access help center. It'll take you right here. 
+
+And right there, you can see future feature requests. So you can click on that. And there is a form that you can fill out and to your, the feature name enter the description of the feature, what bot and then who you are and then hit submit. 
+
+And like I said, that will come to us. It gets put into a queue, a list of the features that people have requested and we will look at them and consider them. And when we are looking to upgrade or roll out certain features that may get passed. 
+
+Okay. Any other questions? Okay. Well, before we get going, there's one thing that I did want to talk about because I get asked this a lot. 
+
+And that is how do we know when to roll over when to go contract to contract? So I'm going to show you a couple different things that you can do inside of the agency or sorry, inside of the Ninja trader to find that out. So I'm going to share. Let's see here.
+
+I'm going to share my window. Just move this out of the way. All right. 
+
+So here's my window. You just move this guy out of here. And what we're going to do is the first thing that I want to, let's move that out of the way. 
+
+Okay. First thing I want to do is show you if you go to tools and you go to instruments, what you're going to do is you can see a list of instruments in here, but let's say that you want to know what the contract expiration is for MES type in MES. And you're going to find the future right here. 
+
+MES futures micro e-mini and double click on that. And when you double click on it, it's going to open up this window right here. And right here, there's a URL is going to take you directly to the CME website. 
+
+And it's going to pull up MES. This is what we want. And it's going to be on the current contract. 
+
+Next, what you're going to do is you're going to go to quotes. So you click on quotes right here. And right in here, you're going to see the June contract. 
+
+That's the most recent contract. And then here's the next contract, the next one. So this is a list of all the upcoming contracts you can see. 
+
+Now, what you're going to do is you are going to take a look at these two contracts right here. And you're going to look at the volume. Which one do you think is currently being traded more? June. 
+
+Okay. Now, around tomorrow, the next day or the next day, it's going to be this week. You're going to see a switch where it's going to go from this down to here. 
+
+The volume is going to switch because that's when we're going to be switching is sometime in the next couple of days. Okay. So this is one way that you can find it. 
+
+If you check this, which I check this every day, because I want to know what my prior settlement was, this number right here. So I check this every day. And if the volume, if the volume on this contract is starting to deteriorate, and this one's getting higher than this one, then I know it's time for me to switch to the other contract. 
+
+That's one way. Okay. Now, while you're on this site, if you wanted to check a different instrument, you simply scroll to the very top, you can click on view on equity index product. 
+
+And actually, you can click on that. And then here you can find, okay, well, the e mini dot, here's the micro NASDAQ. So that's the MNQ. 
+
+If you want the M2K, that's the Russell. So there's the micro Russell. If you wanted the e mini or the micro SMP, there you go. 
+
+If you want the micro MYM, it's right in, where is it right? Should be, that's real estate, sorry. So I'm not sure where the MYM is. Right here, micro e mini Dow, right there. 
+
+Okay. And then if you want a different, a different category, all together, you would just go to markets, and then pick browse by metals. If you wanted metals, you could go into metals, and then find the appropriate asset class. 
+
+Where are we here? Gold futures. Okay. So you could find that. 
+
+Let's get, where are we going here? I don't normally, they've changed this a little bit. Analyze here. Anyway, go, go from that website, that's the easier thing to do. 
+
+So it takes you right to the site. All right. So that's, that's what I normally would do. 
+
+And I actually have it typed right in here. So CME, and then right there. So we'll take that back, get me back to the NASDAQ. 
+
+And like I said, there's the quotes. So you're going to check out the volume, you can see the volume right there. Okay. 
+
+So that's option number one. Now option number two, is if you go to positions, and right click inside of this window, you can go to properties. And in the properties, you're going to see a days until rollover category, you can check on that. 
+
+And it's going to bring this column right here. Now the downfall of this is the only time you're going to see anything in here is if you're actually in a position. So if you're in a position, and you see that there's gonna be a number there, that's gonna tell you how many days that that particular ticker has before rollover.
+
+So there's another option that we can use. And that is if we go into new, and we go to market analyzer. So this is the market analyzer, this is kind of the way you can build a watch list.
+
+So the first thing that we'll do is we right click, add an instrument, let's add the MES. So now I'm getting updates about the MES, I see the ask price, the bid price and the last price. Well, I want to know how many days to expiration. 
+
+So I'm going to right click again. And I'm going to go to columns. And in the columns, I'm going to look for days to expiration or days until rollover right here. 
+
+So I'm going to add that to the chart right here. And I'm going to hit OK. So now I've got a days until rollover. 
+
+And you can see that a number just came in here, it's six. So I have six days until rollover. So I can add the rest of my list. 
+
+So let's go MGC. Let's go MYM. Let's go micro. 
+
+Let's go MNQ. Let's add another instrument. Let's go to micros and add M2K. 
+
+And we'll add MCL. So let's go micro MCL right here. There we go. 
+
+So now I know that pretty much everything except for gold, gold is 48 days until rollover, but everything else is rolling over in six days. Okay, so that's the quickest way you can have this, this configured and have it up running all the time. And when it's time to roll over, one of two things is going to happen. 
+
+If you haven't turned it off, then when you start NinjaTrader up, it will automatically come up with a window saying that it's you have it you have instruments that need to roll over. Make sure that you say yes, okay, do that. Let NinjaTrader do it automatically, it will roll over all of your contracts, it'll update all of the stuff that you have to the most recent contract. 
+
+Now in the event that you don't do that, and you see your market analyzer saying I need to roll over, and you're still using the old contracts, what you can do is you go into tools, you go to database management. And right here, you're going to see a list of all the instruments that that need to be rolled over, you select them, make sure that they're all selected. And then you click rollover, that will automatically roll over to the next contract if you haven't done it already. 
+
+Okay, so watch what happens if I open up a chart right now. So I'm going to select, I'll select MES, but I'm going to put it as the March contract. So I'm going to highlight this.
+
+This is what you can do to change. So I'm just going to put the March contract on, I'm going to remove this one. And I'm going to click OK. 
+
+So now we're going to load up the old contract, there's going to be probably no data in here because it's not being traded. But now what's going to happen when I go to tools, database management, you can see that I've got MES March needs to be rolled over. So I'm going to click rollover, this message is going to come up, I'm going to hit Yes. 
+
+And boom, it updated that from MES March to MES June, just like that. So it's updated the contract, it's made it exactly where it needs to be. And now I am up to date, everything in my charts, everything in my window is up to date. 
+
+Okay. So people ask me that a lot. And that is how you handle that. 
+
+Okay. You can also find a lot of this information in our help center, because I put that together in the help center as well. All right. 
+
+Okay. That's it for today, unless there's other questions. So does anyone else have any other questions? How do you save that market analyzer? Okay, let's, yeah, let's... Trying to get out of it, but it wants me to save it, I don't see where to save it at. 
+
+What do you mean? You're trying to what, out of it? I was just trying to close out of it. But it's saying you if you close out, without saving, you're going to lose everything. Yeah, so I would leave it up. 
+
+But if you let's just go like this, if you go market analyzer, what you can do, so let me add these instruments again, MES, MCL, M2K, MNQ, MYM, MGC, where's MGC, micros, MGC. Okay, and then I'm going to go to again, columns, and I'm going to add the days until rollover, I'm going to add that and click OK, I now have it on the market analyzer. Now, if I right click, and I go to templates, I can actually save it as a default if I wanted to. 
+
+And that means anytime I open the market analyzer, it'll open up with all of the settings that I have in here, I can save as. So if I save it as, I can then create, let's just say days to rollover. Okay, and then hit Save. 
+
+So now what happens if I open up the market analyzer, it's a blank screen, I can right click templates, load days to rollover, load, and it's going to load the schematic, I still have to add my instruments. Okay, but it loaded all of the settings that I had in here. So I'm going to add all of these instruments back and don't have to, I'm going to queue M2K, MES, and MYM. 
+
+I already got that one. Am I missing MCL? There we go. Okay, now, notice that I installed, first of all, March, see, it's showing that I've 85 days passed.
+
+Okay, so that's a queue. If you're one day past, it's going to show up as a negative number if you haven't rolled over. So this is a really good thing to have. 
+
+Now, the second thing that you can do is just keep this open, and just go to your workspaces, and then go and hit Save. And now it's going to open up anytime you open your workspace. So those are the two ways that you save it is through a template. 
+
+And like I said, you can save it as default, but that's just going to save the configuration of how you've got it all set up. Okay, does that answer your question? Yes, it does. Okay, perfect. 
+
+Excellent. When you save it like that, does that keep the instruments in there too, or do you have to? No, you have to add the instruments. If you save it through the workspace, and you don't close the window, then it'll stay in there.
+
+All the tickers that you add, the instruments will stay there. If you close the window though, all the instruments go with it. Yep. 
+
+And there's a whole video on the market analyzer that I did on how to customize it as well. It's inside of the Ninja Trader Masterclass. So you guys are welcome to watch that as well and get some other, because you can build alerts, you can build all sorts of different things inside of that market analyzer. 
+
+It's a very powerful tool, very cool tool. I missed that. Oh, I didn't miss it. 
+
+But I cannot recall how, because I have a negative 13 and negative 26 on gold. Yep. So that's oil. 
+
+Go to tools. Tools. Go to data management or yeah, database management. 
+
+Database, okay. And then right there, click rollover. But that's got, oh, okay, I see what it's got. 
+
+Okay, cool. Okay. Sweet. 
+
+That's sweet. Gracias, señorita. My pleasure. 
+
+All right. Is there any way to make an account protection and account dashboard to open when the Ninja Trader is? We're working on it. Okay. 
+
+That'd be really cool. We're working on it. We're just having problems with the code to get it to stay open. 
+
+Yeah. Okay. Yep. 
+
+So no, it's definitely being worked on. It's just not happening as fast as we'd like it. Believe me, it's a frustration for me too, because every time I restart Ninja Trader, which I do when I manually trade, anytime I have a loss, I restart Ninja Trader. 
+
+Well, guess what happens? I forget to turn my copier back on. The very next trade and I trade in the SIM account all the time and copy to my real accounts. So I'm off a loss. 
+
+I reset it, come up, I hit that trade, trade wins like, oh no, I forgot to turn on my copier. Dang. So, well, it is what it is. 
+
+So yeah, it's frustrating. So is it with the trade copier right now, is it safe to use it or is it still kind of some, okay. Yep. 
+
+No, it's working great. And all the protection that's built into it is working great as well. So, yep. 
+
+What we have not been able to do is have it stay open and saved with the workspace. It has to be restarted with every instance of Ninja Trader being opened. But you can save the templates so that it's easier to reload. 
+
+That's about the only thing. How do we find out more about this protection thing? I'm not, I'm unfamiliar. It's not, the protection add-on is not public yet. 
+
+We're still beta testing it. I expect we'll have it out public in the week. But what you can do is right now, because I've already published a video and an article on it. 
+
+So you can go to right here, screens right here. So in, again, in the bot trading community, go to the course and recording section, scroll down until you see support help center, click on it, go to the help center. And inside of here, if you go to bot and technology add-ons, you're going to see how to use the account protection add-on for Ninja Trader.
+
+So this account protection, there is a video where I do the walkthrough of it. And then here's all the screenshots on how it works and steps for you to go through to get it set up because there's a few different things that you need to do to get it working and set up. So I walk through with screenshots on everything that you need to do to get set up. 
+
+Okay. Now, just note that the, none of the protection is going to work if you lose your internet. We can't, we can't protect against loss of internet. 
+
+That's, there's nothing that we can do. If you lose a connection for your internet, there's, we can't send emails. We can't, obviously don't have an internet. 
+
+There's nothing that we can do that can, that can help with that. So that's the only scenario that we can't, we can't protect against. Cool. 
+
+I have one request. Just make sure you go a little faster next time. Just kidding. 
+
+You know, you know, I love you. You mean in this, in this video, go a little faster or do you mean just what you just did? I was like, I'm going to, I'm going to follow her. And I was following you and I freaking lost you and it's all good.
+
+I'm like, gosh, she needs just a little faster. I'm sorry. Go, go slower in, in talking. 
+
+Don't be sorry. I'm just giving you a hard time because there you go. Yeah. 
+
+It's recorded. Play it in quarter time. Yeah, no, this, uh, so basically what you do go into, I repeated myself like five times for this today, but that's probably why I'm going faster.
+
+Bot trading community, left-hand side. This is the only community that you need to be going into at all right now. We've got everything that you need right in here. 
+
+Go to course slash recordings. You've got your course material up here. Then you've got your bot links right here. 
+
+You've got the trade copier account, dashboard, all the protection stuff all right here. And then you've got your support center. And then all these live sessions are below here. 
+
+So support help center, click on it. There is a link to access it very clearly marked. Click this to access help center, click on it. 
+
+It's going to take you here. The technology stuff, you're going to look for bots and technology add-ons, find it here, or you can find it right here, click on it. And then in here, you're going to see an article, how to use the account protection add-on. 
+
+When you click on that, you can open that up and it's going to have a video walkthrough along with all of the screenshots and a user manual basically that is written to explain how all of this works and what you need to do to set it up. Thanks Jason. I found it. 
+
+Bots and technology add-ons. Got it. Got it. 
+
+Until my next question, but I'm good. Thank you. To your next question. 
+
+Jason, did you send this message for a reason? Yeah. So this is the VPS that I have. Okay. 
+
+It says 16 cores. I have 16 cores, 8 gig, and I'm paying 70 bucks a month through chart VPS. There you go. 
+
+And I think it's 70 bucks a month for the 4x1 too. Is it month to month 70 or is it like you have to pay annually? Month to month 70. Oh, that's nice. 
+
+That's a good deal. Yeah. Because like with the trading VPS, I was just looking to do like an annual, that's $70, which you have to pay annually or it's $99 every month. 
+
+So I'm like, I can't keep paying $99 every month. Yeah. I've had really good luck with these guys. 
+
+So I think, yeah, I've had a different service before and it just, it was slow, but these guys, like you could just ask them a question and be like, why is NinjaTrader doing this? They're like, oh, you know, they'll either help tell you what it is or they'll say, we'll sign on and we'll fix it for you. And they just, and they actually did help me with my personal laptop, fixing NinjaTrader, uninstalling it. You know, they installed like Revo uninstaller or something like that. 
+
+And then they did it for me. I'm like, geez, I'm like, this was like over and above, you know, but it saved me because I couldn't figure out what the heck to do. And you're doing Alpha Series, right? On their website, that's like the red. 
+
+I think it's the Alpha, yeah. I can, let me just see, I just got the invoice. Cause I think I need to like switch today, tomorrow, because before I get billed again, so I'm like, crap, you need to figure it out. 
+
+Or maybe reach out to them and ask them for a discount code again for next month. Oh yeah. I think they'll be able to help you with that stuff too. 
+
+Well, I mean like with my current provider, I'm like, I don't want to pay 99 bucks again, but they bill every four weeks, not even every month. Imagine that. So like you never can keep track of when you're going to be billed. 
+
+I didn't even realize, I thought I had like another week, but no. Plus they get an extra two payments. Yeah, that's, I'm like, this is so lame.
+
+Oh, thanks so much. Yeah, that's a good deal. That's a really good deal.
+
+Okay. Maybe I'll try them and that might be better. Awesome. 
+
+Now reinstalling everything again. You know, they'll install it for you if you want, you know, they'll install Ninja for you. They'll do whatever you want. 
+
+Do you know how to save some of that stuff so that you don't lose it? I know like I uploaded templates before through Google Drive, but if you can show me like what, maybe there's a better way to do it. Yeah. So what you're going to do is you're going to open up your Manila folder. 
+
+Oops. You're going to go to documents, your documents folder. So that one is right here. 
+
+My documents folder. You're going to go to NinjaTrader 8. And the best thing for you to do is before you take this, you can copy the whole folder. But what I would do is you open this up. 
+
+You're going to want to keep your workspaces, your config, your UI, your templates. If you go into templates and save strategy, that's one that you're going to want to save. If you have any indicators or anything else, you can save the those as well or drawing tools, the templates.
+
+That's these are all the templates. So if you want to save your template folder, you can just save the entire folder for and put it somewhere. So put it on Google, put it on somewhere that you can have it.
+
+But those are the things that you're going to want to keep. And when you install the new version of NinjaTrader, you're just going to take these folders and just replace them into the new version of NinjaTrader in the exact same spot that you find it. So you'll replace your config file, your user interface. 
+
+What that'll do, this config, that'll remember your access to it. It'll also remember the skin that you're using. So if it was dark mode or light mode, it'll remember all of that. 
+
+And then, of course, your workspaces. So if you click in here, these are all the different workspaces that you'd have saved. So you don't have to rebuild your workspace. 
+
+You can just just take the file and put it back into the workspace file in the new upload of NinjaTrader. Oh, that would save me so much time. Oh my goodness. 
+
+It is. But the bots, I still need to download, right? Yes, you'd still need to install the bots. But once you install the bots, then you can go into the folder that you kept with templates and you can go to strategy and you can, in each of these, these are all the strategies that you've had that you've saved. 
+
+You can just highlight them and drag them and put them into the appropriate folder for each of the bots that you just installed. But I know like I've done it once and I think you need to run and save at least one strategy with the new bot on the new setup in order for this folder to appear because this folder doesn't appear until you save one. So just create the folder. 
+
+Okay. So just in your templates, go to strategy, copy this entire folder and paste into the, you just got to put, you got to make sure you put it in the same place. In the right spot. 
+
+Okay. Okay. So that's the way you do it. 
+
+It saves so much time when you can do that versus having to rebuild the whole thing. Believe me, I've done it how many times, so. Okay. 
+
+All right. Well, I'm going to try another one. Good luck. 
+
+But it says like, so I'm looking at it on their website. It says there are two cores, but we want more, right? Where two cores is okay. No, no. 
+
+Jason, is that what you have? Jason has 16 cores. Oh, do you want to grab that screenshot that he put in the chat? That's what he's. Okay. 
+
+So when I open it, it looks like it opens as a screenshot. Okay. I can just send them this and say, can you build me this? Because on their website, it just has two cores for $70 a month.
+
+Yeah. Yeah. Ask them. 
+
+Yeah. A friend of mine has this particular stuff here. Can you, you know, give me the same for the same amount? Yeah. 
+
+Yeah. Yeah. Cause I want, I don't want two cores. 
+
+I want 16. If I can get it for the same price. Yeah. 
+
+Cool. Looks like there's also create a custom farm too. So are you looking at the alpha series? Uh-huh. 
+
+Yeah. Yeah. It just says two cores.
+
+What exactly? I think it did like recently it did speed itself up, you know, because I do, I do do some strategy analyzer stuff in there and it seemed like in the past week or so it got much faster. So I don't know if they upgraded all their stuff. So just keep in mind that if you don't use the, the strategy analyzer in your VPS, the cores aren't going to matter. 
+
+So Paul, you asked, what are the cores? Think of a core as a second brain or, um, the number of brains. So the more brain power you have, the more, and the more individual brains you have, the faster you can multitask. That's what it comes down to. 
+
+So, um, cores really come into play when you are doing back testing and optimization. It's going to speed the optimization up significantly. So my, my desktop, I have 32 cores and I can do a, I can do a typical test in a fraction of a second compared to some individuals.
+
+So my son has, um, he's got, I think, uh, 16 or 24 cores. I'm not sure which, but I can get a back test on the same test in probably half the time that he can. And that's all because of the cores. 
+
+Wait, how many cores do you have, Tracy? I have 32. Oh, and he has, okay. But on my VPS, I only have six. 
+
+16. I want to be able to run strategy analyzer on my VPS so it's all in one place. Yeah. 
+
+So it would be nice to have as many cores as you can get. Yeah. Okay. 
+
+Okay. Okay. Awesome. 
+
+Thank you. All right, guys, you guys have a great night. I'll, uh, I'll see you guys on Thursday. 
+
+And just remember, um, as bot traders, you guys are also invited to the trading psychology classes. I highly encourage you that you take them because even as full automated traders, you are susceptible to mind issues or, uh, psychology problems when it comes to your bot trading. So if you want to improve every aspect of your trading, including your bot automation, I encourage you to participate in the trading psychology classes. 
+
+All right. So those are held every Wednesday at 6.30 p.m. Eastern. And, uh, yeah, I hope to see you guys there. 
+
+Otherwise, I will see you guys Thursday. Thank you. All right. 
+
+Thank you.

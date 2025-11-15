@@ -1,0 +1,579 @@
+I don't share the screen. What's going on here. Oh, here it is.
+
+Zoom. Yeah. Can you see my screen.
+
+It says screen share started. Okay. So, this is the VPS.
+
+Can you show me the settings on the year. Do you know if the set at the time zones are the same day, they are now. Okay.
+
+On the right side move the settings, move the screen up a bit. Right so move it up. Like the scroll bar here.
+
+So the mega or Thursday and Friday. Okay. Hopefully something I obviously overload I've looked at it many times.
+
+Okay, yeah, scroll down on both sides, it looks so far it looks the same, but definitely different number of trades. So far, it looks the same. Yeah, scroll down some more.
+
+High one minute. High one minute. Yeah, it looks the same. 
+
+So on the right side you have 36 trades on the left side how many trades you have 49. And are you connected to the same exact account or different account, same account. So the same like apex account. 
+
+Yeah. Like a trade of eight or something. Yeah. 
+
+But the only thing I remember I give you the machine ID for the VPS, I don't know if you registered I don't know if that matters. Well, it wouldn't work if it's not registered. So, so you registered three, three registered.
+
+You have three technically we only allow two but you have three. Thank you. Really appreciate it.
+
+Yeah. So, like, the inputs are the same but the outputs are different. Yeah, I've never seen this before because I have it on my desktop and laptop and it matches exactly on the desktop.
+
+You're on my laptop now. This VPS is like wildly different I'm like what's going on here. I mean it's just, for some reason, the one on the left has more trades than the one on the right I don't know why but it definitely has more grades.
+
+Right. So, I mean, the, I guess I don't have this problem because I don't really run back tests on my on the VPS. So can I trust that the reason I don't do that is because my, my VPS is so bare bones.
+
+It only has like two gigs of memory, it would take forever to run a back test. I use that VPS is the same as I think the same exact build as yours. Right.
+
+Well, I'm just saying I don't run back test on the VPS because it's so slow. So, that being said, is the back test inaccurate on the VPS? It's not that it, I mean I've never run a back test on VPS because it would be so slow. Like, like logically, you know, if the inputs are the same you would assume the outputs would be the same but in this case something's different.
+
+I don't know why it would be different. Why would it have a different number of of trades, I don't, I don't really know why I would have a different number of trades. I asked chat GPT I mean just for hypothetical.
+
+Kicks and giggles. Yeah. Yeah. 
+
+And it's saying that because of the processing speeds. It might compute it differently might take a different results. I guess that's possible. 
+
+Yeah. But then which one is accurate then. What is your, your, your desktop.
+
+It matches the laptop. The VPS. I mean, your desktop computer, like what's the memory for your laptop.
+
+Hang on. I would assume whatever has more computing power would be more accurate would be my guess. Yeah, this the laptop is 3.3 gigs and 22 processors.
+
+Yeah, so you got 16 gigs. So right here it shows 16 gigs. And over here is probably two gigs. 
+
+Yeah. Yeah. So should I just not run back test.
+
+Well, that's my, that's, that's my. That's what I do I don't run I don't worry about it because, because you kind of like create a problem is like these two things don't match and now there's a problem well I don't ever run the back test, because I don't have to worry about the magic because I never run back test over there, but I only ran it not because I, I just, it's a sanity check, I would just. You just right it's like a confidence thing right you want to make sure they they match right.
+
+I get it. I just, I just don't run back test on, because like we've had, we had one guy he's like he on, I forget what it was like a bit sometime like a VPS like 57 trades and another one had 57 he spent some like six hours trying to find one missing trade and I'm like hey you know what, either way, like it meets your criteria and he spent like six he wanted me to spend six or seven hours trying to help them find. I'm like, look, I'm not gonna spend six or seven hours trying to find one trade difference, either way, they match our criteria.
+
+It's not worth six or seven hours to find one missing trade somewhere. You can, you know, of course, dump, you know export all the trades and spend your own time I'm not gonna spend six or seven hours trying to figure that out for you. Yeah, but either way it was like off by literally it was one trade difference. 
+
+And he wanted me to spend all this time I'm like I have other things to do and either way it still meets your criteria. This meets your criteria and this meets your criteria there's one trade difference I don't remember 56 and 57 or there's one trade difference and he wanted to spend all this time trying to get to the bottom of it like a, you know, like a super perfectionist kind of thing I'm like, my time trying to figure that out but, you know, I hear you, it's really up to you but I guess it makes sense the computing power could could handle it differently, I could see that. So I, I'm curious if you if you did it you would price, most likely see the same thing right I don't think I'm an outlier.
+
+Yeah, I would probably see the same that you have here. Yeah. I'll just, I'll just run with the one I have on my desktop.
+
+Yeah. And can you copy and paste what chat GPT said, throw it in the chat here. Yeah, hang on, let me.
+
+Actually go to my other controller. We don't post in the chat. In the, the zoom chat here. 
+
+Yeah. Just kind of, I don't know whatever, what did you ask, what was your prompt, what did it say. Why would the back test results be different between Ninja Trader running on VPS versus running on a local desktop.
+
+Put it in the zoom. Yeah. Okay.
+
+Fair enough. Looks like I got cut off back test PR is a limit. Remind me Thomas, where do you live in Jersey, New Jersey.
+
+Got it. Were you testing Tennessee. Hoboken is New Jersey right it is yeah, and you're working in there.
+
+So, how can you chose the Forex VPS. It was kind of a popular. And it's like, just a popular one that people choose I don't know. 
+
+There's a zillion zillion of them out there. Oops, as you can imagine, right. So, then you're pretty happy with it in terms of.
+
+Some people have connection issues I don't have like some people just have constant issues with connections I don't have those issues but yeah. And then there's no downtime right there's no like. I haven't had any, any issues with that.
+
+And then can you. I mean like me personally I'm not a huge fan of Windows servers in general, I'm not, you know, I'm not a Windows fan boy by any means, you know, my, my preferred platform would be anything but Windows. When I was a software CEO we used to run Red Hat Enterprise Linux and we'd have servers that would have years of uptime. 
+
+This whole thing of restarting, you know, Windows servers every week is like a foreign concept to me. Like, we're trying to send people to Mars and we can't figure out how to make a server run for a week without having a restarted every week is kind of a foreign thing for me I'm like, I don't get this. You know, yeah.
+
+We had servers that had thousands of days of uptime and restarting every week is just, it's weird to me. And then the Mac, it happens to be where it obsolesces itself, where you can't upgrade after certain, if you have a certain hardware version you can't upgrade your Mac OS. And then you can't run the software.
+
+Yeah, there's, there's, you know, advantages and disadvantages to all but I just, I like anything but Windows, for the most part, but unfortunately, certain, certain, you know, software tools only work on Windows, unfortunately, so. Yeah, like NinjaTrader. Yeah.
+
+Like NinjaTrader, yeah. Exactly. So, um, so we're going to talk. 
+
+Have you. I mean, we were going to talk about VPS tonight but it sounds like you're already using VPS, right? Yeah, it's pretty straightforward other than this back test. Yeah.
+
+Yeah. I felt that it's like I can't get keep the uptime on my computer. Well, when you have to restart every week. 
+
+Yeah. It's always there and I can reach it and I don't have to restart it. Yeah, yeah.
+
+So, um, I guess what we could do is we could talk about the volume bot then. Yeah. Let's do that. 
+
+Let's talk about the volume bot. So. Oh, can I ask you a question before I forget quickly.
+
+Sure. Remember that when they paused the 90-day tariffs, right, I was shorting, right. And then all of a sudden the market shot up, I don't know, like 10% or something.
+
+And then I got. Yeah, 10% on index is nuts. I don't think I've ever seen that ever.
+
+I don't think they've ever had that ever happen. Yeah, I don't, I've never seen that either. And then, and then, um, it's, uh, it, uh, what do you call it? My, I had a $17,000, uh, trade, right.
+
+On my account. And then it looked like that trade, it automatically stopped out. And then I lost, I don't know, a few thousand bucks.
+
+Yeah, it was probably like the intraday. Um, yeah, it was like the, in the way that, um, that apex counts, the, the trailing drawdown intraday. Yeah.
+
+So, so then that counts no longer in my. Uh, in my Ninja trade, it would disappear if it hit the drawdown, it would disappear. And then it, once your billing cycle comes, it'll reappear.
+
+Once it charges you again, it'll, you'll get a free reset on your billing cycle. Do you know what your billing cycle is for that? At the end of the month. Like the 20, you know, like what day is it? Like the 29th or something.
+
+The 29th. Okay. So on the 29th, it'll charge you.
+
+And then I'll reappear the next day in your account. Like when you log in, it'll, that new, that account will appear, appear again for you. Okay.
+
+Got it. And then what, I mean, so we're susceptible, right? To this. Cause it's like, let's say we had like four accounts going, right.
+
+Um, and like in a, like, well, so like in a, in a, a big fast move, like, like if you have, um, Like, uh, a move where you're getting into a trade that looks like this, we're entering here and you're not quite to the profit target. And you go down like this, this would, would count as a two R move against you. You know, even though you didn't quite hit your, your profit taker up here, your take profit, right.
+
+It would count as minus two R because the way that apex counts is what is your highest balance, even if it's not closed, not completed, it would count as a two R balance. So, um, if you were, um, you know, it would count as two R against you, even though you technically lost one R from open to close, it would count as two R move against you. So depending on like where your balance was, or if you had, um, uh, you know, if you had like, um, this is why I don't recommend people have like five R targets is like, if you had, um, let's say you had, uh, uh, another, uh, trade that looks something like this and a five R target up here, it was almost up here.
+
+And then something like that and didn't quite hit your target that would have counted as six R against you. Right. And so that's why, you know, I kind of recommend small base hits, not these huge, you know, home runs because if it almost gets there and then reverses, that's a big hit that you're going to take just because of how apex counts it. 
+
+Like the way that they count it is a little bit different. Um, some of the other funded account programs, they just look at your end of day balance from yesterday compared to today. That's how they count it.
+
+Whereas apex counts is your highest running balance throughout the day at any point in the day, right? The way that they calculate is different. Like the form of they use is very, very different. That makes sense.
+
+But how, how would you protect yourself other than small Rs? Because that's the only way you can do it. Oh yeah. So, um, I guess I know that you have EPS, but I guess some of the other folks don't.
+
+So I'll just touch on a VPS briefly, like how this works. So we can get it in recording and then we'll talk about the volume bot. It sound good.
+
+Yep. So the main, uh, the main reason that people use a VPS is, uh, there's really three, three things that, um, people need in order to have a connection. One is kind of power. 
+
+So like you're powered on electricity, right? One is your, um, uh, connection to the internet. And then the other thing is you're logged into your account. So like your apex account. 
+
+Right. And so typically those are done like on your, your laptop, your desktop, right here, whatever you're using. And, um, so typically people run that on your, you know, your local computer, whatever that looks like. 
+
+Right. And that works great up until you have a power outage, a storms coming, you're traveling, uh, maybe you're in a time zone where you don't know when the market, like if you're in Hawaii and you're five hours behind where you normally would be. And you kind of don't wake up at three in the morning, when the market opens or something and you forget to turn something on and you miss, you know, a winning trade or two. 
+
+And so, um, this is where like a VPS comes in and the VPS stands for virtual private server. And it's basically, you set up a computer, like a virtually set up a computer kind of out in the cloud. Right.
+
+And it basically is a, like another instance of a computer, like living out in the cloud. Physically it lives somewhere. Uh, my setup is like in New York city or New York rather.
+
+I don't know if it's in New York city, but it's in New York somewhere. And essentially what I have is I have like a piece of hardware and I'm kind of like renting a little space. Think of it like I'm renting a little apartment in a building.
+
+I'm renting a little piece, a little virtual space and a, and a, um, a computer, right? Like I'm renting like an apartment. I have neighbors. I don't see my neighbors. 
+
+They don't know I'm there. I don't know they're there, but they're kind of using resources, right? And VPS virtual private server is very different than VPN, which people do get confused. They're very similar letters, but they're different.
+
+VPN is typically where you're maybe overseas and you want maybe Netflix or certain benefits and pretend that you're actually in the U S you want maybe Amazon services or certain things. And you're using a VPN that kind of makes the web think that you're in the U S or maybe you're in the U S and you want it to think you're in Germany or somewhere else. That's typically where a VPN, uh, would be used.
+
+But VPS is kind of like your, uh, your kind of remote version of Ninja trader kind of living out in the cloud. Okay. And so in this case, these three things, you're kind of outsourcing it to, uh, to a service. 
+
+In this case, a lot of people use ForexVPS.net. There's only one or two people that I know of who've had issues with this. A lot of people use it. I've, I've heard very, very, very few complaints about ForexVPS. 
+
+I use it myself. And I did notice that they do have for the next day or so, 24 hours, 23 hours and change. They do have this. 
+
+Um, you can get 40% off, uh, kind of deal here. Uh, so you can get that coupon. And so what we're going to do is we're going to hop over into my account.
+
+This is what I'm doing. Uh, I have two gigs of Ram, 60 gig, uh, solid state drive and two cores also known as a one-legged hamster. Very, very slow, not very, uh, very, you know, very minimal bare bones. 
+
+Okay. Now my computer that I'm talking to you guys on has 96 gigs of Ram. Okay. 
+
+That's, that's what I'm talking to you on right now. This has two gigs of Ram. Now, ladies and gentlemen, where do you think I'm going to do the majority of my optimizing all my back testing? Where do you think that's going to occur? That's going to occur right here. 
+
+Okay. I have two, um, two sticks that I added and kind of upgraded on my laptop. Everything's going to happen here. 
+
+Okay. The only thing that I'm going to run here is my live, uh, my live bots. That's it. 
+
+I'm not gonna run any back tests. I'm not going to do anything except run my live and I'm going to run very, very bare bones here. Okay.
+
+Because I don't want to consume too much memory. I don't want to hit my, you know, max CPU resources. I just want to run just bare bones. 
+
+That's it. Okay. And so, uh, I think I spend, I think it's let's look at the billing. 
+
+I think it's 32. Yeah. $32 a month. 
+
+That's it. 32 bucks a month. Now for some of you, you're probably thinking, Oh, uh, you know, 32 bucks a month.
+
+I'll just say 32 bucks a month. But if you miss one trade or one day of trading because you forgot to turn your laptop on or some reason or another, you miss a winning day. And let's say you miss out on a $1,200 day because you were a cheapskate and you tried to save $32 a month and you missed out on $1,200.
+
+Guess what? You're going to feel like a big dummy. Like I was when I first started. I'm like, you know what? I'm just going to spend the darn $32 a month.
+
+I'm just going to spend $30 a month and I'm just going to make the 1,200 and I'm just going to deal with it. Right. That's what most people are doing. 
+
+I'm just going to save the money. But $1,200 a month, uh, $1,200, uh, that I lost was way worth, worth it. If I just paid it, spend the $32 a month. 
+
+So don't be a cheapskate. Now, obviously if you only, um, if you don't travel, if you're always in front of the computer, if you always have a solid connection, you have, you know, high speed internet. If you're always at your computer, you know, maybe you can get away with not using a VPS.
+
+Now what I'm going to show you here is you guys can probably see this, uh, connection right here. Uh, when I mouse over it, you'll see it says remote. Uh, remote desktop connection, right? Remote desktop connection.
+
+And so what I'm going to do is I'm going to click on that real quick and you'll see it pop up here. Remote desktop connection. Let me minimize some windows. 
+
+And this is basically my little tool. This is how I can connect remotely to my Forex VPS. And we'll give it a sec and it'll connect.
+
+So when I set up my Forex VPS account, when I set up an account, put in my credit card, set up that $32 a month account, they'll give me a few pieces of information. They'll give me an IP address. They'll give me a port.
+
+They'll give me a username and they'll give me a password. They'll give me those four pieces of information. I'll take those and I'll set configure that tool, which comes, I believe it comes installed by default on windows 11.
+
+I think you have to download and install it for free on windows 10. I enter those four pieces of information and it lets me remotely access this tool. Okay. 
+
+We're only kind of access the Forex VPS. So here, here you'll see forexvps.net. And the first thing you'll see when you log in is you'll see the Microsoft Edge browser, Forex VPS support, and you'll open that up. And the best thing that you can do with the Forex VPS, the best use of it is to say you type this in, go download Google Chrome. 
+
+So you go download Google Chrome. And so you just go, it's the best use of it. Go down, go download Google Chrome. 
+
+Right. And keep in mind when you download Google Chrome, it'll put the download in your windows Explorer folder. And the windows Explorer folder is of course, keep in mind, this is the folder for the VPS.
+
+This isn't your local folder. This is the VPS folder, right? And then once you've downloaded Chrome, then you can, you know, log in and all your bookmarks that would maybe be, oops, except go away. All your local bookmarks, all these things are popping up.
+
+That's so annoying that you know why. All right. All your bookmarks that, that would load inside of Google Chrome.
+
+You can like load all those here. Once you've installed Google Chrome, you can load all those here. Right.
+
+And so all my bookmarks, all the things that I normally would do, all my shortcuts, all those kind of load. When I log into Google Chrome, the next thing I can do is log into a Ninja trader. And down here I can now download and install Ninja trader.
+
+Again, I'm kind of setting up my desktop all over again on the VPS, right? So again, I'm loading that downloading it, installing it here. Then all I'm doing is I'm logging into our community, just like where you would first install the bots. I'm logging into our space here. 
+
+So I would go find, this is the class I taught last night. So I go to our December class. I'll let this load. 
+
+Let's see. So I would go find our December class right here and I would go and download all the bots. So the bots that we have, the orb, right? The mega orb, all the bots that we've previously downloaded, I would also download, install them.
+
+And those would also go down here into my folder, right? And so the same process that you've gone through of downloading and selling the bots that you've done on your desktop, you would pretty much repeat that same process for the VPS. Now the same thing would apply when you launch your Ninja trader, which would be also make sure that you also send us your machine ID, right? So you're allowed to have two machine IDs. So you would take that machine ID right there and you would send that to us and tell us, this is your VPS. 
+
+It's super important. You tell us which machine ID you have, like what's your desktop, what's your VPS so that when you give us more than one, we know which one to replace. We don't inadvertently break or replace the wrong one, right? Like one's a desktop, one's a VPS. 
+
+So when you give us a new one, we know which one to replace. We don't inadvertently like replace the wrong one and break, you know, break one of the one that's working and replace the wrong one. Right? So again, you can copy and paste that, send that to us and you're allowed to have two machine IDs, right? Thomas.
+
+Yep. And the, you know, the same process happens here. Here where you go in here, you import your Ninja script add-ons that, you know, the same process would happen. 
+
+Now what you can do, this is, this is, you know, personal preference. What some people will do is when they load a strategy, I like to, when it comes to launching the bots, the strategies, I like to only run two different things here. These are the only two windows I like to run the account dashboard and the control center.
+
+And I like to launch everything right here from this toolbar. Okay. So the new strategy, I'll launch it here.
+
+And when it comes to templates, as you guys know when you run a back test at the end of that, you kind of generate a template. The easiest thing to do what I like to do a couple different ways to do it is I'll have my side-by-side monitors and I'll basically just look at my templates and I'll copy them over. Right. 
+
+I'll say, okay, here's my templates on one side, here's one another. And I'll just kind of make the same changes from my VPS to my local desktop. Someone told me last night that they just like to copy and paste from one folder to the other, that that's one way to do that.
+
+But apparently that's a way to do that. Whatever you're comfortable with. There's only about a dozen settings and a lot of times I'm using most of the defaults anyway. 
+
+So whatever, whatever's easier for you. Again, the idea here is that you're going to be downloading most of the same bots that you downloaded previously. You're going to be downloading them directly from the same place.
+
+You got them to begin with, right. You're downloading them from the community onto your desktop for your, your back testing or download them from the exact same place or your VPS. Right. 
+
+So it's pretty, pretty straightforward. Same thing with loading your, your back tests, your, I'm sorry, your templates, you're going to give them kind of the same or similar naming convention. In my case, I like to, I kind of have this like this, this naming convention that I like to use where I just give it a name like the, the, the bot name and then the, the ticker symbol, then Monday through Friday, whatever days, then the, the risk unit, the time it's starting and then the, the profit taker. 
+
+Right. I just, I just have kind of my own naming convention. So whatever I name it on my desktop, I'm going to name it the same thing here.
+
+So when I go live, same thing, just pick, click, boom, done. Right. And then every morning I'm just going to double check, make sure I got a green light here, make sure these are going to be enabled. 
+
+Of course, when I, before the market opens and make sure these are green, this is green. And then if I have multiple tabs, I'm just going to go in and make sure these are all green and I'm, I'm ready to go right every morning. I would double check it. 
+
+Now, obviously tomorrow is going to be good Friday. So the market will be, won't be open. So it's not going to matter too much.
+
+At least the stock market won't be open. So probably not going to do much tomorrow anyways. So I'm probably not going to have anything running tomorrow anyways.
+
+So I won't have anything enabled until Monday, but that's, that's the process, right? I'm going to go turn things on, kind of enable them. I will enable my, my, my bots here and here. And that's, that's the process, right? I'm ready to go, ready to go for, for the next trading session. 
+
+That's, that's kind of the idea, right? And so that's kind of the process of setting up a VPS. Are there any questions? Yeah. How do you, what do you do with your templates that you created on your laptop? How do you get them onto your VPS? Like, do you just have a file? Someone told me they copy and paste them.
+
+What I do is I have two monitors here and I just open one up here on, on my other monitor on this screen. And I opened the other one here and I'm just side by side, just looking at the settings and I'm just like copying them, copying the values side by side, just manually making sure the values are the same. And then I save the template and I name it the same thing on the VPS.
+
+That's how I do it. It's, it's pretty simple to do. I can do it in less than 30 seconds. 
+
+That's how I do it. Someone says they copy and paste it, which I didn't, I don't know. You could do that, but someone says they copy and paste it.
+
+How do you copy and paste? I don't know. They said they can't copy and paste. I guess you can. 
+
+I don't know. I guess you can copy. I think you have to enable some permissions to copy and paste from, I don't know. 
+
+I'm not sure how that works. What about saving the strategy and then exporting it and then saving the strategy in that strategy folder and copying it from the strategy folder into your VPS strategy folder, but that's too much of a headache. Well, the strategy, it's the bot itself is multiple pieces.
+
+So I don't recommend you do that. I would just like import it because you have the zip file that does that. You go to, you know, tools, import an indescript add-on, right? That's what I would do for that.
+
+No, but you can import a template. Yeah. The template is just a single file.
+
+It's like a XML file, but you have to go find, I don't even remember exactly where they're stored. So I guess you'd have to understand where they're stored. I have to dig into where they're stored exactly.
+
+To me, it's just easier to like open up the values, right? To me, it's easier just to open this up and look at this here on one side, open it over here and just copy the values. That's easier for me. I mean, there's how, how long does it take to just copy some of these values and hit save? That seems easier to me, but.
+
+Oh, you got to go find the folder, like navigate to the folder, you know, copy it, then go into the VPS, navigate to the right folder, make sure the permissions are the same, nothing changes, you know? Okay. So I guess whatever's easier for you. Okay.
+
+To me, I just change this. I put two monitors side by side and look at them side by side. That's easier for me.
+
+And then this VPS, if you use more compute power, there's no increased costs, right? I mean, you keep that CPU at a hundred percent all day, 24 hours a day. Is it going to. I'm not sure what you're asking.
+
+Like for, like for this, the trade. The VPS is just a flat monthly fee, right? It's not, you don't pay for usage, compute power. Okay.
+
+Task manager. Yes. Yes.
+
+That's great. So like for this, if we were to look at, let's see. Task manager performance.
+
+You'll see, you'll see sometimes it hits a hundred percent, which I don't do a lot. And that's why I'm only running two windows, but if I was to launch a chart, if I was to launch like two or three charts, you'll see. I almost hit a hundred percent right there.
+
+Right. But if I was to launch like six charts, someone told me that like, Matt, I had six charts running here, but I don't look at them. I'm like, I don't think it matters whether your eyeballs are looking at them.
+
+They're having to be loaded in the background. Right. If you have like six charts loaded, I don't think it matters if your eyes are looking at them, like the computer is having to render them.
+
+And like, if you're constant, if, if you're hitting your a hundred percent memory usage all the time, that's going to cause problems with the, the connection to Apex that could choke the connection. Right. Yeah.
+
+So that's why I'm only running this right here, just these two windows and that's it. Right. And typically I would close my Chrome windows as well.
+
+Okay. All right. So that's it. 
+
+Just run the super basics. And then does your, on the VPS, you know, that little green circle there on the lower left, on that control panel. Say that again.
+
+How do I annotate? Yeah. Sometimes that thing just turns red by itself. Well, that means your connection is, you don't have a connection here.
+
+That's what that is. No, but why would it just turn red? I mean, it means you got disconnected. But then that means I still got to monitor this thing. 
+
+Right. Periodically. Because let's say, so that's, that's part of the problem with like, I think Tradeavate has too many customers and periodically they have, they get disconnected.
+
+They have connection problems from time to time. It's like intermittent. Okay. 
+
+So, so you should actually check it regularly because it's like, let's say you go on a vacation. What we're trying to do is we're trying to build, we're trying to figure out the feasibility of using this and it could like text you if it gets disconnected. Yeah.
+
+That's what we're working on like building. Because let's say, let's say on a good trading day, like you have Monday bots and that thing disconnects and you don't know about it. Right.
+
+Just done. Right. Yeah. 
+
+That'd be a problem. Yep. I have someone fussing at me today about that same thing. 
+
+Yeah. Yeah. Because you don't, you have no idea what it disconnects.
+
+And it's random too. I noticed it just. Yeah. 
+
+It's because, yeah, I think they have more, more customers than they have resources for. Right. And so if you have too many people connecting at the same time, like it disconnects other people and it's, that's why it's intermittent.
+
+Like it's just not like a certain time of day. It's just intermittent problems kind of thing. So.
+
+Yeah. So, but ultimately at the end of the day, the VPS is supposed to, you know, save, save you some. Save you some connection issues.
+
+But I hear very few issues related to the, you know, to that, but sometimes Apex has connection issues. Regardless, but this is like, if you have. Like I was talking to, I was doing a zoom call with several people who in the middle of our zoom call, they themselves got disconnected from our zoom because they were having internet issues.
+
+And that's a great reason to have a VPS to begin with is if you have like choppy internet at your house. Right. Inner, you know, choppy or intermittent issues.
+
+That's a really good reason to have. VPS. So, yep.
+
+So the other thing is you can, I don't know if you have a Mac or a, an iPhone. But there, let me disconnect from this, but on an iPhone, there is a tool called RDP light. Have you ever heard of that? Do you have an iPhone? Yeah, I do.
+
+There's a tool called RDP light. And so I can connect to this real quick. We'll see.
+
+Stop the sharing. You should be able to see this. So you'll see here on my iPhone, I can connect to, there's my VPS right there on my phone.
+
+I can connect and look at it from like a couple of inches at a time. And I'm using the free version and it'll allow me to stay connected. I think it's 60 seconds at a time, which is fine.
+
+And I can also hit the, the flatten all button, that little red button right there. And I can also hit the, I can also hit the flatten all button if I need to. So for example, if I'm close to going over my funded account, like hitting a $50,000 account, if I go over that $3,000 goal, I can hit flatten all and kick, you know, flatten all the trades.
+
+Yeah. I've done that before actually, while sitting in a conference. Waiting for.
+
+For the bots to kick in and do their thing. So I can do that remotely. And the free version will allow you to stay connected for 60 seconds.
+
+I haven't really needed to use the paid version for that. So that's a super helpful. The there's a Mac thing called a windows app.
+
+Remote remote app, I think. So it's called a windows remote app. It's the same thing.
+
+All you need is your IP address, username, password, and the port, and you can configure your Mac. Mac app to come remotely connect to your windows VPS. So you can control, use your Mac to control the windows DPS as well.
+
+So, you know, super, super handy, helpful stuff as well. So, yeah. Okay. 
+
+So let's, let's transition. Let's chat a little bit about volume bot. Volume bot. 
+
+Are you familiar with the volume bot? No. Okay. So what we're going to do is we're going to chat about volume bot.
+
+And let me let this run real quick. And let me explain, see if we can get this to run quick. So we can get this.
+
+So the volume bot has some pretty cool, unique features. And let me see if I can scroll up. It doesn't choke on me.
+
+So the volume bot, the way that this works is there's three unique features that are built in. One of them is it's going to look, there's a look back variable that says, what is the average look back that we're going to look? And it's looking for volume spikes, right? So this right here is a volume spike. You see the spike in volume is another spike in volume, right? So it says, what are we going to use as our average look back period? Let's say we can say 10 candles, 15 candles, whatever we want.
+
+We can say we want to look back an X number of candles as an average. Right? So we can call it the average. We'll call it the average look back.
+
+Okay. That's one of our, we'll call that one of the new variables relative to this specific bot. Okay.
+
+Average look back. We'll call that number, number one. Okay.
+
+Number two is we'll call it the spike multiplier. Which means let's say our average is maybe 500 or I'm sorry, 5,000 right here. Let's say our average is 5,000.
+
+Right. Do we want the spike multiplier to be two X, three X, whatever we want it to be two X or three X. So two X would be 1,000, three X would be 1,500. What do we want it to be? What is the multiplier? What is the, whatever our average is, what do we want it to be? Two X, three X. What do we want that to be? Okay.
+
+Two X and three X. So we can say we want it to be two. We want it to be three. Right.
+
+Okay. And then finally, there's another one, which another variable, which means how many candles after our spike. So this is our spike.
+
+How many candles later, we'll call it delay candles. Do we want it to apply a strategy? Okay. We'll call that the delay candles.
+
+And so that can be one candle, two candles, 10 candles, which basically means when we see a spike, we're going to look back X number of candles and average look back. So we're saying we're going to look back 10 or 15 candles. That's how we're going to determine our average.
+
+We're going to look for a two X, a three X, a four X, whatever the X is for our, our multiplier. We were looking for a two X or a three X or a five X. And then we're going to weigh X number of candles in this case, one, two, three, four, five, six, seven. This has like an eight X. See there's our, our dot right there, our signal candle.
+
+And then we're going to also, we have number four would be, are we going to apply the O R B or are we going to apply. The snapback strategy. So we have some dynamic strategies that we can also apply at the same time.
+
+Okay. Does that make sense? It does. Yeah.
+
+So again, there's like four unique pieces to this. One is what is our average? Like how many candles do we look for an average? So like obviously down here is a smaller average than like right here would be a different average, right? What is our average? Like how many candles are we going to use for our rolling average? What is our spike multiplier? Do we want to look for a two X, a three X, a four X, a 10 X, whatever that looks like. What is our next like candles? Do we want to wait X number of candles after, and then number four B, do we want to look for the orb, the O R B or the snapback? Like what, what strategy do we want to apply? Right.
+
+And you'll see here. The other thing is we can, we also can show the volume. So it's actually showing the volume, the actual volume indicator on the bottom of the chart.
+
+And that's super helpful. Of course, it doesn't actually change the back test itself. It just shows it on the, on the screen.
+
+And you'll see here where it says trade type. That's the, that's what this is talking about. The orb or the snapback.
+
+You're able to apply that dynamically. Right. And you remember the orb is like the continuation, right.
+
+Continuation up or down, right. That's the orb. Whereas the snapback is kind of like the reversal, right.
+
+It's like the U-turn, right. It's the U-turn kind of reversal, right. That's the difference between the two in here.
+
+Hopefully this will finish here in about two minutes. And we'll look at some results. Now, in this case, I had it set to max net profit.
+
+When I ran this yesterday, It took like six minutes and I had it set for. The profit factor. And it gave me all a bunch of results that all had the exact same profit factor.
+
+And it wasn't super helpful. It all had like a profit factor of 2.3 and they all had the same exact result. A whole bunch of 2.3. So we'll see if this can give me some different results here in just a second.
+
+Does this make sense? Yeah. And this is a in-house strategy that I created like a year ago, two years ago, something like this. It was something that I noticed.
+
+Now you remember in the last presidential. We'll call it regime. There's a lot of things that happened on Wednesdays, like Wednesdays are like interest rates or fed adjustments or things always happened on Wednesdays.
+
+And I always noticed there's always like the, the stock market would go a lot. And then there's some huge, weird, crazy volume out of nowhere. Right. 
+
+You remember that? And it always happened on Wednesdays. Right. So I noticed I'm like, just like this right here.
+
+Just be going along and then wham, some huge, crazy. Insane. And I'm like, how do I take advantage of that? So that this was my, my answer to that.
+
+And I wanted some way to always be able to adjust it and test it. And this was my, my answer to that. It was the volume bot is it just looks at the volume because some days they wouldn't have any volume at all and they would do nothing. 
+
+Right. Some days it had insane amounts of volume. Just absolutely insane.
+
+When you think about this, if there's a huge volume spike. It's also a price movement as well. Right.
+
+Correct. So then can, can the other way of looking at it is if there's like a 4% price movement, then. Well, it just looks at the volume first.
+
+That's the trigger that to make it like wake it up, so to speak. Why volume is as opposed to price movement. Like let's say a 4% price movement.
+
+It means a big volume spike. Right. Well, if, if volume moves the price, then they're kind of wanting the same.
+
+Yeah. So then why volume is that a price movement? I'm just curious. Well, it's kind of one of the same, right? Right.
+
+Because like, like the, the bar can look for a 4%, you know, uptick or downtick, and then that would trigger the. That would be followed by each other in a single candle though. No, let's say within some timeframe.
+
+I don't know, like within a one minute interval or something. And then from there you would set up. That would be.
+
+I mean, I guess we could do that. It's slightly different than. Yeah.
+
+Yeah. I was thinking about that. So let's take a look at the chart here.
+
+This is not drawing our lines for us. For some reason, why is it not drawing our lines? Let's see. Open a new tab.
+
+And. Chart. This is weird because it's not drawing my lines.
+
+Oh, there it is. There's the line. Okay.
+
+All right. So let's delete this. All right. 
+
+Let's take a look. Okay. So here is our signal candle right here.
+
+Here's our spike right there. And on the right, we're looking at, I only ran this on a 15 minute chart. So we can, we can do it on more.
+
+But what it's looking at in this case is a Tuesday, Wednesday, Thursday. Looking for a 2.0 profit taker starting at eight 30. And what we're looking for is the three X volume multiplier.
+
+We're looking for a look back of 15 candles. So going back 15 candles for, to get our average. And then once we have our, our volume spike are waiting seven candles.
+
+Right. We're waiting seven candles and then we're applying the orb. Right.
+
+Oops. They were applying the orb. So.
+
+There's the orb and it breaks. Looks like it breaks lower and then boom. There we go. 
+
+2.2. 2.0 profit taker. Does that kind of make sense? It does. Is that is the vault is that candle count.
+
+An average candle volume spike is that iterable. Can you iterate through that? On the back on the optimization test. Is it like one to seven, one to 15.
+
+Oh, yeah. Yeah. Optimization could iterate through that.
+
+Right. Yeah, absolutely. All the, all the optimizations can do that.
+
+In this case, I'm looking at a 15 minute candle. You can go down here and optimize data series. And so you can test between a one and 15.
+
+If you wanted to one to 15 minute chart. Okay. Is that what you're asking about? No, the candle count.
+
+We, I see it at the top and you can, you can iterate through. Seven to 14. So that one you could. 
+
+Oh, yeah. All these fields, you can optimize all the fields. Yeah.
+
+How, how, when you do the optimization test, is there a. Steps like you would, because if I optimize. You know, days of the week, profit taker, the risk. And then the maximum of trade that can go on for hours.
+
+Is there, do you have something to. Iterate through it. So it's more.
+
+Optimized. Like, do you do like profit taker? The thing that gives you the best bang for the buck would be this right here and your start time on most of the bots. The, the thing that's unique to this.
+
+This bot would be these three also. Okay. Well, and this too, right? These, the, this.
+
+This bot has these four. Fields are unique to this bot. No other bot has these four fields.
+
+Okay. So, you know, but across the board, the thing that gives you the best bang for the buck would be the start time and the chart size. Always a three minute to seven minutes at 15 minutes.
+
+The rest of the things are typically like you can use almost a faults. You know, whether you're using a 1.2 or a 2.0 profit taker. will make a small difference, not a humongous difference.
+
+But, um, but again, like when you're using a higher profit taker, like a 2.0, keep in mind, um, that will also, you know, could bite you if you come really, really close to hitting a profit taker and that reverses against you, that could count against you as an intraday move for, for apex. Yeah. Okay.
+
+So then my value bought, uh, optimization test would be, let's say I would keep the profit taker, the risk, uh, you know, I don't iterate through that. And I just iterate through the value and then the candle count, the average count in the volume spike like that. That would be the iteration.
+
+Yeah, you can do these three. Yeah. Okay.
+
+In this case, because it has, um, all the normal fields that a normal bot has plus like four new fields, it's going to be, it's going to be a heavier lift of, of things optimize. Right. Yeah.
+
+It's, it's going to be exponentially more longer timeframe, longer time to optimize some things. Okay. And then how do you know what to set the trade type to, or we're snap back? Well, that's something else you can optimize.
+
+Oh, okay. Yeah. I mean, you can, you can try both of those, right? Cause the snapback member is the reversal.
+
+And then the, the orb is the continuation. So you can try either one of those. Um, as far as show volume, I would set it to true.
+
+Don't worry about optimizing it because it doesn't change the actual outcome. It just displays it on the screen, right? It just displays the volume on the screen, AKA right here. So for example, um, if you set it to false, it will, this whole thing will just disappear.
+
+Right. If you set it to optimize, it'll add to the workload of turning, trying it with it on, trying with it off, but it won't actually change the back test. It'll just change the chart that you're looking at here.
+
+Does that make sense? Does if you set it to optimize, it'll exponentially double your workload, but not actually change the back test. Does that make sense? It does. Yeah.
+
+So, yeah. Great questions. No.
+
+So I will upload this for you guys. Okay. And then, uh, what about, um, in terms of instruments, because I'm, I'm primarily looking at the MNQ and MES, and then a little more of the MBT, anything other, any other micros I should be looking at or just stick to those? Well, MNQ has a special place in my heart.
+
+That's the only one I do is trade is MNQ. There's so much out there. Okay.
+
+Um, but, uh, Tracy Ball likes, um, MGC, so gold and M, uh, what is crude oil? I'm trying to think I'm blanking on it, but I'm blanking on crude oil is, um, MCL. Yeah. Okay.
+
+But you basically just stick to the basic MNQ. That's what you do. We don't try to, yep.
+
+That makes the watch list very easy for me. Yep. That's right.
+
+Cool, man. Well, I'll, uh, I'll upload the, um, I'll upload the. Volume bot here in just a second.
+
+And yeah, you'll get access to that here in just a sec. Yeah. Great.
+
+Download the volume bot. And then do you have, um, a strategy for, uh, which bot when, right? Like, is there like, let's say for MNQ, um, like the volume bot and 10 AMA are better for Thursday, Tuesday, like Thursday, Fridays. And 10 AMA get a bad strategy.
+
+That's a great question. We're, we're going to be putting together something that explains a little bit more about that, but ultimately, you know, rely on the back tests. Um, we're, we're trying to put together like a one pager, um, that helps like what to also optimize what, what works better optimization wise.
+
+Um, yeah, because I think right now I need a strategy because I can, I get like Monday, Tuesday bots and then Wednesday, Thursday, Friday, there's nothing. So I'm trying to figure out what would work, which bot works better for Thursday and Friday, Wednesday, Thursday, Friday, like that, right? Okay. There you should be able to see download volume bot 2.4. See that? Yeah.
+
+Yeah. It also like recommendations on like, um, like targets, like, should we be, if we get 3k net profit, is that we just call that, you know, the goal and we put that into go live with that, or there should be like a higher tier profit that we should be looking for, right? Because then we know when to stop. For a day, for a month, for.
+
+Let's say the backtest for three months. Oh, cause we have a, like a scaling plan, like ideally, like for a backtest and what, like what size account do you have 50 K 50 K yeah. So like normally for a 50 K, what I would recommend is, is you, you can at least run a backtest and 90 days and grow it at least that 3k goal without losing 2,500.
+
+That would be like your starting point. Right. Okay.
+
+All right. So like you can pass a funded account in the backtest, right. And ideally you can do it in less than 90 days, but that would be like your minimum, your minimum criteria.
+
+Right. And if you can do it in 30 days or less, that's even better because that's what we do with like our live demos that we, that we, um, do on a couple of times a week is we show, um, back tests showing that we could pass a demo, you know, like a rolling um, you know, every week we'll do a couple of demos a week and we'll show the, like the live back test of the current day, going back 90 days and show the report of whatever settings showing that it, you know, we, we crossed $3,000 profit goal without losing $2,500. That's kind of what we, what we demonstrate, but that's the idea.
+
+And then like some of these bots that can get 6k net profit, you know, with 70% or max profit and, you know, but the thing is that some of them, I get max 3k and I think, should I keep trying to get the 6k or just, you know, 3k is what as high as it's going to get. That's what I'm wasting a lot of time on. Well, I would say as long as it passes the four criteria, yeah.
+
+As long as it passes the criteria, you're fine. Like my personal preference are the bots that can run all five days of the week. Like I, I would prefer one bot that can run all five days of the week versus a Monday and a Tuesday, you know, you know, specific days, because what I've learned is over time, certain ones work better on certain days of the week for really no good reason.
+
+Sometimes like they work better on Mondays or better than Tuesdays. And over time they might, what works better on a Monday might start working better on a Wednesday for really no good reason. And so if I can run across all five days, they can still work better on certain days of the week, but then I'm running on all days of the week.
+
+I can continue running them and capture all five days of the week. That's the best way to do that. Right.
+
+So that's just my, my own personal preference. What happens if a bot that runs five days a week and another one that runs on Monday and Tuesday, would that, would the bot, I mean, how would you, like, what's the, there's a max, a max risk, right? I mean, won't that go over or like you have to compute that? Like how, how does that work? Or you just don't run two bots on the same account on the same day. So let's say I have, I don't know, I have a 50K account, right? One bot trades Monday to Friday and another bot trades Monday and Tuesday.
+
+Right. And then the risk on bot one uses 17K. Right.
+
+Well, let's use this 20, 25K. How does the, the bot two can go make a bet bigger than 25K, right? So I have to be careful with that. Well, you wouldn't want them both running at the same time because you don't want one to like take a long position and one take a short position on the same asset at the same time, that would, you'd have unintended consequences.
+
+Like, right. So it's kind of like, you can't be short Tesla and long Tesla at the same time in the same account. Okay.
+
+So then you wouldn't want that to happen. You wouldn't want to even give that a possibility of happening. So what you would normally do is like run a bot in the morning and have it exit and then run another bot in the afternoon after it's the first one's out of done and out of the way.
+
+So you don't have to worry about, you know, buying power. Like it, the first one's done and the second one starts. That's the idea.
+
+Okay. Makes sense. Yeah.
+
+Cool. Cool. Thank you, man.
+
+Great. Yeah. Great.
+
+I'll post the recording here shortly. All right. Thank you.
+
+Thanks Thomas. Yep. Recording.

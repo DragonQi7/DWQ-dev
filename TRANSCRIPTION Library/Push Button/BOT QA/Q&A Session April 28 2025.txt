@@ -1,0 +1,631 @@
+Perfect. All right. So, let's start out with some questions. 
+
+Svetlana, you wanted to discuss or cover, you know, ways that you can track your data, right? So, the first thing that I want to go over is, let's just, I'm just waiting for this to pop up. There we go. If we take a look at the trade performance window. 
+
+So, here's an example of some trade data. Now, you can select the data that you want to get. You just go up top here, select your start date and your end date, and then hit generate. 
+
+You can go into the filter here, and you can select by account as well, and it would narrow it down to just specifically to a certain account. Then what you can do is, if you go to trades, you can actually right-click and then export, and that will export as a CSV file, at which point you can just copy the data and track it and put it right into a, into a Google Sheet or something like that, and then you can sort the data that way. That's one way that you can do it. 
+
+Another way is to manually generate the information per trade, okay? So, those are the two options, and you can either create a Google Sheet to do that, or you can create a Notion database if you wanted to, but all the information is sitting right in here. So, you can see all the information that you have. You've got your percent current profitability.
+
+You can see what the trades are that you've taken. You can see the date that it's been. You can see what your average winning trade is over your average losing trade. 
+
+You know, there's a ton of information that you can get inside of this, this information. Now, the downside of doing it this way is that if you fund an account, that information, it disappears. Yeah, the previous history disappears. 
+
+If you blow an account, the previous history disappears. So, it's really hard to track your performance. So, it's good to transport this stuff out of here and put it into a Google Sheet, where you then have that information that you can utilize at a later date, okay? That's my take on it.
+
+And is there a problem if I use different bots on the same account? Would that mix things up? Mix it in what way? Like, it depends on what you're trying to track. Well, I guess if I'm trying to track bot performance, I probably should keep one bot per account, right? And just keep it that way. But if I switch it, that's why I was like, oh, I think I'm just created a kind of a mess on my hands. 
+
+Because I do one bot overnight, for example, and then one bot later on the same account, that could be a problem. Let me show you one of the things that I do. Let me just grab this. 
+
+Where are we here? Where's my Notion? Already not coming up. Hang on a second. I just got to find my Notion.
+
+Here we go. There we are. Okay, let me grab share. 
+
+Hang on a second. Where are you? Right there. So, I have a Notion database that I've created. 
+
+And if you understand Notion databases at all, this is like, I have my active bots up here. So, when I do my bot performance, I just select that it gets tagged appropriately. But down here, I have my performance. 
+
+So, I can see, you know, what week it is. And then when you scroll over, you'll be able to I just updated this. So, I haven't done anything for this week. 
+
+Because I put all brand new bots in for the this week, but you would just click on here and I put whether it was a win loss, a skip or no trade. So, I keep track of it that way. And then in my PNL, every week I track. 
+
+So, I know exactly what because it has the list of what the bot is. I know exactly what the performance is for each bot and on what account it might be trading on. So, I have all of that active right in here. 
+
+That's the way that I do it. So, I don't track the trades per se, I track the other performance. And when I go to my weekly testing, I have all my parallel testing, the profit factor, net profit, max draw down, all of that built right into here. 
+
+And that all gets stored. Every single week that I do it, it creates a new entry, right? Does that help or does that make sense? That looks like a lot more than I wanted to track. Yeah. 
+
+Okay. Well, my point being is that you can make it very simple where you just track the bot and then every day you say whether it won or lost. It depends on what you're trying to do for what information you're trying to track, right? So, I have that automated.
+
+Yeah. Maybe just like effectiveness of the bot, like did I find the accounts, how quickly, like just kind of simple things like that. Yeah. 
+
+So, I would just create a database, like I said in that database, track it once a week of how the bot performed each. You can base it out by account and then you can also have a tab that shows what bots you had running on it and what the performance was for each bot. So, okay. 
+
+Yeah. That's the best thing that I would recommend. Okay. 
+
+Okay. Oh, and then another question I have for you. I noticed that when I run my bot overnight, I have just one bot that I run overnight. 
+
+The commissions is like huge. Did you notice that too? Like it's a lot more. What are you running it on? Like on a funded account? Yeah. 
+
+Like evaluation account. Okay. So, have you noticed that there's a huge amount of contracts that you're getting because the thing in MNQ or any of them overnight, the volatility is going to be significantly lower. 
+
+Now, the bots are going to be using the size of the candle to determine your size. So, if the candles are small, that's going to mean more, way more contracts. You pay per contract each in and out and yes, it adds up. 
+
+So, my rule of thumb is when I'm trading futures, if I'm trading consistently more than 20 contracts, I don't trade the micros. I will jump up and I will trade the minis because of that. If you get into, for example, one micro contract might be $1.64 in and $1.64 out. 
+
+So, that's what? $3.28 round trip. So, now you get that over 20 contracts. Okay. 
+
+So, $3.28 times 20, you're looking at $65 in commission. Now, if you get $3.25 times 40 contracts, that's $130 in fees for 40 contracts. Now, that same thing, you might pay $4.65 for a round trip on a mini. 
+
+So, the equivalent risk reward. Yeah. Right? Because 40 contracts is equivalent to four contracts on the mini.
+
+Okay. I'll have to double check. Yeah. 
+
+I'll have to double check how many trades, you know, it takes because I'm consistently, like for example, if I had three losing trades, so it should be like $750 in loss, but it would be like close to a thousand altogether with commissions. Yeah. It's really weird that I just noticed. 
+
+Okay. I'll double check. Okay. 
+
+I don't think it's, I don't think it's, so it would be under trades, right? And then yeah, you look at the quantity. Yeah. It says just one or two. 
+
+Well, I'll have to double check. Oh, it's actually, it's a different one. Nevermind. 
+
+I'll have to double check and get back to you and see if that's what it is. Because it's per contract and it's per in and out, and it's the same, doesn't matter whether it's an in or an out. But yeah, the micros are significantly more expensive to trade when you start getting it up into higher levels that it's not worth it with the commission. 
+
+So, that's my rule of thumb, but I trade my own capital as well. I don't really care about it in my funded accounts, but I do care about it in my own, my own accounts. Well, it seems like it eats up into the dollars. 
+
+It does for sure. Yep. It does up. 
+
+Like I said, if you're trading 20, 30 or sorry, 30 or 40 contracts, you're in the hundreds of dollars of commissions, right? Yeah. Okay. Okay. 
+
+I'll check. Thank you. Perfect. 
+
+Awesome. Okay. Any other questions? Things people need help with? I have a question, very quick one.
+
+In average, how many trades do you place, you know, every day? That's one question. Second is, when's it going to be the Megascalper officially released? I'm not sure when the Megascalper is going to be officially released. So, we're still testing it. 
+
+So, it could be in the next, next couple weeks. We need to make sure that we have everything ironed out. So, yeah. 
+
+Okay. As far as trades per day, that varies. It really depends on the settings. 
+
+My bots, the max I do on my bots is three trades per day, unless it's the Megascalper, then I actually set it to 20, 30, 40 trades. Cause I don't care. Cause I, I want it to trade. 
+
+It trades differently. It trades the drawdown and I don't, I don't want to limit it to the number of trades per day. I want to limit it to the drawdown instead. 
+
+But yeah, that's, that's what I do. Three is the max, but I don't necessarily trade every single day and I don't always trade three trades per day because it depends on the settings of the, the bots that I find. Okay. 
+
+And just to keep that in mind, more is not, more is not more, less is more sometimes. So, yep. It can be very lucrative and very profitable to be trading, you know, three days a week rather than trying to trade more. 
+
+Okay. Sure. Okay. 
+
+Any other questions? Can you hear me? Yes. Jason. Oh, all right. 
+
+Casey, how many times do you go through and re-evaluate like, you know, which bot you're going to run on a Monday versus a Tuesday or whatever? How often do you do that analysis? So, I, I only review my bot. So, my process is this. Every single day I check on my bots to make sure that the, the technology is linked. 
+
+There's no issues with the, the VPS. There's no issues with the internet. Everything that I've enabled, everything, nothing's disabled. 
+
+I just check that every single day. At the end of every single week I compare the last 90 days. The, like I, I rerun the exact same settings again as a back test and I check those settings and I look for the same things that I would initially when I was looking for the setup. 
+
+And if it passes all the criteria that I'm looking for. So, if it passes the profit factor, if it passes the, the net profit versus the max drawdown, if it passes my percent profitability, if it passes all the things that I'm looking for, then I don't do anything. I just keep running it for the next week. 
+
+If for whatever reason those settings fail, they are no longer meeting the levels that I am expecting, then and only then will I look to replace it. Okay. Fair enough. 
+
+I, I have a slow laptop, but I, I've been running the stuff, the analysis through the VPS and stuff. It can take, you know, half a day or something like that to do it. Is that kind of what everybody's noticing for results? Yeah. 
+
+So the, the VPS is not a good place to be running back tests because the VPS has got, it's probably way, way less capable than your laptop. Depends on what package you got. So when you're running back tests or optimizations, the number of cores you have is going to be a contributing factor to speed. 
+
+So if you have something that has more cores, it's going to be faster in its processing the information and getting through those back tests. So if you're going to use the VPS, then you're going to have to upgrade to more cores if you want to be actually running back tests faster. How long does it take you to run, let's say, five instruments on various settings and stuff? Uh, so what would you say would be the number of, um, well, let's just look at this.
+
+Zero to seven, seven, 25 on the, uh, the candle. Um, point. Let's, let's do one. 
+
+So, so, okay. What, so what is it? The, uh, what, what bought Megaorb? Or just the orb. Just the orb. 
+
+Okay. Um, okay. So the orb, uh, let's just do 100. 
+
+Let's do 250. Whoops. Okay. 
+
+So what settings are you optimizing here? Um, profit taker. So it might be, maybe you've got to switch to optimization, right? Oh, hang on. Okay.
+
+Um, I'll do 1.5 to 3.5. Okay. And then, um, entry candle might be zero to what's your increment? Um, just one. Yeah. 
+
+Oh, I'm sorry. 0.1. 0.1. Okay. And then don't touch that. 
+
+Don't touch. The only thing I else I touch is, um, yeah, the entry candle is zero to 50. Okay.
+
+And then I changed the optimization and I set it from one minute to 12 minutes. Sorry. Um, click the optimization button down below.
+
+Okay. So optimization data series, and then you're doing one to five. One to 12.
+
+One to 12. Okay. One to 12. 
+
+Okay. And then, um, you're doing five instruments. I have instruments. 
+
+Yeah. Okay. Well, I'm just going to do these ones right here. 
+
+That's six. Okay. Um, what's the timeframe? What time? Yep.
+
+Are you Eastern? Yeah. Okay. Uh, sorry.
+
+There you go. And are you running it on, uh, standard or are you running it on high-tech? Yeah. Yeah. 
+
+There you go. And that should be it. Okay. 
+
+So 77,000, that's quite a lot. It is only going to take about 16 minutes, maybe 20 minutes for me to run this. Oh, okay.
+
+But, but that's a lot. Yeah. My laptop's really old and so it's probably five, five years old and stuff like that.
+
+It doesn't have a lot of juice. Yeah. So a basic laptop.
+
+But right off the bat, one of the things that I would recommend, and this is for everybody. So you don't have to go through every iteration from zero to 50. You could skip and do maybe three.
+
+Okay. Do, do three iterations. That's going to cut it.
+
+That's going to reduce it by three. Um, as far as the profit taker, same thing. Go to, um, oops, go to 0.2. So instead of doing every iteration, go to 0.2. Now you're down to 14,000 instead of 77,000.
+
+So you can be a little bit more strategic in, in what you're, what you're optimizing, just to make it a little bit faster for you and, and go from there. Right. Okay.
+
+So as you can see, this isn't going to take too long, but I'm not going to let it run. Cause I mean, I can, it doesn't matter. Is there any other questions? I have a question about the trailing stop, uh, uh, stop loss on the snapback.
+
+How can I make it? So it's a little bit closer to the price. Cause I see it a lot that it goes for a very long time and then it just loses all of that and becomes a loss. How can I make it? So it's like a little bit closer to the price.
+
+So it doesn't lose as often. Yeah. Okay.
+
+Hang on. So let me abort this for a second. Um, yeah.
+
+Okay. So that one uses the ATR. So if we take a look at the mega snap right here, mega snap, it uses a 10 period ATR.
+
+So think of the 10 period is like a 10 moving average. That's what it is. Okay.
+
+If you want something faster than reduce that. So that would be like a three moving average. It's making a, if we take a look at any moving average, let's grab a chart here.
+
+Um, chart let's do, yes, let's go minutes. Let's go one minute. We'll just look at one day.
+
+That's fine. And I'll click. Okay.
+
+So here, um, I, you guys probably can't see that. Let me just share that again. Okay.
+
+So here's an MES chart. Now, if we whoops, okay. If we were to take a look at this, sorry, I'm just trying to make it bigger.
+
+So if I add in some indicators, I'm just going to add in an EMA. So just give me a second. Okay.
+
+So let's add in an EMA. We'll add in three. Okay.
+
+So we'll make this one a 10. Whoops. Actually, you know, you know what I'm going to do? I'm not going to do that.
+
+I'm going to add in an ATR because I actually have a trailing ATR indicator. Okay. So where is it? ATR trail.
+
+We're here. Okay. So I'm going to add in two of those.
+
+So this one here, I'm going to do, um, now you've got the 10 period. So that's like the moving average part. So I'm going to make that, um, yeah, we're just going to do that like that.
+
+We'll do 10. And then this one here, we'll do, um, uh, five. Okay.
+
+And we'll hit apply. Um, actually let me get in there. Cause I have to change those colors.
+
+We, I can identify the difference. So let's do the five as yeah, green and we'll do gold. Okay.
+
+So you can see that the, the five is bringing in the dots closer, right? You can see that. Okay. So that's the first way.
+
+That's one way you can do it. The second way is if we go into here, cause the second parameter of this is the multiplier. So what the multiplier is doing is it's taking the average true range and then multiplying it by that number and that's the distance.
+
+So if you make this smaller, let's just go to, uh, say two. So watch these dots because the green dots are currently ahead. I'm going to alter the blue and I'm going to go say two and watch how close the blue dots became.
+
+Oh, wow. Right. So the multiplier right here, uh, where are we? Yeah.
+
+So the ATR multiplier, the ATR time multiplier, that can be huge. Okay. And then again, if you combine that with, let's go with a three moving average apply.
+
+Now you're super, it's super fast when it changes. Okay. Does that make sense? Okay.
+
+So just play with those numbers basically and lower them. Yep. Okay.
+
+If it helps. Okay. Just be, be aware the smaller, the number, the more noise it's going to be, the more often you're going to get hit with it.
+
+Yep. Okay. And is the period, um, is that, uh, candles look back? Yes.
+
+On the average. Yes. So basically it's looking at what it's doing.
+
+If you have a 10 period, it's looking at the last 10 candles, what the range is for each of the last 10 candles, and then it's averaging that range. Okay. Okay.
+
+And when I talk about range, I'm talking high, low of each candle. So it takes the distance between the high and the low of each of the 10 candles back, and then takes the average of that distance. So obviously if you have like a lower, a lower period, it's only going to look back at the last three or the last two, or it's going to switch really quickly.
+
+Your average is, if you did an average of one, you're just looking at the range of that exact candle. That's it. And you're multiplying by whatever that range is.
+
+Or if I kept like 10, but multiplier is lower, then it's still going to trace it a little bit closer. That's correct. Yep.
+
+Okay. Okay. I'll play with some different numbers.
+
+Yep. Okay. All right.
+
+Any other questions? Oh, did you figure out your issues with the VPS, the stuff that you sent to me that's supposed to help, right? So you mean getting your own machine ID isolated? I'm hoping that it will. Yep. Because a lot of the VPSs have a shared VPS.
+
+So hopefully that does. But what I have found is adding into my weekly routine is to clear the cache files. So to do that, what you do, let me just share my screen.
+
+See if I got it. And you said weekly? Yes, I do this every week now. So what I do is I simply open up my folder and I go to documents.
+
+Where are we going here? And are you still using 4x VPS or did you switch? I am. Yeah, I'm still using 4x VPS. Okay.
+
+So if I go to my documents right here, documents. So you go to documents, NinjaTrader 8, go to database. And then I select this folder and delete it.
+
+Select the day, delete it, minute, delete it, and tick and delete it. And I do that every single week. And what I found is doing that I can run my VPS all day, every day for the entire week with no issues.
+
+So the reason that I think this helps is I was running into disconnect issues as well. I upgraded my VPS. So I've now got eight gigs.
+
+Actually, I think I've got 16 gigs and four cores now on my VPS. And it worked great for the first week. Then I had a couple disconnect issues.
+
+I checked the stats on my VPS and found that my memory was once again hitting the high end of that memory. So I thought, okay, well, what chews up your memory the most, but your cache files. So I deleted the cache and ran it for a week.
+
+Perfect. Absolutely no issues. I've done it again.
+
+No issues. I haven't had a single issue since I started this habit of clearing out the cache on a weekly basis. Between those two, I'm thinking that's the solution for it.
+
+And it's going to be my thinking until proven otherwise. It could be coincidental, but I highly doubt it. No, Tracy, I think you're right.
+
+So I had 4x VPS, but now I have chart VPS. The 4x just wasn't cutting it. And then I got up to the chart and it was doing great for me.
+
+There were periods of time where it was slowing down for me as well. And they gave me a whole document on all the things you could do to optimize your workspace. And I think some of that was clearing up the cache and stuff like that.
+
+I also shut off my virus protection and stuff like that during the day because I don't want that interrupting with anything because that can get drained. But also how to optimize the charts. I had a ton of charts just open and a lot of them were by tick.
+
+And he said, dude, you're draining everything. So he said, just do on-bar close for a lot of stuff. If there's certain ones that you need on tick, leave them, but don't have a million charts open because all those ticks and all those things just drain everything.
+
+And he also said too, one simple thing, like the cursor. Like if you have the crosshair cursor, he goes, that is taking in so much data. He goes, you got to just switch it to the regular arrow cursor and stuff like that.
+
+Yeah. Yeah. NinjaTrader is a very resource heavy software program.
+
+And that's why it's really important to know what you're going to use your VPS for, because not all VPSs are created equally. And so that's the thing. If you're going to be using the VPS and you're just using it for your bot trading, you really don't even need a chart up.
+
+You can just have your control center, keep it simple. But like I said, that still is generating historical data. And so just shut it down, just get rid of the data.
+
+Right. As soon as you open it back up, it's just going to rebuild those folders again and give you what you need. But after a week, it's collected all that week of data that it doesn't need, right? Yep.
+
+And you said that it was cache, day, and minute. Cache, day, minute, and tick. And tick.
+
+Okay. Yep. Yep.
+
+I delete those every single week. Yep. I feel like I have better success with the Trader VPS, but it still happens every once in a while.
+
+Well, I would still get in the habit of clearing that cache, because I think what happens is when you get close up to that memory, your computer automatically starts to slow down, right? When you're starting to hit the memory, it's starting to get sluggish. When that happens, there is like a delay that's happening between the communication of NinjaTrader and CQG or Apex, whatever. And when it doesn't get that ping back right away, it will then create a disconnect because it thinks that there's an issue, right? So I think that's what's happening is the computer is actually stalling.
+
+It's like, imagine being on a phone call with somebody, and they're taking a really long time to respond. And you start talking again because you think that they're not there. And it's- There's a lag.
+
+Yeah, there's that lag. And that lag ends up causing some communication disrupts or disruptions. That's what I'm thinking is happening.
+
+All right. I'll start doing that. Have you done any DSN or DNS flush? No.
+
+No. When I reached out to them, they were like, do this. Yeah.
+
+Yeah. I think just getting some proper housekeeping every single day is- or every single week is a good thing. So try it.
+
+And I wouldn't go ahead and do a whole bunch of stuff right off the way because you never know what fixes the problem then. So if that doesn't solve the problem, then you try something different. But I would just keep doing each of those things, and eventually it should get better.
+
+But like I said, I haven't had any issues at all for the last month. That's great. Yep.
+
+So, okay. I just didn't see a similar like 16 gig, six core with a 4x VPS. And they were trying to tell me to upgrade to like my own server.
+
+And I was like, no, that's not what I want. No, you just had to click custom. And I did that.
+
+I like even chatted with them. They're like, oh, no, just do like the private server. I'm like, no, that's not what I want.
+
+Weird. I requested it. I sent them the specs.
+
+I might have to go back and switch to them because I think Trader VPS is very expensive. I think it's more expensive. I'll try again.
+
+Because I pay in Canadian dollars, so I don't know what it is in US dollars. Do you do like the annual plan? Yeah, I do the annual plan. Sorry.
+
+What's that, Jason? For chart VPS, I pay 70 bucks a month. 70? Yeah, seven zero. There you go.
+
+Jason, would you mind in the bot trading community, would you mind sharing the link of the VPS that you use? Because there are some people that are not happy with 4x VPS and they would like another alternative. And if you've used it, that's great. I have not used any of the other VPSs, so I can't speak for them.
+
+I'm doing... I've had issues too on my personal laptop and he's helped me with my personal laptop, right? Because I was having problems on installing the new version. He signed on. He loaded up these things to clear out the registry and do all this kind of stuff.
+
+I mean, and for nothing. There's times that I've had other VPS issues and they go in, they fix it, and they're responsive 24-7. So real good people.
+
+That's great. Perfect. That'd be great.
+
+Thank you, Jason. Appreciate that. Yeah.
+
+Yeah. Okay. All right.
+
+Does anyone have any other questions? Because otherwise I've got something else that I would love to share with you guys. Go through if you guys want. But I want to make sure I cover your questions.
+
+One quick question. In the strategy analyzer, do you always set it to max profit or are there other things that you can set in there that are beneficial? So we actually set it to... Let me grab my share here. Where is my strategy analyzer? There it is.
+
+We actually set it to profit factor. So that's the one that we usually have it on. So where's my optimization? Hang on.
+
+I think it's not back. Let's go to optimization. And down in here, we always have it set to max profit factor.
+
+Now, that's the preference that we do. And the only time I ever change this is if I'm really struggling to find anything. But yeah, you could set it if you wanted to, to max, what do you call it, max profit if you wanted to.
+
+You could do minimum drawdown if you wanted to. But I just find the max profit factor is the best to do it. And the other thing that you can do is instead of setting it to 10, you could set it to 100.
+
+It'll give you 100 results for each if you want it as well. So you don't have to just take the 10. Okay.
+
+Yeah. For sure. All right.
+
+Any other questions? All right. So one of the things that I wanted to go over, just because I get this question a lot, people are really struggling to find results. And so one of the things I wanted to do is just kind of review again some of the things that I'm looking for anyway in my results.
+
+And then I want to show you how you can fine tune some of these things as well. Now, the big risk is you don't want to be over-optimizing too much on this side. But let's just look at this as an example.
+
+So here's an example of a backtest that I found that, and this is not the exact settings because I've manipulated a little bit right now to bring it back to what it was when I first found it before I made some changes. But you can see it's got decent profit in it. This is the mega orb, but it has a really low drawdown or sorry, a really low percent profitability.
+
+It doesn't meet my criteria. It doesn't meet the two profit factor that we're looking for. And it's actually got a pretty high drawdown, right? So there's a couple of things that I want to take a look at first.
+
+So right off the bat, we know that we're looking for 4x the drawdown to the profit. We have that, right? We're definitely four times greater than our profit. The other thing that is kind of a minimum requirement is getting that two profit factor.
+
+That's what we're looking for. The other thing is the percent profitability. We're usually looking for greater than 70%.
+
+Now that being said, again, I want people to recognize that the higher your profit taker, the lower this percentage can be. And that 70% is kind of the benchmark when you're going for a 1.2 profit taker. So if you are one of my students and you go to, let me just grab my, I need to share this again differently.
+
+Hang on. If you go to right here and you look in the, I've got it right here under backtest checklist. And I can post this in the community for everybody.
+
+But if you have the backtest checklist, if you scroll down, I have actually created or written down what the acceptable win rates are based on your profit target. So if you have a profit target of 1.2, you need a minimum of 70%. If it's 1.5, minimum 64.6%, minimum two, you know, 57, you can see how it goes lower and lower and lower.
+
+So if you're getting above four, you can easily get away with lower than 40 or around 40% profitability. Okay. So just keep that in mind that you can, the higher the profit target, the lower the percent profitability is.
+
+All right. Does everyone understand how that works and why that would be different depending on as the profit taker goes up? You guys understand that? No, I understand. Yeah.
+
+No. No. Okay.
+
+Perfect. Okay. So now one of the things that I want to point out here, first of all, those are the minimums.
+
+Then this next thing that I will do is I will always go from summary to analysis page. And normally this would be daily and cumulative. So you see this particular chart, this is your equity curve, and it goes from left to right.
+
+That's what we want to see. So the next thing that I would do is I would go and I check out the days of the week. And we can see right off the bat that if we eliminate Friday, run it, it's going to be significantly better because Friday is a losing day.
+
+So what's the point of trading Fridays? Okay. So I'm just going to let this run. There we go.
+
+And now if I go back to my summary page, I've already improved this. So it passes the two. I want to see if I can make this a little bit better.
+
+It's still got a low. It's only 37%. I'm not too concerned about that because I'm going to cover that in a second here as well as why I'm okay with it.
+
+The next thing that I want to look at, if I go back to analysis, is again, I want to check my distribution. So I'm not looking for one particular month that does really well. I want to see that this has been consistent three months in a row.
+
+And here you guys would say that this is pretty consistent. Would you agree? Yeah. Yeah.
+
+Each month is pretty consistent. So right off the bat, I'm liking these results already. And so even if I have a low percentage, I'm okay.
+
+But one of the things that I want to consider here is more importantly for me is looking at this average win loss. So right here, we have our average win and our average loss. And if you take a look at that, I'm getting a 3.5 to one risk reward ratio on average.
+
+That's what I'm getting. That to me speaks more than the profit factor. Okay.
+
+Because you can get a really high percentage, but the win loss is super low. Like you're making a little bit for every win. I would rather have a high percentage of probability and a high average winner, like the average win loss ratio be higher.
+
+Does that make sense? But if I have to take a smaller percentage like this, I want to make sure that I'm getting a decent average return for every win. So basically what this is telling me is that most of my winners are getting almost to the full target. I'm getting some good results.
+
+You guys understand that? And then this is my expectancy. So my average trade for every trade that I'm going to place, I'm likely to make $151.60. That's pretty good too. So these numbers here mean a lot to me when I am considering any kind of setting that may not be quite what I'm looking for.
+
+Does that make sense to you guys? Yep. Yeah. Okay.
+
+Yes. Perfect. The other thing that I want to point out here is that there is a profit per month.
+
+Now what it's done is it's taken the average or taken this and it's giving you an average. This is the average profit per month. So $6,564.47. This is designed to be traded on a monthly or a 50K account.
+
+If this performance continues, am I likely to fund a 50K account? Yeah. Twice over, right? That's the likelihood. Okay.
+
+So one of the other things that I look at during the week is if I take the expectation here, so in 30 days, the average is about $6,564.47. Okay. So one of the things that I can look at is if I take a calculator, oops, grab the calculator again, and divide it by four, if I'm heading in the right direction, if this particular strategy is working the way that it was in the past, and it's continuing to work, then I should be close to this on a weekly basis. Now that's going to give or take.
+
+You might have a losing week and then one week that's really good, but you can use it as kind of a benchmark of whether or not you are heading in the right direction. So again, when I'm analyzing things at the end of the week and things are getting kind of iffy, maybe the settings start to drop a little bit, I want to take a look at this and see where am I in results to how this is performing. Okay.
+
+These are just another way of you analyzing and looking at the numbers and seeing how it's performing and what should my proper expectations be. Right? You guys get that? Yeah. The only thing, I mean, that max drawdown could potentially at some point kill your account at some point, potentially.
+
+Sure. Potentially it could, but I don't care whether or not I blow an account. I really don't.
+
+Because that's the other thing. For you guys all, there's two very important numbers that you need to learn. What is your pass percentage? Okay.
+
+So what is your pass percentage? It's going to be different for everybody. I know some people that have 100% pass rate. Every single funded account they've done, the assessment they've passed.
+
+Okay. I also know people that have like a 20% pass rate. I know both types that can be very profitable because it's not about whether or not you have a 100% or a 20% pass rate.
+
+It's about knowing what those numbers are and then working around it. Okay. So it's no different than having a strategy that has a very low percentage.
+
+So the turtle traders, I've used this example before many times when I've talked to other people, the turtle traders, if you guys have ever heard of them, they were one of the most well-known profitable traders in the eighties, nineties, they had a 27% win rate. So 27% of their time, they won their trades. The other 73% of the time they lost.
+
+Okay. That's a long time to be losing. That's pretty bad.
+
+The reason that they made billions of dollars was because their losses were really small and their wins were really big. So if you know what those numbers are, you can build a strategy around it. So if you know what your pass rate is, so out of every evaluation, how many evaluations do you fail before you get one passed? That's going to be your pass rate.
+
+So let's say that you have 10 accounts and five fail, five pass, that is a 50% pass rate. Okay. So this is one number that you need to understand.
+
+The second number that you need to understand is your average days to pass. Okay. Now this is going to be a dynamic number.
+
+Both of these numbers are going to change. The more evaluations you get, the more whatever, but you can start by understanding where you're at. And as it changes, it'll change slowly.
+
+It won't change drastically. Okay. So average days to trade now, or the average days to pass, I should say.
+
+Now, why is that number important? So the average days to pass, if you know that your average days to pass is 30 days, that's what your average days to pass is. Then once again, you know that in 30 days on a 50K account, your PA account should be up to $53,000. Every 30 days, you should be building another $3,000 if you're on track for that same performance.
+
+Okay. You combine these two numbers, that number and your pass rate, you now know how many evaluations do you have to have working to replace the potential PA accounts that you're going to fail. Because if, like I said, if you have a 50, 50%, let's say that you've got 20 PA accounts going, you can assume that 10 of them are going to fail.
+
+That means that you have to have 20 assessments going because you know that 10 of those are going to fail. And 10 of those are going to pass. Those 10 replenish the 10 that fail.
+
+And you have that consistent door going so that you have constant cashflow because the 10 that are passing are giving you the cashflow while you're replenishing the 10 that have failed. Does that make sense? Well, hypothetically, once you get all 20 passed and you're at the 53,000, are you basically saying that, you know, I mean, there's obviously always opportunity that you're going to fail some of those, right? Yeah, well, I'm talking right out of the get go because if you pass the account, it goes back down to 50. So you're starting at 50 again and you have to grow it to 53 again, but you could still drop 2,500 and lose that account.
+
+So it's very possible that once you start trading that PA account, now, if you keep growing it and you keep a bigger cushion, you make it less likely that you're going to break it. But in the process of getting there, you're growing these accounts, understanding what your pass rate is and understanding what your average days to pass are very important numbers that you should be keeping track of. Those to me are the two numbers that are the most important numbers out of all of this.
+
+Because like I said, I don't care whether or not I pass or fail an assessment account. I wanna make sure that I have my system working so that it replenishes because to me, passing and failing a funded account is no different than winning or losing a trade. I have no control over it.
+
+All I can do is have my system in my place and if I can pass more than I fail, win more than I lose, I'll be profitable. Right? Yep. Okay, so getting back to this test right here, I wanna look at a couple other ways that we can fine tune this and adjust it.
+
+So if we go into summary again, and we go to analysis, I want you to take a look at our half hour of day. Okay? So if we look at the half hour of day, you guys can see that this strategy, I'm not really getting much out of it when I start letting it, if I keep it past 8.30. You guys can see that? Mm-hmm. And really, I mean, that one's okay, but I could even knock it back to say 7.30 and get rid of that.
+
+So this is another way that you can take a look and narrow your timeframe. So watch this. If I actually take this and I change it to 8.30, so I'm gonna cut it off.
+
+I'll just close the trade, right? I'll close the trade. So the trade gets closed. Let me go to summary again.
+
+And I increased the profit factor a bit, a little bit, didn't do much else with that, but let me take that back and let's go to, let's say 7.30. Do you look at the max consecutive losers very often or do you not really look at that? I do because I wanna set my own expectations. Okay. Right? Okay.
+
+That's something to really consider because if you don't know what to expect, then when it happens, you're blindsided and guess what? You get emotional and you start to react and you're going, this isn't gonna work. Right? This is trading one, two, three, four days in a row. If I've got 10 max consecutive losses, I could lose three, six, nine, that's three days in a row right there that I could lose.
+
+And then part of the last day I could lose. I could have a completely abominable week and at the end of the week going, man, this sucks. I don't want this anymore.
+
+This is terrible. Right? And then you take it out prematurely. Okay.
+
+So anyway, I wanted to introduce you to the, like I said, the half hour by day because you can narrow things down a bit. Now, let me go to seven. I mean, that's a thousand dollars because this makes a lot, but let's go to seven o'clock.
+
+I'm just eliminating all the junk. So I'm only taking the stuff that's actually performing really, really well. If I go back to my summary.
+
+So I dropped my net profit, but I also reduced my max drawdown a little bit. So I actually like it better at 830. So, and this is the one I'm running.
+
+Now this is on a 30 second chart, just so you're aware. That's the other thing is that I don't have any problems running things on a 15 second, 30 second, 25 second. I've got lots of things that are running on second charts.
+
+I get some pretty good results, but you have a very low profitability. Okay. Any questions regarding what we just covered? What is this? That's the start time that I don't see very well.
+
+It's 635. That's Pacific standard time. And this is 830.
+
+So if I convert this to Eastern time, it is 935 start time. And it is 1130 close time. Okay.
+
+Okay. Running Monday through Thursday. And the thing that I do like, like I said, I've got a 3.66 risk reward ratio based on my average winning trade versus my average losing trade.
+
+That's pretty good. Okay. Okay.
+
+All right. Any questions? You put your risk down to 150. Let's say your profits going to be less, obviously, and your drawdown is going to be less.
+
+Okay. So that's something that you need to be aware of, that if you do change the risk, so that will drastically affect the results. And here's why.
+
+Because, and if you don't want it to, then uncheck this features button. But what happens in our bots, the way the bots work is that you have, here's a candle, here's some padding. So we have an entry right here.
+
+And then here's your stop loss padding. Let's say that our stop is right here. So there is a range that is created right here.
+
+And that range has a specific value. So let's say that that range is, let's say that it's $300. Okay.
+
+A value, $300 of value in that range. That means that if we take 300 and we divide it by 250, that means that we could get, let's see, 1.5 contracts, 300 divided by one, 250, sorry, 1.2 contracts. Okay.
+
+1.2 contracts. Now, if we were doing 300 divided by 150, we can get an even two contracts. Okay.
+
+Now, the difference between this and this, when this button is selected, what's going to happen in this scenario, because you can't get 0.2 contracts, you're only going to get one. And that means that the stop is going to move down and the target is going to move up. Okay.
+
+In this scenario, the trade is going to be exactly the same because you get two contracts. When you move the target up, when you move the stop down, those same trades that you did with the 250 risk, you either, you might not hit the target or you might not hit the stop. Do you know what I mean? So if you change it now to 150, that stop doesn't move.
+
+It stays right here and your target's lower. So in this particular case, you might get stopped out right here, where the 250 had it stopped right here. It comes right here, rolls around, and then hits the target.
+
+Meanwhile, this particular trade stopped you out. Do you understand that Jason? Gotcha. Yep.
+
+Okay. Now, the reason we did this this way is because if you start getting into 1.5 contracts and it's really, it's really bad in the closer you get to one, the distribution of this is massive. So when you start getting into the 1.5, if you round up, then you're adding significant risks to the trade and you're almost doubling your risk when you hit the stop.
+
+So it's not good. So we didn't want to round up. So if you round down, you're then reducing your profit by significance.
+
+So what would end up happening is if you win, maybe you win, you know, let's say that you're going for a 2R target, but when you win some of those trades, you're only getting 1.2 worth of reward. And other times you're getting, other times you're getting maybe the full two, but sometimes you're losing, like maybe you're losing one point or just maybe you're losing a full one. And then maybe another time you might be losing 0.8, whatever.
+
+It just wasn't, it wasn't consistent enough. So depending on where the wins were and where the losses were, if your wins were on trades that were closer to the two numbers, so 1.8, 1.7, anything greater than 1.5, you would massively lose out on your P&L. So if your losses were all being hit on those numbers, that's fine.
+
+But if your winners were being hit when the original contracts was greater than 1.5, you're not making the money that you were. But if your losers are all hitting the stop when you were getting with these types of contracts, you're losing. It just wasn't working out.
+
+And so you could get a 50% win, but still be losing. Does that make sense? Yeah. Okay.
+
+I hope it does. The futures button. What exactly does that do? So what that does is it repositions the target and the stop based on the contracts that you actually get filled on.
+
+So the bot first takes the candle and the padding to determine what the range is that it uses to calculate the actual mathematical position size. So the mathematical position size might be 1.4, let's say. That's what it mathematically calculates as your required position based on your risk and where your entry and stop would be based on the range of the candle, the entry padding and the stop padding.
+
+The futures button will go, oh, well, you only get one contract. So let's move the stop to where that one contract would be so that we have an actual full $250 worth of risk. And let's move the stop so that when it gets hit, you actually get 3.9 worth of reward.
+
+So that's something that you should always check. Yeah. Because what will happen is if you don't check this button, okay, if you don't check that button, then, like I said, your entry and stop are here.
+
+They don't move. But let's say that you were supposed to get 1.5 contracts. You only get one contract.
+
+Actually, let's say that you're supposed to get 1.9 contracts. You only get one contract filled. So when your stop gets hit, you're only going to lose maybe $120, maybe that.
+
+But when your target gets hit, you're also only going to make 300 and whatever, $350 instead of the 750 that you were supposed to win. Okay, great question. Tracy, can I ask you a question? It's super interesting.
+
+And thank you. When I've run my numbers, I've come across this very setup where everything else matches up, but the percentage profitable doesn't measure up. So I've discarded them in the past.
+
+What you are saying is don't throw it away, right? We can use this. Can you give me a rule of thumb? So if the profit factor is right, what do you use when you come across something like this where one of the percent profitable doesn't match up? What is your rule? What would you advise to go with a one in three shot at winning a trade and it's still viable? So for me, it's right here. It's these numbers right here.
+
+If I can get greater than two and a half to three, greater than that, with a percentage that doesn't really meet my criteria, I'd like it. Now this isn't far off because if I'm four, if I'm a four profit factor, I need 40.6% minimum profitability. And I've got 36.9. So this is close, but I'm looking at this number right here.
+
+I really like it. This is what 3.66 times my average loss. So for my average winning trade, I'm making a decent return.
+
+I can handle that. And you go no lower than 2.5. 2.5 and higher would be good. For me, yeah, that's my preference.
+
+Yep. But if your average is two to one, I mean, that's still pretty good, right? Right. Okay.
+
+Your average win two to one. This is significantly higher than four X. So I like that. I like this.
+
+I like the numbers. This is the only thing that I don't like. But again, I'm dealing with a high percentage profitability, but the profit taker, what I would be concerned with if I have a high profit taker, because what's going to happen here is this.
+
+If your trades aren't actually hitting target, let's say they're getting trailed out a lot. A lot of these winners might be decent. This number will be a little bit lower.
+
+Maybe this will be a bit higher, but this number will be way lower because you're getting trailed out of the trade all the time. This is telling me I'm actually hitting target a lot, right? Because 806 is very close to where that would be maxing out. Very close.
+
+Interesting. And would you mind sharing that percent? I don't think I've seen that percentage list that you showed us earlier. If you don't mind sharing it, I'd love to print that out.
+
+I'll post it in the bot trading community when we're done. Thank you. Yep, for sure.
+
+Okay. But yeah, this number here, like 3.66, I'm almost at the same number as my profit taker. So if my average winner was the same as what this would be, it would be 3.9, right? Risk reward, because that's what I'm looking for.
+
+This is almost 100% risk reward. You know what I mean? Because that's what we're looking at. If we look at a maxed out, what's 3.9 times 250? 250 times 3.9, that's $975.
+
+So if I had $975 as an average winning trade, and the average losing trade was $250, that would be a 3.9 ratio average win loss. I couldn't get it higher than that. It'd be impossible.
+
+Unless the bot was malfunctioning and I was getting skipped. Like I was getting filled way higher than what the 3.9 was. You see how that works? Okay, any questions? This is your guys' opportunity to get some help, get unstuck, ask questions, utilize my process, thoughts, all that kind of stuff.
+
+So I won't keep you very much longer. If you guys have all your questions answered, you guys are all doing well, that's great. Tracy, I mean, I just joined, obviously.
+
+I'm just waiting for the other people to know. So I kind of did some analysis. I used five instruments.
+
+I did some analysis Thursday night and came out with some particular ones that I wanted to trade on Friday. I think I hit, I don't know. I think it was just one or two or something like that on Friday.
+
+So I had like a $400 plus day for each account. And then today I ran four, I'm only running the orb. And I did four instruments today.
+
+And one on three, I lost on one, but overall it was $850 per account gain. So I kind of found a strategy where I'm downloading the data in the CSV, putting it all in Excel, and then I just kind of marry it up and say, okay, if I ran these based on the trades that hit on these instruments on these days, so Monday or Tuesday or Wednesday or whatever, what would the potential profit be? So I came up with, I think it was for the four months here from January one to present, it was like $27,000 that all the trades made and stuff like that. And using your analysis too and all that kind of good stuff to break them apart and figure out the month was kind of fairly equal and some of the numbers tying back to what you did.
+
+You know, I think I found a pretty good rhythm from that. Obviously I'm just starting to tippy toe into everything and stuff, but I'm strong on the analysis. So, cause I've been doing it a lot and I was just a finance guy anyways, but it's been working out well, you know, so far.
+
+So. Well, Jason, I encourage you to watch the video on the mega orb, because you can trade the mega orb with just one trade per day. The reason that I like it, cause you can treat it just like an orb.
+
+So the reason that I like it is because it's got that trailing stop. So you can have a trailing stop with the orb. Okay.
+
+Yep. Yep. So I use it.
+
+And if you don't want to use the trailing stop, then fine, you can keep doing that. But I absolutely like, I love using the orb or the mega orb. And you can see here, the average it's taking is 1.98 trades a day.
+
+Um, if I change this to one, it's only going to take one trade a day and let me see what the performance is now. So I lost half of it. Okay.
+
+So those two trades matter. Yeah. Right.
+
+So go back up to two. Are you trading this on the seconds or on the minutes? I'm trading on seconds, 30 second chart. Okay.
+
+Yeah. So that's 16, four with two trades a day. That brings the draw down better.
+
+I've improved a lot by trading only two days. And that increased the percentage of actually, this actually passes my, all my criteria, but notice my average winning trade went down significantly. Right.
+
+So, okay. Yeah. I didn't get to the, I didn't get to the mega orb yet.
+
+So I'll have to do that. Okay. Cool.
+
+Any other questions, anything you guys want to go over? Otherwise I will let you go and you guys have a great evening. Um, I got a question. So you guys all set up, you guys set up an LLC for all your accounts.
+
+So, uh, I don't know what the rules are in, in the United States. I'm Canadian. And that's not something we would do because it doesn't matter whether we have, uh, a corporation or not trading, uh, trading, uh, capitalist is taxed as personal income.
+
+So, or it's taxed as income the same way. So there's no benefits to it. So no, I don't.
+
+Have an LLC or a corporation or anything like that in, um, for my trading, I don't need it. Okay. Yeah.
+
+Okay. Yeah. And if you're trading funded account programs, if you're trading the funded account, you are a, uh, you're a contractor anyway.
+
+So it wouldn't make any sense for you to, I don't think it would make sense to have a, an LLC for, for that. I don't know. You'd have to talk to talk to a tax accountant.
+
+Yeah. Okay. Yeah.
+
+Anybody on the call have any, uh, experience with that? I haven't made money enough to report anything on taxes so far. Hopefully next year, I will be filing all my losses from the last couple of years. If you're prompt trading, if you're a 1099 in the United States, you're basically a 1099, like Tracy said, you're a, you're an independent contractor.
+
+So you're going to be taxed at, uh, at regular income. Now, if you're trading, you're trading futures out of your own account, much favorable tax treatment, much favorable tax treatment. Like 60% of it is long-term gains versus.
+
+Correct. Correct. Correct.
+
+Yeah. Something like that. Yeah. 
+
+I got to get to that point here. Yeah. You got to find out what the rules are in your, in your state and in your country.
+
+So yeah. Yep. Okay.
+
+We don't talk, we don't cover taxes a lot for that reason, because I've tried to get tax accountants to come on and give us like some tips and tricks. And they said they can't because it's specific to the area that you live in. There's so many dynamics.
+
+They just refuse to get on there and give us the, give us the, the, the skinny on it. So it's really go see the local professional that's in your area, but definitely find somebody that's familiar with trading. They don't have to be traders themselves, but they, they should have an understanding of what day trading is.
+
+Okay. Awesome. Thank you.
+
+I hope so. Okay. I'll see you guys in a couple of weeks.
+
+Otherwise you guys will have Matt next week. Okay. Yes. 
+
+Thank you, Tracy. Thanks guys. Bye.

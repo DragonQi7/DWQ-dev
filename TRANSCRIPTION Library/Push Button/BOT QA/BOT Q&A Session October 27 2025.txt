@@ -1,0 +1,577 @@
+All right, so we'll start out with a quick disclaimer. Just a reminder that Pushbutton Trading is not a financial advisor. Everything that we provide is for educational purposes only.
+
+This is not a solicitation for you to trade or to participate in the financial markets. You do that at your own volition and be responsible. Trading has risks associated.
+
+Know the risks and be prepared to accept those risks. So you're fully responsible for the decisions that you make. All righty. 
+
+Moving on. Today's session, before we get into any questions or anything, I do want to cover a quick topic. How many of you have experienced that error where it says, you know, order was skipped, blah, blah, blah. 
+
+You guys know what error I'm talking about or do I need to give you a screenshot of that error? Type one in the chat if you guys want to tell me. Who hasn't heard of that error? Let's put a two in the chat if you haven't heard of that error. Okay, there's a couple people that haven't. 
+
+Okay, so what the error looks like. Let's just see if I can find one. Oh, hang on. 
+
+Let me see if I can find one of those errors. Who is the most recent person that sent it to me? I messaged you, Tracy, this morning. Let me grab it from you. 
+
+And there's also one in the chat somebody else posted. Oh, in the in the community chat. Okay. 
+
+Yep. Let me just grab the one from you though. Actually, I'll go to the chat. 
+
+That's quick. Yeah, there it is. Okay. 
+
+So let me share my screen so you guys can see what that looks like. You guys can see this. It says sim sell stop, or stop limit order can't be placed above the market affected order, sell stop, blah, blah, blah. 
+
+And it ends up as an error inside of your grab the error that's inside of the control. See if I can find one. Here we go. 
+
+So let me grab a screenshot of this. So basically, it says strategy volume bought, blah, blah, blah, an order has been ignored since the stock price 16761 near the bar stamp, blah, blah, blah is invalid based on the price range of the bar. This is an invalid order and subsequent. 
+
+Okay. So what ends up happening is the trade doesn't actually go through. Now I want to explain why that happens. 
+
+And why there's very little that we can do about it. I can tell you what we can do about it. But it's the solutions are not pleasant.
+
+So I'm going to grab a whiteboard for a second. Tracy, where do you see that message? That last one that you sent in the logs? You'll find a log. Okay. 
+
+Alright, so everyone can see my whiteboard? Yes. Yes. Okay. 
+
+So the first thing that you need to understand is that there are two types of orders, you have the limit order. And you have a market order. Okay, is there anybody that does not understand the difference between a limit order and a market order? Type a two in the chat if you do not understand the difference between a limit order and a market order. 
+
+Alright, so everyone understands the difference between a limit order and a market order. Okay. So now we're going to focus our attention on limit orders, because our bots put in limit orders, either a stop limit order or a straight limit order. 
+
+And the reason they do that is because that is the best way for us to control price. If we use market orders all the time, we're going to have a lot of slippage. So you have limit order, and you have stop limit order. 
+
+Now, what is the difference between these two orders? Does anyone want to take a stab at it? Okay, well, the difference between these two, two orders is the placement of the order relative to where prices. Okay. So if we take a look at the buy limit order, which means we want to buy a limit order means that we want to buy at that price or better. 
+
+Okay, which means that usually prices up here. And a limit order means that we are placing somewhere down here, we're placing the order below where price is. And what happens is that we're waiting patiently for price to come down and fill that order. 
+
+That is a limit order. Okay. Now, we would put a stop in front of that to make it a stop limit order. 
+
+If we actually didn't want to get in below the price, we wanted to get in above the price of prices here. And we actually wanted to get in once it breaks above this level, then we need to put a stop order in place to prevent the limit order from triggering right away. Because the limit order, remember, a limit order says buy at this price or better, right? Which means that if price is currently sitting right here, right, price is sitting right at this price, and we put a limit order right here. 
+
+That's that's basically says get me in at this price or better. Would any price below that limit order meet the condition of being that price or better? Yes. Yes. 
+
+For anybody that doesn't understand that. It's okay if you don't type of type of two in the chat if it doesn't make sense. Okay. 
+
+Okay. So what we do, because if you just put a limit order, this would immediately fill because it meets the condition. So we put a stop order in place to say, Hey, you can't put a limit order in. 
+
+We want to wait because I don't actually want to get in until price breaks this level. Okay. So what ends up happening is basically... I always use buy low, sell high. 
+
+So buy, it'll take a low price. Sell, it's the opposite. You sell high, it'll do, it'll sell at the high price.
+
+So for your stop limits, buy low, sell high. Like you're saying, if your price is above it, and it's just a limit, it's going to buy low. So the price is whatever is lower than that.
+
+I'm not sure I follow what you're saying. Buy low, sell high. If you go short, if you're going short, and you want to sell at a limit, if you do a limit order for a sell, it's going to sell high.
+
+Yep. You're right. So if this was a sell order, it wouldn't go until the price was above that.
+
+But if you had a price, a line below it, and you said sell with a limit, it would sell high. So it automatically sell. Yeah. 
+
+Yeah, possibly. I don't know if that helps. Well, not really. 
+
+I'm not, because I'm not talking about selling right now. I'm talking about buying, just buying orders. So these are all just buying orders. 
+
+Yeah. So we're either buying low, right down here with a limit order, or we're buying high with a stop limit order. Okay. 
+
+So, because we're waiting for the stop. But the point is, is that you place a stop limit order above price, a buy stop limit order, you place it above price, and you place a buy limit order below price. Okay. 
+
+So buy limit goes here, below price, so buy stop limit goes above price. So price is right here. This is price.
+
+This is the buy stop. This is your buy limit. Okay. 
+
+Does everybody understand that? So buy stop, basically, you want the price to reach a certain level to prove that it's going in your direction. That's why we choose buy stop versus buy limit. That's right. 
+
+So when we're taking a breakout, an opening range breakout, right, here's the candle, we put an order here and an order here. We don't want that order, either one of these orders to trigger until it either breaks that level or breaks this level. Okay. 
+
+So we put those stop orders in place to keep it from triggering prematurely. Okay. So we've got price right here. 
+
+If you want to get in above the price for a buy, it's a buy stop. If you want to get in below the price, it's a buy limit. Now, what happens is when, let's say we build this candle. 
+
+Let me clean this slate here. We have a candle right here. And it's got a wick. 
+
+And here's our buy stop limit order. And here's our sell stop limit order. Okay. 
+
+So if the price breaks lower, it'll trigger. If it breaks above, it'll trigger. That's our opening range. 
+
+Now notice that this is the, we'll say this is a white candle, this is the open, this is the close. So this is when the candle closes, that's when these orders get triggered, or they get placed. Okay. 
+
+The minute that candle closes, they get placed. But notice you have room between where it closed and where the entry potentially could be. There's room. 
+
+Okay. So the time that this order gets placed, it's still the correct order. It's still a stop limit that needs to be placed.
+
+But if you have a candle that gets triggered, for instance, like this, this is just a white candle as well. And there's your entry and there's your like your high and your low. So again, if it breaks the high or breaks the low, this will go long, this will go short.
+
+Notice that the close is really, really close to where the entry price is. Okay. So it's really, it's possible. 
+
+And this will happen also in very fast moving markets. But the point is, is the time that it takes to submit the order to where price actually is at the time, because if this is moving super fast, the next candle could already be here by the time this actually gets submitted to the broker. Once price gets to here, that stop limit order gets submitted, but it's now the wrong order. 
+
+Right? Because when you're when you have price right here, above is the stop limit order, below is the limit order. So if you, if this order, which at the condition of the close of this candle is a stop limit order, it gets submitted, but by the time the broker gets the order, price has already moved into this zone right here. This is now below, which means this is the correct order type. 
+
+So what happens is the order gets rejected because it's the wrong order type. We're submitting a stop limit order instead of a limit order, the order gets rejected, and you need to manually go in and resubmit the order. This happens in manual trading, it happens in bot trading, it doesn't matter. 
+
+Now some brokers will auto switch the order. So if you submit a stop limit order, and it should have been a limit order, it'll automatically switch over. If you submit a limit order, it knows that you should be placing a stop limit order if you place it in the wrong position. 
+
+So some brokers will auto do that. Most won't. Most will reject the order, say, hey, it's a wrong order, and you have no idea what went wrong. 
+
+You don't know why it was rejected. You got to kind of figure it out. They're not clear on that. 
+
+But that's what's happening. Okay, so I get this message to me multiple times because they, they see it happening in the log all the time. And why did this order get rejected? Why did this this bot not take a trade? This is why this is one of the things that can happen, especially on smaller timeframes, with really high moving markets like MNQ.
+
+Now, you are not going to see this as much in the five, six, seven, 10 minute, 15 minute charts, you're going to see this a lot more in the one minute, maybe the two minute and less. Okay, that's where you're going to see it because price is just moving so quickly. In those timeframes, the new candles are coming up really quickly. 
+
+Okay. Yep, go ahead. Just real quick. 
+
+So because I've noticed I get an error from time to time that says that the price for it's an error saying the price range is no longer within. It's no longer valid or something like that. That's what we're talking about. 
+
+That's what you're talking about. Okay, that's just wanted to verify that. Yeah, that's what I'm that's the message you're going to get because it's invalid now because you're putting in a stop limit order, it should be a limit order.
+
+So it's no longer the price is not in the right location for the order that you're submitting. That's what they're trying to say. They're really poor at saying it, but that's why the order is getting rejected. 
+
+So what's the solution to this? The solution is you use market orders because the market order, it doesn't matter. You just get filled when you hit this price, so stop market order. When this goes through, you just get filled. 
+
+The problem is with market orders, you get extensive slippage. So you could get filled here, you could get filled way up here. I've seen it on some of those news releases where you could get because you'll see it on execution all the time. 
+
+If you're using the trade copier, let's get a clean page here. You know, here's your candle. You know, it's a really tiny candle. 
+
+There's your high and your low. And then the news comes in and you get this big, big butt wick. And then it comes down like this and you get filled up here and then you get stopped out right here. 
+
+OK, that's what happens on a market order. Meanwhile, the limit order, stop limit got filled right here on the way up or it got skipped altogether, whatever. But you get filled on the market order way up here. 
+
+And I can go through a whole lesson on why that happens, but that's the problem with market orders. So market orders are not not the best solution to this problem because it opens up a can of worms to more problems and it limits the bots from being useful on anything but really high liquid, high volume markets where you reduce the slippage because slippage is controlled by liquidity and liquidity is based on the number of participants that are trading in that market. And it is usually correlated with volume. 
+
+So the higher the volume, usually the higher the liquidity. But it's not the same thing. OK, so the higher the liquidity you do have, the more participants you have, the less likely you're going to have bad slippage. 
+
+OK, so that's not really the solution that we're looking for. So right now, what our developer is is currently working on, we're trying to figure out a way because the best solution is to have some way of determining this is where the order should have been placed. It broke out to the high, this is where the order should have been placed.
+
+It got rejected. So now there is no order. If we had some way of saying, OK, we have a we have a position that should be open. 
+
+It's not open. We don't have an order. Let's put the order in and then submit a second order to fill on a limit order to get filled if it comes back down.
+
+That's the alternative. Or we just have to accept the fact that we're going to miss some trades. OK, so I just wanted to run through this today. 
+
+I wanted people to understand why this happens and I want to move on from that. So does anyone have any questions regarding this particular topic? We could also put in a little more like if we have a particular one that it comes up a lot, we could do the entry buffer a little more. Couldn't that help, too? It might. 
+
+Yep. Yep. It might. 
+
+So it depends on how fast the market's moving, because I find the ones that are doing it a lot are really coming. They're starting around the open. And it's just an influx of volume. 
+
+It just happens so quick. So, yep. Yeah. 
+
+OK. When the volatility is really low, they trigger all the time. But when the volatility picks up, it's just you're getting it all the time. 
+
+You're missing them, missing the orders. But you can definitely try it because all that's doing is moving the it's moving. What it'll do is it'll help when you get candles that are like this with no wicks. 
+
+That'll solve that problem, but it won't solve this problem when it when it moves so fast. It just it's it's gone and no time. OK. 
+
+All right. Does anyone else have any other questions regarding this particular topic? Does this provide clarity for you? Yeah, definitely so. OK. 
+
+All right. OK. I assume that's why we were getting those errors, but I I guess I wasn't 100 percent sure. 
+
+Yeah, that's OK. And that's why I want to have a class on it, because it's it's something that's been coming up for a long time and people keep asking about it. And and so I just want to have a video that talks about it and. 
+
+Yeah. So now now we know. OK, so. 
+
+And Tracy, does this error disable bots from keep going, because I just I restarted my NinjaTrader and re-enabled everything. Maybe that was not the right thing to do. I just wasn't sure. 
+
+No, the order just gets the order just gets skipped. So. OK. 
+
+We just say, OK, and just leave it alone again and just once it resets, it will be OK. Yep. They're fine. 
+
+Yep. So like I said, it's just the price is not allowing it to to fill at that particular level. Yeah. 
+
+I've had a couple where it would skip me on that long wick and then it would come back the other way and it would fill me the opposite direction. Sometimes that's lucky. Yeah. 
+
+Yeah. Sometimes that's lucky and that happens, right? Because here's the thing, too, right? With a stop. So a stop limit order. 
+
+So basically what's happening to David is as price jumps up, this order gets rejected because it's the wrong order type. But but the bottom order still was still valid because it wasn't in the wrong location. Right. 
+
+So it it comes all the way back up then down and then fills on this this order. I've definitely plausible. And you know what? You saved yourself on a loss and potentially got yourself on a win. 
+
+But at the same token, you could end up saving yourself on a loss and then this ends up in a loss as well. So you end up with a loss anyway. Either way, you end up with a loss.
+
+So there's that. But the other thing as well is with a stop limit, because there's two parts to a stop limit. So when you have a stop limit order, the first thing is the stop price has to be hit. 
+
+So price has to actually go up through the stop price, whatever the stop price is. Once price goes through the stop price, it then submits a limit order. It triggers the limit order says, hey, let's put the limit order in now. 
+
+Now, a limit order needs to be filled on the way down. So price actually has to come back down to fill the limit order. So you have to cross the price basically twice to get a stop limit order filled. 
+
+So again, in really high, fast volatility markets, it's possible for the price to go straight through and never fill you because it triggers your stop and your limit order just gets sitting there. It doesn't get filled because price never actually came back and filled it. OK, so there's that other possibility with a stop limit order. 
+
+All right. Any questions regarding this stuff? Oh, no. OK. 
+
+All right. Any questions regarding anything else now? So my question is, you mentioned a while back that, well, like a week or two ago that you were going to use a different prop firm and started using another prop firm. I was just curious, how is that working out for you? I've taken one trade on it. 
+
+Oh, I haven't had any time to trade with it so far. I like them because their their end of their end of day, first of all, their end of day drawdown. So it doesn't matter what you do throughout the day. 
+
+Like it's it's whatever it is at the end of the day. So it's not a which is nice, but they have five hundred less drawdown available to you than what what Apex does. But again, because it's not a trailing drawdown, that's my first trade could take up that first five hundred dollars very, very quickly anyway, just from from having one of my trades go in the right direction and then come back a little bit, even if I win on the trade. 
+
+So I like it that way. The other thing I like is that they send an email out at the end of the day, right off the bat, just giving you a summary of your trading day. So then the other thing that I like about them is that it's a one time fee, not a monthly fee. 
+
+So it's it's more money, like a 50k account costs eighty one dollars. And I got that on a discount. But it's you take as long as you want to to fund it.
+
+It's not a monthly fee. I have no idea what resets costs if you blow it. But it's like I said, it's a one time fee rather than a monthly fee. 
+
+The downside, you can only have five accounts. That's the the max. But it's still you can trade it with your Apex accounts. 
+
+There's no no problem because trade of eight. And this is also on the base of trade of eight. You can have multiple different trade of eight accounts connected to your Ninja trader. 
+
+So you can have 20 accounts with Apex, five with Lucid, five or three with one of the other companies. I don't know what BlueSki does, but I don't know all of them. But you can have one with every single one of them as long as they're all trade of eight. 
+
+You can be trading all of them at the same time and being connected to all of them at the same time. Where Rhythmic, you cannot. You can only have one Rhythmic login. 
+
+Even if you have multiple accounts with Rhythmic, you can only have one Rhythmic login. And it might be Apex and you have 20 accounts with Apex, but you can only be logged into Apex. You can't be logged into Rhythmic at Topstep or Rhythmic with another company. 
+
+OK, so BlueSki. I made a question, but that was I was curious to know if the data connection was any more stable with them than it is. Yeah, I don't know. 
+
+I haven't used them enough. I just I just traded. I took one trade on it. 
+
+That's it. So and the one trade went fine. I had no no connection issues, nothing like that. 
+
+But I've been too busy doing other things that it's just been sitting there doing nothing. So, yep. But I'll let you know. 
+
+OK, yeah. All right. Is there anybody else that has any other questions? So you said you were talking about Rhythmic. 
+
+So the accounts that I'm trying to qualify are Rhythmic and I just passed a Rhythmic 50k account last week. Yep. If I go to get new ones, do you suggest that I go to Tradeavate instead of Rhythmic? So if you're doing, I do recommend that. 
+
+But I mean, if you are going to get more Rhythmic accounts within Apex, that's fine. But if you get any other account, I would get Tradeavate for sure. Like if you go to if you go to BlueSki or you go to Topstep or Topstep doesn't offer the Tradeavate, they only offer Rhythmic on NinjaTrader anyway. 
+
+But if you went to Lucid or whatever, just make sure you're getting Tradeavate. And yeah, you could switch over to the Tradeavate if you wanted to with Apex. But I think you'd have to let go of your Rhythmic accounts.
+
+I don't know if you can have both. You might be able to. Yeah, that was my question is since I've got Rhythmic qualifying, if I buy another account since I've qualified this one, if I buy another account and buy Tradeavate, will that cause problems? I don't know. 
+
+You'd have to reach out to them because I've never tried it. But I would just stick with Rhythmic on there. And if you go with another company, just get Tradeavate. 
+
+But if you blow it, I would definitely switch over to Tradeavate. I think somebody else was going to say something. Yeah, I was going to say you can have both. 
+
+I've done it before. But where I ran into issues is if I was using a copier between the Rhythmic and the Tradeavate, they would get out of sync and can get really messed up. Yeah, two different data feeds. 
+
+Yeah, you get ghost trades and it's a nightmare. Yeah, there you go. Good information. 
+
+Thank you, Tim. Okay. Tracy, I got one thing for you. 
+
+So I know in the past, and I just want to clarify this, but let's say you got two portfolios going. Let's say you got one thing that's long MNQ and another thing that's the second portfolio is short MNQ. It's still okay as long as you can define to Apex that you're running two separate, you have a strategy and you're running two separate things.
+
+So what they don't want you doing is they don't, and there's copiers that will do this, and I know that there's copiers that will do this. So there's copiers that will, when you place a long trade in, let's say, NQ, you can place a reverse trade. The exact same trade at the exact same time, you can place it on the same ticker or on a different ticker, but you can do that. 
+
+So the timestamps are identical. Everything's identical. You're getting in, you're getting out, but you're hedging, and that's what they don't want.
+
+That's not okay. But if you are legitimately taking a long on one trade or on one account, and then you're taking a short on another account, the chances of them being at the exact same time are going to be very, very unlikely, let alone being the exact same position size. So that's what they don't want. 
+
+And a lot of the companies, I just read through the Lucid, because they talk about it as well, and they made it clear that it's not what they're talking about. Let's say you're long six contracts in NQ and you're short one contract in the ES, it's totally different. But if you're long six contracts on NQ and short six contracts on ES at the same time, that's what they're talking about. 
+
+Topstep does not connect it. They do with Rhythmic. They only have one type and it's not their new brand. 
+
+And it sucks because they limit the micros to five contracts. So the risk that you use is 10 times less than if you traded the minis. So they don't they don't do that. 
+
+And I know that because I had an account with them. I canceled it for that reason, because trade of eight or sorry, apex will do five mini micro contracts or sorry, five mini contracts and 50 micro contracts. So you can keep the risk identical, identical. 
+
+Because I don't know if you guys know that. But for every mini contract, it's equivalent to 10 micro contracts. That's the same. 
+
+So Topstep, I wouldn't use them because they they have a crappy platform for NinjaTrader. So their new Topstep X, I believe, is really cool. And it works really great. 
+
+But it's not it's not available on NinjaTrader. So yeah, okay. Yeah. 
+
+Okay. All right. Any other questions? Tracy, when are we going to move to email identifier for NinjaTrader? I don't know.
+
+I'm waiting for NinjaTrader to get back to me because I am running into issues with it. I've been testing it, we've been getting our bots updated with it. And I can't get it to run on two machines. 
+
+I'm getting licensing saying, hey, your license isn't working. So I've got an email out to them, they have not replied back to me. So I am just waiting to find out how to get this code working. 
+
+So I'm preparing for it. But in the meantime, we have to keep the machine IDs going. And that's what it's going to be in until whatever. 
+
+But I have asked everybody for their email address so that I can compile it because what I'm doing is going in and manually giving you guys licenses so that we can when we do transition over, you guys are never going to know it's just going to be a seamless process, rather than getting a whole bunch of alerts that come up and say, oh, everything's not working. And then you guys are like, why doesn't it work? The nice thing is, is that once we do switch over, I've already created all the automation, that all you need to do is fill out a form, your email gets automatically submitted. So it runs through some checks to make sure that you have the appropriate tagging. 
+
+And that you are actually a customer. And if you are a customer, and you're you're allowed to have that license, then it automatically provides you the licensing and it's instantaneously done. So that's the nice thing.
+
+I don't have to worry about, you know, you guys sending me a message, and then I have to get to my computer, I have to make sure that I have access to it, all that. That's why there's a 24 hour wait period for the machine IDs right now. So yeah, that's the process that's happening right now. 
+
+And once NinjaTrader gets back to me and helps us figure out why we can't have multiple, multiple computers working, then that would be that would be good. It's a glitchy system right now. So we're just trying to get it all sorted out. 
+
+Okay, yeah, because I have my new computer set up. And I probably just need to send you my machine ID for now. Yep, yep, you will. 
+
+So would I still be able to run like different portfolios on different accounts? If I sent you those two machine IDs? Is that possible? Yeah. Okay. Yeah. 
+
+Yeah, the licensing will be the same. I just need them. I just need the machine IDs so that it's like I said, right now, I'm going to be sending out an update this week, most likely this week, once I get the bots, there's a couple bots that need to be fixed. 
+
+Once I get the bots, I'm sending out a new package. And it'll still be running off of the machine ID unless I get the stuff with Apex or with NinjaTrader sorted out before then. But it'll be as usual. 
+
+So you can run them on your main computer, you can run them on your VPS, it doesn't matter, as long as we have the machine ID. Okay. Now, one of the things that I do want to point out, let me just end my share here. 
+
+One of the things I do want to point out is in this new update, when I send it out to everybody, I have put together it's going to do an uninstall on your computer and an install. Now what it's going to do is it's going to go in and remove all the bots, that you have on all the files that that you have in your in your in your templates, for those templates and any of the files that you have for the portfolio, it's going to remove all that first and then install the new stuff. Now, that's fine and dandy. 
+
+I encourage you all before you do the install to go in and manually uninstall all the bots, restart your NinjaTrader before all that happens. Anyway, I encourage you to do that. And one, because it's good practice for you, you need to know how to do it. 
+
+The second reason is that if you have made any templates yourself for those bots, when you uninstall a bot and reinstall, like uninstall, restart and then install a new one, you lose all those templates. So it's a really good habit for you to get into going in and actually what I do, and I'm going to show you this right now. So let me just share my screen right here. 
+
+Let me just move that out of the way. Move that out of the way, whatever. Anyway, what I do is I go into my little manila folder, okay, and then I go to documents, I go to NinjaTrader 8, I go to templates, and then I go to strategy. 
+
+That's where you want to go. Now, what I do is I just grab all of these folders, I right click, I go compress, compress to zip. And then I just put in here, I say volume bot strategy backup. 
+
+And then I date it October 27, 2025. And I just let that go. And then I just drag it and drop it on my desktop. 
+
+Now I have it in case I need it. Now I can go ahead uninstall the bots, reinstall everything. And then if I need to get into it, I can just unzip it and then grab whatever files I need. 
+
+So you just can right click extract all this little file folder comes up. So you just extract it, it's going to extract right onto my desktop. Boom, there it goes. 
+
+So now where did it go? I need to find it here. It's on my desktop somewhere. I've got three different desktops. 
+
+Here we go. Right here. So there it is right there. 
+
+So you just click in it. And when you click in it, you're going to see all those same folders are right there. And inside of each of these folders is the strategies that you had. 
+
+So then you can just grab the ones that you wanted to put back and just drag and drop them into the folders. Okay. So that's something that is good for you to get in the habit of doing. 
+
+Okay, any questions regarding that? So when we uninstall them, do we do it on NinjaTrader? Or do we just delete these files here? No, no, no, no, no. So to uninstall a bot, so before you uninstall, what you'll want to do is you always want to take a copy of your templates just if and only if you made your own custom templates. If you didn't make any of your own custom templates, don't worry about it.
+
+Okay, this is only for those that make their own templates. So you did your own backtesting. And, and then you you wanted to save some of your own backtests. 
+
+That's this is only for you. Okay. If you did not do that, then don't do not do this step. 
+
+Okay. So if you did, do any of your own customized backtests, then you can go into this area, the documents and NinjaTrader eight template strategy, highlight, zip them up, drop them onto your desktop. Okay, that's step one.
+
+Step two is to then go into tools, remove NinjaScript assembly, and then find the bot in here that you want to remove. So EMA 10 and you click Remove. Okay, so you remove it, it'll come up with a little bit. 
+
+I don't want to remove it because I haven't backed up my my files. I actually just deleted them. So so you remove it, the bot comes off, it'll give you a message saying it was removed. 
+
+And then you can move on to the next one. MegaOrb, remove. Okay. 
+
+Megasculptor, remove. Megasnapback, remove. NR7, remove. 
+
+VolumeBot, remove. Once they're all removed, and you'll get a message saying they're all removed, you can close this, then you just shut down NinjaTrader. And then you can go ahead and you can install the package. 
+
+Okay. Okay. Okay. 
+
+So any questions regarding that? Yeah, Tracy, I haven't downloaded any. I haven't got as far as downloading the portfolio. So should I do all this before I download the portfolio? Yes. 
+
+Okay. Thank you. Yep. 
+
+Okay. And and actually, Paul, for you, if if you are downloading the most recent portfolio, you will need to install the bots as well. So update all the bots. 
+
+Once you update all the bots, then install the latest package. But if you aren't doing it until after I release this next update, then you won't have to install the bots first because I've got I'm doing it for you. So the last installation package, the one that's currently public, does not install the bots for you. 
+
+Okay, I want to make that very clear, the new version that's coming out at the end of the week will. So if you are using the older version, you need to install the bots before you install the installation package. Okay. 
+
+And the reason being is because the installation package puts in all those templates into that folder that I just showed you. And if you go and uninstall the bots after you do the installation package, it just removes all the stuff that just got put in there from the installation of the portfolio. Make sense? Yes. 
+
+I think I'll just wait to you. I'll wait to the end of the week. Sure. 
+
+Sounds good. Okay. Perfect. 
+
+Thank you. You bet. All right. 
+
+Any other questions? All right. I want to go over some new features that are going to be coming out in the new bots. So the newest bots that are going to, they're all coming out with version 10.0. Okay, 10.0 is going to be the changeover from our old system to our new system. 
+
+And that's why we've just drastically changed the version number. Now, one of the things that you're going to know, and I went through this last the last time I was that I was hosting, I think it was last Thursday, not last Thursday, the Thursday before that, I said to you guys that if you install a strategy, let's just run, let's go right here and install. I wanted you to put numbers in front of this. 
+
+So if I go into edit, you scroll down, and then I wanted you to go, okay, 001 dash portfolio. Oh, the port folio one dash. That's what I wanted you guys to do. 
+
+And then hit, okay. And it would put the portfolio number and the, and the strategy number. You guys all remember me saying that? Okay. 
+
+Well, I ran into some massive problems trying to do it this way. So you can still do that. I like to do it just because I can see what the strategy is and the and the bot or the portfolio number, but you don't need to anymore. 
+
+Why I had to rebuild the bots, got them rebuilt to accommodate this because the way NinjaTrader posts the trades, it wasn't working. So inside of the new bots, you're going to see this tag system right here. Okay. 
+
+Now I've gone in and I've already preset a lot of these. I still have some to do, but if I go and load template 001, for example, it's going to automatically have the number right there. That's, that's the setting. 
+
+And then it says portfolio mega orb. This is actually, we'll normally say number, not mega orb. So it'll normally say this. 
+
+So what you do is just replace that number with whatever portfolio it is. So let's say 100 is the portfolio that you've created. So there's setting number one and portfolio 100. 
+
+You only need to do this. If you want to take advantage of the brand new tracker that's going to be released with this new update. And I'm going to show you that next.
+
+Okay. This is solely used for the portfolio tracking, which I'm going to get into. Does anyone have any questions regarding this? Okay. 
+
+The other thing is all of the bots now have this directional filter. And I have already changed some of the strategies to be only long or only short. So that's, you can change this here. 
+
+Okay. So both long or short. So some of these strategies that are going to come to you are only long strategies. 
+
+They will only fire off longs. They will only fire off shorts. Some will fire off both. 
+
+Okay. So just know that that's also a new feature that has been taking place. All right. 
+
+So now I want to introduce you to the brand new, new and approved portfolio tracker. This is the portfolio tracker. Now the portfolio tracker, notice the colors. 
+
+This is the nice, the greens. These are, these are push button colors. Okay. 
+
+So this is branded with push button branding. All right. And what you're going to find right here is there is a theme right up here. 
+
+You're going to see, see theme, there's dark, and then there's light. Now, if I change it to light, it'll apply the next time you restart it. So I'm just going to close this and I'm going to open up the tracker again and boom, it is light now. 
+
+Okay. So now you have a light theme. So if you prefer it all in light, then you can have it in light. 
+
+If you prefer it in dark, which I do, then you can switch it back to the dark and restart it. Now, oops, the, uh, okay, there's the dark. This theme selection right here controls the theme of the tracker, the analyzer, and the builder. 
+
+So if you want the light theme to be on all of them, then you set it here. If you want the dark theme, then you set it here. Otherwise that's the only way you can do it. 
+
+So it's light or dark. It's controlled in the portfolio tracker. Okay. 
+
+Next, this opens up on a calendar page. That's the very first page. So you can see your weekly view right here. 
+
+So I've got some tests in here, portfolio one, portfolio 99. These are just some tests that I've been running. Okay. 
+
+I'm not actually running any portfolios on this computer at all, but I've, and I only have one bot right now that currently can track this. So, um, I'm not able to track the rest of them. So this is just, just with the one bot I've been using to track the trades and I'm entering them in, um, like kind of a few seconds after each other.
+
+You can see the tests. These are all tests that are taking place. Um, really small ins and outs.
+
+Um, but anyway, so you've got a calendar page. This is a weekly view. You can also look at a monthly view. 
+
+Okay. Now somebody requested this. So I gave it to you. 
+
+You wanted a calendar view. Here's your calendar view. So you can look at your, your portfolio performance. 
+
+It'll have a list. If there's multiple portfolios that are trading on the same day, it'll show you the total PNL on that particular day or that particular week. If you want to look at the week, you'll see the list here. 
+
+Okay. If you want to filter, you can filter all of this. So you just click on the calendar and you can filter the date. 
+
+All right. So that's the first part of this tracker. The second part, you can actually see, this is all of the, all of the trades. 
+
+Okay. All of the trades. And then your daily PNL for each of your portfolios. 
+
+Now, if you wanted to, you can go in and you can, you can, um, select the account. You can just look at that account. If you wanted to just look at the instrument, you can look at specific instruments and see what the progress was just for that instrument. 
+
+And again, you can filter by the date. So if you only wanted to see this week's, uh, trades or the day's trades, then you can just click on the calendar, pick the day and then hit refresh and it'll refresh the data and you're good to go. The next is you're going to have a performance. 
+
+Now this I think is really cool and I'll show you how to get this active. Okay. But what this does is let's say that I'm comparing portfolio. 
+
+Number one, notice when I, I switched from the test portfolio, watch what happens over here. So this is historical. This is real. 
+
+Okay. So real, this is historical performance. This is, these are the real trades.
+
+So if I go to portfolio one, notice this changed. If I go to portfolio 100, notice it changed it updates. So it's automatically going to grab the historical data from, from portfolio number 100 and it's going to compare your live performance with portfolio 100.
+
+Okay. Now there's a little button right here. This apply date, date filter. 
+
+If that date filter, I've got a defaulted to checked on, but if you uncheck it, then what you're looking at is you're looking at the entire historical performance, but that's not very useful, is it? So if you put, apply a date filter, what is it doing? Is it saying, well, you've got 27 days historical scale to 27 day window. So what it's doing is it's taking the historical information. It's giving you a 27 day average of what it has been doing over the last three and a half years so that you can now compare apples to apples. 
+
+Okay. How many people think that's pretty cool? Yeah. Very cool.
+
+Very cool. Okay. Get ready to get your mind blown. 
+
+Speechless. Oh, it's even getting better. It's good. 
+
+Yeah. Here comes Christmas. Here comes Christmas. 
+
+You ready? Okay. We have a health check. Now you need at least a week's worth of data. 
+
+What this is going to do is there's some built benchmarks that are built into the calculations here, mathematical deviation factors that AI helped me create around net status, like the net profit status, your profit factor status, your drawdown status, and your trade status. It gives you a green, an amber, or a red alert. Okay. 
+
+And basically a green means you're within safety parameters. Amber means you're kind of deviating beyond those parameters. Red means you've gone way beyond the parameters that you need to be. 
+
+All right. And then there's an action here. This action, again, is good, amber, or red. 
+
+Good means keep trading the portfolio. It's doing great. Amber means you need to start doing some investigation. 
+
+There's some issues that are coming up where it's deviating a little bit too much from the portfolio. And red says, you need to stop this portfolio right now. Don't trade it anymore. 
+
+Stop it. Okay. How cool is that? That's awesome. 
+
+I think it's cool. I'm super excited for it. Definitely. 
+
+Yeah, it's really neat. But what you need to do is you actually need to select the week or the month, but you need to actually run it. Okay. 
+
+So I don't have any trade data in here, but you'd need to run it. And I have not been trading it enough. Like I said, I'm just testing to make sure everything works, but I need to trade it long enough. 
+
+And then what it's doing is you can see all the different portfolios. So it's listed by the portfolio. So whatever the portfolio numbers are that you have that are running on here, it's going to give you a health of each one of those portfolios. 
+
+And you can decide at a glance, do I keep running this or do I stop it? It does need at least a week of data. So I recommend that you run it at least a week at a minimum, preferably a month. Okay. 
+
+So that's kind of where it's at. But even if you check it after a week, you know, and let it go for a second week, maybe a third week, but it's basing it off of this performance window. Okay. 
+
+So it's looking at the comparables week to week and month to month. Okay. So just like this, when you look at this, you can use at any time to compare, but the health check is checking after every week.
+
+And after every month, it's comparing month to month and week to week data. Okay. So, and again, it's based off, like I said, this here is taking that window and it's saying, okay, well, you're looking at a 27 day window. 
+
+Okay. I want to compare it to a 27 day average window on the portfolio. What this health check is doing is looking what's the weekly average performance and what's the monthly average performance and comparing it to your live performance. 
+
+Okay. And then based on that information, it's giving you a health check. Okay. 
+
+I'm super excited for this. The other thing is if you want to reset all of your data, so let's say a blowout account, you don't want it in here anymore. You can reset the tracker. 
+
+It's going to reset all of your data. You'll lose everything in here. Okay. 
+
+That that's there. It just starts everything from zero. So you can do that if you only have like one account, or maybe you've got two accounts, they both get blown, whatever. 
+
+And you want to reset the tracker, then you can just reset the database. Okay. Now, any questions so far? I do. 
+
+Is this unique to the one machine? Sorry. Sorry. Is it unique to just that machine that you're running? It is. 
+
+Yep. Yes, it is. Well, you know what, no, Svetlana, you know what, I'm not 100% sure yet, because I had to change the tagging. 
+
+So until I get a bot that's working on both machines, that does the tagging, I won't be able to tell you that it may not because I do register the trades on both machines. Okay, so it might, it might catch it just being on one machine. Okay.
+
+Okay. I got one question. Yep, go ahead.
+
+Yeah, so um, so you know how if it goes to red, and so we know that sometimes a portfolio can go red in a month or can go negative in a month. But it doesn't necessarily mean that it's a bad portfolio. It just means that one month was bad. 
+
+So how would that correlate to let's say it's red for three weeks, and then? Okay, so first of all, this action thing is, is telling you that you have more than it's like three of these categories are all red. Gotcha. Okay. 
+
+So if you have like one red, like maybe the drawdown is red, and maybe the trade status is amber, and the rest are green. Or maybe the net status is red, but everything else is green. You're not going to get a, you're not going to get something says, hey, you need to stop this. 
+
+It's when you got three reds are showing up. It's like this is this is it's not it's not functioning. And I'm not and I'm using like AI is using a standard, a standard deviation type of formula to determine what those benchmarks should be. 
+
+So that's where it's at. Now. I was thinking about or toying with the idea of letting you guys put your own parameters in there. 
+
+But that might be down the road, because I wanted to make this as easy as possible. And yeah, it's up to you. I mean, you may decide that, you know, if you get an amber alert, and that you might decide, I'm only going to run it if it's green, and that's completely your choice. 
+
+Right? So you may decide, well, anytime the drawdown is red, you're going to, you're going to do I can't control what you do. And you have complete right to use it however you like. That's just what it's there. 
+
+It's there to help. And I get a lot of questions of when do you change things out? You know, maybe this is going to help you hold a little bit longer, let the portfolios because the portfolios are designed to trade longer, they're not meant to be changed out on a weekly or a monthly basis, they're meant to give them a chance to work, right. And you've got the chance of a portfolio, every single strategy not working all of a sudden is very, very small, you may have one or two of them out of the eight or nine that you might be running that aren't performing. 
+
+But the rest of the the rest of the bot should be should be holding them up. Okay, so it's, um, that's kind of the design of the portfolio. Right? Nice. 
+
+Yeah. Okay, I see some questions here. Or I see some. 
+
+Excellent. I was Yeah, Paige, you were asking for the calendar. You got it. 
+
+Awesome. Okay, perfect. Christmas. 
+
+Holy cow. Great. I see.
+
+Yep. So with this new install, replace all of the existing bots that we may be using. Yep. 
+
+So we would have to redo everything, right? What do you mean, redo everything, rerun the builder and analyzer? Yes, but I would anyway, because you're going to be getting a whole bunch of new strategies. Plus, you're going to get the latest data. Because I've updated them up to 20 the 21st. 
+
+So they've been running up to the 21st, you're getting all that extra data, plus you're getting we have now 300 strategies. So you're going to get more strategies. This the other thing is I've gone through and as we've got these this new long short, I've also changed some of the settings to only do long and only do short. 
+
+So don't update until you you're ready to start using this stuff. And you're ready to get rid of your other portfolio. Because yes, some of those portfolios may have changed. 
+
+The other thing that you can do is you can save because if you will, you'll still have your templates. Because I'm not clearing out the templates. I don't believe I am anyway. 
+
+Let me go into here. So whatever template you have in here should still be in there. So and that bases it off the number so you can you can open that up and it should still pull in the right the right strategies. 
+
+But just double check and make sure that the portfolio that you're running is still is still something that you want to run. Right? Okay. Does that make sense? Yeah. 
+
+Okay. And would you would you be able to show like demo this new information on Thursday? Like, maybe like how to run the builder and analyzer like maybe like on small settings? Because I'm not sure if I fully understand that part. Yeah, well, I'm gonna I can do it right now. 
+
+I am like driving in the car, but I'm almost home again. I have to drop off my daughter. Yep. 
+
+Um, yeah, I can. I can go over it on Thursday. So I'm going to cover the rest of this on Thursday, because there's there's one more part to this as well. 
+
+And that's in the analyzer right here. So remember, there's this export portfolio button that I told you was for future. This, this button right here is how this guy right here gets this information right here. 
+
+Okay. So once you decide I want to start tracking, I want to start using a specific portfolio, then what you need to do is let's say that you've got portfolio 100, I'm going to load it, say, okay, I want to use this portfolio, this is I'm going to put this into action, and I want to start tracking it, then what you do is you click export portfolio, type in portfolio, 1100, name it portfolio, and then the number, okay, don't name it anything else, just name it portfolio 100, whatever the number is, and then click OK. And it's going to save to your portfolio.
+
+You don't need to know that. But that's what's going to give me access, or what's going to give this guy right here, access to portfolio 100. Okay. 
+
+So now it has it has the information right here. Okay. So let's see, there's portfolio, let's see if there's another portfolio in here that we don't have. 
+
+Let's, let's see. Let's do port portfolio 10, because there's no portfolio 10, then you'll see it. Okay, so we're going to load. 
+
+Let's just, let's do this guy here, load it. And let's put the date back to 2022. Right there. 
+
+And what we're going to do is we're going to save this as portfolio 10. So export, and we're going to call this portfolio 10. Portfolio 10. 
+
+Okay, done. Now I go over to my tracker and guess what portfolio. Oh, I might have to restart it. 
+
+I'm gonna have to fix that code so that it's persistent. Portfolio tracker. Let's go to the performance and portfolio 10 is there, I can now load it. 
+
+So there's the portfolio 10 information. Okay. So that's, that's the connect between these devices, or these, these things. 
+
+Okay. Any questions? No questions. All right. 
+
+I think our tongues are sticking out to Tracy. Awesome. Okay, well, I will, I will do a fresh, hopefully, hopefully I'll have an install package by Thursday, and I can go through it. 
+
+But I will do a run through from beginning starting with the, the, what do you call it, the builder, I'll do a refresher on Thursday. So for those of you that want to do that, that'd be great. Hopefully, I'll have the installation package, I can walk, walk you guys through installing it. 
+
+If I don't have it yet, then it'll be towards the end of the week. So I'm working very hard to try and get it to you for for before Thursday. So all right.
+
+But if anybody, if nobody has any other questions, nobody is stuck, then you guys have a fantastic day. It's always a pleasure connecting with you guys. And I will see you guys all on Thursday.
+
+All right. Thank you. Thank you.

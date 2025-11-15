@@ -1,0 +1,104 @@
+# Major points — verbatim, organized for readability
+
+## Contributors & thanks
+
+> "We have been looking forward to this program literally for years, and as a student of Master Liu's, it's myself and everybody else involved in this program, it's our job to kind of nudge the Master along and to say, can you share with us what you've discovered in life?"
+> 
+> "So I have to thank you for all of these our students."
+> 
+> "When the students are ready, Master will show up. Now, so now we have to reverse."
+> 
+> "When the students are ready, they will push the Master and become a student again."
+
+## Course purpose & five-element framework
+
+> "We have an entire universe of Dao behind us, right? So we have a five element system."
+> 
+> "The gift is a come from the Tao and the gift is each one of us inherent inside of us."
+> 
+> "So the five element is a framework existing in the thousands of years ago, has a purpose, right?"
+> 
+> "The purpose of these five elements for today is to give us one of the framework, and particularly for most of you wonder looking for something tangible, comprehensive, and also unique system can help us heal ourselves, fix the problems, and make life better."
+
+## Learning process (information → knowledge → system → wisdom)
+
+> "The first level is grabbing or take information or data, whatever, how do you want to call it? It's information, right?"
+> 
+> "Step one. But this information, if you don't know how to use just information, right? So you need to apply this information, turn it to the knowledge. That's the second step."
+> 
+> "Now, what is this five element consciousness state? In between, right? It's in between."
+> 
+> "It's levels. … This course is a processing course, right?"
+> 
+> "If we want to enter invisible world, we have to start at the visible world first, and the stepstone, that's our stepstone, right? That's our information."
+
+## Practical application & examples
+
+> "I continuously use this concept, right? My master always say, you must follow this concept again and again."
+> 
+> "For example, I, someone suffer in a chronic constipation, right?... Suppose I say, I'm going to use lung, lung as the, I will enter because the lung, the function is allow energy rise and energy drop. So the lung and the colon has a relationship."
+> 
+> "That's just a different angle. Suppose they say, okay, I don't want this. How can I go to the water gate?... So the water element is important, right?"
+> 
+> "You can take wood, you can take the metal, you can take the kidney water, make it the common, that's the teamwork."
+
+## Emphasis on levels and systems
+
+> "System different, thinking different, combination different, then the outcome will be different. So that's why we say five element consciousness framework is levels."
+> 
+> "So the second very important concept about the discourse, right? About the discourse. This course, how do we going to do that, right?"
+
+## Wu (key Chinese concept & homework)
+
+> "I want everybody to learn this first Chinese vocabulary called Wu. Wu, W-U."
+> 
+> "What is Wu? It's thinking without the mind. You have to think, but without the mind. All you can say, think with your heart."
+> 
+> "The first homework is you need to realize what's called the quantum leap, the Wu."
+> 
+> "Wu is you. You need Wu."
+
+## Process & practice guidance
+
+> "Again and again means that you have to start for the consciousness mind, then turn to the unconsciousness mind. Then we will turn to no consciousness mind."
+> 
+> "The wisdom cannot use language to pass, to teach. You have to experience."
+> 
+> "I only can lead the student to the gate, the student have to go through."
+
+## Memory, imagery & healing
+
+> "Let me do the one of the music and see what's happening. Does anyone see the ice cream truck in front of you? ... The sound triggered the memory."
+> 
+> "If this five element consciousness framework can pull out your consciousness level of the past life. What's happening? At the cell level, you will change. You can pull out the happiness and the joyful memory. You can use this memory for healing."
+
+## Advice for learners
+
+> "Go back and re-listen to each session. Many of us have listened to them five or six times."
+> 
+> "Please make sure that you have a five element chart, download it, download all the charts, but keep that five element chart handy with you."
+> 
+> "This is such a massive program with 60 videos. So we're rolling them out gradually so that you will have a chance to study."
+> 
+> "They're accessible for you for the next year and a half."
+
+## Modern-science parallels & big-picture metaphors
+
+> "Quantum entanglement... everything's a connect. You cannot separate."
+> 
+> "The chaos theories tell you if one small butterfly at the Brazil can cause the Texas and the tornado happens... then one of the elements can happen at any organs, can impact to entire whole body."
+> 
+> "You look at the five element is a five elements. Can you look at the five element is one element as a oneness. Then that will be directly five elements and turn it to the one entire elements. Oneness, that is the goal."
+
+## Closing / encouragement
+
+> "That's just the beginning, right? So we are going to use the, when I say that the new learning path, the new learning technique, circle up, right? Tornado up."
+> 
+> "My job is every class I give you a guidance, I give you a key point you need to learn, right?"
+> 
+> "Good luck. So that's just good beginning. So when the good beginning, we'll have a good end."
+
+## If you'd like next
+
+- "Save this organized verbatim file into the repo (done)."
+- "I can also produce a short paraphrased summary (non-verbatim) or extract a contact list of people named in the session."

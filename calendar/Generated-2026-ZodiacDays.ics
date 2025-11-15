@@ -1,0 +1,2360 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DWQ Generated//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:2026 Zodiac Investment Windows (EST)
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:uid-20260101-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260102-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260102
+DTEND;VALUE=DATE:20260103
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260108-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260108
+DTEND;VALUE=DATE:20260109
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260108-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260108
+DTEND;VALUE=DATE:20260109
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260111-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260111
+DTEND;VALUE=DATE:20260112
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260113-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260113
+DTEND;VALUE=DATE:20260114
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260114-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260114
+DTEND;VALUE=DATE:20260115
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260120-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260120
+DTEND;VALUE=DATE:20260121
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260120-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260120
+DTEND;VALUE=DATE:20260121
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260123-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260123
+DTEND;VALUE=DATE:20260124
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260125-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260125
+DTEND;VALUE=DATE:20260126
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260126-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260126
+DTEND;VALUE=DATE:20260127
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260201-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260201
+DTEND;VALUE=DATE:20260202
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260201-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260201
+DTEND;VALUE=DATE:20260202
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260204-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260204
+DTEND;VALUE=DATE:20260205
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260206-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260206
+DTEND;VALUE=DATE:20260207
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260207-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260207
+DTEND;VALUE=DATE:20260208
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260213-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260213
+DTEND;VALUE=DATE:20260214
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260213-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260213
+DTEND;VALUE=DATE:20260214
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260216-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260216
+DTEND;VALUE=DATE:20260217
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260218-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260218
+DTEND;VALUE=DATE:20260219
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260219-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260225-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260225
+DTEND;VALUE=DATE:20260226
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260225-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260225
+DTEND;VALUE=DATE:20260226
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260228-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260228
+DTEND;VALUE=DATE:20260301
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260302-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260302
+DTEND;VALUE=DATE:20260303
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260303-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260303
+DTEND;VALUE=DATE:20260304
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260309-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260309
+DTEND;VALUE=DATE:20260310
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260309-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260309
+DTEND;VALUE=DATE:20260310
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260312-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260312
+DTEND;VALUE=DATE:20260313
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260314-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260314
+DTEND;VALUE=DATE:20260315
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260315-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260315
+DTEND;VALUE=DATE:20260316
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260321-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260321-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260324-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260324
+DTEND;VALUE=DATE:20260325
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260326-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260326
+DTEND;VALUE=DATE:20260327
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260327-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260327
+DTEND;VALUE=DATE:20260328
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260402-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260402-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260405-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260405
+DTEND;VALUE=DATE:20260406
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260407-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260407
+DTEND;VALUE=DATE:20260408
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260408-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260408
+DTEND;VALUE=DATE:20260409
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260414-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260414
+DTEND;VALUE=DATE:20260415
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260414-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260414
+DTEND;VALUE=DATE:20260415
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260417-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260417
+DTEND;VALUE=DATE:20260418
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260419-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260419
+DTEND;VALUE=DATE:20260420
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260420-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260420
+DTEND;VALUE=DATE:20260421
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260426-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260426
+DTEND;VALUE=DATE:20260427
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260426-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260426
+DTEND;VALUE=DATE:20260427
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260429-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260429
+DTEND;VALUE=DATE:20260430
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260501-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260502-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260502
+DTEND;VALUE=DATE:20260503
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260508-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260508
+DTEND;VALUE=DATE:20260509
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260508-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260508
+DTEND;VALUE=DATE:20260509
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260511-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260511
+DTEND;VALUE=DATE:20260512
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260513-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260514-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260514
+DTEND;VALUE=DATE:20260515
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260520-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260520
+DTEND;VALUE=DATE:20260521
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260520-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260520
+DTEND;VALUE=DATE:20260521
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260523-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260524
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260525-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260525
+DTEND;VALUE=DATE:20260526
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260526-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260526
+DTEND;VALUE=DATE:20260527
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260601-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260601-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260604-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260605
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260606-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260607-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260613-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260613-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260616-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260618-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260619-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260619
+DTEND;VALUE=DATE:20260620
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260625-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260625
+DTEND;VALUE=DATE:20260626
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260625-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260625
+DTEND;VALUE=DATE:20260626
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260628-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260628
+DTEND;VALUE=DATE:20260629
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260630-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260701-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260707-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260707-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260710-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260710
+DTEND;VALUE=DATE:20260711
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260712-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260712
+DTEND;VALUE=DATE:20260713
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260713-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260713
+DTEND;VALUE=DATE:20260714
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260719-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260719-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260722-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260722
+DTEND;VALUE=DATE:20260723
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260724-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260724
+DTEND;VALUE=DATE:20260725
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260725-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260725
+DTEND;VALUE=DATE:20260726
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260731-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260731-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260803-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260803
+DTEND;VALUE=DATE:20260804
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260805-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260805
+DTEND;VALUE=DATE:20260806
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260806-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260812-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260812-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260815-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260815
+DTEND;VALUE=DATE:20260816
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260817-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260818-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260824-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260824
+DTEND;VALUE=DATE:20260825
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260824-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260824
+DTEND;VALUE=DATE:20260825
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260827-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260827
+DTEND;VALUE=DATE:20260828
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260829-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260830
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260830-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260905-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260905-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260908-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260910-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260911-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260917-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260917-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260920-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260922-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20260923
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260923-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260929-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20260930
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260929-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20260930
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261002-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261003
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261004-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261005-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261011-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261011-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261014-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261016-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261017-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261023-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261023-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261026-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261028-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261029-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261104-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261104-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261107-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261109-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261110-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261116-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261116-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261119-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261121-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261122-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261128-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261128-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261201-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261203-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261204-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261210-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261210-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261213-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261215-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261216-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261222-nobleman-day-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Day — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+DESCRIPTION:Rat N2\nGenerated from rule: day=Horse → Nobleman Day — Ra
+ t N2\nCONFLICT: true\nOther events on this date: Peach Blossom Day — 
+ Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Rat N2 (possible clash with Horse
+  2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261222-peach-blossom-day-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Day — Horse S2
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+DESCRIPTION:Horse S2\nGenerated from rule: day=Horse → Peach Blossom D
+ ay — Horse S2\nCONFLICT: true\nOther events on this date: Nobleman Da
+ y — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Day — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261225-intelligence-day-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Day — Rooster W2
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+DESCRIPTION:Rooster W2\nGenerated from rule: day=Rooster → Intelligenc
+ e Day — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Day — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261227-sky-horse-day-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Day — Pig NW3
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+DESCRIPTION:Pig NW3\nGenerated from rule: day=Pig → Sky Horse Day — Pi
+ g NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Day — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261228-nobleman-day-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Day — Monkey SW3
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261229
+DESCRIPTION:Monkey SW3\nGenerated from rule: day=Rat → Nobleman Day — 
+ Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Day — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260604-nobleman-month-rat-n2-possible-clash-with-horse-2026--1@dwq-dev
+SUMMARY:Nobleman Month — Rat N2 (possible clash with Horse 2026)
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260704
+DESCRIPTION:Rat N2\nGenerated from rule: month=Horse → Nobleman Month 
+ — Rat N2\nCONFLICT: true\nOther events on this date: Peach Blossom Mo
+ nth — Horse S2
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Month — Rat N2 (possible clash with Hor
+ se 2026) begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260604-peach-blossom-month-horse-s2-2@dwq-dev
+SUMMARY:Peach Blossom Month — Horse S2
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260704
+DESCRIPTION:Horse S2\nGenerated from rule: month=Horse → Peach Blossom
+  Month — Horse S2\nCONFLICT: true\nOther events on this date: Noblema
+ n Month — Rat N2 (possible clash with Horse 2026)
+CATEGORIES:Zodiac
+X-PRIORITY:5
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Peach Blossom Month — Horse S2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20260904-intelligence-month-rooster-w2-1@dwq-dev
+SUMMARY:Intelligence Month — Rooster W2
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20261004
+DESCRIPTION:Rooster W2\nGenerated from rule: month=Rooster → Intellige
+ nce Month — Rooster W2\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Intelligence Month — Rooster W2 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261104-sky-horse-month-pig-nw3-1@dwq-dev
+SUMMARY:Sky Horse Month — Pig NW3
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261204
+DESCRIPTION:Pig NW3\nGenerated from rule: month=Pig → Sky Horse Month 
+ — Pig NW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Sky Horse Month — Pig NW3 begins soon.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uid-20261204-nobleman-month-monkey-sw3-1@dwq-dev
+SUMMARY:Nobleman Month — Monkey SW3
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20270101
+DESCRIPTION:Monkey SW3\nGenerated from rule: month=Rat → Nobleman Mont
+ h — Monkey SW3\nCONFLICT: false
+CATEGORIES:Zodiac
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Nobleman Month — Monkey SW3 begins soon.
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,325 @@
+All right, well, let's go ahead and get started. Got a big full house today. How's it going, guys? How's bot trading going for you? Got a couple things to go over, but want to see if you guys, anyone has any open issues, anything to review. 
+
+Otherwise, I got some interesting things, some findings I want to share with you. Anybody? I'm good on my side. Okay. 
+
+All my issues are data and platform related, not strategy related. Okay, gotcha. Awesome.
+
+Well, I guess not awesome. Okay, thank you. So, what I want to do is I want to show you guys this. 
+
+I got a couple DMs this week about something that I wanted to go over. And you guys have probably, you may or may not know this. Once I point out, it's going to be like glaringly obvious, but let's say, like I'm showing right here on my, let me just minimize this down here. 
+
+I'm showing the, like what I'm currently running. Now, I do run this on my VPS. I fixed it on my VPS, but I want to show you guys here because I've already fixed it in the VPS.
+
+But as you guys are running strategies, like as you guys know, I'm a big fan of just running from the strategies tab versus attaching something on the chart. And the thing that you might notice is you can right click over this, and then there's an option. I think it's like right here for, right click and go to, oops, right click over this, go to strategy performance. 
+
+You guys see that? So when I go to historical, it'll load like the last seven days. And what you'll notice is, oh, the last seven days have taken a whopping zero trades and made zero money, right? And if I repeat the process for number one, number two, and number three, they all have zero trades. And like, what the heck is happening? It's been live. 
+
+Everything's good. And I'll show you how to fix this. And there might be multiple reasons why this might be a, an issue. 
+
+The one I want to show you is because of this right here, this pesky thing, as you guys know, it's the end of September right now. And I'm using the September contract. So how do I fix that? Well, easiest thing to do, we're going to uncheck that. 
+
+We're going to go into edit the strategy. We're going to disable it, go into edit. And when you scroll down, you'll see M&Q SEP here, right? So the easiest thing to do is retype M&Q and you'll see futures. 
+
+And when I click futures, you'll see it switches, right? You guys see what happened. It's switched from September to December. You guys see that was September is now December, right? If you blinked, you might've missed it. 
+
+So I'll do it again here in a sec. But now if I was to look at the strategy performance over the last historical, you'll see, okay, in this case, it took two trades, right? So, okay, that's, we're good, right? And if I look at this one, same thing, we'll see zero trades, right? Basically means it did not trigger any trades. And as you guys know, you can roll over the contract, but there's a few things that it doesn't happen automatically in the actual asset you're trading when you configure the bot is one of those things. 
+
+So repeat the process. We're going to disable. So I'm basically unchecking over here. 
+
+So I'm unchecking this. That's step number one, right? Uncheck that. Step number two is right click, go to edit. 
+
+So we're going to go to edit strategy. And I'm going to go down here to where it says instrument right here, September 2025. And I'm just going to type in MNQ. 
+
+And in this case, there isn't a stock by the same ticker. That's not what we're looking at. We're looking at the future. 
+
+I click on the futures and it defaults. It switches from September to December. You guys see that? So now I click okay. 
+
+And we will notice is I now have December, December, and I still have this one I need to fix. Now, when you're looking at this, you're like, well, why are these green? But this one is not. And the answer is because this is not checked over here. 
+
+So of course I have to enable it in order to take effect. And you'll notice this little sync thing right here will appear a few seconds after I click. There you go. 
+
+You see how it's saying, okay, we're synced. We're ready to go. Okay. 
+
+Now, if you ever enable the bot, let's say it's supposed to run at 7am and you for whatever reason, enable it at 730 and you see that it's not green, it's actually orange. And it might have like a two S here. That means you missed the trade and it's supposed to be two contracts short. 
+
+Right? So at that point you missed it. You can't do anything about it. And you have to wait for that trade to end before it will take the next trade. 
+
+Right? So in an example, if you're supposed to start it at seven and you decide to enable it at 730 for whatever reason, and it'll say, we are two contracts short, maybe it's three long, four short, whatever the number is, it will literally say it right here. It'll have a two S three S four L four long, right? Five long. And this will be orange. 
+
+And that means you enabled it too late. Like it's already supposed to be in a trade. And so in that case, you leave it enabled. 
+
+And once that trade finishes, once, you know, it's done, obviously you're not in it. Then it will, it'll turn green and continue onward. Does that make sense? Questions about that? Have you guys ever seen this problem before? I literally am like, why is this not taking trades? And I'm like, Oh, don't Matt. 
+
+I've been traveling out of the country and I totally wasn't even paying attention. That was my fault. Right? Yeah. 
+
+It happened to me this morning. Okay. So it's not, so there's two honest people on here then, right? Tim and I. So again, we're going to repeat the process. 
+
+We're going to disable it. We're going to edit it. We'll go to M and Q M and Q, and then we're going to pick futures and it's automatically going to fall to the next contract.
+
+Now, obviously if I do this in January, it's going to default to the next contract, right? The next like March 26, 2026. So again, repeat the process, check, click, checked boom. Now, now we're ready to go. 
+
+Makes sense. So, uh, that's, that's kind of what, um, I wanted to share with you guys. I know that's not a huge groundbreaking thing, but if you let this run, I saw a comment. 
+
+Someone's like, uh, hasn't the, the bots haven't taken a trade in two weeks. What's going on? Anyone else having the problem? This is one of the common things that comes up is you're trading the wrong contract. And you guys may have seen like a rollover image that says, Hey, do you want to roll over? You know, July to September, September to December. 
+
+But if your bot is configured manually to run September, it's still going to run September. You just have to like go in and manually change that. And that's also one of the reasons why we don't recommend brand new traders, you know, have like 15 bots. 
+
+Cause that's a lot to keep up with a lot to change. And then depending on what you're trading, uh, if it's gold or crude oil, they might be different, um, contract expirations, right. It may have like one might, might be October and something else might be December as far as like the next contract. 
+
+So I just want to share that with you guys, kind of give you a little bit of, um, like heads up on, on that, that issue in case if, and when you, you kind of come across that. Okay. The other thing that I've seen happen is you might be connected. 
+
+Um, so this might be green and the feed might be frozen. And so just cause it's green, you need to make sure you're getting data feeds. So if we look carefully right here, you'll notice this black, um, thing is actually like moving. 
+
+You see, you see that it's like the market's open. Uh, in this case, we're looking at MNQ December and it's still, it's like moving in real time, which means my, my connection is enabled, but in the data feeds are operating correctly, which means my chart is being populated. The value, you know, the, the chart data is up and running and moving. 
+
+And in this case, we're just looking at a five minute chart. So what does that mean? Well, it's currently 709 my time, which means in the next plus one minute, uh, we'll get a brand new candle kind of forming. So this candle will close. 
+
+And so all that means is obviously the green light indicates that it's connected, but if you lose internet connection, um, it's still going to probably show green. So like if I was to pull the disconnect my router and, you know, turn it off, power it down, it might still show green, but it's up to you just to make sure the data feeds like the handshake is working still, not just green, if that makes sense. So it's super important, especially if you're running this on a VPS, just a few little things to check every morning, just in case there's a, there's a problem. 
+
+Uh, what I like to do is I like to look at like, uh, on my bots here, I'll show you my, my processes. I'm going to uncheck all these. And what I want to know is there's a three I'm running. 
+
+I want to know what time does the first one run, right? What time? So this one is we'll put it up here on the screen. This one runs at eight 24. There's the time, the first one run. 
+
+So what time does the second one run? Well, the second one runs at this case, seven 30, right? So seven 30, what time does the third one run? I believe it's late evening. If I'm not mistaken, third one runs at eight 24. Okay.
+
+So it runs at eight 24 as well. So basically what I need to do is make sure before seven 30, probably seven 25, I need to have like a checklist or a process. I'm just going to double check the connection. 
+
+As you guys know, most of you probably use VPS. So you would need to connect to your VPS. You would need to go in and double check to make sure the connection is running. 
+
+You can open a chart and you should see, uh, the data flowing through this way. Um, Tracy ball has a slightly different way. She does it where you'll have a countdown timer, which might say like four minutes, you know, 20 seconds until the next candle. 
+
+Right. And you want to see that kind of moving, kind of shifting, right? Counting down how many, how long before the next candle comes in and this candle here closes. And so that's just a couple little tips on how to connect, how to verify the connection rather that the, the data is connected. 
+
+Make sure you're using the correct contract for the instrument you're trading. You're not trading, you know, December of 2024, which if you're running back tests over multiple years, that's actually a common mistake is you can say, well, why is, why is this for your back test? Hasn't taken any trades at all this year. Well, that's why you're using December, 2024. 
+
+So nothing in 2025 has been traded, right? So that's just a couple of tips on how, how to verify that, how to look at that. Um, what we'll do here real quick is I'm going to actually show you, um, let's just pretend here that, um, I'm going to use, uh, let's see, February. Actually, this won't let me do it here, but you guys probably saw that it was set to September. 
+
+Let me see if I run it, if it all changed. No, it won't. Let's see. 
+
+Let's go in here. This is December and this one's December. Dang. 
+
+Okay. Well, MNQ. Uh, oh, see, look, I can choose an older like MGC August. 
+
+You see that? So if I was to run this, um, it's your responsibility, of course, to make sure you do this, right? There's no like tools that will tell you, Hey, you made a mistake, but let's run this real quick. This is August, 2025. So I shouldn't have any September trades, right? And as you guys can see, I really want some trades through the end of September, right? So if I was to look at my analysis, uh, you'll see here that there is a kind of a big, it was like a big gap right here, right. 
+
+Of time. And I'm guessing if I was to look at the monthly, let's go down to the bottom. You'll see the last trade actually occurred July 1st.
+
+Right. So again, those are just a few things to kind of look at, uh, make sure you're doing it correctly. In this case, we were probably have a, what, two, a 480 through that. 
+
+So this has 480 trades, right? And so, yes, it did run a back test. Yes. I got all the trades, but I inadvertently, I'm not looking at the most recent data, right? Cause it doesn't have any trades in August.
+
+So as a flip over to the actual trades, scroll all the way down to the bottom, you'll see 725, July 25th was the last time it took a trade. Okay. So let's fix it. 
+
+Let's run it again and see how many more trades besides 480 that we're actually missing. Again, we're going to type in this case, just type in MGC, uh, should give you just one choice for futures. Click, click on it. 
+
+Boom. It'll default to December. Click run. 
+
+Should give me more than 480 now. There you go. 505.
+
+It's about roughly 25 additional trades that were dropped off. Makes sense. Questions about that? I think the only thing worth adding is, um, when you, when you do change like on the, um, on the strategies, when you're rolling over to the next contract, make sure to, as soon as you're done rolling over the contract to save your workspace. 
+
+Cause if you do experience a disconnect, it'll revert back to the old contracts. Oh, so you're saying if you have the old one saved, yeah, yeah. Okay. 
+
+Got it. Yeah. Yeah. 
+
+So, um, I have a workspace called Matt, the long favorite Matt MD fav. I click save. And, uh, I believe it will show. 
+
+So all these windows here, the strategy analyzer, the chart itself, the control center, um, all of these windows are going to be like saved with whatever the previous selections are. As you guys probably know, when you click template here, it it'll say the actual ticker here, but it won't actually like preselected for you here. That makes sense, right? It won't actually do that. 
+
+So in this case, um, I'm even looking at the wrong, I'm looking at MGC with a, should be loading M in Q, right? So I'm running the, uh, Oh four Oh four double Oh four, not double Oh seven double Oh four right here. This is the guy that I'm running and you'll see it's actually configured for M in Q. In this case, I manually chose the wrong one. So yes, it's giving me a result, but it's not, it's not amazing. 
+
+So let's fix that M and Q member. Just type in the ticker and you can click on all or feature. Usually there is just one in this case, there happens to be a stock. 
+
+We're going to click okay, run, and we'll give that a sec to rerun. Yeah. Good point, Tim. 
+
+Uh, I forgot about the workspace. Um, usually when I close in trader, I'll ask me, do you want to save the workspace? Yes, of course. Yeah. 
+
+It hit me on this rollover where I did the rollovers for all of my bots, but then I had a, I had a session, I had a session disconnect. And so then when I got reconnected, all of the bots reverted back to the old contracts. Gotcha. 
+
+Gotcha. Yep. Makes sense.
+
+In this case, you'll see, we don't have a $2,000 profit. We have a few more dollars than 2000 right here. Nope. 
+
+Hello, Amanda. How's it going for you? But yeah, uh, Florencio, how are you? Any questions you guys have guys, gals, let me know. Just hi, Matt. 
+
+How you doing? Good. How are you, sir? Not too bad. So on the right hand side, on the timing, you have seven, uh, seven 30 start time, right? Yes. 
+
+And time eight o'clock, but then you have to close at six o'clock. Yeah. Um, I'm not, I'm not sure why that, that is that way. 
+
+Uh, let me look at the original. I don't know if I screwed that up or, Oh yeah, see, I screwed that up. This is the original version. 
+
+Um, so when I was fast forwarding my times, uh, it should be 1430 is what it looks like, right? So when I load CST, Oh, no, wait, wait, wait. Something is very off. Hang on. 
+
+Load number four, five 36. Okay. There we go. 
+
+So that's the original. So I need to fast forward these. So good catch. 
+
+I, I screwed it up. Basically this should be eight o'clock template save. There you go. 
+
+Overwrite. Yes. Good catch. 
+
+Yep. And then you could probably like pick the end of the month. Uh, you guys, you guys may know this, but you don't have to pick the glass day.
+
+If you pick the end of the month, I'll save the end of the month. Obviously it's not going to take trades on the 26th of the 29th or the 30th because today's the 25th that hasn't happened yet. So I like to just kind of save through the end of the month just for, uh, so every time I run this, I don't have to like keep manually changing the date. 
+
+It just saves a couple of steps. So, but yeah, great question. Let's rerun that. 
+
+Good catch. No problem going for you, Amanda. It's good. 
+
+I have a question when it says close time. That's it should close out the trade, right? No matter what. That's correct. 
+
+Okay. Yeah. Mine. 
+
+One of mine didn't close out the other day. I had to manually close it. Do you remember what time it was? No. 
+
+Because what sometimes happen is if you put the close after the market closes, it's going to stay in the trade. And what happens is if you have this set to like good till camp, I'm sorry. If you have sets of the day, um, it'll stay in the trade, which is what you're telling it to do. 
+
+Uh, the day, the, the time in force, um, the value will be set today. So the, the closing trade will close automatically just get reset and you'll be in the position without a stop loss. Right. 
+
+And so like what time zone are you in Amanda? I'm in Eastern. Okay. So the market closes at 4.00 PM your time, right? So that would be, um, five, 5.00 PM. 
+
+Right. So it would be like 1700, I think. So if you set it to close at 1700, for example, that's right. 
+
+When the market closes in like zero seconds available to, so you probably should set that at least lower than 1700, maybe 1655 or something like that. Double check that. That's the only time I've actually seen that happen is if you tell it to close right at the market open, but keep in mind at 17, like at five o'clock and one second, the market's closed. 
+
+Like there's nothing really. I think it's at right at 1700, even, or you would say just 5.00 PM Eastern. Uh, it's close, right? So it can't do anything. 
+
+You got to close it before it closes, if that makes sense. But that's the only time I've seen it happen. Just let me know if there's any, any other issues with that, but.
+
+When I fixed the time, uh, Florencio, you see, it actually gave me a few more thousand dollars and a couple more trades. So yeah, great, great catch. So I'm going to rerun these. 
+
+Uh, so you guys can see through the end of September. So this is 06. Oh, let's reload this just for kicks and giggles. 
+
+Six 24, eight 20 and six, seven, eight. So I'm going to load my CST. Okay. 
+
+Looks good. Save CST. Oops. 
+
+Yes. I need to change this real quick to the end of the month template save and Oh, 600 CST. Okay. 
+
+Uh, the only other change we've made in case you guys haven't done this is we actually made a template called apex trader funding for trade of eight, and we're mimicking the actual real commissions that, uh, that apex trades or charges, I should say. Um, and so there's a file. Um, I can show you guys how to download it, but it's basically just an XML file that specifies like the commission schedule for apex. 
+
+And you can download that so that when you run it, it's going to default to apex, you know, trader funding. And then the actual commissions, sometimes we estimated it was kind of close, but these are the actual, like, you know, the actual values, not just like roughly close kind of right. So, uh, there's a, let me show you guys how to find that real quick. 
+
+So if we were to bring this over here, you guys see my screen. Uh, so if we go into course recordings sessions, let's go down to module 11. And by the way, if you haven't done first four modules, make sure you do that because some of this isn't going to make sense if you step in here without, um, without that. 
+
+And so, um, this is the commission template and you basically load it right here at this pass. Uh, previously this had an S on the end and we fixed that. It's no S. Uh, so what that means is you basically just save this, unzip it here, uh, in this folder and then restart Ninja trader. 
+
+And then, uh, once you've done that, then we basically have, uh, we're good to go with the option here, which will default to apex trader funding, trade debate. So good to go. Like I like accuracy. 
+
+I don't know about you guys, but I like things to be accurate, right? Otherwise, like, what's the point? It can be off a little bit fine, but I don't want it to be a huge, you know, huge swing one way or another. So, but yeah, what other questions you guys have for me? What file should we save that into? Uh, it's not a file. It's a folder. 
+
+Yep. Okay. So it's just a new folder. 
+
+Yes. So, um, here you go. It is right here. 
+
+Uh, we'll paste this into our group chat real quick. So you have access to it. Uh, chat. 
+
+There we go. There you go. So documents slash or backslash Ninja trader eight slash backslash templates, backslash commission. 
+
+Right? So if I was to look at this in my, uh, my folder or my setup, right? So we got documents, documents, Ninja trader, Ninja trader. So now I'm looking for the templates commission. There's a, sorry, the templates folder and then commission, right? So you'll see here, documents, Ninja trader, templates, templates, commission, commission, and that's it right there. 
+
+Apex trading funder web, uh, trade of eight apex trader funding trade of eight commission. And once you do that, it won't be available until you restart Ninja trader. So once you restart it, uh, and come back in there, otherwise they'll show the old stuff that kind of like loads it all like at runtime when it first starts. 
+
+So if you make changes, just restart and it'll, you'll see it take effect. So, yeah. Okay. 
+
+Um, I have another question. One time you mentioned resetting an account for free. How do you do that? So it's resetting a evaluation account for free. 
+
+Is that what you're, are we talking about the same thing? Yeah. Yeah. Okay. 
+
+So, um, essentially what you do is let's, let's go through it real quick. Well, I don't have a, an account that's like blowing up or classifying up, but essentially like what you would do is, um, th the first thing you have to know is like, when does the, um, the apex account renew? Right. So let's just say it's on the 28th. 
+
+Right. So it's basically today's the 25th. So we've got a few days, right? So let's say today is nine 25. 
+
+It renews on the 28th of every month. Okay. Now, if you are close to blowing it up, just take a trade to blow it up all the way. 
+
+Now, obviously we're talking about evaluation accounts. We're not talking about PA or funded accounts. You vow only evaluation only on your next billing cycle on the 28th.
+
+This is your billing cycle. Uh, so on the 20th of the month, you'll be charged again and you will get a new account with a $0 balance, meaning, you know, reset to 50 K what size account 50 K maybe or 25. Yeah. 
+
+Okay. So what you do is you manually blow it up if you're close to blowing it up so that you get like a, it's kind of like you get a free elevator ride back to zero back to ground level. Right. 
+
+So if you, if you imagine something like a 50 K account, um, you're allowed, uh, 2,500 to draw down. Right. Um, let's see. 
+
+D D of minus 2,500 to 45. Okay. So if you're, let's say 47, 500 is your threshold, but let's say you're at 47,006. 
+
+Oh one, right. You're just like a hundred dollars hanging on for dear life, right? You're like $101 away from blowing up. All you do is run your, um, uh, you, you place a trade manually to blow it up on purpose, but obviously you have to do this before the evaluation account happens. 
+
+Oh, okay. So does it have to be close to the date? Well, it will automatically reset on the day. So if you blow it up on the fifth, you got to wait around until the 28th comes for your next reset. 
+
+So what I do is I have like a calendar of, you know, like, let's say account number one is on resets on the 16th. Maybe the next one is on the 20, like account number two is on the 21st. The 26th is like my third account, right? That's the idea, um, is you got to know when they're coming up. 
+
+And so on my, what I do is on my calendar, um, it will actually show, and I guess I don't have it in front of me, but, um, on my counter, oops, on my calendar itself, it'll show that, uh, that, Hey, this is coming up. You know, if it's the 16th, I'll put it on my counter on the 14th, like, Oh, my zero zero one account is going to renew. Look at it. 
+
+If it's close to blowing up, just push it over the edge. So that on the 14th or sorry, on the 16th, rather it will go ahead and, uh, I get a free reset. Right. 
+
+So the idea is like, if you have your account looks like this and you're at like 47.5 and let's say that this is 50 K on the billing cycle. So let's say on the 16th of the month, you get a free ride back up to 50 K and take advantage of that. Right. 
+
+But you have to be mindful is if you miss, if it's on the 16th and you wait till the 17th, you got to wait enough 30 days for the billing cycle to run again. You got to wait for the, for it to happen again or cycle around. Yep. 
+
+Okay. I have a follow-up question on that. Sure. 
+
+Good. So let's assume you do go ahead and blow it up. Right. 
+
+Or, or it, you blow it up even beforehand. How do you actually know that you've already like, that's it. It's done. 
+
+Like, just wait until the billing cycle comes along. So usually what's going to happen is there's a, a tab here for messages that will say, you know, account limit. I forget the exact wording, but something like account limit, account limit, self kind of self liquidated or something like that.
+
+So you'll know, obviously if the hard part is like, it's probably, you're probably not going ever have 47,500, right? Because what happens the way this works is let's say you started at 50,000, right? Let's say you go up to 52,000, right? Your minus 2,500 is not on this. It's now based off this. So minus 2,500 here. 
+
+And some people have complained, like my account was over 50,000. How did, you know, how did it blow up? It's, you lost 2,500 from the highest value you had in, in your account. So ultimately the short answer is it'll say messages, like it'll say something to the effect of like account self liquidated, something like that.
+
+Some, yeah, something like that. But yeah, yeah, no worries, Amanda. Okay. 
+
+So that's how you know, it's, it's, it has blown up. If you look at inside of Apex, I don't, I don't have a way to show you guys without showing my account numbers. I want that to get into recording, but it will show you like your balances, like, and also if you use the dashboard, it'll show you your, how much you have till your drawdown. 
+
+It'll show you like your balance, what available balance you have. Yeah. So, so I'm not getting those messages.
+
+And when I go into the Apex, it's not showing me it at the beginning, when I bought the account, the valuation account, it did show like, okay, you have the 50,000 account, blah, blah, blah. And everything was fine up until that point. But there was a point where I believe it went over.
+
+And so I, I got blown out. I got thrown out, but I haven't been able to, to, to see like, once you blow it up, it'll take it off your list of accounts the next day. So until your billing cycle runs again, it won't actually come in. 
+
+It won't show back until the billing cycle runs on the 24th. It'll show up on the 25th or 16th. It'll show up on the 17th, something like that.
+
+So the fact that I went into Apex and it's not showing on there because I only have one account. So it's not like I can get confused. So if it's not showing up, then that means it got blown up.
+
+They took it off. It doesn't mean you've blown up. Did the account actually, I guess you have to make sure you're logged in correctly. 
+
+Right. What I would do, what I would just recommend you do is... It won't even let me connect. It won't even let me connect. 
+
+It says there's no account found for that, whatever. Okay. So in that case, it probably did get blown up. 
+
+If you look at your, is there like a messages tab right here on your control center, like messages? If so, I would look at that to see, like go back to when it happened and see if it says, it'll show like in a red stripe, it'll say account self-liquidation. Messages are in blank. There's nothing showing up. 
+
+There's no messages there. And do you know what day of the month you got the account? On the 27th. On the 27th. 
+
+Okay. So why don't you do this? Why don't you log into Apex real quick. Don't share your screen because we don't want to see your account numbers, but log into Apex real quick and see what it says for your account for like your next billing cycle and like where it is kind of thing. 
+
+On the 27th. However, I would need to kind of mess around with this right now, but I guess my point being is that, is it more likely that I did blow it up and that's why I'm not finding any information on it? It's possible, but unless we actually like look. No one told the 28th, right? Is basically what you're saying.
+
+I mean, it's possible like a username or password change and you're trying to log in some of this and it is, that's another possibility. But what I'm saying is if you log into Apex and it shows, Hey, you got an account, but the next billing cycle is on the 27th and you should see it automatically appear on the 28th. Okay. 
+
+Okay. Got it. So if you only just want to double check the Apex, like your Apex account, log into it and take a look on with your browser, right? Go to Apex trader funding, log in and then look at your actual account. 
+
+It should tell you there exactly like what that looks like and what your choices are. Yeah, there is. Well, where their account number or something, I know that.
+
+Yeah, it'll show all that on a single page. Yeah. There's one where it says reset, but I was watching one of the videos and it said that one of the, I guess one of the community members, he hit that button, I guess it reset and he had to pay. 
+
+So I don't want to touch that. You can pay and reset it ahead of time. No, no, I don't want to touch that.
+
+Yeah, I'd rather wait. Exactly. Yeah. 
+
+So there's, so as you know, you can have multiple accounts, so you blow up one, you're working on the other. That's kind of one of the advantages of having more than one. But in your case, I would just verify if you want to just DM me the screenshot of what it looks like, I can tell you, I can point out what we're looking at there to kind of point you in the direction. 
+
+Otherwise you just wait till the 20, you know, to the next day after the billing cycle and it should reappear on a Sunday or something like that. Yeah. Yeah. 
+
+It should still reappear automatically under accounts. Okay. Once the billing cycle has been renewed, you paid, credit card charge went through that kind of thing. 
+
+Yeah. Okay. Yep. 
+
+But that's kind of what I have for you guys. Any other questions? Was this helpful? There's a few things that I kind of got tripped up with this week. I wasn't paying fully attention because I was traveling and having fun in the Dominican Republic, but yeah. 
+
+Any other questions? Was that, I don't know if that was helpful, but no, that was helpful. Thank you, Matt. Awesome. 
+
+All right, guys. Well, we'll see you guys on Thanks so much for hanging out. Yep. 
+
+Bye.

@@ -1,0 +1,455 @@
+Let's go ahead and get started. So in our last class, let me double-check. In our last class, we talked about the VPS and going live and using the VolumeBot.
+
+Did you get a chance to, I don't know if you thought there was a lot of value in using the VolumeBot? Did you get a chance to play with that at all? I played with the VPS. I've been using the VPS with the Mega Orb with a strategy I already had. And I was expecting it to be a little bit more stable because I was running it just off my laptop and my Wi-Fi and it was holding out all day.
+
+But sometimes with the VPS, it would drop out. So I've just got to work with a VPS provider and just make sure that their service is compatible with APEX products like with Trademate. Yeah, what I've noticed is it's not that the VPS is a problem as much as the APEX connection is sometimes a little bit iffy.
+
+That's what I've noticed, yeah. Oh, okay, okay. Yeah.
+
+So what that means though is that like, so there are services and tools that will notify you if there's a disconnection and the internet connection goes down. And those services will notify you when it comes back online. And you'll get a message saying that it was offline at X time and it'll tell you when it was offline.
+
+The last, like it'll take a note of when it was last online and when it comes back online, it'll give you like a timeframe. And so those are good for that kind of service. But like ultimately, if APEX has or Trademate or Rhythmic has like a hiccup, that's a different kind of problem that, like the VPS can't solve that kind of a problem if that makes sense.
+
+So it's kind of like the weakest link kind of a problem, whereas VPS can solve the internet connectivity problem, just like Starlink, right? If Starlink works, but the connection with APEX is a problem, then you solve one problem, but you got a different kind of problem. So yeah, we've had a few people have, like we have one person who has no matter what, she just always has tons of APEX problems. I've experienced a little bit of APEX, but there's some people who just have, no matter what, they even switch servers or sometimes they try Chicago, sometimes try to New York, sometimes they even switch VPS providers.
+
+And I'm like, I've never had that many problems. Some people just have tons of problems. I've had a few problems, minor, but not the level that some people have.
+
+But I guess just try something, try it, see what works for you. But the benefit of VPS is the always on connectivity but again, if APEX has a hiccup with their connection, that's, you can't, VPS won't solve that. What would you say, Matt? Sorry, I'm breaking up a little bit, but what would you say is the most common and or most popular, more consistent, maybe is what I'm getting at, combination, rhythmic and which VPS like, or train of eight and which VPS? Like, do you find that there is some that work better than others or? Are you talking about VPS or? So like I personally like trade of eight better than rhythmic personally.
+
+Cause like the bot sometimes will issue cancel order. So it'll try to throw out an order and then sometimes it'll cancel the order. Rhythmic has notoriously sometimes rejected a cancel order.
+
+So imagine throwing out an order and the bot's like, okay, nevermind, cancel that order. And rhythmic will say, nope, we're going to reject your cancel order. Now we're going to fill your order.
+
+And then it's like, wait a sec, I tried to cancel that order. And then you have other, and then it's like, we're now in a trade that we didn't want to be in. And so that's, so I personally like trade of eight better myself.
+
+I personally use Forex VPS. There's a few other providers that people use, but that's personal preference. I've tried rhythmic and I had a whole bunch of problems with rhythmic.
+
+I switched to trade of eight and like 90% of those problems just went away when I switched to trade of eight. So, yeah. Tom, what do you, do you have problems with the rhythmic trade of eight? What are your preferences? I use trade of eight.
+
+I don't have any problems with it. And actually I do, it keeps disconnecting randomly throughout the week and I have to keep reconnecting it. It's not too bad, but sometimes the strategies get unclicked.
+
+So I have to reclick them all, but that's, it's not too bad. Right. It's bad in a sense that say, I don't pay attention for a week and then it goes out on Monday and then I lost the entire week.
+
+Okay, got it. But did you say they send out alerts or no? We're working on, well, so we actually have a new version that we're testing out. We wanted to build that.
+
+It's just, our developer said, it's going to take quite a few, it's going to be a big project. So we were like, oh my gosh, I don't know if we can commit to that kind of a project just yet. So we're trying to weigh, you know, weigh, cause we have to set up like a centralized server and then we have to like subscribe to Twilio and Mailgun and we have to, it's going to be a bigger project than we originally thought.
+
+But we do have a new version of the account dashboard that will kind of solve some of the problems a slightly different way. So we'll talk about that here in just a second, but- Is it on NinjaTrader? Can't they just send an email? Well, so like you have to have like an email provider, right? So like you have to have some way to send an email, like some kind of outgoing email service. Oh, I see what you're saying.
+
+Okay. Yeah, yeah. Now I see what you're saying.
+
+And so that would require like something like Mailgun, like an outgoing, like a transactional email service, right? Yeah. And then we'd have to subscribe and have an account and then we'd have to have a centralized location where NinjaTrader notifies the centralized location where if we ever change our account or something, it has like a handshake to that. Anyway, long story short, it's a little more complex than what we originally thought.
+
+And our development team quoted us, I forget how many hours, but it was significantly more than what we were thinking. We think, I think, we were thinking it was like 20 or 30 hours and it was significantly more than that, like multiples of what we were thinking. We're like, oh my gosh, it's a lot more than what we were thinking it was gonna be.
+
+So we were like, okay, let's hold off on that for now. But what they did do in the interim is they built, I think it's the, I gotta go back and double check, but I think it's the dashboard 3.5 or 3.6, something like that. I have to double check what the latest version is.
+
+But what they did was they, like if you have a, we got like a light, yeah, 3.6, but basically like if you have a position that doesn't have a stop loss or take profit, it can create the stop loss or take profit. That's like the ultimate problem that happens if you're disconnected. So that's one of the problems that occurs, right? Because the first step in getting a position opened is, you have like an OCO order, right? And once it's filled, after it's filled, then it creates a stop loss and take profit, right? But if there's a disconnect after the position gets filled, then you have a position with no stop loss or take profit, right? And that could be disastrous if that continues and moves against you for two hours, like it could blow up an account.
+
+And so that's kind of where the, we have some other stop measures that automatically checks for that. So we do have that in the interim, some other things in place to kind of check for that. But that's kind of like, I think it's, yeah.
+
+So it's version 3.6 that was being tested yesterday, as last I heard, it was being tested yesterday. So we have some new versions of that to try to fix some of the ultimate problems that arise out of the disconnection issues. My personal feeling is that APEX, when they offer these 80, 90% off, they have zillions of customers and they have way too many customers for the infrastructure they offer.
+
+And when you have too many customers connecting at any one moment, you're gonna have some disconnects, right? It's kind of like rush hour where it's not always, doesn't always happen, but when it happens, some people get disconnected, right? And that's why it's an intermittent thing. That's my personal feeling. That's why when you switch to different VPS providers, you still have the problem.
+
+That's why when you create, even when you go from APEX to, what's another funded account? I'm drawing blanks on another funded account program. What's the name of another funded account program, Bryce? Top Trader. Top Step or Funded Trader.
+
+People will switch funded account providers that use TraderVate and Arithmetic, same thing. They still have this, they all complain about the same exact problem. And that's because, same thing, they have too many customers for the infrastructure.
+
+That's my personal feeling again. That's the common thing, right? So that's not something we can solve. We can kind of have some stop gaps in some things, but that's the ultimate issue.
+
+I feel like when we had the MetaTrader funded account programs, we didn't have any of these issues, but we had other issues, but not this one. So it is what it is. It's just something that's slightly irritating at the moment and I'm sure they'll solve it at some point, but it is frustrating and I apologize.
+
+I know it's kind of a pain. Yeah, so, but yeah, Tom, thanks for sharing your notes there on the hardware. Yeah, obviously there are some things we can do to minimize the, like if you have internet issues or you have low hardware, like minimal hardware problems that could choke the resources, which could cause internet disconnect issues.
+
+So, but yeah. Matt, for this class, can we go over, I guess the performance of our bots and get some feedback or you have something, yeah? Yeah, we can. Yeah, absolutely.
+
+So right before you joined, we were just talking about the kind of the VPS and the volume bot. But yeah, let's talk about, I do wanna go over something else, but let's talk about, we'll have some time to touch on the 10 EMA, but let's go ahead and you wanna share your screen or what? Yeah, thanks Matt, I really appreciate this. Yeah, no worries.
+
+I feel like I'm struggling a bit, but I could definitely use some feedback. Yeah, let's do it. Can you see that? There we go, yeah.
+
+Yeah, I opened, some of these bots, they go negative, like here's this one, the Mega Orb, EMA 3G25. And then- All right, let me ask you a question. How many, let's take a step back.
+
+How many bots are you running in a week or? I think I have one. It looks like you got about, what, 10 there? Four times, I have three accounts, so like 12 bots. No, it looks like 12 right there, right? Yeah, it's 12, yeah.
+
+And how many trades per week is that? I don't know, I gotta- Some of those probably take multiple trades per day, I assume, right? Yeah, they do, yeah. But it's kind of, I balanced it because some just trade Monday, and then let's say Tuesday, so then that's one bot here. And then this one trades like Thursday.
+
+It's kind of like that. So it's, some of them is Monday to Friday, and they do overlap on days, but I just try to balance it as much as I can. Okay, got it.
+
+So the first thing I would say is, can we start by looking at like a back test of whichever one you wanna start with? Yeah. Let's start with the NR7, MNQ, 8-minute, maybe. I might not have all of it on this computer.
+
+Because the biggest thing I've noticed is like the easiest thing, and I'm not even sure what MHG, I see MHG and I'm not even sure what ticker that is. But the thing that I've started working towards is trying to find something that works reasonably well across Monday through Friday, right? So instead of having five, like a Monday bot, a Tuesday, a Wednesday, Thursday, Friday, I got something that can work all five days. So instead of having a five bots, I just have one that works all five days.
+
+And that's so much easier to manage, so much easier to like pay attention to, to, you know, it's just a lot easier to look at. So then I can just run a Monday to Friday. But you have to relax the criteria just a little bit and like not, you know, it still has to meet some certain criteria.
+
+But that's so much easier to look at and manage and you can still take two or three trades in a day, but it's a lot easier instead of having like, you know, your list of 12 here, it's, I just have maybe one or two or three instead of 12, but it's so much easier to like manage, right? But let's go ahead and look at what you have for the, what is it? The NR7, MNQ, eight minute, that very top option there. And by the way, how many accounts do you have? Three. Three accounts, okay, got it.
+
+So do you want to do the strategy? And you have templates for all of these set up? I have it all on the, the Forex VPS. I might not have it on my laptop, but I'll check, I'll check what's there. Okay, got it.
+
+You have like some, what did I say? Like R2D2, is that what? Yeah, I have some naming convention. So like, let's say I go to this NR7, if I edit the strategy, I have like an identifier, so I go template load, and then I know A902542, and I can load that on my strategy analyzer here. So then, because it's a different, because it's on a laptop, and so I can't sync it, so I just use identifiers to sync it.
+
+So here's the question. If, if you're saving the strategy, if you're saving the template as an optimizer, how do you, and you're loading it as an optimizer, how do you- No, it's a back test, wait, it's a back test. Because it's showing it as optimizer though.
+
+When you click load, it's an actual optimizer. See what I'm saying? Yeah, no, but I hand, I manually by hand move the settings over to Forex, VPS, to the VPS version. Right, like what I'm saying is like, because I actually, I saw someone do this the other day.
+
+I'm like, I didn't even know you did, but like when you click, click template real quick again, just the template option there at the bottom right. Yeah, click load, click that middle option, the, I don't know, whatever that is. Yeah, MNQ5K, yeah.
+
+Click load, like it'll load, right? Like the, it's basically the optimization, right? Okay, now hit cancel right there in the top right. Top right, the X, just close that window out first, or minimize it, minimize this one, yeah. But like, you can actually click template right here, right? Yeah.
+
+And hit load, and you can literally load this, like go, sorry, hit cancel. Click, click cancel here. Yeah, click- Wait, this is the VPS, I think.
+
+Wait, is it? No, no. Hit cancel. Yeah, yeah, right click and go to new strategy.
+
+What strategy were we just looking at where you had- NR7. Okay, got it. So right click, then click edit strategy.
+
+Yeah, and then like click template again. Whatever, like where was that middle option? Load? No, because you were looking at, when you saw the middle option, it was on my laptop. This is the Forks VPS, that's why it's a little confusing.
+
+Oh, okay. This is remote. No, what I'm saying is, I actually saw someone do this the other day, right? Where what they did was they had an optimization template saved and they picked it here for an actual bot.
+
+And I'm like, I have no idea what would actually happen if you did that. Do you follow what I'm saying? Yeah, yeah, yeah. And he's like, well, I'm having problems.
+
+I'm like, I didn't know you could do that. And when he ran the optimization in the back test, the analyzer, it said one, it was like 20,000. It was like running test one of 20,000.
+
+I'm like, how does it know which one to pick? Because there's like 20,000 back tests and you're loading 20,000 as a template. How does it know which one of the 20,000 to use? It's like, yeah, it's giving me weird results when I run this. And I'm like, you should be loading a single back test, not one of 20,000.
+
+You see what I'm saying? Yeah. It was, so I guess, I understand what you're saying, that you're looking at the remote desktop connection in this case. Yeah.
+
+So I guess however you want to get to it to run the back test, let's look at the back test. Right. So there, template load.
+
+I mean, it has to optimize something, right? Anyways, I mean, well, hang on. Because it's running an optimizer. You know what? Let me try another example.
+
+Because like, you should have like a single back test, like with a single, one single standalone result. Yeah. Unfortunately, that's on my desktop, right? So this is my laptop.
+
+So let me try the volume. While you're doing that, do you want me to like just go over the 10 EMA while you're trying to get that result? Yeah, I'll set that up and then you can go over that. Because we're like 30 minutes into.
+
+Stop sharing. Okay. Yeah, yeah.
+
+Okay. Got it. Okay.
+
+So let me share. Okay. So what we're gonna review is, we're gonna talk about the 10 EMA strategy and, let's see, the 10 EMA, 10 EMA, where is it at? Okay.
+
+Here we go. So the 10 EMA was a, it's, you guys should be able to see my screen now, correct? Yep. Let's see if I have some templates in here.
+
+Yep. I'm just gonna run a quick June, 2025. And what we're gonna do is we're gonna look at a chart, real quick, let this run.
+
+And there's a couple, so the 10 EMA is a, it's a trending strategy. So the way that this works is this, this is a strategy that came from a former company that I used to own. And when I left it and sold my ownership, Tracy Ball, myself, Robert Thompson, all of us used to all be affiliated with the company.
+
+And when we left, we all kind of came over and that's kind of how push button trading started. But the way that the strategy works, and as soon as this back test is done, the way that it works is if you have a bearish candle, so you have a bearish candle, would be like a red or a black candle closing above the 10 EMA. So the 10 EMA is like a, it's an indicator.
+
+And the 10 EMA represents the 10 exponential moving average, right? So there's simple moving averages, there's exponential moving averages, there's all kinds of variations of the moving average. EMA means moving average. Exponential means you give more weight to the most recent timeframe.
+
+It's more weighted, right? And so the way that this works is we're looking for the 10 EMA. So it's like a moving average on your chart. And we're looking for a bullish trade.
+
+What we're looking for is, again, this is kind of funky, but it is a bearish candle. For a bullish trade, you're looking for the opposite. So it's a bearish candle closing above.
+
+And there are lots of bullish candles that close above, but we're looking for it to interact with the 10 EMA. So it's got to close above. And what it's gonna do is it's gonna kind of act like and trade like the opening range breakout, like the orb.
+
+So it's gonna trigger the signal. There we go, finally got some candles. And let's take a look.
+
+Okay, so you guys see a dot, right? Well, let's kind of jump. I'm trying to get a cleaner version. Let's see.
+
+Try to get a couple of clean ones. Okay, here is a bearish candle. You guys see the blue dot? Bearish candle that is closing above this little gold line is my 10 EMA line, okay? Is a bearish candle closing above.
+
+So it's gonna set up an order, wait for a break above. Remember, break above. However, it doesn't actually break above within five candles.
+
+So what happens is it closes out my order, right? So then guess what? It waits for the next time. Now, this candle right here, this red candle, does that close? Is it a bearish candle, meaning a red? Or if you like black and white candles, it would be black. In this case, it's red.
+
+It does that close above the 10 EMA, yes or no? Yeah, yes. Yes, but does it interact or touch the 10 EMA? No. No, it does not.
+
+But does this next one where it has a blue dot touch and interact with the 10 EMA? It does, yeah. It does. So this is a trigger, aka a signal candle.
+
+It interacts with it. It is a, so we got a break above. So we're gonna set up a trade.
+
+High above, so a break above. So we're gonna entry candle here, stop below, and we're waiting for a break above, right? So that you guys can see just like an orb. It plays just like the orb.
+
+Entry above, stop below, profit taker above. Boom, quick, two, three candles, we're in. Boom.
+
+Why is the interaction important? The reason interaction is important is because you may have seen like on some of these candles, like this candle right here. If you were too far away from, like if you were to set up a trade like this, you're too far away, your take profit would be up here. You would never actually hit it.
+
+You'd actually get stopped out, right? The reason is because if you're too far away from the moving average, you're always gonna come back because the moving average is like a rubber band. And right here, it doesn't actually interact with, it's very, very close, but it doesn't actually interact with this, this would have worked, but it's very, very close, it just ends up missing it. So my personal rule when I'm manually trading, my personal rule of thumb is could I take this candle and let's say that that represents half an inch, could I draw half an inch below? And if I can, and there's still extra space, it's too far away.
+
+If this represents half an inch, could I draw half an inch and still touch? And if I can't, then that's plenty, plenty close, close enough, right? Does that make sense? It's like, this is like just, I can put like a sheet of paper, barely, that's close enough basically, right? Whereas this is too much white space, which means it's probably gonna, you know, come back. And the reason that these are, it's too far away from the moving average and it acts like a rubber band, it's gonna come back basically. And there is a term, it's called like mean reversion.
+
+You guys know how rubber bands act, if it goes too far away, what's gonna happen? It's gonna come back, then it gets too far away, then it's gonna come back, and that's kind of the idea of what happens. So we don't really want it to be too far away. Let me see if I can find a couple more examples of it.
+
+Yeah, so like see right here, this example, like we were to set up a trade and it actually breaks above, it would immediately lose, right? You see that? But in this candle right here, actually this would have worked, but it's at 2.30 in the morning, so it was outside our starting time, right? Same thing here, this one, too far away, it would have broke above, but it's too far away, it didn't interact with our moving average, right? These are not interacting, not interacting with our exponential moving average. Again, these are early, early morning, so it's outside our starting time. So that's basically how a bullish trade works.
+
+Again, this would have set up, but it never actually broke above, and in this case, we had it, it says right here, cancel after five candles, meaning one, two, three, four, five, so five candles, it didn't actually break above, we're gonna close out the trade, close out the open order, and we're gonna pretty much set up a, wait for the next signal to occur, okay? Now, the next thing that would happen the opposite of that would be a bearish move, and I'm trying to cover this up a little bit, the next type of move would be a bullish candle, again, it's the opposite, a bullish candle closing below my line, again, interacting with, right? Interacting with the 10 EMA, right? See that interaction with it, just barely kisses that high, so the high is kissing that level, again, breaking below, we got our order, boom, right? Now, the reason this is important, it's not like the opening range breakout where we're trying to figure out, okay, which way are we gonna break, right? In this case, we always have a direction figured out, right? It's always, if it's a bullish candle, we're always going lower. If it's a bearish candle, we're always going higher. A bullish candle, we're gonna be shorting, if it's a bearish candle, we're always gonna be bullish, or sorry, it's like the opposite, right? A bearish candle going higher, bearish candle going long, bullish candle going short, bullish candle going lower, does that make sense? And then all of the rest of these things are variables you would expect, again, our entry here, stop loss here, take profit here, right? And the other thing that this does have is this has kind of the older way of doing our trailing stop loss, which is based on ticks.
+
+Now, what this says is start trailing after 20 ticks. On MNQ, do you guys know what a tick is? A tick is 25 cents. So how much is 20 ticks? $5, is that correct? So what this says is, once you're up $5, start trailing by $5, right? And you guys can see the scale out here on the right, right, you guys see that? The scale on the right here is basically, this represents, this is like a $20, $20 scale, $20, $20, so you can turn that on, turn it off, that's kind of the older way that we did that we applied the trailing stop, okay? Now, the 10 EMA is a variable, so you can optimize it, you can try a nine, you can try a 20, 21, like that's a variable you can adjust.
+
+The, these two check boxes won't actually change the actual test itself. The show 10 EMA just draws the line, like draws the actual line on the chart so you can see it, so if you're trying to troubleshoot it, you can visually see it. The volume actually just draws this little thing down here for you.
+
+So it's pretty simple to see, pretty simple to look at if you want. Again, when you're optimizing something, people are like, Matt, how do I speed up the optimization? It's taking too long. Well, the number one advice I always give for optimizations is make sure you know like what the workload is, right? So for example, don't worry about Saturday and Sunday if you're testing assets that don't trade on Saturday and Sunday, otherwise you're adding a whole bunch of workload that's not gonna mean a pile of beans difference.
+
+You're adding lots of workload, it's not gonna change the outcome, right? The other thing I always recommend is when you're optimizing is I always hard code my risk and max slot size to the account size. I don't ever vary those. I always hard code those.
+
+I don't optimize them. I hard code them to whatever account size I'm using, right? So it's gonna be 10% of my drawdown. So this is what I would use for 50K.
+
+I've seen people like optimize those and I've seen some really odd and weird. I've seen people say my max slot is like 66 contracts. I'm like, where the heck did that number come from? They're like, well, that's what the optimization told me.
+
+I've seen some weird stuff. I always hard code those. Don't even worry about that.
+
+Hard code it to what it's supposed to be and just leave it. It saves a whole bunch of time on your optimization, right? So that's a couple of things just to think about and consider. But again, the biggest things that really would make the biggest impact when it comes to optimization, the things that like the biggest, I don't know, bang for the buck, I would say, would be your start time, your profit taker and your chart.
+
+Like whether you're using one minute, five minute, three minute. Those are the things that, and of course your entry candle offset along with your start time, those in combination. Those are the things that make the biggest chain, the biggest bang for the buck, the biggest difference.
+
+So, yeah. Questions on that? How do you optimize the start time? You can optimize the start time, but you have to do it via the entry candle offset. You know what that means? No, how do you do that? So you can't directly change this.
+
+So you can manually change the start time, but the start time is like a text field. So you can't really like wrote. So like when you pull down optimization, the optimization field, this doesn't change.
+
+Like, it's not like a, let's vary the start time. It's pretty much hard-coded. But what you can do is what we built in is this entry candle offset.
+
+So what this does is it'll look down here at your value. And if this is set to one, it'll say, okay, we're gonna add one times three. We're gonna add three minutes here.
+
+If this is set to two, two times three, it's gonna add six minutes. If it's set to three, three times three is nine minutes. So it's gonna add nine minutes.
+
+But what you can do is change the entry candle offset. You can optimize the entry candle offset and you can run zero to 100 on a three minute chart in this case. And so it's gonna kind of essentially add and basically add to the start time dynamically.
+
+Does that make sense? It does, but it is a little, I mean. It's a little funky because you can't, they won't let you directly change the start time. That's the problem.
+
+That's how we got around it. But you can't iterate through the entry candle offset, right? Oh, you could, okay. And you can also iterate through the, you can go down here to optimize the data series.
+
+You can do that. And then you can go up here. Like my favorite thing to do is say three to 15.
+
+Oops, three to, all right, butterfingers. Here we go, 15. Yeah, there we go.
+
+So you can say three to 15 and you can do zero to 50, zero to 100. And so whatever this is, it's gonna take the, so it's basically gonna add to your start times. In this case, it's set to 918.
+
+So if this is, it's basically, whatever this number is times this added to the time. So zero times three added to nine, however many minutes added to 918. Zero times three is zero added to 918.
+
+One times three added two times three, three times three, four times three. And then if this goes up to, if you have the set to five, it'll be zero times five, one times five, two times five. And it'll iterate through all of that very, very quickly.
+
+And Matt, I'm just cutting in a note a little bit. But that's that 918, like the Eastern time zone when the stock market kind of opens at 930. And for me in Mountain Standard, that'd be 718.
+
+So 918, yeah, so great question. So it's basically when you go up here into your options is however you have it configured. When you go into general, it's whatever you have yours configured to.
+
+You go up to options, general. This is how I have mine configured is central, central time zone. So it's kind of like my local time zone.
+
+918 for me would be about 48 minutes into the market open. Gotcha, thank you. Yeah, and obviously if you're running VPS, make sure you understand what time zone you're in and what we have it set up to.
+
+Actually, you know what, I'm going to cancel that. I'm finding a little bit after market open is the best time for futures activity, like consistent future activity. Get away from the kind of open where there's a lot of movements, right? Yeah, it all depends.
+
+Some, it depends on what the strategy is, what you're trying to do. There's a lot of variations of things, yeah. Yeah, yeah, yeah.
+
+What's a good start time to iterate from? 9 a.m. or 8.30? Right, 8.30 is what I would do, yeah. Oops, let me go back to my template here. Yeah, yeah, let that load.
+
+But yeah, that's the basics of the strategy. Does that make sense, team? Yeah, it does. You bet, thanks, Matt.
+
+Yep. And the 10 EMA is a, it's a directional strategy. The opening range breakout is kind of like neutral.
+
+Like it'll, it's kind of like a blind ox. Like it doesn't matter, it'll go wherever. Whereas this, because of the candle, it'll pick a direction and go a specific direction.
+
+Whereas the opening range breakout, it doesn't matter, it's like direction neutral, right? So because of this, it doesn't have, it doesn't use the OCO orders. It just, it's like, okay, this is a bullish candle, so we're definitely gonna be going bearish, right? Or it's the opposite. It uses the opposite candle to pick the direction.
+
+So the cool part is just like the other bots is they can do multiple trades per day. You guys have probably noticed like over time, all the bots that we're putting out now can take multiple trades per day. The exception was the original Orb and the original Snapback were like one and dones, but these can take multiple, you know, multiple trades per day, yeah.
+
+So yeah, pretty cool, pretty cool stuff. Yeah, I like that. The only other thing I was gonna say is when you guys are running a back test or an optimizer, always, always, always run it one more time on high tick, high one tick.
+
+I know you guys may not have noticed. Good piece of advice, Matt, because I get two quite different results based on that. Yeah, because high one tick is gonna be very slow, but it's the most accurate, okay? And before I go in here to template and save, I'm gonna run it one last time on high tick.
+
+Now, I'm not gonna run a 20,000 optimizer test on one tick because it's gonna literally take forever. Like I might, you know, have two birthdays by the time it finishes, right? And so I'm gonna run that on standard. I'm just like, it's kind of like a funnel.
+
+Like I can just, you know, whittle through a couple of things and find a few things I might like, and then rerun a single back test on high one tick, okay? And before I save my templates, before I like say, okay, I like this, I'm gonna run it one more time on high one tick. And if I still like it, it still meets my criteria. I'm gonna go down here to save, and I'm gonna save it as a template, right? So in this case, you guys can see that when I go into analysis and I go to like day of the week, you guys see, okay, Monday, Tuesday, Wednesday, Thursday.
+
+Now, I'm gonna run it one more time on Friday. I don't remember why I didn't pick Friday. I don't know.
+
+I don't know if it was a loser or a huge loser or a tiny winner, tiny loser. I don't remember what happened, but that one tick, always, always, always save it as one tick, okay? Now, when you go to run the bot live, you're gonna switch that to standard when you go to run it live. When you're running the strategy analyzer, high one tick on a single backtest, it's very, very important, okay? Because that is the most accurate.
+
+Now, when people tell me, hey, Matt, I ran a backtest and the backtest didn't match what actually happened live, I always say, did you run it on historical back? Did you run the fill processing on one tick? If you said no, I ran it on standard and it had different results. I'm like, run it on one tick. They're like, oh, it matched perfectly.
+
+That's why we run it on one tick. It is slower. It's a fine tooth comb, but it is highly accurate.
+
+Just trust me, highly, highly accurate, but you don't wanna run high one tick on live because it'll mess you up. Let's run it in standard live, high one tick for the backtest. And I feel like I can trust those results when I run my bottom live.
+
+Right, yep. Did you guys see what happened here? It wasn't losing on Wednesday. When I turned on Friday, it started losing on Wednesday.
+
+Does anyone know what happened? What you might notice was this was set to three and it fricking changed to one. I'm gonna run it one more time. I don't know why the latest version of NinjaTrader randomly changes that value.
+
+I'm not sure why it does that. If you're not paying attention, that'll mess you up too. No kidding, that can be frustrating.
+
+I wouldn't say it can be, I think it definitely is. Yeah, yeah, no kidding. Yeah, it definitely is.
+
+Let's see, what else? What else? What other questions do you guys have for me? Did you, Thomas, did you get your? Yeah, I think so. Do you wanna do a screen share? Loaded, yeah. Yeah, yeah.
+
+This is still running, so I'll, yeah, go ahead. Yeah, all right. The one I have here is the volume bot.
+
+This is the back test. Can you see it? Yeah, did you run this on the high one tick, by the way? That's right. Yeah, that's a good question.
+
+Yeah, I did, yeah. It's one, ah, it's one minute. Oh, shit, all right.
+
+Well, that's running. I'll just screen share quickly and show you one of my analysises. All right, can you see my strategy? It says market analyzer, Dave.
+
+Is that what you're trying to? It says market analyzer, though. Oh, sorry, strategy, yes. And watch this, Matt.
+
+It's kind of interesting. It was a great strategy when I loaded it, right about the 1st of May, somewhere in here, and then it just kind of hailed off after I load it. Scroll down on the right, on the right side.
+
+Was it the one tick? Scroll down. Oh, you did, you did one tick, okay. And I loaded this and ran it live, based on the back test performance.
+
+And then since then, it's. Yeah, it looks like you did everything right. It just, you had some.
+
+I mean. You kind of, you stopped, or you started it right when it stopped working. Yeah, I had, I ran my mega orb probably almost four months straight, and it looked similar to this, and then it stopped working.
+
+I had to change up some of the settings, but yeah, that does happen sometimes. And that was hard for me to trust. Like, I did have about a week, a bad week with it.
+
+How many weeks, how long do you let it? Well, so that's a good question, and it's hard to give you like a straight answer, but for me, I had almost four months of really good, so it's like one bad week isn't gonna, I'm not gonna bet on it, but for you, you started kind of at a negative. So I had a little bit more history to, cause like, even if I had three weeks of losing weeks, I'm still up net, net, right? So it's tough to say when you start negative like that, but that's a good question. It was a good strategy.
+
+It back-tested out good, it should have been good, and you gotta let it run, right? So I would say, cause what I would wanna look at, Dave, is what did the back-test say when you started it as far as your consecutive losing trades? What did that say? And whenever you went past that, like if it said four or five, that's probably where I would've pulled it. And I think it was like two or three, and then I experienced four. Yeah, so that's probably what I would've pulled the trigger.
+
+Like if you're back-tested, let's look at, Tom, do you wanna share yours? Let's look at yours, and I can show you an example, Dave, on Tom's. Yeah, but that, I don't know, when I change it to one tick, it's still running. I don't know what's taking so long.
+
+I can share the screen. You see it? Yeah, oh, it's still running, cause of, oh, this is VPS. You're running on VPS? No, I'm running on my laptop.
+
+Oh, it's still running. Okay. Well, I can share my screen if you guys want.
+
+Why is it taking so long? It's just- This is why, because of the- Oh, stop sharing. Yeah, it's the one tick. So can you guys see my screen right now, or no? Yeah.
+
+Okay, so right here is what I would look at, Dave. See where it says max consecutive winners, 10, max consecutive losers, five. And then it says seven long trades, five short trades.
+
+That's what I would be looking at, the five and seven. So like, this gives you an idea of like what you could expect, right? So like, if this is, again, assuming you're using the right criteria, right? Like this right here represents 120 days, right? So like the best way to run this would be like the most recent 90, right? So let's say I'm just gonna, let's say that it's the end of April. Like, let's go back two weeks.
+
+Let's pretend that we're at the end of April. And I run this and it meets all my criteria, right? And it's like, okay, the large maximum consecutive losers, let's just say it's five, right? And let's say right out the gate, I lose five. Well, that's probably gonna be it, right? Now, obviously, like most people don't understand what this number really means because what they think it means is five losers.
+
+That's not what it means. It does not mean five losers. It means five consecutive losers.
+
+And that's a little different than five losers, right? Here's why. One, two, three, four, five, and then a winner, and then one, two, three, four, five, right? So let's say I have five losers and then I have a winner, and then I have another five losers. And that's technically nine losers, but technically I have five consecutive losers.
+
+Do you guys agree that that is technically five consecutive losers? Even though I might've had nine losing trades, that still is five consecutive losers. Do you guys agree that that's still correct? Yeah, that's right. So that's the kind of stuff that you just have to think about.
+
+Okay, have I had my five consecutive losers or not? Now, the thing you also have to think about is if you had connectivity problems, you guys are familiar with Murphy's law, whatever can go wrong will go wrong. Sometimes you may have connectivity problems on winning days, and your connections are like flawless on losing days. In those cases, I recommend you look at the back test to see what happened on the days where you had connectivity problems.
+
+And I guarantee if you had connectivity problems on losing days, count that as a blessing, my friends. Like, that's awesome. Like I sat out on a losing day, right? But keep that in mind, like keep the running tally and like, okay, even though I didn't actually take the loss, I'm gonna count it towards my max losing trades.
+
+And that's kind of the way I think about it, right? Now, in this case, you'll see that it shows 65.59% profitable trades. But when I look at my actual trades, what you'll notice is some of these are $25, $12, $15. $50, right? And why do you think that is? Even though it shows kind of a pretty high, pretty high percentage profitable.
+
+Why is that? Does anyone know? Because of my trailing stop loss. If I turn that off, my percentage profitable will go down significantly. It's probably like 40-50%, right? Now, keep in mind, percentage profitable can be a little misleading when you have a trailing stop, right? Because it'll count a dollar win as a win, correct? Right? Yeah.
+
+Yeah. But on bots that don't have a trailing stop, a win is a full-size win. This is counting a partial win as a win.
+
+And you're not really, and that's why I'm like, you guys always gotta look at the full picture. Look at all these tabs. Make sure you understand I'm taking a full-size loss, but sometimes I'm making, I'm getting a $12 win.
+
+Like these three wins in a row don't even make up for a $228 loss, right? Throwing a $58 win, a $15, like these, there are four wins that still don't make up for one loss. Here's another $52 win. Understand? So you gotta look at the full picture, the full package, before you just fall in love.
+
+And here's one that was just breakeven. So with commissions and a $5, like just make sure you understand, look through this, do your homework, make sure you understand what you're looking at. Make sure that, don't just fall in love with page one of the summary, right? Don't just fall in love with this and like, okay, oh, it looks good.
+
+The reason I'm looking at this, and I know that this is automatically suspect is this percentage and this, this should be significantly higher. This should be closer to like five or six grand because this max drawdown looks fine. This looks good, but this should be significantly higher.
+
+That's why I know it should, for what the numbers look like, right? Especially if I'm using 250. I would expect to see this, these numbers, if I'm using like $100 of risk, but I'm using more. So that's why I'm like, I gotta look at the trades because I can tell I'm not taking, some of these trades, I'm not making much when I add it all up, right? And then look at this, guys.
+
+There's my five losers in a row. I might've had multiple five in a rows, but there's one of them, right? So that's the long story short. I look at what does my back test tell me? And the easiest way to think about this guys is whenever you run a bot, like some people actually will name this, like this is my Rick bot, or this is my Teddy, or like, give this a name, right? And think about this, like you're filing a flight plan, like a pilot would, and like, this is your plan, right? And here's what your expectations can be, right? Now, I don't really fall in love too much with, it's gotta be a seven, it's gotta be a five for your bullish, bearish, long, short.
+
+Don't worry too much about this, but like collectively, these should be your numbers, right? And this is what you should expect, right? Don't fall in love with, they gotta break out exactly like this, because as you guys know, sometimes you're gonna have more bullish wins and bearish wins, depending on what the market looks like, right? That's, it is what it is, right? But ultimately, this is what you should expect, assuming you did it right, and you got a 90 day back test, right? So that's what I look at. And if, are we on plan or off plan? If we're off plan, it's your job to like, take it offline, replace it with something else. And so that's, that's the long answer, Dave.
+
+How do you know when to replace it, or give it, you know, room, leeway? That's the answer. So you're saying it should be around, it shouldn't be max consecutive loss, shouldn't be more than- That evaluation story, I probably lost connection there, but that's good advice. Right, yeah.
+
+I'm sorry, Thomas, what'd you say? So the max, you have to keep an eye on the max consecutive loser, if it's just accumulating. Correct, but keep in mind, like the way the max losses count, right? Like one, two, three, four, five, that's five. And then if I have a win, that would be plus one, right? And then I have one, two, three, four, another minus five.
+
+So net, net, collectively, that's nine losers, but it's only five consecutive, right? Okay. Five and five. Okay.
+
+Do you understand what I'm saying? Yeah, I mean, yeah. It's having multiple iteration, it's like nine, if you had 10, if you had like five consecutive wins, and five consecutive losers, but the iteration happened twice, but not directly. Well, let's say I have 10 winner, 10 losers interrupted by one winner.
+
+Yeah. Did I really have 10 consecutive losses or did I really have five consecutive? Yeah, it's like 10. No, well, no, if I had one winner in the middle of it.
+
+Yeah. So I had five losses, then a winner, and then five more losses. But my overall account would be down nine, minus nine R. So that's what I'm saying is like, people would count this as nine consecutive losses.
+
+No, that your drawdown would be nine losses, but your overall consecutive losses would be five still. Yeah. And see like the people asked, they're like, hey, I'm using $250 of risk.
+
+Why am I down 1900? Well, because of this, like drawdown is different than your risk per trade, right? So like, if we were to look at, we're gonna pop over here to analysis. Oops. Daily.
+
+Cumulative. If we were to pop over here, drawdown is like your highest high to your lowest low. That right there is your drawdown.
+
+That is your consecutive losing trades in a row. I don't know if you guys know you can do this, but you guys can see like the gross losses here, and you can click on each of these like dots here, and you'll see, you see like this little guy right here, when I click around, you see it moving. So like when I click on a row, the net profit for the day shows up here, and then the cumulative running balance, negative or positive kind of pops in here.
+
+I see that. So like the, so there's your losses in a row, and you'll see like the balance minus $212 right here, minus three, and you'll see my overall balance going lower, lower, lower, lower. And then we got some more wins and it starts going back up.
+
+But yeah. Because ultimately, like what you're saying, Dave, is you kind of started here and started losing. But just cause you had, like, you know, someone actually told me this, and it's interesting when you talk to people, everyone has their own like unique way of doing it, some of which are very, very unusual.
+
+Like I hear people say, Matt, if I have two losing trades right out the gate, I stop it. And I'm like, thinking to myself, well, like, that right there is two losing trades right out the gate, but it still would have made some, like, like, why is that a thing? Why is that a problem? I don't understand. Right? I'm like, that's just some weird rule you just made up out of nowhere.
+
+And I heard someone else say, Matt, when I run the back test, the high one tick, one minute and one second, they all three have to match, or I won't use that as a template. I'm like, where did that rule come from? Like, where did that come from? Like people have all these weird, yeah. I'm like, that's a rule you just made up out of nowhere.
+
+Like, what? Yeah. People have some, I don't get it. So anyways, all that to just be mindful guys is like, let the back test, we'll do the heavy work for you.
+
+Let it guide your decision-making. If it says you can expect five in a row and you're only have two, you know, just be patient, give it some time. And certainly don't keep changing it up every time you have a loss.
+
+Otherwise you'll never give anything a chance to run. You know? Yeah. So that's the idea.
+
+Yep. Did that back test finish, Thomas? Still running. It did.
+
+Okay. How does that look? It's showing screen. Okay.
+
+We should call this the back test breakdown. What do you think? That's a cool name, right? I asked ChatsGPT for some suggestions. That's what I did.
+
+Can you see it? Yes. Yeah. So you see where it says max consecutive is four.
+
+Yep. Yeah. Yeah.
+
+Okay. So are these, have you gone live with this? Like how does- Yeah, it's live. Okay.
+
+So when did you start running this? I think about three weeks ago. Okay. So I guess the only thing I would say is your end date, then I would thought your end date would have been more recent.
+
+Like you're running through the April 17th is what it says. Okay. I mean, yeah, I could just do it.
+
+Yeah. Let me test it. Is this supposed to be a one minute or what timeframe was this supposed to be? Yeah.
+
+One minute? Yeah. Okay. Because when you rerun this, it's going to take another 10 minutes or something.
+
+Yeah. I have this running on my VPS, right? And hang on. Let me show you the results.
+
+Okay. I think it's this one volume by strategy. It's historical.
+
+Maybe this one. Yeah. You see that? Yeah.
+
+That's only a five day back test though, right? Strategy performance. Yeah, yeah. Were you seeing them? Sorry.
+
+How did you get to the screen again? Start date and end date. It's just showing this right here is what he's talking about. Oh, I see.
+
+So it's only ran for five days. Is that what you're saying? Yeah. And it looks like, so three trades, three consecutive losers.
+
+No. Was that the same one that, what was the, was that the same one we were just looking at the back test stuff? I think so. I gotta, it's gonna take me a bit to figure it out.
+
+Cause the thing, cause there's a little bit of a gap between when you were like running your back test. Cause your back test said it was run through I think 417, right? And then you started running it on 510. Yeah.
+
+So there's a little bit of a like, like what happened in between there that I would, so it's kind of, I don't know if the tests got a little bit outdated or if you ran the latest and greatest or if you sat on it for a month. It was probably a little outdated. I probably had the test finished around April 17th.
+
+Okay. Cause I would wanna like make sure you run it latest and greatest before you like, make sure it's still worked okay before, like right before you went live. That's what I would have recommended.
+
+But yeah. What about the stats on the, cause this is just zeros. Is that what you're on? It's this one.
+
+You see that? Yeah. Is this okay? I mean. I would try from a high level, yes, but I would try to get a more updated timeframe.
+
+So remember we're always looking at the most recent 90 days and this was, you know, you're missing like the most recent month, which is the most relevant month. Right. So I would do something like, I don't know, two, sorry, 2-15 to 5-15 and like change up the dates and then let's take another peek at it.
+
+That's what I would, that's what I would do. Yeah. But like right now it looks okay, but we're missing the most recent timeframes, most recent months, you know.
+
+Yeah. Yeah. So if you want to rerun it and just like shoot me over the screenshot, that's fine.
+
+We can take a peek. Okay, I'll do that. And then what about, I guess the analysis, anything you can glean? I mean, that's exactly slope in the right direction.
+
+That looks fine. Okay. All right.
+
+Yeah. Cool. Alrighty.
+
+Any other questions? No other questions, but thanks Matt. Sorry about the bad signal today, but glad I was able to join on. Hey man, glad to have you in the USA.
+
+Yeah, that's right. Welcome to the USA. Welcome to Oregon.
+
+Never been to Oregon, but yeah, dude, that's super cool. You get to drive around and take a class in the back of a truck. I mean, dang, that would make me, that'd make me nauseous, but good for you.
+
+Yeah. Good for you, man. That's awesome.
+
+I really like what's going on with the community, so I hate to miss. Yeah, no worries, man. It's all good.
+
+We, I don't know if, have any of you guys traded options before? Cause we're actually going to be beefing up our options program in the next 45, 60 days. More info coming soon. That's all I'll say at this moment, but we got some more options stuff that we're going to be doing.
+
+So yeah, it's going to be cool. Good, good. I need to learn more because I've traded options unsuccessfully only.
+
+Well, that's the hard part, figure out how to do it wrong. Yeah. So yeah, what about you, Thomas? You traded options before? I have, yes.
+
+You have or have not? I mean, not programmatically, not through a bot. Okay, but you have like, even like manually and stuff? Yeah. I got you.
+
+Awesome, cool. Alrighty, thanks guys. Great.
+
+Thanks Matt. Yep, I'm headed to Chattanooga tomorrow to do my half Ironman. Good luck, have fun.
+
+Yep, thanks guys. Awesome. All right.

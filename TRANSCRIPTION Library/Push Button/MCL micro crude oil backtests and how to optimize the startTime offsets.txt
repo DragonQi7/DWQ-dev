@@ -1,0 +1,297 @@
+Let's see if I can get this on this computer. There we go, we got Peter Converse in the house. Look at that.
+
+How's everybody doing? Hello from, you're in Indiana. Looks like you're in your home office, right Peter? I am, it's about time, huh? Yeah, I've missed you. All right, so what we're gonna do is we have a kind of a run sheet and we have some ideas of what people have looked at and analyzed that we're gonna run some tests on just to see how they work.
+
+So I have in my other screen here, you guys can't see, I have a list of some things that people have added to that I wanna kind of go over with you guys and we're gonna verify and see what works. We're gonna run some quick back tests. As you guys know, back trading or back testing is pretty fundamental to bot trading.
+
+We wanna see what works historically so that we can make some decisions about what to run going forward. So the first thing I do is I'm gonna go look at MCL. MCL is a futures contract, did you guys know, for gold? Sorry, not gold, crude oil.
+
+CL is crude oil. And so I have this other screen I'm looking at. I'm just looking, I'm pulling through some information.
+
+So we're gonna go back, we're gonna run a 90 day test. You guys should be able to see my screen, correct? And we're gonna run just a quick, actually do a one minute real quick. So Steve and Rochelle over the weekend added a whole bunch of things that he looked at and I'm gonna verify, make sure everything looks, kind of looks good.
+
+And so we're gonna look at MCL and he says it's set up to run at 8.56 every morning. And we're gonna see what this looks like. And he has a 1.4 hour profit taker and he's using the Snapback.
+
+So the Snapback is one of my favorites. So we're gonna take a look at, run a quick report on this, see what comes back. And I actually, I need to check one thing, which is what is the timeframe? He says 7.56, but I don't know what timeframe he's in.
+
+So that'll definitely change it a little bit. Definitely not that. Does anyone know, Steve Rochelle, where is he at? I think it might be in, let's take a look.
+
+Oh, I know what I'm doing wrong, here we go. It's Wednesday only. Is that right? Looks about right, 8.56. Okay, so what we're gonna do is we're gonna take a look at the trades that were taken.
+
+This looks a little bit better. So what he has, I'll pull this over here, you guys can see what I'm looking at. I'm just kind of looking at this spreadsheet here.
+
+You guys, can you see that? And so there's a whole bunch of ideas that people have kind of added in here of what's worked really well based on their back test. And what I'm looking at right here is I was just looking for the first SR, so he'll put his initials there. And so that's kind of what I'm trying to replicate here real quick is MCL on an eight minute chart and let's do a one tick, do a real thorough back test.
+
+And in this case, we're going back basically 90 days. We're going to look and we're almost done with August. So we're gonna include all the August information here.
+
+We're gonna run a quick test and then it may turn out to be about, okay, so about what it was before. And so if you look at the analysis here, we'll see that that's kind of the trend line. So it takes a loss and then continues over time.
+
+And one of the things I really like to do is I like to take people's back tests and I like to expand on them. Does anyone know what I mean by that? Like, let's look at all the days that worked and let's see if there's any other days or days of the week that work better, right? So we're gonna look at days of the week and does anyone have, here we go, days of the week. And what we're gonna see here, does anyone know why he picked Wednesday? Well, definitely not Tuesday.
+
+Tuesday historically has been a losing day. Now, keep in mind every single thing on the right over here, these are all inputs that determine our results, our inputs. And any one thing over here has a huge impact on everything on this left side.
+
+So it looks like Wednesday is definitely the best day to do this. So the next thing I'm gonna do to expand is I'm gonna go into optimization and I'm gonna say we're only gonna use Wednesday. So we're gonna say false, false, false.
+
+Everything is false. We're gonna use our $750 of risk and we're going to go down here to our max contract size of 300. Does anyone know where these numbers are coming from? Where am I getting these numbers? So I'm using an Apex 300K account and you're allowed 7,500 of drawdown.
+
+So I'm basically using 10% of that. So that's how I come up with 7,500 and I'm allowed, I think it's like 300 micro contracts. Micro, that's what the L here in that.
+
+So instead of CL, it's MCL, instead of NQ, it's MNQ. Instead of ES, it's MES, right? So we're gonna run some optimizations on this and we're going to look at some offset. So we're gonna look at, let's do 830 and we're gonna increment, let's do every two minutes an increment of, let's do up to 15.
+
+So if you haven't seen some of these bot settings, what this does is what I'm telling it is, I want the bot to run a whole bunch of different tests and I'm saying, I want you to start at 830 and I'm in central time zone. So this is relative to my time zone. Peter, you also are in central.
+
+Those of you in mountain, Svella, I think you're in mountain as well. Correct, mountain standard time MST? Yes, Sam. So this obviously would be 730 if you're trying to replicate exactly what we're doing here.
+
+This would be 730 and what I'm telling it is, I wanna start at 830 and I want you to rotate, increment the time by two minutes and I want you to go up to, I said 15, but I probably should say 16, right? And I want you to rotate through all the different timeframes and I wanna see what works best. And now keep in mind, I'm hard coding a few things, one of which I'm saying, I only wanna look at Wednesday, only Wednesday and only Wednesday, right? My risk, I'm gonna start at 750 and stop at 750, which means nothing, which means we're gonna hard code that, we're gonna hard code a few things and then we're gonna dynamically rotate a few other variables. So what we're gonna do is we're gonna see what comes up first and I'm gonna give that and you'll see that I'm running through nine different, work quick, nine different iterations and here at the top I have, let's go look at the summary.
+
+Here's all the different results, okay? Now I don't love this so far, but what I wanna do is I wanna rotate a few more things. I'm gonna say, I wanna rotate through my profit taker now, okay, which means I wanna do everything we did before and I wanna start with a 1.2 profit factor, a one and I'm gonna increment by 0.2. So 1.2, 1.4, 1.6, 1.8, right? And repeat all the way and stop at three, right? So we had nine previous iterations and we just added some more. So now we're doing about 90 and we're getting a little bit better results now looking at historically, right? Now the only other thing I wanna do here is I wanna rotate through the timeframe and this is exponentially gonna add to our workload.
+
+Now it's done automatically so it doesn't necessarily matter but it will take a little bit longer, right? So I'm gonna start with one minute, I wanna go up to 15 minute, I wanna increment by one. So I'm gonna basically look at a one minute chart, a two minute, a three minute, all the way to 15. So I'm now exponentially gonna look at all of our, I'm gonna look at all the profit factor, I'm gonna look at all of the different start times and now I'm also gonna add a whole bunch of timeframes.
+
+So you'll see we went from nine to 90 to 1,350 tests and actually I should have done it, well, I guess it'll run. Might as well let it run. I was gonna do it the fast way, but we'll give that a sec and you'll see that we're literally running 1,350 different tests and literally 30 seconds a minute, something like that, right? Now, if you guys were to manually run all these tests, how long would that take? Take a while, definitely take a while.
+
+Alrighty, so let's see what we got. Okay, so we got some decent results. So just like everything else, we're able to right click and go open in a new tab.
+
+So I'm gonna take that one back test by itself, right? And throw it in a new tab. I'm gonna take some of these other ones and throw them in their own separate tab, right? So now what I can do is I can say, okay, I wanna look at the analysis. I wanna look at how this performs.
+
+I wanna look at also the trades themselves, right? So I'm gonna look at every single trade and you'll see that it has quite a few, this one has quite a few variations to it. So exit on close, meaning it closed at the end of the session meaning we didn't get really full, like a full timeframe. And that's because we are, let's see what timeframe are we using? Wednesday is true.
+
+And where is our, we're using a 14 minute chart. So 14 minute chart, we got a lot of, let's go take a look at some of the trades that we're taking. We'll see them in here in a sec.
+
+There we go, there's an example of one, right? So our entry was here, our take profit was way up here, but the session closed right there, why? Because it started way too late in the day. That's really late in the day, very much late in the day, but it turned out okay. Obviously overall, and in this case we took, we made 10 trades, right? What we just looked at was just one of those, right? So let's look at another one, see if we can find another one.
+
+Remember, this is one trade a day. So there's a losing trade. Let's take a look at the another one trade, let's see.
+
+So another one, again, this is profitable, but it didn't quite make it up to there. And you'll see this, I don't know if you guys can see on your end, but this is a dark line. That means that's where the session ended, right? The session ended right there.
+
+And so what I'm probably gonna do is, now that I'm looking at this, I'm probably gonna change my offset a little bit. We'll come back to that in a sec. Let's see, what else? What are some other trades? You'll see that it's only running one day a week, right? Here's the same thing.
+
+It kind of just started late in the day. So I'm surprised it actually does as well as it does, because in this case, this is not what Steve is recommending. I took what Steve was recommending and I kind of expanded on and found some other variations.
+
+But obviously taking a, looking for like a 2.8R trade late in the day, probably not gonna happen, right? But it did a entry here, stop loss down here, and then just take profit up here, but it had to exit it at the end of the day. So that's what it did. Let's do this.
+
+Let's do 15.55. And let's say our offset is zero. See what happens, see what it tells us. Oh yeah, so that's not improbable.
+
+Okay, let's look at our other result. Our other result was here, here. So let's take a look at this result.
+
+This is our analysis. So similar, we're gonna take a look at our orders. Oops, trades.
+
+Okay, this looks a little bit different. A lot of these are exiting on the session, at the session close. Let's rerun that whole entire optimization.
+
+Hey guys, you guys keeping up? Is this making sense? You're like, what in the literal heck, Matt? So let's take a look. Where's my offsets? Here we go. So let's do up to four, increment of one.
+
+And then let's rotate through our data series. Our data series is that timeframe, right? So in this case, we're gonna start at one, increment by one and stop at 15. So it's basically gonna run a one minute, a two minute, a three minute, four, five, six, seven, like all the different chart timeframes up to 15 minutes.
+
+It's gonna test all those variations automatically. And then it's gonna test zero to four alteration, kind of altering the start time. But our stop loss padding, everything else is kind of fixed and stays the same.
+
+Again, just looking at Tuesday. But what I might do is add some optimizations in here for we're gonna rotate Tuesday, Wednesday, and Thursday and every possible combination. We'll see what, see if we can get some other alternatives.
+
+So now it's gonna, a little bit heavier workload now, right? 6,000 tasks is gonna take less than two minutes. You'll see my estimated time is going down pretty quick. See what it comes up with.
+
+And remember, it's gonna only keep the top 10. It's gonna show us the top 10 up here based on what? Based on the product factor or the performance or kind of one in the same. So let's see what this comes back with.
+
+If I like any of these, I'm gonna set them up in my lineup. But yeah, we'll give that a sec. Any questions so far? So you're starting this at 8.30 and I believe in the beginning it was like nine o'clock is when he had it set up? No.
+
+He had it at 8.56, yep. 8.56? Okay. Does that, are you overlapping that somehow with the testing or not really? You're just starting at 8.30 and the offset's only four minutes.
+
+Is that correct? I'm breaking up a little bit. I didn't quite understand your question. Can you guys hear me? Or is it just me? It might not be me.
+
+So 8.30 is when you're starting. Your offset is four minutes. So your offset is up to 8.34, not 8.56, correct? Am I still breaking up? Let's see.
+
+So I'm saying, so it really depends. Like if I'm running a five minute chart and I say an offset by four, that means offset 20 minutes. Right? Right.
+
+This is my offset. Now, if I'm running like a 15 minute chart, then that's gonna be basically 60 minutes. So it's the equivalent of changing this dynamically.
+
+60 minutes, it would be like 9.30, right? 9.30. So we weren't able to rotate the time and make it optimizable. So what we did is we just made an offset that basically adds a certain number of candles, right? So that's how that works. To give us a rotating start time.
+
+Should be finishing up here soon. And wow, we got some pretty 87% profitable. Let's take a look.
+
+So this is showing 87.5% profitable, our profit factor of 8.24. Now, in this case, if you guys are ever running optimization, you put your mouse over this and stop, you'll see what the inputs were, right? So this is, again, just taking Tuesday only. On it, where it says 11 period, it means 11 minute chart. Down here is a nine minute chart on Thursday only.
+
+Here's another one on Thursday only, right? So they all have different variations here. So let me, actually, let me close some of these and get some new space open. We're gonna right click that.
+
+We're gonna open that one. We're gonna open this in a new tab. We're gonna open this in a new tab.
+
+We're gonna just open a few variations. So we're gonna look at them. But when you're running your optimization, everything is sorted by default based on usually performance.
+
+And performance and profit factor are pretty much the same. And we like anything over, I like anything over like a 2.0 profit factor. That's like on the minimum, the low end, right? You're gonna look at based on total profits.
+
+Looks like this one would be it, a 5.49. Should be this guy. So if we were to go through our checklist and say, hey, does this meet our criteria? This right here would be just a little bit below what we're looking for, right? Because we're looking for ideally 70% or better. And what you can see across the board was the long trades worked, but the short trades didn't work as much, right? So they didn't really contribute much.
+
+Even though there are five trades here, four trades here, this was kind of hit or miss 50-50. It just barely contributed a little bit, right? So overall, this one looks okay, but I don't think I would run it exactly as is, right? So our drawdown is reasonable. Remember, if you were to look at an Apex account for $300,000 like my account, you have up to 7,500 of drawdown, right? So you guys can agree that didn't hit 7,500 basically, right? It did not.
+
+So that kind of checks that box. Prompt factor above two, I like. And then normally what we would do is we take this number times four.
+
+So we'll just say 1,500 times four. So we're looking for a minimum return of four times that. It's not you're not making four times your money.
+
+You're just saying your drawdown, like if this is your drawdown, if I was a draw, it needs to be about four times. So this is a factor of this, right? So your drawdown, how much, like a string of losing trades in a row, your drawdown, how much is that? And then this needs to be kind of four times that at a minimum, ideally better, but that's the idea. And so as I'm looking through this, some of these have some real potential.
+
+In this case, it's just a little bit lower on the profit factor or I'm sorry, on the percentage profitable, right? And so what I can do is I can go in here and I can say, I want to go back into my optimization and I want to sort based on X, right? And I can say a percentage profitable is one of the variables I can sort on. Let's see, which one is this? Max percent profitable. And now I can rerun the test and I'll resort everything based on, I just want to look at what's most, what is consistently profitable.
+
+It doesn't necessarily matter if I have a couple of huge home runs, it's like what's consistent over time, right? Because you're going to have some huge winning trades every once in a while and you lose twice and you have a huge home run, make up for all losses. That's one way to do it. I like the consistency of small profitable wins over time.
+
+That's my preference, but I do have some, I mix it up a bit, yeah. Yeah, no worries, Andy. So we'll give this a sec to run.
+
+Has anyone ever traded gold before? I'm sorry, crude oil, MCL, micro crude oil? Yes. Yep. I actually had a one good trade last night on MCL.
+
+Thanks. I just set it and went to bed and it worked out. Yeah, yep, that's awesome.
+
+Yeah, the only thing about some of these assets, you just have to make sure the volume is there. That's why I usually will look at the chart also. While we're doing that, I guess we can launch.
+
+Let's do a new chart. So one of the things I like to look at is, I don't really like super low volume. So I'm going to say MCL on a three minute, let's take a look at what that looks like.
+
+But ideally you want to have enough volume to get in and out of your trades, right? If you're trading 20 contracts and the volume you're looking at is only trading two, you're going to have problems getting in and problems getting out, right? That's why we're looking for the minimum. I'll let this load. And you can see like right here, it's got some decent volume, but everything else you'll see how it's scattered.
+
+So actually this is, you can just tell by looking at the volume. And when you look at the volume, that's like a huge spike, right? But you have to keep in mind the context. What is the context? Well, my legend over here is saying it's a little over 200 contracts, right? But down here is four.
+
+So four contracts, four contracts, right? And this is, normally you have futures trade 23 hours a day, five days a week, right? So let's see, in my time zone, you'll see that it around 830. That's usually when the stock market opens to about 1330. That's kind of when the stock market opens.
+
+Usually you have higher volume through here, but every day is different, right? And so it looks like it has decent volume through here. And again, a couple hundred contracts. Now, if you compare that same exact timeframe, right? Let's flip over to M&Q.
+
+You guys see a difference? We don't have 200 contracts. We've got 20,000, right? And I had a loss today on one of my trades, but- Is it possible that people switch to a different contract so it's not September anymore? So that's why you're seeing low volumes? Yes, that's possible. I don't know what the other- Yeah, I don't know either.
+
+Let's see. So everything here is showing. Here, let's go down to micros.
+
+MCL, September, yeah. Is that the only one, right? Right now? Bitcoin has July still, that's weird. Wonder why that's like that.
+
+But yeah, that's possible. But whatever you're trading, what you wanna do is make sure you have like 830 to 330, whatever the stock market time, where you have some decent volume. And this is why, one of the reasons why I like M&Q so much, lots of volume, right? So if this has 20,000 shares, and this is a three minute, right? 20,000 contracts rather, not shares, but 20,000 contracts, right? Then, and I'm looking at my trade.
+
+Let's see, where's my average trade history in some of these back tests. And I'm looking at the trades. Look at how many I'm trading, right? Now, if you saw some of those have a little blip and I'm trying to trade, the volume is four and I'm trying to trade 37, that's gonna be a problem, right? So even though the back test says, hypothetically it would work, ultimately that's gonna be a challenge.
+
+It makes sense? So I do MCL selectively, that's what I'm saying, just because of the volume, right? And you can always go to chart and you'll see, anytime you see like, it looks like a dusting, it looks like maybe the pin ran out of ink when he's drawing these candles, that's typically what that is, right? Now, when you have like more, it's like a full head of hair right here, like really solid, smooth, type of candles. And you'll see that the candles are pretty small right through here, look like toddlers, but then right through here, they get quite a bit taller. And when I mean referencing is the range, the high and the low of each of these candles.
+
+So this is like a toddler, right? Little guy. And then these are like NBA seven foot players, right? Right here, and that's what I'm looking at to make sure we have volume. Now, obviously volume is not on the chart here when I'm looking at it, but I can click here and then add it and just kind of peak.
+
+And I can already tell it's gonna be low, yeah. So there you go. So for whatever reason, the volume kind of started picking up at 3 a.m. on that day.
+
+I don't know. I don't know if there was some OPEC or I don't know what meeting or something was happening there, but MCL is decent. I've traded before.
+
+You just have to watch the volume. See, sometimes it just falls off a cliff, right? You see that? So sometimes it falls off cliffs. You just have to be careful, especially if you're doing like after hours.
+
+This big, thick, I don't know if you guys can see this big, thick gray line, that represents the previous session. And this is the new session. So there's futures trades 23 hours a day, five days a week, which means there's one hour of downtime, right? One hour of downtime.
+
+And that's kind of where it starts and stops, right there in that thick line. So, yeah. Okay, so MCL, I would just say, ultimately has got some decent things in here.
+
+Just be careful with the volume. That's the moral of this story. What volume is okay? The more, the better.
+
+Andy, that's a good question. But obviously, if you're trading, like you guys can see here, the volume through MNQ, right up to the end of the day, compared to right now, is super low, right? And so even low volume, low volume in MNQ is kind of like high volume in MCL. Do you guys see that? I'm just talking about the range, the, what do you call it? Legend on the right side of the screen, right? So this is showing what, eight or 9,000, eight or 10,000 contracts traded right through here.
+
+And that's a three minute, in a three minute window. Obviously, if I go up to like a 15 minute, it's gonna go up even more, right? So we have, looks like it took a bunch of trades today. But you'll see, this is what I'm looking at is the volume, right? You'll see the volume kind of pops up and kind of trails off, usually similar and parallel with the stock market.
+
+Does anyone know how often the stock market is open? So if I can draw a white, let's do it right here. Stock market is- Six hours a day. 6.5 hours a day, five days a week, right? Futures is 23.5. However, just because it trades more time, doesn't necessarily mean you want to be in it.
+
+Why? Because of this right here, like nothing, right? So just keep in mind, if you're trading, like we were just looking at MCL, if you're trading 30 to 50 contracts and there's only four trading, four contracts, trading in that five minute candle, a three minute candle, that's gonna be a problem, right? It's kind of like, so Peter and Algy for you would be a boat that sits in the water three feet and you're in six inches of water. That's a problem, right? What is that called? I forget the, I'm drawing a blank on how, the depth that you sit in, what's that called? The draft. The draft, there you go, yeah.
+
+Yeah. So you guys can see, I like trading M and Q. But ultimately, like usually what will happen is even though you have six and a half hours, six and a half hours for the stock market, futures is open significantly longer. Let's do it this way, let's do, futures is open significantly longer, but just cause it trades a lot longer doesn't necessarily mean you want to be in it, right? So this is futures and this is the stock market.
+
+But whatever you're trading, it needs to definitely have some volume during the prime time. That's what I'm saying. Does that kind of make sense? Sort of.
+
+Yep, I'm sure it does. Awesome. So let's take a look at another one that's in here.
+
+Let's see, MGC and MQ. MQ. Okay, let's look at M and Q. And let's load up one that I like myself.
+
+And this is on, oops, wrong one. Let's go back to back test template load Friday. There we go.
+
+Gotta change the asset correctly. Have you guys noticed the mistake I made? It's pretty frozen on me. Come on.
+
+So I'm running an M and Q test, but I got MCL selected. And now it's about to freeze on me. Come on, don't freeze on me.
+
+There we go, okay. Right, so look, my template says M and Q. Choose M and Q, but I have to manually change M and Q. There we go, now let's run that and let's see. This is what gets me excited.
+
+So do you guys think based on our results, actually, we gotta go forward one more week. Eight, 20, 23, one tick. There we go.
+
+So this is the one I actually ran last week. Worked well, worked really well. Do you guys see the video I released of all the trades that were taken last week? Any of you guys see that video or no? Nobody.
+
+I did see it. I watched it. Okay, no worry.
+
+So we'll let this run. And those of you in the yearly class, our next class is on the, so Andy, so on the 11th, I believe. Yep, 11th, September 11th, wow.
+
+Interesting date. All right, we'll let this run. So this is a, it's a five minute chart, and it's, there we go.
+
+You guys agree this reaches our 70% profitable? Right here, this is above 2.0. Yes and yes, and then I'm looking for this to be below 7,500, which is based on the account size I'm using, based on the account size I'm using. I'm managing my risk using. Come on, it's freezing on me.
+
+Come on, no. Oh, I'm using $750 of risk. So basically, can you guys see? I know it's a little faint now.
+
+9,400, so yeah. And my profit factor on that was 1.6R. You can't see it, but it's up here, 1.6R. And I'm using $750 of risk. So someone tell me how much that's gonna win and how much it's gonna lose based on those numbers alone.
+
+If it loses, it's going to lose how much? $750. $750 for 1,200 or when? $750 times 1.6, is that right? There we go, 1,200, oops. So when we're gonna win? Connection lost.
+
+1,200. So lots of people's connections are getting lost. So yeah, there we go.
+
+So that's what that means. So keep in mind, our profit factor is a multiple of our risk. We're risking, we lose, we lose minus 1R, right? We win, we win plus 1.6R. So even with 50-50 odds, we're gonna be ahead, right? Because of that little difference maker with the more than one-to-one, right? So when we look at our trades here, you'll see that I had a couple losing trades, yep.
+
+But there we go. We're looking for that $1,200. And it doesn't always do exactly 1,200.
+
+Why? Because tick size and how many contracts you're using. And so at a small loss here, it closed at the end of the session. Everything else hit the take profit or the stop loss.
+
+I like it. So this would be considered what I call a wild card, meaning could have won, could have lost. It just went sideways and exited at the end of the day, basically is what that did.
+
+How do I know? Well, if I look at the maximum number of bars here, if I sort it that way, you'll see down here at the bottom, we got 52. Does anyone remember what timeframe we're running this on? What chart size? It's a five. Five minutes.
+
+So five. So how many candles is 52 candles on a five minute chart? 260 minutes, which is basically four and a half hours. It's in the trade and then it exits.
+
+Yep. What else? So this is the snapback. Yep.
+
+Any questions? Is this helpful? It's interesting. John Parame, what do you think? Yeah, just one quick question. So the start time offset, what units is it in? Is it in? It's minutes, yep.
+
+The actual minutes, okay. So actually, sorry, I lied. It's not minutes, it's candles.
+
+And a candle could be a one minute, a five minute, a 12 minute, whichever chart you selected, right? So it's gonna say skip X number of candles. Right. If you're looking at a five minute chart and you say three, then technically it's gonna go forward 15 minutes, right? And that's the same, like in this case, if you have it set to run 830 on a five minute chart with offset of three, that's the same as saying started at 845.
+
+That's essentially the same thing, right? With zero offset. That's how that runs, yep. But there's a lot of stuff out there.
+
+I don't know if you guys have any ideas for what you wanna, any backtests or anything you've found, especially Svetlana, Andy, John. Please submit your findings in our small group. Andy has a question.
+
+How do you optimize to find the best start time? Okay, so we kind of did that a little bit, Andy, just previously, but the short answer is you have a start time you wanna go with, let's say 830. Sorry, 830 in this case. And then you can just go to optimize and you can't optimize the start time, but you can optimize the offset, if that makes sense.
+
+Right, so my start time is still 830 and I can say I wanna go rotate it 30 candles. So start with zero. Oops, sorry, 30 candles, start with zero.
+
+Oh, it's only allowing me to do 20. Okay. Oh, I see.
+
+Zero and a max of 20, I did it backwards. There we go. So now I can say 30.
+
+So that's the idea and you increment. I still let me do 20. Matt, we can't see your screen.
+
+I don't know if you're sharing. I was doing a great job of explaining though. Sorry.
+
+Okay, so here we go. 830, whatever your start time is. Andy, it says start time and you're gonna go forward from there.
+
+In this case, you're gonna go forward anywhere from zero to 20 candles, right? In this case, you have a hard-coded of five minutes. So you can change it to five, 10, 15. If you also wanna roll through, you can say optimize data series, which we haven't talked about this in the August, some of you guys in that class haven't got to that section yet.
+
+We're gonna start with one, increment by one up to 15. So keep in mind, all we're really doing is we're setting some parameters, right? So what about like a 30 minute chart? Well, I'm saying one to 15. That's all I'm saying in this case.
+
+A one to 15 minute chart is what this is saying. I'm gonna start a minimum of one, a max of 15, we're gonna increment by two, right? Now I could say, let's, I'm sorry, increment by one. I could say increment by two, or I could say a five.
+
+I'm gonna do five to 30 and I increment by five. So what are those values gonna be? Well, it's gonna be five, 10, 15, 20, 25, and 30. That's basically what that means.
+
+If I say a minimum of five, max of 30, and I want you to step up or increment by five each time. That's the basic, that's how you do that. So what that offset does, it gives us the ability to kind of optimize the start time, but you hard code the starting start time and then how many candles you want to walk forward after to try to optimize that.
+
+And most of you guys know, we've been trading with NinjaTrader more than a few months. You know, the start time is critical to the success of the overall back test. It could be a difference between a winning trade or a losing trade, right? Based on the start time.
+
+So, yep, that's what I got for you. Any questions, Andy? So greater than 20, we need to have a different start time again, optimize again. Yes, but it's 20 candles.
+
+So depending on what you're running, if it's a one minute, that represents 20 minutes. If it's a, probably wouldn't be an hour candle, but let's say a 10 minute candle, that'd be 200 minutes, three hours and change, right? You have to allow for more than 20 candles. Yeah, John, I didn't know it was max of 20.
+
+I'm not sure why it's limiting to 20. It might be a resource. It might take too many resources.
+
+That's why I'm not, I didn't realize it was limited. I noticed there was 20 last week, so. Yeah, yeah, yeah.
+
+I'm not sure why there's. It wasn't a big deal. Yeah, no big deal.
+
+Yeah, so yeah. And that this ideas spreadsheet, is that just like good ideas or what is this exactly? Yeah, so those are just ideas that, we originally started that in July and over time, some things have started working better, not worked as well. It's shared in the bot community.
+
+I think you have access to that, Stellana, right? Yeah, I can access it. Yeah, and so the ones in the dark green are the ones that people have highlighted as like they make sure it checks all the boxes. People add to it all the time.
+
+So I haven't really looked through the latest changes that were added in the last, like this past weekend. So, but yeah. Not everything I have is that I run myself is in here, but there's some of them I run are in here, so.
+
+Yeah, thank you. Yeah, great questions. How do you know how to optimize to fragile? Andy, we're gonna talk about over-optimization here in a class or two.
+
+We're gonna talk about that. It's a whole topic. But yeah, the short answer is, obviously if you make all your settings work magically going backwards and they fall on their face going forward, that's one of the signs that it was a little too optimized, right? Because what we're doing guys is we're not trying to predict the future, right? We're using probabilities.
+
+So something as a 70% plus chance, it's still kind of like flipping a coin. You have higher than 50-50 odds, but you still have to accept any outcome, win or loss. We're not guaranteeing a win, but I don't know about you guys, but if I have to lose, I'd rather lose.
+
+I had a high probability. It just didn't work in my favor versus like 50-50 chance, right? So, but yeah, that's the idea. But yeah, great questions.
+
+I will, I'll post a recording here shortly. Thanks team. Have a great rest of your night.
+
+Thank you.

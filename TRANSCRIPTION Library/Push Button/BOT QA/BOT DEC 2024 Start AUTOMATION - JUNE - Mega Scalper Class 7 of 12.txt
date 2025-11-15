@@ -1,0 +1,419 @@
+Okay, so in this class we're going to talk about the Megascalper. The Megascalper is the latest bot that we released, I'm going to say three weeks ago, the Megascalper version 1.9. And what we're going to do is we're going to walk through some of the unique settings and the unique properties for this specific bot. And we're going to kind of explain, do my best to explain how the bot works, and we're going to go back and actually watch some trades take place and kind of watch it in Market Replay. 
+
+So the first thing that you'll notice is it does have, of course, the days of the week all of our bots have that, so that's common. In this case, I run a back test for, looks like we're just looking at Thursday and Friday. Your risk and maximum lot size, of course, is always, you probably shouldn't optimize it, always hard code that. 
+
+In this case, I'm using kind of the values, kind of assuming I'm using a 50k account, which has like $2,500 of drawdown, right? So that's like your drawdown limit. And from that, we kind of extrapolate 10% of that and kind of use 250, 10% of my drawdown. So $2,500, $250 of drawdown, I'm sorry, $250 per trade. 
+
+So $250 per trade, and that goes right there. Okay. Now, one of the things that is really unique to this bot is that you can set this up and you can define this to stop trading in a couple of different conditions.
+
+One is based on your maximum trades and the other is based on maximum drawdown. Hello, Dave. How's it going? Good. 
+
+How are you doing? Good. I was just getting started with the recording. Yeah. 
+
+Yeah. We're talking about the mega scalper today. It's the latest iteration of the bots, the latest one that we've come up with. 
+
+Yeah. So we got the, again, we got the days of the week. We got the normal risk management. 
+
+You'd expect $250 risk, 100 units, 100 lots, 100 contracts for max lot. The thing that's unique about this bot is it has this feature where you can say, stop trading on maximum drawdown. And the maximum drawdown in this case would be like $200.
+
+That's what is defined. Now you guys may know that the mega orb and the mega snap, like really all the other bots use stop limit or limit orders. So those are the type of orders that are used, right? In this case, what it uses are market orders to get into the trade.
+
+So what you might notice is that my drawdown that I want is a little less than what I'm actually risking. And that's because I'm kind of thinking, you know, I'm going to have a little bit of slippage, right? So this is pretty cool. And I'll explain how this works when we tie a couple of these pieces together. 
+
+But the idea here is that you can say, you know, like in this case, we have 20 max trades per day and the mega snap back in the mega orb. If you say three trades per day, it's going to do a maximum of three win or lose. It doesn't matter. 
+
+It's going to just take those trades, right? But in this case, what you can do is you can give it some kind of intelligence and say, I'm only willing to give back $200. So what does that look like in practical terms? Well, if your first trade wins, it's going to take another trade. And if that wins, it's going to keep going until it hits an unrealized loss of $200, right? So if it starts losing, then it's going to cut off and say, okay, we're done for the day. 
+
+Now, that's one of the features that are built into this. So it has kind of a little bit different risk management model. I guess you could say that makes sense. 
+
+Kind of a different way of approaching risk management. Now, on the flip side is if it takes the first loss and just loses, it's done for the day. So essentially, if it wins the first few trades, it's going to keep going until it hits that loss. 
+
+Now, you can, of course, adjust this and say, you know, $500 here, which would basically be like, keep trading until you have two losing trades or a net loss of $500. Again, that's unrealized gains, right? So if you have like a $1,200 unrealized gain, and you go down to $700, that would be a $500 loss. And that would kind of trigger your max drawdown. 
+
+That makes sense. And then the other piece here is your max trades per day, you can also have it stop on max trades per day, which is, I wonder why there's a checkbox, because like, I'm thinking, shouldn't that always hit the max? Like all of our other bots? Yeah, I don't know. But regardless, so I actually was the mega orb and the mega snapback.
+
+Those are kind of my personal projects. The mega scalper was Tracy Ball's personal project. So yeah. 
+
+So Canadian brainpower there, right Dave? There we go. The other cool part about this is you do have the ability to have a profit taker like turned off. So what that means is you'll get into a trade, entry here, stop loss here, when no profit taker, as long as, you know, if you have a pullback of in this case, minus $500, it's going to exit the trade, but it is going to keep going as long as it, oops, as long as it, runs. 
+
+Right. Does that make sense? So it's going to keep running as long as with no, like you're not putting a ceiling on it. You're not putting a, right. 
+
+And so when you look at it, we'll look at the example here in a second. So what you'll see is something that looks like this is your entry and your stop loss with no take profit defined at all. So in this case, it is checked.
+
+Obviously the example I just gave up above is if you have it like unchecked, right. Yeah. Now it'll have, it does have the traditional start and close times. 
+
+So like the starting and stopping time which those times can't really be optimized, but you can optimize the offset and that'll kind of dynamically update the start time, kind of roll that start time forward a bit. It does have trailing stops. So that's another way to kind of exit out of a trade is if you hit a trailing stop, in this case, it's 50 ticks. 
+
+If you remember the, we're looking at the MES in this case, the MES has a 25 cent tick, right? So in this case, 50 ticks, 50 ticks is equal to about $12 and 50 cents, right? So if $12 and 50 cents a pullback in this case defined by 50, that's not an S, that's a five, zero, 50 ticks, boom, we're going to have our pullback. Now the part that is super, super important is the specifics of how this works. And that is we're using three different exponential moving averages, right? We're using a 10, a 30 and a 100.
+
+Okay. So in this case, we have a 10 EMA, a 30 and a 100. Now those are all defined over here on the right, right? You'll see 10, 30 and 100. 
+
+And so what this does is it looks for a 10, 30, 100, it's looking for three EMAs and how this, this is looking for a trend to be defined. In this case, you'll see that it has three moving averages, as long as they're both going in the same direction and they're parallel. That's what it's defining as they start and end of a trend.
+
+I'll show you the examples out here in a sec, but you do have the option to, you know, if you want to show the EMA on the chart, you can do that. Obviously, if you toggle that on or off with the actual back test, it's not going to vary the results. It'll just vary the visual piece of it.
+
+And then you can, you know, update the colors if you want to kind of default here. So red, green, and blue. So in this case, if I'm looking at a very first, fresh back test, first thing I'm going to look at is, you know, if I'm assuming a 50k account, do you remember what the goal is? Is we have a 3k profit goal. 
+
+So we want up 3k and minus 2.5k of drawdown. So up 3k down 2,500, right? So you would agree that this does not hit 2,500. So it looks good.
+
+You'll agree that this definitely does surpass our $3,000 goal. And then the other thing is I like to take this number times four. So ideally let's just round that to 1,500. 
+
+So, you know, I'm looking for about $6,000 of profit up here. Obviously we kind of surpass that. So everything looks good so far. 
+
+Now what you will notice is our time of day. I'm using the, what is it, 1.5, the 0.15 version of NinjaTrader. I think it's like 8.1.5, I think, 0.15. Anyways, that's brand new. 
+
+I hadn't seen that until I upgraded. And that doesn't necessarily relate or correlate to my, that does not relate to my time over here, my start time. It's not related to my start time because as you guys know, we're running a bat test in this case over like a 90 day period.
+
+And it's just telling me when it starts and when it ends. And then I'm looking at very specific chunks of time, you know, just that little hour and a half. I'm in central standard time. 
+
+So CST, that little hour and a half window there that it's running. So even though it says 12 a.m. to 12 a.m., that is correct for the start and end time, but it's still only looking, only taking trades in between that 7 and 8.30 time. Okay. 
+
+Makes sense. So then the rest of this is probably stuff you've seen before. All your, the built-in stuff that's built into NinjaTrader itself. 
+
+Every single bot has your start time, your historical fill, your, you know, all the, all the things related to the back test itself. Now, what I want to do is I want to look at the analysis and you'll remember we're looking for a $3,000 gain, which happens about what, one, two, three weeks in, we hit that $3,000 gain. And so that's, that's pretty cool. 
+
+And Dave, I don't know if you've ever had gotten account funded yet or not, but not yet. Not yet. So what you do is you get a PA account and a PA account stands for performance account. 
+
+So what happens is your old account, you stop paying for the old account and we highly recommend you, you pick like the, they call it like a, I think they call it like a lifetime fee. And depending on what account size you have, it's a little different. I think I paid, it's like I had a choice of like a hundred dollars a month or $130 for 10 years or something like that, like for 10 years. 
+
+And it's like a penny for each additional year or something like that. I don't know how that works. Cause I don't know if Apex has been around 10 years yet or not, but obviously a hundred dollars a month, you're going to break in after break, even after two months, they always choose the, the lifetime. 
+
+So it's not as stressful when you're not paying monthly fees. Once you get a PA account, right, you're reducing your risk by half. You're not paying monthly fees for those accounts. 
+
+It becomes kind of a, you know, a little bit more of a, we'll call it easy street. You don't have to worry so much about getting it funded or whatever rates you're there. So a little less stressful, but the PA account is the performance account. 
+
+That's where once you grow it, you know, a certain amount you're eligible to withdraw cash money, right? Put that money into your, your bank account. That's where the money becomes real. So if we were to take a look at a couple of trades here, what you'll see here is because we're marketing into these orders, you'll remember we're using a take profit switch tools.
+
+So we're using a profit. Sorry, Matt, just to go over your time, which is just below there. You're at your profit taker, but your start time and end time, that's a short window. 
+
+You're trying to do this in an hour and a half. Yes, that's right. Which is basically before the market opens even that's what I was going to say also. 
+
+Yeah. Okay. Yeah. 
+
+And I'll, I'll show you some more examples of like why, you know, so like people ask, why do I do it this way? Why do I do it that way? And the answer is always going to be, what will it be? Whatever the back test tells me it's going to guide my optimized. Yeah. It's going to buy and guide the decision-making. 
+
+Right. So the, so here's what here's what this is going to look like is the way it structures is if we lose, we're going to lose what, what's my risk $250. Right. 
+
+But if we win, we're going to win how much we're going to win 2.2 times my two 50, which is plus five 50. Right. Right. 
+
+Now the reason it's not always exactly five 50 is because we're marketing in that's one of the differences here is because we're scalping it's used on usually a shorter timeframe. This isn't meant to hold positions for hours. It's quick in and out after a few minutes. 
+
+Right. So scalping is like day trading on a super short timeframe, quick in and out. I think the, the meme people out there, they call that a paper hands, like hold it for very short, like we can hold it for a very short period of time, just quick in and out. 
+
+Right. And so in this case, you're not going to have the exact five 50 because you're marketing into it. Sometimes you can get a better fill. 
+
+Sometimes the worst fella probably works out to be the same, but you'll see here. Sometimes you get five 50, sometimes it's a little more, sometimes it's a little less. See that. 
+
+And then all of our stops sometimes are going to be different based on if a trailing stop was hit. So if a trailing stops hit, it's going to be less than two 50, like right here. Or if it's your full, full bore, you know, full loss, you're going to see just that full two 50, give or take a few dollars, right. 
+
+Depending on how many contracts you have. Right. So if I'm going to flip this around, you'll see the minimum contracts I have is four, which is good. 
+
+I don't ever want to see one. I don't want to see a hundred. If my minimum is one and my max is a hundred, I don't really want to see those numbers. 
+
+I want to see something in between. I don't really want it to hit the max. I don't really want it to hit the floor either. 
+
+I want it to kind of float around in the middle. So I call those kind of refer to those as like wild card trades, but in this case, I don't have either of those. So that looks pretty good. 
+
+So what I'm going to do is I'm going to pop over here to the chart and let's take a look at a couple trades that we can find some. So the first thing I want to do is kind of like bring your attention to this line right here, where I'm drawing is you'll see that all three of these lines start to go parallel and in the same direction. Nothing is crossed, crisscrossing. 
+
+So you can say like between that level there and probably about right here, where those lines start crossing. That's what we're defining. We're all three lines going in the same direction. 
+
+That's what we're defining as a trending, like the price action is trending. It's trending. Now I used to use two different moving averages, but we've learned that a third moving average actually works even better because you'll see here in a sec where if you have like two moving averages like right here, but then you have a third ones, like it's all over the place and it kind of keeps you out of a lot of the chop.
+
+So you've heard the phrase, the trend is your friend. And have you ever heard of the second half of that Dave? You've heard the phrase, the trend is your friend. I've heard that, but I don't know if I've heard this. 
+
+The trend is your friend until the bend in the end, which means like if you're in a bullish trade, it's going well until it just like until the bend in the end and no longer bullish. And you gave back some of your profits, right? That's the trend is your friend until the bend in the end. So let's take a look at this example here.
+
+You'll see all three lines when it takes this trade, all three lines are parallel, obviously going down. So when all three lines are pointing down, then of course it's going to be looking for a bearish trade, a bearish trade. And what it's looking for is it's actually looking at this candle right here. 
+
+So what it's looking for is a kind of a lower low that's taken out. So for example, you've probably heard higher highs, higher lows, lower lows, like you're like, what the heck does that mean? So in this case, we're going to talk about a lower low. Okay. 
+
+And you've probably heard of like a higher low, a lower high, right? And so the way that I've always explained this, and this is just, it finally clicked with me once is the very first word, lower means the direction, meaning we're going lower, right? We're going lower. Okay. The second word, lower high is talking about the anatomy of the candle, right? So our low here or our high. 
+
+So we're talking about a lower, all this is going lower, lower, lower. This is my lower low, right? If you look at all the lows to the left, I cleared this up a little bit, this lower here to the left, all the lows to the left, it's waiting for that to be taken out, right? That's what it's looking for is this candle. And you'll see right there, we kind of go up a little bit and then kind of fall off the cliff, right? So that's kind of, that's what it's looking for, kind of a lower low, and then waiting for a kind of a break and a move lower. 
+
+Now, in this case, we do have the 2.2 profit taker. So if you think about the spacing in between here represents like a $250 loss, the spacing in here represents, what did I say? It was a 550, so $550, right? And you can also tell that the spacing is proportional to the profit taker. So like if I had a 5R target, obviously it'd be down here. 
+
+So it's like this spacing times five, right? One, two, three, four. So the idea here is that it's proportional, right? So here's our stop loss, here's our entry, and then right here is our take profit, right? And because we're on a shorter timeframe, we're looking at, in this case, a one minute chart. What we're doing is we're typically using quite a bit more contracts because we're looking at a very small candle, right? They're smaller candles. 
+
+If you can imagine the price action on a 30 minute chart, the candles over 30 minutes are going to be bigger than a one minute, right? The movement over 30 minutes of consolidated price action is going to be bigger usually than a minute, right? So in this case, we're going to have more contracts when we have a smaller candle. So in this case, again, it sees that lower low. And so this was the previous lower low. 
+
+We didn't take it out, but we made a new lower low. So I was like, oh, that's it, boom, lower move. Make sense? So let me see if I can find a good example for a bullish example. 
+
+And because we're using a one minute chart, there's a lot of candles. And because I'm only looking at it two days a week, we're having to skip through a bunch of... Let's see. And you're only looking for the hour and a half. 
+
+Yeah. Yeah. Just a small window of time. 
+
+Yep. So let's see. Where's my date? April 22.
+
+Let's see. Let's see. Where am I? April 27. 
+
+April 30. Oops. What day is this? This is May 2nd. 
+
+Okay. So May 2nd. I think this one has a couple of trades set up in here. 
+
+There we go. A couple of trades. And we're going to go back and replay this exact day, actually, May 2nd.
+
+So the way that this works is it's looking for a lower high. Remember, lower, and then we're looking at the anatomy of the high. So lower high, it's a lower high, lower high, and then that lower high taken out. 
+
+So let's think of it like an S-curve, where it's looking to get in right here as it's making that S-curve. We're confirming it's bullish. We're pulling back. 
+
+We're getting in on the pullback, and then we're pushing higher. Now, again, you'll notice right through here is where those three lines cross. And then somewhere off the chart is where they crisscross again. 
+
+And again, this is what we're defining. Three parallel lines, again, based on our EMAs we've defined here. In this case, we've got 100, 30, and 10. 
+
+So whatever those defined, those are our lines on the chart. So we're going parallel. So we're telling the system, OK, that's what we're defining as trending. 
+
+And it finally takes out this, finally pops up above that lower high. Boom. There we go. 
+
+Quick 2.2. So then it pulls back again. Same thing. I guess this one right here is probably the next lower high after that. 
+
+Same thing. We finally break, go above. Same thing. 
+
+Rinse and repeat. And then hit our top. Whoa, whoa, whoa. 
+
+There we go. And then same thing. And then here, what happens in this very, so we made 2.2 here, 2.2 here, 2.2 here. 
+
+And then right here, you'll see we stopped because of our max drawdown. We're like, we almost, we get into trade and immediately hit our stop loss, immediately. So we're like, dang it. 
+
+So then guess what? It's done for the day. Now using the rules that I had set up in here. Actually, let me reload my template because I changed it. 
+
+So $200 of drawdown. So you'll see here in this case, we took 13 contracts. Then we took 11. 
+
+And you'll see the spacing is a little bit different size here because the spacing is smaller. It needs more contracts, right? And here was a smaller as well. So 16 contracts. 
+
+So the, the way that this, the contract sizing works is if you think about, if you have a big candle like this versus a smaller candle like this, which one will have more contracts, the big one or the small one? The answer is the small one will have more contracts. So let's say that this will be like 20 contracts and maybe this is like 10. Okay. 
+
+So, but the problem is the 10 has to go over a much, think of it, it's got to go like a half of a mile to hit the profit target, where this has to just go maybe a quarter of a mile to hit the profit target, right? So more contracts over a shorter distance, the bigger candles have a less contracts over a longer distance, right? So that's why like the trigger candles and the size of the trigger candles are, are so important, right? That's kind of what decides, what decides and determines how many contracts to use. And that's how the risk is the same, but the contracts are varied to kind of get that risk calculation to, to add up to be whatever you're risking in this case, in this example, $250. Makes sense. 
+
+Questions so far? Nope. Following. Yep. 
+
+Hello, John. Okay. So what we're going to do, I don't know if you guys know this, but you're able to do this is you go into tools and you go into historical data. 
+
+If you go up here to market replay, you guys have seen this before, but you can go down here to download and get market replay data. So I can define like what days I have to download each specific day. So I can say, okay, I want MES for June, which we're about to, I believe it. 
+
+We haven't yet. It's going to be soon roll over to the next day. So I can pick, okay, I want to download May 2nd, right? But you'll notice up here, I already have May 1st through the 2nd already for MES. 
+
+So now what I can say is, okay, I want the 3rd and 4th or weekend. So now I want to download the 5th, right? So it'll give that a second. Now you'll see, I now have the 4th, the end of the 4th through the 5th, right? I got the next kind of like trading session worth of data. 
+
+So you can download that, like download it historically, and you can be disconnected from NinjaTrader, lose your internet connection and still run back tests. Pretty, pretty cool. So that's that. 
+
+So what I'm going to do is I'm going to disconnect from this. I'm going to go into my connections and go to my playback. So I'm going to go up here to MES and we're going to May 2nd, click continue. 
+
+There we go. Continue. And what you'll see here is this little playback window. 
+
+You guys may or may not have seen me demonstrate this before. And what I want you to look at is this, this timeframe right here, right? See where it says 11 PM. Now, when I slide it to the right, you'll see that time is fast forwarding. 
+
+So I want to go up to about seven ish. So let that catch up. So you'll see my chart above. 
+
+I'm going to hit play and I'm going to fast forward this to maybe like 10 X. So 10 X, move Dave's picture out of the way. So 10 X, and what you'll see is every 10 seconds are going to give me a movement. So it's like consolidating 10 seconds of time for every one second of our time. 
+
+That makes sense, right? So while we're doing that, you'll see that my mega scalper is on the chart, but that D, do you guys know what that D stands for? The D stands for disabled. And the quickest way to fix a disabled bot is to enable it. You guys thought that was a trick question. 
+
+So I'm going to go back to playback. I can click enabled, click load. Let's see where we are. 
+
+Yeah, everything's correct. Click playback 101 enabled. Okay. 
+
+Okay. Okay. Boom. 
+
+So now you'll see that D is gone. So now my bot is up and running and I believe it was around, let's see, move this out of the way. What was my trades for May 2nd? I want to say around 737. 
+
+Okay. So coming up soon. So we'll see you to take a trade here in a second and you'll see it throughout the orders and you'll see it start trending and then fire off some trades. 
+
+So 737. Throw out some questions if you guys have any. I'm following so far, Matt.
+
+This looks like a good bot. Yeah, it's pretty cool. I've been using a couple of weeks, so I don't have lots of history with it just yet, but. 
+
+Right. There's that one candle we noticed. Yeah, that's the big. 
+
+The big one. That's the Shaquille O'Neal candle, big tall. So now you'll see we're in a trade, right? You can see my P and L moving around, zipping around up, down, sideways, right? And I'm going to speed it up 20X. 
+
+You'll see. There we go. So now if I look at my account, you'll see I hit that very first 2.2R, right? Give or take. 
+
+Remember, we're marketing into the trade, so we might have a little bit of slippage to get into the trade. Now, wait till we get into the next trade. I want to show you guys something else real quick when we get into the orders tab. 
+
+The next one will happen pretty quick here, if I'm not mistaken. Order submitted. There we go. 
+
+So I'm going to hit pause. Okay, so I paused. Too bad you couldn't do that in real time. 
+
+Pause. Pause the market because I need to go get a drink, right? If only it was that simple. So what you'll see here is we already have our stop limit, or sorry, our limit and our stop market orders. 
+
+I don't know if you guys have ever noticed this, but our limit orders to get out of a trade when we're profitable, we're always going to use a limit order, which basically means we're not going to try to get any, we're not going to use, we don't want slippage getting out of a winning trade. We're going to have to have some slippage to get out of a losing trade because we're going to have to have a stop market and just get out at whatever price as quick as you can. So we're going to pay a few pennies, a few ticks sometimes to get out using a stop market, but that is our bracket trade. 
+
+And you'll see that because we're in a bullish position, a bullish trade now, the reverse action to get out would be to sell, right? To exit, we're going to sell. And you'll see that we got 11 contracts in this case. And so if I pop over here to the positions, you'll see I'm filled on 11 contracts and I got this really funky price average, and then we're at 142.50. Now again, keep in mind because we're in a, because if this becomes a winning trade, which trust me, it will be, we're going to limit out up here to try to save commission slippage. 
+
+I should say not commission slippage. If it starts, it turns into losing trade. We're going to try to throw out the order, get out as quick as we can, preserve the capital and maybe take, give up a little bit slippage wise because of that stop market order. 
+
+Now I'm sure you guys are probably familiar with what market orders are, but a market order is like going, I always use the same example, but a market order is like going to your favorite restaurant and it says salmon market price. What does that mean? That means you can get some, but you may not like the price. That's what that means. 
+
+That's the translation from market price. That's what that means. Okay. 
+
+Now the same thing here is market means you're going to get out, but you may not like the price. Now the stop is, means there's a condition, meaning something has to happen first, which means we have to cross my red line. So that happens. 
+
+And then you're not going to like the price. It's like, that's the first thing. And we in, in development world, we call that a condition, conditional. 
+
+So something has to occur. Just like, for example, if you were to say you know, it has to be cold outside. So Dave helped me with what's freezing zero Celsius. 
+
+So you would say if weather is below zero Celsius or zero Fahrenheit, put on a jacket, right? Like you're not going to always do that in this condition. When this occurs, then we're going to do that. And same thing here is like, when we cross this red line or in this case, it's, it's not the actual red line. 
+
+It's the order is represented by the red line. When we cross that, then throw out a market order. That's kind of what it's saying.
+
+Again, you'll be out, but you may not like the price. And that's what we have to use for like emergency breaks. Cause you guys have probably seen interest rate talks, or if you've watched the market at any, any, any, any more than a few days, you'll see there's some wild, crazy moves at times, right? And if you're on the right side of it, great. 
+
+If you're on the wrong side, use one out as quick as possible, cut the pain, stop the bleeding. And that's why we use those, those types of orders to kind of get out quickly. If we're losing and we're going to, we're going to keep our pennies and our quarters preserve as much as we can when we're winning, because the lemon order is sitting out there waiting and boom, we're going to hit, we're going to kind of push up into that, uh, winning trade and, uh, auto exit. 
+
+Cause that, that order is sitting there waiting to get filled, right? You'll see here. It's a five 68, uh, five, six, eight, four, seven, five. So right here, five, six, eight, four and 75 cents. 
+
+So just a smidge above, above that line right there. Right. So it's just waiting. 
+
+Once we get up there, boom, is auto going to kick out and that's going to cancel the opposite order. So if it, if it hits the take profits automatically to cancel the stop loss and we hit stop, it's automatically going to cancel that limit, right? So that's kind of set up like that. So let's give it a sec. 
+
+There we go. So now you look and we're up a thousand dollars and 82 cents. Again, remember where you got that five 50, give or take with some, uh, some slippage. 
+
+So got about two winning trades so far. So we're up about four R and change so far. Right. 
+
+So we got a couple more trades to take. Now, keep in mind my rules, Dave, my rules dictate that I'm going to stop trading. Once I hit a max drawdown of $200, right. 
+
+And that's unrealized an unrealized gain. So it's going to keep trading until I hit that. That could be the very first trade of the day and it's done for the day. 
+
+Or it could be like the 18th trade. Like I have 17 winners and then 18th one's a loser. And then it's like, okay, now we're done. 
+
+And so you have that ability to kind of, uh, make it a little bit smarter than, you know, how many trades per day, regardless of winners or losers, you have a little bit of ability to kind of make it a little bit smarter and give it some more specific rules. If that makes sense. There we go. 
+
+Yeah, it does. Yep. So now we're look at our position up 70 bucks, 195. 
+
+Boop. Almost. There we go. 
+
+So now we look at our account. Now we're up 1627. Now remember guys, we're risking $250. 
+
+So not a bad day for $250 of risk, right? Yep. There we go. You see how that got in and out in one candle Yeah. 
+
+Yeah. Because of that, see what it says, uh, take our, uh, stop loss filled because of that max drawdown of, uh, uh, $200. Right. 
+
+So what I'm going to do is, yeah, so we're going to replay it with one variation. We're going to redo this again with one minor change. And I want to show you just so you guys can see how this works. 
+
+Uh, I'm going to disable this apply. Okay. Uh, the only thing I'm going to do different is I'm going to change this max drawn on to 500.
+
+Okay. And I'm going to say, no, take profit, no profit taker. Doesn't mean that it's not going to exit. 
+
+It just means there's no ceiling. We're not going to put a ceiling, like stay in the trade as long as you can, but only give back $500 of, uh, of unrealized gains, right? Okay. So that could be two losing trades around the gate or one winning trade that goes up to a thousand dollars.
+
+We're going to come back to $500 or something. That was going to be my next question. So you're, you're reading my mind. 
+
+Yep. So let's give this a whirl. Let's see. 
+
+The first trade was seven 37. So give that a sec. We'll let this play out. 
+
+So now we're in now you'll notice there is no take profit. Nowhere on the chart. Is there a green take profit? Gotcha. 
+
+Yeah. We have no take profit in the order, nothing on the screen. It's just open, right? It doesn't mean it's not going to exit. 
+
+It's not paying attention. It just means that it's, it's now watching for that drawdown. So you'll see the account we're up to $750. 
+
+So you can almost do a year in your head. Okay. Once we go down, you know, for ups, what'd it say? $750. 
+
+Once we go down to 250, once we give back 500, uh, if we, if we hit that, it's going to exit, pull the rip cord and we're done, done for the day. We're getting close. Should be right there. 
+
+It goes a little bit lower. If it pops up and goes higher, it's going to continue. Yeah. 
+
+So if we take out, we make a new high, then it's going to reset that, that pullback level rate. So now we're up seven 850. There we go.
+
+Can you guys see that? Is that small for you? I can, yeah. It's a little bit more nerve wracking. Is it? Yeah. 
+
+My advice is don't, don't watch it if it, if it's too, too nerve wracking you. Well, you want it to run, but it could have taken some nice profits already. So that's the dilemma, right? Well, that, that's the thing. 
+
+Yeah. Because like at some point like this look like at some point in the life of the trade, this looks like that was the high of the day until it makes this high of the day. And then you're like, well, this looks like the high of the day and you don't know if it's going to fall off a cliff here or it was going to continue going higher. 
+
+You don't really know. And so you can only look back at what's happened historically. You don't really know. 
+
+You can't go into the future and then come back and make a historical decision. That's only like in the movies, right? Like back to the future. Right. 
+
+Exactly. Yeah. Almost keep going. 
+
+So we're going sideways. So at some point, I think we, we go down to about like right here and then just exit. So if it kept crawling up your whole hour and a half, 10, 20, R whatever. 
+
+Yeah. And see, that's the thing is, is when it's trending, you want to kind of stay in the trade, but you can see how that, that phrase I mentioned at the beginning is the trend is your friend until the bend in the end. And it's not your friend. 
+
+And then when you get back all your profits, right? See, a lot of people would add to a winning position, like right, right here at all time highs, then you roll over and now you're back to like zero. Right. And that's, that's a common mistake people make. 
+
+They're like, oh, it's, it's up. So I'm going to keep adding, adding, adding, adding to a position. I don't really recommend you do that. 
+
+You, you want to add on, on pullbacks, not on, you know, at all time high or high at the day, I should say. Right. So like, it makes sense to do that down here and down here when it's hugging that, that EMA, not when it's up, up high away from it. 
+
+Cause always the price action is a lot like when their candles are too far away from this green moving average, which we've defined as the 10 EMA, it's, it's like a rubber band. It's going to kind of come back to it. Right. 
+
+And if it goes too far, it's going to, going to kind of go below it as well. So we'll see what happens. So when it goes too far below, it's going to kind of pop above and go below.
+
+And then it's going to do one of these numbers. So let's see what happens. So we're up 1400, 83, 1500. 
+
+What do you say? Let her run. Is it going to pop and go higher or roll over and go lower? That's rolling over. Yeah. 
+
+You already saw. Yep. So we'll see how much it gives back. 
+
+There we go. So we were up about 1800 and down 1300. So the funny thing is between the two examples, you ended up with about the same amount, right? Remember you were a quick in and out one of these trades and you're in and out another one, then you're in and out another one. 
+
+And then the fourth one was a loser. It's, it ended up being about the same. And this exact example, not saying they're always going to be that. 
+
+And this example kind of ended up being the same, but I want you guys to see how it works without the take profit. It just, as long as it's running, it's going to continue to run. And the cool part here is you got some flexibility and some ways to kind of set this up and alter, let it run and play with the variables and however you want this to run. 
+
+By default, I was running this at 200 with a 2.2 take profit. That's kind of how I had it set up. It does say max trades per day, 20, but 9, 9, 9, 9, 9 is probably like your keep going until I tell you to stop kind of a thing.
+
+So, but that's, that's the basics of how, how that works. And you'll see here that I, I believe it actually comes back almost down to where our very first entry was somewhere around here. Entry in our stop down here, something like that. 
+
+Which is, it's pretty interesting. But yeah. Questions about that guy? Is this, this making sense? John, does it make sense? It's making sense in this particular setup you back-tested to find it works best on two days.
+
+Just two different days. Two days. What do you mean? Oh, just my example. 
+
+Yeah. So I, it was just one back test that I ran. Yeah. 
+
+Yeah. Gotcha. Yeah. 
+
+So we have let me show you guys this. You may or may not know. I, I forget which groups I show this to. 
+
+But we do have a, where is it at? It's a group over here. It's called the bot optimization team. I don't know if you guys have seen this, but you can join this, but it's basically a, a place where if we were to go in here and go to, we have a place where if you, if you guys, you're like, I don't want to do back tests. 
+
+I just want to look at other people's. So this is kind of what we have set up. We have May, April, May, June, we're, we're doing this every month, but you can see like the bot name. 
+
+So in this case, mega scalper, mega snapback is here, mega orb. And then the, the bot version. So 1.8, 1.9, the, the ticker. 
+
+So MNQ, MES, MGC, all that kind of stuff. It specifies quite a bit of things in here for you. If you want to look for, there's some more mega scalper, mega scalper, MES, MNQ, five minutes, 21. 
+
+I've never seen a 21. That's interesting. 21 seconds. 
+
+That's interesting. And then if you go over to the right, you'll see there is a, like the settings file. And it basically just shows you like what the, that's not the settings.
+
+That is the back test. I think we, let's see. That is not the settings. 
+
+That's the back test. I think we hit the wrong column. So you'll see there's a column and I think we hit the wrong one.
+
+But that, but that's the, the, the basics. If you guys want to look at this, the only, we've done this before where we're like, Oh, let's like collaborate and do like this crowdsourced idea of running back tests and kind of share ideas. The problem we had with this before is everyone wanted to look at everyone else. 
+
+There's no one wanted to like share and everyone else wanted to just be a taker. So what we have is this rule of, you know, you have to submit one back test per month to stay in a group. Right. 
+
+And then if you miss two months in a row, you're giving a grace period, but then we'll just remove you. It's not a big deal. If you want to be a part then participate. 
+
+Otherwise they don't participate. It's, you know, it's optional, right? So that's the idea. But if you guys want to see, there's there's some, some other things in here and it shows like the, the timeframe it was run, the start time, the close time profit factor, and like some of the variables and statistics that the days of the you know, the days of the week, I'm not sure why he's using $50 of drawdown with 590. 
+
+That's interesting. $50 and a dollar two of drawdown. I don't know if he meant to do that. 
+
+If you typoed that, but right. $50 account $500 of risk. So yeah, that's pretty, pretty interesting. 
+
+So anyways, if you guys want to do that, there's a thing called bot optimization team. If you guys want to, to, to join or contribute to that as well. So that's what I have for you guys for the for tonight. 
+
+Yep. Well, thanks Matt. Yeah. 
+
+Yeah. So I did go ahead and upload it to our group. So if I, let's see, December, December, here we go. 
+
+Here we go. Bring this over. Can you see my screen still? Not anymore. 
+
+Just there. Participants. There we go. 
+
+Yeah. So you'll all upload it here, but you have the ability to let's hide this real quick and then make it visible and notify. I got it. 
+
+You should get a note saying, Oh, download mega scalper. So there you go. Download it is available already for your consumption and I'll post a video maybe next half hour or so however long it takes to render and download, but yeah, that's what I have for you guys.
+
+Okay. Well, appreciate it. Yeah. 
+
+My pleasure. Let me get funded. All right.
+
+Awesome. See you guys. Yep.

@@ -1,0 +1,295 @@
+Here we go. All right. Well, folks, this is your Q&A session. 
+
+It's the opportunity. This is when you have a chance to ask the coach, me or Matt, whoever's hosting it at the time, for things to help you get unstuck, right? So if you are currently not getting the results that you want, this is your opportunity to ask some questions. So I'm going to open up the floor and you guys can start asking your questions one by one. 
+
+We'll just, we'll go through them. Is everyone currently profitable? Okay. So where do you think you're stuck? No, I'm stuck. 
+
+Okay. So what's your, what, what's your biggest issue? I'm stuck on back tests. Everything that I back test meets all my criteria is always, you know, they're good back tests. 
+
+And then I turn them on and I'll get a few wins. And then I just get like all losses. And I'll say, okay, well, like last month, I let them like go for the whole month. 
+
+And I was getting like two, three weeks, four weeks in a row of losses. And the back test, like never have a drawdown more than like 250. It's usually, you know, as, as what I'll find. 
+
+And I just, some of them will have 80, 80%, 90%, 70% win rates, 250 drawdown, five, six, eight, 10 profit factor. And I just don't see any of that in, in when I, when I run them. And so I will get a streak enough to get an account funded.
+
+And then I'll get six or eight losses in a row. And I'll, you know, basically blow that account up. Because with the draw, with the trailing drawdown, I'll get a win, which pushes the drawdown up and then get a bunch of losses. 
+
+And so you get 1500, maybe 800, 1800 of drawdown out of your total 2500 because you get a little bit of success on a day. And you, you know, basically the drawdown, you could go up one R almost two R depending on what your profit factor is, and then turn around and lose that trade and basically lose three R of your drawdown. Yeah, no, I get it. 
+
+So I get six or eight, I get about six or eight losses in a row. And that usually does it. So that's where, that's where I've been kind of struggling with this consistency of. 
+
+Okay. So my first question is, do you have any back tests that we can go over right now? Um, I could probably pull them up. I'm don't have my computer in front of me. 
+
+I'm kind of on my phone. So okay, that's a little bit of the, of the downside. But I, the other part that I guess that I would struggle with is with the with the orb and even the snapback. 
+
+You're, you're basically looking at probability that in the past, probability says that at this specific time on a specific day for the past three months, it's been a percent successful, that at this time, it's always going to break out in one direction or the other direction. And the rationale behind that, like, logically, that makes probability makes sense. Logically, it just doesn't, to me, doesn't make sense, as far as a consistent strategy, that I'm saying that this, this ticker is going to perform the same at this time, everything. 
+
+Now, 10, 10 EMA, and our seven volume bots, they're saying it once this certain criteria is met, then it tends to do this probability wise. But for the orb and the snapback, unless you're saying that at market open, open in range is always going to happen open range, once you move that time, now you're just kind of saying that there's less strategy, I guess, when I look at it through that process. And I don't know if that's my, my struggle of backwards performing, or I'm just picking, like, I shouldn't be picking, I don't do a lot of optimization. 
+
+But like I said, I'm able to find good results. And I'm not sure if they're too good. And I'm supposed to be picking a 2.0 profit factor or something that loses a lot.
+
+Right. So let's address the first question that you had, because I've struggled with that same issue about the whole, you know, it's, it's kind of arbitrary. But here's, here's the reality.
+
+If you were to go into TradingView right now, and if you were to look up strategies, you can probably find, I don't know, probably 100 of them that are built into that people have, like, like me that have coded them and provided them. There's, there's probably hundreds of them. If you were to go on Google and look up strategies, you're gonna find hundreds of them anywhere from, you know, the moon strategy, as if the moon has anything to do with how the market's going to perform. 
+
+Yep, there's a strategy around it, you can get moon indicator that shows you the full moon of whatever and whatever you buy and sell. Okay, you've got moving average crossovers, you've got, you've got oscillator types, but like, overbought, oversold, you've got opening range breakouts, you've got breakouts in general, just with consolidation and a breakout. There's a million different strategies out there. 
+
+Here's the fundamental truth about any strategy. Almost all strategies, if you, if you trade them consistently, win over time. Some have worse drawdowns than others, but most of them win over time, unless it's an absolutely worst strategy on the planet. 
+
+But I'm talking about the majority of strategies, they win over time, most of the time, they don't win all the time, and they don't work all the time in, in good markets, you're going to find that they're going to work really well in some markets and not well in others. The difference is, is that you can take a winning strategy, a strategy that has been performing the best over the last 10 years, 20 years, 30 years, doesn't really matter, put it in the hands of somebody that is psychologically not prepared to trade it, or be consistent, and it will turn into a losing strategy. You can take one that isn't the greatest, put it in the hands of somebody that is extremely diligent, very well psychologically balanced, and, and is just, they're not looking at the out, the outputs, they're just focusing on the process, following the rules, and they're being consistent. 
+
+And they can turn that into a very profitable win. That is the reality of every strategy. The strategy is never, ever, ever going to be your problem. 
+
+The problem is always going to be in your consistency with delivering or executing on that process. Now, when it comes to bot trading, there is more than just the actual strategy that you're using. There's the process of how you select your, your settings, how you monitor your settings, and how you change your settings. 
+
+That's the consistency that you need to get into. And you are going to experience drawdowns, you're going to experience winning weeks, you're going to experience losing weeks. That is the reality. 
+
+You take any strategy, optimize it over the last year, even two years, you're going to find something that that's profitable. But when you go and look at it, the week per by week performance, or even the month by month performance, you're going to see that there's going to be weeks and months that are not profitable, yet the strategy overall was profitable. Right? So the thing that has to be in place is a strategy. 
+
+And when I say strategy, I'm talking about an actual process from selecting your bot to taking it out of service. That process has to be consistent. And it has to take into consideration the drawdowns. 
+
+So let me pull up a whiteboard. Okay, so one question. I don't know if you do this at all. 
+
+With basically, you know, the classes I've taken with you the volume profile and stuff like that. Sometimes I'll watch a bot and it'll enter in and it's like, oh, this is high in the market. Everything is saying that this is, you know, going to go in the opposite direction. 
+
+Am I better to just close that trade and not let it continue or to reverse it? Try to manually interact with it? Or do I just trust the process and let it win or lose? You trust the process and you let it win or lose. That's what I've been doing. But I'm so tempted to like, want to chase it. 
+
+No, I get it. And that's human nature. I don't have tools on this board. 
+
+So I want to start a new one. Let me just stop this share. Let me start another one. 
+
+Let me go whiteboard. The fact of the matter is, is that, is that there is absolutely nothing that is predictive in the market. Not one thing. 
+
+I don't care how much information you know. I don't care how much you learn. You will never, ever have every piece of information to make a decision that is 100% accurate in the market. 
+
+That is a reality. Okay, so even, Michael, the stuff that I teach with the volume profile, that's an edge if you're trading that particular style. But if you're trading that, that doesn't mean that I'm right all the time. 
+
+And it doesn't mean that, that every trade is going to win. So I might think that the market is whatever, too high or too low or overbought, oversold, whatever it might be. But that doesn't necessarily mean that it's going to go higher or going to go lower. 
+
+That's why you have to just trust your process. So when I see a setup in the market, I'm not trying to judge where it's going. I just execute on the information that's provided based on the decision-making metrics that I'm making. 
+
+And whatever happens, happens. And it could result in a losing trade. It could result in a winning trade. 
+
+And it doesn't matter whether I'm making my decisions through data-driven information by doing back tests and looking at historical information, or whether I'm using it as market-generated information by watching the volume profile market profile. It's just how I make decisions. Let's take this as an example, because maybe this makes more sense to some of you. 
+
+You guys all know what this is, right? It's a hammer candle, okay? Do you guys know what that pattern is? Double bottom. A double bottom, okay. And we all know what this pattern is, and we know what this pattern is, right? Or, sorry, like that, head and shoulders pattern. 
+
+We all understand what these patterns are. These patterns are not 100% accurate either. These patterns are the same thing. 
+
+If somebody has gone through back tested, and they've gained all the data, and they've shown how often does this show up, and what is the results of it, and et cetera, et cetera. So it's the same process as what we do with bot trading, but we're doing it in a much faster way than anything else. So every single one of these patterns has historical relevance to them, just based on the patterns that we've seen. 
+
+Does it mean that the next double bottom is going to be a winner, the next double top is going to be a winner, or the next hammer candle you see is going to be a winner? No, it doesn't. It's just, that's the visual cue. You execute on it, and if you have good risk management, and you have a good process, and you follow your plan strategically, you should win more than you lose, and over time you're profitable. 
+
+That's the key. Does that make sense? Yes. Okay. 
+
+So what I want to talk a bit about then right now is the start of the selection. So you were talking about, you know, how only having like a 250 drawdown, which means that it's only lost one trade. Okay. 
+
+So right off the bat, that tells me that there's a possibility that the data set is too small. So if you've only lost one trade, and either all the conditions are aligned perfectly, and that's what you're looking for, the moon's aligned, like every last thing is aligned, everything is absolutely perfect, therefore you only lost one trade. That to me makes it very difficult to replicate.
+
+If you have something that's had, you know, two or three losses, you know, that's a little bit more reasonable. So what I would recommend, if you're getting a lot of tests that only have one trade that's lost, are you doing three-month back tests? Yeah, it's a three-month back test, but I usually just do a single day. So I look for a bot that, you know, what bot's going to perform the best on Mondays, and then what's on Tuesdays. 
+
+So I run a different bot each day, rather than each day. One for multiple days. So usually about 13 or 14 trades, and then if there's multiple trades per day, like up to three, then sometimes it gets to like 20 or more. 
+
+I would say your sample size, first of all, is too small. So if you're going to do an optimization over three months on a single day, then I would actually do a nine-month optimization, if you're going to do it over a single day. You need to get that sample size bigger. 
+
+So when I do mine, I'll do a three-month, but I do it on Monday all the way to Friday. And then what I'll do, because I have the sample size of every single trade that it took across all of the board, and then what I'll do is I'll look at the distribution across Monday through Friday, and if I have a day that's not performing very well, I just remove it. That's the way that I will do it, but if you're going to, like I said, if you're optimizing for straight Mondays, then I would increase that to a nine-month. 
+
+I would try to get about 50 trades into your sequence in order to actually have some statistic relevance to what you're saying. So that's the first part. Don't be concerned about getting your profit factor really high, because again, you're just over-optimizing these things. 
+
+You're trying to get things that are absolutely too perfect. As long as it's over two, that's all you really care about. Even the percent profitability, are you doing 1.5? Like what's your target that you're typically going for? I usually optimize it, but I go from up to three.
+
+Okay, so I would try not optimizing for a while. Just do like 1.5 to max. Okay, so just until you're profitable and you're finding some consistency, just keep it at 1.5 or two.
+
+One of those two. Okay, so that's then the next thing is this. If you find that you have some results at, let's say, two hours, your profit, the next thing you need to do is you need to run that same back test without changing anything else but the profit factor. 
+
+You need to test your profit factor at 2.5. Now what you want to see at 2.5 is you want to see the net profit go up. Okay, if the net profit doesn't go up, then you need to start going to 2.4, 2.3, 2.2, 2.1, and wherever the net profit goes up, that is your max profit that you can get with those particular settings. From that point, what you're going to want to do is you're going to want to back it off then. 
+
+So let's say that you do the test and you find 2.5, your net profit goes up. Okay, great. Leave it at two. 
+
+No big deal. But if it doesn't, if let's say that at 2.5, your net profit goes down, and then you test it at 2.4 and your net profit is still down from what it was at 2.0, and then you test 2.3 and it's up, then what I would recommend you do is drop this down to 1.8. Okay, now why would you do that? And the reason being is because if this number is so close that what's happening is your trade is going up, it's hitting the target and literally reversing. Okay, because if you increase that profit at all, you increase it to here, all of a sudden you're losing trades. 
+
+You know what I mean? So what that is doing is you're actually maxing out the profit. And that means that in order to replicate that, everything has to be perfect again. So we don't want everything to be perfect. 
+
+We want things to be in the middle. We want to catch the middle of the run, not the extremes of the run. When you try to catch the extremes, you're going to have a lot of losers, right? Yeah, that's good. 
+
+Okay. All right, so then next, the next part after you've accomplished this part, so this is just a starting thing, after every week, okay, after every week, let's say that you run an optimization or a backtest. The original backtest is from, let's say that it's from, where are we right now? We are July, so April, let's say it's originally from April 1st to June 30th. 
+
+Okay. So now at the end of this last week, what you would do is you would shift this date up a week and shift this date up a week. So you're still doing your 60 days or 90 days in your case, if you're going to do it single days, you're still going to be optimizing over the same or not optimizing, but backtesting over the same period. 
+
+But what you're doing is you're removing the first week and adding the last week. So you're keeping the sample size the same, but you're including the new information and that's the way that you walk it forward. Now, what you want to see here is your backtest result passes. 
+
+So if you were looking at this backtesting for the very first time, would you run this bot right now? And if the answer is yes, then you keep it for the next week. If the answer is no, then you let it go. Okay.
+
+And that's all you need to do every single week. That simple. It's a yes or a no. 
+
+Okay. Now there's one other thing that I need to keep making you guys all aware of. Here's your max, whoops. 
+
+Here's your max drawdown. Okay. So let's say that you are doing a 50K account and you have 2,500 max drawdown. 
+
+If you are setting up a week, let's say that you decide I'm going to optimize Monday through Friday, three trades per week, or three trades per day. Okay. Per day at $250 per risk. 
+
+Okay. That's your 250 risk. Okay. 
+
+How many trades could this potentially take in a week? 15. Okay. What's the max loss you could experience during the week? That's $3,750.
+
+Can we blow an account in one week if things go bad? Yes. Yeah. Okay. 
+
+So what I would recommend doing is let's say that you are, you want to give yourself room. You want to give yourself enough opportunities to make some adjustments throughout the week. Maybe you have a goal that, okay, well I either blow it in two weeks or I blow it in a month. 
+
+Right. That's my goal. So if I'm either going to like, I set it up so that I can reset it every month. 
+
+So that's the way I set it up. I get the free reset at the end of the month. So I'm either going to fund it or blow it up in the month. 
+
+That's what I'm going to do. So I don't want my risk to get to a place where I can blow up the account in one week. So let's look at this $2,500. 
+
+What's that divided by four? That means $750 of risk. Okay. Per week. 
+
+That's the max that I'd ever want to lose per week. So if I want to take 15 trades, then I take my 750 divided by 15. And that's the risk that I should be placing on each trade. 
+
+If I don't want to place that kind of risk on each trade, I want to do it with, with less risk or less trades, then I just reduce. So if I did 10 trades, then my max risk could be $75 per trade. If I did five trades in a week, then I can get up to 150. 
+
+If I want to do three trades in a week, then I can do the 250 because I'm looking at the max potential risk. Right now, if I've got a two, a two R profit, I take 15 trades per week. What's my max gain on that? $7,500. 
+
+Right. That's my max gain. If $3,750 is my max loss, $7,500 is my max gain in a week.
+
+Right. So depending on how you're setting these numbers, this is all a numbers game, right? And if you're setting, if you're setting your trades up so that you're optimizing every single day and every single day, you're taking three trades a day and you're using $250 risk, you're, you're going for that home run. You're trying to fund it in a few days.
+
+You may not, you may not consciously know this, but you are, you're sub, you're subconsciously, you're trying to fund this in a, in a couple of days. And I mean, yeah, you can do it. You could, you could fund it easily in a couple of days if you hit it right. 
+
+But the worst case scenario is you're going to blow it up. And that's more likely what you're seeing. It doesn't give you any time to adjust. 
+
+Do you know what I mean? Yeah. I mean, the other part of that is I'm figuring that if I lose every single trade and blow up the account in a week, then it's not those five random or those 15 random back tests, none of them, you know, you know, they all lost. And that's where that's kind of, I guess, where I've been struggling with because, yeah, I'll get six or eight of them in a row. 
+
+And that usually is enough to kill the count. Right. I'm just saying things, things change in the market and there are drawdowns. 
+
+And just because you come off of, you know, like I said, one loss on a back test, your sample size is too small for one. But second of all, I mean, you've had one loss. You never know when the losing streak, because every strategy is going to have a losing streak and you could just be hitting it every single time. 
+
+And because you've got it over leveraged, you're not able to adjust. It's happening too fast. So the market changes. 
+
+And when it changes, it's going to be a few days where it's not working. Right. The volatility kicks in. 
+
+It doesn't kick in for an hour. It kicks in for like a week or it could be kicking in for a month. Right. 
+
+We had we had all of February and March that the volatility was pretty bad this year. Like it was just insane. Right. 
+
+You'd have a lot of gaps and whatever. The market changed. So you have to remember that the market is going to be making its own adjustments and changes and it has its own behaviors. 
+
+And you need to have enough time built into your own performance to be able to make adjustments to what the market is doing. OK, so that's really the big, big key. I think that if consistency in the process, but also, you know, just scaling it back a little bit, not not going for the fences, try and try and schedule so that you are so that you're funding an account in 30 days. 
+
+I think 30 days is a And you'll know every week whether you're on track for that, because at the end of the week, you should be up about 750 dollars in profit each week. That's what you're aiming for. And if you're down, you know, you don't want to be down. 
+
+You know, if you're down 750, OK, well, you know, you got to hold back and you got to scale things back till you get back up to that that 750 until you're back on the on the the wagon. Right. And there's nothing wrong with reducing your risk, giving yourself some time to to build that to build that up. 
+
+And when you're heading in the right direction, you can start increasing the risk. Decrease it when it's not working and increase it when it is working. So I've given you a lot here. 
+
+So you might have to rewatch the recording, but I would start there. And then from there, we can help you, you know, add in some additional stuff. Right. 
+
+Yeah, no, that was all really good. No pieces of this. So you you taught it before, but, yeah, putting that together. 
+
+And I think one thing, yeah, the daily and going back further, I think I've always done three months, but I understand the data set and going back further. I think that that'll help some of the backtesting. I've got two bots that I'm currently running that that I backtested for a year. 
+
+So they're only trading three days of the week, but that's I backtested them for a year and I just went with them. They're not they're not the greatest bots, but they're they work. So and I just continue to do that same thing, so there's nothing that says anything that has to be done on the three month. 
+
+It's you need to back you need to get that data set bigger. That's really what it's all about. OK, and again, because nothing's predictive, as I've mentioned many, many, many times before, the optimizations or the backtests, it's really akin to looking at the weather and then saying tomorrow is going to be a sunny, a sunny, warm day. 
+
+Why? Because today was a sunny, warm day. And you know what? Most of the time I'm going to be right until I'm not. Right. 
+
+I have more chance of being right by selecting whatever it looks like today than I do turning around and saying tomorrow is going to be, you know, three feet of snow and minus 10. Right. Could it happen? Yeah, absolutely could. 
+
+And living in Canada, it's very possible that could happen. So it's not wouldn't be the first. But it's extremely unlikely. 
+
+Right. I have a much better chance of being right by selecting what it was like today, which is sunny and warm. Now, it could with a higher, just as not I wouldn't say a higher probability, but a more reasonable probability would be tomorrow could be cooler and rainy. 
+
+Right. That's a much easier shift from going from what it is today to tomorrow. So as far as backtesting are concerned, you could be picking the sunny, hot days all the time and they're just absolutely perfect, exactly like today.
+
+But tomorrow, the next day, they happen to be rainy and cloudy. It's a little bit different. So if you picked a test that was a little bit more, you know, rainy and warm, like kind of in between, you might have had a better chance of covering both. 
+
+Right. So it's kind of like the guy that goes to the roulette wheel as well and puts all their money on 35. And then you've got the other person that'll put all their money around and it covers all kind of all the different numbers that are around that one number. 
+
+And you just you increase your odds of finding something that's going to hit. Right. Hope those analogies made sense. 
+
+But anyway, cool. Right. And Michael, I think we have a we have an appointment coming up, too. 
+
+We can talk more about it as well. But the other thing is, if you want to bring any of your backtests on Thursdays, we do backtest breakdowns and we can actually take a look at some of the backtests that you want to run and we can walk through it in more detail. So that'd be great. 
+
+All right. Is there anybody else here that has any questions, comments or anything like that? So everybody else in the room is profitable right now? Send me your backtest and I can fix that. OK, so everybody else, you guys are all profitable? No. 
+
+OK, Svetlana, what's your what's your biggest issue? Have you? First of all, have you created a plan yet? So OK, but OK, so this is what I'm going to do. This is like my accountability moment. So I'm going to. 
+
+So this is, I think, where I need to start. I need to like have one bot running per account. I feel like sometimes I do multiple bots on the same account.
+
+And so it makes it really hard to track. So what I'm going to do and I kind of like just as I was listening to you, you know, going back, you basically explained what you said to us last week, you know, and it reminded me, OK, I need to do this. So I what I did, I went to my strategies and under a label for the bot that I assigned to each account, I made a note to myself that this is like one hundred and twenty five dollars risk and this is this much profit target. 
+
+So I know, OK, don't use that same one on some other account. And I'm going to do one funded account, like what do you call it? The test account. Right. 
+
+And one PA on that same bot, because I know it works. So I'm just going to do a small risk. I'm going to start grow it.
+
+The only thing I'm not 100 percent sure. So like one of my PAs is kind of. Because I was using multiple bots, it went down like I had too much in losses.
+
+So do you think I should keep? I think one hundred and twenty five is still pretty reasonable risk to keep, even though let's see how much I am away from some. I am thirteen hundred from being closed. Do you think that is still OK to run one twenty five risk? Thirteen hundred. 
+
+Yeah. Yeah. So I think it's still like ten losses, basically, in the row to lose. 
+
+You know what my my ten, twenty, thirty rule is and my five, ten, fifteen rule is. So pick one of those. That's what I remember. 
+
+Do you remember how to do it? I don't. But I'm sure if you start explaining it, I'll remember it. OK, so here's your ten, twenty, thirty rule.
+
+So if you have a twenty five hundred dollar drawdown, you start out by dividing it by 20. OK, that is. That's one twenty five, right? Yeah. 
+
+By 20, that equals one hundred and twenty five dollars. So when you get to twelve hundred and fifty dollars worth of drawdown left, that means that you only have ten trades left. At that point, you would then re-do this. 
+
+You take the twelve fifty and you divide it by 20. That brings you to sixty two fifty, right? So sixty two fifty would become your risk at that point. OK, if you grow the account up to thirty, thirty seven fifty, when you get that much profit in your account, which you're not going to have in an assessment account, but you will have it in a P.A. account, when you get to there, you would then divide by 20 again. 
+
+So that means that at thirty seven fifty, you can increase your risk to one eighty seven fifty. OK, that's if you're using the ten, twenty, thirty rule. If you're using the five, ten, fifteen, which is more aggressive, and I think you'd find to use this on an assessment account, but I wouldn't use it on a P.A. account. 
+
+You take the twenty five hundred, divide it by ten, that equals two hundred and fifty dollars worth of risk. When you get the two fifty or that your drawdown down to twelve hundred and fifty dollars, again, you would divide by ten. That means that your risk would then drop to one twenty five.
+
+If your account goes up to thirty seven fifty, you would then divide by ten and you can increase your risk to three seventy five. So those are your bumpers, right, based on where your profit is. OK. 
+
+OK. So that's what I would do for risk management. Yeah. 
+
+But you owe me a plan. So yes. OK.
+
+And we're kind of awesome. All right. Anybody else? You bet. 
+
+My pleasure. Anyone else have any questions? Seriously, not so much a question, but I have been trading my first P.A. account up about twelve hundred dollars. Nice. 
+
+You're doing that because you waited till you got four funded, correct? I've got four and I'm trading my first one of them up to about twenty, twenty six, nice, twenty five. Cool. And you're doing the you're doing the four times your risk and you're waiting every week to see where you are and then you'll add in the second account. 
+
+Yes. And but I'm just as guilty as several people just trying to chase what's the best strategy. So I've got to I've got to quit doing that and just stick with one.
+
+And I'm trying to stick with that seventy five to one hundred dollar risk until I get to. On that twenty five thousand dollar account, you say about thirty thousand is the point. I don't plan on taking anything. 
+
+I just want to grow it. So you think what, thirty thousand is the point of what, the max that you can get the account before you maxed out on your lot size? No, I was I guess what I'm trying to say is how often do you reevaluate the ten, twenty, thirty rule? Oh, I'll do it with every every time I hit those benchmarks. So if you're using if you're using a risk of, like I said, fifty, then you're when you have enough profit in there, thirty, seven, fifty, that's your that's your thirty. 
+
+So whatever your risk is, multiply it by twenty, multiply it by ten. You know what the two levels are and you don't do anything until you hit those two levels. One of them. 
+
+That's what I was trying to figure out what you were saying. That makes sense. Yeah, yeah, yeah. 
+
+So let me go back to the whiteboard for a second. Reiterate that. So if you have two hundred and fifty dollars of risk, that's you're starting at twenty five hundred. 
+
+Your lower threshold is twelve fifty. Your upper threshold is thirty seven fifty. As long as you're between these two numbers of drawdown, you can keep your risk at two fifty.
+
+The minute you hit this number, you recalibrate. The minute you hit this number, you recalibrate. OK. 
+
+OK. Hopefully that makes more sense. Yes, it does. 
+
+That that clears it up for me. Perfect. Awesome. 
+
+OK. Thank you. You betcha.
+
+All right. Anybody else have any questions? All right. Well, if that's if that's the last question, then I will let you guys get back to your evening. 
+
+I just do want to remind you that if you are struggling, this is your opportunity to get help. So hopefully we make it an environment that is welcoming and not intimidating for you to ask questions. This is why we do this. 
+
+It's completely and utterly for you. So I want to encourage you all to reach out and ask for help during these sessions. That's what they're here for. 
+
+All righty. So you guys have a fantastic evening. And just a reminder that on Thursday, we have our back test breakdown. 
+
+Same time, same place. And hopefully if you guys want to bring your back test, we can take a look at the ones that you want to run. We can go over them, talk about them. 
+
+And and yeah, hopefully I see you guys there. All righty. Thank you. 
+
+Thank you. Have a good night, guys. Take care. 
+
+Bye.

@@ -1,0 +1,343 @@
+So want to check in and see how everybody's doing so far this week. Hope you guys had a great Monday. That was an awesome face. 
+
+Sorry, go ahead, Brandon. I was going to say what a great Monday it was. I am running four different portfolios and yeah, they did all really good. 
+
+I mean, nice. They're all in the green. Two of them did like over a thousand dollars. 
+
+Nice. Yeah, awesome. Awesome. 
+
+Well, I had a fun little project this weekend. I set up a new VPS with a totally different provider to see if some of the connection issues that I've had just intermittent. It wasn't nearly as bad as Fetlan has had in the past, but some of the little intermittent issues that would always drive me crazy because they always happen to seem to happen on winning days. 
+
+So it's like you sit out the winning days and you show up for the losing days and that's kind of takes a hit to your overall gains as you guys know. So this last week and I set up an account with ChartVPS. Yeah, it's quite a bit more expensive than the previous provider and when I say quite a bit more, it's like 70 bucks a month. 
+
+Yeah, for a while. You're cutting out again. Dang it.
+
+I know. Better? Because it just happens weird like sometimes not all the time. Yeah, I'll try to get rid of this stupid thing. 
+
+That's so weird. I ran all the updates, all the patches, everything. Yeah, better now hopefully. 
+
+Yeah. But I switched from ForexVPS. I still have Forex, but I set up an account with ChartVPS. 
+
+I'll report back in a couple weeks. Today was the first day. Obviously didn't have any problems. 
+
+Did pretty decent as well as all of you have with the bot trading today. And I kind of set up everything from scratch, right? Brand new VPS, installed the tools, had a few little hiccups. Tracy actually had to help me with some things that are a little bit different this time around.
+
+And I picked out some bots and set it up and configured it and went live and then had a trade copier. So all the things that I've showed you guys how to do, I myself eat my own dog food. So I want to kind of share with you guys a little bit. 
+
+I'm going to share my screen and we're going to connect to my ChartVPS real quick. And I want to show you a couple of things real quick. So I don't know if you guys have seen this, but this is a new feature that Tracy came up with and it is called the Portfolio Tracker. 
+
+So the Portfolio Tracker, it basically uses your live trade data. And you'll see, actually I had a little bit more than that. I took a losing trade near the end of the day and gave back a little bit of my gains, but who's going to cry for me, right? We're 1,052 in Portfolio 1. And the no portfolio, in case you guys are wondering, that's usually, I think that's the sim account.
+
+So the cool part about this tool is this kind of goes above and beyond what your normal trade performance, you guys have seen the trade performance that's like built into Ninja Trader. This will actually like show you all kinds of stats and like specific, actually, it looks like one of these is not in my, is not in a portfolio. Oh, actually Sim 1 is in a portfolio.
+
+I misspoke. Sorry about that. So it looks like a couple of my accounts are not in portfolios.
+
+That's interesting. Well, I think it's when you don't assign it on the bot itself, then it won't assign the portfolio. You know how you go and change the hashtag to the number? Yes. 
+
+So you might not have that, right? I'll have to double check that actually, because I'm pretty sure I double checked all of these. So if you look in the middle of the screen here, when I mouse over the settings, it says Portfolio 1, Portfolio 1. Where can you see that? I was trying to find if there's like an easy way to check. So the way I do it is I look at the parameters and all the values are alphabetical. 
+
+So you'll see where it says Megascalp is like the base strategy. The base strategy is like the variable name. And so it's all alphabetical. 
+
+So portfolio name is like in the middle of the list usually. So Portfolio 1, Portfolio 1, Portfolio 1 and Portfolio 1. So they're all in Portfolio 1. I'll have to check on why that happened. But regardless, the Portfolio Tracker is a pretty cool tool. 
+
+So one of the things I really like about this, and if you haven't used this, this is all part of the 8.1.6, the kind of the latest 8.1.16, 8.16, is that this kind of creates a calendar view. So instead of just saying a list of all your trades, this actually shows you on like a calendar chart Monday through every day of the week, how much you've made or not made. And this is really cool for those of you like me who like kind of visuals of how are things going.
+
+And this will show, excuse me, after, you know, I've only been running it for the month one day, we've only had one business day, one trading day so far this month, and it doesn't have enough data yet. But all I'm doing right now is running it in a, I'm running it in my PA account using 2x the risk and then 1x on the other accounts. So that's kind of how I'm running it. 
+
+And in this case, you'll see, of course, it's green because, you know, one day positive for the day. And because I'm trading kind of three accounts at 1x risk and one account at 2x risk, and then a account on top of that, this is kind of like the actual trades that were taken across, you know, the entire account. So most of you probably know this, but when you're looking at the portfolio analyzer, and what you'll notice is if you look at the, where's that the one of these tabs? There we go. 
+
+Monthly, there we go. Monthly, you'll notice that sometimes you have $3,000 a month, sometimes you lose a little, right? And so if you were to look at my account today, I was up $3,000, right? And it's tempting to say, okay, I'm going to pause it for, you know, pause it for the rest of the month, because 3000 is kind of like a high average of, you know, maybe what you would see across the board here. However, as you guys probably know, there's two different things going on here, right? So one is this is like the base setup, right? Called the base strategy, the base strategy. 
+
+Matt is running it in multiple accounts, right? Running in multiple accounts. So all that this is showing me is the base strategy times, I guess it would be times five technically, right? Is what I'm seeing for my $3,000 plus day, right? So technically, the base strategy only made a fifth of that. Does that make sense? So like one, I guess it'd be like 20% of 3000. 
+
+Does that make sense? So kind of like 600 bucks effectively. So this thought ran through my head today. I thought, you know what? That's actually was close to $4,000 right out the gate, like early in the morning, took a few small trades and get back a little bit, but, you know, still did pretty well.
+
+And I'm like, wow, over the average, you know, $4,000, you know, there's a few examples where the current configuration that I'm running did pretty, actually, I'm running this one. It's the same one, but there's some pretty good, you know, averages in here, where I, you know, I'm thinking, you know, $4,000 for the month. I'm going to just be done for the whole month of November, right? But as you guys know, what I'm trying to explain is these are individual, like one, one account, right? Matt is doing it across five accounts, or we'll say five risk, five X. Does that make sense? So right here, making $3,000 over here, what I'm really saying is I really only made about $600 over here. 
+
+Does that make sense? So as you guys see, when you're looking across all the different, the values, the stats, the analytics, the total, this is across one account, right? So running across five accounts, you would just times five, right? And so I'm just wondering to kind of point that out, because I almost thought to myself, you know what, I'm just going to be done for the month. And then I'm like, wait a sec, this, this bot portfolio analyzer doesn't know that I'm running a trade copier. You guys follow me? It doesn't know that I'm doing that. 
+
+So it's only looking at the individual instance. It's not looking at all of the, you know, all the different accounts that I have. It's just looking at a single instance of all these bots running for, in this case for Monday, right? So this is, this is essentially what I'm running. 
+
+I'm just running a couple of these, and these are pretty much just stock standard out the gate. I think this is eight, if I'm not mistaken, eight of them. Yep. 
+
+So eight different bots that I'm running, mostly mega snapback and mega orb with the mega scalper and a volume bot kind of mixed in there. And I'm just using micros in this case, you'll see here. The other thing I decided to do, which may or may not be helpful for you all is I decided just to leave everything in Pacific time. 
+
+What does that mean? Well, you'll notice down here, uh, my current calendar on my watch says it's 7 11, not the convenience store, 7 11 PM. And it's currently showing here, 5 11. Right? So what I do, I just changed the clock on the VPS to run on PST. 
+
+And I also went into, uh, I went, let's see if I can change this. I also went into the, I got to minimize this. I went into tools settings, and then I just said, we are, let's pretend we're in Pacific time. 
+
+Now, why did I do that? Well, it occurred to me if I'm going to always change the time on every single thing, every single month, that's, you know, I can just like save myself some work, save myself some steps and let's just run it and pretend that everything's in PST, right? Says, says me a lot of headaches, a lot of manual changes. And sometimes I could, as you guys know, when you're doing manual changes, you could make a mistake or I could accidentally update the time, not realize it. And then add another, an extra two hours on top of the two hours to correct from, you know, PST to my current CST time zone, right? Two hour difference. 
+
+I could accidentally, uh, add two hours, not realize I added two hours and add another two hours, right? Maybe a few days later. So all the mistakes, all the extra, um, steps that I'm taking, I'm trying to minimize this to make it as smooth and efficient as possible. Does that make sense? Yeah, I did the same thing. 
+
+Just, okay. Awesome. And are you using chart VPS or what are you using? I'm using a tree to VPS right now, but I will be, you know, probably looking for something cheaper. 
+
+Okay. So the one reason I actually decided to, um, so I looked at my trades from October and I did okay. I'm sure some of you, most of you did, right? But I noticed there were quite a few trades, um, that weren't taken because of connection problems. 
+
+It wasn't a lot, but I'll just say the difference between the, uh, the let's do it this way. So I was a connection issue and not something else. Cause I, I had pretty much trouble trouble shot troubleshooted. 
+
+I don't know how you say that. I pretty much tested every possible thing possible that apex said that Ninja trader said, and, you know, I have a super fast connection at home. I don't know. 
+
+It was just, I tried to running at home. I tried running everywhere else. It just, I just could not, I could get it to work at home, but just not on VPS. 
+
+So I just decided that, um, when I travel, I can't always run it off my laptop. Cause I take my laptop with me and it's powered down, you know, when you're going through security at airport, right? Like all the things. So I was paying this and I'm currently paying this, which as you guys know, is just an extra $35, but I came to the conclusion, I'm actually willing to spend $700.
+
+If I can not miss, I'm not spending 700, but I'm only spending 70. But if I can not miss some winning trades, I think the extra $35 for the month is worth it. Right? So I kind of have this shift. 
+
+I'm trying to encourage you guys to think about this too. Is that the shift from Matt? Don't be a darn cheapskate and try to get something. It's a little more stable. 
+
+Like I can do cheap, but then I have all these headaches and I probably spent more than $35 on Tylenol, right? And so what I thought it was saving money. I was actually losing money. Does that make sense? Even though technically it was the cheapest option, I was kind of making it harder on myself.
+
+Now, as you guys know, I've only been using ChartVPS here for today, or I guess today was the first trading day. And so I'll report back in a few weeks how well this is going. One day, as you guys know, isn't really a good sample size. 
+
+We'll see how all this works, but assuming I'm paying double and it's working really, really well, then it's a no brainer for me. I still have the old account, still have the new one, and we're going to kind of see which one, run both of them, see which one works better. Does that make sense? So I wanted to encourage you guys to think about that. 
+
+It's not always about what's the absolute cheapest option, because if you think about it the other way, I'm actually losing a lot of money by using the cheapest option. I just kind of came to that conclusion just thinking, you know, Matt, just pay for what you need to and don't be a cheapskate. First class is only 10% more. 
+
+What's that? First class is only 10% more. First class flights? Is that what you're talking about? I just, there was a saying when I was growing up, said it costs 10% to go first class, so why not go first class? Oh, well, I will tell you, international first class is not 10%. It's probably 10% more. 
+
+Yeah, I was just about to say that. International, the longer the flight, it's significantly more. Yeah, I've looked into it.
+
+Well, you got to remember this was the 70s too, so. Oh, okay, yeah. Yeah, so maybe in the good old days. 
+
+We're in 2025, buddy. Yeah, right? So the bot that Tracy did on Thursday night's video, yep, I set it up last night and it was $2,393.50 today on the portfolio that she set up, that portfolio 33. Yep. 
+
+And I went to the Pacific time, but my laptop is still in Central time and it's working. Oh, okay. Yeah, it should be working. 
+
+I think it's the NinjaTrader settings that matter. Yeah, the NinjaTrader setting is what NinjaTrader is looking at. It doesn't care what your screen is looking at. 
+
+So yeah. So that worked for me. Awesome. 
+
+Cool. Cool. How's it going for you, Solomon? How's everything's going for you this? I am $35 away, Matt. 
+
+It's unbelievable. $35 away from a million? My first payout. Oh, I gotcha.
+
+As soon as it goes $36, stop that. I want my money. Yeah. 
+
+Well, be prepared that sometimes you might go backwards a little bit and then you'll go across, but don't lose hope. I was going to say two weeks ago, I was $100 from being funded and then I took about $1,000 drawdown. That was a week and a half ago and I'm like, oh my gosh. 
+
+But I'm like, I held the faith, man. I'm telling you, I held the faith. Yeah, Brandon, me too, bro. 
+
+Friday, everything turned around and today it's like now we're right back to where I'm $100 from being funded. Yeah. Yeah. 
+
+We're super excited about these portfolio tools. And really what we want to do is just kind of introduce this style of trading to anyone. I feel like we solve three problems for people, people who don't have experience, don't have capital, which is where the funded account program comes in or don't have time. 
+
+And some of you guys are in the manual push button class as well and you enjoy the manual trading. So that's fine. That's kind of what that's for. 
+
+But we're just having a blast playing with the new tools and hopefully you guys are seeing some of the same success with some of these new tools. I really love the idea of smaller risk over a bigger timeframe because you're able to get, kind of hang on to those PA accounts longer than trying to, how do I get a payout as quick as possible, right? Because that's a little bit, shoot from the hip, a little bit more dangerous to do it that way. This is a little more conservative, a little slower, but we've had numerous people tell us they got accounts funded in three weeks, four weeks, and they're using just the pre-configured, nothing changed, just the pre-configured settings. 
+
+And so Tracy released, I think we have up to 300 something of them now. Do you guys know? I think it was 300, I'll have to go back and check, but so we're super excited. I had a question. 
+
+What's your favorite combination for the portfolio? Say you're using 50-50 or? That's what I use, yeah, personally. Cool. Yeah, but everyone has their own. 
+
+Some people are like, I don't care about that. I care about, I want a high win rate. I want to see green in my account every day. 
+
+It doesn't matter to me, but it matters to some people. And the other thing is that we've resisted offering a free trial. So I know some of you guys have asked if we have an affiliate program or how do you tell your friends? We actually are going to be doing a webinar on Thursday and we're going to take the original Orbot and set it up for a two-week free trial.
+
+We're not going to offer any, none of the community, nothing else, just the Orbot by itself with maybe a handful of pre-configured settings and see if we can make it work with the free trial. When I was running my software company, that was very, very effective to let people try the product, test drive it before they buy it. We don't really want to give people access to all the bots or all the, because then you're getting into more support and it's a drain on us when we're spending a lot of time with people who have never paid or joined trying to help people who are in the free program. 
+
+So if you guys are interested, you can invite your friends. We can send out a link on Thursday at five, sorry, 630 Eastern, 530 Central. We're going to offer a two-week free trial just with the Orbot by itself, nothing else, no community, just the Orbot by itself with a couple of steps and videos, or maybe a PDF on how to set up and get installed. 
+
+If you guys think you have a friend or two who might be interested in joining that, let us know. We can kind of send you guys the link. So they won't have any access to the portfolio? They won't have any access to it. 
+
+The portfolio is not going to be part of it, right? Yeah, just the Orbot. Kristen, the BPS option I'm using is the, whatever the first one they offered was $70. They have things for like stock, $70, future $70, and I looked at it and they're all pretty much the same. 
+
+Like the specs are almost the same. They just packaged them up slightly differently. So whatever the $70 option was, yeah. 
+
+And that's what this is here, the churn BPS. So do you guys think that would be, like, do you have friends or family you think that would be helpful to have just the Orbot by itself? We're going to have to have some pre-configured settings. I was running some back tests on this to kind of pre-package with it a few, maybe three or four or five to work with. 
+
+So, okay, awesome. What's your sample data? Three years or three months? Yeah, three years, going back three years. So this is the back test I was running right before. 
+
+Hey Matt, just a comment. So I think, how are you doing? I think, I mean, first of all, I lost my job a couple of months ago and the job market is tough out there. So I would say that as companies are trying to grapple with AI and how to deploy AI and how to, I mean, they say it'll augment the workforce, but in turn, it's really kind of getting rid of the workforce as well. 
+
+I think people are going to be looking for something to do when they're not working. And I think that's your target audience, is to find those people that can step into something. And a lot of these people might not know the first thing about what a candlestick is, but I think that might be a really good target market for you guys. 
+
+Right. Yeah. I feel like we originally tried to target brand new traders or people who talk them into learning how to trade. 
+
+And we've had a little bit better success trying to target struggling traders, like people who used to do it. That's me right here. Yeah. 
+
+Just because we're not having to convince you why you should do trading over an Amazon store or some kind of affiliate marketing or Amway or all those zillions of ways to make money out there. You've already kind of made that your mind up and that's kind of something you want to, you're struggling with, you need help with, right? That's kind of worked well for us. But I'm sure there's tons of people out there in the US and Canada that would fit the bill, would fit the requirements for that.
+
+Yeah, I'll get with you, Matt. My daughter just a few minutes ago said, I want to do this, especially when I told her how much it went up today. So prices went up today? No, he's talking about his performance, how much his account is up today. 
+
+Oh, okay. Okay. I get it right now.
+
+Yeah. Was that 2,300? Was that on micros or minis? Oh, it was the portfolio that Tracy had on the video from last Thursday night. I got to go check it. 
+
+I went in and just entered those in. Charles, 2,300 on one account or multiple accounts? Uh, that is on, oh, that was on two accounts. Yeah, two accounts.
+
+I was going to say, I thought that was the 40, 40, 20 that we did Thursday night, that we come up with the really good portfolio. Yes. Yeah. 
+
+That one, well, I actually put it on, it would have been more, uh, because the Sim 101, you know, no, I ran it on my Sim 102. The Sim 102 amount was more than the, uh, was more than the actual account that I had it copied to. Yeah, the Sim account typically is more because there's like, it's simple, no, you got the lag, no slippage. 
+
+Yeah. Yeah. There's usually a little bit more.
+
+That's, that's normal. Yeah. Yeah. 
+
+Yep. Commissions too and stuff. Brandon, you said you had a portfolio combination that you, you, uh, you're running right now? I have four different combinations. 
+
+Yeah. Which one was the one that you just said about the Thursday or something from Tracy? Well, so when we, when we met Thursday, we did the 40, 40, 20. So 40, 40 on max profit, 40 on max drawdown. 
+
+And then I think it was 20% on, um, when loss percent, if I remember right. Sick. I'm going to try that out.
+
+Yeah. Cause that'll give you different results. Um, let me see if I can, uh, so the 50, 50 works really good too. 
+
+Cause I've got one for 50, 50, which is the 50, 50, uh, um, net profit and draw down, uh, max drawdown. Yeah. That's like the 40, 40. 
+
+What was the 20 brand? The 20 was either wind loss percent or, um, the one I've got is PF. What was PF? It was the third one over. Yeah. 
+
+I was going to say it was the third one over. So it's profit factor. Yeah. 
+
+As many as their micros. Micros. Okay. 
+
+Yeah. So let's see what we can do. Yeah. 
+
+And it'd be cool if we can name these, like name a portfolio, just to give it a name. Like the Brandon did really well today. Solomon and the Jason did.
+
+It sounded like there was, I know Tracy did really well too. She put something in the, in the chat this morning. So I think there was a lot of people that did well. 
+
+They were running some kind of version of these. Yeah. The two, the two 53 bot and the Oh, 86 bot were the two winners today. 
+
+Yeah. Okay. Yeah. 
+
+Well, some of these don't run on Monday, so that makes sense. Yeah. Yeah. 
+
+And what did you call this? The 40, 40, 20. Yeah. Everybody's calling it the 40, 40, 20 rule. 
+
+And it's 11. Okay. Yeah. 
+
+I'll check that out. 40% for your wife, 40% for your kids, 20% for your work. Actually that the bot that she had on, there was one NQ in there.
+
+Oh, was there? So that wasn't just micros then. Okay. Yeah. 
+
+Sounds right. Is an NQ. The NQ is the NASDAQ features. 
+
+So let's take a look at the 40, 40, 20. Let's take a look at this. So this may not be exactly what Tracy had. 
+
+I haven't watched that video yet myself, but it's from last Thursday, right? I'll probably go watch that. Yes. Actually, I was just going to say, I think somebody posted in the community that they actually used AI from this through AI and AI said it was for the 40, 40, 20. 
+
+That's how they. That's crazy. Somebody's thinking. 
+
+They asked, chat GPT or whatever. Yeah. So what's interesting though, is the, like the correlation you'll see here, there's like some a slight conflict here with the Oh six, four, the MES. 
+
+And I'm guessing that's because we have another MES right here, the price. Let's see. MES or MES. 
+
+Oh, the Oh six, four bot. Wasn't in the one that Tracy had Thursday night. Okay. 
+
+Well that makes sense. Yeah. Yeah. 
+
+Yeah. The Oh six, four bot wasn't in that. Okay. 
+
+Doesn't it automatically rule out, you know, things that are conflicting that. It does, but you have to check it more than once. Like this is just saying, saying that there's a conflict here. 
+
+So like this MES runs Monday. Oh, I guess Monday, Tuesday, Wednesday, Thursday, Friday. That's interesting. 
+
+Cause the other, I'll have to look at that again and the other tool, but I just, so like the easy thing you can do is you can also go in here and like load up a whole bunch of these, right? So this is the entire like list of 100, right? Yeah. One to 299. You can load these. 
+
+It'll take a while to load them. I'll probably kill the memory. But if you were to load, let's say I just say clear all, and I'm just going to grab, I don't know, like 35 of these click. 
+
+Okay. You can see that. Yeah. 
+
+So you can see that there's conflicts, right? But then I can say, okay, I want you to, I want you to rethink through my list of 35 and have anywhere from maybe four to six, no three to six. And I want at least like 1500 a month and, and then re rerun all the combinations that don't have correlation problems. And you'll see here, so it's generating combinations, please wait. 
+
+So it's literally going to look at all 35 of these. It might, dang it. Of course. 
+
+So it's going to look at all 35, run every possible combination, every possible combination with a minimum of three and a maximum of six. And then it's going to look at, okay, how, who has, what has a minimum of 1500 positive and a maximum of 2500 negative drawdown, throw those out and just display the rest. Right. 
+
+So I probably shouldn't have loaded 35 because I think this, I think this has like eight gigs of RAM. It's not much. I probably shouldn't have done that many for this test. 
+
+We'll see what happens. But yeah, invite your, invite your friends if you can. Page said he, it was him. 
+
+Couldn't find a better one than the 40, 40, 20. Yeah. And what's interesting is like, there's so many combinations.
+
+Usually we look in at all micros or all minis, but you can also combine the two, the two of them. Right. So you can combine those as well. 
+
+You usually get into a little bit bigger risk when you get into the the E-minis versus the, the micros, but it's super, it's super fun to, to play with. And of course all the work has been done. We actually have automation now that updates the files at the end of the month. 
+
+And we'll go through and run all in this case, 300, rerun all 300 again from scratch. And then the team, the volunteer team that works with Tracy they're just working on new, like new settings, new setups. Right.
+
+And then the automation that we hired a team to build does some of the, the, the, the grunt work of rerunning all the tests every month. So yeah, pretty cool stuff. I mean, that is awesome.
+
+This is crazy. Yeah. So people ask us about like AI, AI powered like strategies and I haven't yet seen anything super like, like above and beyond head and shoulders above like just the normal strategies that we that we trade. 
+
+And I have a few theories why that could be. One of them is the market is always changing. Right. 
+
+So like you can just like with back tests, you can run historical data, but it doesn't really predict, nothing predicts the future. Right. And so, you know, if you're trying to train a model and you show AI like here's a hundred pictures of apples, here's a hundred pictures of oranges and then show it something hasn't seen you like, is this an apple or an orange? Right. 
+
+And it in the market though, I feel like sometimes apples look like oranges and sometimes oranges look at apples. Sometimes it's none of the above. And so a lot of, this is just my theory. 
+
+And I actually knew someone who spent, he raised like $18 million, built a whole AI automated trading suite, all that went out of business. Like it just, it couldn't perform any better than just simple, you know, basic strategies could. And he, you know, had a pretty good size amount of investors and, you know, some significant capital behind him. 
+
+And he still couldn't outperform just basic strategies, you know? So I know it's changing. Maybe unless someone can convince me otherwise, we're just going to stick with what works. And we are, we do, you know, tip our toes in that world.
+
+We just haven't seen anything that's just blown my socks off yet, you know? So anyways, we'll get there at some point, but I haven't seen anything like significantly heads and shoulders better. And if you, if you ever do any Google research for AI trading bots for Ninja Trader, if you talk to the salesman and ask them, what, what part of this strategy is AI? They're like, I don't know. Like, we're just told to say AI because it's a cool marketing term. 
+
+We're like, so you lie to people. So we try to be really clear that we don't really use AI. We do use automation. 
+
+We do use a lot of advanced techniques, but we don't use AI in the actual strategy piece. Right now, obviously you guys know we have, we had an AI mindset coach, but it's not the actual strategy piece. Right. 
+
+So anyways, hopefully that was, you know, some, some of you guys have asked about that a few times. So I just wanted to kind of bring that up. So we're super excited about what we're doing. 
+
+Hopefully you guys can share the link here in the, in the chat with folks who, friends or family you want to join. It will, again, we're offering a two week free trial and we're doing a webinar about it on Thursday and we'll give them, give them a chance to try out the Orbot. We'll have some pre, pre-configured settings. 
+
+So yeah. Awesome. Cool, Mike. 
+
+30, 30, 10, 10, 10, 10 and experience five. Well, you have to, I guess you have to like any, just like anything else, one day or two days or isn't a big enough timeframe. But yeah, all of our, all of our webinars are recorded. 
+
+So absolutely. We'll absolutely record that. So any other questions? I'll have some cool stuff I want to show you guys on Thursday, but any other questions, concerns? Matt, I was going to bring something up real quick. 
+
+I don't know if Tracy showed you this, maybe you already know. In our Thursday night session, she showed us a thing on how to enable all the bots at the same time. Now there's some people here that may not know that, but I thought it was the coolest thing ever. 
+
+That way you're not having to go through and enable each one individually, but basically you just go through and you, you know, click on the first one, go to push shift, highlight, and then the last one, and then right click and enable them all. So pretty cool. Do you, do you want to, my, my, it's still freezing from my, my generator.
+
+The same way guys, you don't need to remove bots one by one anymore. You can highlight them all and remove them all. Oh yeah. 
+
+I just put like control A. Yeah. Yeah. The thing that's annoying is that, okay, you have to like confirm that, you know, when you do it one at a time, but yeah.
+
+Awesome. Yep. Cause I feel like we're going from multiple stages, right? From like a single bot in a single account to a single bot in multiple accounts, to multiple bots in one account, to multiple bots in multiple portfolios, multiple bots in multiple portfolios. 
+
+It's like next level, right? I've seen the evolution of this, man. I love it. I love it. 
+
+It's like we're on stage seven or something. And as fast as Tracy's working, it's like drinking through a fire hose. Yeah.
+
+Well, sometimes we have to slow down while we release, you guys' head will explode. Just trust me on that. So, you know, it's good to like space it out a little bit so you can absorb it and digest it. 
+
+Yeah. That's why I like the videos is because I can go back and watch and rewatch if I need to. Yep. 
+
+Yep. Christmas is coming soon. What's that? You said Christmas is coming soon? Well, we have some more things coming, but we'll show. 
+
+Yeah. We always have ideas. You guys know that. 
+
+We're not short on ideas, short on manpower, but not ideas. Jason, you had a question? I have a question. So let's say I got a portfolio. 
+
+I got, let's say eight strategies set up. And yesterday I did the new portfolio 10.0 update. When I go do the update, do I have to delete all the strategies and then rebuild them? Or does it automatically? So it's just like copying files from one folder to another. 
+
+As long as the, if the file names are identical, it'll overwrite them. But if you have like your own custom strategy templates, those will stay in place. Is that what you're asking about? Yeah. 
+
+So I think, I think the, like the original like mega orb was 2.3 or something like that, I think is what it was called. But now the new one was 10.0. So that's why I was like, I got to delete them and rebuild. The settings, the setting name for the bot is still like the old name. 
+
+I told Tracy, we need, because of all this new stuff and the new version and all this stuff, we need to like do a major upgrade in the bots. And let's just start with 10.0 going forward. So that we have like a clear distinction between like the older Ninja trader and the newer, right. 
+
+And you can kind of see. So I think the names might still be the old, the little name in the template itself. Snapback is not. 
+
+Snapback is, mega Snapback is 10.0. Everything else is the old version number on the strategies. Right, right. Gotcha.
+
+Okay. Yeah. But yeah, we're super excited about all this stuff that's happening, coming. 
+
+We want you guys all to get some payouts if you haven't yet. And congrats to those of you who are super close. Hopefully you get across the finish line this week. 
+
+$35, let's go. You're like, can I just pay you $35? Can I just like give you $35? And we're actually trying. I have a couple of contacts at Apex right now. 
+
+We have some back channel discussions saying, Hey, can you guys be a little more officially friendly with bot trading? And I'll share some of those conversations with you guys in a few weeks. Wait, are they actually considering this? Our names have been passed up the flagpole a few times. So we'll see. 
+
+We haven't talked to anyone above like a kind of a lower level yet, but we've got some feelers that we're trying to make it a little more friendly officially. They have some concerns why they're not friendly towards it. But I have this like personal thing that I always try to think of is like in business, when you make an assumption, like bot trading is bad, bot trading is going to make us go broke. 
+
+And then you make a whole series of decisions based on a single assumption and years or decades can go by. At some point, you have to verify that original assumption was true, right? Like bot trading equals Apex losing money. That's kind of their current mindset. 
+
+And I said, at some point you have to test that that assumption, even see if it's true. What if it's not true? What if it's not true that every bot, when you say the word bot from any technology company ever, they're automatically going to think that everyone's going to be making a zillion dollars and making them go broke. And that's not automatically the case, right? Just as you guys have learned that if you disable bots or you are emotional or whatever, you can still lose. 
+
+But ultimately their assumption is their whole mindset is bot trading is bad because it will make us lose money. And I'm trying to warm them up to the idea that's not always a correct assumption. So anyways, a couple of weeks, we'll have some updates on that front, but it'd be cool if you're only allowed to use push-button trading bots.
+
+That'd be really cool. That would be sick. Yeah. 
+
+So anyways, we'll see what happens, but I love you guys to reach out if you have any other questions, invite your friends and family on Thursday and we'll see you guys in a few days. Thanks. Bye.

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wu Ming Meridian Therapy: Healing the Dragon's Way</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(99, 102, 241, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #34d399;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e0;
+            font-weight: 300;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 211, 153, 0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #fbbf24;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .slide {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.6));
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(52, 211, 153, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #34d399, #6366f1, #fbbf24);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(52, 211, 153, 0.2);
+            border-color: rgba(52, 211, 153, 0.3);
+        }
+
+        .slide:hover::before {
+            opacity: 1;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(52, 211, 153, 0.2);
+            color: #34d399;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(99, 102, 241, 0.1));
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .slide-content {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #cbd5e0;
+        }
+
+        .slide-content ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .slide-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .slide-content li::marker {
+            color: #34d399;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 41, 59, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .progress-text {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .progress-track {
+            width: 200px;
+            height: 4px;
+            background: rgba(52, 211, 153, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #34d399, #6366f1);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .slides-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .presentation-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <header class="header">
+            <h1 class="main-title">Wu Ming Meridian Therapy</h1>
+            <p class="subtitle">Healing the Dragon's Way</p>
+        </header>
+
+        <nav class="navigation">
+            <button class="nav-btn active" onclick="showSection(0)">Section 1: Foundations</button>
+            <button class="nav-btn" onclick="showSection(1)">Section 2: Practice</button>
+            <button class="nav-btn" onclick="showSection(2)">Section 3: Application</button>
+        </nav>
+
+        <!-- Section 1: Foundations of Qigong -->
+        <section class="section active" id="section-0">
+            <h2 class="section-title">Section 1: Foundations of Qigong</h2>
+            <div class="slides-grid">
+                <div class="slide">
+                    <div class="slide-number">1</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/ancient-chinese-i-ching-hexagram-with-glowing-meridian-points-jade-green-gold-mystical-energy-pathways?width=400&height=300" 
+                             alt="I Ching hexagram with meridian points" 
+                             onerror="this.src=''; this.alt='Ancient I Ching hexagram - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">What is Wu Ming Meridian Therapy?</h3>
+                    <div class="slide-content">
+                        <p>Ancient Chinese healing system combining Qigong and meridian work to balance life energy through specific pathways.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">2</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/traditional-chinese-dragon-flowing-energy-jade-green-gold-spiritual-power-ancient-wisdom?width=400&height=300" 
+                             alt="Traditional Chinese dragon artwork" 
+                             onerror="this.src=''; this.alt='Traditional Chinese dragon - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">The Dragon's Way Philosophy</h3>
+                    <div class="slide-content">
+                        <p>Dragon represents the flow of vital energy through the body, emphasizing natural, effortless movement and harmony between opposing forces.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">3</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/yin-yang-symbol-meditation-inner-harmony-peaceful-balance-jade-green-moonlight-silver?width=400&height=300" 
+                             alt="Yin Yang symbol with meditation elements" 
+                             onerror="this.src=''; this.alt='Yin Yang meditation symbol - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Qigong and Inner Harmony</h3>
+                    <div class="slide-content">
+                        <p>Cultivation of internal energy through mindful practice, balancing physical, emotional, and spiritual aspects for deep peace.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">4</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/fire-element-universal-qi-energy-radiating-golden-light-life-force-flowing-spiritual-power?width=400&height=300" 
+                             alt="Fire element with energy radiating" 
+                             onerror="this.src=''; this.alt='Fire element energy - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Qi: The Universal Energy</h3>
+                    <div class="slide-content">
+                        <p>Life force that flows through all living beings, can be cultivated and directed, forming the foundation of Traditional Chinese Medicine.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">5</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/ancient-chinese-scroll-earth-element-4000-years-history-taoist-monks-shamanic-traditions?width=400&height=300" 
+                             alt="Earth element with ancient scroll" 
+                             onerror="this.src=''; this.alt='Earth element ancient scroll - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Origins of Qigong</h3>
+                    <div class="slide-content">
+                        <p>Over 4,000 years of documented practice, developed by Taoist monks and Chinese physicians from ancient shamanic traditions.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">6</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/turtle-symbol-longevity-wisdom-body-mind-spirit-connection-holistic-healing-jade-green?width=400&height=300" 
+                             alt="Turtle symbol representing longevity and wisdom" 
+                             onerror="this.src=''; this.alt='Turtle longevity symbol - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Connection of Body, Mind, and Spirit</h3>
+                    <div class="slide-content">
+                        <p>Holistic approach treating the whole person, where physical postures affect mental states and spiritual awareness enhances healing.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">7</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/water-element-flowing-waves-qi-deficiency-energy-blockages-healing-restoration-blue-silver?width=400&height=300" 
+                             alt="Water element with flowing waves" 
+                             onerror="this.src=''; this.alt='Water element flowing waves - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Qi Deficiency and Imbalance</h3>
+                    <div class="slide-content">
+                        <p>Symptoms include fatigue and emotional distress, caused by stress and energy blockages, restored through proper Qigong practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">8</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/wood-element-tree-roots-branches-emotions-affecting-qi-energy-blockages-emotional-regulation?width=400&height=300" 
+                             alt="Wood element tree with roots and branches" 
+                             onerror="this.src=''; this.alt='Wood element tree - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">How Emotions Affect Qi</h3>
+                    <div class="slide-content">
+                        <p>Negative emotions create energy blockages while positive emotions enhance Qi flow. Emotional regulation is key to energy balance.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">9</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/metal-element-five-traditions-qigong-circle-taoist-buddhist-confucian-martial-medical?width=400&height=300" 
+                             alt="Metal element with five traditions circle" 
+                             onerror="this.src=''; this.alt='Metal element five traditions - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Five Traditions of Qigong</h3>
+                    <div class="slide-content">
+                        <p>Taoist (spiritual cultivation), Buddhist (meditation), Confucian (moral development), Martial (strength), Medical (healing).</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">10</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/heaven-hexagram-medical-qigong-healing-energy-therapeutic-application-jade-green-gold?width=400&height=300" 
+                             alt="Heaven hexagram with healing energy" 
+                             onerror="this.src=''; this.alt='Heaven hexagram healing - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Medical Qigong Overview</h3>
+                    <div class="slide-content">
+                        <p>Therapeutic application of Qigong principles to treat specific health conditions, combining self-practice with practitioner treatment.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">11</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/modern-revival-ancient-practices-cultural-revolution-global-wellness-phoenix-rising?width=400&height=300" 
+                             alt="Modern revival of ancient practices" 
+                             onerror="this.src=''; this.alt='Modern revival - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Suppression and Revival in Modern Times</h3>
+                    <div class="slide-content">
+                        <p>Suppressed during Cultural Revolution in China, experienced global revival in recent decades, now practiced worldwide for wellness.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">12</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/master-teaching-student-lineage-transmission-wu-ming-ancient-wisdom-energy-transfer?width=400&height=300" 
+                             alt="Master teaching student lineage transmission" 
+                             onerror="this.src=''; this.alt='Lineage transmission - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Wu Ming Lineage and Message System</h3>
+                    <div class="slide-content">
+                        <p>Direct transmission from master to student, emphasizing internal understanding over external form, preserving authentic ancient teachings.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">13</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/form-versus-message-systems-comparison-physical-movements-internal-energy-cultivation?width=400&height=300" 
+                             alt="Form versus message systems comparison" 
+                             onerror="this.src=''; this.alt='Form vs message - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Form vs. Message Systems</h3>
+                    <div class="slide-content">
+                        <p>Form systems focus on precise physical movements while message systems emphasize internal energy cultivation. Wu Ming integrates both harmoniously.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">14</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/energy-transmission-master-student-healing-energy-immediate-shifts-awareness-acceleration?width=400&height=300" 
+                             alt="Energy transmission between master and student" 
+                             onerror="this.src=''; this.alt='Energy transmission - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Transmission of Energy</h3>
+                    <div class="slide-content">
+                        <p>Master can transmit healing energy to student, creating immediate energetic shifts and awareness, accelerating the learning process.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">15</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/chinese-calligraphy-martial-arts-foundation-qigong-energetic-base-creative-expression?width=400&height=300" 
+                             alt="Chinese calligraphy and martial arts foundation" 
+                             onerror="this.src=''; this.alt='Chinese arts foundation - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Qigong as Foundation of All Chinese Arts</h3>
+                    <div class="slide-content">
+                        <p>Underlies martial arts, calligraphy, and painting, providing energetic foundation for all practices and enhancing creative expression.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Practice -->
+        <section class="section" id="section-1">
+            <h2 class="section-title">Section 2: Practice & Methods</h2>
+            <div class="slides-grid">
+                <div class="slide">
+                    <div class="slide-number">16</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/morning-qigong-practice-nature-elegant-healing-transformation-breath-movement-intention?width=400&height=300" 
+                             alt="Morning Qigong practice in nature" 
+                             onerror="this.src=''; this.alt='Morning practice - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">The Practice of Wu Ming Meridian Therapy</h3>
+                    <div class="slide-content">
+                        <p>Elegant Qigong practice in morning light, harmonizing breath, movement, and intention for deep healing transformation.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">17</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/ten-sacred-movements-sequence-minimalist-symbols-flowing-qi-meridian-pathways-grace?width=400&height=300" 
+                             alt="Ten sacred movements sequence" 
+                             onerror="this.src=''; this.alt='Ten movements - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">The Ten Movements Overview</h3>
+                    <div class="slide-content">
+                        <p>Minimalist symbols representing each sacred movement, flowing sequences that guide Qi through meridian pathways with grace.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">18</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/daily-practice-sunrise-meditation-rising-sun-energy-transformation-accumulated-wisdom?width=400&height=300" 
+                             alt="Daily practice sunrise meditation" 
+                             onerror="this.src=''; this.alt='Daily practice - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">The Power of Daily Practice</h3>
+                    <div class="slide-content">
+                        <p>Rising sun energy and gentle time flow, consistent practice creates profound transformation through accumulated wisdom.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">19</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/natural-breathing-meditation-person-glowing-chest-heaven-earth-connection-rhythm?width=400&height=300" 
+                             alt="Natural breathing meditation" 
+                             onerror="this.src=''; this.alt='Natural breathing - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Breathing Naturally</h3>
+                    <div class="slide-content">
+                        <p>Close-up of person breathing calmly with glowing chest, natural rhythm connecting heaven and earth through breath.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">20</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/meditation-hall-candlelight-empty-sacred-space-inner-silence-deep-contemplation?width=400&height=300" 
+                             alt="Meditation hall with candlelight" 
+                             onerror="this.src=''; this.alt='Meditation stillness - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Cultivating Stillness</h3>
+                    <div class="slide-content">
+                        <p>Empty meditation hall with soft candlelight, creating sacred space for inner silence and deep contemplation.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">21</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/liver-meridian-energy-flow-anatomical-silhouette-glowing-green-emotional-balance-qi-circulation?width=400&height=300" 
+                             alt="Liver meridian energy flow" 
+                             onerror="this.src=''; this.alt='Liver meridian - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Liver Meridian Flow</h3>
+                    <div class="slide-content">
+                        <p>Anatomical silhouette with glowing green energy path, supporting emotional balance and smooth Qi circulation.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">22</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/spleen-meridian-golden-energy-yellow-flow-abdomen-digestive-fire-vital-energy-essence?width=400&height=300" 
+                             alt="Spleen meridian golden energy" 
+                             onerror="this.src=''; this.alt='Spleen meridian - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Spleen Meridian Flow</h3>
+                    <div class="slide-content">
+                        <p>Yellow-golden flow through abdomen, nourishing digestive fire and transforming food into vital energy essence.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">23</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/kidney-meridian-blue-energy-spine-life-essence-foundational-vitality-willpower?width=400&height=300" 
+                             alt="Kidney meridian blue energy spine" 
+                             onerror="this.src=''; this.alt='Kidney meridian - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Kidney Meridian Flow</h3>
+                    <div class="slide-content">
+                        <p>Blue energy flowing along the spine, strengthening life essence and supporting foundational vitality and willpower.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">24</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/lung-meridian-white-mist-energy-chest-purifying-breath-cosmic-energy-respiration?width=400&height=300" 
+                             alt="Lung meridian white mist energy" 
+                             onerror="this.src=''; this.alt='Lung meridian - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Lung Meridian Flow</h3>
+                    <div class="slide-content">
+                        <p>White, mist-like light in chest area, purifying breath and connecting with cosmic energy through respiration.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">25</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/heart-center-lotus-blooming-warm-light-compassion-universal-love-wisdom?width=400&height=300" 
+                             alt="Heart center lotus blooming" 
+                             onerror="this.src=''; this.alt='Heart center - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Opening the Heart Center</h3>
+                    <div class="slide-content">
+                        <p>Lotus flower blooming with warm light, expanding compassion and connecting with universal love and wisdom.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">26</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/building-internal-strength-glowing-energy-sphere-palms-inner-power-energetic-sensitivity?width=400&height=300" 
+                             alt="Building internal strength energy sphere" 
+                             onerror="this.src=''; this.alt='Internal strength - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Building Internal Strength</h3>
+                    <div class="slide-content">
+                        <p>Glowing energy sphere between palms, cultivating inner power and developing energetic sensitivity through practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">27</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/movement-awareness-connection-motion-blur-flowing-mindful-graceful-physical-expression?width=400&height=300" 
+                             alt="Movement and awareness connection" 
+                             onerror="this.src=''; this.alt='Movement awareness - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Movement and Awareness Connection</h3>
+                    <div class="slide-content">
+                        <p>Soft motion blur effect showing flowing movement, integrating mindful awareness with graceful physical expression.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">28</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/master-student-energy-exchange-teacher-guiding-open-field-sacred-transmission-wisdom?width=400&height=300" 
+                             alt="Master student energy exchange" 
+                             onerror="this.src=''; this.alt='Energy exchange - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Master–Student Energy Exchange</h3>
+                    <div class="slide-content">
+                        <p>Teacher guiding student in open field, sacred transmission of wisdom and energy flowing between generations.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">29</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/healing-message-transmission-radiating-light-two-figures-direct-energy-spiritual-awakening?width=400&height=300" 
+                             alt="Healing through message transmission" 
+                             onerror="this.src=''; this.alt='Message transmission - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Healing Through Message Transmission</h3>
+                    <div class="slide-content">
+                        <p>Radiating light between two figures, direct energy transmission creating profound healing and spiritual awakening.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">30</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/cosmic-meditation-transcending-time-surreal-space-deep-contemplative-practice-timeless?width=400&height=300" 
+                             alt="Cosmic meditation transcending time" 
+                             onerror="this.src=''; this.alt='Cosmic meditation - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Entering Timeless Practice</h3>
+                    <div class="slide-content">
+                        <p>Surreal cosmic meditation transcending ordinary time and space through deep contemplative practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Application -->
+        <section class="section" id="section-2">
+            <h2 class="section-title">Section 3: Applications & Guidelines</h2>
+            <div class="slides-grid">
+                <div class="slide">
+                    <div class="slide-number">31</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/dragons-way-everyday-life-person-full-moon-ancient-wisdom-modern-living-mindful-awareness?width=400&height=300" 
+                             alt="Dragon's Way in everyday life under moon" 
+                             onerror="this.src=''; this.alt='Everyday life - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">The Dragon's Way in Everyday Life</h3>
+                    <div class="slide-content">
+                        <p>Person standing under full moon, integrating ancient wisdom into modern living with grace and mindful awareness.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">32</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/weight-imbalance-transformation-silhouette-shadow-to-light-energetic-imbalances-physical-symptoms?width=400&height=300" 
+                             alt="Weight imbalance transformation shadow to light" 
+                             onerror="this.src=''; this.alt='Weight transformation - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Healing the Root Cause of Weight Imbalance</h3>
+                    <div class="slide-content">
+                        <p>Silhouette transforming from shadow to light, addressing energetic imbalances that manifest as physical symptoms.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">33</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/emotional-balance-heart-mind-connection-energy-lines-harmonizing-conscious-breath-movement?width=400&height=300" 
+                             alt="Emotional balance heart mind connection" 
+                             onerror="this.src=''; this.alt='Emotional balance - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Balancing Emotions with Qi Flow</h3>
+                    <div class="slide-content">
+                        <p>Energy lines connecting heart and mind, harmonizing emotional states through conscious breath and movement.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">34</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/five-organs-anatomical-diagram-pastel-tones-organ-health-metabolism-body-balance?width=400&height=300" 
+                             alt="Five organs anatomical diagram" 
+                             onerror="this.src=''; this.alt='Five organs - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">The Five Organs and Weight Management</h3>
+                    <div class="slide-content">
+                        <p>Soft anatomical diagram with pastel tones, showing how organ health affects metabolism and body balance.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">35</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/vitality-light-particles-immune-health-natural-defenses-metabolic-function-optimization?width=400&height=300" 
+                             alt="Vitality light particles immune health" 
+                             onerror="this.src=''; this.alt='Immune vitality - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Immune and Metabolic Health</h3>
+                    <div class="slide-content">
+                        <p>Light particles representing vitality, strengthening natural defenses and optimizing metabolic function.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">36</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/mental-clarity-calm-face-meditation-floating-light-motifs-inner-stillness-clear-perception?width=400&height=300" 
+                             alt="Mental clarity calm face meditation" 
+                             onerror="this.src=''; this.alt='Mental clarity - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Mental Clarity and Emotional Peace</h3>
+                    <div class="slide-content">
+                        <p>Calm face with floating light motifs, achieving inner stillness and clear perception through practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">37</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/body-mind-spirit-harmony-geometric-symbols-glowing-sacred-unity-human-experience?width=400&height=300" 
+                             alt="Body mind spirit harmony geometric symbols" 
+                             onerror="this.src=''; this.alt='Body mind spirit - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Reconnecting Body–Mind–Spirit</h3>
+                    <div class="slide-content">
+                        <p>Glowing geometric harmony symbols, restoring the sacred unity of all aspects of human experience.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">38</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/intuition-eye-mandala-pattern-inner-knowing-sensitivity-subtle-energy-cultivation?width=400&height=300" 
+                             alt="Intuition eye mandala pattern" 
+                             onerror="this.src=''; this.alt='Intuition mandala - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Building Intuition Through Practice</h3>
+                    <div class="slide-content">
+                        <p>Eye within mandala pattern, developing inner knowing and sensitivity to subtle energy through cultivation.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">39</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/wu-ming-practice-guidelines-checklist-minimalist-overlay-essential-principles-safe-effective-cultivation?width=400&height=300" 
+                             alt="Wu Ming practice guidelines checklist" 
+                             onerror="this.src=''; this.alt='Practice guidelines - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Wu Ming Guidelines for Practice</h3>
+                    <div class="slide-content">
+                        <p>Minimalist checklist overlay, essential principles for safe and effective energy cultivation practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">40</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/best-practice-times-clock-daylight-progression-optimal-timing-natural-energy-cycles-circadian-rhythms?width=400&height=300" 
+                             alt="Best practice times clock daylight progression" 
+                             onerror="this.src=''; this.alt='Practice times - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Best Times for Practice</h3>
+                    <div class="slide-content">
+                        <p>Clock and daylight progression visual, optimal timing aligned with natural energy cycles and circadian rhythms.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">41</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/moon-phases-wheel-seasonal-energy-shifts-lunar-cycles-seasonal-transformations-harmony?width=400&height=300" 
+                             alt="Moon phases wheel seasonal energy" 
+                             onerror="this.src=''; this.alt='Moon phases - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Full Moon and Seasonal Energy Shifts</h3>
+                    <div class="slide-content">
+                        <p>Moon phases wheel, harmonizing practice with lunar cycles and seasonal energy transformations.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">42</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/hands-over-heart-candlelight-intention-sincere-purpose-heartfelt-dedication-practice?width=400&height=300" 
+                             alt="Hands over heart candlelight intention" 
+                             onerror="this.src=''; this.alt='Practice intention - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Practicing with Intention</h3>
+                    <div class="slide-content">
+                        <p>Hands over heart with candlelight background, cultivating sincere purpose and heartfelt dedication in practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">43</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/avoiding-energy-drain-gentle-warnings-do-not-icons-eating-fatigue-distraction-protection?width=400&height=300" 
+                             alt="Avoiding energy drain gentle warnings" 
+                             onerror="this.src=''; this.alt='Energy protection - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Avoiding Energy Drain</h3>
+                    <div class="slide-content">
+                        <p>Gentle "do not" icons for eating, fatigue, and distraction, protecting and preserving vital energy during practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">44</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/transformation-stories-silhouette-glowing-radiant-energy-testimonies-profound-healing-life-transformation?width=400&height=300" 
+                             alt="Transformation stories radiant energy silhouette" 
+                             onerror="this.src=''; this.alt='Transformation stories - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Transformation Stories</h3>
+                    <div class="slide-content">
+                        <p>Silhouette glowing with radiant energy, testimonies of profound healing and life transformation through practice.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-number">45</div>
+                    <div class="slide-image">
+                        <img src="https://image.pollinations.ai/prompt/living-wu-ming-way-sunrise-person-arms-open-sky-wisdom-compassion-energetic-vitality?width=400&height=300" 
+                             alt="Sunrise person arms open sky Wu Ming way" 
+                             onerror="this.src=''; this.alt='Living Wu Ming way - Image failed to load'; this.style.display='none';"
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="slide-title">Living the Wu Ming Way</h3>
+                    <div class="slide-content">
+                        <p>Sunrise with person opening arms to the sky, embracing life with wisdom, compassion, and energetic vitality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-text">Slide Progress</div>
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('.section');
+        const navButtons = document.querySelectorAll('.nav-btn');
+
+        function showSection(sectionIndex) {
+            // Hide all sections
+            sections.forEach(section => section.classList.remove('active'));
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected section
+            sections[sectionIndex].classList.add('active');
+            navButtons[sectionIndex].classList.add('active');
+            
+            currentSection = sectionIndex;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalSlides = 45;
+            const slidesPerSection = 15;
+            const currentSlide = (currentSection * slidesPerSection) + slidesPerSection;
+            const progressPercent = (currentSlide / totalSlides) * 100;
+            
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+        }
+
+        // Initialize progress
+        updateProgress();
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' && currentSection > 0) {
+                showSection(currentSection - 1);
+            } else if (e.key === 'ArrowRight' && currentSection < 2) {
+                showSection(currentSection + 1);
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9956223ed2804301',t:'MTc2MTYwOTQyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

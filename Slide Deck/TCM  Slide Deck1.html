@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wu Ming — Slide Decks</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa6b2; --accent:#8dd3c7; --accent2:#7aa2ff;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071026);color:#e6eef6;min-height:100vh}
+    .app{display:flex;gap:24px;padding:28px}
+
+    /* Sidebar */
+    .sidebar{width:320px;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .logo{width:44px;height:44px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#042031}
+    h1{font-size:16px;margin:0}
+    p.lead{margin:8px 0 18px;color:var(--muted);font-size:13px}
+    .section-list{display:grid;gap:8px}
+    .section-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .section-btn.active{border-color:rgba(122,162,255,0.18);box-shadow:0 6px 18px rgba(122,162,255,0.06)}
+    .count{font-size:12px;color:var(--muted)}
+
+    /* Stage */
+    .stage{flex:1;display:flex;flex-direction:column;gap:18px}
+    .stage-header{display:flex;align-items:center;justify-content:space-between}
+    .stage-title{display:flex;gap:12px;align-items:center}
+    .stage-title h2{margin:0}
+    .controls{display:flex;gap:10px}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:var(--accent);cursor:pointer}
+
+    /* Slide area */
+    .slides-wrap{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    .slide-card{background:linear-gradient(180deg, rgba(13,24,36,0.6), rgba(6,12,20,0.6));border-radius:14px;padding:28px;min-height:420px;display:flex;flex-direction:column;justify-content:space-between}
+    .slide-title{font-size:20px;margin:0 0 6px}
+    .slide-bullets{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.6}
+    .slide-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;color:var(--muted);font-size:13px}
+
+    /* Thumbnails */
+    .thumbs{background:var(--card);border-radius:12px;padding:12px;height:420px;overflow:auto}
+    .thumb{display:flex;gap:10px;align-items:center;padding:10px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+    .thumb:hover{background:rgba(255,255,255,0.02)}
+    .thumb.active{border-color:rgba(141,211,199,0.12);box-shadow:inset 0 0 0 1px rgba(122,162,255,0.02)}
+    .thumb .t-title{font-size:13px}
+    .thumb .t-sub{font-size:12px;color:var(--muted)}
+
+    /* Responsive */
+    @media(max-width:980px){.app{flex-direction:column}.sidebar{width:100%}.slides-wrap{grid-template-columns:1fr}.thumbs{height:auto}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">WM</div>
+        <div>
+          <h1>Wu Ming — Slide Decks</h1>
+          <p class="lead">3 Sections • 15 slides each — focused points for teaching & presentation</p>
+        </div>
+      </div>
+      <div class="section-list" id="sectionList"></div>
+      <div style="height:12px"></div>
+      <div style="font-size:12px;color:var(--muted)">Use arrow keys ← → to move slides. Click a section to jump. Click thumbnails to open a slide.</div>
+    </aside>
+
+    <main class="stage">
+      <div class="stage-header">
+        <div class="stage-title">
+          <h2 id="stageTitle">Foundations</h2>
+          <div style="color:var(--muted);font-size:13px" id="stageSub">Section 1 • Slide 1 of 15</div>
+        </div>
+        <div class="controls">
+          <button class="btn" id="prevBtn">← Prev</button>
+          <button class="btn" id="nextBtn">Next →</button>
+        </div>
+      </div>
+
+      <div class="slides-wrap">
+        <article class="slide-card" id="slideCard">
+          <div>
+            <h3 class="slide-title" id="slideTitle">Title</h3>
+            <ul class="slide-bullets" id="slideBullets"></ul>
+          </div>
+          <div class="slide-footer">
+            <div id="slideNotes">Notes or time: 1–2 min</div>
+            <div id="slideMeta">Wu Ming Meridian Therapy</div>
+          </div>
+        </article>
+
+        <aside class="thumbs" id="thumbs"></aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Data: 3 sections, 15 slides each. Concise slide titles and bullets derived from the provided Wu Ming text.
+    const sections = [
+      {
+        id: 'foundations', title: 'Foundations', slides: [
+          {t:'Program Overview', b:['The Dragon\'s Way and Wu Ming Meridian Therapy','Unique ancient qigong transmission system']},
+          {t:'What is Qigong?', b:['"Energy work" — mind/body/spirit integration','Self-healing discipline that cultivates Qi']},
+          {t:'Qi: Core Concept', b:['Life force that governs organ function','Imbalance leads to disease and weight issues']},
+          {t:'Historical Roots', b:['Possibly 5,000+ years old','Traditions: Taoist, Confucian, Buddhist, Martial, Medical']},
+          {t:'Form vs Message', b:['Form = technique, precision matters','Message = transmission, master-to-student energy']},
+          {t:'Wu Ming Approach', b:['Message-based system','Transmission from master to student']},
+          {t:'Qigong in TCM', b:['Foundation of Chinese medicine','TCM doctors often Qigong masters']},
+          {t:'Suppression & Revival', b:['Suppressed during Cultural Revolution','Reemerged late 1970s, global interest by 1988']},
+          {t:'Popularity', b:['100M+ daily practitioners in China','Growing Western interest']},
+          {t:'Mind–Body Unity', b:['No separation between body and mind','Practice cultivates integrated health']},
+          {t:'Intuition & Perception', b:['Qigong develops intuition','Offers a different way to perceive reality']},
+          {t:'Five Traditions', b:['Short descriptions of each tradition','Medical Qigong most relevant to health']},
+          {t:'Medical Conferences', b:['World conferences on Qigong research','Platforms for clinical evidence and exchange']},
+          {t:'Why Wu Ming is Unique', b:['Uses energy message and objects','Can embed healing in art, music, gifts']},
+          {t:'Safety Note', b:['Powerful practice—requires guidance','Described as both beneficial and profound']}
+        ]
+      },
+      {
+        id: 'practice', title: 'Practice & Methods', slides: [
+          {t:'Core Movements', b:['Set of ten movements','Target meridians: liver, spleen, kidney, lung']},
+          {t:'Daily Routine', b:['Full set ~20 minutes','Practice at consistent times for best results']},
+          {t:'Optimal Times', b:['11:00 AM–1:00 PM and 5:00 PM–7:00 PM','Also full moon & seasonal transitions']},
+          {t:'No Special Breathing', b:['Breathe naturally','Avoid holding or forcing breath']},
+          {t:'Mental Attitude', b:['Peaceful, open heart','No specific mental focus required']},
+          {t:'Individual Practice', b:['Practice movements separately ≥5 minutes','Build depth by repetition']},
+          {t:'Transmission Tools', b:['Objects, art, music carry energy','Gifts can be used as carriers']},
+          {t:'Teacher–Student Bond', b:['Deep energetic connection matters','Transmission quality depends on teacher']},
+          {t:'Ease vs Depth', b:['Some systems easy but shallow','Wu Ming aims for accessible and effective']},
+          {t:'Advanced States', b:['Timelessness and silent mind','Energy itself guides healing']},
+          {t:'Integration with TCM', b:['Complements herbs & acupuncture','Can accelerate recovery']},
+          {t:'Practice Contraindications', b:['Avoid when very hungry or exhausted','Not after large meals or sex']},
+          {t:'Progress Measures', b:['Physical changes, digestion, sleep','Increased clarity & emotional balance']},
+          {t:'Teaching Methods', b:['Form demonstrations plus transmission','Hands-on linkage and personalized cues']},
+          {t:'Common Mistakes', b:['Overemphasis on technique for message systems','Expecting immediate dramatic change']}
+        ]
+      },
+      {
+        id: 'applications', title: 'Applications & Guidelines', slides: [
+          {t:'Weight Management', b:['Targets organ meridians tied to metabolism','Addresses root Qi imbalances']},
+          {t:'Chronic Conditions', b:['Helps immune, digestive, respiratory issues','Used for arthritis, asthma, migraines']},
+          {t:'Cancer Support', b:['Adjunct to treatment','May reduce chemo/radiation side effects']},
+          {t:'Injury Recovery', b:['Speeds post-surgical & trauma healing','Used in sports recovery']},
+          {t:'Emotional Health', b:['Reduces stress & depression symptoms','Improves clarity and emotional regulation']},
+          {t:'Metabolic Effects', b:['Can alter metabolic rate and appetite','Regulates endocrine/insulin functions']},
+          {t:'Immune Strengthening', b:['Boosts immune resilience','Balances systemic function']},
+          {t:'Practical Guidelines', b:['Comfortable clothing, regularity','Short daily practice beats sporadic long sessions']},
+          {t:'Cultural Timing', b:['Practice on birthdays & seasonal markers','Full moon recommended']},
+          {t:'Use with Other Therapies', b:['Combine with diet, TCM modalities','Avoid seeing Qigong as the only intervention']},
+          {t:'Evidence & Research', b:['Clinical studies and conferences exist','Growing but nuanced scientific literature']},
+          {t:'Patient Stories', b:['Anecdotal recoveries (e.g., Valerie R.)','Useful for motivation, not substitute for care']},
+          {t:'How to Find Teachers', b:['Seek lineage and training','Look for skilled master and clear lineage']},
+          {t:'Gifts & Art as Tools', b:['Use carefully crafted objects for support','Art/music can be part of an energetic prescription']},
+          {t:'Ethics & Safety', b:['Respect patient readiness','Avoid coercion; ensure consent and clear boundaries']}
+        ]
+      }
+    ];
+
+    // state
+    let currentSection = 0;
+    let currentSlide = 0;
+
+    // DOM refs
+    const sectionList = document.getElementById('sectionList');
+    const stageTitle = document.getElementById('stageTitle');
+    const stageSub = document.getElementById('stageSub');
+    const slideTitle = document.getElementById('slideTitle');
+    const slideBullets = document.getElementById('slideBullets');
+    const thumbs = document.getElementById('thumbs');
+    const slideCard = document.getElementById('slideCard');
+
+    function renderSections(){
+      sectionList.innerHTML = '';
+      sections.forEach((s,si)=>{
+        const btn = document.createElement('button');
+        btn.className = 'section-btn'+(si===currentSection?' active':'');
+        btn.innerHTML = `<div style="text-align:left"><strong>${s.title}</strong><div class=\"count\">${s.slides.length} slides</div></div><div class=\"count\">Open</div>`;
+        btn.onclick = ()=>{ currentSection = si; currentSlide=0; render(); };
+        sectionList.appendChild(btn);
+      });
+    }
+
+    function renderThumbs(){
+      thumbs.innerHTML = '';
+      sections[currentSection].slides.forEach((sl,idx)=>{
+        const t = document.createElement('div');
+        t.className = 'thumb'+(idx===currentSlide?' active':'');
+        t.onclick = ()=>{ currentSlide = idx; render(); };
+        t.innerHTML = `<div style=\"flex:1\"><div class=\"t-title\">${idx+1}. ${sl.t}</div><div class=\"t-sub\">${sl.b.slice(0,2).join(' • ')}</div></div>`;
+        thumbs.appendChild(t);
+      });
+    }
+
+    function renderSlide(){
+      const s = sections[currentSection].slides[currentSlide];
+      stageTitle.textContent = sections[currentSection].title;
+      stageSub.textContent = `Section ${currentSection+1} • Slide ${currentSlide+1} of ${sections[currentSection].slides.length}`;
+      slideTitle.textContent = s.t;
+      slideBullets.innerHTML = s.b.map(b=>`<li>${b}</li>`).join('');
+      document.getElementById('slideNotes').textContent = 'Estimated time: 1–2 min';
+    }
+
+    function render(){
+      renderSections();
+      renderThumbs();
+      renderSlide();
+    }
+
+    // controls
+    document.getElementById('prevBtn').addEventListener('click', ()=>{
+      if(currentSlide>0) currentSlide--; else { if(currentSection>0){ currentSection--; currentSlide = sections[currentSection].slides.length-1 } }
+      render();
+    });
+    document.getElementById('nextBtn').addEventListener('click', ()=>{
+      if(currentSlide < sections[currentSection].slides.length-1) currentSlide++; else { if(currentSection < sections.length-1){ currentSection++; currentSlide = 0 } }
+      render();
+    });
+
+    // keyboard
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowRight') document.getElementById('nextBtn').click();
+      if(e.key === 'ArrowLeft') document.getElementById('prevBtn').click();
+    });
+
+    // initial
+    render();
+  </script>
+</body>
+</html>

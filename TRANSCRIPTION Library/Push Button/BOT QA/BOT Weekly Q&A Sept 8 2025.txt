@@ -1,0 +1,393 @@
+Hello, Florencio, got some more folks joining us. So how's everybody doing today? How's bot trading been for you guys this week? Going well, yeah? Well, losers today, but excellent overall. Yeah, awesome.
+
+Yeah, I was like down 120 something bucks today, no big deal. Pretty decent week last week, so yeah, awesome. So what I wanna do today is I'm gonna show you guys kind of my process for, which by the way, I wanna ask real quick, how many of you guys, just unmute or whatever, how many of you guys are using the new bot portfolio? They're kind of recommended settings.
+
+Are you guys on those yet? Probably some of you. James? Yeah, Corey? Yes. Tim, Florencio, what do you do? Yeah, I haven't started yet.
+
+I'll probably start it this week. Okay, got it. So I can touch on that just briefly if you guys want.
+
+I have something on that one. You have something, like a question to me? Yeah, yeah, yeah. You want a comment? So I did go and download the portfolio stuff.
+
+I did a couple of the comparisons and the whole thing. But then when I went to go use it on the Ninja Trader, not everything got transferred over. So I went back and I kind of compared and there was a lot of them missing.
+
+So what I had to do is go back and unload everything and then reload. So I don't know if anybody else is having that same problem or if it was just something I did. Unload.
+
+Because I couldn't figure out. So let's say, for example, on the three thing I got was, I think it was 139, 140 and 150. But then I could only find 139 and 140 and 150 were missing.
+
+So I guess you're aware that they're not all like sequential in the same bot folder, right? So some might be mega orbs, some might be in mega snapback or, right? So they're not all going to be in the same exact folder. They might be in different folders. Okay.
+
+Does it make sense? Yeah, because I did think about it because- Because if you might see some missing, they may not necessarily be missing, quote unquote missing, might be a bot in like, like when you open up... Here, I'll show you. This probably might make a little more sense. But like when you open up like the mega orb folder, for example, here, let me share.
+
+So you guys are looking at like mega orb. Do you guys see that? So like when I hit templates, it's only, and click load, it's only going to show me the mega orb version. So there might be some numbers in here that might, you know, might be missing, right? So like, for example, in here, you're like, oh, where's number 31 to 107, right? And where's like 109 to 114? And those are bots that belong, those are settings that belong to other bots that are in different folders.
+
+Those are in... So I don't know if that's what you're talking about or- Yes, I think that's exactly what was happening. Okay, got it. Because I was like, wait a minute, why are they missing? So it could be that- they belong to different bots.
+
+Yeah, right, right, right. You're only looking at the bot related to the one you're looking at. So that's a good- Yeah, that explains it.
+
+We probably should... Yeah, we probably need to clarify. It's not that they're missing. They just appear to be missing.
+
+Yeah. I just couldn't find them. Yeah, yeah, yeah, no worries.
+
+So it's pretty cool. So, you know, for some of you guys who may have, you know, maybe you're downloading it for the first time, Amanda or some of you guys that are new, even if you were to just grab one or two, let's say you have two accounts, you run one account, one or another, and you don't even want to get into like multiple bots, you know, in a single account and do- I just want to keep it super, super basic. You know, there's still a pretty decent way to get started, right? So this is kind of how I think about it, how I got started was, I'm using- this is the one I'm actually using right now is VolumeBot 2.3, right? So I go into Templates, I click Load, and I'm using number 31.
+
+So I just grabbed the very first one and I'm in Central Time Zone, right? So as you guys know, they're all like labeled PST, meaning Pacific Time Zone. So because I'm in Central, I'm going to update these and add two hours. So I'm going to add two hours each of these two times, and then I'm going to save it as CST, right? So I'm going to just basically say, okay, add two hours of this, add two hours to this 14, and then I'm going to save it and call it the exact same thing, but I'm going to add CST on the end, right? And the reason I'm going to do that is, so when I go live, I'm going to go live with the CST settings.
+
+I'm going to leave the original one named PST. So whenever the team, if they update it for whatever reason, it kind of stays intact. Does that make sense? So we're going to keep the original, I'm just going to make a copy of it and change the copy.
+
+And then I can go live with, of course, my copy. Now, if you happen to be in the Pacific time zone, those of you lucky enough to be in that time, then you don't have to change any of the time zone settings. You got it made, right? So in this case, it comes with $100 of risk and $100 of max slot size.
+
+And so I actually changed this myself, just that this is recommended, do it or don't do it, however you want to do it. So I'm going to click run, and it comes with $13,000 of return with $3,000 of drawdown. I'm like, dang it, that's just over that.
+
+You know, if I was to put this in a 50K account, that would be over the drawdown limit, right? So I'm like, shoot, that won't work. Cause it's obviously over $2,500 limit. But let's go take a look at like, what would be maybe sufficient? Like what account size would that work in? You guys know that I like the 50K account.
+
+That's like my favorite, favorite, favorite. So let's take a look at Apex and let's take a look at what account it would work in. And I have a 300K, I have 300K accounts still.
+
+But what would allow over $3,000 of drawdown in the event you still have, you have a bigger account, right? In the account, in the event you have one. So 150K, really anything greater than 150K, right? So that would work in that size account. Now there's a few things I could do.
+
+Of course, I could shrink the risk or shrink the risk down and of course reduce my drawdown or I can go back to that $100 risk. And my, of course my return goes down, but also my drawdown goes down, right? Now keep in mind that this, obviously, you know, I could add 20 bucks to it and try to get a little closer to what the drawdown allows. But as you guys know, sometimes, you know, you don't want to tow the line of, you know, if your limit is 2,500, some of you guys, I know you're going to spend time trying to figure out how to get to 24.99 and 99 cents.
+
+I know you guys, I know you guys, some of you are going to be like, how do I tow the line? Like, just like give yourself some room, right? Just give yourself some wiggle room there, right? So in this case, go ahead. There's also one other thing I think is a value to bring up because I noticed this on one of my portfolios is it had a max drawdown of 3,200. But then when I looked at the drawdown spread over the three years, it only hit that once.
+
+Every other time it was under. So there are some cases where it's almost worth taking the risk just because over a long period of time, if it only hits it once, it's low risk. Sure. 
+
+Right. And as you guys know, there's advantages and disadvantages to funded accounts, right? There's advantages and disadvantages to using your own like real money brokerage accounts, right? Funded accounts, when you hit that drawdown, you gotta like start all over, like start back at zero. When, if you go over the some, there's no limits on your own brokerage account.
+
+And so if you lose a little bit more than maybe what you want, you don't start at zero and start all over, right? You just keep going and you can keep trading and continue on, carry on, right? So in this case, if I like this, and I'm like, you know what, I'm just gonna keep it simple. I'm just gonna run this by itself. I could absolutely do that, right? So you guys are probably thinking, well, Matt, over the course of, what is that? Like three plus almost, well, say three plus years, three years and eight months or seven months, I guess, right? Cause three years, seven months.
+
+Over that timeframe, you're like $8,000. That's like my grocery bill for three, right? You know, I guess not a lot of money, but keep in mind, you can do this across how many accounts, right? You do this across a lot of accounts if you want it. Now you can also, you know, there are other, there are other account sizes.
+
+There's a lot of other things you can do. And there are, I have seen numerous occasions where you add another bot to an account and I've actually seen the drawdown actually go down. Have you guys seen that? So like one bot will have a $2,100 drawdown.
+
+Two might have an $1,800 drawdown. Have you guys ever seen that where the drawdown actually goes down? The profit goes up and the drawdown goes down, right? You gotta find the right mix, okay? So let's just pretend for kicks and giggles, I like this. This is only trading four days a week.
+
+Ideally five, but four's, you know, the next best thing. And you guys can see here, profit taker three R, right? So when it wins, it wins big, wins. So what this is telling me is when I win, I'm gonna win plus $300.
+
+When I lose, I'm gonna lose $100, right? So even with that 31% win rate, that even with a lower win rate, that's still pretty decent odds, right? So again, what I'm gonna do is save my template, go in here, save, and save it as CST. Boom, save, overwrite, okay? Now what you guys are gonna see me do is I'm going to launch, which I already have it launched. Let me start over.
+
+I'm gonna launch. You guys see this? Can you see this screen? Your most remote desktop? So I'm gonna connect to my VPS. I'm gonna show you exactly like the process, like how I do this.
+
+And I'm launching it in another window that you guys cannot see apparently. All right, so let's do this. Let me, oops, where'd it go? Here we go.
+
+Let's, can you guys see this? So this is my actual VPS, V-P-S, okay? So if I like where I was looking at another screen, I have two monitors here, one here and one here. So I'm gonna do the easiest thing that I like to do is match up. I have my back test in one screen and my VPS in another, right? So I'm gonna do that real quick.
+
+I'm gonna tab, oops. Let me see, hang on. To minimize this, I'm gonna drag this over here.
+
+VPS back over here. Boom, boom. All right, so I'm gonna have like side by side, right? So it makes it easy for me.
+
+Now, some of you guys like to just copy and paste and upload to Google Drive and download. Easiest thing, I just like to keep it simple. So I'm gonna go to, oops, I'm gonna reset this, right? So I have, I'm gonna go into the volume bot.
+
+I think it's, yeah, volume bot. And I'm just gonna edit this one, right? I'm gonna edit this and we're gonna reset this strategy. We're gonna go to reset.
+
+And so remember, I'm using just, I'm looking at my other screen where my settings were. I'm gonna copy everything over exactly. This is how I do it.
+
+You guys may have a different way of doing it, but this is my jam, how I do it. So three, five, zero, zero, three, five, oh, five. Boom, six o'clock.
+
+Oh, six, zero, zero. 14, 30. And I'll show you one little, very, very important step here.
+
+14, 30. Scroll down. One.
+
+And then 15. And then three. Or M and Q. Very important that you're running on M and Q, right? Which I just realized that back test was on, whoo.
+
+Oh, okay. Well, I'll show you what I did wrong over there in a sec. So everything on, I like to run it on SIM202 over here.
+
+Click okay and go live, okay? Now I have my dashboard. Pretend I have it off. And I'm gonna sort this.
+
+I'm gonna run my PA in my, one of my other funded accounts. I'm gonna run it live. The PA is a 300K account.
+
+So 100 bucks, I'm gonna just run 200, right? So I'm gonna double up the risk. So 2X here, 1X risk here. And I'm gonna click go.
+
+Now you notice I did not check this, but I'm running the account protector over here. So I got my accounts up and running over here. And that's basically the first thing I'm gonna do, okay? Now the last piece of what I'm gonna do is super, super important, is I'm gonna get the name of that template, okay? I get the name of that template.
+
+And I forgot to do this. Name template, save. And I believe that overwrites it.
+
+Okay, there we go. So I'm gonna save that template. Do you guys know why I need to save that template name? If I just call this volume bot, I lose track of where this came from, what this was, like, in case I accidentally set up something wrong.
+
+What if I actually had it running five days a week? What if I accidentally have it running on the eight minute chart, right? Like, there's all kinds of things I can screw up. But I just wanna like verify and double check so that I know where it came from, right? Yeah, see, so I'm gonna name it exactly what I named it on my laptop that we're just looking at. Okay, does that make sense? Again, so we're good, okay.
+
+Check enabled, boom, okay. So I'm gonna minimize that and we're gonna go back into the strategy analyzer. Now, what you guys didn't notice and I just realized it was I was running this right here.
+
+MNQ, I just realized it, 24. You guys know, September 24 was a year ago. Yeah, so when I ran it, we had $8,000 of gain.
+
+But you know what happens when you add a new year? Like the right contract, Matt, instead of the wrong contract you get a few more dollars of gains, yeah, yay, right? So you get a lot more trades. The profitability stayed around that low 30s, but your drawdown stayed around the same, but your profit went up, which means what? Well, if I was to look at my analysis and look at it on a monthly basis, all right, there we go, monthly, you'll notice a few things. Number one, here is my monthly net profit.
+
+If you can stomach the first month as a loser, second month made a little, third month made a little, you made it all back in month number four and then it just continued, right? And then this is like the running checkbook, the cumulative, like 973 plus 136 equals 837, right? Plus 238 equals 599, negative, plus 257 brings you back to positive number and then positive number from then on, right? You guys see how that works? And it adds up to that 13,000. And what you'll notice is, remember first losing month, small winner, small winner, big winner. And then you got all this like mixed results going forward.
+
+But if I was to look at my, let's do daily and let's look at the, let's do it this way, cumulative. That's exactly what it's supposed to look like. And you can also do this on like, if you wanna do weekly, was look like weekly and you can say monthly.
+
+So each point represents a month, you can do it yearly. So you have, there's your four, three and a half, four years, one, two, three, four, four points, right? Or you can do it per trade, like every single trade, even multiple trades per day, you can see how rugged and what that looks like. Or you can just say daily or weekly is probably sufficient to smooth it out a little bit.
+
+Isn't that cool? And also, if you wanted to ever look at like what happened right here, where it kind of is probably your biggest drawdown, just looking at it visually, you can literally click on that, click on that point, right? And you'll notice that highlighted this row right here. And that's where you had a couple of weeks of just losing weeks in a row. But if you're able to sustain that, new highs, right? See what happens, folks, is we always have our own, our own, what's the word? Expectations that we put on the market, right? We say I have to make X amount per day, per week, per month.
+
+And we treat the market like an ATM machine. Like when I pull up, I expect to pull something up. And the market is like fishing.
+
+You may go and may not get anything. You might get a fish and eat all your other fish, right? Of course, that doesn't really happen with fish, but you understand what I'm saying. You have a losing trade that kind of gives back all your winning trades.
+
+But ultimately, if you're patient enough, you guys can see kind of what can happen. So let me see what kind of questions you guys have for me so far. Tim, what questions you got? The only question I have is really, it's not a detailed technical question.
+
+It's just sort of what other people are doing. So for me, I'm trying to create different portfolios that have different strategies or goals. But I do have cases where I have the same bot in both portfolios.
+
+And I'm just seeing what other people's thoughts are. It's like, if you're trying to diversify, is it not a good idea to have the same bot running in multiple portfolios? Or, I mean, are other people doing that as well? So how many total do you have? Like, how many portfolios? You have three? Right now, I just have two portfolios. Well, I guess three, but two that I made up for the portfolios.
+
+And they're running the same ticker in both? Is that correct? Yeah, yeah. It's basically, both portfolios have one bot that's identical in every way. And what is it about that that you like, that you've chosen? Well, that's what I'm questioning is whether I like it, whether I like the fact that I have two bots doing the same thing.
+
+Well, you're gonna have, yeah. I mean, it's like a double-edged sword. When you win, you're gonna win double.
+
+When you lose, you're gonna lose double. So if you like that or not, that's the advantage of it. There's also the disadvantage of it.
+
+So it's really up to you. But it's kind of the equivalent of adjusting the risk and doubling whatever setting you have. If you have it at 200, you're making it 400.
+
+But it's in two different accounts rather, right? So it's up to you. But I personally wouldn't do that, but it's your call on what you wanna do. Victor, what do you think? Well, I've been out, Matt, for the last week and a half at a conference.
+
+So I'm barely gonna start doing this. And I had one question for you because something in my brain isn't clicking with this thing. I'm excited to try my PAs on it because it's only a hundred dollar drawdown, which is great, right? You're supposed to- A hundred dollar risk.
+
+Yeah, a hundred dollar risk. Because you're supposed to cut your risk in half anyway. So there's no... So if I choose a portfolio and it's got an old mega orb and it's got a mega snapback, it's got two or three, right? So I need to look at the instructions again because I'm gonna do that tomorrow and I'm gonna start running these things.
+
+But just to be clear, how do I get those three bots working in one PA account? Is there... Do I combine them somehow? Again, I need to look back at the videos and all that. Yeah, so you unzip the... I can kind of walk through the process. for you guys, but essentially you're just running three bots in a single account, right? So one, two, and three or whatever.
+
+And when you go live, you pick the same exact account, right? PA account number one, PA account number one, PA account number one. That's essentially what you're doing. But if you run multiple bots in one account, you have to make sure that they don't... Like there's no conflicts, right? Correct, correct.
+
+There's not the same ticker at the same time, not running in the same day, not running the same asset, the same... So there's some of those types of things. There's ways around that. So like you can trade in queue and MNQ at the same time.
+
+You can trade some things on Monday, Tuesday, something else on Wednesday, Thursday, Friday, or you can trade something in the morning, something else in the afternoon. So as long as there's never ever a situation where one bot might go long and one bot might go short, because those will like step on each other's toes and you'll have like just a mess, right? They'll conflict. So that's the only thing you have to... They don't really communicate, so to speak, with each other.
+
+They just kind of are their own little silos. So you just have to make sure that they're not... There's never a situation where they would trade at the same time at the exact same asset, right? And what Tim, you're asking, you're running two portfolios and in each of those... In different accounts. There's one identical bot.
+
+One common denominator. Right, right. That's an interesting approach.
+
+And what you're saying, Matt, is that he's doubling his risk then, right? He wins twice or he loses twice. Right. Yeah, and it's equivalent of doubling the risk value, essentially.
+
+And the way... I like that, it might be okay. It just kind of landed that way. Like the way I designed it is one portfolio is like super aggressive, like trying to maximize profit, whereas the other portfolio is really trying to minimize, draw down and risk.
+
+And it just happened that those two bots checked both of those boxes. Or that bot checked both of those boxes when I built it out. Right.
+
+Yeah. Awesome. And one other thing, Matt.
+
+So we can do it that way, which is the way Tim is doing it. And you just showed... By itself. Just pull it off the shelf and run it.
+
+Yeah. And just update. So there's multiple ways to do this.
+
+Some people get bored with simple things. Some people like to keep it simple. Some people are bored with simple.
+
+So depending on which way you gravitate, there's a ton of different ways to do it. And so ultimately there's a spreadsheet that shows what all the bots are, and I can share it with you guys real quick with me. I open that real quick.
+
+Let's see. So I have a copy of it. So you guys should be able to see my screen.
+
+So it all starts right here with... Let me see. Can you guys see this okay? Let me see if I can make it a little bigger. So it all starts with like, what do you wanna focus on? And I say, okay, 50% of my... Half of it's important to me is net profit.
+
+Half of it is max drawdown. Those are like what's important to me, right? 50-50. And so when I check those or when I configure those, then it's showing right here what bots it's recommending.
+
+And so I can check those if I want and say, okay, well, those look good. And so this is showing you the template. Each template has like a number.
+
+So this is like an ID number, 04, 01, 02, and then showing you the instrument, what the profit was, drawdown. And as you go over to the right, you'll see some more of the values. The start time is always in PST.
+
+So Pacific time zone, just because that's Tracy and her team are working from everyone's kind of standardized the time zones to be Pacific time. Excuse me. And we added a new variable for end time.
+
+So each one of these is Pacific time zone. It used to be just start time and close time, right? When you wanna start and when you wanna go to cash. Well, we added a new variable called end time, which basically allows you to look for trades during a certain window.
+
+So like your start time and your end time, right? That's kind of what you can do. And then there's a new, sorry, this is the new one, but there's used to be start and close. So it used to run it start to close.
+
+Now you can do start close, end and close. So basically means it's gonna start looking for trades only through this time, and then just kind of coast with open trades through to the end. Does that make sense? So that's kind of the difference.
+
+And so the newer bots have this end time variable. If there's no end time variable, it's just gonna use close time as like the default there. So it's pretty nifty.
+
+And then the other piece is like whether you're doing the Sunday evening session, Monday, like what session you're doing there. And so what you can do is I can like, just as an example, check these. Again, these are if you're gonna use multiple in one account.
+
+So when I click on portfolio build, you'll see these are the ones I checked, right? These are the one, two, three, four, like the six, seven I checked, right? So I got seven that are checked. And you'll see here that this is like the bot, this is the bot template name. With dash PST on the end, right? So that's what I'm gonna use, update my time zone and save it as this dot CST.
+
+So essentially what you do is you get a zip file that has all these in it. And you just copy it, unzip it and put it in your NinjaTrader root folder. There's some instructions on how to do it.
+
+And boom, ready to go. And it essentially kind of looks like once you get it in there, it looks like this, like here's all the... And it won't override, like all these are ones that I've previously had myself. So it won't override anything you have, of course, because they're named uniquely.
+
+So unless you named your template exactly identically this, it won't override it, right? So the cool part is once you do that, if you're gonna run all of these in a single account, the next thing, once you've like checked what you want, the next thing is to look at the correlation. Where's the... Yeah, there we go. So it's showing that there's a little bit of a conflict with, let's see, this is... No, sorry, it's not a conflict.
+
+So what it's looking at is it's saying, okay, let's compare bot number 01 that I checked. Oh, sorry. Hang on, I got the old version of the spreadsheet.
+
+I'm sorry. Sorry, go back to portfolio build. Yeah, sorry.
+
+I got number one and number... I'm sorry, number four. Okay. So what this is showing is like number four here is checked, right? And then I have number 61.
+
+So I can say, okay, how does number four, how does that compare to number 61, which is down here? Yeah. Something is not... So what you're able to do is say, okay, how does this compare? And the black just means it's comparing to itself, right? So you'll see like this bot compared to number 24, right? And it's showing there's... If it's red, it means there's gonna be a problem, right? So that's ultimately the way that it works. So you can kind of check for conflicts.
+
+If you're just running one bot by itself, there's not gonna be any conflicts and you don't have to worry about that. That's why I'm suggesting, if you guys just wanna start with one, start with one. But they're also the same thing as recommended settings, right? So that's kind of what I started off with is the just start with one.
+
+See what you think. Start with one, add a second one. You add a second one, it's gonna get a little bit more, a little bit more complicated, not complicated, a little more to it.
+
+And then if you... Obviously we're running like 20 different accounts with 20 different portfolios. That can get a little complicated, a little bit complex. Please, if you're new, don't start there.
+
+You will drive yourself nuts. A lot to keep up with. Just start small, right? And on this page, you just wanna stay away from the red, right? The orange is fine.
+
+You could live with the orange and the green of course is great. Right, yeah. So like you're just comparing the one bot to the other that you have in the portfolio, yeah.
+
+Hey Matt? Yes. Oh, yes. Is that Jason? Hello Jason.
+
+Yeah, I got bounced out. But anyways, go back to portfolio build all sorted. Go back to the original one.
+
+Yeah, there you go. Because typically if you scroll down a little bit, all right, so you only highlighted the ones. I think, I don't know, maybe yours is just isn't updating or something that portfolio, that correlation tab because the correlation tab should just narrow it down.
+
+Yeah, it should be. Yeah, I think it's cause I have the, I think I have the older version still. Okay, gotcha.
+
+All right. Yeah. Yeah.
+
+Yeah, Victor, it gets a lot easier to look at the correlation. It just fits. Cause it only shows the yellow ones.
+
+Like all the green ones are hidden. So it's a lot less to look at. So, yeah.
+
+But essentially what we're trying to do folks is make it easier. So instead of you guys having to spend time, you can still run back tests on your own. We have some three, three and a half year back tests that we've run, put our own time into run and done, we'll call it pre-work to build some settings.
+
+And all you gotta do is change the time zone. The only difference, Victor, when you're looking at these or Dr. Joe is you can't have one tick data when you're going back three and a half years. They don't offer one tick data.
+
+So like the super, super fine data going back that far, they don't offer that. So it's just be mindful of that. So the good news is it'll run really quickly, right? A three and a half year back test will run fast.
+
+It's just, it's not the super, super fine, detailed type of data that you would typically want on a shorter back test. So that's okay. So Matt, I have a couple of questions.
+
+Sure, okay. So if you look at the profit factor here and that's one of your higher percentages, right? Let's say you're getting a, I don't know, let's say you pick out a two, you know, two something. And then you go to transfer it to NinjaTrader.
+
+And then that's where you actually see like, is it going long or is it going short? Like how's it getting to the two plus percent on the profit factor, right? So what I've been struggling with is, let's say as an example, you have long at eight, I'm sorry, at 1.8 percentage factor, but then you look at the short and the short's only at like 0.5 or something like that. How do you balance it out? How do you get the shorts to come up? Like, in other words, I don't know what settings to move or to play with. You're talking about these? How do these equal that? Is that what you're asking? But once you get to the Ninja, once you're doing the back test, like the, forget this, you know, you could just be doing an actual back test.
+
+So you've got your settings and you run it through and it comes back and it says, oh, you know, you've got a two point, whatever, profit factor, right? And you're like, oh, great. You know, I'm supposed to be over 2%. But then when you narrow it down and you look at it, you're looking at the longs and the long has a higher number than the shorts.
+
+So my question is. So in that case, I don't really, yeah, to me, this number matters more than these individually. The reason is because some market conditions, you guys have probably seen this, is there's some market conditions where the longs are gonna work better than the shorts.
+
+And there's some where the shorts are gonna work better than the longs. That's just market conditions. You can't like shape that at all.
+
+It's just how it is. And so because these bots can go either direction, when the market cooperates and starts being more consistent, the bots will continue to work in long or short and do better in one or the other. That's basically it.
+
+You can't, there's no setting that you can make it work better long or make it work better short, if that makes sense. Yes, because that was my question. Because in other words.
+
+Yeah, because ultimately we don't really wanna have a bot that like you want it to be flexible enough to do either one, essentially, right? You don't wanna make a bot so rigid that it works really well in the back test but does terribly in the real world. Like it worked really well historically, but that's terrible in real world scenario, real world situations, right? Right, I get what you're saying. So I was looking for something that was a little bit more even.
+
+You know what I mean? I was looking for- Well, it's gonna all depend on the back test. Yeah, but it's not, I mean, that's not like a thing though. Like it's not, like, I would say certain market conditions are gonna be better than others.
+
+It's like, you know, certain years it's a little cooler in the winters than warmer in the summers. It's not like something you can control or change. It just, it is what it is.
+
+Does that make sense? Okay. I don't know if it's like even is, being even isn't really like a requirement. Right, it wasn't like even, but close to each other.
+
+So I guess at this point- No, it's not something I would want. Yeah, it's not something I would have a requirement for. Like there are, you know, you guys can have your own requirements but that's certainly not something we would mandate or recommend.
+
+It doesn't, so like you're having like a requirement that's not really correlated to anything. You know what I mean? It's like, it has to do this, but that's like, unless you have some like data or whatever, I haven't really seen that, you know, even, you know, evenly long or evenly short equals better success. I haven't really seen that.
+
+The only reason why I'm asking is cause I've seen some really good ones, right? And they have like, again, a profit factor of over 2%. And I'm like, oh, this is great. But then you start to look at it and then the one that's short or long, you know, either way, the highest one or the better one has a really good profit factor, has really good profits.
+
+And then you look over to the other column and it's red and it's like a big chunk of- Right. And are you doing, what length back tests are you doing in that scenario? I couldn't give you a specific one because- Is it like three months or longer? Do you know? At least three months. Usually I go- You're doing short.
+
+Yeah, but if you do like multiple years, they're probably gonna be a little more balanced. Right. That's what I'm saying.
+
+If you zoom into like a little three month chunk of time, the markets can just be screaming higher or screaming lower, either one. And one's gonna work better than the other, right? So the temptation would be to turn a setting and say, okay, always make it long or always make it short. The problem is in the real world, if it ever changes, you don't want a bot to always go long when the market's always like falling off a cliff and going, right? You don't wanna be in a position where it's hard-coded to zing when you're zanging, right? You don't want it to always go one direction when the market's always going the other.
+
+That's why the bots, they will adapt and they'll go long or short, either one. But as far as like, if you do a bigger back test over a longer period of time, like a year or two years, you'll see them be more balanced. If you're hyper-focused on like 90 days, that's probably where you're gonna see more where one worked better than the other.
+
+That's probably what you're talking about. Well, I don't know if you guys remember in, what was it? 2022, the market just like fell off a cliff. All the tech stocks were down 70, 80%.
+
+Do you guys remember that? Anyone remember that? Like no matter what you bought, it went lower. I'm talking about 70, 80%, like billions of dollars. You remember that in 2022? So like you could short almost anything and you'd make money, right? But in 2023, 2024, you can buy anything and almost make money.
+
+And that's what I'm saying. Like there's just certain market conditions that we don't control, that there's certain environments where the market is just trending one way or the other and you just go with it, right? And it works in a certain direction and it is what it is. And so that's, if you're hyper-focused on like a 90-day window, then of course, you're gonna see it a little more one-sided or the other.
+
+But over a bigger multiple years, you're gonna get all of that mixed into a little more even ball. Okay, understood. Yeah, I guess basically what you're saying is it's not bad that it's like that.
+
+So in other words, don't get too focused on that and just let it run. If it's giving you a high profit factor over a longer period of time, it'll eventually balance itself out. So when the market turns one way, you're already covered on the shorts.
+
+And if the market turns the other way, then you're covered on the longs. Exactly, yep. Yeah, because I don't know if you guys have ever watched the bots.
+
+How many of you guys have ever like watched them trade and you maybe have a little bit of manual trading experience and you're like, if I was doing it, I would definitely go long here and it goes short and it wins. Have you guys ever like mentally said, dang it, it did the opposite of what I would have done and it won, right? Or maybe it's the opposite. It did exactly what you would have done and it lost or something, right? And so like ultimately, you don't really know how things are gonna play.
+
+I know it has a magic ball, but in our case, we have these probabilities of this has happened. And in this case, we're looking at 1,213 trades and the historical nature of what's happened 1,213 times to give us a little bit of an edge. So you guys can agree that it's a little bit better than a 50-50 eeny, meeny, miny, moe kind of odds to implement this strategy on this ticker using these settings, right? We have a better than average, right? And so that's essentially what we're doing.
+
+We have a statistical probability that's in our favor, right, that it's gonna work better. In this case, even though it's 31%, where it's a low percentage profitable, this is lower than 50% because this is so high. Now, if I was to change this to like a lower number, this would definitely go up a lot, right? I'm saying I'm only counting a win at 3X of my $100.
+
+So $300 is the only thing I'm counting as a win. $299 is unacceptable. That's essentially what I'm saying, right? All right, so a question there.
+
+So right now you have the setup right here at the build. Yeah. The 50%, 50%, right, on the profit, on the drawdown.
+
+All right, is that just something that you just threw out or is that something that you really kind of put high priority on? Or is it just depending on what you have? So you have 50, 50, right? On the profit and on the drawdown. My question is- 50, 50 on the profit and the drawdown. Yeah, on the- The drawdown is 3,000, the profit is 30,000.
+
+No, Matt, it's on your thing, your portfolio build on the spreadsheet. You got percent profit, 50%, and max drawdown 50%. Oh, oh, oh, yeah.
+
+So when you put that down, of course, everybody has their own priorities. I understand the whole thing. However, did you just put 50, 50 just to throw out numbers or what are you looking for? So 50, 50, yeah, 50, 50 is like the default, yeah.
+
+Yeah, that's what I like. That's fine, that's what I like, yeah. So like- So like part of it is like some people, some people would rather have less win, less winning net dollar amounts as long as they can quote, unquote, win, right? Because some of you guys who are brand new traders, all you really want to know at the end of the day is did I win, even if it's a dollar? Like you'd rather win a dollar every day than four losing trades than a huge winner, right? Because there's this emotional connection from losing that's usually twice as negative as the winning emotion of a winning trade, like the positive emotion of a winning trade.
+
+So like some people, they just don't like to lose ever. And so they'd rather have a lot more winning trades, even if they're tiny than, you know, what am I trying to say? It's almost like, to me, I've been doing this long enough and if I lose money, real money, prop fund, PA account, eval accounts, I'm okay. The emotions, I've been doing this for some years.
+
+So I got some experience, but to me, I'm not emotionally connected to the trades. If I have a losing day and you meet me, you know, on the street and shake my hand, you'd have no idea if I won or lost because it doesn't affect me. It is what is, you know? And what you have to do, especially when you guys are ready to become full-time traders, you have to accept all outcomes.
+
+Most people say they accept all outcomes, but when it gets close to actually dealing with a negative losing outcome, they're like, no, no, you know? But you have to accept all outcomes. And that comes with, you know, trading options. Some of you guys are in the options program, accepting all outcomes.
+
+But for me, I'm okay with this. I don't, you know, I don't really care about, I have to have a very high winning probability percentage. It doesn't matter to me.
+
+These are even for me. And that happens to be the default. That's a long way to your answer.
+
+Yeah. Well, right. But I guess what I'm trying to get to is what really gets a funded account across the finish line? In other words, you can't just say, I'm really willing to throw a bunch of stuff out there, but what really kind of has more weight, I guess, is where I'm going with that.
+
+I understand. I've done it with, yeah, I've, so like you can do the same exact thing in one month that worked really well, and the next month it doesn't work as well, right? And the reason is because of this thing called game theory where your inputs are affected by everyone else in the world, everyone else in the markets inputs at the same time, right? So you can be on point and do exactly what you're supposed to, have a huge winning month, do the exact same inputs the next month and lose a little, right? It just, that's where you have to accept all outcomes. And so there's no, this one plus one equals two, and these inputs automatically equal these outputs.
+
+You have probabilities, but there's no like guarantees. That's where it just, it's a little bit different. It's like, this is like poker where there's some hidden information.
+
+Not everyone knows what everyone, what all the other participants are doing, right? You guys may have been in Tracy Ball's class where she talks about the book called Thinking and Bets. Have you guys ever heard of that book? Thinking and Bets? Have you guys, have you guys ever heard of that book? It's a cool book, right? It, Amy Duke's Thinking and Bets. And the idea is that trading is a lot like poker where sometimes you just get lucky.
+
+You gotta get a lucky hand. Doesn't mean you did anything right. Doesn't mean you did anything wrong.
+
+Sometimes you can play everything right and still lose. Right? Same thing with trading. There's no this, you know, one plus one equals two.
+
+And if I do this, it's automatically gonna be this. It's all just probability stacked in your favor. Now, the difference between an experienced trader and one who gets lucky from time to time is doing this over many, many years.
+
+And who, like, anybody can get lucky and win one trade of one hand of poker, but can you do that consistently for years? That's a totally different thing, right? Especially high stakes poker. Does that make sense? So to answer your question, Florencio, I'll let some of you guys who have funded accounts, like, I'll let you guys answer some of the, what you guys did to get funded accounts. I've got funded accounts and made $26,000 in January.
+
+And then I've done the same thing and lost $200 in a month. Same exact setup. So it is what it is.
+
+So, yep. I would say, can you guys hear me? Yes. You have to speak up a little bit.
+
+Oh. So I would say that, you know, for me it's, you know, you have to play around with those percentages, you know, whether it's, can you guys hear me? I think I lost. Oh, okay.
+
+You have to play around with those percentages, but then it builds the portfolio for you, right? And then you take all that data and you put it in the strategy analyzer. And that's where you can tell what your potential drawdown is gonna be. So ultimately it really winds up being, can I get something that's gonna be mostly profitable and not blow my account out every month? So, you know, like if you have a $50,000 account, you don't wanna be trading micros with NQ and YM because the drawdowns could be 10, $13,000.
+
+So you wanna trade micros and you wanna try to find the one with kind of the least drawdown that happened over the past three years, let's say. And yeah, I mean, typically that drawdown might've only happened once and it might've happened in 2023 or something like that. So chances are it's, you know, let's say the drawdown was 2,500 or something like that two years ago, you know, and the more recent drawdowns is kind of like 15, 1,600, 1,800, then, you know, you probably got a pretty good portfolio.
+
+Could there be an opportunity where it blows your accounts? Yeah, but the chances of it happening, you know, once out of, you know, the chance that it happened once out of maybe, you know, 36 months or something is a good opportunity to still wanna play that portfolio. Does that make sense? Yes, so you're basically trying to stay in balance. You could say that.
+
+You're trying to stay in balance within the guidelines and the guidelines is, okay, you don't wanna get, you don't wanna hit the drawdown, right? But at the same time, you wanna make a profit. So you have to play this balance in between both of them without having to really overdo it so you don't wanna extend your profits or you don't wanna get a big profit taker because that could work against you when it starts going the other way, right? So when it goes down, now you're gonna reach that bottom a lot faster because you're trying to get, you're trying to climb to the top faster, but it also means that you can drop a lot faster. Exactly, exactly.
+
+Right, and what you were saying is that if you look back at the historical data, then you wanna get the one that had the smallest falls, I guess you could say, or the least amount of falls and you stayed within balance. I don't know. Exactly, exactly.
+
+If you had one that was getting like $2,500 drawdowns like eight times in the past 36 months, that's probably not gonna do you any justice, right? Because who knows if this month or next month is gonna blow you out. So, but maybe if it only did once, maybe twice in the past 36 months, well, that's a fair risk level. So you could probably take your chances.
+
+And the goal, I think, the goal too is really, let's get the portfolio, like just because you, let's say you get funded and then you get from 50,000 to 53,000, maybe you just don't take any money out, and you just keep rolling the dice with it and you keep, and you, I don't know if my computer just rebooting here or something. Can you guys still hear me? Yeah, you're good. I can hear you.
+
+Yeah, my computer is a little flaky, but maybe you just keep going. So you grow that portfolio maybe over the next three or four months to like, I'm making it up 56, 57,000. And then maybe you can start taking a little bit of money, but then maybe once you grow it, I'm making it up to 60,000.
+
+Maybe now you can step it up from micros to minis and make more profit on that. And now you keep escalating your, compounding your profit levels, let's say. Right, well, I'm barely trying to get the first one going.
+
+I've already purchased a funded account. I just haven't gotten it off the ground yet. So I'm still playing with the settings and that's, there's a lot of confusion there.
+
+Just trying to figure out what's what, but I think I'm getting a little bit better grasp of what I need to be looking at. And it really isn't anything in particular other than to don't step out of balance is really what it comes down to. Exactly.
+
+But you don't know if you're gonna step out of balance. You can only try to improve your possibilities of not doing it. Yeah, yeah, and that's why you take those, you take all the, let's say six things.
+
+And ultimately it's just, there's this yin and yang of how risk, how much risk you wanna take. If you get too heavy and you blow the account, you gotta start back at zero, right? Start all over. If you don't take enough risk, then it takes a while to get an account funded.
+
+So, I mean, I've tried to stay in the middle where it's kind of like the slower path is the quickest path sometimes. But there's also people who I know have got accounts funded in a day. Now, they got super risky and took obscene amounts of risk and got lucky with a couple of trades, but that's not something you can repeat over and over and over and over, right? And in the funded account world and the PA accounts that some of us have, that won't fly because they have different rules against, like a 30, they have certain percentage rules that you can't have.
+
+You can't have huge windfall days or they won't allow you to have payouts, so. Well, there is a lucky winner and safe area on it. I mean, it's a hundred, I treat eval accounts much differently than I treat PA accounts.
+
+I take much greater risks with my eval accounts because they're only $18 for crying out loud. I could burn through a lot of them at that point. But once they become funded accounts, it's all defense, right, you lead with your defense.
+
+Defense wins championships. You don't take any chances with your PA accounts, but there's a million ways to skin that cat. Yeah.
+
+Yeah. Cool. And just, as long as you get started and just start with one account on one bot and watch it go.
+
+I know I've had some folks that are, some folks like jump in right away with four accounts and then some folks take a while to get started. So, just obviously there's no perfect way to do it, but as long as you're getting started with something, you'll get the hang of it. So, but I'm almost over my time, guys.
+
+Did you have any other questions for me? Otherwise I'll get this video posted here shortly. Yes, one last question real quick, Matt. You mentioned that you're constantly updating the portfolio of file.
+
+How do you know- Oh, so every month, yeah. We'll update. So, it's just basically finding new ones, like new settings that we'll be issuing or updating.
+
+So, whatever's out there right now, that's the latest. Yes. Yeah.
+
+Okay. Yep. Great.
+
+And really, as long as that works, you just add a month to the date and you can rerun your own back test. So, but yeah. Cool.
+
+Well, I'll be doing another class on Thursday. Same time, same place. So, you guys might have some specific back tests you want us to look at and I'll see you guys there.
+
+Thanks so much. Have a great evening, guys. Yep.
+
+Thanks.

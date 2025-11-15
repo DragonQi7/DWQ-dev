@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Moon — Meditation & Healing</title>
+
+  <!-- Root theme design tokens -->
+  <style>
+    :root {
+      /* 🌈 Core palette — change these once to theme your site */
+      --bg1: #0f2027;
+      --bg2: #203a43;
+      --bg3: #2c5364;
+      --accent: #87ceeb;
+      --text: #e8f4fd;
+
+      /* 🖋 Fonts */
+      --font-title: 'Cormorant Garamond', serif;
+      --font-body: 'Lato', sans-serif;
+
+      /* 🔮 Motion & depth controls */
+      --glow-size: 600px;
+      --orb-color: rgba(255,255,255,0.15);
+    }
+
+    /* === GLOBAL BASE === */
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    /* === HERO / BANNER SECTION === */
+    .banner {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* 🌀 Animated gradient flow background */
+    .banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(270deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 600% 600%;
+      animation: gradientShift 20s ease infinite;
+      z-index: 0;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 🌕 Breathing aura behind logo */
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--glow-size);
+      height: var(--glow-size);
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(173,216,230,0.25) 0%, transparent 70%);
+      animation: pulse 6s ease-in-out infinite;
+      z-index: 1;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* 🌠 Floating "spirit orbs" */
+    .orb {
+      position: absolute;
+      background: radial-gradient(circle, var(--orb-color) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: drift 20s ease-in-out infinite;
+      z-index: 0;
+    }
+    @keyframes drift {
+      from { transform: translateY(100px) scale(0.8); opacity: 0.2; }
+      to { transform: translateY(-200px) scale(1.2); opacity: 0.5; }
+    }
+
+    /* different orb sizes and timings */
+    .orb:nth-child(1) { width: 80px; height: 80px; left: 15%; bottom: 5%; animation-delay: 2s; }
+    .orb:nth-child(2) { width: 120px; height: 120px; left: 70%; bottom: -10px; animation-delay: 6s; }
+    .orb:nth-child(3) { width: 60px; height: 60px; left: 40%; bottom: 20px; animation-delay: 10s; }
+
+    /* === LOGO & TEXT === */
+    .logo {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      z-index: 2;
+      position: relative;
+      text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.8;
+      z-index: 2;
+      position: relative;
+    }
+
+    .tagline {
+      margin-top: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      z-index: 2;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="banner">
+    <!-- floating orbs -->
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+
+    <!-- centered content -->
+    <div class="logo">Blue Moon</div>
+    <div class="subtitle">Meditation & Healing</div>
+    <div class="tagline">“Flow in stillness, and stillness in flow.”</div>
+  </section>
+</body>
+</html>

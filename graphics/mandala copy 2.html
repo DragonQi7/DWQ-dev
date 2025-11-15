@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moon Meditation & Healing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --bg1: #0f2027;
+          --bg2: #000405;
+          --bg3: #2c5364;
+          --accent: #87ceeb;
+          --font-main: 'Playfair Display', serif;
+          --font-sub: 'Source Sans Pro', sans-serif;
+        }
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+            color: #e8f4fd;
+            overflow-x: hidden;
+            min-height: 100%;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        /* Animated flowing wave background */
+        header.banner {
+            position: relative;
+            padding: 4rem 1rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        header.banner::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 300%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 70%);
+            animation: drift 12s infinite linear;
+        }
+        @keyframes drift {
+            from {transform: translate(-25%, -25%) rotate(0deg);}
+            to {transform: translate(25%, 25%) rotate(360deg);}
+        }
+
+        /* Center content */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        .logo-symbol {
+            width: 90px;
+            height: 90px;
+            position: relative;
+            animation: gentle-glow 3s ease-in-out infinite alternate;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 2;
+            border: 2px solid rgba(135, 206, 235, 0.3);
+        }
+
+        .mandala-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .rotate-slow {
+            animation: rotate-clockwise 20s linear infinite;
+        }
+
+        .rotate-medium {
+            animation: rotate-counter 15s linear infinite;
+        }
+
+        .rotate-fast {
+            animation: rotate-clockwise 10s linear infinite;
+        }
+
+        @keyframes rotate-clockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotate-counter {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+        @keyframes gentle-glow {
+            0% { 
+                filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.6));
+                transform: scale(1);
+            }
+            100% { 
+                filter: drop-shadow(0 0 25px rgba(135, 206, 235, 0.9));
+                transform: scale(1.05);
+            }
+        }
+
+        .brand-name {
+            font-size: 3.2rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            font-family: var(--font-main);
+        }
+
+        .brand-subtitle {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin: 0.2rem 0 0 0;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-family: var(--font-sub);
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            font-family: var(--font-sub);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+            }
+            
+            .brand-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .logo-symbol {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header.banner {
+                padding: 3rem 0.5rem;
+            }
+            
+            .logo-symbol {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .brand-name {
+                font-size: 2.2rem;
+                letter-spacing: 1px;
+            }
+            
+            .brand-subtitle {
+                font-size: 1rem;
+            }
+            
+            .tagline {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="logo-container">
+            <div class="logo-symbol">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="mandala-svg">
+                    <defs>
+                        <linearGradient id="mandalaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#add8e6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#e0f6ff;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="mandalaGlow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Outer ring -->
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="url(#mandalaGradient)" stroke-width="2" opacity="0.6"/>
+                    
+                    <!-- Petal layer 1 -->
+                    <g transform="translate(100,100)">
+                        <g class="rotate-slow">
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(0)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(45)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(90)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(135)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(180)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(225)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(270)"/>
+                            <path d="M0,-80 Q20,-60 0,-40 Q-20,-60 0,-80" fill="url(#mandalaGradient)" opacity="0.7" transform="rotate(315)"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Middle ring -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="url(#mandalaGradient)" stroke-width="1.5" opacity="0.8"/>
+                    
+                    <!-- Petal layer 2 -->
+                    <g transform="translate(100,100)">
+                        <g class="rotate-medium">
+                            <circle cx="0" cy="-50" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="35" cy="-35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="50" cy="0" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="35" cy="35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="0" cy="50" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="-35" cy="35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="-50" cy="0" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                            <circle cx="-35" cy="-35" r="8" fill="url(#mandalaGradient)" opacity="0.8"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Inner geometric pattern -->
+                    <g transform="translate(100,100)">
+                        <g class="rotate-fast">
+                            <polygon points="0,-30 15,-15 0,0 -15,-15" fill="url(#mandalaGradient)" opacity="0.9"/>
+                            <polygon points="30,0 15,15 0,0 15,-15" fill="url(#mandalaGradient)" opacity="0.9"/>
+                            <polygon points="0,30 -15,15 0,0 15,15" fill="url(#mandalaGradient)" opacity="0.9"/>
+                            <polygon points="-30,0 -15,-15 0,0 -15,15" fill="url(#mandalaGradient)" opacity="0.9"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Center circle -->
+                    <circle cx="100" cy="100" r="15" fill="url(#mandalaGradient)" filter="url(#mandalaGlow)" opacity="0.9"/>
+                    <circle cx="100" cy="100" r="8" fill="#ffffff" opacity="0.8"/>
+                </svg>
+            </div>
+            
+            <h1 class="brand-name">Blue Moon</h1>
+            <p class="brand-subtitle">Meditation & Healing</p>
+        </div>
+        
+        <p class="tagline">find your inner peace under the celestial light</p>
+    </header>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99338c0fb6157a9c',t:'MTc2MTI0Njc1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

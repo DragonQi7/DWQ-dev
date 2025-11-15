@@ -1,0 +1,339 @@
+In a situation where we're in a trade. You have a question? Go ahead. Yeah, if we're in a situation where we're in a trade and we lose connection, we have to shut down connection and reconnect.
+
+And in the process, all of our bots are shut down. When we turn it all back on, it does not pick up as far as like, if it's got a trailing stop, the trailing stop is dead and done at that point. Right. 
+
+Unfortunately, yeah. Because it kind of loses where it was. But obviously, if you have like a stop loss and a take profit order open, those should, assuming those are out there when the disconnect happened, that'll stay. 
+
+Those live at the broker. So those should stay. Obviously, if it gets disconnected before those are thrown out there, then those wouldn't exist. 
+
+But yeah. Yeah. Okay.
+
+Yeah. I just wanted to make sure the trailing didn't like magically pick that up. And I was pretty sure that was the case.
+
+No, because they kind of lose track of like where price action is when it starts tracking the trailing. It's kind of like a semi-manual process there. So yeah.
+
+Yeah. Cool. On the trade copier, would it lose? It would lose the connection from your Sim 101 account to your trade copied account? Well, no, the Sim 101 always lives on your desktop.
+
+So you might notice if you have a VPS, you have another Sim 101 that lives on your VPS. The Sim 101 is always like local to the software, local to NinjaTrader. But the ability for the bot to connect to it and then connect back out to the follower accounts, of course, that would be broken.
+
+So it appears that it lost connection, but it's kind of like the thread between them all broke, if that makes sense. Yes. Okay. 
+
+Awesome. Okay. So you guys may have seen, let me see.
+
+You guys, can you see my screen? I think you can. Yeah, yeah. So you guys may have seen us talking about this.
+
+And I got a little more clarity from Tracy, like what this is. But essentially what you can do, there's two main tools that we have. And just to go over this again, I'll touch on it briefly, is we have the Portfolio Builder and the Portfolio Analyzer, right? Two different tools.
+
+We actually have another one that's not out yet called the Tracker, which we'll talk about in a week or two. But ultimately, this Builder here, this Portfolio Builder is designed to replace that spreadsheet that was circulating, right? Where you make a copy of it and you can kind of make your own changes. That's been replaced with the Portfolio Builder, right? And at the top here, you'll notice that I can check minis or micros.
+
+If you're trading small risk, you probably want to stay with the micros. So you check that and only the green will appear. If you check the minis, just the blues will appear.
+
+And the difference is the tickers themselves. You'll notice NQ, so the NASDAQ or ES or YM or crude oil, CL, right? Some of those are, or GC, gold. Some of those are minis.
+
+And then the MNQ is the micro, right? So most groups like Apex have like a 10 to 1 ratio of, let's see, where's my tool? So you can trade for every one micro, you can trade 10 over here, right? So if you have four here, you can trade 40 over here. You got 40 over here, you can trade 400 over. It's usually like a 10 to 1 ratio, okay? As far as the number of contracts when using Apex between micros and minis, okay? Now, if you're using really small risk, micro is the way to go.
+
+If you get up into 700, $1,000 plus risk, switching to the minis are probably a little better, save you a few dollars on commission, okay? Again, just to reiterate, we're not gonna go through all this again, but the builder here is basically to replace the spreadsheet, okay? Now, what I did was I checked all the micros that had no conflicts, essentially. So I said 50-50 waiting, give me all the micros. And then what I do is I pretty much just loaded it here.
+
+We're gonna go through this here in a sec. So we're looking at all the micros. And you'll notice here on the left, we're looking at about $25,000 return and about 10% of that roughly being drawdown.
+
+Now, keep in mind, this is not like optimized or anything, it's just I picked everything, right? We're gonna go and look in a second and we're gonna refine this. I think, I believe this was 11. Oops, individual strategies, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11.
+
+Yeah, 11. So basically 11 that are non-conflicting, okay? So what I want you guys to think about here is this is $25,000. I'm gonna show you this cool trick.
+
+I'm gonna write it up here on my screen. And 25.85 of drawdown and this is cash money, right? Net profit, net return, okay? 25.85, okay. Now, you guys probably have seen this, the portfolio generator.
+
+We're gonna play with that a little bit more tonight and I'll show you a little bit more about some cool things that are worth noting, okay? So number one is I have preloaded 11 strategies here, right? We'll call it 11 strategies. And in those 11 strategies, I can tell the system here that my drawdown and my monthly gain. So obviously if my drawdown is $2,500 for a 50K account and I want a minimum of let's say $500, I have 11 strategies, right? And I can say I want a minimum of three and let's say a max of, well, let's say a max of 10.
+
+This was gonna take every possible one of these 11s, every single one and run every possible combination, right? So it's kind of, think of it like it's optimizing all the settings against each other, right? You know how you can optimize a setting of values, all the possible values, right? Especially when you're like looping through all the timeframes, like a five minute, a 10 minute, a 15 minute, or a one minute, two minute, three minute, four minute chart, right? You can kind of loop through and see all the possible combinations. Now what this is gonna do is because I have 11 right here loaded, you don't see 11, but the next version will show you that I have 11 loaded. It's gonna find all the possible combinations and it's gonna use my criteria right here, which is basically I want anywhere between three and 10.
+
+So no more than 10, obviously I have 11, and then no less than three, right? So obviously a bot with just one is not really a portfolio, it's just a solo bot just hanging out, doing his thing, right? So what I wanna show you guys is when I go from 11, 11 bots down to, oops. So when I tell the system, I want you to find all the combinations and show them to me, this is ranked as number one. What does that mean? Well, remember on the previous screen, I did 50-50 weighting between net profit and drawdown, right? That was my 50-50 weighting, right? And what you'll notice is I had previously with all of them, I had 25,886, right? And this will show you if I open it up, which bots were here.
+
+So what I can do is I say, okay, I have all the micros kind of loaded. I'm gonna save this one and I'm gonna call this the MVP combo, right? I'll do underscore just to be cool. The MVP combo, okay? Boom, boom, and we have it right here, okay? Now, the reason that that's important is you guys remember just a second ago, we had 136, sorry, we had a 25,886 and now we have 136,000.
+
+Do you guys think that removing one of these bots is actually trading less and making more? But look what else happened to the drawdown here and here. Does anyone notice? The drawdown actually went down a little bit, but the net profits went up five, six X. You guys see that? So this is kind of the power of the portfolio generator is you can manually choose the bots, save the template, bring them in here, and then you can kind of reshuffle them and also eliminate them, right? And this will kind of, it's like another way to look at it, like a different lens to view this, okay? So in this case, you'll see all the different strategies are here. If I was to open this all up, it's listing every single possible strategy.
+
+So you'll notice is 253 is right here, 253, 118, 118, right? And then 018 is right here, right? 018. So all that to say is that I bet you guys didn't ever think about what happens when you trade less, you actually make significantly more, like in this case, significantly more. Would you guys rather have less trades, which also means less commissions, and significantly more money being generated, or would you rather have the original that I set up just because I checked everything, I didn't really look at it, just checked everything, say, let's do everything.
+
+You guys see the difference here? So I'm going to pause and see if you guys have any questions, if this makes any sense, because I haven't really gone over this in depth in this group before, but let me know what you guys think. Nobody. Amanda, what do you think? Tim, Charles, Jason? I know this is... I don't want to... I'm just going to... Is it possible for you to actually just do all that over, but just quickly, just... To do what again? Start again? I mean, kind of, yeah, but just go like twice as fast, and just go... This is where I... Just so we can just... I can understand exactly... I know I've missed something, and it's just probably a couple of words here and there, but... So you start with the builder.
+
+And I'm new to this. Yeah, no worries. And I use 50-50.
+
+That's kind of like my... So you can use this button here, save as default, and that'll basically save whatever you have here. This is like my... This is kind of where I start, right? And at the end of the day, these all have to add up to 100. It's basically what is your weighting.
+
+So profit factor, percentage profit, profit per month, and win-loss ratio. Some people want just a very high win-loss ratio, right? You might make $2 per trade, but they just want a very, very high win-loss ratio. To me, I don't know that that really matters.
+
+It's not super important to me, but net profit in max drawdown 50-50, okay? So what I do is I click micro here on the left. Now, as I check all of these off, what shows up in red is a conflict. So if I check one of the red ones, you'll notice it's showing that I have a conflict, right? Why do I have a conflict? Because I'm running M and Q at overlapping times on the same day.
+
+Monday, Tuesday, Wednesday, Thursday, right? So what I'm saying is, okay, I'm gonna pick all of those that aren't conflicting. So I'm gonna check them all. And that's kind of how I came up with the 11 to start with.
+
+Eight, nine, 10, and 11. There's all of them right there. So I have no more that are here.
+
+So I basically have 11, right? And that's kind of where I saved the template. And that's where I got my 11 to begin with, right? So I save that. Let me go over here into this screen.
+
+And I call it micro all. We're gonna load those, boom. And we're gonna come back into here.
+
+Clear. I think your mic just- We just lost your audio. Yeah, we lost your audio about 20 seconds ago.
+
+Wait, can you hear me now? It's choppy. All right, I might just get rid of... What about now? Hello. There you go.
+
+I'm not sure what it is. These fancy mics. I don't know if it's the wiring or what, but it's something if I cut in and out.
+
+I'll try to go fast. So 50K account, we're allowed 2.5K of drawdown. And our goal is 3K.
+
+So because of that, let's say I have this account. Drawdown. Drawdown again.
+
+Dang, it's in and out. If I just don't use my microphone at all. Can you hear me like now or no? In an echo.
+
+Yeah, but yeah, we can hear you. I'm not sure what to do. Because, hang on, let me see.
+
+My power is on. I don't know. Get the latest version.
+
+I have to go to the settings again with Tracy. I don't know, I'll just do my best. Just holler at me.
+
+I guess that's all we can do. So I'm basically going to just take my $2,500, plug it in here. And then I'm going to generate the portfolio combinations.
+
+Right now, previously, oops. Load. Loading them.
+
+And I'm basically just regenerating them all, right? So what this tells me is these are all ranked from high to low. Oops, that's not correct. What happened? What did I do? Your portfolio template was mega combo or master combo, MVP combo? No, it's different now.
+
+I think Tracy did in one of the more recent videos where she made it so you can click risk or strategies or something like that. And it changed them, their order. Like if you clicked rank.
+
+Yeah, you can sort the rank. Oh, okay. Oh, there you go.
+
+But this had like 11, and that's six. You had 1,000. I mean, you had 500 before, I think, didn't you? On the average monthly gain.
+
+I click. There's all of them. Let me do a different one.
+
+Load template. Okay, so I have less here. Wait, did I? I think I changed.
+
+Okay, so yeah. I actually screwed up the dates before for the call, before I clicked anything. Let's go back to January.
+
+No, that's not right. Well, I'm not quite sure. Some of the numbers are a little different, but interesting.
+
+I think why that would be, let's say 700 and 1,500 generate. Did you go from a 25K account to a 50K? I might have had $5,000 to draw down here, actually, before. Why is it different? Your max strategy is seven.
+
+My data here keeps defaulting back to December. Load template, because we had like 125,000 of, 128,000 of profit a second ago. Your max strategy is seven.
+
+Was it seven? Okay, there we go. It looks like we're a little closer. Well, we're getting closer, but I think this was 2,500.
+
+I changed too many things. Well, we're getting closer, definitely. Well, kind of what I wanted to show you guys was when we first loaded this by itself, it had, what, about 25K of profit over three, four years.
+
+We had 11 strategies. Now we're up to 111 with seven. That's kind of what I want to show you guys.
+
+My drawdown is still all, it's kind of an uncomfortable level, but it's all kind of there. And you see that how many with the maximum wins, maximum of losses, all that is here. All that to say that with the builder tool, you can kind of start playing with some ideas and like save some ideas and then load them in here.
+
+And it'll take all the ones you stored and have run every possible bot combination against every other possible bot combination. Now, of course, as Tracy explained to me, the gotcha here is, of course, you only want to do that with things that you've already checked the correlation problems. As you saw on the other screen, we already kind of ran through that and there were no conflicts detected in the 11 that we selected, right? So I'm going to save these again, just in case I go on micro tool.
+
+And I'm going to close this down and restart it and see if that'll do a reset for me. Where's an indicator? Where are you? There we go. New.
+
+And I'll answer. Micro, oops, did I close that? Where's my micro tool? Save template. Micro.
+
+Okay. New. Analyzer.
+
+There we go. There we go. Okay.
+
+Back in business. So now let's do 2500, 3 and 10. Let's see what we got.
+
+Okay, so a little bit different here. Every time I do this, I get a slightly different result. That's interesting.
+
+It was 125 a second ago. Must be doing something different. Dates, right? We'll have to figure that out.
+
+Regardless, what I wanted to show you guys was just the ability to take a whole bunch of strategies, in this case, 11, and I can refine them down to 10, 9, 8, 7. I can kind of cherry pick certain ones. So I don't have to tell it, try without this, try without that. It's going to automatically think about every possible combination, right? So for example, if you think about it, what it's really trying to do is I have number 253, I have 118, I have 018, I have 004, 148, 23, 075, 286, 247, and 049, right? So what it's going to do is they're going to try and say, okay, this one, this one, and this one, this one, this one, and this one.
+
+Right, this one, and this one, this one, and this one, but not this one. It's going to have every possible combination of every possible, right? So every unique combination. So what you'll see here is it's basically, it's cherry picking which ones it's going to use or not use, and then totaling, calculating, computing those values, and then just kind of spinning it out here on a row here for you, right? So you can see what the different possible combinations are.
+
+Now, based on what I previously told it here of 50-50 weighting, right here and here, 50-50 weighting, it's going to score what I picked here rank-wise, right? So this is kind of the top, because I said these were the most important with the most this with the less that, right? On a high net profit with a low drawdown, and that's kind of what it came up with for me is for number one. So here, if I like it, I can click this, and I'll call this again the MVP2, save, boom. And now I can load the MVP2 combo, and you'll see here kind of all my stats, all my analytics, all the things here on the left side of the screen.
+
+There is one thing in here that we did notice in our periodic analysis is when you scroll down, so it shows you all the months, right? Which is good. It's fine. But what you'll notice is because January, you're like, where's 2025? So it doesn't show it because the year's not over.
+
+So we do have a fix for that. We noticed that in our internal testing. So the numbers don't change.
+
+It's just for whatever reason it's not being displayed. And then obviously, as you can see, the correlation still is what I picked. Still looks pretty good, right? And then go back to our generator, and here's some possible combinations, right? And some of you may like a really low, maybe say, I want the least amount of losses possible, right? It looks like, what is the least? Looks like 11 in this case.
+
+No, seven. So if you want a very few losses in a row, seven is your ticket, right? And it looks like it's running three combinations. But some of you are like, I don't care.
+
+I'm not going to micromanage it. I just wanted to do what's the most efficient. Then you would kind of flip this around and say, well, the most amount of money for the least drawdown with just using micros would be right here, right? Number one.
+
+That's kind of what I have saved here. And we can also look at the ups and downs, all the different months here. And you'll see that the very last, like everything's decent.
+
+I have to look at what this month is. What is that? I think that's September. Oops, that's September or October.
+
+September, yeah. And that's only $1,400. It looks like it fell off a cliff and lost $8 trillion, but it's only $1,400, right? Keep in mind that these are all scaled, which means the numbers are here on the left.
+
+So biggest month of $7,100. And then we have the biggest loss is $1,494. You guys can see this is pretty well balanced, right? Like very few losing months.
+
+And when you lose, it's small relative to the bigger months. And you also can look at like days of the week. Looks kind of like the middle finger pointing at you.
+
+Weekly, monthly, yearly, right? And you're like, whoa, why is $220? It looks like it's slanting down. Well, keep in mind that we're only year to date here, right? So you had two and a half more months to go here, and it might improve that. So that's kind of what I wanted to show you guys in case you had seen that.
+
+Sorry for the microphone problems. We'll see if we can get that resolved. Questions about this? Super cool stuff.
+
+Yeah, no, that's helpful, Matt. Isn't the correlation always going to be good because we're using the builder? It depends. If you're using a template from here that was kind of screened, yes.
+
+However, I can go the other round and just randomly grab a bunch of stuff my own that isn't correlated, checked, come into here, and then I have this. OK. Yeah, you can import it here from the builder, right? Kind of pull it from the builder directly here, kind of preview it, save it, and then load it here.
+
+Or you can just hot load everything from scratch over here. I think at some point we may end up working the builder and the analyzer together so there's not two different tools. But it's a lot of code and a lot of things to make it work like that.
+
+But for now, that's just where we are right now. But yeah, so again, if you just hot load all these, you're going to have some conflicts. I can already look at that and tell.
+
+How do I know? Well, if you look at MNQ starting at 7 a.m., starting at 6.45, starting at 5.30, like 6.30 MNQ, you have some times where the same asset is running at the same time. Now, unless these are all, let's see if I can open this up a little bit. These are all, some of them are Monday, Tuesday, Friday.
+
+Some are Tuesday, Thursday, Friday. So no matter what, there's definitely going to be some overlapping days and overlapping times. And so that's the, you know, that's kind of the idea.
+
+And someone asked me, what is the yellow or the little gray dot? Like, why is it not colored? And the reason is, does anyone know? Actually, I'll see. Does anyone know why these are colored? There's a specific reason. It's comparing with itself.
+
+It is. It is its own father. It's itself, right? So 004 and 004, right? So it's like, what are all the possible combinations? It's got itself on the left and right axis, essentially.
+
+Yep, exactly. So in this case, this, oops, be right here. This and this are one in the same.
+
+Yep, exactly. I'm glad you guys knew that. Awesome.
+
+Any other questions, thoughts? This is super cool, guys. Like, we can kind of nerd out on this for hours. How many of you guys are already running some of the bot portfolio tools? Whether you're using the, we'll call it the legacy stuff from September.
+
+Seems like September was so long ago. I will say the spreadsheet and the QAI analyzer to where we are now. Obviously, the settings haven't changed, but like how we look at them are now kind of native.
+
+So yeah, Pete is running it. Awesome. Who else? Anyone else running it? I'm running it.
+
+Brandon, Charles. Awesome. Cool.
+
+And don't worry about whether you have a good day or a bad day. You know, we're looking at a lot of this analysis over like the course of, let's say, what, 200 weeks? So one day in 200 weeks is, you know, or even a week in 200 weeks is just a small amount of time. Right.
+
+You might have been right here. You might have been right here. Or you might have been one of these big tall Burj Khalif buildings in Dubai.
+
+Super, super tall. Tallest building in the world, right? But you might have just a little bitty one. And so I've seen people say, oh, I had a good day or a bad day or a good week or a bad week.
+
+Again, over the course of hundreds of weeks, one week shouldn't make or break you if you're managing your risk well. Unless you're like someone we know, no names who credit card got declined. They already canceled the accounts that were funded.
+
+That was an oops. Not my, no names. Not me, though.
+
+But yeah, what other questions do you guys have? Charles is awesome. Brandon, how are we doing? Good. Yes.
+
+So far, overall, I'm pleased with how everything's going. You know, I've got a couple accounts that are once about halfway funded. The other one is within $500.
+
+I had computer issues last week. Oh, my gosh. Yeah.
+
+Anyway, that's a whole nother thing. But I'm trying to switch over to Windows 11. And anyway, but I have noticed.
+
+It's interesting how much commissions play into it. Yeah. That's why Quant Analyzer didn't calculate those.
+
+And we absolutely have to because over like what I've seen over three, three and a half, four years is sometimes $10,000, $8,000, $12,000. And that's a nice piece. Yeah.
+
+So yeah, so I've run some of these portfolios on, you know, like EA accounts and they do okay. They but then when that I've moved them over into like a SIM account, holy cow, I'm going to do great. Yeah.
+
+Adjust for all that. So in a pretend world, they do pretty good. Right, exactly.
+
+Yeah, no, but overall, I'm pleased. I think this is great. This is a step in the right direction.
+
+Awesome. Cool. What about Victor, Tim, Paige? I got a question, Matt.
+
+So I've just spent the last three or four days watching the modules in 11 and the new stuff and a couple of the Q&As at least twice. And so I think if you could just review the zip files I needed, make sure I have downloaded to move forward. I know that everything is up on the new version for NinjaTrader.
+
+So I'm kind of in that next stage of, I feel like there's stuff in 11 I'm not supposed to know. So I don't want to confuse myself. Uh, when you're about to confuse yourself, stop.
+
+Right? So Kristen, do you have a new? Just like, just don't do that. So what version of NinjaTrader, do you have the older one or the newer? No, I've got the newer. Okay, got it.
+
+So you should be able to see my screen, right? So we're going to go in here with the newer version. If you have the older version, use this one, the newer version. And in case you're not sure, do I have the latest or greatest? This is the version here, 8.1.6. And if you were to go into NinjaTrader, go into help and about, you should see right here, 8.1.6. So the 8.1.5 is the old 8.1.6 is the new, right? So that's how you would do that.
+
+And then let's see, let's go back into here. Let's go into the screen, the tool here. Boom, boom.
+
+And let's see, this is it right here. Just the one zip file. So you do have to make sure your NinjaTrader is closed and this will install, like it'll be a zip file and you'll open the zip file.
+
+This is the one time you do pull things out of the zip file, run the exe installer and it will load the newest tools. And you start NinjaTrader and everything should be on board. So that's it.
+
+That's kind of make it easy. Awesome, thank you. Speaking of portfolio versions, the one you were showing, were you able to sort in the portfolio generator? Were you able to sort on the columns? Let's take a look.
+
+There's one place I showed Tracy was not working correctly. That might be it. Which tab did you want? The generator.
+
+In the generator tab, there you go. Which one, which column? Yeah, are those columns sortable? Yes. Oh, are they sortable for other people? Anybody else? Do you have 1.2 or 1.3? Where's the... Top left.
+
+I have 1.3. Sortable for me. Unless you have too many, maybe you click it and give it a minute. All right.
+
+Yeah, it's working, thanks. Okay. Yeah, so I think what you were showing earlier is helpful.
+
+So the rank is based on how you set up your percentages in the builder. But then you can sort on the column. Let's say if you just purely want net profit, you can sort and see the highest net profit.
+
+So it may not always be the one with the most bots. Exactly, yeah. Sometimes it is, sometimes it isn't.
+
+That was good. I remember in the other screen, like you can have more or less. Yeah.
+
+But you have to understand like the 5700 number, 5700 trades is, you know, substantial amount of commission as well, right? Right. So, but if I was to look at the MVP2, go into here, you'll see... Commissions, $11,000 commissions. Wow.
+
+So, yeah, average win 184, average monthly profit 2339. So. No, that's good.
+
+Thanks for going over that. Yeah. Awesome.
+
+Cool. Quick question, Matt. On the, can you load your own strategy? Let's say you created your own strategy.
+
+Can you load that? You do, but it has to kind of be in this format though. So is that, that's in Excel? It's just an export of your trades. Yeah.
+
+Yeah. So I'm looking at it. And it's in trade exports.
+
+So what you would do is go, yeah, can you see my screen here? So what you do is basically run a back test, go to the trades tab and export it. And that's what this is here. Oh, okay.
+
+It's just reading the exported file. Okay. And so there's one to two ways of kind of like loading this up.
+
+You can, you know, cherry pick whatever you want here. You can load that, or you can use like a template of like pre-packaged ones that you picked in the, in the build. Okay.
+
+Yep. Yep. Cool.
+
+What other questions? So that export portfolio, is that how you put the 11 bots in NinjaTrader? I'm not quite sure what export does. I think that's... I asked Tracy about that. She said that's for the future, but that's what I was thinking too, is it would be nice to be able to just pull those into the strategy tab via CSV file.
+
+Right. I'm not sure if you can like... I think one of the challenges she said with that was, was the times because of time zones. Time zones.
+
+Yeah. Unless, Tracy and I kicked this around, is unless everyone just sets their VP, their system time and the NinjaTrader time to always be Pacific. That's what I just did.
+
+Like you can do that. It might confuse you if you're in a different time zone other than Pacific and you're looking at like your watch and you're looking at the chart. You're like, that would be a big difference, but... You can do that.
+
+Yeah. Easy way to do it over time. Yeah.
+
+In settings, you can change the time zone for Ninja. I just changed my whole computer to Pacific time. Right.
+
+Because I was making accidents in my conversion of time zones. Right. Yeah.
+
+I've done that too, because it's the manual. But we do have some automation that we're using on our end. You guys wouldn't see it, but where we're at the end of every month, we have automation that's going to rerun all the tests and create an updated zip file every month.
+
+And so then the team of folks, volunteers working on that would be just dedicated to finding new stuff. Right. It's like mining Bitcoin.
+
+We're looking for new nuggets. And then the automation is going to just review all the existing stuff that's been found and just add a new month and rerun everything. Get new trades, new updates, new zip file, all that.
+
+Because as you guys can imagine, every month is going to get a little bigger, a little bigger, a little bigger, a little bigger. With more trades, number one. With more settings, number two.
+
+And then adding an additional month to all. I think we're up to almost 300 now. It's not all public just yet, but we're pushing 300 right now.
+
+So I think you guys might have seen 150. So we have almost double that we're going to be releasing soon. Next week or so.
+
+So yeah, lots of cool stuff coming. I know I'm afraid to start loading stuff because then I get all loaded and then I get to reload and unload. I'm just kidding.
+
+I appreciate you guys. You're doing a lot of hard work. Settings are going to be the same.
+
+It's just the view of it is going to be different, right? So like you have another month of data in the chart that we can look at, but it's the same settings, right? This will have, we might have some additional ones. Good. Cool.
+
+Anything else, folks? I'm good. Thanks, Pat. One question that I have, and this is probably because I've reversed engineered a lot of things in the past.
+
+When you do a, when you're in the strategy analyzer and you come up and you get a, say a $13,000 profit, but you've got $135,000 loss and you've got, everything looks good, but it's backwards. Is there a way to do a, like, is there a reverse bot that you could build that would take- Oh, so you go to my aging scenarios and you turn it on and turn it on. Just curious.
+
+It's my over analytical- Not working as it is now. That's interesting. That's really interesting.
+
+I don't know. Nothing comes to mind right now, because as you guys know, the Snapback and the Orb are kind of opposites, but there are a few variations of each of them that aren't 100% opposites, if that makes sense. So interesting.
+
+I do know the new version, so for some of you who've asked, like the new version, the Mega Orb will have long only or short only, or both combined. So I know it's been a big request. I've kind of resisted that for a little bit, but we've baked that into the newer version of the Mega Orb coming out.
+
+So you guys will have that in the next week or two. So, but yeah, I can't think of anything else on my head, Charles, but like, yeah, it's almost like in business, you find a way to lose money. You're like, okay, let's do it backwards.
+
+Let's make- Right. Yeah, that's- I don't know anything else on my head. Just the reverse engineering piece of, in my mind, I'm thinking, is there a way to do that? So- Yeah.
+
+But I loaded- Maybe you could just discard it. Yeah. I mean, I loaded two bots, one 4-bot and one 7-bot that I started today, and both of them were profitable.
+
+The 7 was less profitable than the 4-bot. But that's okay. Tomorrow it may be the opposite.
+
+Yep, absolutely. Cool. And that was using Tracy's, you know, some of the things that we learned from Tracy last week.
+
+So it's- We're good today. Let me tell you guys, we're going to be releasing for beta testing. We kind of had it on hold because there's so many other projects.
+
+But if any of you guys want to, I'll show you guys on Thursday, the AI coaching thing that we're going to be beta testing. You guys want to see how that works, where you can ask it questions that will answer like Tracy would. We're trying careful not to say trade psychology because none of us are licensed psychologists, but we'll just all say the AI mindset tech that we built.
+
+So some of you guys have seen it, some of you guys haven't. So I'll show you guys that again on Thursday. But otherwise, I got to run.
+
+Thanks so much for hanging out. We'll see you guys on Thursday. Same time, same place.
+
+Thanks. Have a good night.

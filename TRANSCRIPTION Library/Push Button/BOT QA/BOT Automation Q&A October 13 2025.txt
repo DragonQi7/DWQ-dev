@@ -1,0 +1,413 @@
+All right folks, first of all let's start out with a disclaimer. So first of all, Pushbutton Trading is not a financial advisor. We don't have any financial advising certification or anything like that. 
+
+We're not here to advise you on what to trade, when to trade, or how to trade. We are here for educational purposes only. Trading has significant risks associated with it and you are responsible for those risks. 
+
+So be certain that you understand the risks and don't risk more than you can afford to lose. And can I say risk any more times? In one sentence, no. That's it. 
+
+All right, let's move on. Paige, it's super good to see you here, man. I've missed you.
+
+Hi, it's good to see you again, of course live this time. I seem blurry, like if I get, is it my glasses or? No, you're blurry. All right, I don't know why. 
+
+Good to be here. Hi everybody. Yeah, well welcome. 
+
+It's good to see you. All right, let's open it up first of all to some questions and then we'll get into some of the sub stuff that I want to make sure we cover before the end of the session. So let's start with any questions. 
+
+Anyone? Everything's working pretty good right now. Yeah. I do have some error in getting into, I loaded up the new stuff and I just have an error which you probably, if you don't know right off the top of your head.
+
+What's your error? Into the account dashboard. First of all, have you updated NinjaTrader? Yeah. Okay, so which version of the dashboard are you trying to install? Because there is two versions of the dashboard and the new one only works with the new version. 
+
+That's why it's a separate. I've got two available. So let me go into the community. 
+
+Okay. And bring that right over here. Let me share my screen. 
+
+All right. So if we go into the right here, bot community and go to the courses recordings section. Yeah. 
+
+And if you scroll down, you're going to see a trade copier. So when you open this up, you're going to see download account dashboard and trade copier 4.4 and account 1.7. And then you're going to see account dashboard for Ninja Trader 8.1.6. Now when you open up this version, it says, do not use with newer versions of Ninja Trader. Does not work with Ninja Trader version 8.1.6.0 or newer. 
+
+So you need to go. Is that the one that's in the portfolio version one zip file? No, because I didn't include the dashboard. Oh, you didn't. 
+
+Okay. All right. I'll take care of it. 
+
+Yeah. So this is the new dashboard. When the newest version of Ninja Trader came out, it broke a whole bunch of dependencies with a whole bunch of stuff. 
+
+So, and it's not backwards compatible. So the portfolio builder and analyzer are also not backwards compatible. They only work with the newest version of Ninja Trader. 
+
+That's the version I built them on. So we have updated the account dashboard and the account protection so that it works on the newest version of Ninja Trader. And you do need to install it. 
+
+Now, when it comes to installing things, this is one of the things I wanted to cover today. There's a process when you, when you go and you uninstall, or when you install a bot, one of the things that ends up happening is you end up deleting. That's my bots.
+
+You end up deleting the bot folder in the documents folder. Okay. So let me show you what that looks like. 
+
+If I, I'm just going to stop this share and change my share to a screen share right here. Okay. So if we are to look at documents folder right here, if we go into documents, Ninja Trader 8, templates, and then strategy, you're going to see there's a bunch of strategy folders, push button EMA 10, mega orb, mega scalper, mega snapback, NR7, snapback, volume bot. 
+
+And when you click into these, you're going to see the templates. Now, if you go and install or uninstall a bot and then reinstall a bot, this folder disappears. Okay. 
+
+And then it reappears as soon as you open up your strategy analyzer and you select a bot, then the folder will reappear. So one of the things that you need to be very cautious about when you are updating your bots is to go into this, what I do, this is what I do. I go into documents, Ninja Trader 8, templates, strategy. 
+
+I then make a copy of this. So you can do it from this part here. You can just right click on here or just control C, select it, control C, and I drop it on my desktop. 
+
+And I do that just so that I have a backup in case there's any files in there that I want to put back into this folder. Okay. So I just, so I'll take this, copy it, put it on my desktop. 
+
+Then I'll update my bots. So I'll uninstall, reinstall, install the bots. And then once you do that, you can put these folders back in here and then continue to add to them or remove them, delete them, et cetera. 
+
+Okay. Does everybody understand what I'm talking about here? Okay. Yes. 
+
+Well, might the templates change with the new version of the bots though? Yes, that's the, no, the templates won't change with the new versions of the bots. They shouldn't. Oh, okay. 
+
+Well, some of them have new options. I guess you'd change them. Yeah. 
+
+If we fundamentally change the bots, but all of these strategies have been built on the most recent versions of the bots. So if there are any changes that we make to the bots, first of all, we try to make them backwards compatible. And if we don't, then it'll be a completely different bot and we'll name it something different. 
+
+So that's, that's where we're at. But when I do publish a bot that has like, if we find an error in the bot and how it actually functions and we fix that, there'll always be a message that says, this is a major update. You must retest all of your strategies before using this. 
+
+So there's always a disclaimer. There are a message that tells you that you need to, to double check them. But for the most part, when we update a strategy, it's for little tiny things that we're trying to, to tweak.
+
+But at the same token, every single month, I go through all of these, these prebuilt portfolio strategies, and I update all of them based on the newest, latest versions. And then I create an installation package that comes to you. When you click install, it's going to remove all of these files and put the new ones on. 
+
+So it's going to update everything for you. Okay. And then in that, I'll also tell you that you need to be using this version of, of whatever bot.
+
+Okay. Great, great question. All right. 
+
+Anybody else with any questions or difficulties that they're having? I have a question that I think I already know the answer to, but I'm just like, I want to throw it out to the whole group here to see if, see if anybody's done anything with it. So it's regarding NinjaTrader. And so NinjaTrader is a Windows-based platform. 
+
+Has anybody found a workaround to where they can install it like on Linux or, well, yeah, basically Linux or anything like that? I mean, the reason I'm asking this is just with the Windows 10 ending and Windows 11 and all the craziness going on with that. I'm like, yeah, no, I really want to upgrade to Windows 11. Actually, how many of you are on Windows 11 already? I've been on Windows 11 for the last, I don't know, three years, two years. 
+
+Seriously? Yeah. Oh, wow. Okay. 
+
+Yeah. I've had no issues with it. Okay. 
+
+I don't have any issues either. Okay. Yeah. 
+
+Windows 11 has been out for a long time now, and that's the reason that they're removing any support for Windows 10 because it's been out long enough that. Yeah. And I know it's been out for a long time, but I know like, I don't know.
+
+I'm a little different just because I have a lot of friends in the IT world that are like really anti-Windows and the whole AI assistant, you know, just a lot of the recall features and kind of the, you know, just the, you know what I'm talking about. So I do. Yeah. 
+
+Initially when it was brand new, I had some issues with the virtual desktops, but those have been fixed. It's solid as far as the basic usage that I'm using. Yeah. 
+
+Same here. Yep. Yep. 
+
+So as far as Linux is concerned, I haven't tried to install it. I've had no need to. I've never really used Linux in any of my home computers. 
+
+So I don't know, Jason, what about you? You probably have more experience in that aspect. Windows 11. I haven't used Linux. 
+
+I did like decades ago, but yeah, I mean, you know, just with your friends, I think they're just, you know, I remember, you know, some people are just hardcore. This is only what they're going to use. You know, I mean, you got to take it with a grain of salt, I guess. 
+
+Yeah. Right. Yeah. 
+
+Yeah. So anyway, that's been my experience. Like I said, I'm using Windows. 
+
+Let's see here. Just about Windows 11 home. So, and I've been using it since it was installed on 2023, March 18th. 
+
+So I've been using it for a while. Yeah. Okay. 
+
+Awesome. All right. How many of you are running a portfolio? Me. 
+
+Excellent. Does anyone want to share their experience so far with using the portfolio? How's it running? Working? Well, I'm actually running probably like five of them right now. And all of them are, I've got two of them. 
+
+Actually, let me look here real quick. I'll tell you exactly how they're doing. I have one of them that's $600 from being funded.
+
+Another one that's within, what, $1,800 of being funded. I've got one in a sim account that is probably $500 from being funded. Nice. 
+
+If it was in a EA account. Yeah. A couple other ones aren't doing as well, but yeah. 
+
+Awesome. How do you feel about using the portfolios versus the old way we were doing things? Oh, a hundred percent. I feel, I think it's great. 
+
+You know, it's interesting. I was listening to, are you familiar with Tom Sosnoff? He's the options guy with KC Trade. Yeah. 
+
+You know, and he, his big thing is the law of big numbers. And it was interesting listening to that because his whole thing is trade small, put small positions on, but trade often. And I'm like, well, that's exactly what we're doing with these portfolios now. 
+
+Yeah. Putting on a lot of trades, but we're reducing the risk by quite a bit from what we were. Yeah, absolutely. 
+
+That's one of his keys to being successful as a trader. He was, you know, relating more to options, but I think it could relate to this just as well. Yep. 
+
+You just got to be cautious of commissions because the commissions on micros can chew you up very quickly. Yeah. Yep. 
+
+Yep. So cool. All right.
+
+Paige, your hand is up. Do you want to? Yeah, I thought I'd use that. That's great, Brandon. 
+
+That's really awesome. I guess a question. So according to the email you saw, I installed Portfolio Analyzer and then I installed some more bots and I don't have the templates for the bots. 
+
+So what's the process for getting the templates for those additional bots? Okay. So I'll just give them to you right now because I was going to, they're included in the installation package, but you have to install it again. So that's the one thing. 
+
+And I'm just going to put this out there for anybody that's watching the video. If you have not yet installed the installation package for the portfolio, please make sure you install all the bots first and then install it. So what I'm going to do is I'm going to go to here.
+
+So for someone to reinstall the portfolio executable, would you uninstall it first and then rerun the executable? No, because it'll do it for you. But I'm just going to give you this right now. So we'll see. 
+
+Okay. I'm just putting it in the Zoom chat. It's called Strategy Zip.
+
+So when you unzip that, unzip it into the documents folder, NinjaTrader 8 templates, and then strategy. So you're going to want to put it right here. Documents, NinjaTrader 8 templates, and then strategy. 
+
+And you're going to want all of them to show up like this. Okay. Now when you unzip it into here, it shouldn't, it shouldn't show up like this. 
+
+It's going to override anything that's the same as it, but it will not erase the things that you've already got in there. So if that makes sense. Cool. 
+
+Thank you. You bet. Right. 
+
+And then the next installation package that we give out at the end of the month, it will remove any of the old stuff and replace the new stuff. So it's an uninstall install that I give you. So it keeps everything up to date. 
+
+Okay. All right. So perfect. 
+
+Okay. Who else is running a portfolio if they want to share their experience so far? How are they doing? Fine on today. Anthony, you've been kicking butt, dude. 
+
+Yeah. I did get three funded today on the old school method. There you go. 
+
+Nice. Nice. Are you using a portfolio at all? Yeah, I did. 
+
+I just turned it on today for the first time. Okay, cool. Yeah. 
+
+Yeah. Well, congratulations on getting those other accounts funded. That's awesome. 
+
+And hopefully this works just as well, if not better. Yeah. Yeah. 
+
+That's great. Perfect. Okay. 
+
+How about anybody else? Anybody else want to share? So the couple portfolios that I have are, you know, kind of just, you know, staying even keel right now, not really gaining, not really losing. But yeah, but now that I have the new stuff too, I'm going to take another crack and, you know, take a look. But I'm hesitant to want to change it because, you know, one month you could just not have a good return, but then next month it could be phenomenal. 
+
+So I just want to be impatient with it. What size account are you running? 50. 50? Okay. 
+
+So I've got three portfolios running on 250k accounts. I'm using the minis though, not the micros. And then I've got one that's running on a 50k account that's micro.
+
+All of them are working really well right now. So it's good. I think the 50k account is about 800 from being funded, eight or 900 from being funded. 
+
+And the 250, one of them is like 9,000 from being funded because I just started it. And the other one is like 6,000 from being funded. So it's, it's pretty cool. 
+
+But last week, the 50k, the 250k accounts were bringing in about four or five grand last week alone. So on each account. Yeah. 
+
+So, so that's, that's pretty exciting. Pretty cool. And are there, are there, are there particular settings like the net profit max drawdown profit factor that people are having better success with? Well, I just did 50, 50.
+
+That's what I did. And then I ran it through the portfolio generator. Yeah. 
+
+Yeah. That's yeah. 50, 50 net profit max drawdown is what you're saying. 
+
+Yeah. Yeah. Yeah.
+
+And then I, so I, I just started doing that. I just installed it today and then I just started doing it. So yeah. 
+
+Does everybody understand how the portfolio builder works and how the portfolio analyzer works? Is there anyone here that doesn't understand how it works? I think it's pretty intuitive. Once you, once you go through the video or, you know, see you do it once, I think it's pretty intuitive. So. 
+
+Okay. Well, I want to let you know that I am making some additional features. I'm trying to build another tool that is going to compliment this. 
+
+So right now I'm working on an additional project. You know how we have in, in here, you have your trade performance, but when you click on the trade performance, you don't know what strategy did what because as soon as you disable a bot, you lose all of the strategy history for it. And the only way that you can keep the strategy history is if you keep the bot enabled. 
+
+And then you look at the historical data on the actual strategy that you have installed. The other thing is there's no way for you to know how a portfolio is performing. So I'm building a tool that is going to keep track of all the trades, be able to keep track of the portfolio performance as well as the strategy performance. 
+
+And the goal is to then build in guard rails that can automatically monitor your, your portfolio performance based on benchmarks that occurred from your back testing and send up alerts or red flags that say, Hey, this is starting to deviate from original parameters. So that's, that's the goal that we're heading to now, that being said, I need some help from you guys in how you install or how you install a strategy. So what I want to go over right now is kind of a, we're just going to do it. 
+
+So right now, you know how we have a, um, we have a, uh, kind of file name configuration. Like there's a, there's a template of how we're doing our file names. And so what I mean by that is if I right click here and I go new strategy, and if I look for a brand new strategy, I'm going to go into push button and let's just install the mega orb. 
+
+I'm going to go to template. I'm going to go to load and I'm going to grab zero zero one. So this is the template that I'm talking about. 
+
+It's a set thing, zero zero one, then there's three year, then the, then the strategy, then the ticker, then the timeframe, the start time, et cetera. It's the same. And I need it to stay the same because some of the tools that we're building is reading some of that data and extrapolating it to be able to, to work well without using a whole bunch of resources. 
+
+So I'm going to load this bot right now. I'm going to click load. The next thing that I want you guys to get in the habit of is scrolling down. 
+
+When you have your, your bot that you're about to install and you see where it says label right here. So this guy right here, where it says label, what I want you to do is I want you to get in the habit of clicking at the beginning of that label and typing in zero zero one and then dash portfolio space. And then let's just call it one and then dash.
+
+Now, what that's going to do is it's going to give this new tool that I'm currently building, the ability to differentiate between what strategy is working for what portfolio. Okay. So we could potentially have multiple portfolios that are running. 
+
+And if we have multiple portfolios that are running and let's say that you have bought zero zero run running in multiple portfolios, how do we know how to keep track of that performance versus the performance in another portfolio? Well, you know that by this guy right here. So portfolio number one. So when I click, okay, you're going to see that that name is right here. 
+
+It says zero zero one portfolio one mega orb 2.3. Now in the log, for example, when I click enable, if I go to my log, enable, enable Ninja script strategy, this just tells me the mega orb and then there's a number that's attached to it. And I'm able to use that information to extrapolate what's happening. But what ends up happening in here is you can see that there is, let's see if I can find a whole bunch of errors in here.
+
+Okay. Well, maybe I don't have any today. I have a whole bunch of errors in here.
+
+But normally what you'll see is you'll see this number right here, zero zero one portfolio one mega orb, you'll see that as submitted an order. So it knows what strategy, what portfolio submitted an order, then there's an order number that's attached to it that that this program that I'm building can now use to put all the execution files together so that it can keep track of all of this. So this is something that I'm going to need you guys to get in the habit of doing.
+
+So I want to tell you now, so you can start to get into the habit. It's a great way of you being able to see all of your, your bots too, because I have like, I don't know, 50 or 60 bots running right now with all the different portfolios. So this can get pretty, whoops. 
+
+When you have multiple mega orb strategies, how would you want those differentiated? Like I said, it's the strategy number is the first number. That's the number you have loaded, right? So this is strategy number zero zero one, right? You're not going to have multiple zero zero ones on the same portfolio. Right. 
+
+Because that would just be doubling your risk. So the zero zero one tells you what strategy is running. And those are all unique. 
+
+You'll you're never going to have more bots out there that are called zero zero one something. There's only one of them. And there will always only be one of them. 
+
+So the important part is the first three digits dash portfolio name. And then after that second dash, can we put whatever we want or I would, I would just leave the mega orb versions 2.3, if you don't mind, I'd leave it. Because then it's, there's no need to put anything else.
+
+If you think that there's a need for some other kind of data there, then put it at the end. Leave the leave this part exactly the same. And you want the portfolios named portfolio one, portfolio two, portfolio three. 
+
+Yep. Yep. Portfolio one, portfolio two, whatever, however, you're going to name it portfolio, but put portfolio and then whatever number.
+
+Okay, so I've saved like 5050 some portfolios, I think so far. And so I've labeled them all 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, up to 50. So far, and that that's just my way of tracking them. 
+
+Okay, just some unique number. And like I said, portfolio and then the number so that it's identifiable. And it's going to be used to track the performance.
+
+So I am still very far away from having this ready to go. But I want to get you guys in the habit of doing it because it's just easier. And then we can work with that. 
+
+Right? Anyone have any questions regarding that? Kind of what Paige is saying, I use that, that the label to kind of keep track of my bots. Can we do it after mega orb and put our own whatever we want on there? Or do we have to leave that off? No, you can you can put anything after mega orb you can put on there. Okay, you can hear it just I need this part and this part at the beginning of the mega orb.
+
+Just leave the first three items there. Put whatever you want at the end. Yep. 
+
+Okay. Yep. Yep. 
+
+Use it however you like there. So and if you I mean, if you choose not to, that's fine. You just won't be able to use the portfolio, the performance tracker.
+
+Okay, it won't be able to register the information. It just won't, it won't even log anything. Okay.
+
+Because this this works on executions. So every execution that happens, because there's no way for me to build any kind of a system that will communicate with the trades themselves so that I can get a log. And that's, that's built into NinjaTrader to prevent people from being able to hack into your trades and then and then manipulate them. 
+
+So there's the only way that I can do this is to read an execution log, extrapolate that, that information and place it and then parse it all together so that I have have the information that I need, if that makes sense. Okay. Will the, if we have other things that are running that aren't, aren't portfolios, will your new tool like just ignore them? Or will it cause an error? No, they won't, they'll ignore them if you don't have the 001 portfolio. 
+
+Yep. They'll ignore it. Okay. 
+
+Yep. Yep. It's, it has no way of understanding what that is. 
+
+So it'll, it might show up, but it'll show up as unknown or, or whatever. Yep. Okay. 
+
+Awesome. Anybody else? Okay. Who here has not placed a trade yet on a, on any account, live account, sim account, doesn't matter. 
+
+Is there anyone here that has not placed a trade? Okay. Is there anyone here that has not yet funded an account? I haven't yet. Okay. 
+
+Amanda, what, what are you currently running right now? I have a 50,000 account and I'm running, I want to say I have five bots running. I don't know which ones they are. They're not losing per se, but they're, they're kind of just going sideways. 
+
+I have one that's positive. Are you using a portfolio? Yeah. Okay. 
+
+So let's run through what, what did you do to select it? Um, I went with one that had only a 1300 drawdown. Okay. What, what your percentages were that you used? I think I did 50, 50. 
+
+I haven't used this new system that's on the screen yet. I've still, I haven't had a chance to download this. I'm still using the other one.
+
+Okay. Well, I would definitely do that right away because we removed some bots that aren't performing in the old one. And there's also some that you can't use at all because the, like MCL, if you have any MCL that's running right now, stop it. 
+
+Stop it completely because we are not able to use MCL in this at all because it doesn't, there's no, um, we haven't found any strategies that work when you consider the, uh, commissions. So before when we ran it, we didn't realize that Ninja trader excluded the commissions in their template for MCL. So we ran all of these thinking we had commissions included and it didn't. 
+
+And then once you do run it with commissions, none of them are profitable. They're removed all of the MCL from here. Okay. 
+
+Well, now I do have one of those. Yep. So we're going to, you're going to want to update this and get it to the system. 
+
+So let's say, uh, 50, 50, plus we have some new bots in here. There's a lot more variety in here. So we're gonna go 50, 50.
+
+And then what we're going to do is we're just going to select the first bot, second bot, fifth bot, sixth, eighth. We're just going to go down here and select the ones that are green. And we're going to have, uh, several bots that show up here, right here. 
+
+Okay. And what we're going to do is we're going to just, um, we're going to save this template. So let's save it.
+
+And we're going to, I'm going to call this Amanda portfolio. Okay. We're going to click. 
+
+Okay. That's been saved. I'm going to close that out and I'm going to jump over to the portfolio analyzer and I'm going to open up the Amanda portfolio load template. 
+
+Okay. So I've loaded this template. This particular template had a total net profit in the last three and a half years of $160,000 with a total max drawdown of 4,091. 
+
+Now, obviously on a 50K account, that's too much. So what we're going to do is we're going to jump over to the portfolio generator and we're going to put in, what's the max threshold you wanted? 1,300, you said? Yeah. Okay. 
+
+And we're going to do 10 and then we're going to generate, uh, none. Okay. So let's go to 800. 
+
+Okay. That's too low of a drawdown. Let's go 500. 
+
+So there's only one and it includes two bots. So are you sticking to the 1,300 because you're close to blowing the account up? No, I think that's just what it generated on its own when I put them together. Okay. 
+
+So how much drawdown do you have available right now? You're in a 50K account. Can we use 2,500? Yes. All right. 
+
+So then if we do that, that, because that, that's so much better. All right. So now we have a whole whack of portfolio options.
+
+Okay. So the best one here that's available is bot number 253-007, 233-004, 009, and 247. Okay.
+
+That's the best one. Now I prefer to not have 004 in there because it is a one minute bot, but it seems to be one of the better, better versions, but just be aware when you do have it, it could skip a lot because it is a one minute chart and we end up missing a lot of those, a lot of those trades because it just moves too fast on MQ. Just be aware, but the bot performs historically really, really well. 
+
+Okay. So these would be the best choices for you right now. And it's got a max drawdown of $1,748 and average monthly right now is $1,844. 
+
+Now for 2025, let's just see what the deal is. Can somebody write that down? 253? Actually, I'll just take a screenshot of it because I'm going to run the generator again. There we go. 
+
+Okay. So if we run this just for 2025 and see what, what's performing really well in 2025, then we get 253. Did I change this? Yeah. 
+
+That didn't change the history. Hang on a second. Why did it not change that? I did notice that only all the portfolio analysis stops at 2024. 
+
+Really? Yeah. Like if you go to performance analysis, it'll stop at 2024, December of 2024. Yeah, but that's actually not, not true. 
+
+I don't know why like 2025 is showing in here. I just don't know why it's the trades, why it's stopping because the trades are showing up as like, you've got trades in 2025 and that's where it's calculating the data. So this is 926, 2025. 
+
+So the trade data is here. Periods analysis. Period. 
+
+Yeah. And I know it's stopping there. I have to fix this. 
+
+That's a, that's on my list to fix. It is there. It's just, for some reason, it's not calculating until the year's complete. 
+
+Okay. For whatever reason. Yeah. 
+
+So I'll, I'll fix that. But this trade data is definitely there. So let me just go to the portfolio analysis and see if this has changed. 
+
+It's not changing. So 2025, do I need to hit the date? There we go. I didn't hit the date. 
+
+There we go. Okay. So back to the portfolio generator and run.
+
+All right. So these are the bots that are performing the best in 2025. So 007, 233, 009, and 247. 
+
+And that had a max drawdown of $682 with an average monthly of 1080. Now, if you want to take the second one, this one here had a max drawdown of 1420 with an average monthly of 2178. Okay. 
+
+So if we were to actually sort by monthly, we have this guy right here that made three grand. It has an average of three grand in a month. And that, that would be the bots. 
+
+This is ranked number 30 because it's got the biggest drawdown as well. Okay. So that is definitely one option. 
+
+I will give you a screenshot of this if you like. Okay. Thank you. 
+
+But just remember, you need to install the portfolio thing first because these bots are different. Okay. And install all your bots first too. 
+
+Yes. Okay. So I just put it in the Zoom chat. 
+
+So you can grab that snapshot if you like. That's the sorted version. Like I said, that's ranked number 30. 
+
+And then you can install that one if you'd like. Those would be the bots. So just remember that you want to go through and update the bots, that the templates, update them to your current time zone before you install, install these. 
+
+Okay. Don't change any of the other templates. Like don't, don't override any of this. 
+
+Just, just what you'll do is you'll just save it as, but change the, the time zone on the back end of it. Yeah. There's none of this. 
+
+These tools use the strategy saved files. They only use the exports. So, okay. 
+
+So you don't have to worry about what you end up saving, but I want you to keep access to the original files. Okay. So hopefully that'll help and we can get you rolling in the right direction.
+
+Yeah, I think it will. Cause I do have MCL. I know I do on one of mine. 
+
+It's running every day. Yep. Get rid of it. 
+
+Get rid of it. Yep. Just, just update. 
+
+Oh, the other thing guys is that we were running some on Zed B and Zed B is is it's one of the what do you call it? Tenure notes. I think that's the tenure note. Anyway, I found out it's not tradable on Apex without an extended account. 
+
+So you need to have a special account. So we've removed that and we're adding in a whole bunch of new strategies, including like NG and, and there's a few others. So there's going to be a lot more, but those are all minis, not micros. 
+
+There's a lot more minis available to trade on than there are micros. So just be aware of that. And if you guys are looking to get any bigger accounts, those ones would work really well on that or on personal accounts. 
+
+Okay. The micros are good for the smaller accounts. All right. 
+
+Okay. Any questions? Right. Is there anyone, anything that any, Oh, go ahead. 
+
+Oh, I was just going to make the comment. I can see I need to get in here and do some more work just because, yeah, because I started out playing with this. Most of all the bots that I have running right now are, are from the old system that I just kind of kept, migrated over the hard way. 
+
+Well, actually, no, I take that back. The computer that I'm running my bots on has not been updated yet. Computer that I do all the backtesting on is, so it is updated.
+
+And so when I move everything over, it's, I have to do it the hard way. Gotcha. And I've been afraid to update just because I'm afraid to break something with NinjaTrader because it sounded like there were some issues. 
+
+Well, like I said, the issues that had to do with the dependencies on programs, that's why I threw out the warning that said, Hey, don't, don't update because you're going to lose the copier. You're going to lose the protection because there was some issues with the dependencies as soon as the update happened. So some people updated and immediately I was getting flooded with error messages because the old stuff didn't work with the new stuff.
+
+Oh, I put out that warning and said, Hey, just hold off on updating because we need to fix all of this before. And then I put out the new update that said, everything's been fixed. Here's all your safe to now update. 
+
+So, so I, I interpreted that as more data connection interruption issues. I'm like, that's all I need is more of that. No, no, no. 
+
+It had nothing to do with that. It had everything to do with the fact that it was a, it was an upgrade of NinjaTrader that was no longer backwards compatible. So we had to go in and change a whole bunch of code to bring in the dependencies. 
+
+So it was working again. And like I said, if you go and try and install the, the portfolio package on an old version of NinjaTrader, it'll come up with a message saying this is, this was built on an incompatible version of NinjaTrader and it's been built on the newest version. So they, they, this is when you're building software, it's really important to try to make sure that you maintain backwards compatibility for these reasons. 
+
+Cause it just ticks your customers off. It creates a huge problem. Unfortunately, we didn't develop NinjaTrader.
+
+So we were relying on them. And this is one of those things that they, whatever reason they felt they, they, they had to break the dependencies and that it ticks me off. I don't know how many Xbox or how much money I've paid for Xbox and in investments in games. 
+
+And then the new system comes out and it's not backwards compatible. It's like, you just wasted this several thousands of dollars worth of games and time and whatever is gone now. Oh, cause I don't want to carry two systems, et cetera. 
+
+It's a pain. Right. But it's also their way of generating more income because now people can pay for the new stuff. 
+
+Right. Right. Yeah. 
+
+Yeah. Yeah. So, but sometimes it's, you can't, you can't avoid it. 
+
+Sometimes you have no choice. Right. So like no one here is running XP and on their computer anymore. 
+
+Right. At least I hope they're not. Well, I am. 
+
+I'm just joking. There you go. Windows 2000. 
+
+Yeah. Yeah. All right. 
+
+So is there anything that anybody wants me to go over? Because otherwise I'm going to call it a day because it is my Thanksgiving and I'd like to get, get back to my family. So thanks Tracy. All right. 
+
+Thank you. You guys have a fantastic evening and I will, I'll talk to you guys next time. I'll see you guys Thursday, I guess. 
+
+Okay. Take care. Bye.

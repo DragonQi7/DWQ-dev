@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragon's Way Qigong® Membership</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0a0f19;
+      --card: #141b2d;
+      --text: #f2f4fa;
+      --muted: #b5c2e1;
+      --orange: #ff7a45;
+      --purple: #a86bff;
+      --gold: #e2b857;
+      --accent: #1f2942;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, sans-serif;
+      background: linear-gradient(180deg, #080d16 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height:1.6;
+    }
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    .title{
+      font-family:"Playfair Display", serif;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height:1.2;
+      margin: 0 0 16px;
+      background: linear-gradient(90deg, var(--orange), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .subtitle{
+      max-width: 860px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.6vw, 18px);
+      margin-bottom: 32px;
+    }
+    h2{
+      font-family:"Playfair Display", serif;
+      font-size: 24px;
+      margin: 32px 0 16px;
+      color: var(--gold);
+    }
+    .list{
+      display:grid;
+      gap: 16px;
+    }
+    .item{
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 6px 20px rgba(0,0,0,.35);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .item span{
+      font-weight:600;
+      color: var(--text);
+    }
+    .item .value{
+      font-weight:600;
+      color: var(--orange);
+    }
+    .highlight{
+      margin-top: 32px;
+      padding: 20px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,122,69,.15), rgba(168,107,255,.15));
+      border: 1px solid rgba(255,255,255,.12);
+      text-align:center;
+    }
+    .highlight h3{
+      margin:0 0 8px;
+      font-size:22px;
+      color: var(--gold);
+    }
+    .highlight p{
+      margin:6px 0;
+      font-size:18px;
+    }
+    .highlight .cost{
+      font-size:24px;
+      font-weight:700;
+      color: var(--orange);
+    }
+    .note{
+      margin-top: 20px;
+      font-size:14px;
+      color: var(--muted);
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1 class="title">Dragon's Way Qigong® Membership</h1>
+    <p class="subtitle">Transform your energy, heal your body, and awaken your inner power with our exclusive Qigong® system.</p>
+
+    <h2>Membership Benefits</h2>
+    <div class="list">
+      <div class="item"><span>Personalized Energy Forecast — Monthly guidance for your transformation</span><span class="value">USD 300 / month</span></div>
+      <div class="item"><span>The Dragon Oracle — Ask questions and receive instant energy guidance</span><span class="value">USD 197 / month</span></div>
+      <div class="item"><span>The Vault — Curated videos and techniques for immediate results</span><span class="value">USD 99 / month</span></div>
+    </div>
+
+    <h2>Bonuses</h2>
+    <div class="list">
+      <div class="item"><span>Qigong Guide — Printable exercises for daily practice</span><span class="value">USD 197</span></div>
+      <div class="item"><span>Energy & Alignment 2026™ — VIP ticket to live training event</span><span class="value">USD 697</span></div>
+      <div class="item"><span>Thrive 2027™ — VIP ticket to live event</span><span class="value">USD 697</span></div>
+      <div class="item"><span>Exclusive Member Privileges — Surprise invitations, discounts & more</span><span class="value">PRICELESS</span></div>
+    </div>
+
+    <div class="highlight">
+      <h3>Total Value</h3>
+      <p>USD 1687</p>
+      <h3>Membership Cost</h3>
+      <p class="cost">USD 47 / Month</p>
+    </div>
+
+    <p class="note">*Stay subscribed to Dragon's Way Qigong® until the event date to receive the bonuses.</p>
+  </main>
+</body>
+</html>

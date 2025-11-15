@@ -1,0 +1,325 @@
+Started. There he goes. Hopefully you guys can hear me okay. 
+
+I hope everyone's amazing. So we revamped or reorganized the community over the weekend. Not sure if you guys are like, where did everything go? We did post a message about this. 
+
+I know not everyone reads their breaking news alert, which is fine, but I just want to quick go over this. Let me share my screen real quick. Here we go. 
+
+This screen. Here we go. So we did make an announcement about it, but oops, where is it at? Wrong. 
+
+It's here somewhere. Where did I put it? This is not it. Let's see. 
+
+Where did it go? Let's see if it's here. Nope. What's funny is when you comment on something recently, it puts everything up to the top. 
+
+Where did I put it? That is not it, apparently. Hang on one sec. Well, I got to find myself. 
+
+So I know where everything is, just where did I put the message? That's the question. But ultimately what we did is we used to have like a place to download the bots, a place for the recordings, a place for the events. And then if you're in Tracy's group, you had a different event calendar. 
+
+If you're in my group, you had a different event calendar. Long story short, we simplified it all, put everything in one place. And that is basically right here. 
+
+So the chat and stuff will relate to bots. We'll continue here. All of the live classes will be here. 
+
+And we kind of summarized some of this because part of the challenge would be I would sometimes have classes that Tracy would sometimes have classes that had whopping zero people, or we'll say one person, including me, zero people show up. So we're like, you know what, let's combine the two groups so that people can show up to either one and we don't have to separate it so much. So ultimately that's kind of what we've done. 
+
+And so we have, this is the bot trading Q&A weekly. That's kind of what we're talking about today. And then we're going to do a weekly backtest breakdown. 
+
+So what we found is that a lot of people go live with settings, or maybe they're a little bit nervous about what settings they've selected. And we want to give you guys like a formal opportunity or a special time to review backtests and jump in and get feedback on it as well as maybe get other bot traders opinion. So that's kind of what that is. 
+
+That'll be every Thursday at the same time. And then Mondays will be the same kind of recurring. Does that make sense? So let me know if you guys have any questions. 
+
+The only other thing is there's, we're trying to reorganize this a little bit, but all the recordings and stuff will be in here, including the classes themselves. So module one, two, three, four. Some of you guys have access to this. 
+
+Some of this is not yet public, but the downloads and stuff for the bots are not in a separate room. They're going to all be right here again, trying to organize everything and make it all in one centralized place. Because I know at times it's a lot to go into like a new community and it looks like you're drinking from a fire hydrant, right? So that's what we've kind of done. 
+
+So let me know if you guys have any questions thus far. Brandon, does this make sense? Some of you guys have been around a little bit. So again, the idea is to try to simplify it. 
+
+So there's not a place to download stuff, a place for two places for events to look at two different event calendars gets a little confusing. And then somewhere else to look for recordings, right? It's all kind of going to be summarized in this general area, which is the bot trading community. So questions, let me know. 
+
+Okay. So this time right now is really to kind of help anyone who's struggling, anyone who's brand new, who has issues, who has anything, like, let us help you out. Let us throw you a rope and, you know, assist if you're stuck on anything.
+
+So this is like the Q&A. We open this time up every Monday, same time, same place. I'll be doing these every week. 
+
+Tracy will be doing the every other week. So you'll see both of us doing these calls going forward. So want to see if anyone has questions. 
+
+Otherwise, I got some stuff to go over. So we'll throw that out there for you guys. If you have any questions, please unmute on mic. 
+
+If you're new, say hello. Well, I feel like I'm probably new to this, but not Matt and I've known each other for quite a few years. I think I'd like to just throw my question out. 
+
+Like, how do you know which bot to use? I mean, so some of them are familiar, like how they work, but how do you make that decision? Just testing them to see which one you like. So we do have a video that explains like how each one works. I think it's important to understand the, like the strategy and like the market conditions that make the strategy work. 
+
+So for example, if you're using like a trending strategy in a non-trending environment, it's probably not going to work as well. Same thing if you have a strategy that works really well in sideways environments, not going to work really well in a screaming market that's maybe super bullish or super bearish, right? Things are just going straight up or straight down. Those non, you know, those sideways strategies like the snapback or some of those other strategies would not work as well. 
+
+So that's the first thing is like just having a basic understanding of the strategy, like what kind of environment, you don't have to know like the mechanics of how it all works, just understanding like what bot is for what type of market environment. The other thing is every, like people ask all the time, how do I know like what timeframe, what ticker and all that, including which one to use, all come down to what the back tests will tell you. So that's kind of how I hinge all of my decision-making. 
+
+It's kind of like data-driven decision-making. So some of you guys know I used to be a software CEO and Google actually was a client years and years ago that I'm talking about like before all y'all were born, like in 2008. I'm kidding. 
+
+But they introduced me or at least us, the team that went to this idea of data-driven decision-making and that the idea is instead of just saying, oh, let me just do this and hope it works or do that and hope it works. The idea is let's look at a back test and let's pretend that we ran this the last 90 days and how well would it perform in those market conditions, right? And the idea is that assuming that the future market conditions will be the same or similar, you're going to have similar results. If they're wildly different, then you're not going to have the same results. 
+
+You're going to have the opposite results. So that's the short answer is just kind of a basic understanding of the strategy, what kind of environment it works well in. And we could probably, now that I think about it, we could probably like build like a comparison chart. 
+
+I don't know if you guys think that would be helpful. Some of you guys, you have one or two favorites and you always use those, which obviously if you have favorites and continue on, but that might be helpful to build like a comparison chart that explains what's a trending environment type spot, what's a sideways range bound, right? I don't know if that answered your question, Kristen, but that was a three minute spiel. No, no, no, that was good. 
+
+But I think that led to another question would be like, okay, well market environment, we never, you know, that's kind of a timeframe situation. So are you talking like 90 days or more to get an idea of that? So I typically look back 90 days. And the idea is the most recent timeframe is going to be the most relevant, right? A lot of people say, Hey, you should run a test going back 10 years.
+
+But I don't know about you guys, but I don't really care what happened 10 years ago. We're here today, right? A lot of things happen in 10 years. I don't even really care about what happened in COVID because that exact scenario probably won't happen exactly. 
+
+I'm talking about the stock market and not the whole pandemic, but the stock market reaction probably isn't going to happen exactly like that ever again. Right? So like the most recent timeframe where things were just falling off a cliff back a few months ago, now they're kind of tend to, they're starting, they're recovering nicely, right? All that kind of environment is what I'm talking about. So if things are like in January, for example, things were just going up in February, right? March, they all had their own like a different personality, right? And so the idea is in this case, we would be looking back at March, April, and May. 
+
+Those are like the most recent 90 days. That's what I would be looking at. Knowing that April is probably the most significant because that was literally last week. 
+
+So all backtests, typically I prefer 90 days of backtest data. So, but yes. And then whether you run on a 30-minute chart or a 30-second chart or a, you know, 800 tick, that's all the backtest should tell you, the results, so you can compare and contrast. 
+
+So I'll show you guys some ninja trick stuff here in a minute if you want to see some of that, some more of that, Kristen. So yeah, great question. Thank you. 
+
+Yep. What other questions do you guys have? Hello, Winston. We got some new folks, some new names. 
+
+Yep. Hi, Matt. Hi, everybody. 
+
+I'm super new. Don't have enough questions to ask you yet. So. 
+
+Okay. Your question is what questions should I ask, right? That's right. Yeah. 
+
+Where are you from? Where are you? Tell us a little bit. I'm in Nashville. I live in Nashville. 
+
+So I'm not too far from you. Yeah. Nice. 
+
+I'm not too far from you. I met you, I think, in Orlando, I don't know, last year sometime. Oh yeah. 
+
+At the Omni Hotel, probably. Yeah. That's right. 
+
+I met you over there. How funny is that? Like we live in almost the same city and we met in a totally different city. Yeah. 
+
+So it's, yeah, I just don't have enough questions to ask you. I'm just, I think I registered what, two days ago or three days ago. So. 
+
+Yeah. Soon I'll have questions. Sure.
+
+Gotcha. Awesome. And this is a good environment. 
+
+I know a lot of times people will DM me questions. I get a lot of DMs. So I'm not like super fast to respond. 
+
+Obviously like just generic questions, you can post them in the community chat, right? So you can probably get faster responses. I certainly don't mind answering, but you might get a little bit faster response because a lot of folks have experience and kind of some of the same questions you might have, they may have encountered as well and be able to answer that. So again, for you, Winston, that would be here in the bot trading community. 
+
+It's like a space here on the left. And then there's this chat here and you would just type out some questions. Okay. 
+
+So yeah. Yep. Thank you. 
+
+Yeah. Some people who insist on asking me directly, which is totally fine. I just can't respond as quick as everyone else can like collectively. 
+
+Right. So, yep. Cool. 
+
+Well, welcome. Thank you. Yeah. 
+
+My pleasure. Victor Svetlana, Paul, Michael, Brian, how are you guys doing? Doing great. I actually have one account that's just about funded probably within about $800 on a 50% account. 
+
+We'll see what happens. Awesome. I guess the only thing I can think of as far as a question is concerned, what's one thing that I have kind of struggled with here lately is just kind of having some data inconsistencies, like back test inconsistency between the computer that I, the computer I do all the back testing on is obviously faster. 
+
+It's set up a little better. And your VPS, right? You're right. Well, it's actually not even a VPS, it's a kind of more of a homegrown VPS. 
+
+So it actually is a little better. Okay. Slightly better than a Windows PC that I call a VPS that I remote into. 
+
+That's why I call it a VPS. Okay. Well, technically, yeah, I get it. 
+
+Okay. Yeah. So just on a, it's just weird how some of the back testing results are a little off. 
+
+So I don't know. Yeah. That's a good question. 
+
+That does happen a lot. So you guys may have heard me say this before. This is just my own personal approaches. 
+
+My laptop that I'm on right now has 96 gigs of hard drive, right? So it's got like a V8. My VPS has like, it's a little two stroke. Like you got to mix the gas and the oil. 
+
+It's like super slow. Right? So because of that, I don't run any back tests over there. So I don't have the in comparison, the, you know, the reports being slightly different. 
+
+I don't have that problem because I don't run into that. But the first thing I would do, if you ever do see that is look at the number of trades. So I compare A and B, look at the number of trades. 
+
+And that's one of the variables or the stats that kind of pop up in the strategy analyzer. Right. So let me share my screen. 
+
+I don't know what I have open right here, but let's take a look at whatever I have open. So like right here, number of trades is 38. So on one, you might say 38 and the other might say like 35. 
+
+And so obviously that means you're missing three trades somewhere. And you can easily just switch to the list of trades to see if something like where that is. Obviously, if it's a small, you know, a small difference or something like that. 
+
+Oops, let's go. What happened? I went back. Let's take a look at trades. 
+
+So obviously if it's like a small variation, you know, it's probably not too bad. But what typically happens is that a lot of EPSs do the absolute bare, their hardware that they provide is the bare minimum of what NinjaTrader recommends. So the connection downloading data sometimes isn't like a good, like thorough download. 
+
+It's like a partial download. And so if you look at the full list of trades, like, and I don't even know what I'm looking at here, but in this case, if you're looking at like March 1st through the 30th, and in this case, we have 154 trades. I want to look to make sure all my trades actually, I have trades through all that. 
+
+And it doesn't just like stop in the middle of April, right? Like it ran through this time, but the middle of April. And so typically that's what I would look at there. We have a video floating around about how to reset the cash, which by the way, we are building a knowledge base.
+
+So I know Tracy's looking for some beta tests. We've got a handful of those. So we're building a knowledge base so you guys can search and then specific issues you run into, we're going to be able to create screenshots, video, text, whatever to try to help troubleshoot some of those types of issues. 
+
+That exact reason, there's like three or four reasons why sometimes that happens. One being the minimum memory, like the low memory on a VPS. I have to ask Brandon, do you know what the hardware looks like on your homegrown? So right now I think I have... Grow farm.
+
+I want to say eight. I got to look here real quick. Okay. 
+
+So that's above the minimum. Like a lot of VPSs are two, even though they advertise like they're four. They tell you on the marketing, you're going to get at least four or six or eight or whatever. 
+
+Then they give you two and you have to know to look. So, okay. That's not, I mean, it's not terrible. 
+
+Have you looked at the two side by side to see if one has more than the other? Otherwise the settings have to be identical. I assume you know that, but the only other thing I've seen that changes is sometimes you might be looking at a June contract versus a September contract. So the asset itself isn't identical. 
+
+And then also the other thing is make sure you're always running like one tick on both. So you can run standard on one and one tick on the other. You're going to get slightly different results at times.
+
+So again, all the inputs, if all the inputs are identical, including the asset itself, if you're comparing June and June, then you should be, should be okay. But if not, then typically I would start with clearing the cash and see if that resolves the issue. Yeah. 
+
+I normally clear the cash on the weekends when I update everything. Um, but the one that I've noticed the biggest difference is, is with like the volume bot orb, um, where like in the back, like the differences would be, you know, one would go along and the other would go short. Oh, like they take opposite trades. 
+
+Right. Yeah. And the, uh, well that's definitely different. 
+
+Um, on the, you're using the same settings across the board and the historical fills identical as well. Oh, I haven't. Can you send me those? I'd like to see that. 
+
+I don't think I've seen that exact scenario before, but yeah, that would be definitely different. You're talking about one specific trades or all the trades are like that. Well, so I'd have to go back. 
+
+I quit using it last month because man, the, the, the parallel testing wasn't even anywhere near close to what was actually what, what the trades, what the actual trades were. Okay. And so I still got those records. 
+
+I'll have to get it to me. Yep. Okay. 
+
+Got it. Fair enough. Fair enough. 
+
+Okay. Got it. Uh, what other questions you guys have? This is your, your opportunity.
+
+Matt, I have a question. Yes. Can you hear me? I can. 
+
+What's up? Yes, Paul. So what I'm doing, hi. So I'm running a back test on, um, under the historical fill, it should say tick. 
+
+Also under, uh, oh shoot, I lost it. Um, no, shoot, I just lost it. Oh, under a data series. 
+
+So that type also say tickers cause I have it as a minute. Yeah. Great question. 
+
+So, um, so the, the, uh, this is still running, but I'll show you in a second when this is finished, but this, this is like your, your chart. So it's like the, equivalent of like a timeframe. So for example, if you're running a bot on a five minute timeframe, this will say minute last minute five. 
+
+Right. But that's what I'll say. Now the historical order fill means how do we want to like simulate the actual life of the trade? We want to do like fine tooth comb, super fine powder. 
+
+Right. That's how we want to like just super, super granular. We want to kind of replicate all of it to make it as accurate as possible.
+
+The downside when most people don't do it with the one tick is cause it is just molasses slow, which is fine. But you want to, you want fast and inaccurate, you want slow and accurate. Right. 
+
+I'm like, I want the slow and accurate. Obviously if it, you know, if a test is going to take hours, it'll typically, um, you know, you do other things. You're not sitting here twiddling your thumbs, but ultimately that's the answer is the data series is the chart itself. 
+
+So five minutes, six minutes, 20 minutes, 30 minute or 30 seconds, whatever you're running it on. The historical order fills always going to be one tick when you're running a back test, when you go live, the, this'll go back to standard when you're going live. So, okay. 
+
+All right. Thank you. Yes, it did. 
+
+Thank you. Yep. And what's interesting is sometimes people, um, we do have a, a community for, um, the bot optimization. 
+
+So if you guys want to kind of collaborate with others and look at what other people have found, here's a group of settings that works really, really well. Um, and if you're interested in that, we do have a, um, a space set up just for that. And that is here. 
+
+I think you can see my screen. So that is here. The only thing, so we tried this like a year ago and everyone wanted to use everyone else's settings. 
+
+No one wanted to put any time in and it's kind of like a give and take, you know, kind of a cooperative, collaborative effort. Uh, and so the only, there's a few rules that you have to submit, um, one test a month. So, you know, not, not a lot of effort to, you know, stay. 
+
+And, um, and then from there, um, what you'll see here, if you give me one sec, is I will open my spreadsheet and I'll show you kind of what that looks like for those of you who are new. So when you open it, you go up here to like, uh, let's say this is what may look like. And so those of you new, Kristen, Winston, any of you all, um, what you're able to do is look at, um, here's the, you know, the person that submitted, right. 
+
+And then here's the bot mega snapback, mega scalp one, 1.2 version or 8.3. And then what the asset was of the ticker. So MNQ, micro NASDAQ, MES, micro, um, SMP, right. MCL, crude oil, micro crude oil, MGC, micro gold. 
+
+And so the idea here is that you're able to see what other settings people have used. You're able to, you know, consider, Hey, maybe this is something I would want to use. And you scroll over to the left. 
+
+And this is typically what most people do is they'll look at the, uh, the settings here. So it'll show here's all the, like the settings that were used. Um, and so it shows, you know, Monday through Sunday, you know, is turned on on Tuesday, Wednesday, Thursday, Friday, and everything you can go back in and, you know, open this in one screen and another screen, like set up the settings. 
+
+There's a way to download the backtest template, but for some reason, people get errors when they download this and we haven't figured that out exactly. I have a couple of theories, but that's the best and easiest way to do it. And, uh, you can see, uh, some of the very, like the, the output of it, the percentage profitable net profit max draw down certain days of the week. 
+
+As you guys know, my favorite all time favorite is just to use something that works across at least four, if not five days. So you can certainly run something that only runs on Monday, something else that runs on Tuesday, something else. My favorite way to do is the least time consuming and probably most efficient is something that runs all five days of the week, right? That's the, uh, the most efficient way to do it. 
+
+That's my personal favorite. So, yeah. Yep. 
+
+Great questions. What else? What other questions you guys have? Matt, are you still running, uh, the bot that runs every day of the week? Oh, I am. Yeah. 
+
+You know, that's the Holy grail. I have not been able to find one that works every day of the week. Uh, I'm still looking, but, uh, I know you had one for a while, an orb, I think a mega orb. 
+
+Yeah. So what I, what I was running, I think it lasted really, it did really well for like three and a three and a half, maybe four months. I'll get back and check, but I didn't change anything. 
+
+It ran nonstop. Um, it got many accounts funded. It got, it did really, really well. 
+
+And, um, and the question that people ask is how do you know when, if something isn't performing well, how do you know when to switch? And the answer is right here is your magic right here. How many consecutive losers are there in a back test? Cause this back test basically tells you, you know, assuming you ran it correctly, you know, follow the guidelines. This is saying, okay, I ran this over, you know, at least 90 plus days. 
+
+Right. So in this case, it's saying, actually, I guess in this case I did probably 90 plus 10. So I got a hundred days, give or take, but the idea is this is what you can expect this again, assuming the market conditions are the same. 
+
+And if it says I I'm, I can expect seven consecutive losers. And I decided to run this live. Guess what I can expect folks. 
+
+How many consecutive losers seven, but what people don't quite understand is that, um, they freak out after you have two, but this is telling you what to expect. You're okay with it, but you're not even halfway through the seven and people sometimes are like, Oh, I need to change it. Something is wrong. 
+
+But you know, I know like, um, public service announcement or PSA, sometimes trades don't always win. I know that's unfortunate. I have to be very bad news, but it is part of trading, right? It is what it is. 
+
+Um, but this is typically when I, if, if I'm sitting at eight losing trades and I, and this says I can expect seven, that's when I'm going to consider taking it offline. Right. That's, that's, that's how I know. 
+
+But, um, but, but yes, uh, the mega orb, the setting I was running, it was on a six minute. I'm running now on a five minute, slightly different start time, but yeah, it did really, really well. Yep. 
+
+And again, if you guys are, if you don't have any ideas, consider joining the optimization space. Uh, it's, uh, you can get some ideas to start with. Obviously they'll give you some settings, but you need to make sure you adjust your own, uh, timeframe. 
+
+So your own, you know, if you're, if, if we give all the settings in Eastern time and you're in Pacific, just adjust the start and end times accordingly. Or if you're in, you know, Australia or somewhere, whatever, uh, adjust the time zones accordingly. So, or just make your machine, tell it to use the, um, the Eastern time zone, right. 
+
+There's a, you can force that. A lot of people do that with VPS as well. So, and then make sure the time is correct for that time zone. 
+
+So, but yeah, which, um, by the way, folks, um, I want to make sure everyone understands this seven, cause this is like the most missed actually is two things. One is what is seven consecutive losers look like? If I take one loss, two, three, four, five, six, seven, I'm at minus seven. Right.
+
+And then I have, let's say a winner plus one. And then I have another one, two, three, four, five, six, seven. What, what statistic will show up here as a max loss? Does anyone know? Seven, seven, seven is the max, right? It's almost like I had a, a losing streak that was interrupted by a positive one. 
+
+So this still counts as minus seven. Now that's the first thing. The second thing that people misunderstand is when you, if you were to look at how well, let's say you run a bot. 
+
+It runs all week or whatever. It's designed Monday through Friday or certain days. And then you go back and look. 
+
+And for whatever reason, if you're running on your laptop, you forgot to turn your laptop on, on Wednesday. And let's just say that you had Monday, let's say Monday, Tuesday, Wednesday, Thursday, and Friday. Let's say Monday. 
+
+You made 1.2R. Wednesday, you had it turned off, right? Tuesday you had minus one, this had minus one. And then Friday had, let's say plus 1.2, right? You would kind of be just barely above break-even if you're looking at it that way. Correct? Because you didn't run on Wednesday because you forgot to turn it on or power was out. 
+
+Some reason you didn't have it running VPS. There's some connection problems, like something happened, right? But you might not have realized that Wednesday was a plus 2.4 and you missed it, right? So the difference between that would be plus, you know, you like two winning trades, right? So plus 2.4R and plus four would be what? 2.8. So instead of being up plus 0.4, you should have been up 2.8R, right? And that assumes you're running identical settings and everything works. But when you go back at the end of the week and you're like, how well should this have run? This number right here assumes you ran it every day.
+
+Because what is, you guys are familiar with Murphy's law? If not, ask ChatGPT. No, I'll give you the summary. The summary is whatever can't go wrong will go wrong, which means sometimes if you sometimes turn it on, sometimes turn it off, sometimes start it late, like you're going to ultimately show up for the losing days and skip the winning days. 
+
+I had a group, I want to, I forget what group it was, but one of my groups, I said, we're going to all, we're all going to run the identical settings and half of us are going to get our account funded. It was earlier, like beginning of this year, half of us are going to get accounts funded, the other half are going to blow up accounts. So like, how is that even possible running the identical settings? I said this right here, starting some days, not starting others, trying to double up risk on one day and happens to be losing, right? You guys see how, like what should have happened deviated from what actually happened.
+
+And what this number here is showing you, consecutive losses, is what should have happened. How do you run it consecutively, consistently every day, right? And of course, that's one of the benefits of EPS is you don't have to worry about turning it on. So if you're like me, you like to travel and sometimes you're like, what, what time zone am I in again? Lake Tahoe, is that what, what Hawaii am I five hours behind? And that's what the benefit of EPS is, is to allow it to, you don't have to worry about turning it on and off. 
+
+And the first time you miss like a $1,200 day, because you were trying to save $32 a month on VPS, you're like, dang it, I'm just going to pay for the VPS, right? And that happens a couple of times and you're like, what should I, what am I doing? I should be just pay for this. So yeah, that's kind of my thought on like this. It really, it's two things. 
+
+It's what should it have done, not what was your exact experience. Because your exact experience, assuming you ran it correctly, should be almost identical to what the back test over that same exact week should be, right? So if you, that's what we, that's what Brandon was talking about, a parallel test. So let's say you run, let's say June 2nd through, let's see, through the 6th, right? You run it live. 
+
+At the end of the week, you want to run a back test, called a back test, over that same period, right? To make sure that the bot did the same thing that the back test said it should have. And that's why we kind of refer to it as a parallel test. That's not something you can ask chatGPT about. 
+
+Ladies and gentlemen, that is a Mattism. A Mattism is when Matt here, yours truly, invents new words, new phrases. That's a Mattism.
+
+So, yeah. What else? Anything else? Any other questions? Oh, I'll introduce myself, since I'm relatively new here. Hello.
+
+Hi, my name is Minh. I've been doing my own thing. I'm a software developer by trade.
+
+Nice. I've been writing my own code, my own strategies. Some are good, some are bad, but I'm going to try to come back to the bot strategies that you have and restart over again.
+
+Nice. Back to square one for myself. Nice. 
+
+Awesome. Yeah. I find a lot of developers like to tinker with, like, building their own strategies. 
+
+Nothing wrong with that, obviously. If you are familiar with that specific code, the NinjaScript codebase, that syntax, then most people are good to go. I find a lot of people try to learn it just to, like, obviously, if you want to make a career out of building technology, that's one thing, but if you've never written code before, ever, which is, I'm not referring to you, of course, if you've never written code before, ever, and you want to learn it to try to build your own bot, that's a very, as a software engineer, am I right, that's a heavy lift, right? That's not something you're just going to do in a weekend.
+
+Yeah. You can ask your GPT to help you with pieces of it, but it's not all going to work right. Yeah. 
+
+It took me a while, but probably three, four months to get all my stuff working because a lot of stuff is intrusive, you know, timing off. Yeah. Yeah. 
+
+But you also have a software background, so assuming you have that kind of experience, but for someone who's never written code ever before, how successful, how much time do you think it would take to build some kind of a base? Oh, that's tough. Yeah. That's what I'm referring to. 
+
+And it's kind of the equivalent of saying, you know what, I need a new engine for my car, and therefore I'm going to try to build it myself. I'm like, just buy, you're going to have so much time and effort and frustration, just buy a new engine. Don't try to figure out how to machine shop every little piece yourself. 
+
+Just go buy the thing. It's so much easier. Just use someone else. 
+
+They've done the work, right? Right. And that's kind of, but yeah, there's a small group of folks in this community who love just playing with strategy and writing code and that kind of thing. So yeah, I get it. 
+
+So yeah. And where are you? Where do you live in the world? I'm from New Orleans. New Orleans. 
+
+Okay. Yes. New Orleans.
+
+New Orleans. I used to have a guy, a sales guy who worked for me. He said he's New Orleans.
+
+New Orleans. Is that right? I don't know. Everybody says that though. 
+
+New Orleans. Yeah. It's not New Orleans. 
+
+I don't really hear that as locals. Yeah. He had a big, yeah, his family had a big Cajun accent.
+
+That could be it. Yeah. Cool. 
+
+Well, nice to meet you. Yes. Cool. 
+
+Any other questions, folks? Yep. Awesome. All right. 
+
+Well, on Thursday, if you guys have some back tests you would like some feedback on, same time, same place. Again, the link is in the community. Join us and we'll give you some, we call it the back test breakdown.
+
+And we will see you guys then. Otherwise, reach out if you have any questions. Otherwise, see you soon. 
+
+Thanks.

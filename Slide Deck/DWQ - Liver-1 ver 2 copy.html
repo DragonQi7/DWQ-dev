@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wu Ming Week 2 — Liver & Gallbladder</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+  }
+
+  .slide {
+    max-width: 900px;
+    text-align: center;
+    padding: 40px;
+    display: none;
+  }
+
+  .slide.active {
+    display: block;
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .highlight {
+    color: #f39c12; /* golden orange accent */
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #f39c12;
+    color: #fff;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 10px;
+    font-size: 0.8rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div id="slides">
+  <div class="slide active">
+    <h1>WEEKLY <span class="highlight">CHALLENGE</span></h1>
+    <ul>
+      <li>Increase your Qi. Hold Number 10 for a few minutes or more.</li>
+      <li>Notice where your energy feels blocked — especially in the chest or ribs.</li>
+      <li>Practice mindful breathing after movement.</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>LIVER + <span class="highlight">GALLBLADDER</span></h1>
+    <ul>
+      <li>They move Qi, bile, and fat through the body.</li>
+      <li>The Gallbladder is your decision-maker.</li>
+      <li>This duo defines flexibility — physical, mental, and emotional.</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1><span class="highlight">WOOD</span> ELEMENT 🌳</h1>
+    <ul>
+      <li>Represents growth and free movement.</li>
+      <li>Flow = Health. Stagnation = Frustration.</li>
+      <li>Let your body move like branches in the wind.</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>SENSE ORGAN: <span class="highlight">EYES 👁️</span></h1>
+    <ul>
+      <li>Reflects the health of your Liver.</li>
+      <li>Dry or itchy eyes signal imbalance.</li>
+      <li>Close your eyes to strengthen inner vision.</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1><span class="highlight">TENDONS</span> & FLEXIBILITY</h1>
+    <ul>
+      <li>Strength in TCM comes from tendons, not muscles.</li>
+      <li>Stretching moves Liver Qi through sinews.</li>
+      <li>Emotional flexibility = physical grace.</li>
+    </ul>
+  </div>
+
+  <!-- Add up to 15 slides as needed in the same style -->
+</div>
+
+<div class="nav">
+  <button id="prev">← Prev</button>
+  <button id="next">Next →</button>
+</div>
+
+<footer>Wu Ming Meridian Therapy — Week 2: Liver & Gallbladder</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  document.getElementById('next').onclick = () => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  };
+
+  document.getElementById('prev').onclick = () => {
+    slides[index].classList.remove('active');
+    index = (index - 1 + slides.length) % slides.length;
+    slides[index].classList.add('active');
+  };
+
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') document.getElementById('next').click();
+    if (e.key === 'ArrowLeft') document.getElementById('prev').click();
+  });
+</script>
+
+</body>
+</html>

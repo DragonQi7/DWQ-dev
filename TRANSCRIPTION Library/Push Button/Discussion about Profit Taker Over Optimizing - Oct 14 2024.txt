@@ -1,0 +1,309 @@
+Let me go ahead and let her record. So, welcome everyone. So, Tim, this is your first visit, hang out with us.
+
+We do this every Monday afternoon, sorry, Monday evening. And we just kind of go over some Q&A, open stuff. I usually have a few things to throw out.
+
+But what I want to do is I want to first chat a little bit about what I'm looking at, what I'm working on for some back tests and things that I've noticed. And one of the things that I always think is interesting was when someone says, I can't find anything to run. And I'm thinking there's like hundreds of thousands of possible combinations, nothing out there.
+
+So, what I want to do is I'm going to go through just kind of my process here. And I'm going to just kind of go through where I start and how I kind of go flow through all this, just as a repeat. Most of you guys have been through all the course or watch all the videos.
+
+Some of you, this is like the first time hanging out with us and that's fine. Some of you are somewhere in the middle, somewhere not a beginner, but not a ninja yet. And so, the first thing I want to do is I want to usually identify a day.
+
+So, obviously today is Monday, Monday is over. And so, what I do is I went ahead and grabbed like Tuesday and I'm just going to start optimizing a few things on Tuesday. And I actually found a couple of things I already like, just kind of waiting for this meeting to start.
+
+I want to share with you guys. But the first thing I want to share with you is a lot of you guys will, when you run optimizations, you take the profit taker and whatever gives you the most profit, that's what you're going to use. And the thing that I like to kind of think about is let's say that 1.2 are profit taker.
+
+So, Tim, that means 1.2 times my risk, $750 in this case. But if I have like a range of profit taker let's say 1.2 to 2.0, yes, and all of these kind of meet my criteria. Let's say that's like a slider.
+
+What do you guys think most of you will pick? Most of you will pick that right there, right? Which means 1.99 would probably turn into a losing trade. And that one little difference maker could, if you have two or three trades that almost hit their target, that one little difference maker could make quite the difference. And so, the thing that I like to do is I like to have at least, when I run something like this, I want to make sure at least 1.2 are, I want to make sure that that obviously is my starting point, right? So, that should work, should meet all my criteria, right? And if we flow through that real quick, you'll see here my percentage profitable above 70, my profit factor above two, my drawdown relative to my returns.
+
+Everything looks pretty good, right? And then if I was to shift over to my actual trades, the trade list, I don't really have any wildcard trades. Everything looks like it's in range, right? So, in this case, everything looks good, right? So, then I'm going to say, okay, I want to try 1.4. And if 1.4 still works really well, I'm going to keep it at one point. I'm going to keep kind of increasing it to make sure that, see, now at 1.4, it still works, right? All my criteria are still met.
+
+Now, if I go to 1.6, and what I'm trying to do is 1.2, like the high end of, let's say it's like 0.5, for example, all the way to 1.2. What I'm wondering is, is 1.2 the high end of what I can do? Is that pushing the boundaries? You got to see my percentage profitable still shows as what? Still above the 70%, right? My drawdown has stayed the same. My profit factor actually was at three, and it's actually gone up to four. Obviously, my total net profit has gone up as well.
+
+And so, what I'm trying to do is, a lot of you guys will just use whatever gives you the most profit, and that's fine, but you also have to kind of understand the sliding scale of how the profit taker works. So, in this case, I've already established that at least a 1.6 meets all my criteria, right? So, I'm going to keep walking this up a little bit just to make sure everything's good. And I want to find where is the boundary? Where does it flop from like 70% down to 50%, right? What is the profit factor? And here at 1.8, even, it still makes sense.
+
+You guys see what I'm saying? So, the idea is a lot of times we want to max everything out, and there is this term called over-optimizing, which is a real thing, which means you have everything finally tuned. So amazing. Historically, it's perfect, just perfect, right? But going into the future, it just falls on its face.
+
+It just falls flat. And so, I just usually like to leave everything pretty much default. I kind of always use in my 300K account, I'm always going to use that $750 of risk, which is 1 10th of my drawdown.
+
+So, you guys know a 300K account, you're allowed 7,500 of drawdown. I'm just using 1 10th of that in my max contracts because I'm using MNQ, which is a micro. So, MNQ here, because I'm using MNQ, I'm going to just use the 350.
+
+Now, obviously, I could run this again on NQ and have less contracts, which also means what? Less commission. But I'm really not getting up into like the 30, 40 contracts just yet, partly because I'm running on a seven-minute chart. Now, does anyone know how the heck I chose set 1008 in a seven-minute chart? How the heck did I even think to enter those inputs? Does anyone know? Your optimization.
+
+Testing. Testing. Yeah, there we go.
+
+So, what I typically will do is I will run an optimization and I'll try, I think this was set to 10 previously, 10 or 11, and it was set at 830. So, I just kind of adjusted it based on that. That's how I came up with the 108.
+
+Now, the seven-minute chart, as you guys know, when you run an optimization, when I run an optimization, I can go down here and I can say optimize data series. And then what it'll do is it'll open this up. And I usually like to go from one to 15.
+
+One to 15. And that's why I get these oddball 10 or 12 or seven-minute charts. Those aren't like standard mainstream charts, as you guys know, who've been trading for a while.
+
+One minute, three minute, five minute, 15 minute. Those make sense. Seven minute, 10 minute.
+
+Those are a little bit off, we'll say non-mainstream timeframes. But any kind of intraday timeframe, of course, we're just testing to see what works. And in this case, same thing with the profit taker.
+
+I can run this from 1.2 all the way up to three. And just because 3.0 may give me the best results doesn't necessarily mean that I wanna use 3.0. Why? Well, on my grand scheme of things, a 3.0 is like the high end, right? I'm choosing the 3.0 and down here is 1.2. I'm probably gonna go somewhere over here. Like, right? I'm not gonna always just try to max it out.
+
+But the catch is all of these ranges still have to meet my criteria. Does that make sense? And so that's one of the things that I started looking at. Cause I do review all my trades just like you guys do.
+
+You can look at a chart and see, oh, okay, that one today, or, oh, previous one's lost, right? You can go look at that. But what I noticed is a lot of times, I've seen quite a few wins, at least in September, that came really, really close to the profit target, but just barely missed it. And more than once, more than twice, more than three times.
+
+And I'm like, you know what? I bet I'm maxing out my profit taker a little. I'm redlining that a little bit too much. So I'm gonna pause there, see if that makes sense.
+
+See if you guys have any questions about that. Does that kinda sorta make sense, Julie, Antonio? Yeah, I started using that on my optimization this weekend, adding in the snap back, and not doing the total highest I can get. Cause I didn't even think about that until you said that the other day.
+
+Right. Yeah, cause the catch though is, there is something called over-optimization. And the problem is, you're kind of making decisions based on what's already happened.
+
+And in quant terms, they would call that in-sample, right? Out of sample is like in going into the future. And so like we make it, we fine tune it and tighten all the nuts and bolts so tight, it's a little bit too fragile going into like an unknown environment. We'll call it out of sample, meaning new data that the backtest hasn't seen cause it hasn't happened yet, right? And going into the future, future data, right? Like whatever happens tomorrow, right? Or the next day would be out of sample.
+
+Does that make sense? So that's the idea. Yeah. And in this case, sorry, go ahead.
+
+Let me clarify this. So basically, optimizations, I know about that. And the over-optimization issue, I know about that.
+
+But because of the fact that we're only keeping the last 10, I guess we could keep more. We're only seeing those things at the right end of the slide. So what you're saying is that after optimization, we should go back and do these manual things like you just did at the beginning? That's what I like to do.
+
+I like to see how brittle is, how we'll call it seaworthy, how fragile, how strong is the... And when you're running an optimization, if I go back into optimization, you do see the last 10, but you can change that here, Larry. You can say 20, you can look at more. Right.
+
+Most people are going to pick the most profitable. That's just human nature. And what I'm saying is that is human nature, but sometimes it makes sense not to choose the most profitable because it's a little too finely tuned.
+
+Does that make sense? Yeah. Right. Yeah.
+
+So you get a number of smaller wins and that makes a lot of sense. Right. Yeah.
+
+Okay. Yeah. So the manual step after the automated optimizations is what you're advocating.
+
+Okay. Right. Right.
+
+It shouldn't take too much time to go back and do that. Like you just saw that I went from like 1.6, 1.8, and you'll see that the percentage profitable has a big jump somewhere in there. And that's kind of where that variance comes in.
+
+Matt, you have an entry candle offset and a different start time. Well, sorry, that should have been zero. That might mess up your numbers a little bit.
+
+Yeah. Yeah. Sorry.
+
+So yeah, it should go back to... Yeah, there we go. 70% plus. And I think it liked 1.8 as well.
+
+I think that was up into the 10, $11,000 return. But my percentage profitable stayed the same. Right.
+
+So what I'm doing is I'm trying to kind of feel it out a little bit. Right. That's the idea.
+
+Yeah. 4.53. So some of you guys have... Let me take a look at... Let me switch my account real quick. Hang on one sec.
+
+All right. Let's see. I need to connect to Tradeavate again real quick.
+
+My other account. Let's do it this way. Okay.
+
+So I'm going to go up to my new trade performance. I'm just going to show you guys where I am on the month. We're going to go to the first.
+
+So that's what about... So I use a $750 R. This is not a back test, by the way. This is actual trade performance. This was the first... Actually, last week was the first time I used trade copiers.
+
+Or we used our trade copier. We had some demos and some tests. The first time I actually ran it live.
+
+But $750 R, I think that's what about... What is that? About 18 R. That's... I actually thought about just pausing the rest of the month. Hey, might as well just kind of sit tight for the rest of the month. But just trying to be... Yeah, so it is right at 18 R. Sorry? Are we supposed to be seeing your trade performance? Can you ask? Oh, sorry.
+
+It says screen share is paused. I click resume. Can you see it now? There we go.
+
+Yeah. Yeah. So I'm just running... Sorry.
+
+So this is my trade performance itself. So this is just kind of the month to date. And I'm running a $750 R. Now, yes, I do have multiple accounts that I'm copying into.
+
+So that also means if I take a loss, it's going to be copied across three accounts. If I take a win, it's going to be copied across three accounts. And so this week... Or sorry, last week was the first time I used the trade copier, our trade copier.
+
+And so that's kind of where I am so far. Now, I want to show you guys... Not everything is perfect. Every month, I actually had a down month.
+
+Not a lot, but I was down 2R basically for September. I didn't take a whole lot of trades, just a handful. Actually, it says 17.
+
+But if you look at the executions, it's a lot of the same price, right? How that splits it up into multiple pieces. I don't know why it does that. But so down 2R.
+
+But then if you were to go back to August, it was a decent month previously. So not everything is perfect every time. So yeah, so AD was at about 11, 12R, something like that.
+
+11.77. So just want to show you guys what I'm up to. There's no kind of what I'm seeing. I do know that I don't have my Interactive Brokers account logged in.
+
+Otherwise, I would show you that. But not everything is rocking every month. And usually, if I feel like it's not off to a great start, I usually slow it down.
+
+There's nothing wrong with saying, hey, I only take three trades a week. Now, I do know some of you who take like 27 trades a day, which is a lot. My average is between 5 and 10 a week.
+
+That's it. Like two a day is a busy day, right? So there's no magical way to do this. But for me, at least, that's kind of how I think about it, if things aren't going well.
+
+And sometimes, even in August, I actually started out down 4R in August, but I ended up battling back to what, 11.7, 11.8R. So just want to show you guys what I'm doing. I have not taken 49 trades. It's just how it splits it up.
+
+You guys can see here, all this is one trade. It's split into pieces. I'm just looking at the date and times, right? So it's counting all these as separate trades.
+
+But here's more of the orders. And obviously, some of these got canceled. Some of these got filled, right? So yeah, some of them got rejected.
+
+So yeah, any questions on that? Matt, what are you using for your leader account? Are you using an active account or using a SIEM? So I actually started in SIEM, but I shifted back to... I'm probably going to go back to SIEM again, but yeah. So I use a SIEM account, and I actually run it in the SIEM account, and then I copy it into the other accounts. There's an advantage to that.
+
+I think I talked about that last week. And the reason for that is APEX is going to see an OCO order. But if it's in a SIEM account, it waits for one to get filled.
+
+It's only going to see that one order come through instead of an OCO. And they've talked about, you should already have a bias and not do breakout trades or opening range trades. But as you guys know, opening range breakout is a legitimate strategy.
+
+They may not like it, but that's kind of how I do it. So you won't see it in... So if you do it in a SIEM account, it won't reflect in there. That's definitely been the issue for me because I was doing well on snapbacks, but having all kinds of problems with the OCOs, part of them not closing.
+
+Yeah, with Rhythmic, that's where we had a lot of the issues. So I was thinking that maybe from that point of view, the other thing was, as I said, with that TraderVate order not being placed, if I had been using a SIEM as my leader, that wouldn't have happened. Probably, yeah.
+
+You can set it up that way and see if that works. I shifted away from Rhythmic before I tested that exact scenario. But yeah, it was actually Tracy Ball told me about that.
+
+I'm like, I never thought about doing it that way. I actually have a question on that because I had a TraderVate account that did not stop with the bot. The rest of them did.
+
+It kept going. Was it the leader or the follower account? It was a follower. But I also have a TopStep account, which was not included in any of my copy trading or anything, but I had that data turned on.
+
+I have to have both datas. If I want to trade TopStep, I have to have the Rhythmic. You have to have rTrader open also? Do what? Do you have that rTrader app open also? Yeah, if I want to trade TopStep, I have to have that.
+
+So I'm wondering if I have to have that shut down. Yeah, I don't know. I haven't really used TopStep.
+
+Tracy's used it and her summary is she didn't like it. I wasn't trading it with the bot, but the data was on. And my Tradeavate account, which was a follower account, did not stop.
+
+It kept going. So I don't know if the two datas are conflicting. I guess it depends on what you have enabled, right? So what you have turned on.
+
+So right here, can you see this screen? This should say when you turn it on. I have a kinetic connection open right now. But when I turn this on, it should say Tradeavate.
+
+Where's the connection coming from for that strategy? This is what I want to see and then make sure it's true. Yeah, I didn't look at that part just because I'm not sure if I have that in my columns, but it didn't stop. So I was like, that's weird because I have it as a follower account, not even trading TopStep, but my data was connected.
+
+Were you using the orders or the executions mode? Orders. Okay. So that's kind of some of the issues that we found in the first beta test round.
+
+A lot of the issues were related to orders. As you guys know, orders basically copies the exact type of order. So stop, limit, or limit orders.
+
+And the catch, though, is sometimes just like with regular trading, if price action is going to buy at a certain level and it just flashes down to that exact penny for a nanosecond, doesn't mean every order everywhere is going to get filled. It means some will, some won't. And so that's kind of the downside to orders.
+
+The advantage of using orders is you don't have slippage problems. Like one tick or two ticks or whatever. But executions is going to always use market orders.
+
+So you definitely get into the trade. It might be slightly different entry point than maybe what you want, but you're definitely going to be in the trade. So there's advantages and disadvantages depending on how you want to do that.
+
+But a lot of issues we found were related to orders. And Tracy Ball updated with the 1.6 in that little beta group, that small beta group, if you want to try that, the updated version. Okay, I'll get that downloaded.
+
+Do you have 1.4, 1.5, do you know? Do you remember what version you were using, Julie? The one, the first one. The first one. 1.0, is that what you mean? The beta, the dashboard.
+
+Okay. 1.15, I think. Okay, gotcha.
+
+Because I've updated them as they've come out. I just saw that 1.6 is up. So I haven't downloaded that yet.
+
+This was a couple of days ago. So it would have been probably the 1.15. Okay, got it, got it. Well, what I'm going to do is, go ahead, Larry.
+
+Just a question about the execution. It sounds like a market order. That is exactly what it is, yeah.
+
+The industry term is executions or orders. Like what mode do you want it, you know, executing on? That's what that is. So typically, what kind of slippage is there? So as long as you're using something that trades a lot, like MNQ, MES or NQ or MES, it's usually gonna be one tick.
+
+If you're trading something very lightly traded, like MBT at three in the morning, it could be more. It could be significantly more. And that takes typically 25 cents, yeah.
+
+So if you're doing like traditional, you know, nine to four trading hours for like the stock market, but you're trading features during that same time, it's usually got plenty of volume as long as you're using a highly traded asset. And you guys probably know how to check. I think like on this, let's see.
+
+This is MNQ on a three minute, but if I was to pop over to like a, let's say a five minute chart, you can add volume down here. So VOL, easiest thing to do is go up to here, this little jagged line, and then click on that. And then on the left, you're gonna click vol, V-O-L.
+
+They're gonna, you can double click it and it'll add it down here. And click okay, apply, and it'll add it to your chart down here, just like I have it. And then if you even wanna get a little fancier, you can also right click, go to templates and then save it as default, save as default.
+
+And so that'll take the color scheme. I have a 10 EMA turned on right here with this little blue line, my volume, black and white color scheme. And so the Christmas tree, green and red.
+
+So you can get all kinds of fancy with it, but that's what I do, saves default. Boom. But to check the volume, now that you have that on your chart, you can check the volume.
+
+You'll see out here the range. So obviously up here, we're hitting 25,000 contracts and that's in a five minute timeframe, right? So if you were to go to like 30 minute, it's obviously gonna be significantly higher. You'll see that 100, right? Significantly higher timeframe.
+
+You'll see significantly higher 120K contracts. So that's obviously if you're trading 10 and 12 contracts, 120,000, you definitely can get, you can definitely get some orders filled in that range. What other questions do you guys have for me? Matt, I had a question on the 10 EMA.
+
+Am I gonna see you in Orlando, Michael? I'm kidding. Go ahead. 10 EMA on the 10 EMA bot.
+
+Yeah. I had a question on the, let's go down to the setup. Scroll down.
+
+Sorry, let me open the window. Okay. What are we looking at? Let's see.
+
+Keep going down to setup. Oh, this is just, it's not on the strategy analyzer, but I'm gonna go to a chart and open it. So put the 10 EMA on a chart.
+
+Okay. Yeah, now let's go down to setup. Okay.
+
+Calculate. Is that supposed to be on each tick or on bar close? Each tick, yeah. Okay.
+
+Why is that one different? Why is it different? What do you mean? What do they each do or what are you asking? Yeah, like what's the, because all the other ones is on bar close. Because to me, you want the bar to close and you want to determine, is it above the 10 EMA or below the 10 EMA? Yeah, the open range breakout, it's all at. That's a good question.
+
+Let me look at the manual on what that says and get back to you on that. They should all be the same, basically. Yeah, because on the other one, it was on bar close.
+
+But when I've done that, I've had some times where the 10 EMA will only trade once and not 10 times. And I had one Friday that didn't match the back test. It went, I don't know if the trading, if the order didn't get submitted correctly or not, but it ended up like going long instead of short.
+
+Yeah, that should be the same. I don't know that, let's see. Are you able to, you can't even set it up in here.
+
+So you can't choose it here. Yeah, it should be the same. Should be the same across the board.
+
+But I know on the other ones, it was at bar close because to me, once you want to wait for that bar to close for it to determine if that meets the bar or not. If it meets the criteria. Yep, great questions.
+
+What other questions? Tim, you got some questions? No, I'll save them for offline for now. Okay, no worries. John, Pete, Antonio, Anthony.
+
+Anthony Jones is in the house. Stellana, you guys have some questions? What's up, Anthony? Just more testing with the new version of the trade copy. I'm just taking it all in.
+
+Taking it all in, okay. Have you downloaded the trade copy yet, Anthony? Yes, I got the 1.5. I use it all the time, it's pretty neat. Okay, so let's see if I can open this other, in this other window here.
+
+So there's, if anyone wants to go in here, that we have a beta test group for, this came out today. So the 1.6 version of the trade copy. It's invite only.
+
+So if you want to be invited, I mean, you're welcome to get into it. If you're just learning bot trading, I would probably say just a pass on anything new being added to your learning cycle. Just minimize it, keep distractions down for now.
+
+But yeah. Otherwise, I'm headed to Orlando tomorrow. I'll be at the Money Show on Friday for, what are we talking about? Bot trading.
+
+Can you guys figure? Go figure. So yeah. Any other questions for me? Just one question regarding how the beta test is going.
+
+Any issues cropped up? Oh yeah. So there were some related to the orders thing that we were just talking about. The orders mode had a couple issues with that, but otherwise everything's, that was the only thing that's come up.
+
+What I've learned being a software CEO is the more people use the product, the more they're going to bang on it and find the more hidden. Issues that aren't right at the surface. Unusual scenarios like this and this, but not this, unless that.
+
+Trying to use 17 accounts all at once, trying to do some unusual trade. That's usually when things bubble up. So what we try to do is put it in front of maybe a dozen people, see what kind of things we can find, and then slowly roll it out to the larger audience of our community.
+
+But nothing major yet. I think you guys. Okay.
+
+Matt, could you invite me into the group for the beta? Sure. Thanks. Bruce.
+
+Matt, can you add a sort on the columns? A sort for? For the trade copiers, so each of the columns you can sort it. Oh yeah, yeah. Throw that suggestion in that feed there.
+
+Tracy's going to be taking that over when I'm out of town here. But yeah. Yeah, so I'm running stuff on VPS.
+
+I think this week I only have five, six things running. I had the snapback set up today and it actually did not trigger. I'll show you guys that if you want to see on a one minute.
+
+And you'll see exactly why it didn't trigger, which it did what it was supposed to. One minute, boom, boom, boom. I'm going to switch to one minute though.
+
+There we go. Does anyone know? Right here's my signal candles, my signal dots. So this is my signal candle.
+
+It closed above and it was waiting for a reversal, which never happened. And you'll remember there's one, two, sorry, five candles. So basically it would have lost, but it kept me out of the trade.
+
+I like it. I'll take it. Obviously like many hours later, it went lower, but that five candles, that's why I'm like, did something malfunction? I looked at, nope, it did exactly what it's supposed to.
+
+And that's kind of the hard thing of troubleshooting code sometimes is you think it should do something, but then you go back and double check and you're like, well, shoot. It actually did what it was supposed to in this case. And you'll remember a snapback is, it's looking for the opposite.
+
+So when it breaks above, it's looking for a reversal, but it's waiting for a close above like that, like this dark blue dot candle to close above. And then it puts an order down here, which it never, it never got back down there. It ran over, went off the cliff and we didn't have a seat on the bus.
+
+So that's fine with me. I'll take it. Keep me out of losing trades.
+
+So yeah, that's what I'm doing. I got a couple of things I have to decide on. So this is one of them tomorrow that I'm going to be running is the orb MNQ.
+
+Let's load it up again. I have this M10 right here. No, that's not it.
+
+It is this one. Run that, give that a sec to run. But I have one running at 9.50 and 10.08. I just realized they're super close together.
+
+I'm going to have to pick one. I'll pick one over the other. If you guys have two back tests that are, and you have to pick one over the other, how do you decide? I'm curious how you guys do it.
+
+You're like, I can't do both because they're going to run into trades. They're going to conflict with each other. Right, you don't want one trade going long and one going short on both MNQ.
+
+That wouldn't work out well. I choose one with the lowest profit factor, actually. 10 minutes away.
+
+Profit taker. Oh, that's what you need to load. They're both the same in this case.
+
+Right, there's less risk if you do that. I guess I, let's see. I guess I could do, well, here we go.
+
+Let's see if, hopefully this doesn't freeze up on me. Come on, this is 71%. As option A and option B is the one that's like 10.08. Where's 10.08? Right here.
+
+Actually, this is 1.4. So what I would do is I would do exactly what I just said is I would walk this up a little bit to see how much wiggle room I have to go higher. And I would keep it at the original 1.4, but I would see if it could handle 1.6 or 1.8 and how much, as long as my percentage profitable stays the same. That's the one I would pick.
+
+That makes sense. We're still at 71%. Let's see what this one tells me.
+
+Still 71%. Well, it tells me this one, this got some robustness to it, right? Because the thing where you don't want is like one point, let's say 1.7. Here, let's do it this way. Let's say 1.8 works, but 1.81 blows everything up, right? That's a little too fragile.
+
+Like your percentage profitable falls off a cliff. That means it's a little bit too fragile, right? So let's see what kind of, at 1.8, we were still at 71%. Let's see what happens.
+
+See, you guys see what happened? We dip below 70%. So you take 1.8? So no, 1.8 is the high end. I didn't test 1.9, but 1.4 to 1.8. So I would probably do 1.6 or 1.4 somewhere in there.
+
+1.8 is the max. Now I didn't test 1.9, but I'm guessing it's going to be somewhere in between the two of them, just for efficiency sake. I like it.
+
+So yeah, because those, when you have a trade that you get into the trade, stop loss, and you take profit, and you, oh, see 1.9 would have worked. 2.0 would not have. When you almost get there and then boom, you'd be like, dang, how do I fix that? Well, you don't max it out so much.
+
+And so you leave a little bit on the table, so to speak, so that you have a higher profitability. And as you guys know, the difference between 1.8 and 1.9R is not, it's 0.1, it's not a huge difference until it turns a 1.9R, it could have been a plus 1.9R, turns it into a minus 1R. That my friends is more, that is a 2.9R difference in your account, correct? Plus 1.9 versus 1, 2.9R difference in your account.
+
+And so that's why I'm not so worried about trying to get every last penny squeeze every last penny out of it. I would probably do 1.6 or 1.4, 1.5, something like that on this one. So, yeah.
+
+Very good. I like it. Yeah.
+
+All right, ladies and gentlemen, let me know if you have any more questions, otherwise I'm headed to bed and headed to the airport in the morning and I will see you guys. All right, good luck with the show. Thanks guys.
+
+Stay safe. Yeah.

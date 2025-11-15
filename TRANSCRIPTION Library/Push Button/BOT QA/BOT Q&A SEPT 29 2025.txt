@@ -1,0 +1,301 @@
+According to the, all right, okay. So how many people are using the portfolio trader so far? Everybody? I think so. Okay.
+
+Let's start out with just a little bit of feedback. So if, um, does anyone have any, now that you've been using it, does anyone have any concerns, complaints, suggestions, anything like that, that they want to pop up and just letting them run, just letting them run, letting them run and doing their thing and, you know, um, yeah, I don't think this month was a good month, um, it'll probably go down as a negative month, but on the portfolios I pick, but it is what it is. I'm just letting it do its thing.
+
+You know, um, you know, the only problems I have are when, you know, trade of eight disconnects and, you know, I just managed that and that's about it, you know, so, but other than that, the, the bots are doing their job and running and, you know, I got no complaints about that. So. Cool.
+
+That's excellent. Well, I, um, so this portfolio thing right now, it is a beast to manage on our end. So, uh, as you can imagine right now using a, uh, Google sheet, it requires a lot of manual labor to maintain that and update it.
+
+So over the weekend, I built some things inside a Ninja trader. Actually last week, week and a half, I've built, been building some things inside a Ninja trader to try and, um, make this better. And, uh, first I just want to give a shout out to Jason because Jason, your help has really like accelerated my ability to do some of the stuff that's in here because I like just a couple of little tweaks that you helped me do.
+
+And it's like, bam, now I'm off to the races. So I am really sorry, but we are going to be scrapping the Google sheet. Now the team that is here, if you're, if anyone's watching this video or the team is here helping, uh, that's been putting this together, we're still going to use the sheet to add strategies, but you guys, as the regular users will not be using the Google sheet anymore.
+
+And I will have, uh, an installer package that I've got to put together and install our package that's going to come out this, uh, this week. But what I want to show you right now is the new and improved version. Okay.
+
+So I'm going to share my screen right here and here's our old, this is the old Google sheet, right? So this is the old Google sheet. We're going to scrap it. Boom.
+
+Gone. No longer going to be using it. See you later here.
+
+What we have. Yeah, exactly. See you later.
+
+So what we have here, this is the brand new portfolio, the push button portfolio analyzer. So first of all, you guys will not need to use quant analyzer. This is a replacement for quant analyzer.
+
+Now you guys saw the one that I had been using that somebody else had built inside of Ninja Trader. I think I built one that's a hundred times better. So this is a separate standalone.
+
+So when you, uh, once you install it, when you go into your new, um, you'll see it, you'll see it down here, port portfolio analyzer. There's also a portfolio builder. And like I said, I'll be showing you both of those tonight.
+
+So with the portfolio analyzer, all you need to do is you need to just go up and load your strategies. Okay. I already have one that's preloaded.
+
+You can save the templates. So when you have strategies that you like, you can actually save them and then they show up in here and you just click on this and then hit load template. It'll load the template.
+
+It brings them all in. Now, why I like this version better than quant analyzer is quant analyzer does not take into consideration commissions. It separates it out.
+
+So all of the values that you see are pre commission that includes the drawdown. So this does not do that. This includes your entire overview with commission.
+
+So this drawdown that you see here says $2,022. That is after commissions. The profit, $67,211, that's after commissions.
+
+There was a total of, where's the commissions in here? Right here, $15,096 of commission. So this is pretty accurate. Now you also have a tab down here where you can see the individual strategies.
+
+It shows you which ones are built or loaded right now. You can go in and actually take a look at a performance. For this.
+
+So you can look at the daily, you can look at the day of the week. You can look at the weekly, monthly, and yearly. This doesn't have as many details as you would find inside the back tester.
+
+I just use the ones that I think are relevant. But I also added an additional feature. So inside of each of these, you can have a net profit, max drawdown.
+
+Or, and this is what I really like, the combined P&L and drawdown. So what this does is let's say that you go to a monthly and you're looking at your monthly and you're looking, okay, well, what was the max drawdown I had each month and how did it actually end up? You can actually see the two together. And the reason that I like this is because you may be able to look and see, okay, well, you know what? If I just cut off my losses at a certain time, I can actually save myself some money.
+
+But without seeing it together, you wouldn't actually know that. So anyway, that's kind of what this is for. So there's a combined P&L and drawdown.
+
+There is a max drawdown and then there is a net profit. Now, this will also update with the date range. So you can go into the date range and you can change the date and you can just look at 2025.
+
+So if you just want to look at 2025, it automatically updates everything. This is dynamic. You don't have to do anything to change that.
+
+You don't have to import any new data. You can just load it in here and see how it goes. And even your list of strategies changes to just what you have for the filter.
+
+So this is the 2025 view. And like I said, if you want to go back to see what it was in 2022, you just simply go back, select this, and there's your three and a half year portfolio. In here, I've also built in a correlation table.
+
+So this also shows the correlation. So you can just double check and make sure that there is no correlation issues. OK, so this is the portfolio analyzer.
+
+You guys are all going to have access to this. So you will no longer have to use Quant Analyzer. You can just load your strategies right in here.
+
+Now, you do need to load the same files that you would load into Quant Analyzer. So that means that's the trade exports from the trade tab. So if you go into a backtest and I'll be giving you these files.
+
+But if you go into the backtest and you go to trades and if you right click on the trades, you can export. And it's that file that gets loaded into this portfolio analyzer. OK, now the big one is the next add on, which is the Portfolio Builder.
+
+Now, this is the Portfolio Builder, which is going to take over the Google Sheet. Now, it automatically loads all of the files. What files does it load? It loads these one right here.
+
+So if you open up any one of your backtests, OK, you run your backtest. If you go up here and you click export, it's going to export. It needs to export to the strategy analyzer exports folder in your NinjaTrader 8 file.
+
+But it exports an XML file and a CSV file. Not that you need to know it, but it exports that. So if you export it with the same file structure as I've been teaching you guys to use, same file structure.
+
+And the reason I'm going through this is in case you decide that you want to add some more of your own strategies, you're more than welcome to do so. But you need to do it this way. And so if you install it, use the numbering convention, use the whole this entire structure of how you create the file and then hit save.
+
+That is the file that is automatically being uploaded into here. As soon as you load this, all of the files that you have in that export thing get loaded. They're all here. 
+
+OK, now you have the option if you want to just look at like if you did uncheck this, you'll see whoops, uncheck this. You'll see both minis and micros. These are all of the strategies that we have available, every last one of them.
+
+OK, they're all there. They've all recently been updated. If you just want to look at minis, you just click mini and they're right there.
+
+If you just want to look at micros, they're all right there. And you notice they're a different color so you can see them a little bit differently. Now, the cool part is this.
+
+So here you've got your net profit, your drawdown, your profit factor, your percent profitability, your profit per month and your win loss ratio. These this is your weighting. So if you decide that I want to do 25 percent, let's go, let's leave it at 20.
+
+Let's do 15 percent. I'll do 15 there and let's do 10 right here. OK, so now I'm going to click update rankings.
+
+And it just updated the entire list. Now, when you do this, the top is ranked in order. So the very top one is the best one.
+
+The second best, the third best. So here's the cool part. I'm going to click that first one, and the minute I did that, it immediately scratches off any correlated.
+
+Yeah, that is crazy. So now I'm going to click number two and boom, more correlations gone. Number five, more correlations gone.
+
+So if you decide, you know what? I don't want seven, but I'm going to take eight. I'm going to take 12. I'm going to take 16.
+
+Right. And and like seven went away. I'm going to take 39 here and then maybe there's 59, 64.
+
+OK, 92 and 138. OK, so all the correlated, there's no conflicts, no conflicts have been detected. So all of these and you can see when they're when they're trading, you've got the list right here.
+
+So you can see, you know, which bots they are and like just double check. Here's MNQ. OK, well, that's at five thirty to six.
+
+That's before this would even start. So, yeah, it's definitely no no correlation. This one's in the afternoon, so no correlation.
+
+And this one here is again in the evening. No correlation because it's after. 18, 20, Tuesday.
+
+This one might have a correlation. I'm going to have to look at that because it's not catching the evening time. But anyway, the point is, is it's pretty cool, right? Yeah. 
+
+Awesome. That's crazy. Right. 
+
+So and then all of the strategies are listed right here. So you can take a look at all the individual strategies, what they are and and all that kind of stuff. OK, now, in order to use this, like I said, the structure, the file structure has to be the same because it is pulling some information from the file name.
+
+And same with the with the portfolio analyzer. It's pulling information from that file name. But this is all taking it from trade data and all that kind of stuff.
+
+So I like I said, I just think it's really cool. Now, the. There is a save as default, so if you wanted to save your settings because you like using the same portfolio, whatever, you can do that.
+
+Now, right now, what you have to do is you've got your list of strategies. So at this point, what you would do is then go into portfolio analyzer, load your strategies and just load these these particular strategies. You can take a look at how that all works out and you can remove them or or whatever, like just take a few of them, add them, do whatever you want.
+
+Like the point is, is it's like use it however you want to use it. The next iteration will be I want to have a little load button right here that says load strategy and you click it. It'll automatically load it, open up the the portfolio analyzer and just show you that.
+
+So that's the next iteration of this. OK. The other thing that's going to be coming as well is I am trying to figure out a way to get.
+
+The. Where is it right here? Oops, not that. Not that.
+
+Where are you? So the steps that that need to happen is I and I want to automate this so that this is an automated thing. And what will happen is you guys can have all of these files on your computer and maybe you can even run the automator so that I don't have to keep sending them to you. You can just update it once a month or once a week or however you want.
+
+If I can do that, great. If I can't, then we'll just be getting it so that I update it. But the steps that are required is every single one of these strategies we have to go through, load it, change the end date to the current date and then run it.
+
+And then once we run it, then we have to export here and then we have to go to trades and export here. Those are the steps in order to maintain this. So I have to do that right now with every single strategy.
+
+So I'm looking. Are you looking to streamline that and automate that? I'm looking to automate that. I'm currently looking at trying to code something inside of NinjaTrader to do it automatically.
+
+And I mean, it would require a button to get pushed at some point to say update. But the goal would be then then we could have this updated like weekly or monthly, possibly even getting it updated daily if we if we really have the bandwidth to handle it. So it'll depend how quickly this works.
+
+Right. So, yeah, that's coming out the pipe. I've already updated all of the strategies.
+
+So the ones we're currently looking at are updated as of the 27th. So they're all the same. And and so I will be like I said, I want to put an installer package because right now there's there's two zip files, a folder files plus two add ons that you guys have to install.
+
+I want to do it so that it's it's one package. You just hit install and it does it all for you. So I'm just in the process of trying to build that installer and then hopefully I can get that out this week for you guys.
+
+If I'm struggling to get the installer, then I'm sorry. This first time you guys are going to have to manually install everything to get it up and running. All right. 
+
+But at this point, I would love your comments, questions, feedback, that kind of stuff. I mean, yeah, I mean, amazing, you know. Is there a way to adjust the time zone.
+
+Like, with some of these updates and stuff so that it goes to the right, like, your standard time. Yeah, no, not not automatically that you'd have to do that on your system. Yeah, but that's why that's why I'd like to get it so that you can automate it on your end and just click the button to automate it, because what what you would need to do is then just run through all these strategies for the very first time, change your time zone, run them and save them in your time zone.
+
+And then after that, it's just a matter of updating it so that it can go in it'll automatically do the update. That would be ideal. Unfortunately, I cannot save the files on my end with a different time zone because it saves the trade data.
+
+And in order for me to run it in a different time zone, I get different trade data. So that that doesn't work. So unfortunately, there is still some work on your end.
+
+I'm sorry, I can't do everything. Tracy, you've absolutely crushed this whole thing. Like, it's unbelievable.
+
+Pretty exciting, right? Yeah, crazy. Yeah, crazy. Yeah.
+
+So are there any other features that you guys think you would like or that you would need after you guys have been working with this so far? Is there a way for it to read our minds? Who's that Matt? Get off the call. Remember in Back to the Future, you know, he had the sports almanac, you know. That's crazy.
+
+I have a question with the naming convention. You were saying that the portfolio builder pulls some of the information from the name. So like, so I go through and I change the time, I change the date and set it to my time zone.
+
+What I've been doing is when I save the file, I'm just putting a new indicator for me on the end. Should I actually be going through and changing the actual timestamps in the name also? Yeah, yes. Okay.
+
+Yeah. Yeah, I would. Because it's like I said, it's using some of that data from there because it can't get it from the XML file.
+
+So in order to recognize this correlation stuff that's taking place in here, it's using the logic of knowing when is it starting? When is it closing? Those are the two time zones or timeframes that are extremely important that they're accurate. Now, I probably could program it so that, so that, and here's the thing, Michael, to answer your question, if you leave all of this in PST time, this is running off the trade data. So if you're not changing any of the files that I give you, this will still, it'll still give you the accurate and then all you need to do is take the strategies and then update them in your own file.
+
+You just wouldn't be able to see them in your time zone in through here, if that makes sense. So like, if you pick this, this portfolio, go, okay, well, I looked at it. I like it.
+
+Um, actually let's go over here. If you pick this portfolio here and you say, yeah, I really like this. I'm going to run this.
+
+Here's my strategies. Well, I now just need to go into these strategies, update them, update those strategies to your current time zone, save them as a separate file, and then you can run them on your system with the correct time, but you can do all your analysis in PST time. You don't need to change everything to, to, um, to a different time zone.
+
+So just keep that in mind. Um, but that would require that I continually update you with those zip files, which once I automate this, I won't have a problem doing that. It's not a big deal.
+
+So it's just an extra step. So Tracy, would it be helpful in this portfolio builder to be able to see the individual strategy like you have in the portfolio below analysis? Like what's this, the different like charts and stuff. Um, inside of here, I mean, well in the portfolio, the actual, this portfolio analyzer, you can see all those results, but in the builder, if you wanted to look at just the individual.
+
+The individual one before you selected it to see, oh, do I, you only see the, the, the limited data that you have here, the max, but you don't know like how it's performed without loading it into an analyzer. Well, you, you, you, you can, you can look at it over here on the all, all strategies, like all of them are listed right here. So you'll see the net profit, the max drawdown profit factor.
+
+It's just, there's no chart with it. Um, I could add that in. I just won't be getting that anytime soon.
+
+So that's a lot more coding. That's like an aesthetic thing, if I'm being honest, that the chart, because these numbers right here are what you really want to see. Yeah, I could still do it.
+
+I just, like I said, this, this one here took me 4,600 lines of code. The other, the other one was 7,600 lines of code. So it's, um, and this one took me about three days to build.
+
+This one took me about a week. So just, um, any, any features we do add, I'll write them down and I can definitely do my best to try and get it. But just keep in mind, I am not an expert coder, so I am, I'm struggling to get through this.
+
+This isn't C sharp and I'm learning it. I'm learning it quickly, but I'm using, I'm using chat GPT to help me as well. And like I said, thanks to who helped me, um, help me do this.
+
+So, um, yeah, that's kind of where we're at. So I'm not the fastest when it comes to getting some, some of these things changed and coded. Um, but I welcome all of your suggestions.
+
+Cause if I can do it, then great. Otherwise, if it's beyond my scope or beyond the capabilities, we'll have to add it to something. And when we have, uh, kind of the need for it and like a bigger need for it, then if we have to, to send, send it out to, uh, get a professional to get it, get it done, then we can.
+
+But does that make sense? Yeah. Okay. Um, and as far as this is concerned, this is all with a new NinjaTrader update.
+
+So I have updated, um, my NinjaTrader. So this is the latest version of NinjaTrader. So yes, it will work with any version.
+
+Well, I don't know if it's backwards compatible cause I didn't check it with the old version of NinjaTrader, but it definitely works with the new version of NinjaTrader. So, um, with the update, there's that. And on that note, I also want to let you know that we are, uh, fixing all the dependency issues that got broken with the account protection and the, uh, account, um, dashboard for the copier.
+
+I'll, we should have something out to you guys this week, uh, that will work with the new version of NinjaTrader. So unfortunately that new, um, that new release busted a whole bunch of stuff. I spent an entire day rebuilding everything inside of my NinjaTrader because it broke everything.
+
+So yeah, it was, it was really bad. I even tried to go back to the previous version and it wouldn't let me. So it was a pain, pain, pain.
+
+Okay. So anyway, um, Michael, to answer your question, I will, uh, add that to the list. If I can do it, I will, if I can't, then, um, it'll just be on the list for potential down the future.
+
+Okay. Right. Anybody else with any other questions or suggestions? Not that it, not that I need to give you more work, but in, uh, in trading view, there are, uh, trading hours and you can set the trading hours to be by time zone.
+
+So that, you know, I mean, that may be for a future thing, you know? Yeah. The, the, the problem is, is this isn't running a backtest. Oh, okay.
+
+Yes. Analyzing the data. Yeah.
+
+Yeah. It's, it's just analyzing the data. So I have to run the backtest, export the data, and then it just looks at the data and then transforms it into an image, right? To the visuals and into the, into the columns.
+
+So, because this thing here has all of the trade data, this is the trade, all of the trades, it knows exactly what the timestamps are of all the trades. It can calculate where the, the, the peaks, where the valleys are, what the drawdown is, what the monthly, what the weekly, what the daily, it can calculate all of that just from the trade data. So, um, that's the, that's the issue.
+
+So the, the time zone thing, that's why I said, you guys can look at this and you can analyze this and you can just keep it in PST time. You don't need to change it. The data's there.
+
+So you just need to, once you make your portfolio selection, then you need to convert those files into your local time. So it operates at the correct time. Yep.
+
+So yeah. Okay. All right.
+
+Super. Alrighty. Okay.
+
+Any other questions? All right. On another note, tomorrow we are having our very first monthly strategy building team meeting for those that, that have some coding experience or have some trade, uh, strategy ideas and wanted to be part of it. It's a small group.
+
+Um, but we are going to be meeting once a month and the goal for that is to come up with some additional strategies, maybe some different features for some of these strategies. And if we can code them, then we're going to code them and bring more opportunities and options available to you guys so that you have different strategies that you can use. Um, I've already built a couple of them that I've been testing out to see how they work and whether or not I want to change some of the features on them or not, but I think it's going to be pretty exciting.
+
+So these are all things that are coming down the pipe with the, uh, the bot automation thing. And I think it's, it's, I just think this is the coolest program on the face of the earth. So I'm just kid.
+
+So it's just, that's well, I don't think I know, trust me. I know there you go. Yeah.
+
+Awesome. You guys are the, you guys are the P yeah. Yeah.
+
+And that's not just because you live in Canada. So I know it. I'm a Belizean, yo, I'm just in Canada right now.
+
+I really love this. Like when I tell you, Tracy, I've been, uh, those portfolios you have prebuilt already. I've been testing them out.
+
+I love them so much. They're excellent. Yeah.
+
+I love them. Yep. That's, that's awesome.
+
+Now this year, I forgot to mention that the, like the max John drawdown percentages and things like that. That's based on your starting capital. So you can change this and you can put in, if you have a hundred thousand dollar account, um, you put that in and it will change the percentages, um, inside of here.
+
+So that's what the percentages are based on. And you have $150,000 account, right? The, the, the percentage has changed. So that's what the, the starting capital is for.
+
+That's the only thing that's for. Um, but yeah, it's okay. Um, there is a periodic analysis in here.
+
+So this gives you the, your, your monthly net, like what, what the monthly P&L has been just to, in a chart or a, not a chart form, but in a, um, table form, you've got your yearly and you've got your day of the week as well that you can just slip on. So, yeah, it's just, there's, it's, it's pretty cool. I'm, I'm, like I said, I'm excited.
+
+So yeah. Yep. Okay.
+
+Awesome. All right. Well, that's, that's everything that I have to announce.
+
+Um, Matt, are you still here? Do you have anything that you want to add? No, just a round of applause for Tracy and all her hard work. Well, thank you, Matt. Virtual round.
+
+Great stuff, Jason. Yeah. Like I said, it's been a team effort.
+
+Like inspiration comes from everywhere, right? And, and you guys have inspired me. I mean, one of the reasons that I even decided to do this was because last class, people are asking me, how can I get this? And I told them it's really expensive. So I thought, well, why don't I build one for you guys? Cause then you know, for somebody else's.
+
+So yeah. Yep. Like I said, inspiration, we're all a team and that's why I love you guys' feedback, love the comments, keep them coming.
+
+And, um, Matt and I are, are set to, to build one of the greatest companies ever that's just designed behind you guys' success. That's, that's, that's it. I was talking to somebody today and I told him that, you know, that his success is our greatest reward.
+
+So that's, uh, it's, it's, I'm actually so grateful for you guys. You have no idea. Yeah.
+
+I can't believe how I found you guys, but the Lord knows, so awesome to be here. That's cool. All right.
+
+Well, I'm going to open it up to questions then if anybody's having any difficulties, if you guys want to ask those, I can go over something else, but this is it for the announcements. Hey, Tracy, quick question. Uh, I do use the trade copier.
+
+Did you say it's okay for me to do the most recent Ninja trader update now? Uh, no, no, because I have a, I have a, I have a, I have a, I have a to get the newest, so once I released the trade, yeah. So we're just getting the trade copier and the protection, um, updated because some of the dependencies broke on it. So we're just fixing all of that.
+
+And once I released the two new versions, those will be for, uh, the latest version of Ninja trader. Okay. Thank you so much.
+
+Yeah. There seems to be some kind of issues with the latest and greatest. Um, I used to be very quick and upgrading, but now I'm just a little slow dragging my feet because there's always something to happen.
+
+So yeah, Tracy kind of taught us a hold off because, uh, you know, a lot of times there it's, it's not really ready, ready. So, uh, but yeah, thank you for the clarification. Thanks.
+
+Yeah, no, just hold the hold off. Do not do anything. I will, and I will put it in the announcement that this is good for the newest version of Ninja trader.
+
+So you'll have, once you're, once those are released, you'll be free to update if you want to update. Okay. Thank you.
+
+Okay. And that goes for this package as well, because I, I do not have the old version. Um, Matt, you still do.
+
+Um, so what is the old version? There's like old, old, old, old, old, old, new version. Like I have a 8.1.5. So I'm running 8.1.6.0. So, okay. So I got 8.5.1. Yeah.
+
+So what, what we'll do is, um, once I get this installation package ready, Matt, I'll get you to test it on yours and see if it works for the backwards compatibility. Sure. Um, and if it doesn't, then everybody will have to update to the newest version of Ninja trader in order to get this to work because this was built on the newest version.
+
+Okay. Awesome. Any other questions? No.
+
+Fantastic. Liking this equity curve. Excellent.
+
+And again, just, I know I told you earlier, thank you so much. It's, it's mind blowing that you guys would spend your own money on a, you know, things like a trade copier and a portfolio builder, and then just not even charge us for it. But, um, I just, yeah, I think everyone appreciates it, but in case no one is verbalizing it, which I don't think is the case, like, thank you guys so much.
+
+Like, uh, very, uh, very selfless thing that you, you guys are doing. You, uh, you know, you're giving us every opportunity for success. And, um, uh, that's huge.
+
+Cause I know I'm not smart enough to, uh, to build this. So, uh, so thank you. Thank you to, uh, you and Matt.
+
+Yeah, you bet Harold. It's that, like I said, that's, that's the whole point, right? We want to see you succeed. So we're going to do whatever we can to do that.
+
+Sometimes I don't necessarily know. And sometimes Matt doesn't necessarily know what you guys need. So that's why you guys need to tell us, right.
+
+That's why we have these classes. That's why we have these Q and A's when you guys ask questions, we're learning kind of what, what it is that you're needing, where those stuck stick points are, and that helps us come up with plans to, to help you better, right? So awesome. Okay.
+
+Well, if nobody has any other questions, then I can let you guys all get back to your evening. Awesome. All right, have a good one.
+
+All right. Thanks, Tracy. Thanks, Matt.
+
+You guys have a good day. Bye.

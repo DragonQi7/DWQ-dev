@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wu Ming Meridian Therapy — Animated Slides</title>
+<style>
+  :root {
+    --serene-gold: #e3c77b;
+    --moonlight: #b7d4e3;
+    --soft-indigo: #a9b9f0;
+    --tao-green: #b7dcb2;
+    --flow-blue: #c0e6ff;
+    --dark: #111;
+    --text: #f9f9f9;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    color: var(--text);
+    background: radial-gradient(ellipse at top, #1a1a1a, #000);
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  h2.section-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+  }
+
+  .slides {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    justify-content: center;
+  }
+
+  .slide {
+    position: relative;
+    border-radius: 24px;
+    padding: 40px;
+    min-height: 250px;
+    overflow: hidden;
+    font-size: 1.1rem;
+    box-shadow: 0 0 25px rgba(255,255,255,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0,0,0,0.25);
+  }
+
+  .slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(255,255,255,0.2);
+  }
+
+  .slide::before, .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+    border-radius: 24px;
+  }
+
+  .slide h3, .slide p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slide h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  /* Qi Flow Animation */
+  @keyframes qiFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .slide::before {
+    background: linear-gradient(270deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05), rgba(255,255,255,0.2));
+    background-size: 400% 400%;
+    animation: qiFlow 6s ease-in-out infinite;
+  }
+
+  /* Section color themes */
+  #section1 .slide::after {
+    background: radial-gradient(circle at top left, var(--serene-gold), transparent 60%);
+    animation: qiFlow 8s ease-in-out infinite alternate;
+  }
+  #section2 .slide::after {
+    background: conic-gradient(from 90deg, var(--flow-blue), #1e2f50, #0f0f1a);
+    animation: qiFlow 10s linear infinite;
+  }
+  #section3 .slide::after {
+    background: radial-gradient(circle at bottom, var(--soft-indigo), #0d1a3d, #000);
+    animation: qiFlow 12s ease-in-out infinite alternate-reverse;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- SECTION 1 -->
+<section id="section1">
+  <h2 class="section-title">🟡 SECTION 1 — Foundations of Wu Ming Meridian Therapy</h2>
+  <div class="slides">
+    <div class="slide"><h3>What is Wu Ming Meridian Therapy?</h3><p>Exploring Taoist healing rooted in Qi flow and natural balance.</p></div>
+    <div class="slide"><h3>The Dragon’s Way Philosophy</h3><p>Harmony between structure and spirit — the dragon’s fluid movement.</p></div>
+    <div class="slide"><h3>Qigong and Inner Harmony</h3><p>Movement and breath unify the body’s subtle energy systems.</p></div>
+    <div class="slide"><h3>Qi: The Universal Energy</h3><p>All life vibrates through Qi — unseen yet ever-present.</p></div>
+    <div class="slide"><h3>Origins of Qigong</h3><p>Traces back to ancient temples, sages, and natural observation.</p></div>
+    <div class="slide"><h3>Connection of Body, Mind, and Spirit</h3><p>Each aspect reflects the other in perfect resonance.</p></div>
+    <div class="slide"><h3>Qi Deficiency and Imbalance</h3><p>When flow is obstructed, dis-ease manifests in body or mind.</p></div>
+    <div class="slide"><h3>How Emotions Affect Qi</h3><p>Anger rises, sadness sinks — each emotion shapes energy flow.</p></div>
+    <div class="slide"><h3>Five Traditions of Qigong</h3><p>Taoist, Confucian, Buddhist, Martial, and Medical — five paths, one Qi.</p></div>
+    <div class="slide"><h3>Medical Qigong Overview</h3><p>Harnessing intention and movement to realign internal energy.</p></div>
+    <div class="slide"><h3>Suppression and Revival in Modern Times</h3><p>Ancient wisdom reborn in the age of digital awakening.</p></div>
+    <div class="slide"><h3>Wu Ming Lineage and Message System</h3><p>Transmission from master to student — energy beyond words.</p></div>
+    <div class="slide"><h3>Form vs. Message Systems</h3><p>External forms refine, internal messages transform.</p></div>
+    <div class="slide"><h3>Transmission of Energy</h3><p>Invisible resonance exchanged through awareness.</p></div>
+    <div class="slide"><h3>Qigong as the Foundation of All Chinese Arts</h3><p>Qi unites medicine, art, and movement into one living Dao.</p></div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="section2">
+  <h2 class="section-title">🟣 SECTION 2 — Practice & Methods</h2>
+  <div class="slides">
+    <div class="slide"><h3>The Practice of Wu Ming Meridian Therapy</h3><p>Embodied wisdom expressed through daily movement and breath.</p></div>
+    <div class="slide"><h3>The Ten Movements Overview</h3><p>Each posture activates a meridian and harmonizes internal flow.</p></div>
+    <div class="slide"><h3>The Power of Daily Practice</h3><p>Consistency reveals transformation — Qi becomes luminous.</p></div>
+    <div class="slide"><h3>Breathing Naturally</h3><p>Effortless breath aligns Heaven and Earth within.</p></div>
+    <div class="slide"><h3>Cultivating Stillness</h3><p>Through stillness, movement arises spontaneously.</p></div>
+    <div class="slide"><h3>Liver Meridian Flow</h3><p>Green energy unfolds like bamboo — flexible and vital.</p></div>
+    <div class="slide"><h3>Spleen Meridian Flow</h3><p>Golden Qi nourishes stability and clarity.</p></div>
+    <div class="slide"><h3>Kidney Meridian Flow</h3><p>Blue essence grounds the spirit in deep calm.</p></div>
+    <div class="slide"><h3>Lung Meridian Flow</h3><p>White mist of breath connects the inner and outer worlds.</p></div>
+    <div class="slide"><h3>Opening the Heart Center</h3><p>Lotus of compassion unfolds from the chest outward.</p></div>
+    <div class="slide"><h3>Building Internal Strength</h3><p>Qi condenses within — soft yet unbreakable.</p></div>
+    <div class="slide"><h3>Movement and Awareness Connection</h3><p>Each gesture becomes a mirror of consciousness.</p></div>
+    <div class="slide"><h3>Master–Student Energy Exchange</h3><p>Guidance flows through presence, not instruction.</p></div>
+    <div class="slide"><h3>Healing Through Message Transmission</h3><p>Energy carries wisdom beyond words or logic.</p></div>
+    <div class="slide"><h3>Entering Timeless Practice</h3><p>Body disappears — only still awareness remains.</p></div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="section3">
+  <h2 class="section-title">🔵 SECTION 3 — Applications & Guidelines</h2>
+  <div class="slides">
+    <div class="slide"><h3>The Dragon’s Way in Everyday Life</h3><p>Integrating Qi practice with ordinary living.</p></div>
+    <div class="slide"><h3>Healing the Root Cause of Weight Imbalance</h3><p>Energy flow restores alignment and lightness.</p></div>
+    <div class="slide"><h3>Balancing Emotions with Qi Flow</h3><p>Harmony arises as heart and mind unify.</p></div>
+    <div class="slide"><h3>The Five Organs and Weight Management</h3><p>Each organ holds emotional and energetic intelligence.</p></div>
+    <div class="slide"><h3>Immune and Metabolic Health</h3><p>Qi circulation strengthens vitality and adaptability.</p></div>
+    <div class="slide"><h3>Mental Clarity and Emotional Peace</h3><p>Still Qi reflects truth like a calm lake.</p></div>
+    <div class="slide"><h3>Reconnecting Body–Mind–Spirit</h3><p>Energy coherence awakens natural balance.</p></div>
+    <div class="slide"><h3>Building Intuition Through Practice</h3><p>Quiet awareness opens subtle perception.</p></div>
+    <div class="slide"><h3>Wu Ming Guidelines for Practice</h3><p>Purity of intent, patience, and sincerity form the path.</p></div>
+    <div class="slide"><h3>Best Times for Practice</h3><p>Flow aligns with dawn, dusk, and lunar rhythm.</p></div>
+    <div class="slide"><h3>Full Moon and Seasonal Energy Shifts</h3><p>Nature mirrors the inner body of Qi.</p></div>
+    <div class="slide"><h3>Practicing with Intention</h3><p>Mind directs energy — awareness refines it.</p></div>
+    <div class="slide"><h3>Avoiding Energy Drain</h3><p>Protect Qi through rest, rhythm, and mindful boundaries.</p></div>
+    <div class="slide"><h3>Transformation Stories</h3><p>True healing radiates beyond form into being.</p></div>
+    <div class="slide"><h3>Living the Wu Ming Way</h3><p>Harmony with Dao — simplicity in every breath.</p></div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Niche — Join the Community</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, #0d0f14 0%, #121419 100%);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero {
+      padding: 80px 10%;
+      background: url('https://www.transparenttextures.com/patterns/black-linen.png'), radial-gradient(circle at center, #1a1d22, #0d0f14);
+      text-align:center;
+    }
+
+    .hero h1 {
+      font-size: 2.2em;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 800px;
+      color: #ccc;
+      margin: 10px auto;
+    }
+
+    .highlight {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .program-details {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 25px;
+      max-width: 420px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .program-details h3 {
+      margin-bottom: 15px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .detail-item i {
+      color: #00aaff;
+      margin-right: 10px;
+      font-size: 1.2em;
+    }
+
+    .bottom-section {
+      padding: 60px 10%;
+      background: #0c0e12;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bottom-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    ul.learn {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    ul.learn li {
+      margin-bottom: 14px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    ul.learn li::before {
+      content: "✔";
+      color: #00b7ff;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .footer-note {
+      margin-top: 25px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    /* Signup form */
+    .signup {
+      margin: 28px auto 0;
+      max-width: 520px;
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+    .signup label{display:block;color:#ddd;margin-bottom:6px;font-weight:600}
+    .signup input[type="text"], .signup input[type="email"]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff;margin-bottom:12px}
+    .signup button{padding:12px 18px;border-radius:10px;border:none;background:linear-gradient(90deg,#e2b857,#f4c96a);color:#0d1320;font-weight:700;cursor:pointer}
+    .signup .small{font-size:0.9rem;color:#bbb;margin-top:10px}
+
+    @media (max-width: 600px) {
+      .hero {padding: 60px 8%;}
+      .signup{padding:14px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-bg" style="text-align:center;padding:28px 0;background:#fff;">
+    <img src="images/dragons_way_logo_tagline_red.png" alt="Music Niche Logo" style="max-width:420px;width:60%;height:auto;">
+  </div>
+
+  <section class="hero">
+    <h1>Music Niche Collective<br><span>Join the Next Wave of Creators</span></h1>
+    <p class="subtitle"><strong>Music Niche</strong> connects independent musicians, producers, and listeners who want real growth — not noise. Sign up now to get early invites, exclusive samples, and priority access to mastermind sessions.</p>
+
+    <div class="program-details">
+      <h3>Sign up for updates & early access</h3>
+      <div class="detail-item"><i>📅</i> <strong>Next Launch:</strong> Summer 2026 (Early access spots limited)</div>
+      <div class="detail-item"><i>💻</i> <strong>Format:</strong> Online workshops, live feedback, and resource packs</div>
+      <div class="detail-item"><i>🎧</i> <strong>Who it's for:</strong> Musicians, producers & creative teams</div>
+    </div>
+
+    <p class="footer-note">Sign up below to reserve your spot and receive exclusive behind-the-scenes resources designed to accelerate your music career.</p>
+
+    <div class="signup" aria-label="Music Niche signup form">
+      <form id="signupForm" action="#" method="post" onsubmit="handleSignup(event)">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+        <label for="role">I am a</label>
+        <input id="role" name="role" type="text" placeholder="Musician / Producer / Listener / Other">
+        <button type="submit">Reserve My Spot — Sign Up</button>
+        <div class="small">We respect your inbox. No spam. You can unsubscribe anytime.</div>
+      </form>
+    </div>
+  </section>
+
+  <section class="content-section" style="background:#fff;color:#111;padding:60px 20px;text-align:center;">
+    <h2 style="color:#002c5f">Perform with less anxiety — how Dragon's Way helps</h2>
+    <p style="color:#222;max-width:880px;margin:16px auto;">If stage fright or performance anxiety keeps you from sharing your music, Dragon's Way offers a gentle, practical path to confident performing. We combine breathwork, mindset coaching, and small safe-performance labs so you can practice, get feedback, and grow without pressure. Sign up to reserve a free intro call and a limited early-access coaching spot.</p>
+
+    <ul class="learn" style="color:#222;max-width:720px;margin-top:18px;text-align:left;display:inline-block;">
+      <li>1. Safe, step-by-step exposure to performing — move at your pace</li>
+      <li>2. Breathing and grounding techniques to calm nerves on demand</li>
+      <li>3. Short, focused practice routines that build reliable confidence</li>
+      <li>4. Personalized coaching tailored to your voice, instrument, and goals</li>
+      <li>5. Small-group micro-showcases — practice in front of supportive listeners</li>
+      <li>6. Constructive feedback that improves performance, not just critique</li>
+      <li>7. Mindset tools to reframe fear into focus and creativity</li>
+      <li>8. Ongoing accountability and a community that truly understands stage anxiety</li>
+      <li>9. Performance routines and checklists for consistent, calm shows</li>
+      <li>10. Low-risk intro call and affordable pathways to continue — try before you commit</li>
+    </ul>
+
+    <p class="quote" style="color:#0073e6;max-width:700px;margin:26px auto;">“Start small. Share often. Grow steady — Dragon's Way supports your next step on stage.”</p>
+
+    <p style="max-width:880px;margin:16px auto;color:#222">Join others who transformed anxiety into presence. Enter your details in the signup above to book a free intro call and claim an early-access coaching spot designed for anxious performers.</p>
+  </section>
+
+  <section class="bottom-section">
+    <h2>Ready to join?</h2>
+    <p style="max-width:760px;text-align:center;color:#ddd;">Enter your details above and we'll send a confirmation email with next steps. Early-access spots fill quickly — reserve yours now.</p>
+    <a href="#signupForm" style="display:inline-block;margin-top:18px;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,#e2b857,#f4c96a);color:#0d1320;font-weight:700;text-decoration:none;">Sign up — Reserve spot</a>
+  </section>
+
+  <script>
+    function handleSignup(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      // Simple client-side confirmation (replace with real submit endpoint as needed)
+      alert('Thanks ' + (name||'') + '! A confirmation will be sent to ' + email + '.');
+      // Optionally clear form
+      document.getElementById('signupForm').reset();
+    }
+  </script>
+
+</body>
+</html>

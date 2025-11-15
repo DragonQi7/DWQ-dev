@@ -1,0 +1,33 @@
+The Dragon's Way Qigong® logo uses a bold, stylized serif font that evokes strength, tradition, and elegance—perfectly aligned with the symbolism of the dragon and the fusion of ancient wisdom with modern life.
+
+🧵 Font Characteristics
+Serif Style: The font has prominent, angular serifs that give it a classical and authoritative feel.
+
+Bold Weight: The letters are thick and heavy, suggesting power and stability.
+
+All Caps: The use of uppercase letters throughout adds emphasis and formality.
+
+Slight Condensation: The letterforms are slightly condensed, making the text compact and impactful.
+
+Minimal Contrast: While bold, the strokes are fairly uniform, avoiding high contrast between thick and thin parts.
+
+🎯 Closest CSS Font Styles
+Here are some CSS font families and styles that closely resemble the logo’s aesthetic:
+
+Font Family	CSS Declaration	Notes
+Trajan Pro	font-family: 'Trajan Pro', serif;	Classic Roman serif, often used in formal branding and movie titles.
+Cinzel	font-family: 'Cinzel', serif;	Free Google Font inspired by classical inscriptions.
+Playfair Display	font-family: 'Playfair Display', serif;	Elegant with high contrast, good for refined branding.
+Georgia	font-family: Georgia, serif;	Readily available, with strong serifs and good weight.
+Times New Roman	font-family: 'Times New Roman', serif;	Traditional and formal, though less stylized than the logo.
+🧪 Suggested CSS Styling
+To approximate the logo’s look in CSS:
+
+css
+.logo-text {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b30000; /* deep red similar to the dragon */
+}

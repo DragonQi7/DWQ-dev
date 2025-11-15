@@ -1,0 +1,441 @@
+Can you hear me? Yeah, sounding good. Awesome. Alrighty, folks, so what we're going to do is we're going to talk in our very first class, we talked about running our very first back test.
+
+In our second class, we talked about bucket test. And tonight we're going to talk about optimization testing. It's kind of the last thing that we need to chat about before going live. 
+
+In our next class, we'll talk about going live. And so what we're going to do is we're going to talk about how that works. What is an optimization test? Why do we need to do it? What's the purpose of it? And so what we're going to do is we're going to open up a brand new tab.
+
+And what we're going to do is we're going to go up here to the back test, and we're going to flip over to optimization. And we're going to pick, let's pick the orb, the O-R-B. Now, what you'll notice here in the top right here is I have some dropdowns now. 
+
+Again, we were running back tests, and now we're just going to pick optimization. And so now I have some options here. So I have true, false, optimize. 
+
+I have some choices, and I have some things that I can choose now. And the difference is I can say true means I'm always going to include Monday. False means never include Monday. 
+
+Optimize means play with Monday or two, you know, play with it, see, include it or don't include it. Let's rotate it in and out to see whether or not it works. So in this case, what I can do is I can set all these to optimize. 
+
+And what will happen if I set all these optimized and leave everything else kind of the same is I'm going to set my risk to 750, right? So I'm using a 300K account, and I'm going to set my max lot to 350 contracts, because that's my limit for a 300K account. I'm going to set my profit taker probably to set it to like 1.2, set my minimum to 1.2, my maximum to 1.2, leave everything else pretty much the same. And I kind of scroll down here. 
+
+And what I'm going to do is I'm going to pick probably November. Let's go to November 1st through kind of where we are in February. And we're going to pick infinite and go to two. 
+
+We're going to do a high one second, okay? Actually, let's do one. Yeah, let's do standard real quick. And what you'll notice when I click run, it tells me, oh, you big dummy, you got to pick something to run it on. 
+
+We'll do M&Q, and let's do it on a five-minute chart. Sound good? So what we're going to do is click run. And what you'll notice down, has anyone noticed anything at the bottom? It ran really quick. 
+
+You guys may have missed it if you blinked. So what you'll notice, it said one of 32, right? You see what happened is it ran all 32 variations. So what happened right there? Well, it ran a Monday. 
+
+So I'm only telling it to run every possible combination. That's the only thing I'm telling it. You're like, well, Matt, why did it run 32 variations? There's only five days a week. 
+
+Oh, but it's running every combination of Monday only, Monday and Tuesday, Monday, Tuesday, Wednesday, Monday, Tuesday, Thursday, Monday, and Thursday, Monday, Friday, and Wednesday, right? Like every possible iteration of every possible day of the week. And that's how you come up with 32 possible day, 32 possible combinations, right? And so what happens is you have five days of the week, and I'm hard coding just false on Saturday and Sunday. So you have five days of the week, and then each one of those can be on or off, and then all of those combined, any combination of those, right? And so that's kind of what's running and it's running through all of it. 
+
+And you'll notice here at the top is it gives me all the different options so I can sort these at the top. And I can also, the other thing I can do is I can kind of look at the analysis just like I could with a bucket test and kind of click on these and kind of like sift and sort through these. I can sort them based on like what's profitable, like what my profit factor is, all the things, right? I can kind of look at, oh, that's pretty rough. 
+
+That's not amazing, right? And I can kind of like sort through and look at like what these results look like, okay? Now, every single variable on the right can be optimized, okay? So for example, I can turn off the, I can turn futures, I can turn that on or off, like that checkbox. I can set it true, false, or optimized. Even my risk, I can vary that, right? So I'm hard coding that in this instance because I'm using risk for my account size. 
+
+You guys may know I started a PA account, sorry, an evaluation account, 300k evaluation account in February. Sorry, I started it in December, got it funded in a month. Then I started another one in January, got it funded at the beginning of February. 
+
+So I got two accounts funded like back to back in a month each. And so that went pretty quickly. And then there's a lot of variables that are relative to the account size that I'm using that are represented with the risk in the account size.
+
+Now, just as a reminder, I'm going to go back and show you guys just as a, like why I'm using some of these risk numbers. These obviously can be adjusted based on what your numbers would be, based on what account size you're using. In my case, you guys remember I'm using, I have a max of 350 contracts when I'm using MNQ. 
+
+MNQ, M stands for micro, micro in Q, right? So 350 max contracts. So what does that mean? That means I'm using my 350 right here, 350, right? 350, 350. And when I say I want to use a minimum of 350 and a max of 350, what does that mean? That means there's no variations, right? It's just kind of hard coding 350, right? Now, the other thing that I'm doing here is I'm also, let's go back here, which is a way to like set this, so it doesn't keep moving. 
+
+But the other thing I'm doing is I'm using 10% of my draw down per trade as risk, right? So I'm risking how much? 10% of this number is $750. I'm just kind of shaving off the zero. So $750, right? So then what am I doing? I'm just going up here and I'm saying my risk is $750 minimum, $750 maximum, right? So pretty simple. 
+
+Now, one of the questions I get asked the most is, Matt, what are the main, what are the like the hot and heavy things that are the most important things to optimize? Because you can optimize everything and get carried away with, you know, any and everything. There's tons of things in here that you can't optimize. And obviously every little thing that you add to be optimized can obviously add to the workload, not just add to the workload, but exponentially add to the workload. 
+
+Well, what does that mean? Well, if I was to think of it this way, if I was to start at 830 and I say that I want to go from zero to 50 and I want to rotate my starting time, I want to add, like in this case, let's say I want to run a five minute candle. I'm going to start at 830 and I want to add five minutes every single time. I want to add up to 50, uh, 55 minute candles, right? And I want to rotate.
+
+That's going to add 50 times my 32, right? But it's going to have every possible iteration. So it's not 32 times five. You'll see what happens, right? It's going to be a multiple. 
+
+Let's see if I can scroll down. Oh, did it freeze up? Here, let's see. Close.
+
+Uh, I think it froze up. There we go. So you'll see what happened is it's now running every possible iteration of my, um, every possible iteration of that plus like the zero through 50 plus every possible combination of Monday, Tuesday, Wednesday, Thursday, Friday. 
+
+You guys see what happened? And it's showing me in this case, it should take 35 seconds. So what it's showing here down at the bottom is if I can draw, there we go. It is right here. 
+
+It's showing that it's going to take a little bit of time, right? Now you do have to have a little bit of a beefier computer to run these heavier, um, tests. Uh, I've run several hundred thousand back tests pretty quickly. Um, you don't have to have a super fast computer. 
+
+It's just going to take significantly longer. Now, obviously the longer it, the more tests you're going to run, the longer it's going to take and the longer it takes the, the longer you're going to have to wait, obviously. But the key is to make sure you, um, you identify what, what is going to give you the best bang for the buck, right? Like what are the things that you're going to ask it to do that make, that's going to make a difference, right? So for example, um, if you know, futures don't trade on Saturday and Sunday, is it really worth adding Saturday and Sunday to the rotation of things to test? Remember it's exponentially adding to the workload, right? So like Saturday and Sunday is not going to really vary. 
+
+You can ask it and add to the workload, but it's not really going to vary the results because it doesn't really work on Saturday and Sunday, right? Now, even though the Monday session does work Sunday afternoon, it still counts as the Monday session, right? So those are the kind of things you just have to understand what you're asking it to do and kind of be very efficient in what you're asking the system to do. Okay. So let's look at this. 
+
+Let's look at the profit taker as an example. Let's say we want to go from 1.2 to 2.0 and we want to increment in a 0.2, right? So in this case, what I'm asking it to do is everything we just did, but we're also going to increment in 0.2. So we're going to say 1.2, 1.4, 1.6, 1.8, and 2.0, right? So we're going to start at 1.2. We're going to stop at 2.0, but we're going to increment in 0.2. Now I could do 0.1 obviously, but I'm going to kind of skip around a little bit just to make the workload a little bit lighter. Obviously 0.1 is in between each one of these. 
+
+I certainly could do that, but just to kind of make the work lighter, that's kind of something that I'm going to do. And what you'll notice is the chart size, whether in this case is a five minute, you'll notice here that there is no like box for minimum and maximum. Do you guys notice that? There's no minimum and maximum for the chart size. 
+
+Do you guys notice that? You can do that, but it's not actually on the screen yet. So let's see if this cannot run without choking my computer. Do you guys have any questions about this so far? When you say chart size, does that mean like a three minute chart? Like the five minute chart, or the 10 minute chart, or the seven minute chart. 
+
+That's what I'm referring to. So you can't optimize it? You can. I haven't shown you that yet. 
+
+What I'm showing you right now is there's an extra check box you have to check to enable it. Hopefully this will get through without choking. We'll see what happens here in a sec. 
+
+What other questions you guys have so far? John, Thomas? Once you go live, what's the maintenance on this? What do you have to do? So some of what I'm running right now is the stuff that I chose from December. I'm still running the same stuff I was from December. Okay. 
+
+How often do you have to re-evaluate the strategy? That's a good question. I mean, as long as it's continuing to work, you don't really have to do much with it. And I'll show you guys the Mega Orb is like my ultimate favorite, and I'll show you that here in a sec. 
+
+I'll give you guys that bot too, which is like the Orb, but it takes multiple trades per day. That's kind of like the new favorite across the community. So I'll give you guys that, but remind me before the end of class. 
+
+But it basically takes multiple trades per day. You can say I like to run it up to, I think I run a max of three trades per day, but it consistently is profitable every week. At least since I started running in December, it hasn't failed me yet. 
+
+So sometimes it doesn't give me a ton of profit a week, but it's still been profitable pretty much every week. Is that the 2.24 or the? No, no. It's a different bot called the Mega. 
+
+It's actually called the Mega Orb. It's different than the Orb. It's called Mega Orb. 
+
+It was a new one that we launched in January. So new project we launched. Actually, while we're waiting for this to load, I'll go ahead and post it in our group chat if you guys want. 
+
+I could do that. So like over here in our group here, I'll post it real quick in our group chat or our group section. So give me a sec to do that real quick.
+
+So the standard Orb is just one trade a day? Yeah. It's like a one and done is what we refer to it. We kind of introduced you guys to the two basic one and done, basically like the Orb and the Snapback. 
+
+Actually, you guys don't have the Snapback yet. I'll give you that one as well. But it's the one and done, kind of the super entry level. 
+
+The Mega Orb is multiple Orb trades, and I'll share that. I'll share both of those with you guys here in a sec. I'm going to get these uploaded real quick. 
+
+Give me one sec while that's loading, and then we'll take a look at the results. Boom, boom, boom. So wait, when you go live with your strategy, is that the right word? Yeah, you go live. 
+
+Yeah. What do you do? You just leave it? Does it stay or do you have to check up on it? So we actually have a checklist. We'll go over that in the next class, but I have a checklist that I give you to double check. 
+
+Usually, I just make sure everything's connected and everything's good. There's a way if you want to pay a few extra dollars to push it out to VPS so it runs in the cloud. You can do that as well. 
+
+That's kind of what I prefer to do because I travel a lot, but if you don't travel a lot, you're going to be in front of your computer most of the time. You can probably get away with running it on your desktop. If you have intermittent internet issues or power issues, if you live in the mountains and your power is hit or miss, then you might just spend an extra couple bucks a month to get VPS. 
+
+So we actually go through a whole class on how to set that up. Let's see. Snap back 3.3. What about the contract rules? Do you need to do anything like- So yeah, that's a great question. 
+
+So normally when you log in to NinjaTrader, when one expires, there's a checkbox. At least mine has an auto notification. It'll say, do you want us to automatically update it? So when you run a back test, it'll automatically run the back test over the old contracts for you. 
+
+And going forward, obviously you need to pick the new contracts going forward, but you can see here that it still shows like September, but I would, obviously in my favorites list, I wouldn't pick September. I just pick like the new, whatever the new contract is. So it kind of handles all that stuff automatically for you.
+
+So it's pretty nifty. Yeah. All right. 
+
+So you guys should be able to go download the Snapback version 3.3, and then I'm going to give you the MegaOrb download, MegaOrb version 1.5. When you go live, do you use one bot, two bots? So there's, depending on how many accounts you have, what a lot of people do is, most people have more than one evaluation account. I, depending on what your budget could afford, if you could afford like four, I recommend people get four accounts, either the 25 or the 50K is sufficient. And we actually have a trade copier tool where you can run the bot in one account and then copy it into all the other accounts automatically. 
+
+And that will help you scale your trades pretty, it's kind of an advanced thing, but you can do that pretty easily. Obviously you have to understand how to go live with one before you kind of scale it into multiple, but that's a pretty simple tool to use that we have that we can let you guys use. It's no extra cost that we can kind of, we have like a class on how to do that as well. 
+
+So yeah, it's all kind of, all kind of stuff to help you guys be successful. So, yeah. All right. 
+
+You guys should have this now if you guys want to download it. I'll find the videos that can go along with this. You guys want to download it, but these should be available here for you guys to download. 
+
+Version 3.3, download that. And then the mega orb 1.5. Okay. Yeah. 
+
+And do you guys remember how to install these? I do. Yeah. Okay. 
+
+The easiest thing is just go to tools, import a new add-on. Okay. So let's take a look at what our results were. 
+
+You guys remember that I think this iterated through like 10,000 different options. And if you look here at the bottom down here, I only said, keep the best 10 results and let's keep it based on the max profit factor. And the max profit factor is not always the best variable to use. 
+
+Sometimes you'll see, it only took one trade for some reason. Sometimes it will take one trade and it won, and it'll show a max factor, a profit factor of 99. Right. 
+
+Which means it's bad in a thousand, but it only took one trade, right? Like for some reason, maybe the data has a glitch or something. And it's like, all you see is a whole bunch of one trades with 99 profit factor. So those are the kinds of things you just need to kind of pay attention and look out for. 
+
+Sometimes I'll kind of increase this to like, show me the like 30 of them. Right. And then let's look based on like, what's the highest maybe net profit.
+
+Right. Not necessarily the percentage, you know, maybe not necessarily profit factor, but maybe percentage profitable might, which might be a different thing. And I have another class that I teach where you can actually look for multiple where instead of picking just one of these, there's a way to pick three or four or five of these. 
+
+And you can actually graph it. It's got some pretty cool events that we can get into more of this. We can nerd out on some more of this stuff in future classes, but in this case, we'll just say, you know, we'll keep with the profit factor for now. 
+
+But what we can look at here is we can say so far that this top option looks, you know, pretty decent, right? So you'll look at our $11,000 of profit and our max drawdown of $1,400. Our percentage profitable is 71%. It's pretty good. 
+
+The second option still pretty decent, $7,300, $741, which basically means it only had one losing trade in a row, again, 14 trades. And again, the only, the easiest way to look at these is when you click on each one of these, you can right click, go to open in a new tab, and then it'll just kind of launch it down here in a new window. And the easiest thing you can do now is say, okay, boom, now you'll see kind of what the settings were. 
+
+This shows like a Thursday only, right? So it shows a Thursday only. And now if I wanted to, I could just save this, go down here to template and then save this as a brand new template, right? I can give this a name. You guys see I have a whole lot of templates loaded, but I can give this a name, save it. 
+
+And the reason I'm going to save a template is I can reference this very easily. In the next step, when I go live, I can say, okay, go live with these settings, right? That makes it super, super easy. So again, I highly recommend you guys save templates on things that you, on settings or results that you like. 
+
+And then here's the same thing here. You can run this in a new tab, same thing, do the same thing. Look at what you like.
+
+Again, this is showing a Thursday option. You can click through, look at the chart here. The other thing you can also highlight all the days of the week, click run, and you can probably identify why did it pick just Thursday? Well, you guys probably see right here why it chose Thursday only, right? And probably why it didn't choose Tuesday, right? And probably why, you know, Monday and Wednesday were just hit or miss, just kind of broke even roughly. 
+
+Friday made a little bit of money, but probably just a tiny bit, right? And so those are the kind of things that you can kind of look at. And you'll see that our percentage profitable actually goes down when we add Friday, right? So we ended up making more, but our win loss rate kind of goes below that 70 percentile when we add Friday. So all kinds of cool stuff in here to look at. 
+
+There's types of all kinds of stats in here. You can look at like the average hold time, profit per month, you know, all kinds of longest flat period. So 14 days of, which is probably, if we look, oops, look at our cumulative back into daily, cumulative net, cumulative was probably like from here to here, kind of where we just didn't really make any new highs, kind of where we're just kind of flat, kind of that, what is that like middle of, what is that like the third week of December through second week of January, kind of that timeframe, right? So there's all kinds of tons of stats in here. 
+
+And people ask me all the time, like, hey, Matt, can we make it where, you know, where we only have long trades or only have short trades? And I, I've always resisted. I'm like, just because it won right now, long or short, I don't really want someone to have long only or short only. And maybe the market went the other direction and they didn't take any trades at all. 
+
+I want it to be able to make decisions, you know, independently long or short, but that's kind of the basics of, of like how to run optimization tests for some of these values. Now, the only other thing I still need to show you guys is this option right here called optimize data series. Now why that's a separate checkbox.
+
+I don't really know, but what I want you guys to keep your eyes on is this little value right here. Remember we were talking about it. This is a five minute chart. 
+
+Okay. And watch what happens when I check this box, you'll notice this pops into that same format. Now my favorite, I highly recommend you guys look at between three and 15 minute charts. 
+
+I don't really recommend anything like a one minute or two minute charts. They're, they're a little too quick. I do have some exceptions to the rule we'll talk about in a future class, but for now I like to look at three to 15 minutes. 
+
+Again, you check that box right there, optimize data series, data series, meaning like the chart itself. And now what we can do is now what we're doing is we're saying, okay, optimize all of these. So every possible combination of that, right. 
+
+And we're going to rotate every possible iteration of this and this, right. And we're going to iterate through every possible iteration of our start time. So we're going to add up to 50 different candles and we're going to rotate from three to 15 minutes. 
+
+So does anyone take a guess at how many possible tests we're going to be running? If you said 106,080, you would be correct. Thomas, you guessed that, didn't you? I think you guessed that. You probably just came up that off the top of your head, right? First number in my head. 
+
+You're like, I came up with that right away, about a half second. Boom. So this may or may not take a while. 
+
+We'll see if it can like fly through all this. But, but the idea here is when you're, when you're running these tests, make sure you understand what you're telling it to do. Again, don't like ask it to do extra work that doesn't really affect it. 
+
+Like, like a great example would be asking it to run Saturday and Sunday variations, which aren't going to change anything, but it's going to add a whole bunch of extra workload. Right. Or there's, there's all kinds of things you can ask it to do. 
+
+Like the difference between like a profit taker of 3.0 and 5.0 probably isn't going to make that much of a difference ultimately. Right. You know, it's probably not good, like a lot of extra work, but probably not going to like sway the results at much. 
+
+Right. So that's the kind of, that's the kind of things that I typically like to focus on when I'm running a back test. If you guys want to write this down, the things that really make the biggest difference in my mind are the days of the week. 
+
+That's the, the first thing, the days of the week. The second thing is the profit factor. The 1.2 is the default.
+
+Right. That's kind of like the minimum. The other thing would be the, the start time and then you're using like the, the entry handle offset to kind of rotate that start time. 
+
+And then finally is the chart size. Right. So like three to 15 minutes. 
+
+Those are like the four biggest impact. Now, yes, you can have the padding and the cancel after, and you can look at all the other, the lot size, the risk, but a lot of those things are going to move the needle just barely, not huge. These right here are going to move the needle the most. 
+
+Okay. These are going to move the needle the most for at least the bots that we're talking about. The only other thing that would move the needle most would be in the mega orb has one new feature called max trades per day. 
+
+And I think usually I like to set that to three. So you can set how many, what's the most number trade you want to take three, four, five. If you set it to five, doesn't mean it's going to take five. 
+
+It's going to be a max of five. So it's going to look for five. If it only sees three, it's only going to take three, but it'll, you know, it'll limit it to whatever you, you said that to, but you guys can see here in this case, this this has going to take 45 minutes. 
+
+So we might run out of time before this is before this is finished. So I'll let this run. We'll see what happens. 
+
+It might, might be a little faster. Nope. Time's going up. 
+
+Look at that. What is happening? What? I don't know. But but those are the, the, the settings that get, that give it the, the best bang for the buck, if that makes sense.
+
+So is that true for the snapback as well? Yeah. Yeah. So these, these right here are going to be the same. 
+
+Yeah. Okay. These are going to be the same for all the bots. 
+
+This is just specialized for the mega orb. But these, these would still affect the, this would affect the orb. This would affect the snapback. 
+
+This would affect the mega orb, but the mega orb would also have this in addition. Right. So, but yeah. 
+
+Yep. So I'm going to go ahead and stop this. If it'll stop, will it stop? I don't know. 
+
+Oh, geez. Questions. We'll see if it can stop. 
+
+Maybe not. Do you leave, do you leave this running yourself for like hours or just, you don't really need to do that? Usually I'm not here like, you know, waiting for it to finish picking my nose. I usually like let it run, go make some phone calls, come back around Aaron, come back kind of thing. 
+
+That's typically what I'm doing. But usually like, you know, if it's a big workload I've done, I think the most I've ever done was like a 9 million tests. And it took, I think, 14 hours. 
+
+So obviously that's like an overnight kind of a, kind of a thing. But you, you just have to be careful. It doesn't like freeze up in the middle of it.
+
+Because then you're like, shoot, where did it like leave off? And, but usually you want to, you just want to, you know, get a good read on what are some, some optimal tests. Right. And the, the idea here is you want to find what are, what are the optimal settings like in the most recent 90 days. 
+
+The ultimate problem, what a lot of people get stuck with is I want you guys to understand what we're really doing, right. Is we're kind of going back like 90 days, or we're going back like three months. And we're looking, this is considered like in sample data, right. 
+
+We're looking at, it's kind of like, we can pretty accurately guess what the weather has been in the last 90 days. Right. Cause like we know, right. 
+
+And so, but we don't know what the weather's going to be like tomorrow, next week. And so we can kind of have a good gauge and maybe have some pretty calculated estimates, but in the future, same thing with the bots, we don't really know what's going to happen. So what we don't want to do is have everything tightened down.
+
+So, you know, like everything precisely the settings so precise. And, and I, I see this a lot of times, but there's a risk of, it's called over-optimization. And when I see someone with every little setting has like some unique value, I know it's been over-optimized. 
+
+Right. And so the idea here is that we're looking backwards and we know what's happened with our, our back tests. Cause we've seen what's happened and we can, you know, we can tweak all the variables to make it never lose ever. 
+
+Right. Like we have the ability to do that, but what we're trying to do is get a good gauge of something that could work and not fall on its face going forward. And usually what happens is people spend so much time optimizing everything so that the very first like 10 trades are just all losers, but like historically they never lose, but going into the future, they do nothing but lose. 
+
+And when I see someone's back tests and every single one of these values has some weird custom value, I know that guess what it's been over-optimized, over-optimized, right? Like crazy. And the, that's kind of the risk. And so if you guys can just focus on those three or four things that I told you are the biggest bang for the buck and leave everything else, you know, kind of a default, you're, you'll be fine. 
+
+Right. Yeah. And you know, I don't have a crystal ball any more than you guys would say, Hey, this is going to definitely work, you know, tomorrow or next week. 
+
+I, like I said, I'm still running the settings of what I, what I figured out in December. I'm still running those now. And I got two, 300K accounts funded and I got, you know, real money in the, the PA account that I could withdraw if I wanted to. 
+
+So growing those accounts. So, you know, I'm not, I'm not spending much time at all on those. So I am spending a little bit of time in my classes running back tests like this, you know, but nothing beyond that. 
+
+So. Yep. What other questions you guys have for me? Hopefully I can get this back test to stop.
+
+My computer's going to be out of commission in the next few minutes. Yeah. Go ahead.
+
+Do you have like three, like how many strategies do we need going in to a live account or a, what do you call it? How many strategies do I have? Like, do we need going in? Do we just have like one, one strategy and then that's it? My favorite is if you can find one thing that runs every day of the week. Now that's hard to find, but that would be my ultimate favorite. You know why? I don't necessarily need to find a Monday, a Tuesday, a Wednesday, a Thursday and a Friday.
+
+Cause I can have one that does all of it versus five different ones. Right. That's the ultimate. 
+
+I get it now. And it's a way less maintenance, you know, and that's why I like the mega orb. The mega orb was designed to do that. 
+
+Yeah. Okay. Yeah. 
+
+I can show you guys like, let's see if I can clear out some of this stuff. Um, let's see, this is another optimization, but let me run, I'll show you guys. You guys want to see like exactly what I'm running on the mega orb. 
+
+Let's see what dates is in here. So I ran the back test for the mega orb for, um, October, November, December. So like that, that 90 day period. 
+
+And this, this will take a couple of minutes to run cause I'm using a one second data, but, um, you guys can see $48,000, right? That's pretty good. And, uh, I have this thing changed. It's a six minute chart, but I'm running, you know, $750 at risk and three 50. 
+
+Those are my go-to numbers for my 300 K account. What do you guys notice about my days of the week? What every day of the week? What? And if you look at the analysis, some days are better than others, but look at this, like it's pretty consistent, right? And so my back tests look like this, this is my back test. This is what I looked at. 
+
+I'm like, okay, let's do that. So then I go live and here's my PA account. It got funded. 
+
+Um, you know, I got, um, my, uh, evaluation account got funded. I only needed 20 K and that, and then I got two of those funded and I got another seven, eight K of fun, you know, profits and, uh, in the, in the actual PA, you know, they call it the performance account on top of that. So, um, yeah. 
+
+So let's look at the days of the week. You know, you guys have any questions? This is why I like doing it this way. It's, it's so much easier to, um, to have, you know, um, something that can run every, every day of the week. 
+
+You don't have to like cherry pick or, you know, it works. I don't know. I think it works pretty well. 
+
+So yeah. And you guys can see October, November, and December, which ends like right here. I think right here was my, that was my back test and it looked pretty good. 
+
+So then I'm like, okay, let's not over optimize it. And look, this is the fault. This is the fault. 
+
+This is the fault. Uh, I think this was, I think I thought, I thought I said that to three, maybe it's three or four, but this is my risk. This is the fault. 
+
+This is the fault. This is my risk. This is the fault. 
+
+This is unique. That's the only thing I set. This is unique. 
+
+Remember I said the start time and the chart size and everything else is the fault. Like as it, like I'm only changing two or three things. That's it.
+
+Everything else is the fault. So it's not over optimized and you guys can see what happens when you don't over optimize. It works pretty good. 
+
+Like here's my back test. This is what we were, we're talking about the, uh, it was there this way. This is what we were talking about the in sample. 
+
+Like this is what I saw when I ran my back test in sample, right? Uh, we were building this, during like December and we went live at the beginning. Uh, and this is my out of sample and out of sample work pretty well. Right. 
+
+So this is the back test I ran through here. This is my out of sample still work pretty good. What do you guys think? Yeah. 
+
+Now, yes, there was like last Friday, it took like, I think three losing trades, full size risk, but it's, you know, made it all back since then. So, you know, sometimes you get punched in the face, but you just keep going. So yeah. 
+
+And you'll see this, this column here's like the cumulative, let me see. Let me turn some of these off. It's like the cumulative, uh, let's see, trades. 
+
+I don't know why I can't figure out how to get these. Like I'll change these, but then next time I open them, they come back. So, I don't know, but, uh, here's a cumulative number. 
+
+It'll see, you know, like cumulatively adding up, up, up, up, up keeps growing. How do you, um, like, if you have a, like, how does it, how would you think this through? If you have, let's say you have a 50 K account, what would you, what would the, uh, gross profit be that fit a 50 count, 50 K account range as opposed to like. Yeah. 
+
+Great question. Let's, uh, let's look at the, uh, the numbers and I'll tell you exactly what I would plug in again. So let's look at, uh, can you see that my screen? Yeah, no, I, I know, I want, I know what to plug in, but what's the gross profit that is reasonable. 
+
+I mean, listen, so I'm just looking at this. So my, I would use 250 risk and a hundred micros. That's the number I'm plugging in. 
+
+So, uh, two 50 risk and a hundred micros. So I just rerun it. So I'd plug this in at two 50 and a hundred and then rerun it. 
+
+And you'll see, it's gotta have the same graph, but the dollars will be a little different. Okay. So 14,000, again, your goal is three K right. 
+
+Without losing, um, what was it? Two K. Yeah. No, without losing 2,500. Right. 
+
+So do you agree this met three K and you didn't lose 2,500, 2.5 K. Yeah. You agree that this met your criteria. But, but what about the percent, the profit factor is less than two and then the, uh, yeah. 
+
+So yeah. So I I'm okay with that being a, like relaxing the standards there. And like, these are a little bit lower when I have all of these. 
+
+I'm not sure why Saturday keeps getting checked, but when I have all of these, so I'm kind of trading, I'm like, I'm okay with relaxing those a little bit to have something that I don't have to like have five different things that I'm, I'm monitoring, if that makes sense. So I'm okay with that. I'm kind of trading and bartering and changing that a little bit, but even with like, like a little bitty, um, like a 0.56 profit factor, instead of the 2.0, I'm still making, you know, still making some decent profits, but I'm not having to cherry pick the days of the week. 
+
+I'm just letting it always run. So it's just a different way of thinking about it. So then you would push this strategy forward, right? At 14.
+
+I would, but the exception is if I'm running it all days of the week. Now, if this is a Monday only, I probably wouldn't let it run. It was just Monday because I would be more strict on if it's just a single day of the week. 
+
+Why? Because it's only going to have, you know, 12 trades in there for three months. This has significantly more trades in there. Yeah.
+
+Because it's taking five trades a week or no, sorry. Sorry. Sorry. 
+
+It's taking four trades a day or up to four a day. So it's really like up to 20 a week, not 12. Oh, sorry. 
+
+It's not taking one a week. It's taking 20 a week. So it's significantly more trades. 
+
+That makes sense. Yeah. So once we have a strategy, the standards, if I'm able to kind of get away with like a multiple lot, lot more days running without having to cherry pick the days. 
+
+So I've always said that, you know, my favorite would be something can run multiple days, like Tuesday, Wednesday, Thursday, or something like that. But to find something that can run five days a week, that's just gold. That's, that's perfect.
+
+Because then you don't have to cherry pick, well, okay, what days of the week am I running it? And every once in a while, you'll find maybe Wednesday just stops working. Maybe I'll just turn off Wednesday. That's fine. 
+
+And maybe it starts working and then I'll turn it back on. That's fine. Right. 
+
+But I don't want to, you know, if I'm, if I'm running it for three months, three months, 90 days back test Mondays, only one traded a day, that's only going to be 12 trades. Right. So the difference, that's not a very big sample size, 12 trades versus 20, sorry, 271 versus 12 trades. 
+
+I'd rather have the 271 with a little bit less profitability. Cause I'm taking a lot more trades, right. But I'm still making some, some, you know, I'm still in the range. 
+
+This is still the four times, four times that is still pretty solid up here. Right. Yeah. 
+
+Yeah. Yeah. So then once, once I, once I have a strategy like this, then I go like, what else do I need to do? I'm kind of like, do I keep figuring out more, do more back tests, more optimization tests? Yeah. 
+
+So, so we actually have we have a couple private groups that you can join. Like once you get funded, we actually have some private groups that you can join where we're talking about like focus on like the strategy to get payouts, which there's some strategies to get payouts. Cause Apex has certain rules. 
+
+And then we have some other groups for like some, some other like secret groups that we'll say for talking about specialized strategies. But I can give you guys videos on like, or a checklist on like how to go live or video or something. If you want to see like what's required to go live, if that's what you're asking about. 
+
+Yeah. Okay. But yeah, but I don't know. 
+
+What do you, I mean, Thomas, what do you think about a strategy like this that runs five days a week? I mean, I think it looks like it's like gold pretty much. Yeah. Yeah. 
+
+Yeah. We're actually working on you guys probably haven't seen it in here, but we're working on a mega snapback too. Nice. 
+
+It's, it's still in Dempsey. It's not released yet, but we're, we're, it's in the lab right now. So working on that. 
+
+So it's going to be killer. The 10 EMA can take multiple trades per day. The NR7 can take multiple trades per day. 
+
+The snapback is a single volume bot can take multiple trades per day. Push button is a semi-automated. So it's buttons on the screen. 
+
+You click and it fires off the trades, but the orb and the snapback were designed to be one and done kind of entry level. That's why we always start with those just to kind of super basic, simple entry level. You know, so people don't get overwhelmed. 
+
+People get overwhelmed. Like sometimes we have usually older women in class who can't even right click. You know what I'm like trying to try to teach these people who can't even right click how to run bots. 
+
+It's rough sometimes guys. So, but yeah. I mean, you guys tell me what you want. 
+
+I can, I can give you videos. I can give you checklists. Do you tell me what you guys want or need? If you guys want to get ahead, you just tell me what you prefer.
+
+Uh, I'm just thinking like what else we need to do go live after we get the strategy. I just, I just, you know, cause I think I have a few. Yes. 
+
+How about this? Why don't you guys download the, the, the bots that I gave you, run some back tests, send them to me and I can chat and I'll give you some feedback. Make sure you save the templates cause that makes going live easy. Cause you, you, you go live with you apply the template on the chart or, you know, you set up a strategy using the template, which is all the, the combination of all these settings here on the right.
+
+And, uh, and then you, you pick what account you want to go live in and, you know, just then enable it. That's pretty much it. Um, I'll, I'll give you the exact checklist. 
+
+Uh, there's two different ways to do that. Um, I can send that to you guys, but that's typically what we'd go over in our next class. But, um, and then there's like, if you want to run into VPS, that's another class you want to run, uh, like an account copy of trade copier, uh, with multiple trade groups.
+
+If you have 20 accounts, that's a whole nother class. There's like scaling strategies. That's another class. 
+
+So there's all kinds of stuff we can get into you guys, you know, for sake of time, you guys tell me what you prefer. I know we typically have more people than just the two of you guys, uh, in class, but a couple, a couple of people told me they won't be able to make it. So yes, something we prefer. 
+
+Yeah. I'm here. Yeah. 
+
+Just, I guess the checklist would be great, man. Okay. Sure. 
+
+And then, uh, and I'll give you the video that explains the two bots I gave you. I'll, I'll, um, I'll upload that. Um, I'll put it in the, uh, by the download for, for these two, uh, these two bots that we have. 
+
+I'll, I'll share that with you guys. Okay. And then the copy trading, we just get multiple accounts. 
+
+Yeah. Copy trading is really only ideal. If you have multiple accounts, if you just have one account, it's not going to make a difference. 
+
+Like one apex account, maybe you have two, three, four accounts. That's where it really happened. It really, where it really makes sense and where it really takes effect. 
+
+And what are the, like, if you only have one apex account, John, then, you know, just run the bot in that one account. But if you have, like, we had someone in my, uh, one of my classes who had 20 accounts and you run a bot in one account and copy into the other 19. That's the idea. 
+
+What if, what if you have a bad strategy that compounds the losses, right? Well, so there there's, there's some strategies to it. Normally we have like a, there's a strategy where you typically would stagger the accounts where let's say you have four accounts. You would start one on week one, start another one a week later. 
+
+So they don't have the exact same balance as you stagger them. Um, so actually I had one person started 20 accounts, um, and she blew them all up in like one day. Cause she got super aggressive, try to get everything funded in one day and blew them all up. 
+
+I'm like, what kind of risk are you using? How many trades a day are you using to blow everything up in one day? Like how does that happen? You know, that's, you know, try to, you know, have one huge home run and one trade and the trade loss. So she blew it up. What risk were they using? Like $10,000 on a 300K account and your, your, your risk, your drawdown 7,500. 
+
+So, you know, try to make two R to, you know, that, that, that's, you know, we, you know, we can warn people about that, but you know, if you're going to do what they're going to do, and that was after one, the first class, we hadn't even talked about going live, you know, so it is what it is, but, um, the copy trade is all through the same size account or it can't be variations? No, they can be different size accounts. They can be, cause there's a quantity multiplier. So if your main account's a hundred K and your follower accounts are 50K, you can say, let's half size everything. 
+
+Or the other way around, if your main account's 50 and your, your followers are a hundred K, you can just say two X, everything or three X, everything, or 0.5, you know, two, five, everything you can scale up or down based on the account sizes. So, yeah. So, so the risk would be different based on the account size? Well, no, so you, you can figure the bot, um, the bot has whatever risk you want. 
+
+And that points to the leader account, right? And then you, you can figure the follower accounts and each account can, yeah, I can show you. It can scale up proportionately, right? Based on the account. Can you see this? Uh, I just added these two accounts. 
+
+Can you see my screen here? Yeah. So, um, you can, so you can, you can say, uh, here, let's do it this way. So, so I have this configured, you can run four different groups to this, how I have mine set up. 
+
+So I can like, I don't have 20 accounts, but if I wanted to run 20 different accounts, I can have four different groups, right? So I can have one group that has like five accounts. So like one leader and four followers, right? And then repeat that one leader, four followers. So each one of these is a tab. 
+
+So like one, two, three, four. And so what I could do is I can say, okay, um, SEM 101 is my leader. So this is the, the blue is my leader. 
+
+And I can say, okay, in this account, I want to, um, I want to run this one and this, so I can turn these on. Right. And I'm going to use one to one, right? So I have it configured to run on 300 K, right? But then I can say, I also want to run this one. 
+
+And because I configured to run on a 300 K, I only want to run this on a 0.25 risk. So I only want to do like a fourth of the risk. So I can say 0.25 and then enable that. 
+
+Right. And then I can turn it on. So anything that goes, uh, that I point into the SEM 101 is going to copy exactly a hundred percent into this, a hundred percent of that, and then a fourth of it into this, right? So if like 10 contracts come into here, 10 will go into here. 
+
+Um, and then, uh, like two or three, I guess, whatever rounds would go into here. That's the idea. Got it. 
+
+Okay. You can scale them up or down, or you can do it the other round. You can say, you know, this could be like five X. So I just turn it off, change it. 
+
+And then you can also set daily goals, like a daily target. Say I want to make 1500 or if I lose three 50, you know, stop trading in the account. You can, you can do this, you know, five, five X, you know, there's all kinds of stuff you can, you can do in here. 
+
+So, but that's how it works. And you have different, uh, different, um, leader accounts that you can connect different follower accounts to different leader accounts. There's all kinds of tabbed.
+
+And then you can, you can save, uh, you can save like templates here for like how you've configured the accounts, all kinds of cool stuff in here. So this is something that, uh, that we give away in our, um, I think this is like class, normally like class six, I think we go through something like this, but again, it's really only helpful if you have more than one, um, one apex account. What are we doing in class three? No, we're in three now, right? Or yeah, this is costly.
+
+Normally in class four, we go through and talk about going live class four is, you know, checklist to go live to class five is using VPS. Class six is like this, uh, trade copier, um, scaling strategies. So, okay. 
+
+Yep. So what other questions can I help you guys with? Do we have any homework or what's that? Do we homework or no? Of course, man. Of course you got homework. 
+
+So your homework would be run some back tests on, uh, the, the two new bots I gave you. I will, I'll give you guys some, uh, the videos that explain how they, uh, how they work, um, give you a little bit more insight because I'm kind of, I just kind of gave them to you through when you're laughing, like, good luck with that guys. Have fun. 
+
+So I'll give you some videos on that. Run some back tests, see what you like and, uh, share with me some things that you would seriously consider going live with. Again, uh, the mega orb is very, very popular.
+
+You guys are active in the community, but, uh, it's very, very popular. A lot of people like it and it's been very, very consistent, at least for me the last, well, since I've been running it. So again, the, the idea of running it, uh, every day of the week, you know, works pretty well.
+
+So yeah. Yeah, that's that. So that would be your homework and, uh, share your screenshots of your back test. 
+
+Um, show me not just the result, but also the settings so I can see if I can replicate that. But yeah, that's it. And I'll share the videos and I'll give you some checklists to go live if you guys want to do that. 
+
+And we'll, we'll go over all that again in our next class. Sound good. Yeah. 
+
+Thank you, Matt. All right. Thanks guys. 
+
+Yep. And then how do I connect my account again? Sorry. You say you're going to, did you say you was going to send a video to connect the account to the Ninja trader? Uh, cause I got the username. 
+
+Are you using, um,

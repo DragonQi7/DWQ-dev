@@ -1,0 +1,121 @@
+Here’s a clean **HTML/CSS structure** for the Iverson Lee promotional page you showed. It recreates the **two‑section layout**: a dark hero banner with motivational text, and a white biography section with portrait + text side by side.  
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iverson Lee — The Heaven Code™</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-dark: #0a0f19;
+      --text-light: #f2f4fa;
+      --muted: #b5c2e1;
+      --gold: #e2b857;
+      --accent: #1f2942;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,sans-serif;line-height:1.6;color:#222;}
+
+    /* Hero Section */
+    .hero{
+      background: radial-gradient(1000px 600px at 50% 0%, rgba(226,184,87,.08), transparent 70%),
+                  linear-gradient(180deg, #080d16 0%, var(--bg-dark) 100%);
+      color: var(--text-light);
+      text-align:center;
+      padding: 80px 24px;
+    }
+    .hero h1{
+      font-family:"Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      margin:0 0 20px;
+    }
+    .hero p{
+      max-width: 800px;
+      margin: 8px auto;
+      font-size: clamp(16px, 1.6vw, 20px);
+      color: var(--muted);
+    }
+    .hero p strong{
+      color: var(--gold);
+    }
+
+    /* Bio Section */
+    .bio{
+      background:#fff;
+      color:#222;
+      padding: 60px 24px;
+    }
+    .bio-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .portrait{
+      flex:0 0 260px;
+      text-align:center;
+    }
+    .portrait img{
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+    }
+    .bio-text{
+      flex:1;
+      min-width:280px;
+    }
+    .bio-text h2{
+      font-family:"Playfair Display", serif;
+      font-size:28px;
+      margin:0 0 16px;
+      color:#000;
+    }
+    .bio-text p{
+      margin:0 0 14px;
+      font-size:16px;
+      color:#333;
+    }
+    .bio-text strong{color:#000;}
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Your Moment Is Now</h1>
+    <p>The Universe doesn’t reward effort. It rewards <strong>synchronicity</strong>.</p>
+    <p>When you align with Heaven’s timing, everything begins to flow in your favor.</p>
+    <p>Don’t wait for luck. Create it with <strong>The Heaven Code™</strong>.</p>
+  </section>
+
+  <!-- Bio Section -->
+  <section class="bio">
+    <div class="bio-wrap">
+      <div class="portrait">
+        <!-- Replace with actual portrait -->
+        <img src="portrait-placeholder.jpg" alt="Iverson Lee Portrait">
+      </div>
+      <div class="bio-text">
+        <h2>Who is Iverson Lee?</h2>
+        <p>Iverson Lee is a self‑made millionaire, entrepreneur, elite speaker, consultant, and trainer at Joey Yap Research International. He is recognized as a leading authority in Chinese Metaphysics, specializing in Feng Shui, BaZi (Astrology), Qi Men Dun Jia, I Ching, Face Reading, and Date Selection.</p>
+        <p>Through his work, Iverson has helped CEOs, entrepreneurs, professionals, and executives achieve success by aligning with metaphysical principles. His teachings emphasize clarity, timing, and synchronicity to unlock personal and professional breakthroughs.</p>
+        <p>He has shared his expertise with organizations such as KPMG, Sime Darby, Genting, HSBC Bank, Symantec, and many more, earning recognition for his ability to deliver transformation in a short time.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+```
+
+### ✨ Features of this layout
+- **Hero section**: dark gradient background with motivational text in white/gold.  
+- **Bio section**: clean white background, portrait on the left, biography text on the right.  
+- **Responsive**: stacks vertically on smaller screens.  
+
+Would you like me to also add a **call‑to‑action button** (e.g., “Join The Heaven Code™”) under the hero text to make it feel more like a landing page?

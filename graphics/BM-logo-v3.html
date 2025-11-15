@@ -1,0 +1,152 @@
+<div class="logo-symbol" id="mandalaContainer">
+  <!-- JavaScript will inject intricate mandalas here -->
+</div>
+
+<script>
+const mandalas = [
+  // Variation 1 - layered petals + inner polygons + halo dots
+  `<svg viewBox="0 0 200 200" class="mandala-svg">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#87ceeb"/>
+        <stop offset="50%" stop-color="#add8e6"/>
+        <stop offset="100%" stop-color="#e0f6ff"/>
+      </linearGradient>
+      <filter id="glow1">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <!-- Outer ring -->
+    <circle cx="100" cy="100" r="95" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Layer 1 petals -->
+    <g transform="translate(100,100)" class="rotate-slow">
+      ${[...Array(12)].map((_,i)=>`<path d="M0,-80 Q15,-60 0,-40 Q-15,-60 0,-80" fill="url(#grad1)" opacity="0.7" transform="rotate(${i*30})"/>`).join('')}
+    </g>
+    
+    <!-- Layer 2 petals smaller -->
+    <g transform="translate(100,100)" class="rotate-medium">
+      ${[...Array(8)].map((_,i)=>`<path d="M0,-60 Q10,-45 0,-30 Q-10,-45 0,-60" fill="url(#grad1)" opacity="0.8" transform="rotate(${i*45})"/>`).join('')}
+    </g>
+    
+    <!-- Inner geometric polygon -->
+    <g transform="translate(100,100)" class="rotate-fast">
+      <polygon points="0,-25 12,-12 0,0 -12,-12" fill="url(#grad1)" opacity="0.9"/>
+      <polygon points="25,0 12,12 0,0 12,-12" fill="url(#grad1)" opacity="0.9"/>
+      <polygon points="0,25 -12,12 0,0 12,12" fill="url(#grad1)" opacity="0.9"/>
+      <polygon points="-25,0 -12,-12 0,0 -12,12" fill="url(#grad1)" opacity="0.9"/>
+    </g>
+    
+    <!-- Orbiting dots -->
+    <g transform="translate(100,100)" class="rotate-medium">
+      ${[...Array(12)].map((_,i)=>`<circle cx="${Math.cos(i*Math.PI/6)*70}" cy="${Math.sin(i*Math.PI/6)*70}" r="4" fill="url(#grad1)" opacity="0.7"/>`).join('')}
+    </g>
+    
+    <!-- Center glow -->
+    <circle cx="100" cy="100" r="20" fill="url(#grad1)" filter="url(#glow1)" opacity="0.9"/>
+    <circle cx="100" cy="100" r="10" fill="#ffffff" opacity="0.8"/>
+  </svg>`,
+
+  // Variation 2 - more petals, smaller radius layers, additional star layer
+  `<svg viewBox="0 0 200 200" class="mandala-svg">
+    <defs>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#a0d8ff"/>
+        <stop offset="50%" stop-color="#cde8f9"/>
+        <stop offset="100%" stop-color="#e0f6ff"/>
+      </linearGradient>
+      <filter id="glow2">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <circle cx="100" cy="100" r="90" fill="none" stroke="url(#grad2)" stroke-width="2" opacity="0.5"/>
+    
+    <g transform="translate(100,100)" class="rotate-slow">
+      ${[...Array(16)].map((_,i)=>`<path d="M0,-75 Q12,-60 0,-45 Q-12,-60 0,-75" fill="url(#grad2)" opacity="0.7" transform="rotate(${i*22.5})"/>`).join('')}
+    </g>
+    
+    <g transform="translate(100,100)" class="rotate-medium">
+      ${[...Array(10)].map((_,i)=>`<path d="M0,-55 Q8,-40 0,-25 Q-8,-40 0,-55" fill="url(#grad2)" opacity="0.8" transform="rotate(${i*36})"/>`).join('')}
+    </g>
+    
+    <g transform="translate(100,100)" class="rotate-fast">
+      ${[...Array(8)].map((_,i)=>`<polygon points="0,-20 10,-10 0,0 -10,-10" fill="url(#grad2)" opacity="0.9" transform="rotate(${i*45})"/>`).join('')}
+    </g>
+    
+    <g transform="translate(100,100)" class="rotate-medium">
+      ${[...Array(14)].map((_,i)=>`<circle cx="${Math.cos(i*Math.PI/7)*65}" cy="${Math.sin(i*Math.PI/7)*65}" r="3" fill="url(#grad2)" opacity="0.7"/>`).join('')}
+    </g>
+    
+    <circle cx="100" cy="100" r="18" fill="url(#grad2)" filter="url(#glow2)" opacity="0.9"/>
+    <circle cx="100" cy="100" r="8" fill="#ffffff" opacity="0.8"/>
+  </svg>`,
+
+  // Variation 3 - fewer petals, larger inner star pattern, halo effect
+  `<svg viewBox="0 0 200 200" class="mandala-svg">
+    <defs>
+      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#87ceeb"/>
+        <stop offset="50%" stop-color="#add8e6"/>
+        <stop offset="100%" stop-color="#e0f6ff"/>
+      </linearGradient>
+      <filter id="glow3">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <circle cx="100" cy="100" r="95" fill="none" stroke="url(#grad3)" stroke-width="2" opacity="0.5"/>
+    
+    <g transform="translate(100,100)" class="rotate-slow">
+      ${[...Array(6)].map((_,i)=>`<path d="M0,-80 Q18,-60 0,-40 Q-18,-60 0,-80" fill="url(#grad3)" opacity="0.7" transform="rotate(${i*60})"/>`).join('')}
+    </g>
+    
+    <g transform="translate(100,100)" class="rotate-medium">
+      ${[...Array(10)].map((_,i)=>`<polygon points="0,-30 12,-12 0,0 -12,-12" fill="url(#grad3)" opacity="0.9" transform="rotate(${i*36})"/>`).join('')}
+    </g>
+    
+    <g transform="translate(100,100)" class="rotate-fast">
+      ${[...Array(12)].map((_,i)=>`<circle cx="${Math.cos(i*Math.PI/6)*55}" cy="${Math.sin(i*Math.PI/6)*55}" r="3" fill="url(#grad3)" opacity="0.7"/>`).join('')}
+    </g>
+    
+    <circle cx="100" cy="100" r="20" fill="url(#grad3)" filter="url(#glow3)" opacity="0.9"/>
+    <circle cx="100" cy="100" r="10" fill="#ffffff" opacity="0.8"/>
+  </svg>`
+];
+
+let current = 0;
+const container = document.getElementById('mandalaContainer');
+
+function showMandala(index){
+  container.innerHTML = mandalas[index];
+}
+
+function nextMandala(){
+  current = (current + 1) % mandalas.length;
+  showMandala(current);
+}
+
+function prevMandala(){
+  current = (current - 1 + mandalas.length) % mandalas.length;
+  showMandala(current);
+}
+
+// Initialize
+showMandala(current);
+</script>
+
+<!-- Example buttons -->
+<div class="buttons">
+  <button onclick="prevMandala()">Previous</button>
+  <button onclick="nextMandala()">Next</button>
+</div>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragon’s Way Qigong® — Early Enrollment Gifts</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0a0f19;
+      --card: #0f1626;
+      --text: #e9eefb;
+      --muted: #b5c2e1;
+      --gold: #e2b857;
+      --gold-strong: #f4c96a;
+      --blue: #4cb7ff;
+      --blue-strong: #7bd0ff;
+      --accent: #1a2740;
+      --ring: rgba(76,183,255,0.25);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(124,193,255,0.08), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(226,184,87,0.08), transparent 60%),
+        linear-gradient(180deg, #080d16 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--blue-strong);
+      background: linear-gradient(90deg, rgba(76,183,255,.15), rgba(226,184,87,.15));
+      border: 1px solid rgba(124,193,255,.25);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .title{
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height:1.2;
+      margin: 4px 0 10px;
+      letter-spacing:.01em;
+      background: linear-gradient(90deg, var(--text), #cfe3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle{
+      max-width: 860px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.6vw, 18px);
+      margin-bottom: 28px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:#0d1320;
+      background: linear-gradient(90deg, var(--gold), var(--gold-strong));
+      font-weight:600;
+      padding: 10px 14px;
+      border-radius: 999px;
+      box-shadow: 0 6px 24px rgba(244,201,106,.25);
+      margin-bottom: 26px;
+    }
+    .badge svg{width:18px;height:18px;flex:0 0 auto}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 8px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      position:relative;
+      padding: 26px 24px 24px;
+      border-radius: 16px;
+      background:
+        radial-gradient(120% 120% at 10% -10%, rgba(76,183,255,.15), transparent 40%),
+        radial-gradient(120% 120% at 110% 0%, rgba(226,184,87,.12), transparent 40%),
+        linear-gradient(180deg, var(--accent), var(--card));
+      border: 1px solid rgba(124,193,255,.18);
+      box-shadow:
+        0 16px 40px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.06);
+      overflow: hidden;
+    }
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:18px;
+      pointer-events:none;
+      box-shadow: 0 0 0 2px rgba(226,184,87,.12);
+    }
+
+    .card .ribbon{
+      display:inline-block;
+      font-weight:700;
+      color: var(--gold-strong);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card .headline{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom: 12px;
+    }
+    .card .headline .tag{
+      font-weight:700;
+      color: var(--gold-strong);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      border:1px solid rgba(226,184,87,.4);
+      border-radius:8px;
+      padding:6px 10px;
+      background: linear-gradient(180deg, rgba(226,184,87,.18), rgba(226,184,87,.05));
+    }
+    .card .headline h3{
+      font-family:"Playfair Display", serif;
+      font-size: clamp(18px, 2.2vw, 26px);
+      margin:0;
+      color: var(--text);
+    }
+
+    .card .lead{
+      color: var(--blue-strong);
+      font-weight:600;
+      margin: 6px 0 10px;
+    }
+
+    .card p{
+      margin: 8px 0;
+      color: var(--text);
+    }
+
+    .note{
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      border-left: 3px solid rgba(226,184,87,.5);
+      padding-left: 12px;
+    }
+
+    .glow{
+      position:absolute;
+      right:-60px;
+      bottom:-60px;
+      width:220px;height:220px;
+      background: radial-gradient(closest-side, rgba(76,183,255,.28), transparent 70%);
+      filter: blur(6px);
+      pointer-events:none;
+    }
+    .glow.gold{
+      left:-60px;
+      top:-60px;
+      width:180px;height:180px;
+      background: radial-gradient(closest-side, rgba(226,184,87,.25), transparent 70%);
+    }
+
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:16px;
+      margin-top: 26px;
+    }
+    .cta .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:600;
+      color:#0d1320;
+      background: linear-gradient(90deg, var(--gold), var(--gold-strong));
+      box-shadow: 0 12px 28px rgba(244,201,106,.22);
+      text-decoration:none;
+    }
+    .cta .btn-outline{
+      color: var(--text);
+      background: transparent;
+      border: 1px solid rgba(124,193,255,.35);
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <span class="eyebrow">Why Begin Now?</span>
+    <h1 class="title">Early Enrollment Gifts — Dragon’s Way Qigong®</h1>
+    <p class="subtitle">Join early and receive two powerful healing gifts designed to deepen your journey into balance, vitality, and self-healing.</p>
+    <div class="badge" aria-label="Early enrollment bonuses">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2L12 2z"
+              fill="#0d1320" />
+      </svg>
+      Enroll early — receive 2 exclusive gifts
+    </div>
+
+    <section class="grid">
+      <!-- Gift #1 -->
+      <article class="card">
+        <span class="ribbon">Gift #1</span>
+        <div class="headline">
+          <span class="tag">Energy Reawakening</span>
+          <h3>Exclusive Dragon’s Way Practice Session</h3>
+        </div>
+        <p class="lead">Experience energy flow like never before.</p>
+        <p>Join a private guided session with certified instructors to reawaken your body’s natural healing energy and feel the Qi moving through every cell.</p>
+        <p>Perfect for both new and returning students ready to transform stress into vitality.</p>
+        <span class="glow gold"></span>
+      </article>
+
+      <!-- Gift #2 -->
+      <article class="card">
+        <span class="ribbon">Gift #2</span>
+        <div class="headline">
+          <span class="tag">Five Element Harmony</span>
+          <h3>Healing Food & Lifestyle Guide</h3>
+        </div>
+        <p class="lead">Bring ancient wisdom into your daily rhythm.</p>
+        <p>Learn how to align your diet and lifestyle with the Five Elements to support emotional balance, organ harmony, and lasting energy flow.</p>
+        <p>A practical companion to awaken your inner healer each day.</p>
+        <span class="glow"></span>
+      </article>
+    </section>
+
+    <div class="cta">
+      <a class="btn" href="#" aria-label="Enroll in Dragon’s Way Qigong">Join Dragon’s Way Qigong®</a>
+      <a class="btn btn-outline" href="#" aria-label="Learn more">Learn more</a>
+    </div>
+
+    <p class="note">Early enrollment gifts are available for a limited time only. Once registration closes, these exclusive offerings will no longer be available.</p>
+  </main>
+</body>
+</html>

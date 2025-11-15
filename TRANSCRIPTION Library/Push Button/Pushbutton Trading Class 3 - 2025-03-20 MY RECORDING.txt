@@ -1,0 +1,537 @@
+So that's what I did. So here's what we're going to do. This is the process. 
+
+You guys know that there's some requirements and some basic things we want to see out of a back test, right? And there's a couple things that I've changed up a little bit since I first started teaching this. Now, typically we want a profit factor greater than two, and typically we want the percentage profitable greater than 70%. Now, I have since made a couple concessions. 
+
+I kind of made a couple things different. And the only reason I'm okay with these being a little bit lower is if I don't have to, if I have a Monday through Friday where I don't have to have a Monday, I don't have to have a Tuesday, I don't have to Wednesday, Thursday, and a Friday, I don't have five. I was like, let me save myself a whole bunch of trouble.
+
+I'm going to use one thing that can kind of go across the board, right? And so the idea here is I'm okay with relaxing my standards a little bit in exchange for not having to have five separate setups, right? And so in this case, I still want something obviously greater than 50%. 50, 55 obviously would be ideal. And I still want a profit factor greater than 1.5. But the idea here is I'm kind of trading off, right? Now, if I only find something that I'm still going to run like one day a week, I still want those same standards greater than two and greater than 70%, right? The problem with having super high standards like greater than 70 or greater than 80% is sometimes people have different requirements, is if you have something greater than 80%, it can't get too much higher than that. 
+
+And on the scale of winning, you're kind of right here on the high end of winning. And obviously, you can't get too much better. You're certainly not going to ever have 100% win rate. 
+
+So it's more likely that you're probably going to be disappointed if you're looking for 80% and it's probably going to get closer back down to like that 50 to 60, 70%. Does that make sense? So anyways, people have asked me that 100 times. It's like, Matt, this doesn't meet your requirements and this doesn't meet your requirements. 
+
+Well, that's the only exception to the rule is if I have a Monday through Friday. Okay. Make sense? Just want to make sure you get this in the recording. 
+
+Okay. So John, here's what you do. Go ahead.
+
+Yeah. Sorry. Quick question. 
+
+So if we had even just like Tuesday to Friday, like just one day unchecked, we should still. I think that's fine. You can still use the lower. 
+
+Yeah. Okay. You can still use the lower, but if you're doing a single day, that's where you have to have kind of tighter requirements. 
+
+Okay. Okay. Now here's what you do is once I have something that I like, make sure you're using, when you're running a single back test like this, I'm not running it across the stack of tickers or optimizing it. 
+
+Make sure you're running it on one tick. That is the best way to do it, right? Run it on one tick. Okay. 
+
+What you're going to do is you're going to go to save. And by the way, if you're including like a partial month, like today is March 20th, there's no reason I need to save March 20th. Obviously, if I save March 31st, it's going to save March 31st. 
+
+And obviously, as more days of March appear, I don't have to change that date. It'll just backfill the dates as more dates come in. Right? So I can go up to save.
+
+And what I can do is I have to name it and give it a naming convention. Right? Now, keep in mind when I hit save, it's automatically going to put it in a folder for this specific bot. Right? So what I'm going to do is I'm going to go ahead and name it something so that I know some kind of reference. 
+
+Right? So my personal naming convention here is I'm going to call it the mega orb. So I'm going to call it mega orb M6 designates, in this case, the six minute. Right? So that's kind of the six minute over here. 
+
+The M and Q designates the ticker. So M and Q, the micro NASDAQ. Because I'm running it Monday, Tuesday, Wednesday, Thursday, and Friday, I'm going to go ahead and put the days in there, the two character code for the days of the week.
+
+And then if I'm using $250 worth of risk, I'm going to go ahead and define that in here. Now, the reason that's important is you'll see here that I have 250 and 750 so that I don't have to manually know to change one for a bigger account or lower it for a smaller account. I have to, I just pick it. 
+
+Right? I don't have to manually remember to change up or down because trust me, if I have to remember to do something manually, I'm probably going to forget. So I'm going to make it easy on myself. Right? And then 1024 is kind of the start time.
+
+And then 1.2R is like what my profit taker is. Now, the reason I'm defining all this is I'm kind of giving it a naming convention so that, and I'm putting equals equals just because it always comes out alphabetical. And over time, you're going to have a bunch of these and I want them to kind of bubble up to the top, whatever ones I want to use the most. 
+
+So I kind of want them to kind of appear at the top. So in this case, I'm going to click save, overwrite, boom. Now we're ready to go. 
+
+Okay. Now the reason you need a template is when we go live, we're going to take these exact settings and we're going to go live with these exact settings. Okay. 
+
+So there's two ways to go live. I'll show you. Yeah, I just saved it. 
+
+Yeah, yeah. You can. So the way it works is, let's see, you can go, yeah, I'll show you. 
+
+So if you go into documents, NinjaTrader, if you go into the templates folder and then strategies, you'll see right here, the push button mega orb. Let's see. This right here is the one I just, literally one minute ago, this is the file I just created. 
+
+It's an XML file. You're familiar with XML. I don't know why it doesn't use like JSON or something a little more modern than XML. 
+
+As you know, XML is like 2005, right? It's kind of old school, but whatever. Yeah. So, yeah. 
+
+But yeah, you can import and export it. Sometimes if you like give it to a friend or whatever, sometimes you have errors or permissions type of issues, but yeah, you can do that. So now that I have a template, the easiest thing to do is, what we're going to do now is I'm going to take, I'm going to show you guys, this is your December group, right? And so we've, in our first class, we talked about backtests. 
+
+Then we talked about bucket tests, optimization. Now we're talking about class four, which is go live. Now I added these two sections. 
+
+We'll add the recording as soon as we're done here. But these two sections right here are what is required to go live. And there's two ways to do it. 
+
+Okay. And what I'll do is we're going to go through this and I'm going to go one step at a time. I'll copy and paste it and we'll kind of do it one step at a time. 
+
+So you guys, so I'll demonstrate it for you. Okay. So step one, so there's two ways to do it. 
+
+Okay. There's one way is you put a bot on a chart. And then the other way is you can literally launch them from here without a chart. 
+
+Now I prefer to do it this way because it's a little more dummy proof and Matt needs dummy proof. I'll show you why in a second. Okay. 
+
+Let me do it the way that is a little harder to screw up and I'll show you why in just a sec. Okay. So let's do live with the chart. 
+
+We're going to, I'm going to take one step at a time. Okay. And I'll copy and paste it from the notes over here. 
+
+Okay. So we're going to put step one, log into NTA and from the control center. So obviously log into NinjaJet. 
+
+Right. And I like blue. Let's do blue. 
+
+Okay. So from the control center, which is this, this guy right here, let's minimize all this. From the control center, we're going to go to new and then chart.
+
+Right. So new chart. Okay. 
+
+Or if we have a chart open, which I did have a chart open, you'll see here. I have a chart open, chart open. I can click like the plus button, like down here.
+
+So I can do it either way, like open a new chart basically. Okay. So that's step two.
+
+Step three, specify the ticker and timeframe for the bot you want to run. In our case, remember we're looking at MNQ six minute. Okay. 
+
+So I'm going to pick MNQ. Now remember that we're, we were looking at the March contract. I just got a notification two days ago that we're, we're auto rolling over to June. 
+
+Not necessarily something you need to know. It happens automatically, but we're going to automatically, we're going to pick June. And in this case, we're going to look for six minutes. 
+
+So we're going to go to minute six, click. Okay. Right.
+
+So now I launched, ignore this for a second. Cause there's a lot of, see all my trades on the chart. We're going to hide that just a sec.
+
+So you guys don't get all kind of crazy confused. There we go. I'll turn those off just for a sec. 
+
+Otherwise you guys will get a headache looking at all that. Okay. Next step four. 
+
+How did they turn green again? On the chart top row buttons, click the clipboard strategies icon. It looks like a little playbook for like football or rugby or something. Right. 
+
+You guys see that? It's like a little playbook. Yeah. Right. 
+
+So we're going to click on that. Okay. Okay. 
+
+So next is step number five, number five in the top left of the strategy pop-up. Okay. So top left, we're going to double click the bot strategy you want to load. 
+
+So in this case, we have them in the push button folder. We're going to double click the mega orb, right? So double click the mega orb. And what you'll notice is when we double click it, it loads it down here under the configure tab. 
+
+And then all my settings are kind of populated over here, right? So it says double click the bottom. It will load, go live and it will load in the bottom left, right? So it loads it here and settings are on the right. Okay. 
+
+Next. Okay. Okay. 
+
+Edit the settings in the right panel, in the right panel and or click the setting, the templates. So remember John, super helpful, Paige helpful, Tom helpful. If you have templates, makes the job way easier. 
+
+You're going to click templates, which is preferred to load the correct settings. Now don't try, someone showed me though, that they're handwriting all the settings. Just use a template. 
+
+It makes life easier. So I'm going to click template load. Remember I named it something specific. 
+
+Click load. Boom. It changes all the settings for me, right? So imagine I'm going to just like make all these 999, 999, 999, right? I'm going to just mess them all up on purpose, right? Okay. 
+
+I'm going to click load. Watch what's going to happen. It's going to load my template. 
+
+Okay. I'm going to click a plot. Well, hang on. 
+
+I got ahead of myself. We're going to go to number seven, step number seven, and you guys will have this checklist. So you don't necessarily have to take notes and it is in the, the course information.
+
+Okay. So ensure that you have the historical fill processing set to standard. Now, why does that matter? Well, for historical fill here during a back test, you want high tick. 
+
+The one tick is the slowest, painfully slow, but it's also the most accurate. Okay. Most accurate. 
+
+However, during live trading standard is what you want. Okay. Make sure you do this. 
+
+Make sure you do this step. Don't skip this step. If you ever see a trade where it gets in and out in half a second, you're wondering why it's because you skipped step number seven. 
+
+Okay. Okay. Step number eight.
+
+You guys ready? Okay. Step number eight. Here we go. 
+
+Under the setup section, okay. Setup section, choose the account you want to use the account from the account dropdown. Okay. 
+
+Basically, which means what account do I want to use this in? How many of you guys, just show of hands, how many of you guys have more than one or how many of you guys have an Apex account? Well, since I only see Tej. Tej, do you have an Apex? How many of you guys have more than one Apex account? Okay. So you need to pick which Apex account do you want to put it in, right? You guys can see I have a few. 
+
+I actually got my newest PA account. I have to assign the signature and all that. And so one of these will drop off when I get a new PA account will appear. 
+
+Okay. So I need to know which one I need to run it in, but I also need to double check if I'm going to be running it. This doesn't say, this doesn't tell me what my account sizes are, right? So if I'm accidentally running, let's say I'm running 750 risk, but which is kind of what I would use for a 300K, but I'm accidentally running it in a 50K, that's going to be a problem, right? I need to make sure I understand what account number is what risk, right? And what the lot sizes are. 
+
+So I have to be responsible for that. It's not going to tell me, it's not going to warn me. It's not going to say, Matt, you're being an idiot. 
+
+I have to understand that, right? Easiest thing to do if you're confused is to go to your control center. Well, let me click apply real quick and go to your control center, which is here. Click on your accounts and you're able to look at what your account numbers are here. 
+
+You can open them up. So number, you know, you can look at the last couple of days, 19, 20, 20, 15, and you can see what the balances are, right? This one has, this one's halfway to getting funded. This one I just got, well, these two I just got. 
+
+This one, right, this one just got funded. See that? So if I'm not sure, I need to know. That's, that's basically how I could do that, right? Make sense? So I need to make sure I understand what I'm telling the system to do. 
+
+That's super, super important, okay? So back in, in this screen, I need to make sure if I'm telling it to run a 50k, my settings are for my 250 risk, okay? Super, super important. After I, I'm okay with that and after, remember, I need to set this to standard, then the next step is basically to click enabled. The enabled checkbox would be here. 
+
+We're going to click, actually, apply, okay, and okay. Now, how do I know it's live? Well, you'll see it right here, mega orb, right, like that, right? Now, let's pretend, and oh, and by the way, you'll see it actually on the chart here. You see it on the chart? You see that? Now, let's take a look. 
+
+What happens if I want to edit something in here? How do I do it? Everything's grayed out. Well, I want to edit, I got to uncheck enabled, hit apply, and now I can edit anything, including changing an account. Let's say I want to put it in a practice account.
+
+I can click edit, click apply. Let me leave it unchecked, and I want to show you what happens. You guys see this D right here? You see it? It looks like a D. You know what D stands for? D stands for disabled, and how to enable it, or how to fix the disabled, you enable it.
+
+You go down here, you click enabled, click apply, okay, okay, and now that D goes away, and now you'll see it actually right here. You'll see, you can scroll and look at what the trades, the trades that were taken, you're able to see what trades have been taken. Make sense? Questions? Now, you guys want me to tell you why this is not foolproof? Tej, do you want me to show you? Yeah, sorry, I have one question before that.
+
+So, we're choosing like a specific account, but if we're doing like a copy trade or something, would we have to select multiple accounts? No, you can only run it in a single account. That's why you have the trade copier for that. Yeah, you can only run it in a single account here.
+
+You can only pick one. Now, the trade copiers, we can talk about that in a next session if you guys want, or DPS, but we'll talk about that. Yeah, that's what the trade copier does, literally.
+
+Okay, here's how you can screw this up. I want you guys to write this down, MNQ six minute, okay? What happens if I accidentally pick MES two minute, MES two minute, okay? And I now, because I'm not paying attention, or maybe I'm distracted, and I'm trying to talk to my spouse, and I'm picking the right template, even though it says MNQ M6, but I'm accidentally loading it on the wrong chart, and it's not going to tell me, Matt, you're being an idiot. I click enable, apply, okay. 
+
+I go live with the right settings on the wrong chart. That is why I prefer not to do it this way. And you'll see, you see where it says it's calculating? Give it a sec, it'll it'll load. 
+
+It'll load in just a sec. It's a lot of two minute candles. Here, let's do, let's do, I don't know, 15 minutes. 
+
+Should be faster, and I think it has 90 days a day. Let's do five days of data. See if that's faster. 
+
+You guys see what I did? Like, I, it didn't warn me that I put the right template on the wrong chart. That's why I prefer not to do it this way, okay. By doing it this way, it will show me the pretty trades. 
+
+It'll show me, like, on the chart. That's the advantage of doing it this way. There's one other way to do this, okay. 
+
+So this is what we just went through, was steps to go live with a chart. That's what we just went through, okay. The other way is steps to go live without a chart, which we'll go through now. 
+
+Any questions so far before I jump back into the other way? No, no questions? None? Is this on? Okay, here we go. Okay, my ultimate way, my ultimate favorite. Here we go. 
+
+Ready? Are you ready? Paige, are you ready? Yes. Okay, step number one, turn on computer. Okay, next step, log into NT8 in from the control center. 
+
+Remember, the control center is, like, where everything launches from, which is this thing. Click the strategies tab at the bottom, right? That's what we're looking at right now, okay? Okay, next, right-click over the white space and choose new strategy, right? So what does that mean? That means right-click, new strategy. Oop, next. 
+
+Once the strategy window loads on the left, oops, let's move this around. There we go. Once strategy window loads on the left side in the available section, so available section, click on the strategy you want to go live with. 
+
+So we're going to open the push button. We're going to go to Mega Orb, and you'll notice it doesn't load it below. It just immediately pushes it over here, right? So it kind of skips a step in a way, right? Which is fine, fine. 
+
+Okay, number four. Oops. In the bottom right, click the templates link and load the settings template you want to go live with. 
+
+In this case, click load, pick the one we want we're going to go live with. Boom. Number five is going to be the same. 
+
+Five and six are going to be the same as the previous one, which is basically ensure you have historical fill processing set. Someone's like, what happens if I don't do that? Well, you'll be in and out of a trade. Literally, it'll get into the trade and then get out of the trade, either for like a $3 win or $3 loss, and you'll wonder what happened.
+
+That's what'll happen. So remember, historical. In a back test, you set it to high one tick, and live, you set it to standard fastest, okay? Next.
+
+Under the setup section, choose the account you want to use from the account dropdown. Okay? So same thing here. We're going to use what account. 
+
+Make sure you know which one you want to run it in, okay? Now, I actually have several PA accounts, several eval accounts. Total, I got seven now. Something like that. 
+
+And so I actually run two groups of accounts, and I use the trade copier for all of it. So I run everything in sim 101 or sim 202. Basically, which group I want. 
+
+Everything in group one is sim 101. Everything in group two is sim 202. So I have my own methodology, my own method to the madness, but that's kind of how I do it.
+
+If you only have a single Apex account, then obviously you're going to pick the account you have, if you just have a single one, okay? Now, in this case, same thing. Make sure you run the risk that matches. If you're running a 300k risk and a 50k account, we actually had someone the other day run a $1,000 risk. 
+
+He accidentally put an extra zero. You guys know the difference between a $1,000 risk and a $100 risk? It is just an extra zero after all. Someone blew up 14 accounts with that one extra zero. 
+
+Just a little typo. Blew up 14 accounts in one day by the extra zero. An accident. 
+
+It was one trade, just an extra zero and extra oops. And actually, we're going to interview him. He's going to tell the story of how he bounced back. 
+
+He was kind of bummed out for a few days, but he bounced back. So honest mistake, right? It happens. So make sure you pick the right risk for the right account. 
+
+Same thing with the max slot size, right? Ideally, you're running your back test relative to the account size you're going to run in, so that's kind of safe, but make sure you match that up correctly. That's the idea, okay? Now, this is hard. Make sure you guys do this.
+
+Click okay. Click okay. Now, there's one more step that's a little bit different here, okay? And that is, you'll notice that I have a lot of things loaded up here, right? And in this case, remember, I put it in sim 101, so you're like, which one is the one I just loaded? The one I just put in sim 101. 
+
+That's the one I just loaded, okay? So the very last step is this. Back in the control center, which is this guy right here. Back in the strategies tab where we are.
+
+Click that enabled button. Click okay, and it'll give it a sec. Oh, there you go.
+
+There you go. Now, you'll see it says order, and order is open. I'm going to manually... There we go. 
+
+It's trying to go live. I don't want it to go live right now. I'm going to close that.
+
+There we go. Questions? So the reason I like this one is... I'll do it one more time. New strategy. 
+
+I did not pick the ticker. I did not pick the time frame. It automatically picked it from my template.
+
+This one is why I said it's kind of dummy proof, right? It is dummy proof. See, it picks it right here automatically from the template. I'm not throwing it on a chart. 
+
+It's figuring this out from my template, so this one's a little bit more dummy proof. This is why I prefer this method, okay? Now, the downside is I don't get the pretty chart that I can take a screenshot of, but if you're okay with not doing a screenshot, then do it this way, right? Now, I click okay. Now, I can click boom, go live, and you'll see it takes a sec.
+
+You'll see it turn green, say sync is true, and then it'll turn green. If you ever see this turn orange, the reason it'll turn orange is when I put my mouse over the parameters, you see this little box pop up, which shows me all the parameters. People are like, Matt, why is Tuesday, Wednesday, Sunday? It's not in order. 
+
+Ladies and gentlemen, that is alphabetical order based on the settings name. You'll notice at the top is the A, and at the bottom is a W. It's alphabetical order based on the setting name, not the order in which it appears, okay? If you look at this, you'll see somewhere in the middle, it says start time 1020. What do you think happens if I enable this starting at 1020? What do you think happens if I enable it at 1030, 10 minutes after it's supposed to start? What do you guys think happens? It will turn orange and it will not take a trade.
+
+That's what will happen. Why? Because we started late. It's not going to go back in time and take a trade that happened 10 minutes ago. 
+
+That's not possible, right? That would be a problem, okay? The only other thing I recommend is when you guys are doing this, make sure that you'll notice there's two settings here that I have. Your maximum bars look back. I set it to infinite and make bars required to trade. 
+
+I set this to two. That's it. Just make sure you have two bars. 
+
+Normally, it's 256 and I think 20, I believe. Set this to infinite and make it two. That's the only thing. 
+
+Otherwise, everything is good to go and you're ready to go live. Now, the question is, do you guys think you can replicate this? The steps are here for you all. The video, of course, I'll post it here shortly, but your steps on how to do that are here and here.
+
+Your homework is, of course, to go live. You guys think you can do this? Is this doable? Think it's easy? What do you think? Yeah, so the goal would be then just focus on one account right now. Yes. 
+
+My recommendation, if you guys don't yet have an Apex account or maybe do, I don't know. Where to go? Hang on. There we go. 
+
+Apex has, they currently have an 80% off sale for the next 11 days. Now, they had it for two weeks, then they extended it another two weeks, then they said final offer, and then they ended it, and then they had a 71% off sale for three days, and then they extended another, I don't know. If it has 80% off sale, take advantage of it.
+
+The coupon code is SAVENOW. Here's what I recommend if you guys want some recommendations. If I had to do everything all over again, I do have two 300k accounts I got funded in a month.
+
+Each one took a month. If I had to do everything all over again from scratch, here's what I would get right here. 50k. 
+
+That's what I would get. Does anyone know why? I feel like a broken record when I tell this story because I tell this story all the time. Why would I do this? Well, if we're taking risk of 250, 10%, 250, how many wins, how many Rs do I need to get this funded? 12R, right? 250 times 12 is $3,000, correct? Right? How many do I need over here for this one? 20R, right? How many do I need over here for the 300k? Seven, I need about 28R, okay? Now, the 25k, you only need 10R because this is like a one-to-one ratio. 
+
+This is 12R. If you can afford a few more dollars to get double the buying power and you only need two more R, just get the 50k. The coupon code for that, again, is save now is the coupon code, okay? That's what I would get is the 50k. 
+
+That's what I would recommend. Now, does anyone know how many APEX accounts you can have? What's the max they will allow? 20. 20. 
+
+Let me ask you a question. What would be a good external output goal of Rs in a month for one account? Let's say you're risking $250. What is a good R? Do you guys think you can make 4R in a month? If you made 4R in the first week, just take the rest of the month off. 
+
+That's $1,000, right? Now, not that $1,000 is life-changing money, but if you have 20 accounts that you each had 4Rs in, that is a different number, correct? Do you guys see where I'm going with this? In our next class, we'll talk about VPS, and then the following after that, we'll talk about the trade copier. Do you guys think 4R is doable? Heck, I did just today. I did more than 4R. 
+
+I did 8R today, right? This is not hard, but you do have to be consistent. The biggest problem I've seen people do is when they go live, if a bot loses, then they want to change everything so it never loses ever. My advice is just let it run. 
+
+If it loses, it loses. Let it run. Don't try to interfere. 
+
+Don't try to tighten it up. Don't try to help it. The human element still sabotages the automation, if you guys can believe that, especially people who are overly emotional. 
+
+It's tough to watch. Questions? Now, what if you already got that 25K account? Yeah, just keep it. If you got a 25K account, keep it. 
+
+If you have anything else, I would consider getting the 50, because it is exponentially more difficult to get those funded. You can save a few dollars. Get rid of that drop, unless you're super close to getting it funded. 
+
+The other thing is what we recommend is if you can afford more than 150K, like if you can afford two or three, I would not get any more than four max at your level. I would do a max of four. If you can afford four, then great. 
+
+If not, just do one or two or three, but no more than four. The reason is what we recommend is that, let's say I buy four accounts today on, what's today? March 20th, right? On April 20th, if I blow up an account, I can get a free reset, right? Do you guys know that? I've never paid a reset fee ever. I don't know why you would want to. 
+
+I've never paid a reset fee ever. Now, why do people pay a reset fee? I don't know. Why would I pay $33 for an account and then pay $100 for a reset when I get a free reset, right? So, Tej, imagine on your billing cycle, if you've blown it up, it resets back to zero after your next billing cycle, right? So, you're paying $33 a month for the 50K. 
+
+Did you guys know that? Okay. Yeah, I found out the hard way. I paid a reset fee and then I realized after reading more. 
+
+So, here's another idea. Put on your calendar, I actually have it on my calendar, when my billing cycle is because I have three different billing cycles because I bought them at three different times. I'm like, okay, these two accounts renew on the 14th. 
+
+These two renew on the 20th. These two renew, right? So, I have on my calendar like two or three days before, okay? Now, let's say that I'm not at my 50K accounts. Let's say I'm down $2,000. 
+
+I'm having it blown up and I'm close. What could I do to get a free reset two days before? So, instead of having to like dig my way out of my negative $2,000, what could I do to get a free reset? Oversize on a change. Could I do something dumb to just blow it up on purpose, like throw some dynamite in there, blow it up and get the free reset? Yes, I could. 
+
+But I don't want to wait till after the billing cycle. I need to do that before the billing cycle, which also means I need to be very intentional with when the billing cycle is going to occur. Typically, the way it works is is like on the 20th, when they bill you today, the next day, like on the 21st, you'll see that new account show up under your apex. 
+
+So, when I use my login, boom, there's on the 21st, the very next day, that new account will appear. There it is, $50,000 again, right? So, again, be intentional. And if you have multiple accounts, don't ever do what we call a straight line copy, which we'll talk about trade copiers. 
+
+Don't ever have four accounts with the exact same balance, doing the exact same trades. And the analogy, actually, we had someone do this. Someone actually did this with 2,300K accounts. 
+
+They blew them all up in the same day. Okay, let me ask you guys a question. What happens if you have 20 accounts and you blow them all up in the same day? How long before you have to wait for your free reset? It's the first day until the 12th month, right? You have to wait and you do it on a month that has 31 days, like December. 
+
+You got to wait 30 days and you can't buy anymore because you maxed out, right? Someone literally did that. And we call this a straight line copy. And our advice, do not ever do a straight line copy. 
+
+Now, the analogy we have is imagine buying, uh, setting up four restaurant stage side by side that had the exact same menu, exact same pricing. Everything is identical. Why would you do that? Something has to be different, right? Why would you do that? That's literally what people do.
+
+Like, no, no, no, don't do that. Like something has to be different. Our suggestion, instead of that, our suggestion, if you're going to have multiple accounts is if you're going to buy four in one day, use the first one in week one, set the rest aside. 
+
+In week two, bring on a second account. In week three, bring on a third account. So they have these staggered balances, right? So in week one, you're only using the first account. 
+
+In week two, you're using the first two. In week three, you're using three. In week four, you're using four, right? So week one is just this one. 
+
+Week two is these. Now, at the end of week one, does this have a zero balance? It's zero. At the end of week two, guess what? These two are going to have a different balance. 
+
+These are not going to have identical to the penny balance, right? Even if you take the same trades, one's going to be ahead or behind, correct? At the end of week three, are these three accounts going to have the exact same balance? The answer is no. At the end of week four, guess what? No. And even if this one blows up, by the end of week four, you get a free reset. 
+
+No big deal. If any of these blow up, you have minimal time to wait for a new account to reset, right? Does that make sense? So you're intentionally staggering them. It's very intentional, and you get the free resets. 
+
+That way, you're taking advantage of it, and not everything is blowing up at the same time. But of course, the downside is you're not getting all funded at the same time, but you don't want them all funded at the same time anyways. You don't want to have the same problem with your PA accounts, where they all have the same balance. 
+
+You don't want that, right? Same problem. If you blow them all up, they all blow up at the same time. You don't want that problem either. 
+
+Does that make sense? So you would buy all four at the same time, so they would have the same billing cycle? You could. What I recommend is, in this case, because you have more than a week... Let's see. Where's my drawing tool? In this case, because you have more than a week, I would buy... What do you have now? Do you have just one account or two? What do you have now? I have three accounts, but one of them, I'm trading manually. 
+
+The other two, I just got during the sale. Okay. So then I would wait a week after... So the sale, did you get them just in the last day or two? I think the previous sale, in February. 
+
+Okay. So I would try to space it out maybe a week or two, like the billing cycle. Space out a week or two, as long as you can still take advantage of this a week or two from when you got it, so that it's not the same billing cycle. 
+
+You don't want them all expiring on the 14th. So if you got one on the 14th, see if you can get the next one on the 21st or something. You see what I'm saying? Yeah. 
+
+Okay. And then what I do is I write down, so I'll say, okay, on the... Where's my spreadsheet? So what I have is I have a spreadsheet that says, okay, on the 14th... This is literally what it says. It says on the 14th, my PA number one renews. 
+
+And then on my number 15 and my number 19 renew, my eval, called the E, on the 14th of every month. Okay. On the 20th of the month, my eval 17 and my eval 18 renew. 
+
+Okay. Now I'm going to put several days in advance. I'm going to put on my calendar, hey, these are going to renew. 
+
+If I'm really negative, blow them up on purpose, which I've only ever had to do that twice. And then the other one is my 26. On the 26th, my PA two renews. 
+
+So I got three billing dates. See how they're spaced apart? Yeah. So I know that these are eval... They were all evals at some point.
+
+I got to figure out which one... I guess it was this one's the one that got funded. So this will become, I guess, my PA three because I got funded today. This will become PA three.
+
+So yeah. But the idea though is if you can intentionally stagger them so that you're never like, oh, I'm twiddling my thumbs for the next 30 days with no account. And I don't want to pay a hundred dollars to reset it because the whole thing cost me 33. 
+
+How much sense does that make? And I can't buy any more because I maxed out at 20. These are problems you can anticipate and have a strategy for ahead of time. That's why I'm really shocked some of the things people do. 
+
+We try to help people, but they're going to do what they're going to do. We try to make some recommendations, but sometimes people got to make their own mistakes before they like, oh, that's why you recommend that, Matt. Okay. 
+
+I get it now. So in that case, if there was still a sale going on, would you recommend just canceling that account and just buying a new account? Because then it would kind of be the same as... I guess you could. Yeah, you could. 
+
+If there happens to be another sale. Yeah. But if you have anything like a hundred K or more, unless you're super close to getting it funded, I would seriously consider canceling it and getting a 50 K. That's just my recommendation, your decision to make. 
+
+But I had a guy today, he said he got a hundred K account three months ago and he just paid a reset fee. I'm like, bro, you got to make 20 R to get that funded versus like 12 to get the 50 K. Like it's exponentially more difficult. So do whatever you need to, but I'm just saying it's exponentially more difficult to do. 
+
+It can be done. It's exponentially more difficult. Yeah. 
+
+But the big goal would be to get to 20, 50 Ks, right? And so when you have four, imagine getting them all funded and pulling some money out that now you can go get account number five, six, seven, eight, the money you pull out can now finance the newer accounts. That's the idea. Yeah. 
+
+Yep. We have a new, it's like a small group here. It's not small, but we have a group here called Apex Funded Traders.
+
+And in this group, sorry, in this group here, we have some rules that we let's see. So I kind of share, Hey, the goal here is provide your PA certificate to access, but step one is like, the focus is to cut your risk in half. So that you're not in a hurry to blow up your PA account. 
+
+You'd be surprised guys. And this happens more times you realize, like I'll say, Hey, you got your account funded. Congratulations. 
+
+Let me interview you and ask you, what the process was like literally two days from now, someone will call me back and say, Matt, we got to cancel my interview. I already blew up my account. I'm like, in two days, you blew up your PA account in two days. 
+
+He's like, yeah, I took a small trade. Then I tried to revenge trade. And then I blew it up. 
+
+I'm like, what, what you think that would be happening every once in a blue moon that happens all the time. So my advice, cut your risk in half once you're funded. So I have these steps, step one, you know, do that. 
+
+And then there's some steps in here to, to, you know, and here's my talking about spacing them apart, stagger the dates. If you have four more, consider splitting them into different trade groups, use trade copiers, and there's minimum payout amounts and all kinds of stuff. So different strategies to, to work towards getting the payout. 
+
+Once you get the funded account, obviously working towards a payout is, is the next step. I'm eligible to get payouts, but I'm actually going to forego payouts until I, I'm going to grow it above the minimum. So I don't have to worry about drawdowns. 
+
+There's a minimum threshold. You can grow it to, to not have to worry about drawdowns. So that's, that's my goal. 
+
+So for the PA, if you're splitting the risk in half, do you have to like rerun your back tests or. Well, you just run the back tests with the smaller risk, just cut it in half. It'd be a little bit smaller. 
+
+Yeah. But you're only doing that until you, you get past your, your minimum payout threshold, and then you're going back to the full size. Right. 
+
+So for a, for a 50 K, you know what the drawdown is, right? 2,500, right? So in a PA account, you're trying to grow your account to 2,600 positive, and that's your minimum amount before you're eligible. You're like, you got to grow it 2,600. Now you're eligible to request a payout. 
+
+Right. And so once you get to that level, then you can go from one 25 risks to two 50. Again, these are just suggestions, do whatever you want, but these are just suggestions. 
+
+And once you grow from zero to 2,600 profit, then you can go from that $125 risk. Then you can go to two 50. And that's what I'm saying. 
+
+Even if you get four R a month times 20 accounts, that's $20,000 a month. And let's say you get that in the first week of a month and you're copying it across 20 accounts, just be done for the month. Don't even take any more risks. 
+
+Just take the rest of the month off, like turn everything off, go to Greece for going on a cruise, do something, you know, that's what I'm saying. Like, just take it easy. You know, don't take any more risks. 
+
+That's the idea. Yeah. Yeah. 
+
+So there's, yeah, good question. They have, there's, let's see, what was it? I talked about this in this group here. They have, like, there's an auto rollover. 
+
+So I don't know if you guys can see this, but when you log in, it'll ask about auto rollover. I think this asked me, it was a couple of days ago, and I took a screenshot of it, but it'll ask you, Hey, this is about to expire. And we're going to replace it here. 
+
+You click done. And then it'll say, Hey, we're going to, you know, update this for you. The only thing you have to do different is when you're running a back test.
+
+So like, let's say in June, so like fast forward a couple of months in June, you don't want to manually accidentally like say MNQ March, right? Cause then that'll give you a back test with zero results. That's the only thing you would have to do different is just make sure you don't accidentally manually choose March. In NinjaTrader, you probably know this, but when you're running a back test, there's a way to, like right here, you'll see that I can pin a certain ticker, right? So I can pin it like as a favorite. 
+
+You just got to make sure you don't accidentally pin an old one and pick it and run it, right? That's the only thing. So it'll auto roll over for you going backwards. You're running back tests. 
+
+However, you just got to make sure you don't accidentally like manually, like right here, you see MNQ September 24. If I accidentally pick that and run it, it's probably going to give me a zero result back test. And then I'm going to think, Oh, Apex has got some problems. 
+
+No, it's, you know, we would call that a, an ID 10T error. You know what that means, Tade? You know what that means, right? An ID 10T error. Have you guys heard of that? No, I haven't. 
+
+You've never heard of an ID? It's a, it's a tech term. ID 10T error? Yeah, I have heard of it. ID 10T error. 
+
+An idiot error. So it just, in this case, obviously, if I'm trying to run like a September 24 contract, which expired months and months and months ago, and I'm trying to run a back test today, that's probably why I'm not getting results, right? You'll see here, MNQ. No, it'll auto roll. 
+
+Yeah, it'll auto roll. But when I'm saying the back test, I could accidentally manually pick this and it would give me zero results for my, my strategy analyzer. No, it'll auto roll. 
+
+It'll auto roll. Yeah. And that's, that's kind of what I was showing you here is that you have to agree. 
+
+So it'll auto roll, but it'll, it'll ask you to confirm, hey, when you log into Ninja Editor, you know, it'll ask you, hey, we're going to auto roll this. You just click okay, like done and yes, and it'll take care of everything for you. Yep. 
+
+Yeah. So that, that's a good question. And that's more of a, it's more of a science than a, it's a, it's a, it's a fair question that doesn't have a simple answer.
+
+Um, I will tell you when I'm running right now is, is from settings that I ran in December, literally. So like I'm running, um, so well, so like, I think one of the biggest problems is like people, so people make up their own rules, right? So imagine like one guy told me, he's like, man, if I have two losing trades in a row, I'm going to change it. And I'm like, okay, let's take a look at your back trades and let's see in your back test itself. 
+
+Do you ever have two losing trades in a row? Because like, that's important to know. Right. And I'm like, I don't know. 
+
+Do I ever see two losing trades in a row? If I do, like I'm arbitrarily implementing some made up rule that I'm forcing myself to follow. And here I got three, like, where did that rule come from? It's not a rule. I told you, you just made it up. 
+
+Right. And so like, I don't understand some of these rules that people make. Um, I've heard some pretty bizarre rules. 
+
+Like one guy said, um, if, if I run, uh, one guy said, if I'm running this and I run, it has the high, I have to run high one tick one minute and one second, I have to have identical results. And then I'll use the back test. Otherwise I won't use the back test. 
+
+I'm like, that's not a rule either, but you know, people make these arbitrary rules, but the idea though is obviously at some point, um, it's going to stop working and that it's going to be, um, up to you. But I will say that, um, it, the biggest thing I see people do is constantly tweaking and changing things like every other day. And the problem like here is if we were to look at our analysis here between here and here, it looks like it was on a losing streak, right? Like if you were to draw a line right here and like this hadn't happened, it's like, Oh my gosh, it's it, here's what I'm projecting is going to happen. 
+
+It's I'm going to get back on my profits and fear sets in and then your emotions take over and you make dumb decisions. Right. So what I did was I'm like, okay, right here is my, this is going backwards.
+
+This is my 90 day back test. I'm going to go live right here and you guys can see what I did. And I got three accounts funded just, I'm literally using the same exact settings. 
+
+This is another 90 days. So my back test here you'll see is from October. It's literally six months worth, or you'd say 180 days. 
+
+So it's still working. I'm not going to change it, but you can use a trade copier to copy it into multiple accounts. That's what this trade copier is here. 
+
+That's what this thing does. You can run multiple bots in the same account where you don't want to do is you don't want them stepping on each other's toes. So for example, you don't want one going long and one going short because that would have unintended consequences. 
+
+Like you don't, you wouldn't know what would happen. Right. But, or if you have one like end at noon, another one start afternoon that, you know, after 12, that's fine, but they're not stepping on each other's toes or you have one run, you know, Monday, Tuesday, Wednesday, another one run Thursday, Fridays, like as long as they're not stepping on each other's toes, that that's up to you, the operator to kind of like consider those, those variations, like those, those scenarios that would be up to you to consider. 
+
+I personally prefer that. I, we were talking about that at the beginning is I, I mean, I was just looking at this this is my trade performance is what I've done so far in March, $9,700. And this, you guys can see is trade performance. 
+
+It's not a backtest. This is the actual trade performance, like my actual accounts. Okay. 
+
+Now what I will show you is if we were to look at my strategy, you guys can, you guys can see the difference between a strategy analyzer and a trade performance, right? So trade performance is your actual, actual trades. And, and this is where I started thinking, you know, what, maybe in this case, if I could still do that kind of, you know, with a 54, 55% win rate. And when I, you know, my largest winning trade, 1700, my largest losing, you know, like that's, that's still pretty decent. 
+
+Right. So if I was to think about this if I was to look at my summary here, and I was looking at my settings, my preference, my preference preference is I'm okay with a little lower percentage profit. I'm a low, okay. 
+
+With a little lower profit factor. If I can exchange that for something that can run all five days of the week, that's the exception to the rule. And I'm okay with that. 
+
+Now you remember I'm using $250 a risk, right? What's the goal for a 50k? $3,000, right? What's my drawdown? 2,500. Do you guys agree that this made more than $3,000? You guys agree that this did not lose 2,500? Yeah. So I mean, this is kind of like putting eight, what? 8641 in your pocket. 
+
+So $3,000 you eval, 8641 in your pocket, right? A real like PA withdrawable money using the same exact settings. Like nothing, I'm not tweaking anything. I'm just letting the thing run. 
+
+The biggest challenge I see is people constantly optimize, constantly changing, constantly tweaking. And this is really hard for people, like athletes to understand, especially if you play like a solo sport, you know, like running or something is, or cycling where you're just, you're not really, is like I can put in my own effort and get a direct output, right? The problem with the stock market is, you know, this is like, as an athlete, this is like, what would happen, right? I put in my effort, I get a direct output, right? The problem with the stock market is I put in effort and everyone else's output, you know, is affected. And then I get this, and this is kind of what people call game theory, right? Is like everyone else's actions collectively affect my out, like what I get at the end. 
+
+Like I can put certain things in, but collectively I get something that, and I don't necessarily control all this, right? And so the ultimate problem is people think I'm going to tweak, tweak, tweak, control, control, control. And someone's like, I need consistency. I'm like, you know, there's a certain level of control and confidence that, you know, you don't get to say, I need to make X amount every day, every week, just like fishing or hunting. 
+
+How often do you guys do those sports and come home empty-handed? You don't get to tell the market what your demands are. Like it doesn't, I wish it was that easy to make our lives, geez, a whole lot easier, but you don't really, the market, you can't make demands, you know? And so the idea here is that, like your, like the output you get has to do with everyone else's collective involvement. Right? And so people constantly tweak, tweak, tweak, optimize, optimize, optimize, change, change, change. 
+
+My suggestion is let the thing run, you know, just make sure it's turned on and connected and let it run. If it loses three days in a row, it loses three days in a row. So what? You guys can see that sometimes that happens, right? Sometimes it's more than three days in a row, but overall it's going to make money. 
+
+The more you tweak it, the more you're going to screw it up. So that's my, that's my spiel. I don't know who was that John or Tom, whoever asked that question. 
+
+Yep. Yeah. So yeah. 
+
+Was that helpful? I probably answered the question you didn't ask, but I have another question around PA accounts. I know I watched some YouTube videos, I thought trading, but more like PA accounts. I know some people kind of just like, yeah, my, my, my camera was blocking my, but I was just saying, Oh, I know some people were saying, I mean, there's different strategies, obviously withdrawals. 
+
+Some people were saying hit the minimum threshold and then just do the maximum withdrawal and then just kind of almost purposefully blow up the account. And then some people were saying, obviously go, you know, treat it like a normal real account where you just try to grow it, take reasonable withdrawals. Why would you intentionally blow it up if you tried to get it funded that, cause that took time and effort. 
+
+Yeah. I didn't understand it. I mean, I don't understand the thinking, the logic behind that. 
+
+I don't know. I guess. Cause you can take a bigger withdrawal from that. 
+
+I don't know if that's, that was what I was thinking when I saw that. I mean, I don't understand that thinking. Yeah. 
+
+Yeah. Yeah. Let's take a look. 
+
+I do look at it. Sometimes I don't comment, but let's take a look. No, if you're going live and you got like a bot for every day of the week, we got to go like live.
+
+One thing I saw was like Holly Brown was there and Thomas. I think you're talking about like February Thomas. Yeah. 
+
+Tell you what, I'm kind of over my time here. Yeah. Yeah. 
+
+I see the, like, I see something from January 29th. Is that what you're talking about? Okay. Yeah. 
+
+Yeah. Let me look at that. I'll comment on that. 
+
+Yep. Yeah. Yeah. 
+
+No worries. Okay. Anything else guys? No. 
+
+Yeah. And the next class we'll talk about VPS. And then after that, we'll talk about the account or the trade copier. 
+
+So, all righty. Thanks guys. Matt, can you hear me? Yeah.
+
+Hello? Yes. Hello, John. So I was saying, if you're going live and like you had a bot for each day, does it go work the same way? Do you do like go live five different times? You do. 
+
+That's why it's easier to have one that can run all days. You have to do, you have to repeat the process five times, a little bit more work. That's why, that's why I said my favorite ultimate is something that you can run five days a week.
+
+Got it. Yep. All right.
+
+You guys can have two accounts too. Like why not have two accounts, one that you have five different bots and one that you just like, like split test it. Like have one on Monday, Tuesday, Wednesday, like one that runs five days a week and then five that run one day a week and see which one works better over time. 
+
+Like give it a month, see what works better. Make sure they're, you know, connected and stuff and running, but see what works better. Well, I, you know, like obviously if you're like checking out 17 times a day, that's probably going to like make you go crazy, but here's a test. 
+
+Can you guys go like three days without looking at it? And if not, why not? You know, what's funny is like people's anxiety levels, even on this, like eval practice paper money account is like through the roof, even though this isn't real money. I don't understand that. I'm like, would you guys rather lose 2,500 pretend money or 2,500 real money? Because like, it seems like the easy answer, but I don't know. 
+
+I don't get it. So now what about the updated orb? Are you going to give that up? What version do you guys have? The 1.5. You said that the 1.7. Oh, the mega orb. Yeah, yeah. 
+
+You told me the mega orb. Yeah, yeah. I'll upload that for you guys. 
+
+Yeah. The 1.7. Yeah. I'll throw it in here real quick and just give me one sec. 
+
+Yeah. I'll give it to you. Cool. 
+
+I had a question that's unrelated to class. I know there's like weekly or is it, I don't know how often, there's like calls, right? For like people who are part of the community or is that, am I mistaken? We have a whole bunch of stuff going on. What are you referring to? Because I was trying to find, like, I know for our class, we have like a class schedule, but I was just trying to find like a calendar for like the bot trading community. 
+
+There's a, yeah, there's a bot trading community that we have like Monday afternoon, evening, kind of once on Mondays. Yeah. Okay. 
+
+I think that's the thing, like a Q and A, right? Yeah. Yeah. Yeah. 
+
+Okay. It's kind of like, Tracy's actually leading that one. I'm headed to the beach next, this weekend for my wife's birthday. 
+
+So we're doing that, but she's leading that one and then I'll be back right after that. So yeah. Okay. 
+
+I think I found it. Thanks man. Have fun at the beach. 
+
+Yeah. Thanks guys. Have a good one. 
+
+Yeah. Bye. Recording.

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wu Ming — Week 2: The Liver and Gallbladder</title>
+  <style>
+    :root {
+      --bg1: #081018;
+      --bg2: #0c1b2a;
+      --accent: #74c69d;
+      --accent2: #4cc9f0;
+      --muted: #b0bac9;
+      --card: rgba(255, 255, 255, 0.06);
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(-45deg, var(--bg1), var(--bg2), #1a2a3a, #0b1524);
+      background-size: 400% 400%;
+      animation: flowBg 20s ease infinite;
+      color: #e7eef5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes flowBg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .app {
+      display: flex;
+      flex: 1;
+      padding: 28px;
+      gap: 24px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 300px;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .logo {
+      width: 46px;
+      height: 46px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #00121f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border-radius: 10px;
+    }
+    h1 { margin: 0; font-size: 16px; }
+    .lead { color: var(--muted); font-size: 13px; margin: 6px 0 12px; }
+    .section-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 10px;
+      border-radius: 8px;
+      color: #e7eef5;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .section-btn.active {
+      background: rgba(116,198,157,0.1);
+      border-color: rgba(76,201,240,0.3);
+    }
+    .section-btn:hover {
+      border-color: rgba(116,198,157,0.4);
+    }
+
+    /* Stage */
+    .stage {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .controls { display: flex; gap: 10px; }
+    .btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.04);
+      color: var(--accent2);
+      cursor: pointer;
+    }
+
+    /* Slides */
+    .slides-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 18px;
+    }
+    .slide-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+    }
+    .slide-title {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .slide-bullets { color: var(--muted); line-height: 1.6; }
+    .slide-footer { font-size: 12px; color: var(--muted); margin-top: 16px; display: flex; justify-content: space-between; }
+
+    .thumbs {
+      background: rgba(0,0,0,0.25);
+      border-radius: 10px;
+      padding: 12px;
+      height: 400px;
+      overflow-y: auto;
+    }
+    .thumb {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      margin-bottom: 4px;
+    }
+    .thumb:hover { background: rgba(255,255,255,0.05); }
+    .thumb.active {
+      border-color: rgba(76,201,240,0.3);
+      background: rgba(116,198,157,0.1);
+    }
+
+    @media(max-width:900px) {
+      .app { flex-direction: column; }
+      .slides-wrap { grid-template-columns: 1fr; }
+      .thumbs { height: auto; }
+      .sidebar { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorative SVG background graphics -->
+  <svg class="bg-svg" width="100vw" height="100vh" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:fixed;top:0;left:0;z-index:-1;pointer-events:none;">
+    <circle cx="1200" cy="200" r="180" fill="url(#blueGradient)" opacity="0.18"/>
+    <circle cx="300" cy="700" r="140" fill="url(#greenGradient)" opacity="0.13"/>
+    <path d="M0,600 Q720,900 1440,600" stroke="#74c69d" stroke-width="60" opacity="0.07" fill="none"/>
+    <defs>
+      <radialGradient id="blueGradient" cx="0.5" cy="0.5" r="1" fx="0.5" fy="0.5">
+        <stop offset="0%" stop-color="#4cc9f0"/>
+        <stop offset="100%" stop-color="#081018"/>
+      </radialGradient>
+      <radialGradient id="greenGradient" cx="0.5" cy="0.5" r="1" fx="0.5" fy="0.5">
+        <stop offset="0%" stop-color="#74c69d"/>
+        <stop offset="100%" stop-color="#0c1b2a"/>
+      </radialGradient>
+    </defs>
+  </svg>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">WM</div>
+        <div>
+          <h1>Wu Ming — Week 2</h1>
+          <div class="lead">Liver & Gallbladder • 2 Sections • 15 Slides each</div>
+        </div>
+      </div>
+      <button class="section-btn active" id="section1Btn">Section 1 — Relationships</button>
+      <button class="section-btn" id="section2Btn">Section 2 — Practice & Flow</button>
+    </aside>
+
+    <main class="stage">
+      <div class="stage-header">
+        <h2 id="stageTitle">The Liver and Gallbladder</h2>
+        <div class="controls">
+          <button class="btn" id="prevBtn">← Prev</button>
+          <button class="btn" id="nextBtn">Next →</button>
+        </div>
+      </div>
+
+      <div class="slides-wrap">
+        <article class="slide-card">
+          <div>
+            <h3 class="slide-title" id="slideTitle">Weekly Challenge</h3>
+            <ul class="slide-bullets" id="slideBullets"></ul>
+          </div>
+          <div class="slide-footer">
+            <span id="slideNotes">Estimated time: 1–2 min</span>
+            <span>Wu Ming Meridian Therapy</span>
+          </div>
+        </article>
+
+        <aside class="thumbs" id="thumbs"></aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const sections = [
+      {
+        title: "Relationships & Theory",
+        slides: [
+          {t: "Weekly Challenge", b: ["Increase your Qi. Hold Number 10 for a few minutes or more.", "Notice where your energy feels blocked — especially in the chest or ribs.", "Practice mindful breathing after movement."]},
+          {t: "Liver–Gallbladder Partnership", b: ["Moves Qi, bile, and fat through the body.", "The Gallbladder makes decisions; the Liver ensures smooth emotional flow.", "Together they define flexibility — physical, mental, emotional."]},
+          {t: "Element: Wood 🌳", b: ["Represents growth, expansion, and freedom.", "Liver Qi must move like branches in wind.", "Flow = health. Stagnation = frustration."]},
+          {t: "Sense Organ: Eyes 👁️", b: ["Reflects Liver health.", "Imbalance = dry, itchy, or red eyes; floaters; blurry vision.", "Close eyes during practice to strengthen inner vision."]},
+          {t: "Tissue Organ: Tendons", b: ["Strength and flexibility originate from tendons.", "Stretching supports Qi flow through sinews.", "Emotionally flexible = physically supple."]},
+          {t: "Emotion: Anger", b: ["When Qi stagnates, frustration rises.", "Repressed anger can harden tendons and tighten breath.", "Move, express, release — do not suppress."]},
+          {t: "Season: Spring 🌱", b: ["Season of rebirth and renewal.", "Practice outdoors for stronger Liver Qi.", "If allergies arise, Qi is adjusting — keep moving gently."]},
+          {t: "Color: Green 💚", b: ["Resonates with the Liver.", "Wear green, eat leafy vegetables, and walk in nature.", "Observe shades of green as meditation."]},
+          {t: "Taste: Sour 🍋", b: ["Supports Liver detox and flow.", "Lemon, vinegar, fermented foods aid movement of Qi.", "Avoid excess — too much sour constrains Qi."]},
+          {t: "Starting the Week", b: ["Check in with how you feel.", "Track shifts in appetite, emotions, or energy.", "The body never lies — it communicates truth through sensation."]},
+          {t: "The Importance of the Liver", b: ["Regulates stress and adaptation.", "When calm, the body's vibration is smooth.", "Tension constricts flow — awareness releases it."]},
+          {t: "What the Liver Can Do", b: ["Ensures smooth blood and Qi circulation.", "Supports menstrual, digestive, and emotional health.", "Cooperates with Spleen and Stomach for balance."]},
+          {t: "Weekly Goal", b: ["Slow down.", "Identify what drains your energy.", "Say no more often. Rest before exhaustion."]},
+          {t: "When Qi Does Not Flow Smoothly", b: ["Stress, PMS, dry nails, migraine, anger.", "Tendon pain, indigestion, high cholesterol.", "Breathe deeply, stretch, and smile to move Qi."]},
+          {t: "Tune Inward", b: ["Observe cravings and desires.", "Write down what foods your body asks for.", "All cravings are communication — listen with compassion."]}
+        ]
+      },
+      {
+        title: "Practice & Flow",
+        slides: [
+          {t: "Week Two at a Glance", b: ["Learn two new Qigong movements.", "Focus on Liver and Gallbladder energy flow.", "Support with foods and reflection."]},
+          {t: "Five Element Consciousness", b: ["Wood element links to Liver.", "Fire, Earth, Metal, Water complete the cycle.", "Balance across all creates harmony."]},
+          {t: "Movement #5 — Dragon Looks at Its Tail", b: ["Improves spinal flexibility.", "Releases stagnant Liver Qi.", "Promotes balance and awareness."]},
+          {t: "Movement #6 — The Dragon Stands Between Heaven and Earth", b: ["Connects Heaven and Earth energy.", "Calms mind, strengthens tendons.", "Hold posture longer for deeper Qi flow."]},
+          {t: "Breathing with Flow", b: ["Breathe through nose, exhale gently through mouth.", "Avoid force — let the breath guide Qi.", "Imagine exhaling frustration, inhaling renewal."]},
+          {t: "Spring Lifestyle Practices", b: ["Wake earlier; stretch upon rising.", "Eat lightly; favor greens and sprouts.", "Spend time outdoors daily."]},
+          {t: "Food as Energy Medicine", b: ["Add lemon, ginger, scallions, green vegetables.", "Avoid heavy or greasy foods.", "Eat mindfully; chew thoroughly."]},
+          {t: "Emotional Reflection", b: ["What are you holding onto?", "Journal what you resist letting go of.", "Anger dissolves through movement and awareness."]},
+          {t: "Liver Detox Support", b: ["Drink warm water with lemon each morning.", "Avoid cold drinks and processed foods.", "Rest from 1–3 AM — Liver’s repair time."]},
+          {t: "Body–Mind Link", b: ["Qi stagnation shows up as physical stiffness.", "Gentle motion frees both body and emotion.", "Keep energy moving throughout the day."]},
+          {t: "Healing Sound: ‘Shhh’", b: ["Use soft exhale sound ‘Shhh’ to release Liver heat.", "Repeat during exhale for calm clarity.", "Sound aligns vibration with Liver’s frequency."]},
+          {t: "Color Visualization", b: ["Visualize emerald-green light moving through your body.", "Breathe it into your chest and limbs.", "Exhale tension as mist."]},
+          {t: "Quote from Grand Master Nan Lu", b: ["“It’s all about the Liver.”", "“Be like the deer — agile, alert, adaptable.”", "“Not the cow — strong but stiff.”"]},
+          {t: "Reflection Journal", b: ["Write your key insight from today.", "Where did you feel most flow?", "Set one intention for tomorrow’s practice."]},
+          {t: "Completion of Week 2", b: ["Celebrate progress.", "You have begun real internal change.", "Your Qi is learning to dance again."]}
+        ]
+      }
+    ];
+
+    let section = 0, slide = 0;
+    const slideTitle = document.getElementById("slideTitle");
+    const slideBullets = document.getElementById("slideBullets");
+    const thumbs = document.getElementById("thumbs");
+    const stageTitle = document.getElementById("stageTitle");
+    const section1Btn = document.getElementById("section1Btn");
+    const section2Btn = document.getElementById("section2Btn");
+
+    function render() {
+      const current = sections[section].slides[slide];
+      slideTitle.textContent = current.t;
+      slideBullets.innerHTML = current.b.map(b=>`<li>${b}</li>`).join('');
+      stageTitle.textContent = sections[section].title;
+
+      thumbs.innerHTML = '';
+      sections[section].slides.forEach((s,i)=>{
+        const el = document.createElement('div');
+        el.className = 'thumb' + (i===slide ? ' active' : '');
+        el.innerHTML = `<div><strong>${i+1}. ${s.t}</strong><br><span style="font-size:12px;color:#aab">${s.b[0]}</span></div>`;
+        el.onclick = ()=>{slide=i;render();};
+        thumbs.appendChild(el);
+      });
+
+      section1Btn.classList.toggle("active", section===0);
+      section2Btn.classList.toggle("active", section===1);
+    }
+
+    document.getElementById("nextBtn").onclick = ()=>{
+      slide++;
+      if(slide>=sections[section].slides.length){ section=(section+1)%sections.length; slide=0; }
+      render();
+    };
+
+    document.getElementById("prevBtn").onclick = ()=>{
+      slide--;
+      if(slide<0){ section=(section-1+sections.length)%sections.length; slide=sections[section].slides.length-1; }
+      render();
+    };
+
+    section1Btn.onclick = ()=>{ section=0; slide=0; render(); };
+    section2Btn.onclick = ()=>{ section=1; slide=0; render(); };
+
+    window.addEventListener('keydown', e=>{
+      if(e.key==='ArrowRight') document.getElementById('nextBtn').click();
+      if(e.key==='ArrowLeft') document.getElementById('prevBtn').click();
+    });
+
+    render();
+  </script>
+</body>
+</html>

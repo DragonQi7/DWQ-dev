@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon’s Way Qigong Workbook — Weeks 2–4</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.4s ease;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 16px 0 8px 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .nav-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    margin: 0 2px;
+  }
+  .nav-btn.active {
+    background: #f39c12;
+    color: #fff;
+  }
+  .nav-btn:hover {
+    background: #f39c12;
+    color: #fff;
+  }
+  .slide {
+    max-width: 900px;
+    text-align: left;
+    padding: 48px 32px 32px 32px;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    display: none;
+  }
+  .slide.active {
+    display: block;
+    animation: fadeIn 0.8s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  h1, h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .highlight {
+    color: #f39c12;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  .tracker-table th, .tracker-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  .tracker-table th {
+    background: #f7f7f7;
+    font-weight: 700;
+  }
+  .quote {
+    font-style: italic;
+    color: #2c3e50;
+    margin: 1.2rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #f39c12;
+  }
+  .mantra {
+    font-weight: 700;
+    color: #2980b9;
+    margin: 1rem 0;
+  }
+  footer {
+    position: fixed;
+    bottom: 10px;
+    font-size: 0.8rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+<!-- Top Prev/Next navigation buttons -->
+<div class="nav-arrows" style="display:flex;justify-content:center;gap:2rem;margin:18px 0 40px 0;">
+  <button id="prev" class="nav-btn" style="min-width:100px;">← Prev</button>
+  <button id="next" class="nav-btn" style="min-width:100px;">Next →</button>
+</div>
+<div id="slides">
+  <!-- Week 2: Liver/Gallbladder -->
+  <div class="slide active">
+    <h1>Week 2: <span class="highlight">Liver & Gallbladder</span></h1>
+    <ul>
+      <li>Element: <b>Wood</b> 🌳 — growth, movement, flexibility</li>
+      <li>Sense Organ: <b>Eyes</b> 👁️ — vision, clarity, inner sight</li>
+      <li>Tissue: <b>Tendons</b> — strength and flexibility</li>
+      <li>Emotion: <b>Anger</b> — signal for flow or stagnation</li>
+      <li>Season: <b>Spring</b> 🌱 — rebirth, vibrant energy</li>
+      <li>Color: <b>Green</b> 💚 — resonates with Liver energy</li>
+      <li>Taste: <b>Sour</b> 🍋 — supports Liver function</li>
+    </ul>
+    <div class="quote">“It’s all about the Liver. You want to be like the strong, agile deer, or like the cow which has huge muscles but little flexibility.”<br>— Grand Master Nan Lu</div>
+  </div>
+  <!-- Week 2: Practice & Tracker -->
+  <div class="slide">
+    <h1>Qigong Practice: Creating Flow</h1>
+    <ul>
+      <li>Learn 2 new movements (total 6 daily)</li>
+      <li>Practice the set at least once per day</li>
+      <li>Weekly Challenge: Hold movement #10 for a few minutes or more</li>
+    </ul>
+    <h2>Weekly Tracker</h2>
+    <table class="tracker-table">
+      <tr><th>Day</th><th>Practice Done?</th><th>Notes</th></tr>
+      <tr><td>Mon</td><td></td><td></td></tr>
+      <tr><td>Tue</td><td></td><td></td></tr>
+      <tr><td>Wed</td><td></td><td></td></tr>
+      <tr><td>Thu</td><td></td><td></td></tr>
+      <tr><td>Fri</td><td></td><td></td></tr>
+      <tr><td>Sat</td><td></td><td></td></tr>
+      <tr><td>Sun</td><td></td><td></td></tr>
+    </table>
+  </div>
+  <!-- Week 2: Signs & Tips -->
+  <div class="slide">
+    <h1>Signs of Liver/Gallbladder Imbalance</h1>
+    <ul>
+      <li>Stress, angry moods, PMS, menopause, infertility</li>
+      <li>Dry, brittle nails, cold hands/feet, burning/irritated eyes</li>
+      <li>Migraine headaches, arthritic conditions, tendon issues</li>
+      <li>Indigestion, bloating, high cholesterol</li>
+    </ul>
+    <h2>Lifestyle Tips</h2>
+    <ul>
+      <li>Slow down, notice stress drains, cut back on stressors</li>
+      <li>Become aware of foods and tastes your body asks for</li>
+      <li>Support your Liver by wearing green, walking in Nature</li>
+      <li>Try sour foods: lemon, pickled foods</li>
+    </ul>
+  </div>
+  <!-- Week 3: Kidney/Bladder -->
+  <div class="slide">
+    <h1>Week 3: <span class="highlight">Kidney & Bladder</span></h1>
+    <ul>
+      <li>Element: <b>Water</b> — powerful, unstoppable</li>
+      <li>Sense Organ: <b>Ear</b> — protects from cold winds</li>
+      <li>Tissue: <b>Bone</b> — supports bone and teeth health</li>
+      <li>Emotion: <b>Fear</b> — signal for energetic support</li>
+      <li>Season: <b>Winter</b> — rest, recharge, restore Qi</li>
+      <li>Color: <b>Black or dark blue</b> — resonates with Kidney energy</li>
+      <li>Taste: <b>Salty</b> — shellfish and bone soups support Kidney Qi</li>
+    </ul>
+    <div class="quote">“Your life is a candle. How wisely you nurture your flame determines how well you live.”<br>— Grand Master Nan Lu</div>
+  </div>
+  <!-- Week 3: Practice & Tracker -->
+  <div class="slide">
+    <h1>Qigong Practice: Creating Flow</h1>
+    <ul>
+      <li>Practice movements 1–7 and 10 daily, hold #10 for 8+ minutes</li>
+      <li>Weekly Challenge: Add extra practice of movement #10 every day</li>
+      <li>Movements: The Dragon’s Toe Dance, Kicks Forward, Twist, Punch, Looks at Tail, Taps Foot, Rocking Baby Dragon, Stands Between Heaven and Earth</li>
+    </ul>
+    <h2>Weekly Tracker</h2>
+    <table class="tracker-table">
+      <tr><th>Day</th><th>Practice Done?</th><th>Notes</th></tr>
+      <tr><td>Mon</td><td></td><td></td></tr>
+      <tr><td>Tue</td><td></td><td></td></tr>
+      <tr><td>Wed</td><td></td><td></td></tr>
+      <tr><td>Thu</td><td></td><td></td></tr>
+      <tr><td>Fri</td><td></td><td></td></tr>
+      <tr><td>Sat</td><td></td><td></td></tr>
+      <tr><td>Sun</td><td></td><td></td></tr>
+    </table>
+  </div>
+  <!-- Week 3: Signs & Tips -->
+  <div class="slide">
+    <h1>Signs of Kidney/Bladder Imbalance</h1>
+    <ul>
+      <li>Hair loss, bone pain, fractures, forgetfulness, memory loss</li>
+      <li>Knee/heel pain, chronic lower back pain, ringing in ears</li>
+      <li>Fear, anxiety, panic attacks, dental problems, pain in feet</li>
+      <li>Thyroid issues, frequent urination, prostate/sexual issues, insomnia</li>
+      <li>Hot flashes, high blood pressure</li>
+    </ul>
+    <h2>Lifestyle Tips</h2>
+    <ul>
+      <li>Identify daily activities that drain your energy. Reduce energy leaks.</li>
+      <li>Eat seasonal, locally grown, warm foods</li>
+      <li>Include: Bamboo shoots, Lemon, Bee pollen, Pickled ginger, Broccoli rabe, Plums, Dandelion greens, Scallions, Eggplant, Sour pickles, Fennel, Vinegar, Green apples, Mung beans</li>
+      <li>🌿 Eating warm foods aids digestion and conserves Qi</li>
+    </ul>
+  </div>
+  <!-- Week 4: Recap & Lifestyle -->
+  <div class="slide">
+    <h1>Week 4: <span class="highlight">Recap & Lifestyle</span></h1>
+    <ul>
+      <li>Keep a Qigong log and prioritize quality practice</li>
+      <li>Evaluate stress levels and take proactive steps</li>
+      <li>Find time to relax, reconnect with Nature, and reawaken healing potential</li>
+      <li>Mantra: <span class="mantra">“I honor my body’s wisdom and allow Qi to flow freely.”</span></li>
+      <li>Reduce screen exposure to protect Liver energy</li>
+      <li>Recognize yourself as an energetic being</li>
+      <li>Relax and release stress — healthy releases help Liver Qi flow</li>
+      <li>Exercise: Breaking Eggs — release tension outdoors</li>
+    </ul>
+    <h2>Self-Assessment</h2>
+    <ul>
+      <li>Rate yourself 1–10 for: stress, anger, flexibility, letting go, awareness</li>
+      <li>Tracking helps improve energy flow</li>
+    </ul>
+  </div>
+<!-- Left/Right navigation buttons -->
+  <div class="slide">
+    <h1>RELATIONSHIPS</h1>
+    <ul>
+      <li>The Liver and Gallbladder help to move Qi, bile, and fat through the body.</li>
+      <li>The Gallbladder is also your master decision maker.</li>
+      <li>This duo supports your emotional and physical flexibility.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Element: Wood 🌳</h1>
+    <ul>
+      <li>The Wood element is related to the Liver. Its nature is to move freely, like the branches of a tree.</li>
+      <li>Just as trees gracefully dance in the wind, allow your body to follow Nature's energy flow.</li>
+      <li>Don’t just sit there—get up and move. Dance!</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Sense Organ: Eyes 👁️</h1>
+    <ul>
+      <li>Signs of Liver Qi imbalance: watery or itchy eyes (especially in Spring), blurry vision, floaters, changes in vision, red/dry/itchy eyes.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Tissue Organ: Tendons</h1>
+    <ul>
+      <li>In TCM, strength comes from the tendons, not the muscles.</li>
+      <li>Ultimate flexibility—both emotional and physical—is a sign of balanced Liver Qi.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Emotion: Anger</h1>
+    <ul>
+      <li>The Liver loves to go with the flow. If it is not flowing, it communicates with you through excess anger and frustration.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Season: Spring 🌱</h1>
+    <ul>
+      <li>Spring is the season of activity and rebirth. Nature reemerges with vibrant, active energy that must be free-flowing.</li>
+      <li>If your body cannot match this energy, you may experience seasonal allergies.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Color: Green 💚</h1>
+    <ul>
+      <li>The color green resonates with the Liver. All of Nature turns green in Spring.</li>
+      <li>Support your Liver by wearing green, walking in Nature, and becoming more aware of your surroundings.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>Taste: Sour 🍋</h1>
+    <ul>
+      <li>Sour foods energetically support Liver function.</li>
+      <li>Try squeezing lemon over cooked vegetables or eating pickled foods.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>STARTING THE WEEK</h1>
+    <ul>
+      <li>You’re about to begin Week 2. How are you feeling?</li>
+      <li>Remember, symptoms are the body’s way of talking to you.</li>
+      <li>If you are following the program consistently, you’re beginning to break down internal “garbage.”</li>
+      <li>Circle any changes you’ve noticed since starting the program:</li>
+      <li>More energized</li>
+      <li>Bigger appetite</li>
+      <li>Emotional balance</li>
+      <li>More peaceful</li>
+      <li>Fewer body aches</li>
+      <li>Other</li>
+      <li>Or:</li>
+      <li>Less energized</li>
+      <li>Smaller appetite</li>
+      <li>Mood swings</li>
+      <li>About the same</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>THE IMPORTANCE OF THE LIVER</h1>
+    <ul>
+      <li>We live in fast-paced times. Many of us are constantly in motion.</li>
+      <li>For the body to keep up, Liver energy must be strong and flow freely.</li>
+      <li>The Liver plays a key role in managing daily stress.</li>
+      <li>Healthy Liver function is so important that it is the focal point of the Dragon’s Way Qigong program.</li>
+      <li>A hectic lifestyle, mental stress, and physical stress cause varying degrees of Liver dysfunction.</li>
+      <li>When calm, the body’s vibration has an even tone. Stress and anger disrupt this balance, upsetting the flow of Liver Qi.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h1>WHAT THE LIVER CAN DO</h1>
+    <ul>
+      <li>Known as the “go with the flow” organ.</li>
+      <li>The Liver and Gallbladder are responsible for the smooth flow of blood, Qi, and emotions.</li>
+      <li>Their cooperative relationship with the Spleen and Stomach results in a healthy digestive system.</li>
+      <li>Healthy Liver function is evident in emotional flexibility and healthy eyes.</li>
+      <li>The Liver is the main organ responsible for women’s health.</li>
+      <li>Smooth Liver Qi = normal menstrual cycles, reproductive health, and breast health.</li>
+    </ul>
+  </div>
+</div>
+
+<footer>Dragon’s Way Qigong Workbook — Weeks 2–4</footer>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+  function showSlide(i) {
+    slides[index].classList.remove('active');
+    index = i;
+    slides[index].classList.add('active');
+  }
+  document.getElementById('next').onclick = () => showSlide((index + 1) % slides.length);
+  document.getElementById('prev').onclick = () => showSlide((index - 1 + slides.length) % slides.length);
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') document.getElementById('next').click();
+    if (e.key === 'ArrowLeft') document.getElementById('prev').click();
+  });
+  // Ensure first slide is active on load
+  showSlide(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+All right, so just a quick disclaimer, push button trading is for educational purposes only. We are not financial advisors. We do not advise you tell you what to trade or do or and you should not consider this a facilitation to trade either.
+
+We're here for educational purposes only. So you take on the full risk of what you do with that education and just remember that trading is risky. It is going to lose more than you invest. 
+
+And yeah, be aware of those risks. Be careful. Done. 
+
+Okay. Let's see. Let's start out with some questions.
+
+How's everybody making out? I can hear somebody clicking away on the keyboard. Not sure who that is. I'm doing good. 
+
+I switched out my I got, you know, from Monday night's meeting I switched created a new portfolio and I see Tuesday was today Wednesday or Thursday. So yeah, past few days have been good for the portfolio. So, so I'm happy with it.
+
+Good. How about everybody else? Is there any, is anybody here not using a portfolio yet? Jenny. Okay. 
+
+Do you have any questions about it? I haven't got that far yet. I'm going through the training. I'm just having terrible trouble with backtesting. 
+
+I'm not getting any profits. Right. So this solves all that. 
+
+You don't need to backtest. We've done it for you. Thank God for that. 
+
+I was just working through all the training and I'm going, well, I can't progress because I'm not getting anything. Yeah, it's really important that you know how to perform a backtest and it's important for you to understand how to do an optimization, but we've done it all for you. That's this new and improved.
+
+That's what the portfolio thing is, is to take you to the next step because there have been a lot of people that have been struggling with that. So what we've done is we have backtested for you and we have over 300 strategy settings now. I saw them, I saw them, but I was like, I've got to, I guess I've got to go through all of this to get to that.
+
+Yeah, no, you don't. Just jump over to, I mean, go to the three, you might have to unlock it. So just go through each of the classes, go to the bottom and click complete, unlock them.
+
+But get to that portfolio thing. You do need to update your NinjaTrader to the latest version. I've done that. 
+
+Yeah, I have done that. Perfect. Then there's an installation package. 
+
+There's a 20 minute video in there that does an overview of both of the analyzer and the builder. You can watch that video. But just install it. 
+
+It's going to install everything for you and then you're ready to go. I will do that. Yeah, the only thing that you guys are going to have to do, and I'm going to reiterate this, is use the builder and the analyzer as is. 
+
+With the files that I send you, you do not need to convert them to your time zone. You can just use them. Once you get your list set of what you want to run, then you have to go in to each of those strategies and convert the time to your local time zone.
+
+And then just save that as a different file, like a, use the same file name, but just put your, instead of PST on the end, put your time zone on the end. And then you can use those strategies live. So you don't have to go through all 300 and redo them all. 
+
+You just have to do the ones that you want to use. Okay. Now somebody asked, why can't we just send it out with all the different time zones? I'm going to answer that question right now, because that would be an excruciating amount of work. 
+
+There are many different time zones out there. And even if we did it with just the, you know, the main time zones in the North American hemisphere, it, I would still require, it's just a lot of work. So there's two options that you can do. 
+
+You can either go in and you can change the time on your computer and the time inside of NinjaTrader to be PST. And then you don't have to do anything. You can just run it off the PST files. 
+
+Just know that you're running in PST time. And the time that's going to be on your charts is going to be different. But I would encourage you to do both your computer and NinjaTrader. 
+
+So there's no, there's no over, there's no, no issues. Okay. No, no conflicts. 
+
+That'll take care of everything. And then you just need to run it. Okay. 
+
+That's option number one. Option number two is go in and individually change all of the strategies like I was just talking about that you're going to use. Okay. 
+
+Is everyone clear on that? Excellent. Okay. That is the solution. 
+
+That is the simplest solution that we can come up with that isn't going to take a tremendous amount of manpower to fix any other way. So we've done the bulk of the work and you know, show some love, right? You guys got to do a little bit of work yourself. So exactly. 
+
+Exactly. I can't do it all. Matt can't do it all. 
+
+Push button training can't do it all for you. Why can't you just spoon feed us everything? I know. I wish I could. 
+
+Now I want to address another issue and that is because some, some people have asked, is there a way that we could just launch the strategy, the portfolio directly into the strategy analyzer? Ninja trader has made it very clear and I don't expect this to change anytime soon that they do not allow any add ons or external programs access any of the control panel features like putting in strategies and things like that. That is a safety guard that is there for you so that hackers can't come in and get into your accounts, muck with your accounts, do all that kind of stuff. So that feature, as much as I would love to be able to pre launch it and just click up a button and all of those get loaded into your, into your strategy tab, it is not going to happen anytime in the near future.
+
+Okay. So that's the reason why that's another part of the work. So as you can see, I'm going to share my screen for a second because I'll show you my, uh, where is it? There you go. 
+
+You can see, you guys see this window right here. You can see my mouse running around. Yeah. 
+
+Okay. I've got all these portfolios running. So I've got portfolio 41, I've got portfolio 38, I've got portfolio 39 currently running right now. 
+
+That's a lot of bots that I have, but I have them labeled. That's what I'm doing. And just a reminder, this is how I want you labeling for future stuff that we're, that I'm currently building for you.
+
+Um, I would like you to, where is my zoom controls? You guys can see my window. Oh, there they are. Okay. 
+
+So this is the strategy number. This is the portfolio number. Okay. 
+
+So you label your portfolio numbers, however you want. I've got like 50 of them saved already. So I'm currently running 39, 38 and 41.
+
+Um, but do it this way. So one nine, two dash portfolio space, the number, and then dash, and then just leave whatever's native to this feature. And, and as I mentioned in the last class, if you want to add something to the end of it, you're welcome to do that. 
+
+And there's my portfolio running this evening. So it's doing its thing. All right. 
+
+Okay. Super fun. Now, if anybody is watching this call right now, and you're not converted to the portfolio thing, and you're still struggling, this is why we built it. 
+
+Okay. So again, with the basic understanding of the program run through the videos, they're good for you to understand how to use the, the, the optimizer to understand what to do so that you can still play around with it on your own. You can still go in and do this, but this is going to be the fastest way to get you rolling. 
+
+All right. Does anyone want to share a testimonial of how they've been, how the, how the whole portfolio thing has been working for them? I will. Sure. 
+
+Just Monday, I was, you know, kind of questioning it. And then you told me, you know, you have to get this, you have to download the new one. So I did. 
+
+And all this week has been rocking, just making me so happy. Awesome. Yeah, I'm finally seeing the, I'm like, wow, this is what I've been waiting for.
+
+Love it. Thank you, Amanda. That's great. 
+
+It's awesome. Anybody else want to share? Yeah. So Tracy, you know, I, I had an older portfolio from when you first had the Google sheets and, you know, it was just cobbled together and stuff and it just wasn't doing, disbanded it. 
+
+And I switched and, you know, redid the new process and it's been working great. And I think I'm up like a thousand bucks for this week. So, so that's phenomenal. 
+
+And then I, I mean, you know, it's very intuitive for me. I think once people just, you know, just watch your videos and, and just start going through the process, it should be pretty easy and stuff for everybody. What was the other thing I wanted to say? I don't know. 
+
+No, but it's, it's, oh yeah. I took out, I specifically took out. Cause I know you mentioned it before, like zero, zero four, cause it's a one minute and it sometimes skips. 
+
+And, you know, I think that could have been where some of the other portfolios were not doing good. So I took that one out and I took out anything to do with MCL as well. So I'm just focused in. 
+
+And actually what's great about the stuff that I picked is it's pretty much all from like nine 15 in the morning, Eastern standard time, you know, through the end of the day. So I don't have stuff that's running at five in the morning or something like that, you know? So I think that's a benefit for me too, because, you know, I'll let the thing, I'll activate the thing overnight, but, you know, sometimes at three o'clock in the morning, the thing disconnects and, you know, so nothing I can do. Gotcha. 
+
+Now, Jason, you mentioned that you, you removed the MCL one. So have you updated to the latest version? Yeah, no, I have. And yeah. 
+
+So not that I removed them, but it's just, I just, I make sure, you know, I know you probably removed, you removed them all already, right? I did. So that's why I'm asking if you've updated. Yeah. 
+
+Yeah. So that's good. Okay. 
+
+So I'm, I'm talking to us. I'm speaking on a turn, I guess. But the only one I took out really was oh, four. 
+
+Yeah, that one's still in there. And I'm debating whether I want it because I've got it running as well. I think. 
+
+No, I don't have it running right now. I have nothing smaller than a three minute. I'm going to start. 
+
+Sorry about that. That's okay. That's okay. 
+
+I have a testimonial too. Tracy, I funded two accounts. And I did it with 1.0 even before I upgraded to 1.2. Nicely done.
+
+I'm probably going to get a third here in the next couple of days. So, and I got a question for you. Yeah.
+
+Testimonials are done. Well, well, Victor, before you, before you finish, how, how were you doing before the portfolio trading? How do you mean? I've gotten a lot of accounts before, but, but I love the portfolio system. It's, it's, it's phenomenal. 
+
+But I've had accounts before. Yes. Gotcha. 
+
+Okay, perfect. Awesome. Okay. 
+
+Is there anybody else that wants to share? All right. Oh, sorry. Go ahead, Paige.
+
+Yeah, I was messing with my, my webcam. I just put it in the computer. So I just, I followed your, I followed your video. 
+
+I should just set up the same settings that you did in your video. Yesterday I had three wins, and today I had a win. So, starting off good. 
+
+And I really like the software. Awesome. Yeah, that's fantastic.
+
+I have some questions too. I can ask them later if you want to finish the testimonies. Yep. 
+
+Sure. Does anyone else have any more comments that they want to share? Yeah, just, I think the thing that's been biggest for me is, is from the get go of bot trading, I saw the value in having multiple bots in an account to diversify, but it just, it took so long to like, to, to do all the back trading to get enough bots together. And then, even then, you still had some, like, all performing directionally, so you would just lose faster or win faster. 
+
+And so, like, the, especially the, where you can take 10 bots, and then go through the iterations to really find which grouping of those can work best together, just, it's just an incredible time saver. Awesome. Yeah, well, I got a surprise for you towards the end of this class, so.
+
+Hey, it's like Christmas every time we have a class. That's what it is, right? All right. Is there anyone else that wants to share? I just have to jump off in like a few minutes, so, but I'll catch the rerun.
+
+Okay, sounds good, Jason. All right. Victor, why don't we start with you then? You have some questions? Yes. 
+
+So, since we're running so many bots now, and I'm running a lot of them, I'm interested in the VPS, and if you're, I saw all your bots you're running now. Are you running them locally? Do you, do you have a VPS? I think we want more juice on those VPSs if we're going to run that many bots. I wonder what your thoughts are on that.
+
+Yep. So, first of all, I'm using 4x VPS, and all of those are on 4x VPS. I follow my weekly routine of clearing out that documents folder where the cache folder, I clear that out, or the database folder, I should say.
+
+So, I do that on a weekly basis. Every single day I reset my, my VPS, like, I don't reset my VPS, sorry, I reset my connection. So, I disconnect and then connect and then restart my bots. 
+
+I do that every single day. The second thing is I don't have any of these bots on a chart. All of the bots are inside of the strategy tab. 
+
+Right. I have one chart open, one chart only, and that chart, I can, I can flip to whatever account I have available, and just see if I, if I want to look at what's happening, but I can see inside of the, inside of the strategies tab, what's, what's currently trading. So, I don't do anything else with that. 
+
+Now, let me pull up my VPS account. Let me just find Google. We used to be able to get away with very, very minimal horsepower on those VPSs. 
+
+I wonder if we need more these days with all these bots running, but I don't know. Yeah, let me just, I don't know if this is, let me just log in here. Okay, let me look at my services. 
+
+Okay, so this is what I have. I have eight gigs of memory. I have a hundred gigabyte storage.
+
+I have three gigabytes of RAM. Oh, sorry, that's old. I've got eight. 
+
+I went, this is the old one. This was the basic plus that I had, and I, I customized it. I went up to eight gigs of RAM, and if I look at my manage my service.
+
+Let's see here. Yeah, so I've got six cores, eight gigs, hundred gigabyte storage. I don't have any backup. 
+
+I've got Windows 22, and my location is out of Los Angeles. So, I'm not having any issues with that, with this makeup. Every once in a while, I might see it freeze, but if I stick, if I stick to my, my weekly repertoire and my cleanup, my, my housekeeping, I tend to not have any issues.
+
+And the other thing that I do is I make sure that I'm constantly updating the, because the VPS tends to update a lot. So, I'm always making sure that that's taken care of it because I don't want it to do it when I don't want it to. I want to take care of that scheduling. 
+
+So, I'm always on track with that. Okay. But I haven't had any issues with that, with that setup at all.
+
+I tend to open a lot of charts. So, I'm going to take your advice and go chartless as much as possible with this stuff. So, that makes a lot of sense.
+
+Yeah, every chart you open is a resource that's pulling on your computer. So, you need more cores, more RAM, more everything. So, it's, that's, and I have this running, like, I'm looking at it all the time because I'm, I'm a day trader. 
+
+So, I'm constantly at my computer anyway. So, I always have it running. So, I can see if it drops a connection or not. 
+
+But I, I do find that just having the two windows open. That's it is the best setup for me. Yep. 
+
+Okay. Do you have any other questions, Victor? No, that's it. Thank you.
+
+Awesome. Perfect. All right. 
+
+So, then let's go to Paige. She had some questions. Yeah. 
+
+So, is the idea that when the portfolio builds, the portfolio generator builds a portfolio, is it making sure that all the bots do not run at the same time? And does that include if they're on different instruments? Or do bots on different instruments run, can they run at the same time? Yes, there can be a correlation of the different time. What it's looking for, what you don't want happening is you don't want a bot on NQ and then another bot on NQ running at the same time because you can't be long and short in the same instrument. Right. 
+
+So, I noticed a lot of the ones that I have anyway have max contracts 40. So, if I end up with three running at the same time on different contracts, then that could exceed the max contracts for my account. Yes.
+
+So, what I'm doing is just trimming down the max contracts to eliminate that possibility. It's kind of hand tweaking them. You can, but what I would do is because I don't think most of those strategies aren't going to kick into a high end of strategy. 
+
+If you look at the trades, if you go into any one of those individual trades and take a look at the number of contracts, they're usually two or three or four. Yeah, it's just the max. Yeah. 
+
+So, it'd be a rare case really. I wouldn't worry about it. I see it because the risks are so low in those accounts. 
+
+You're very rarely going to hit any of those numbers. I really honestly would not worry about it. But if you're doing what you're doing, that's fine. 
+
+Just realize that you could fudge the numbers. Right. Yeah, I'd rather keep them the same. 
+
+And that's fine. I can take the risk and keep them at 40 because they hardly ever. How often do you ever see one of them actually use the max number of contracts? I haven't.
+
+Yeah, it's based on the risk, right? It is. Yep. And so, when we get up into those higher risks, you should be using the minis, not the micros. 
+
+Because the minis cost or the micros cost so much in commissions that once you start trading above 10 contracts, 11 contracts, you might as well be trading the mini. It's way cheaper. Yeah. 
+
+All right. Thanks. No problem. 
+
+The other thing to keep in mind is that I actually really like running some of these on bigger accounts. So, if you get a chance to get yourself some of the bigger accounts, it's okay to run these portfolios on them as well and build up. It doesn't always have to be on a 50k account.
+
+Right. Yeah, just keep that in mind as well. It gives you a little bit more wiggle room and you can actually start playing with some of those minis. 
+
+Like my portfolio number 41, that's all mini contracts and it averages about $17,000 a month. And that's what I discovered too, Tracy. That's exactly what I did. 
+
+I went up to $100,000. I have all $50,000 funded accounts. Yeah.
+
+But I obviously saw the math and it makes sense to go up higher. And I got a $100,000 account funded with a portfolio because I went to the minis, not the micros. Yeah.
+
+It makes a lot of sense. It does. The only problem is when you go up in those prices, you have way less drawdown. 
+
+So, the profit to drawdown ratio shrinks. It becomes much harder to get funded without hitting that drawdown. That's the only concern. 
+
+That's why the lower ones are better. But when you use these portfolios with lower drawdowns, but you can still get it consistently and commissions aren't chewing it up, it makes it a little bit easier. So, yeah, for sure.
+
+It takes longer. I liked your video where you went over the way to stagger different account sizes. Yep. 
+
+Yep. It's very important. So, no, for sure. 
+
+Okay. Awesome. Are there any other questions that people want to go over? The only question I've got is regarding the discussion about the VPSs earlier is, am I correct that if you're operating and running bots on the VPS, you can't also be connected on your PC? That's incorrect.
+
+Okay. So, you can have two things of Ninja running? Okay. I do all the time.
+
+Okay. Yep. And I can, I can even, and it's actually quite good because sometimes my home machine messes up for whatever reason, something freezes because I've got a lot running on it.
+
+I can zip over quickly to my, to my VPS and I can start controlling whatever trade I had open on my, on my main computer. So, and vice versa. I, because I see any of my bot trades are showing up on my, on my main computer.
+
+Like, it's, it's just dual. Now, what you can't do is log into Tradeavate. Tradeavate will keep you out of one. 
+
+Yep. Okay. So, you couldn't, you couldn't be trading in Apex in both of them? Yep. 
+
+Absolutely. Okay. Yep. 
+
+Okay. Okay. Now, I will tell you that I am currently, so I lost three accounts yesterday.
+
+I did not blow these accounts up. They were actually very close to being funded. I'll explain what happened.
+
+October 12th, all three of those accounts were set for reset, like, for a rebill. And again, there was something wrong with my credit card. Okay.
+
+Apparently, it was expired. I don't understand how it could have been expired. But anyway, the deal was, they send them a message. 
+
+Now, I get their emails all the time. I never read them. And I just assumed that it was the payment thing went through. 
+
+Right. And apparently, it didn't. It failed. 
+
+So, that was the email saying, hey, it's failed. Well, when it fails, they give you 72 hours to fix it or your account's gone. So, 72 hours was yesterday. 
+
+I was trading on the account yesterday. And like I said, I came within a couple hundred dollars of one of the accounts getting funded. And then I reset my account. 
+
+And then when I came back up, they were all gone. I was like, what? So, then I spent I don't know how long with Apex trying to sort this out. And they said, no, you had 72 hours. 
+
+I'm like, seriously, like, have some consistency in how you message. Like, when there's ever an issue, if I violate a rule or something like that, there's this big red message that shows up on my NinjaTrader that says, hey, you screwed up. And I can see it.
+
+But here, the account doesn't pay the like, my account doesn't get renewed for whatever. But they just slide it through on an email. Like, just with like, there's your chance. 
+
+So, and now because the accounts are the first 30 days are the 80% off. And then after that, it's 50% off. So, I didn't want to buy new ones from them.
+
+So, I bought one from Lucid. So, I'm testing Lucid out right now as well. They work with NinjaTrader. 
+
+They only they cap you at five accounts. So, NinjaTrader is still a good option, but I'm trying them out. So, I'm just letting you guys know that I'm trying them out. 
+
+They are a not a monthly subscription. They're a fixed, a fixed fee. So, for a 50k account, it cost me $81. 
+
+And I can take as long as I want with that. It's not a monthly fee. But they have $500 less drawdown on that than you do on Apex. 
+
+But I also think they're end of day drawdown, not intraday drawdown. So, that might be why they're less drawdown period. So, I'm just letting you know, I'm testing it out. 
+
+See how it goes. I'll give you a testimonial after a bit. I haven't even traded on it today. 
+
+So, because I didn't trade at all, because I taught this morning. So, I don't trade when I teach. And then I just got back into it. 
+
+I didn't get back into it. All right. So, there's that. 
+
+Okay. Next, I want to share with you guys something super cool. Let me just open this up.
+
+Now, I'm not releasing this yet. But I want you to be aware that it's coming. Let me share my screen. 
+
+Here's the strategy analyzer. We have updated. Mega Orb 2.6. It's coming out. 
+
+We also have Snapback is done as well. But I'm still testing these. Okay. 
+
+Now, what I want to show you here, as requested. You guys see that? Oh, my goodness. You guys read that? You see that? Yep. 
+
+Direction filter. Watch this. Long only.
+
+There you go. Short only. Okay. 
+
+We have it. Okay. One of the other changes that we've made to this is that we've added in the no trades greater or less than X contracts. 
+
+So, that is now available in here. Okay. So, that's now available right there.
+
+Otherwise, that's it. So, this is a new bot that's like the latest update. And so, my optimization team is going to have a whole bunch of fun optimizing some of the stuff we've already optimized because we can optimize for just long or just short as well. 
+
+So, that's pretty cool. We can get some directional stuff happening as well. I just wanted to let you know that that is coming. 
+
+Okay. The other thing is in this particular update, we have fixed the ability to trade through midnight. So, that's been taken care of now. 
+
+So, we can start addressing those issues as well. All right. Okay. 
+
+Does anyone have any questions regarding that? Pretty cool. Right? Yep. Okay. 
+
+I'm still testing it. So, as soon as I'm done testing, that will be available. So, just know that it's coming soon. 
+
+And as we do this, we're updating some of our other, other bots to have that same feature. Okay. All right.
+
+Any other questions? Order cancelled. Okay. I'm going to show you one more thing because this is another surprise. 
+
+I'm currently working on the SuperSnap Orb. Okay. The SuperSnap Orb.
+
+Now, I'm still working on this bot, but what this is doing is I've got a directional filter in there. And the idea is that it will basically take either a breakout, an orb, or a snap based on the directional filter. So, if the directional filter, like if the EMAs are lined up bullish, then guess what? We're going to take a snapback trade if it breaks the low of the opening range, or we're going to take an orb trade if it breaks the high. 
+
+Makes sense? That's wild. Yeah. So, that's the SuperSnap Orb. 
+
+So, this is one of the bots that we're building in the, in our team, our collective team. What do we call ourselves there, Tim? I can't remember what we call ourselves. Let's see here.
+
+I'll have to look it up. Yeah. I don't know. 
+
+The Pushbutton Trading Labs. Yep. The Pushbutton Trading Labs team.
+
+Yes. That's, that's one of the bots that we're building. So, we put together a team of individuals that have some, some interest in developing new, new bots that have some coding background, etc., etc.
+
+And there's a group of, I don't know, six or seven of us that are meeting on a monthly basis and coming up with strategy ideas. And this is one of the ones I'm currently putting together. So, yeah, that's kind of exciting. 
+
+There's a few different features in here that I'm just trying to, to do. This also gives you the ability to, to choose between stop limit or market. So, you could use a market order or a stop limit order for your entries. 
+
+So, again, this is all pretty neat. The other thing is you have two different stop modes. You can use the ATR stop, or you can use a tick, or you can take it off and not use any trailing stop at all.
+
+So, there's a variety of different options that are in here. It's kind of a, that's why I'm calling it the super snap orb. So, it's, it's, it's super. 
+
+It's not just mega, it is super mega. I should have called it the super mega snap orb. So, maybe we'll have a, we'll have a, a poll for the, or a, or a contest for the coolest name.
+
+As soon as you said it, I was thinking, it's the mightiest heroes. I've been watching Avengers. Yeah. 
+
+Yeah. Or Super Mario Brothers. Yeah, there you go. 
+
+Cool. All right. So, what do you guys have thoughts about that? That's, that's exciting, right? That's pretty cool. 
+
+So, right now, I don't like the directional filter. It's not working quite well, because what I want it to do is during neutral times, when the market's neutral, I only want to take and snap back trades when it's bullish. I want it to take both, but depending on what it's doing, and if it's bearish, I want to take both, but I'm trying to get the directional filter where it actually filters properly. 
+
+I want it to do that. And right now, it's not quite, it's not, it's not sensitive enough to the filter. So, that's a little bit harder to code. 
+
+So, that's where we're at with that. Pretty exciting though. Okay. 
+
+All right. Questions? Tracy, you're right. Every, every one of these sessions is like Christmas.
+
+It's exciting, right? It's exciting. So, we're, we're coming up with new strategies for you. We're, we're finding the settings for you. 
+
+That's the goal. This is supposed to be fun. So, we're going to have a ton of fun. 
+
+And in the process of having that fun, we're going to find some financial success. That's, that's what, what our hope is. Right? So, yes. 
+
+Now, I did want to kind of touch on one other thing that I mentioned this today in my class, but I know you guys are trading on funded accounts. And that's great. But I do encourage each and every one of you as you're finding success with this, because the, the, the goal of the funded account is to give access to those that don't have the financial means to be doing this. 
+
+That's number one. But number two, it's also to give you a lower risk ability to practice a new skill where you're not putting all of your own capital at risk. But the goal should still be for you to be putting money aside, building a trading account, and eventually transitioning so that you're trading on your own account and not relying on funded accounts. 
+
+Then you don't have the drawdowns that are worried about. You can trade with as much risk. You don't have to worry about whether or not the, you had too many contracts open or any of that kind of stuff. 
+
+You can just, just trade it. So I do hope that you guys will take that to heart. And even if you're getting payouts and things like that, I encourage you to take at least 50% of what you're taking in your payout and put it in a trading account and try and build that trading account up. 
+
+And just an FYI with futures, there's no pattern day trade rule. There never has been. So you don't have to worry about having so much money in a, in an account.
+
+I recommend that you get at least $3,000 worth of, of capital available to, to trade for a futures account, um, and grow it, grow it as much as you want. But it's very different than, than trading with, um, with a, uh, uh, stocks or anything because the buying power is much different. Um, so I hope you understand that you can start small, but that's the goal.
+
+And, um, don't be afraid to start trading on your own, own account. Now, if you are doing that inside of Ninja trader, I encourage you to open a Ninja trader brokerage account, because then you don't have to pay the $99 a month for the multi broker license because they include it. It's, it's just part of.
+
+You get their data's cheap and, um, the brokerage account is, is reasonable. If you have, have to get an account that is not with Ninja trader, um, then like if you're going through IBKR or something like that, or Schwab and you're wanting to trade futures, you do have a $99 a month fee that you have to pay through Ninja trader, um, to connect the two. So that's, that's the downside. 
+
+But like I said, if you use the futures brokerage of Ninja trader, um, you don't have to pay that $99 a month. They just include it. Okay. 
+
+So that's the, the better way. So if you have the ability to open an account with them, then I encourage you to do so, um, and start building that wealth. Okay. 
+
+Um, don't rely on the funded accounts. They're, they're a great learning tool, but they're not the end all be all. Okay.
+
+So, and if I can trade, you know, 20 or 30 minis instead of having 20 or 30 funded accounts open, it's the same thing as having 20 accounts and just copying to all of them. Right. So it's, um, but yeah, I've just grown my account really big. 
+
+Okay. So just to give you an idea, uh, for 10 mini contracts, where's my pen? I guess I can't write right now. So let me go in and get a whiteboard. 
+
+All right. So if you did 10 mini contracts, doesn't matter. Well, it does matter, but let's just go, um, let's say, uh, ES or NQ.
+
+Okay. 10 mini contracts is going to cost you $5,000. That's what it's going to cost you. 
+
+That's how much money minimum money you'd have to have in your account to trade 10 mini contracts. Okay. So let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one. 
+
+Let's go to the next one. Let's go to the next one. Let's go to the next one So the futures close at 4 p.m. Eastern and then they reopen at 6 p.m. They actually close at 5 p.m. So 6 p.m. Eastern they reopen. 
+
+Between this 5 and 6 is settlement period. That's what they call it. So it's called settlement period.
+
+And what they're doing during that time is is anyone that is holding a position through through that overnight session, through that close, that five, so if they still have a position open at 5 p.m., then what they do is this money right here, that margin that you needed to hold that position, what they're actually doing is they're taking or adding to it based on your current position. So if you're up $100, then they're gonna credit your account $100. If you are, they're not gonna close the position, they're gonna credit your account $100.
+
+If you're down $200, they're gonna subtract that $200 from your account. So at the end of every single day, they always credit or debit whatever you're up for P&L, and until you close the position, it doesn't stop doing that. So that's why they have these margins, that's what they're for, okay? So does everyone understand that? That was just a quick little, kind of a whatever you call it to futures.
+
+And NinjaTrader works the same way, doesn't it, Tracy? Because whenever I pass up an eval, it's that evening after six, that I get the email and I have to pay the sign-up fee, they kind of work the same, NinjaTrader sort of follows that lead, right? Or is it my- You mean Apex? Apex. Apex, yeah. Yep, yep, Apex, they don't reset till, yes, till the end of the day.
+
+So they wait until the day is closed, and then they do their stuff, and that has to do with getting all the data from trade of eight as well, right? So yes, that settlement takes place at the end of the day, so that's when all your accounts get settled, yep. Okay? Perfect. All right, okay.
+
+Is there any questions, anything that you guys wanna go over, even if, and if there's anybody here that's still using the old system where you're back trading and you really do not wanna jump on the wagon for this portfolio stuff, you're welcome to ask those questions too. I just really feel like the portfolio is the way to go. It's gonna save you a ton of time.
+
+Not said. Okay, all right. Okay, well, if no one has any more questions, then I will let you guys all get on with your evening, and just know that there's some pretty cool stuff coming down the pipe, and yeah.
+
+Okay, I've got another update for, for the Portfolio Analyzer, and actually, I'll just go run over that right now. We'll cover it. So the Portfolio Builder, and the Portfolio Analyzer.
+
+Right, let me just share my screen for a second. Okay, minimize that. There's my screen.
+
+Okay, so some of the things that I fixed in here are as follows. So in the All Strategies tab, you can now sort according to these tabs. So this is now sortable.
+
+In the Portfolio Builder, same thing on this side here. So if you select some bots here, you can now sort this way as well. So if you wanna take a look at the close timer, you wanna sort the ID in order, which is nice rather than how you're entering them, et cetera, it just makes it a little bit easier.
+
+So I've fixed that as well. The other thing is, let's say that we wanna save this template now. Save the template.
+
+This is test 365, and I'm gonna hit OK. So now I've got that template. Now before, what was happening is you came over here, and you would look, and then you'd go, oh, it's not there, and you'd have to restart it.
+
+But guess what, it's already there. So it's now live loading, where before it had to reload on a restart. So now it's available.
+
+So that's all working. The other thing in the Portfolio Generator, I changed the text here so it's a lot more visible. Oh, and the other thing is the periodic stuff is now showing all the way up to 2025, to the current time.
+
+So that's been taken care of as well. So if there's any other features or things that you wanna change or you noticed, please let me know. And, but I will have this up to, available to you guys in the next couple weeks anyway.
+
+Okay? So Tracy, those are awesome. When you do generate a portfolio, does it make sense for the other tabs to represent that portfolio you just generated? Okay, so when you generate, like, are you talking here? Like, when you generate? Yeah. Yeah, so if you, like, let me just, let me go over here, and let me load something that has more.
+
+So you loaded, like, 15 bots, but it's only gonna use seven of them or something like that. Yep, so if you load, like, let's say there's 10 here. Let's just do, let's just run this right here.
+
+Okay, so right here, there is a save feature. So when you save this, it automatically comes available right up here. So all you do is save it.
+
+Like, if there's one of these templates that you like, let's save this one. Okay, well, there's combo. It tells me combo 108, 219.
+
+It tells me what the bots are. I'm gonna hit okay. So that's 108.
+
+Okay, and now if I go into here, combo 108, that's this one here. So I'm just gonna load it. And now if I go over to my portfolio, this is, I've loaded combo 108.
+
+So this is the view from that one. Perfect, that's great. Okay, thanks.
+
+Yep, and that should be working currently on the version that you have. Okay. Yep, so that's that save button that's right there.
+
+All right. Okay, perfect. Any other questions, comments? Casey, I will say that when I load a portfolio, I'm not getting the same numbers that you or Matt get on some of the demonstration videos.
+
+So I am working on kind of clearing out my programs and reloading it, but any other suggestions that I should try? What data feed are you using? Apex. Apex, okay. Because generally it's a data issue.
+
+That's typically the thing that's happening. So if you can send me a screenshot of what you're getting and what you think you should be getting. Yeah.
+
+Because you're not getting it in here because this here is data that I've given you. So all of this should be generated the way I've done it. So there's nothing that's coming from a live feed here.
+
+The only thing that would be affected is the strategy test. If you were to back test it and you're not getting the same amount, same that I am, but I don't know what you'd be back testing it against at this point because there's no comparables for you. Okay, yeah, I'll send a screenshot.
+
+I'm running the back test just to, like after I load it, just to see that the configurations are accurate. Okay. And then I don't get the same number, so.
+
+Okay, so there's two, because you're in mountain time as well, right? And I do adjust that, I am, yeah. Okay, so yeah, just send me some screenshots and I'll see if I can come up with the issue. Are you also up to date on all the bots? Yes.
+
+Okay. I cleared them out, cleared the cache and reloaded the bots. So, I did have OneDrive on my computer.
+
+I've uninstalled it. Yep. Shouldn't be an issue, but I did get a OneDrive message.
+
+Okay, saying what? Lots of files were deleted from your system? I should have screens captured that one as well. I'll see if I can replicate it and share it with you. Okay, yeah, just make sure that NinjaTrader is not operating inside of OneDrive.
+
+That is a, that's definitely terrible, because what it ends up doing is rewriting from the cloud. Right. Yeah, and then you end up with old data, but normally it's a data issue.
+
+So, I would encourage you to clear, what you can do is you go into tools and then go to database management. Okay. And what you can do is under repair database, so right here, and you can click repair and that'll repair the database, or better yet, you can go into documents folder, go into NinjaTrader 8, and then go into database.
+
+And again, clear your day, clear your cache, your day, your minute, and your tick. Okay. And then NinjaTrader will force to redownload the data, because when it downloaded the data, it might've gotten a bad batch.
+
+It also could be, if you're running on a VPS, are you running on a VPS? No, not yet. Okay. Well, it could just be coming from wherever the server is that you're getting it from, but that's the biggest issue is usually a data issue.
+
+I wouldn't worry too much about it, because these tests have been tested by multiple people, not just one. So, and the settings are good, but we need to find out if it's a setting that you're doing incorrectly, because then it would translate it into something live that wouldn't be very good. Right, that's what I was worried about.
+
+Yep, so just send me some screenshots and I'll see if I can figure it out. Okay, thank you. Okay, cool.
+
+Awesome. All right, anyone else? All right, folks. Well, that's it for today.
+
+You guys have a great evening, and I'm super excited for what's coming, so. Thanks, we are too. I'll see you guys in a couple of weeks.
+
+Next week, Matt's got you, all right? All right. Thanks, Tracy. Take care.
+
+Bye, everyone.

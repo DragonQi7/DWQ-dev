@@ -1,0 +1,601 @@
+All right, so with the new bot support, what we're doing is basically you're getting eight classes every month that it's going to be covering. And every month we're going to do one class that is a Q&A get unstuck class. That's this class. 
+
+So there's nothing planned for this class. This is where you bring in your issues that you're having with your bot trading. If you have questions, if you're stuck somewhere, if you're currently taking the, like if you just joined us and you're going through the content for the pre-recorded part, I ask that you reserve your questions to what you've taken rather than questions of how to do the next part that's going to be covered in the class. 
+
+So that's the only stipulation. I don't want to be teaching you what is already being taught in the beginning part, but if you're stuck somewhere, if you want some clarification, then by all means ask the question and we will cover it. Okay, so these classes, this class scheduled for an hour, but we'll take whatever we need to take it. 
+
+So who wants to start? Does anyone have any questions? I'll start. Sorry, I was muted. I definitely feel stuck, but I also don't really know what to ask if that makes any sense. 
+
+I'll make like one or two hour a month from the bots. I'll have out of six months, I've had two months where it kind of popped and I made like six hour, but it's not consistent, especially when you see guys who are, you know, they're making seven hour a month or 17 hour a month, and somewhere in between. And I just don't really know what I, what I'm doing different or what I need to kind of, kind of look at. 
+
+I feel like I keep it pretty simple. Things that I think that I want to know is like someone who is successful, who is getting payouts, like what does their optimization look like? And what does their back tests look like? Like specifically, you know, it's almost like a standard of success so that I know, not so that I can duplicate it, but so that I know if I'm thinking along the right lines, you know, if they're optimized, optimizing things that I'm not, or looking at things in a different, different way than I am. And then some of the, like the 10 EMA, the NR7, I tend to stay away from those just because when I go to run an optimization, they're taking so long. 
+
+So I also don't know if there's some sort of like recommended settings, you know, like maybe if each bot has its own kind of push button training, recommended settings, like sort of thing or something like that. So I feel like I'm not over-optimizing, like you and I chat about that. I took out the, my entry padding and stop loss padding. 
+
+I've left those standard. So we'll see how this this month goes with just optimizing mostly the time frame and the R. But yeah, that's where I'm at. I definitely feel stuck. 
+
+I'm not doing bad. The bots have never had a negative month. And I feel like that's amazing and fantastic. 
+
+And if I was past a payout threshold, and I averaged 4R per month, like that's totally scalable and can make a ton of great money right there. So that's fantastic. But yeah, that's exactly what it is. 
+
+I feel stuck. Okay. So there's a few things as far as the strategy is concerned around the scaling part and whatever, we're going to have a class that's dedicated strictly to that. 
+
+So we'll cover that in that class. And that's coming up. So look for it. 
+
+And it's actually called this, like, it's got strategy in it. There's actually two classes we'll be covering it. To answer your question about the NR7, the TennyMade, like the bots that take multiple trades per day. 
+
+They have a lot more settings involved. I keep it simple. I keep it very simple.
+
+So again, I'm not looking to optimize a whole bunch of different things. So for example, I don't even optimize my profit taker. When I'm doing the NR7 or doing the TennyMA or I'm doing the MegaOrb, I'm looking, I'll actually just set the profit taker at two.
+
+If I'm using the TennyMade, I'll set it at three. And then I just optimize, find some settings. I don't change the stop loss padding, I leave that as is. 
+
+I don't change my entry padding, I leave it as is. So that cuts down some optimization right off the bat. I don't change the max trades per day, I leave that as is. 
+
+So I typically do three. If I don't find anything, then I might go four. But generally, I'll do three. 
+
+I also don't optimize all the days, I just do all of them, run it. And most of the time, I mean, my optimization will go really, really fast. So if I'm looking at the TennyMA, the things that I will optimize are, and I won't even optimize it, I'll just go through the stop time.
+
+Even the trailing start and the trailing distance, I just throw in a number. So I like trailing, the trailing start, I like it at 100. And I like my distance to be 60 ticks. 
+
+That's, so I just leave that. I don't do anything with the period, I leave it. So I will optimize the value. 
+
+So what am I doing one minute up to around 15 minutes on the TennyMA. Same with the MegaOrb. The MegaOrb, I'll do up to 30 minutes. 
+
+But that's it. And so it's really quick to get your optimizations. And I'll do a bucket optimization on that. 
+
+And it'll give me a whole bunch of different things. And then from there, you know how to go in and look at your days to see which days and then you just go from there. Now, that so that will speed things up significantly, there's no need to optimize your EMA period or any of that other stuff, you really don't need to, you can just get some settings that you like. 
+
+And then from there, you can start to kind of feel okay, well, if I'm looking at the trailing start, I've got it at 100 ticks, but it's never actually engaging, then why don't I drop down to 50? And let's see if it's actually engaging at 50. Right? Because it's going to depend on which ticker you're working on, right? 100 ticks is easy to hit on the NQ, but maybe not on the M26. So or the M2K. 
+
+Right? So you might have to adjust that. But for the most part, I wouldn't over up, like, don't do a whole bunch of optimizations. Gotcha. 
+
+Okay. Because I spent the weekend doing a ton on the mega orb, but I found nothing, you know, so. Right. 
+
+So try doing the mega. So with the mega orb, again, I always have futures on. I don't do it without futures. 
+
+I don't change the ATR period. I shouldn't say that. I do like a 10.3 or a 14.4. Those are the two different settings that I'll use on the mega orb.
+
+But again, I don't change the profit taker generally. I don't change the stop loss padding. I'm going for a 3R on those more often than not. 
+
+Okay. And yeah. So you can optimize the candle offset. 
+
+But for me, what I end up doing is I just run a few different optimizations at certain times. That's what I do. And there's no real reason to get into the full optimization part unless you can't find something. 
+
+But you can always run it with just the candle offset doing 0 to 50 with your start time, wherever, and then do a bucket optimization on that and see what you do with just the time frame. That cuts down the optimization time significantly. Certainly.
+
+With the 3R profit taker, do you still look for the 70% profitable? And same thing with like a bot that takes multiple trades per day. No, not. And so I'm actually going to give you guys a spreadsheet that I'm still working on, but it shows you. 
+
+So the 70%, that's fine if you're going for 1.2. Sure. So I've got a spreadsheet that shows you as you increase your risk or your reward, I should say, how that affects what P&L, what percentage of profitability you can do. A little inversion chart. 
+
+Yeah. So last month I made 39R on using the bots. And I was using, I was running the mega orb and I was running the 10 EMA and I was having about a 53% profitability on that. 
+
+But because I was hitting 2R and 3R on those, with the winners were winners, the losers were small. And because I had trailing on that, a lot of the losers were also very small. Gotcha. 
+
+So it adds up quickly, right? Was that in like funded accounts? So the drawdown was in effect and gotcha. Nice. Yep. 
+
+Now the other thing is you're saying that month over month, so your biggest struggle is you're finding it hard to find something. Is that the biggest thing? I can find things on orb, but then they just don't, when I run them live, they don't do what they did in the back test. And so I always use orb. 
+
+I always use MNQ. I'm always looking for 1.2 to 3R and a 70% profitability. And then I run it and then it, most of the time it just falls flat, you know? Okay. 
+
+Yep. All right. So I want to just, let me just run something here and see if this, that was not it. 
+
+Let me load this up. It's MGC. Yeah. 
+
+And with, without the 70% profitability, I definitely would have found something on mega orb, like with all the tests I ran, you know? So that's good to know right there. That'll open it up for me a little bit, right off the bat. Okay. 
+
+So let's, let's take a look at an orb. This is, this is an orb right here. The 2.24, it's running on Tuesdays, Thursdays.
+
+I'm not running this right now. This is just an example. This was on micro gold and it was optimized from October 20th to January 18th, let's say. 
+
+And this was the performance of it with a $75 or sorry, $150 risk unit. We have, there's the profit. There's the drawdown. 
+
+We had 4.97 profit factor and we had 76.92% profitability, which is pretty good. This is only going for 1.5 R. But let's say that you find this. Okay. 
+
+The thing that I want to point out here is to test to see if you're over-optimizing. One of the things that I will do is I will change this profit taker and I will just let me double check and make sure that this is the right time frame because I'm finding that it's not saving it sometimes. So I just want to see, yeah, this is a two minute. 
+
+So I just need to update this to two minutes because if I run it again, it's going to be wonky. So let's just, yeah, that's correct. Okay. 
+
+So I want to test to see if I've over-optimized this. If I go to two and I watch this number, I don't want that number to drop if I go to two. Okay. 
+
+So if I go to two R and I run it and it did drop, so 32. So let's say that if I go to 1.8, 34.98, okay, 1.7, 32, and 1.5. Okay. So of that 1.5 was kind of the, or sorry, 1.8 was kind of the upper threshold. 
+
+If I go to 1.9, I'm at 37, right? And then if I go to two, it dropped to 34, right? Or 32. So it dropped significantly. So I'd say 1.9 is kind of that higher end of the threshold. 
+
+So what you don't want happening is we said 1.9 is kind of that upper threshold and I have mine set at 1.5. So when I run a test and I find an optimization that I like, I'm going to take numbers like this and I'm just going to run them up a little bit more and see if my performance improves or if it declines. If it improves, that's great. That means that I'm not sitting at this upper threshold because you don't want to be at this upper threshold. 
+
+You want to back off and go to this lower threshold. If you're up and you've got all of your optimizations up at that higher optimization level that you're over-optimizing because everything has to be aligned perfectly for that condition to be the case. So if you just back it off a little, you might find some of your performance improves. 
+
+And most of the time when I see a lot of the traders that are coming to me and they're asking me for help, when I look at their results, this is what they're doing. They've got it like pinned right to the top. They're trying to over maximize everything. 
+
+They're trying to squeeze out as much profit as they possibly can. Now the key to success with the bots isn't about squeezing out maximum profit. It's about consistency over time. 
+
+If you can nail down the process and you can be patient and you can get it so that all of your accounts are kind of working in your favor. And what does that mean? And I'm going to talk a lot about this in strategy. Let's say that you have four 25k accounts. 
+
+Maybe you've got three 50k accounts. Maybe you've got four 150 account. Maybe you've got six 300,000 accounts.
+
+This is diversification. Now the other thing is not having these all start at the same time so that they don't all bust at the same time. The idea is that you've got them all working with if one blows out, you've still got three going or 10 going or 15 going and you're replenishing ones as they blow out. 
+
+That's where you get consistent cash flow. But a lot of traders, you're getting eager, you're getting gung-ho and you're buying 20 accounts and you're starting all 20 and you're blowing all 20 and you're just not getting any of that forward momentum that you're looking for. So that's why I've been preaching since the get-go, start slow. 
+
+If you get 25k account done, let's say, and you get it funded, pay the one-time fee and don't trade it. It's good for 10 years. Do it again. 
+
+Get another assessment. Get that 25k account done. Check. 
+
+Check. Now you've got two of them. You've paid one time. 
+
+They're good for 10 years. So don't worry about it. Just pay it and let it sit. 
+
+You don't have to trade it. Get your third one done. Now you've done it three times. 
+
+You've got them. You've got them done. You've got some consistency happening here. 
+
+Now once you get the three done, then you can say, let's say you've got two 25s and you've got a 50k. So two 25s and you've got a 50k. Start working on that on one of them. 
+
+Just take one PA account and one assessment account and you're trading two of them now. Leave these other two alone. Don't do anything. 
+
+But as this one grows, you now have a cushion. Once you have a cushion in it, then you can add in the second one. Now you've got them staggered.
+
+Can you hear me? Yes, I can hear you. Okay. So now if they get staggered, right now you've got that cushion. 
+
+So again, if one doesn't perform well, then you don't blow it all out. You still have the chance for cash flow and you just keep growing it and building it until you have a full complement of 20 accounts that are working in your favor, all staggered, all different values, all bringing in different amounts, and then you're just replenishing them as you need. Right? You're constantly doing that. 
+
+So that's really about getting the process down. But the over-optimization from trying to chase profits, it's one of the things that's going to cause the biggest problem for many of you from getting success. You have to focus on the process, not on the cash. 
+
+Okay? So watch these numbers, watch these optimization levels, and make sure that you're not pinned. Okay? Back it off. And as long as those parameters still work.
+
+Now, what's your process? What's your weekly process, Shane? So, and for that, I don't do it exactly like that, but for each optimization I run, I go in and I look at the trades, I right-click on each trade, I look at the chart, and where it hits its target on the chart, visually, I'm like, was that maxed out? You know, did it hit it and then reverse, or did it have more room to go? And then I'll kind of gauge my R like that. So my weekly process is I'll do the parallel tests at the end of the week. And I really like to not touch them. 
+
+Like, honestly, even if they, so I guess I have more of a monthly process where I'll run my optimizations back test. I'll start the last week of the month. As soon as the last weekday of the month comes in, I'll kind of start running my optimizations if I need to. 
+
+And then on a weekly basis, like even if it had a max consecutive loss of one, and then it loses two, I will probably just let it stay until the month is up. You know, it could win that third week or whatever. So I tend to just let it ride for the month.
+
+Okay. So one of the things that I will do is let's say that, you know, let's say that I optimized from October 1st. So 10, 1, and I went to January 31st.
+
+Okay. So that's when my initial optimization was from, let's just say. Yeah.
+
+Is that 10 October, November, December? No, let's go December, December 31st. Okay. So December, October to December, that was my three month optimization. 
+
+So now the first week of January comes in. What I will do is I will shift this optimization up a week, and I'll shift this up a week. So I'll add a week. 
+
+Therefore, the number of trades is identical. I'll run the optimization again. And there's the backtest again. 
+
+And if the results still pass my parameters, then I'll let it run. If the results don't, then I need to stop that bot, pull it out and find something different. Okay. 
+
+So it doesn't matter whether or not the first trade wins or loses. It matters what happens to the settings, because I could be dropping off a loser and gaining a loser. Yeah. 
+
+If that one trade lost, if a trade in the first week lost, and now your numbers don't match your rules, what you're doing, then obviously the strategy isn't blowing you around to begin with. So you change it. Exactly. 
+
+Okay. Now, one other thing that I do is that when I am looking at, so I've told you guys before that you look at this number and this number, and you want this number right up here to be at least four times this number, right? Okay. Well, I add one extra loss to this and then do my 4x.
+
+Gotcha. Okay. So let's say that this is $434 drawdown. 
+
+Let's add $150 to that. That's $584. Now multiply that by four. 
+
+Does this condition still sit true? If the answer is yes, then I'm okay to keep going. If the answer is no, then I let it go. Perfect. 
+
+Yeah. Okay. So that's just one of the other things that I do, like I said, right off the bat. 
+
+And if I don't find something to replace it with, then I just let it go blank for the month. I'll wait till the following month and I'll just run whatever else I have. Okay. 
+
+Sure. So now the other thing is that with our trade copier, you can set up different leaders and different followers with different bots. So I don't run the same bot on all of my accounts. 
+
+I'll run a mega orb on two of my accounts maybe. And then I'll run a 10 EMA on some other, or maybe it's a mega orb, but different settings. I'll run just strictly orbs on separate accounts. 
+
+I don't run all of them to all accounts all the time. I've got different ones working. So if let's say one month, the snapback's working really, really well, but the orb isn't. 
+
+Well, I've got accounts that are working and others that aren't. So again, you're diversifying the portfolio. So the portfolio overall is still performing because remember we're aiming to gain more than we're losing.
+
+So the portfolio is performing, but individual accounts may be suffering while others are outperforming the others. Does that make sense? Yeah, it does. Okay. 
+
+Do you think I've given you enough help to try and get you to a place where you might be getting unstuck? Yeah, for sure. I've got a few things that I'm going to tweak. Then yeah, we'll go from there.
+
+That's about all I can handle right now anyway. Sounds good. Well, we got seven more classes this month, so you can learn some more from some of those. 
+
+Thank you. Thank you. Awesome. 
+
+All right. Anybody else? Who's next? We have some questions. Tracy, I have a problem that just developed today. 
+
+I was running backtesting and optimization on my laptop without a problem yesterday. It was... And I'm running it on an Alienware laptop. And so good processor. 
+
+But it was generating the reports within a fraction of a second for the backtest and the optimization might take a minute, minute and a half. This morning, I had a little bit of time at work where I was trying to do it. And all of a sudden, a backtest that would take a fraction of a second is now taking 10, 15 seconds. 
+
+And then running an optimization, forget about it. The bar is not moving at all. And so I checked to see if there was any other applications that were eating up my processor or CPU usage. 
+
+And that doesn't appear to be the case. So I don't know if it's an issue with the computer or if I'd be better off just completely uninstalling NinjaTrader and reinstalling. But is that a problem that you've heard of or that you've run into? Yeah, it could be a couple of different things. 
+
+The first thing I check is the cache to see because NinjaTrader fills the cache up really quickly. So just check that. The second thing is, normally, are you at home when you're doing those tests versus at work? Yes, normally, but I'm, you know, I got back home and tried to do it again this evening and I'm getting the same problem again. 
+
+Yesterday, great. Today, terrible, no matter where I am. So one of the things you can try is to download the historical data first and see if by downloading the historical data, if that fixes it, because if it does, then it's an internet issue. 
+
+And it could be your internet card. It could be there. It could be just some kind of connection issue, in which case I'd reset your ethernet card. 
+
+Okay. But otherwise, those are the two things that I would try first. Okay. 
+
+Yeah, because it could also be the data, the data feed, because if you're trying to do it with NinjaTrader or Apex, maybe the data feed isn't, there was a glitchy today. And that's what it's taking. So if you download the historical data from, and you know how to do that, right? So if you go to kinetic right, right, end of day, download the historical data first, and then run your optimizations and see if that speeds it up, then it's, it's likely a connection issue.
+
+Well, I shouldn't have to go to kinetic, though, if I have an Apex account, I should be able to just Yeah, you can try that. I find the data not as good, though. Okay. 
+
+Yeah. Okay. I would get the data that NinjaTrader provides you it's free, because they give you the tick data.
+
+I know for a fact that interactive brokers does not provide you with tick data. I don't know about Apex. So you might only get minute data, not tick data.
+
+Okay. And I was looking ahead of the session. So you may, I may be kind of jumping ahead. 
+
+I think next Tuesday, you're going to spend some time talking about VPS. But I guess that's another area where I've been stuck. I've, I've certainly been playing around with, you know, backtesting, and I've tried to run some of the, the bots. 
+
+But typically, what I'll do is I'll take my laptop again to work. And, you know, I'll set up the bots in the morning, I just I have not, you know, I have not jumped on board with a VPS yet. But after a few months of trying to do this consistently, I realized that that's, you know, just too much of a struggle. 
+
+And so I really do need to be able to rely on, you know, setting, setting something up and just, you know, having it ready to go rather than doing that as part of my routine every morning. But, you know, I was, you know, I was looking at or reading your course or, you know, watching your course content for for this. And I do have a, you know, a desktop that I have NinjaTrader installed on. 
+
+But most of it I've been trying to do on the laptop up until this point. And so I was kind of wondering, do I really need a VPS if I can, if I could just set the bots up to run on NinjaTrader on my desktop computer, and then just turn the screen off, turn the monitor off, but, you know, allow the computer to stay on? You know, would that be an okay alternative to having a VPS? Or not really? It is, but here's the risk. If you have a power outage at all, you lose internet connection, your bots are no longer controlling what's happening. 
+
+So if you're, if you're okay with the risk, and I wouldn't recommend doing this with your own personal account, because the risk is too heavy, but blowing up a funded account isn't a big deal. It just resets and you do it again. So yes, there's nothing wrong with it. 
+
+But just recognize that if you lose internet connection or power or something like that, those bots are no longer controlling. So you could potentially have a position that's open, that's unprotected. If you know that, very fair point. 
+
+Yeah, I would make sure that you are checking on a daily basis to make sure that all the orders have been canceled, closed out, there's no issues with that. Okay. But otherwise, I run my VPS. 
+
+And I, I love it. I just turn it on at the beginning of every week. I always restart it at the end of, at the end of every week, I turn it on and I just set my bots on and I don't do anything with it. 
+
+I just leave it. Other than if I have errors or issues. May I ask what you're using? Are you using what's recommended on PBT? Yep. 
+
+4x. Okay. 4x VPS.
+
+Yep. Thank you. You bet, John. 
+
+All right. Who else? Hey, Tracy, this is Harold. I didn't fully get what you're saying on the kinetic data. 
+
+Whenever I've done backtesting, I've always done with Apex data, but it sounds like maybe that's not most accurate. No, it's fine. I'm just talking about historical data. 
+
+Like if you're connected to live data, that's one thing. But if you're going to do your backtesting off of historical data, what you download for historical data needs to be quality data. And not all historical data that they give you will have information. 
+
+So let me just stop my share and share my whole screen or my bigger part of my screen. So you said you think I'd be all right as long as I'm hooked up to live data to do backtesting or would you still do the historical testing? No, the live testing is fine. There's nothing wrong with it. 
+
+But if you have issues, then this is what you do. So you go to connections and you go to kinetic end of day free. And then what you want to do is go to tools and then go to historical data. 
+
+And in here, you're going to see the download part right there. So download and you select the instrument that you want to download for historical. So if I go to let's say the ES and in this particular case, I want to do three months worth. 
+
+So let's go back to December 1st or November 1st. So I'll go November 1st and I'll just download it today. But what I want here is I want to make sure that I click tick minute and day. 
+
+I also want the ask and the bid as well as the last. And then I'll hit download. This doesn't take very long to download this information. 
+
+But if you're connected to, let's say, Apex, you may not get full tick data or it might be missing part tick data. Now, when you do your optimizations in your testing. So if I bring this back over here and you know how right in here, we've got order fill resolution and we change that to high and then we go to tick. 
+
+Well, if you don't have that data, you're not going to get it. And if you run off of the minute, what that does is it's looking at the high low open close every minute, but it's not looking to see what happened during each tick to actually trigger something. So the data doesn't become accurate. 
+
+So you're going to see in the optimization of the backtesting that the trades are going to show that. Can you guys still hear me? Because I just got an alert saying that my audio changed. You guys can hear me? Okay. 
+
+Yeah. So what will happen is some of the trades that you take will show up as being filled or stopped out or they hit the target. But in fact, they actually stopped out because when you look at a tick by tick, it actually hit the stop or it hit the target, but not based off of the minute, the way that that calculates it. 
+
+So that's all I'm saying. And if you don't have data, then you can do this for free. And this is how you can backtest and optimize without having a live data feed. 
+
+But if you're ever running into trouble, this is the first thing that I would do is download the historical data, do your backtest and see if that speeds things up. Because if it does, then it is an internet connection that you're having an issue with. Good.
+
+I think so. Just if you were me, how would you run it? Would you download all this stuff? Or would you just run it live off Apex? I don't mind doing it either way. I just want, you know, I want very accurate data.
+
+Yep. I would run it live off of Apex unless you're having issues. So okay. 
+
+Okay. Unless it's too slow or if it's hanging up, something like that, then this is what I would do. Understood. 
+
+And Tracy, earlier when you were talking to 10 EMA bot, did you say trail start use 100 and trail distance 60? Yes. That's my starting point. And then again, depending on which one I'm looking at, because like I said, the range on the NQ is way bigger than the range on the ES, for example. 
+
+So if I find some results, I'm going to play with it a little bit depending on what I'm trading. Okay. All right. 
+
+Thank you. Yeah. Yeah. 
+
+Okay. Tracy, how do I find the cash? Or can you tell me where I can find that on the push button site? I know exactly where it is, Tracy, if you want me to tell them. Just go into documents. 
+
+So you open up your file explorer, documents, NinjaTrader 8, DB, D as in dog, B as in boy, and then cash. Does that track, Tracy? Yeah. And then what you're going to want to delete is cash, day, minute, tick. 
+
+And then I also delete the NinjaTrader SQLite. It'll rebuild itself as soon as you restart NinjaTrader, but I delete all of those. And do it when NinjaTrader's closed.
+
+So you'll want to restart it because this can fill up really fast. I'm sorry. Go ahead.
+
+It's okay. I don't delete my database or my replay. That's for replay. 
+
+So if you're doing the push button stuff with me as well, you don't want to delete that because that's all your market replay information, just the other ones that you want to delete. All right. Thank you, guys.
+
+You bet. I actually was only deleting the cash folder, so I'm glad you said that. Yeah. 
+
+Yeah, you bet. Okay. So the cash folder plus the NinjaTrader Lite, L-I-T-E, did I follow that? Yeah. 
+
+And also tick, minute, and day. Tick, minute, and day. All right. 
+
+Sorry, I'm feeding a baby here, so I'm getting distracted. It's all good. You don't delete the folder, just the contents of the folder.
+
+Contents of the folder. Yeah. You can delete the folder, too. 
+
+It'll just... Either way. Yeah. It'll rebuild it to snooze you. 
+
+Yeah. I just delete them all. Except replay.
+
+Yeah. Except replay. For back trading.
+
+All right. How's everybody else doing? Lawrence, how are you making out with the program? Oh, I got a lot of stuff to figure out. I think I probably need to maybe re-watch some of these videos, but I don't fully understand the point of optimization.
+
+For me, once I do my back testing and I get something that I like, I just kind of go with it. So today, for instance, I watched it do its thing. It was 10 minutes, and it made a profit, and then that was it. 
+
+But I didn't optimize or other stuff, and I'm still using one of my accounts that I manually trade. Okay. So have you taken the class yet on optimization? Taken the class or watched the video? Watched the video.
+
+Yeah, I did once. Yeah. Okay. 
+
+So the only reason to do optimization is when you back test, you have to manually pick and choose what the settings are that you want to use. With an optimization, you can let it find good settings for you. That's the only reason to do an optimization. 
+
+So if you are right now running back test and you're manually finding settings that you like, that's great. There's no need to do any optimization. But if you're not finding settings that you want to use, then that's when the optimization comes in because it speeds up the process. 
+
+So instead of you manually entering in 70 different combinations of settings, you can let the program do it for you where it says, this is where I want to start, this is where I want to finish, show me what it does in between. Okay. Well, the other thing is, it's always micros, micros, but I don't use micros. 
+
+I can't find anything on it. Okay. So I was using the mini and that's like, I'm probably the odd man out doing that, but.
+
+Okay. What account size are you trading? Well, I mean, it was a 150k account. Okay. 
+
+So 150k. What's the drawdown on that? Should be 5,000. Okay. 
+
+So 5,000. So this is what I do to pick my R. Okay. So an R is going to be the maximum that I'm going to risk on any particular trade. 
+
+Now you want this to be consistent. You don't want to have on one trade, you're risking $6,000 on another trade. You're risking $300 on another trade. 
+
+You're risking a thousand dollars. You want it to be the same every single time. And the reason being is because that's when profitability, this number right here starts to work in your favor. 
+
+So if you're risky, a specific number, and you're going to risk it every single time, you're going to aim to get at least 1.2 times your risk unit or better. That's what you want. So for every risk that you lose, you're going to make 1.2 for every gain. 
+
+And that way, you're 50% profitable, you're profitable. It's a guarantee that you're profitable. Okay.
+
+Now we're aiming for 70%, which means you're going to be really profitable. That being said, I teach what's called a 10, 20, 30 rule. So if you have $5,000 worth of risk, divide that by 20, that gives you $250 max R. Okay. 
+
+So if you look at a position, let's say that you're using the orb, the orb calculates the risk or the position size based on here's the high and the low. So let's look at a long as an example. If this is the entry, actually, let me just go to the trades here. 
+
+I'll just open these up. Okay. So here's a trade. 
+
+And based on $150 risk, it calculated six contracts. That's what it needed. Okay. 
+
+Now what it does is it, it looks at the trigger candle. Here's the trigger candle right here. Here's the high.
+
+And that's where the stop is going to be. The distance between here has a value in futures. So the number of ticks, whatever that is in, in futures, it's worth something. 
+
+If this stop gets hit, the max that will be lost is $150. And based on the mathematics that says that it needs six contracts. Now this is on an MGC. 
+
+Okay. So MGC is 10 times less than what GC is, right? So GC is your regular contract. Well, you can't get partial contracts. 
+
+If you were trading the same thing with the same risk on GC, you would get 0.6 contracts. That's what the math would say, but you can't get 0.6 contracts. You, you, you just can't, which means that you either do one of two things. 
+
+You either get one contract, which means you're increasing the risk. And if the stop gets hit, you're, you're losing way more than $150. You're losing 40% more than what you intended to. 
+
+So if you are trading, if your contract size is less than 20, consistently less than 20, then you should be trading the micros. The bot does all the calculation for you. Less than less than 21 contracts. 
+
+So if you go into your optimization or into your report, so let's go to trades and I look at the trades and I see the trade quantity right here, based on my risk, are any of the contract size, the quantities greater than 20? No, no. So I have no, if I'm doing a backtesting and I'm not getting the ideal parameters, then does it not matter anyways? It does. That's why you use an optimization. 
+
+So if you do run the optimization, you will find good results. You'll find something that does work. Okay. 
+
+I don't know. I'll have to, I have yet to find anything in a micro that, that I felt. Now here's another, if, if, if I found something and I used it and then I use the copier for other accounts to, to go with it at that moment, I can't use my copier for any of my manual trading, right? You can with our copier because our copier has, so if we go into our account dashboard, this is our copier. 
+
+Let me grab this here. Hang on. Oh.
+
+Okay. So here's our copier and our copier allows you to how to, you can set up two different or more. You can just keep adding them. 
+
+And so you would have one leader account with whatever followers. So then your other account you'd set up as a different leader account with different followers. So I can use some of my existing accounts and add it to that. 
+
+Yeah. Everything that you have connected to NinjaTrader will automatically show up on that. But what I, what I would not encourage you to do is trade manually on something that your bots are already trading on because you could run into conflicts there because you can't have the same trades open or different trades open. 
+
+Like if you try to short the end queue while you're long with the bots in the end queue, it just, it, you can't do that. It doesn't work. I wouldn't trade the account while it's going on. 
+
+Like I only have a two hour window when that the bots work. So I don't trade in that two hour window manually. Yep. 
+
+And that's fine. So yes, you can, you can absolutely do that. But if, if I, I guess I could trade another account that's not part of it.
+
+That's what I recommend doing. Yeah. So like that same account, I traded it before the bot started to work. 
+
+Like I traded it manually and then I don't know, 15, 20 minutes before they were going to start, I stopped trading it because I knew the bots were going to kick in. Yeah. And that's fine. 
+
+Okay. Yep. But I, I, I recommend having a dedicated account that's just strictly for the bots. 
+
+And well, I've intended to do that, but I haven't been able to get mine going. So, okay. I have a whole bunch that will renew, but I mean, I could renew a couple early and like, it's just too many accounts, but like, I need, I'd like to get them passed if I could. 
+
+Okay. Well, let me, I'm just going to, let's just quickly run an optimization here. Let's see how long this takes. 
+
+Yeah. And this is, if it takes too long and yeah, can't really do it, but I'll have to do some more. There's a 32 core computer. 
+
+Nothing takes long on that thing. Yeah. I'll have, I'll have to kind of rewatch stuff and, and dig around some more, I guess.
+
+Optimization data series. Let's just do one to five minutes. Candle offset.
+
+No, I. Okay. So we're just running this on MGC. I should have changed it, but it's doing, it's going to take 610 different parameters. 
+
+That's how many different tests it's going to do. And let's see if we can't find something that's on orb. Like this is the point of the optimization is so fast. 
+
+It's so quick. And right now what it's doing is it's just looking for all the different variables between one and five minutes mixed with entry offset between zero and 121. That's it. 
+
+So I've got one right off the bat. It made with $150 risk $4,257 with a drawdown of 597. If I click on that, that's a three minute chart. 
+
+Make sure it says three minute. Yep. So now if I go and look at this and I go to my analysis and I take a look, my PNL is going from left to right. 
+
+This is a good PNL. If I go into some more detail on it, if I look at my days of the week, I can see that Monday, Tuesday, Wednesday, Thursday, they're okay, but I could probably drop off Wednesday and maybe even Thursday. So let's just do that. 
+
+Wednesday and Thursday, let's take it off and run it. Okay, so now I've got Mondays, it's making just a little over 1100. And Tuesday's making a little over 1700. 
+
+Go back to my summary. With this, I've got $150 drawdown, I've got 3.85. For my profit target, or my my profit factor, I've got $2,945 in profit, two days of trading with a 72% profitability. That's on MGC, three minute chart. 
+
+So the optimizations are extremely important. This is on micros, not on the futures or not on the main account. I've got it starting to two and a half hours before the market, market open, that's what my start time is with an entry offset of 81.
+
+So that was a very simple optimization. Does that make sense? Maybe a little bit. Maybe a little bit. 
+
+What part doesn't? Well, just being familiar with optimization, I guess, and understanding. When you had the list up top, without that, were there like eight or 10 different ones, you could, all those are different ones you could select? Yeah, these are all different options. And I can look at each one of them. 
+
+Yeah, I don't, I may not have gone through this step. I don't know. Okay, maybe that's what I'm missing. 
+
+So that's the optimization part. And that's where I would recommend. So once you get to that video, then practice doing the optimizations. 
+
+So we start out with the backtesting first, then we show you how to do it easier. So make sure you've gone through the program. And when you get this is where it does, it's really starts to become awesome.
+
+Okay. And the other one is the bucket testing. Yeah, so, so the bucket testing, and I could run this optimization, if I go down to instruments, and instead of choosing MGC, I can just go to Tracy's micros and select the ones that I want, and then hit run. 
+
+So now instead of 610, it's going to do 3660, because it's going to do the 610 on each one of the accounts. So I get to step away, I can go do something else. And I can come back. 
+
+And now I'm going to have, I'm going to have a list up top, just like what we saw before, but it's going to be for each one of those that were in my bucket. And I can run it on multiple tickers at the same time. If I'm using a larger account size, what other adjustments should I be making? Nothing, you would do the same thing, because the larger account size just means that you increase your risk. 
+
+So if you've got a larger account, like you're 150, your risk would not be 150, it'd be 250. Okay. Okay. 
+
+So I was starting to tell you what that 10-20-30 rule is. Let me finish. So the 10-20-30 rule is simply, sorry, my computer just, oh, there we go.
+
+So 10-20-30, if you're dealing with a $5,000 risk, you divide it by 20, that equals $250. That's the max that any of your trades should be risking. That gives you 20 trades before blowing up the account. 
+
+Okay. And that's what you put up for your risk. Yes, that's what you put right there for risk. 
+
+Okay. So that would be, yep. Now that gives you 20. 
+
+So you'd have to have 20 consecutive losses to blow the account up. But then I have a cushion, I have a bumper of 10, and I have a bumper of 30. If I grow the account, so my account grows, my P&L is going up, and I end up with enough risk that I can now get 30 trades from it. 
+
+So if we take 250 and multiply it by 30, somebody got a calculator? What is that? 250 times 30. That should be 7,500. Okay. 
+
+So if the account grows up so that I have $7,500 worth of drawdown now, when it hits this mark, I can now divide by 20 again. So what would that be? Divide by 20, 7,500? What is it? 3750? 375. 375. 
+
+So now- Oh, divide by two. Sorry, sorry. Yeah, 20. 
+
+Yeah. So now my risk unit can go from 250 to 375 because I have that available risk. Okay. 
+
+That's how I increase my risk, which thereby grows the amount of money you can get. If I go the other way and I lose, so now I draw the account down so I only have 2,500 left, I then again, that's another trigger point for me to once again, divide by 20. So what's 2,500 divided by 20? 125. 
+
+125. So now I would drop my risk from 250 down to 125. I now have 20 trades again before I blow the account. 
+
+And that gives me a little bit of cushion that I can start getting the account back up into the positive. Does that make sense? This little bumper? Yeah. Like I see the math, how do you actually employ that? I watch my drawdown. 
+
+So like I said, I start a new account. I'll start out with taking my risk divided by 20. That's the max risk that my trades will take.
+
+Okay. So you just watch your account balance and make the adjustment like the next day or whichever. Yeah. 
+
+Well, if this trigger gets hit, so like I said, you've got the 20, the 10 and the 30. So what is that amount? 2,500 is the 10, 5,000 is the 20 and 7,500 is the 30. If my drawdown reaches 7,500, that triggers an increase in risk. 
+
+If my drawdown gets to 2,500, it triggers a decrease in risk. I have to manually go in and decrease it, but I'm not going to change my risk until either that $2,500 drawdown gets reached or the $7,500 increase gets reached. The only, well, if you gain so much that you have more drawdown than you normally have.
+
+Yeah. Well, that's the only way that 30 would kick in. That's right. 
+
+Which is what I want. I want it to grow so that I have, basically, if you're looking at 150,000, it would be 158,500 that you would need in the account to have that room. That would trigger an increase in risk because I want to grow those accounts and I want to get a little bit of a cushion and then I can start getting some consistent cash flow and I don't have to worry about them getting dropped out. 
+
+All right. Okay. It's slower than some people like. 
+
+It's not very aggressive, but this is exactly how I would trade my own personal account. It's about consistency. If you want to grow and make more money, then you need to have more accounts or grow those accounts so that you have more cushion and you can increase your risk. 
+
+And at that point, you increase your risk until your lot size becomes your limiting factor. And if you grow that account enough, I mean, you could be trading with a 3000 or $5,000 R. It's all scalable. All right. 
+
+Well, it'll be a work in progress. And in the meantime, well, the manual probably draw bigger results, but that's. Yeah. 
+
+If you can, if you can have consistency with manual trading, then that's, that's great. Right. But the, the consistency is the hard part for a lot of traders. 
+
+And a lot of that is because people are racing for a goal line instead of focusing on the process. They're solely focused on the finish line instead of the journey. And you're never going to hit that finish line if your journey sucks. 
+
+If you're, if your process to get there is terrible, if your conditioning is bad. Right. If you cramp up 80% through the race all the time, you're never going to finish the race.
+
+Okay. So the conditioning is really important. The process is important. 
+
+The rest comes. Okay. I've been preaching this since forever. 
+
+You guys have all heard this many, many, many, many times, right? Focus on the process. The outcomes you have no control over, but you have complete, utter control over the process. That's what you have control over. 
+
+So focus on it. Okay. Thanks. 
+
+All right. Any other questions? No, I'm waiting to see if this will, uh, I should have done a faster one. See if this'll. 
+
+Can I, um, sound like a needy, basic white girl for a second? Um, if there was a spreadsheet, like how you told us the, the trailing start was a hundred, the trailing distance was 60 and how you do those things. If there was a sheet per bot that were kind of like a guideline or a standard setting or something to reference, that'd be amazing. And I'm going to like save these for everything that we've spoke about and hopefully build it as we go. 
+
+Um, not quite sure. I understand exactly what you mean. So can you.
+
+Like almost like a, uh, SOP, like a SOP per bot or best practices per bot. Um, and that just outlines the settings that someone successful like yourself would mess with and wouldn't mess with. And what is the range of the settings that you would mess with? Like some sheet like that per bot could be, you know, a very helpful, like reference tool.
+
+Um, to, to kind of go off of, uh, but that's my, that's my needy, basic white girl comment. Yeah, no, that's, that's good. It's a good idea. 
+
+So I can work on something like that. I could help too, if, if you wanted it. So perfect. 
+
+Yep. If that helps you guys, we can definitely do that. Yeah. 
+
+Awesome. All right. Okay. 
+
+Josh, how are you making out going through the program? Nope. You're muted. Sorry. 
+
+I didn't unmute. Uh, doing pretty good. Caught up on all the videos. 
+
+Uh, last week was my first week that, uh, I ran the bots. Um, I found with my computer trying to optimize the entire week was a little slow. So I just did one day at a time. 
+
+Uh, and then next month I plan on trying to just stick it out and, um, do the whole week and see if it gets a little bit different result, but just playing around with different things right now. Okay. So when it comes to optimizing for like, I never changed the Monday, Tuesday, Wednesday, Thursday, Friday to optimize. 
+
+So I will always run it as all true. And then what I'll do is once I get the results, I'll go in and see if there's a couple of days that stand out or if I can remove days, that's what I'll do just to speed up the optimization, because with every single one of these that we choose to optimize, it just doubles the optimization time that it takes. So I try and make it very simple. 
+
+You can either do that or do what you're doing, which is optimize one day at a time. I prefer to find things that will run multiple days. I like it. 
+
+It's also got a better data set that you can look at. So, um, those are the two options, but I would avoid optimizing per day, like clicking actual optimization. I was doing all true and then true for just one day. 
+
+I think doing the whole week would get you a better result because if you have two consecutive losses and you have three trading days, you should get a win there where my back test may have had two consecutive losses where now I'm looking at two weeks just to test to see if it's going. Yeah. But that being said, I, um, if I do one day at a time, I'll usually have multiple bots running on that same account, one for each day kind of thing. 
+
+And one of these weeks we're going to, or one of these days this month, I'm going to be talking about, uh, what you do with that. So we're going to talk about quant analyzer. So if you check out that, because you can take all of those results and then get another optimization result from it, which will show you how multiple bots traded on the same account, how it would perform if they were all put together. 
+
+Okay. That's kind of what I'm doing. I have one for Monday, Tuesday, Wednesday, Thursday, and Friday all on the same account.
+
+Yeah. Yep. So I'm going to show you how to confirm that that's all, all good. 
+
+All right. Okay. So here's the results. 
+
+So this is what, um, a bucket test optimization will look like. So now if you, you see this here, I've got multiple, this is what I ran it on. I ran it on the 6C, the MCL, the MES, the MGC, the MNQ, and the MYM. 
+
+And you can see that I've got actually good results for all of these. So I've got, uh, MGC has a profit factor of 2.1. It's only got a 1,558, but let's just right click on that, go to open. This is a five minute. 
+
+And now if I go to my analysis and I go to the day of the week, I can see that Monday, Tuesday is a terrible performer. So let's remove that Monday, Tuesday, and run it again. Now, if I go back to my summary, I'm now getting 7.55 profit factor, $147 drawdown, a $1,736 profit with a 76.19% probability. 
+
+That's a pretty good result. That meets all the criteria we've talked about running on a Wednesday, Thursday. Okay.
+
+Now, if you were trading with a $250 risk, if I just change that to 250, and I run this, that makes $2,978 with a $239 drawdown. Okay. Still pretty good. 
+
+Go back to 150. Okay. So that's, that's that particular one. 
+
+If I look at another one in here, I've got MES, so 2.47. If I right click, run that, that's a two minute. And here I've got 2.47 profit with a 750 loss. That's pretty high. 
+
+I don't like that. But again, check the day of the week. Do I have any particular day of the week that I don't particularly like? Yeah. 
+
+Wednesdays. So let me remove Wednesdays. I'll run it again. 
+
+Go to summary. And this is still, I've got 300 or $3,383 of profit with a 521 drawdown. I'm only hitting 64.86, but I'm trading three days of the week. 
+
+I'm going for 1.5. That's a little bit low for me, but it's still, it's still not too bad. But take that $5,201, multiply that by four. I'm still well below the threshold that I need to be. 
+
+So this, this is still a good, a good thing. Now, one of the things that I talked about earlier, if I go to my trades and I look at the quantity on the MES with the risk that I'm using, do I have any contracts that are greater than 20? I don't. Which means that a lot of these, I wouldn't even get filled because I, this would only take five contracts if I was using the ES or sorry, it would take 0.5 contracts if I was using the ES. 
+
+So I wouldn't get enough. This one, I'd get one, none, one, one, none, none, none, none, none, one, one, one, one, one. You see the, the problem when you start to trade a lower risk unit on something like the ES versus the MES. 
+
+So I look at this and I can see that I'm, I'm, I'm good to trade the, the micros. I will not get the same results if I trade on the ES. I'll get terrible results. 
+
+Okay. Now, if I uncheck this and then trade it on the micros, then I might get some pretty good numbers, but if I look at my risk, so let's do that. If I uncheck this and then I'm going to run this on the ES instead of the MES, I'm going to run this. 
+
+Let's give it a second to do the, do all the tests. Oh, I forgot to do something. Forgot to click uncheck this as well. 
+
+Let me cancel that. Let me go run this again. Here we go. 
+
+And I'm going to turn this off and this off, and then I'm going to run it on the ES. There we go. So it got an interesting amount here. 
+
+Let's go to, oops, let's go to trades. So if I look at the trades, it's all one contract. Everything's one contract. 
+
+So if I look at the actual risk, I'm losing 125. Remember my risk is 150. I'm losing 125. 
+
+I'm losing 187. I'm losing 325. Like the risk isn't the same. 
+
+225, 187, 150, 325, 337, 337, 325. It's not the same. And I'm not keeping that variable the same. 
+
+And that's what becomes the problem. So on 150 and a 1.5, I should be making 225, but here I'm making 375, 200. It's inconsistent and that's unpredictable. 
+
+And that means the numbers can't work in your favor. You never know, because that's completely dependent on the size of the candle at the time, rather than a controlled risk factor. That's why we trade the micros. 
+
+Okay. Any other questions? Tracy, whenever you connect to the kinetic, I guess I've never really understand what, how do you, what do you do from there? How do you download that data? Yep. So connect first to kinetic end of data, and then just go to tools, historical data.
+
+And then right here where it says instrument, choose the instrument you want, the date that you want to download. So the start date to the end date, make sure you've clicked tick minute, day, ask bid last, and then hit download. So how did you get there from tools? I'm sorry, I got distracted.
+
+Uh, go to tools, historical data. Historical data. Okay, great. 
+
+Thank you. No worries. Okay.
+
+All right. Last minute questions. Any other questions? Okay. 
+
+Well, that's it. Uh, there's another class scheduled for, um, Thursday, Thursday. Okay. 
+
+So tomorrow I don't teach on Wednesdays cause I do my trading psychology classes. So hopefully you guys are all in that. You can take advantage of that, but otherwise, um, yeah, I'll see you guys on Thursday where we're going to talk about combining back tests. 
+
+Okay. Awesome. Okay. 
+
+Thanks guys. Take care.

@@ -1,0 +1,111 @@
+/* Poster styles for Dragon's Way Qigong flyer */
+:root{
+  --bg: #E9E4DA; /* updated background per user */
+  --accent: #b30000; /* red accent matching logo */
+  --text: #2E2B28; /* darker text for contrast on cream background */
+}
+
+/* Logo text styling requested by user */
+.logo-text {
+
+    /*
+  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Trajan Pro', serif;
+  font-family: 'Georgian', serif;
+    font-family: 'Cinzel', serif;
+
+  */
+
+
+  font-family: 'Courier', serif;
+
+
+  font-weight: bold;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: #C02026; /* deep red similar to the dragon */
+  display: block;
+  text-align: center;
+  font-size: 1.6rem; /* visible size */
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+
+.bottom-text {
+
+    /*
+  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Trajan Pro', serif;
+  font-family: 'Georgian', serif;
+    font-family: 'Cinzel', serif;
+
+  */
+
+
+  font-family: 'Courier', serif;
+
+
+  font-weight: bold;
+  text-transform: ;
+  letter-spacing: 0.05em;
+  color: #C02026; /* deep red similar to the dragon */
+  display: block;
+  text-align: center;
+  font-size: 1.6rem; /* visible size */
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: 'Arial', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;color:var(--text)}
+.poster{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  background:var(--bg);
+  padding:6vh 6vw;
+}
+.logo-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;gap:0.8rem}
+.logo{max-width:82%;height:auto;display:block}
+/* QR sample styling */
+.qr-wrap{width:100%;display:flex;justify-content:center;margin-top:1.2rem;position:relative;transform:translateY(-60px);z-index:2}
+.qr{width:220px;height:auto;background:transparent;padding:6px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.08);border:none;max-width:90%}
+
+.bottom-text{width:100%;text-align:center;padding:2rem 1rem 1rem}
+.bottom-text h1{
+  font-size:2.25rem;
+  margin:0;
+  color:var(--accent);
+  letter-spacing:0.02em;
+  font-family: 'Comic Neue', 'Comic Sans MS', 'Segoe UI', sans-serif;
+  line-height:1.05;
+  font-weight:700;
+}
+.bottom-text .sub{font-size:1.25rem;margin-top:0.6rem;color:#222}
+
+/* larger sizes for print/large poster */
+@media (min-width:900px){
+  .logo{max-width:70%}
+  .bottom-text h1{font-size:3.8rem}
+  .bottom-text .sub{font-size:1.6rem}
+  .logo-text{font-size:2.6rem}
+  .qr{width:300px}
+}
+
+/* Reduce upward shift on narrow screens to avoid overlapping */
+@media (max-width:599px){
+  .qr-wrap{transform:translateY(-20px)}
+}
+
+/* Print-friendly adjustments */
+@media print{
+  :root{--bg:#E9E4DA}
+  body,html{height:auto}
+  .poster{padding:1.5cm}
+  .bottom-text h1{font-size:40pt}
+  .bottom-text .sub{font-size:18pt}
+}
+
+/* Recommendations: if you want a vertical poster like 11"x17" or A3, set paper size in the print dialog. */

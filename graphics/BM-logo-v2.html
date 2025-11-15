@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Moon Mandala Logo</title>
+
+<style>
+  :root {
+    /* 🌙 Theme Colors */
+    --moon-light: #aee7f8;
+    --moon-deep: #0f3460;
+    --glow: rgba(135, 206, 250, 0.6);
+    --title-color: #eaf6ff;
+    --subtitle-color: #cde8f9;
+
+    /* 🖋 Fonts */
+    --font-title: 'Cormorant Garamond', serif;
+    --font-subtitle: 'Lato', sans-serif;
+
+    /* ⚙️ Animation Speeds */
+    --rotate-speed: 40s;
+    --pulse-speed: 6s;
+  }
+
+  body {
+    background: radial-gradient(circle at center, #0b132b, #1c2541 70%, #3a506b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 🌕 Mandala Container */
+  .mandala {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--moon-light) 0%, var(--moon-deep) 90%);
+    box-shadow: 0 0 40px var(--glow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate var(--rotate-speed) linear infinite;
+  }
+
+  /* 🌸 Mandala Pattern (CSS only, layered rings & lines) */
+  .mandala::before,
+  .mandala::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: pulse var(--pulse-speed) ease-in-out infinite;
+  }
+
+  .mandala::after {
+    inset: 10%;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    animation-delay: 1.5s;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+
+  /* 🌙 Decorative Star Rays */
+  .rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg, transparent 0deg 10deg, rgba(255,255,255,0.2) 10deg 20deg, transparent 20deg 30deg);
+    border-radius: 50%;
+    animation: rotate calc(var(--rotate-speed) * -1) linear infinite;
+  }
+
+  /* 🪶 Text Styles */
+  .brand {
+    font-family: var(--font-title);
+    color: var(--title-color);
+    font-size: 2.8rem;
+    letter-spacing: 0.25rem;
+    margin-top: 1.5rem;
+    text-shadow: 0 0 12px rgba(173, 216, 230, 0.6);
+  }
+
+  .subtitle {
+    font-family: var(--font-subtitle);
+    font-size: 1.1rem;
+    color: var(--subtitle-color);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+</style>
+</head>
+
+<body>
+  <div class="mandala">
+    <div class="rays"></div>
+  </div>
+
+  <div class="brand">Blue Moon</div>
+  <div class="subtitle">Meditation & Healing</div>
+</body>
+</html>

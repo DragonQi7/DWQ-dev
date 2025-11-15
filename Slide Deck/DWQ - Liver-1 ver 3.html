@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Deck — Kidney & Bladder (Water Element)</title>
+
+<!-- Fonts: handwritten for body, light sans for headings (no bold) -->
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg-a: #071226;     /* deep water */
+    --bg-b: #0f2a44;     /* mid tone */
+    --accent: #90c3ff;   /* pale water highlight */
+    --muted: #c9d8e6;
+    --card: rgba(255,255,255,0.03);
+    --glass: rgba(255,255,255,0.02);
+    --dot: rgba(255,255,255,0.15);
+    --dot-active: rgba(144,195,255,0.95);
+    --hand: 'Patrick Hand', cursive;
+    --ui: 'Inter', sans-serif;
+  }
+
+  html,body{height:100%;margin:0;font-family:var(--ui);background:linear-gradient(180deg,var(--bg-a),var(--bg-b));color:var(--muted);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+  /* stage */
+  .viewer{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:36px;
+    box-sizing:border-box;
+  }
+
+  /* slider container */
+  .slider {
+    width:1100px;
+    max-width:calc(100% - 80px);
+    height:640px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:16px;
+    box-shadow:0 12px 40px rgba(2,6,23,0.6);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+  }
+
+  /* decorative soft wave overlay (pure CSS) */
+  .slider::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(1200px 200px at 10% 20%, rgba(144,195,255,0.03), transparent 15%),
+      radial-gradient(900px 140px at 90% 80%, rgba(255,255,255,0.01), transparent 18%);
+    pointer-events:none;
+  }
+
+  /* track & slides */
+  .track {
+    display:flex;
+    transition:transform 600ms cubic-bezier(.2,.9,.22,1);
+    height:100%;
+    will-change:transform;
+  }
+
+  .slide {
+    min-width:1100px; /* matches slider width */
+    max-width:1100px;
+    width:1100px;
+    padding:56px 72px;
+    box-sizing:border-box;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:12px;
+    color:var(--muted);
+    background:
+      linear-gradient(180deg, rgba(9,20,34,0.22), rgba(4,10,18,0.18));
+  }
+
+  /* responsive width adjustments */
+  @media (max-width:1200px) {
+    .slide, .slider { width:920px; min-width:920px; max-width:920px; }
+  }
+  @media (max-width:980px) {
+    .slide, .slider { width:720px; min-width:720px; max-width:720px; height:74vh; }
+  }
+  @media (max-width:600px) {
+    .slide, .slider { width:96vw; min-width:96vw; max-width:96vw; height:78vh; padding:28px; }
+  }
+
+  /* title */
+  .title {
+    font-family:var(--ui);
+    font-weight:300; /* light */
+    font-size:28px;
+    color:var(--accent);
+    margin:0 0 6px 0;
+    letter-spacing:0.4px;
+  }
+
+  .subtitle{
+    font-family:var(--hand);
+    font-size:22px;
+    color:#dfefff;
+    margin:0 0 18px 0;
+    line-height:1.1;
+  }
+
+  /* body list uses handwritten font */
+  .body {
+    font-family:var(--hand);
+    font-size:20px;
+    line-height:1.6;
+    color: #e6f5ff;
+  }
+  .body small { font-family:var(--ui); font-size:13px; color:var(--muted); display:block; margin-top:10px; }
+
+  /* two-column area for some slides */
+  .cols { display:flex; gap:36px; }
+  .col { flex:1; min-width:0; }
+
+  .note {
+    background:var(--glass);
+    padding:12px 16px;
+    border-radius:10px;
+    color:var(--muted);
+    font-family:var(--ui);
+    font-size:13px;
+    max-width:48%;
+  }
+
+  /* arrows */
+  .nav {
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+  }
+  .arrow {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:56px;
+    height:56px;
+    border-radius:10px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.03);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    pointer-events:auto;
+    color:var(--accent);
+    font-family:var(--ui);
+    font-size:20px;
+  }
+  .arrow.left { left:18px; }
+  .arrow.right { right:18px; }
+
+  /* dots */
+  .dots {
+    position:absolute;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    pointer-events:auto;
+  }
+  .dot {
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--dot);
+    cursor:pointer;
+    transition: all 220ms ease;
+    border:1px solid rgba(255,255,255,0.02);
+  }
+  .dot.active { width:14px; height:14px; background:var(--dot-active); box-shadow:0 6px 18px rgba(16,44,72,0.45); }
+
+  /* subtle footer */
+  .footer {
+    font-family:var(--ui);
+    font-size:13px;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    align-items:center;
+  }
+
+  /* avoid bold anywhere */
+  * { font-weight:300 !important; }
+  .title { font-weight:300 !important; }
+  .subtitle { font-weight:300 !important; font-style:normal !important; }
+
+</style>
+</head>
+<body>
+
+<div class="viewer">
+  <div class="slider" role="region" aria-label="Kidney and Bladder slide deck">
+    <div class="track" id="track">
+
+      <!-- Slide 1: Title -->
+      <section class="slide" aria-hidden="false">
+        <div>
+          <h3 class="title">kidney & bladder</h3>
+          <h2 class="subtitle">partner organs • water element</h2>
+
+          <div class="body">
+            partner organs that work in harmony to support the body, especially men’s health, memory, and mental clarity
+            <small>element: water — powerful and unstoppable</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">sense organ: ear — protects from cold winds</div>
+          <div class="note">tissue organ: bone — kidney qi supports bone and teeth health</div>
+        </div>
+      </section>
+
+      <!-- Slide 2: Emotion & Season -->
+      <section class="slide">
+        <div>
+          <h3 class="title">emotion & season</h3>
+          <h2 class="subtitle">fear • winter</h2>
+
+          <div class="body">
+            emotion: fear — approach as a signal for energetic support
+            <br><br>
+            season: winter — time to rest, recharge, and restore qi
+            <small>color: black or dark blue resonates with kidney energy • taste: salty supports kidney qi</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">try soups, shellfish, and bone broth in moderation</div>
+          <div class="note">keep lower back warm; protect against drafts</div>
+        </div>
+      </section>
+
+      <!-- Slide 3: The Body Never Lies (questions) -->
+      <section class="slide">
+        <div>
+          <h3 class="title">the body never lies</h3>
+          <h2 class="subtitle">kidney messages</h2>
+
+          <div class="body">
+            ask yourself:
+            <br><br>
+            how do your daily activities leak energy?
+            <br>
+            what are you doing to acquire qi?
+            <small>tip: reflect on fears or memories that may still affect your energy. trust that life has no accidents — release what no longer serves you.</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">write 2 actions you will try this week</div>
+          <div class="note">keep a short log of energy leaks</div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Weekly Action Plan (overview) -->
+      <section class="slide">
+        <div>
+          <h3 class="title">weekly action plan</h3>
+          <h2 class="subtitle">qigong practice • creating flow</h2>
+
+          <div class="body">
+            practice movements 1–7 and 10 at least once per day, holding movement 10 for 8 minutes or longer
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">weekly challenge: add an additional practice of movement 10 every day</div>
+          <div class="note">time: 15–25 minutes daily</div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Movements (part 1) -->
+      <section class="slide">
+        <div>
+          <h3 class="title">qigong movements</h3>
+          <h2 class="subtitle">core set (part 1)</h2>
+
+          <div class="cols">
+            <div class="col body">
+              the dragon’s toe dance
+              <br><br>
+              the dragon kicks forward
+              <br><br>
+              the dragon’s twist
+            </div>
+
+            <div class="col body">
+              the dragon’s punch
+              <br><br>
+              the dragon looks at its tail
+              <br><br>
+              the dragon taps its foot
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">practice each movement slowly with awareness</div>
+          <div class="note">use the established counting rhythm</div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Movements (part 2) -->
+      <section class="slide">
+        <div>
+          <h3 class="title">qigong movements</h3>
+          <h2 class="subtitle">core set (part 2)</h2>
+
+          <div class="body">
+            rocking the baby dragon
+            <br><br>
+            the dragon kicks backward
+            <br><br>
+            the dragon rises from the ocean
+            <br><br>
+            the dragon stands between heaven and earth
+            <small>hold the final posture for deep accumulation of qi</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">if unsteady, use a chair for support</div>
+          <div class="note">practice barefoot or in soft shoes</div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Signs When Qi Does Not Flow -->
+      <section class="slide">
+        <div>
+          <h3 class="title">signs of imbalance</h3>
+          <h2 class="subtitle">when kidney/bladder qi does not flow smoothly</h2>
+
+          <div class="body">
+            hair loss · bone pain or low density · forgetfulness · memory loss · knee and heel pain · chronic lower back pain · ringing in the ears · fear/anxiety · dental problems · foot pain · thyroid problems · frequent urination · prostate & sexual function issues · insomnia · hot flashes · high blood pressure
+            <small>tune inward: identify daily drains and begin reducing them</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">start with one habit to change this week</div>
+          <div class="note">hydrate, rest, and protect the lower back</div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Closing Words for Week 2 -->
+      <section class="slide">
+        <div>
+          <h3 class="title">closing words • week 2</h3>
+          <h2 class="subtitle">recap & practice</h2>
+
+          <div class="body">
+            keep a qigong log and prioritize quality practice
+            <br><br>
+            evaluate stress levels and take proactive steps
+            <br><br>
+            find time to relax, reconnect with nature, and reawaken your body’s healing potential
+            <small>mantra: "i honor my body’s wisdom and allow qi to flow freely."</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">celebrate small wins</div>
+          <div class="note">share progress with a partner or teacher</div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Week 3 at a Glance -->
+      <section class="slide">
+        <div>
+          <h3 class="title">week 3 at a glance</h3>
+          <h2 class="subtitle">learn & focus</h2>
+
+          <div class="body">
+            how the kidney and bladder relate from a five element consciousness perspective
+            <br><br>
+            learn 2 additional qigong movements for a total of 8 daily
+            <br><br>
+            prepare kidney-supportive foods; understand how saving qi leads to balance
+            <small>grand master nan lu: "your life is a candle. how wisely you nurture your flame determines how well you live."</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">set one intention for week 3</div>
+          <div class="note">record energy levels each day</div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Starting Week 3 / Importance -->
+      <section class="slide">
+        <div>
+          <h3 class="title">starting week 3</h3>
+          <h2 class="subtitle">the importance of the kidney</h2>
+
+          <div class="body">
+            kidney holds all your body’s qi and intelligence
+            <br><br>
+            stores inherited qi essential for growth, bones, teeth, hormones, and reproduction
+            <br><br>
+            wise use of inherited qi maintains strength and vitality throughout life
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">avoid overwork • support sleep</div>
+          <div class="note">nurture with warm, grounding foods</div>
+        </div>
+      </section>
+
+      <!-- Slide 11: What the Kidney Can Do -->
+      <section class="slide">
+        <div>
+          <h3 class="title">what the kidney can do</h3>
+          <h2 class="subtitle">functional overview</h2>
+
+          <div class="cols">
+            <div class="col body">
+              partnered with bladder to access genetic potential
+              <br><br>
+              supports heart function
+            </div>
+            <div class="col body">
+              strong qi combats fatigue, memory loss, bone loss, anxiety
+              <br><br>
+              supports anti-aging and resilience
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">keep hydrated • eat warming foods</div>
+          <div class="note">gentle movement daily</div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Eating-for-Healing (Week 3) -->
+      <section class="slide">
+        <div>
+          <h3 class="title">eating-for-healing</h3>
+          <h2 class="subtitle">week 3 — foods to include</h2>
+
+          <div class="body">
+            bamboo shoots · lemon · bee pollen · pickled ginger · broccoli rabe · plums · dandelion greens · scallions · eggplant · sour pickles · fennel · vinegar · green apples · mung beans
+            <small>did you know? eating warm foods aids digestion and conserves qi</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">cook vegetables • favor soups</div>
+          <div class="note">avoid cold drinks and raw-heavy meals</div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Lifestyle Tips -->
+      <section class="slide">
+        <div>
+          <h3 class="title">lifestyle tips</h3>
+          <h2 class="subtitle">protect & restore</h2>
+
+          <div class="body">
+            reduce screen exposure to protect liver energy
+            <br><br>
+            recognize yourself as an energetic being — emotions are energy
+            <br><br>
+            relax and release stress; healthy releases (crying, movement) help qi flow
+            <small>exercise: breaking eggs — release pent-up stress in a safe outdoor space</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">practice daily mini-breaks</div>
+          <div class="note">walk in nature when possible</div>
+        </div>
+      </section>
+
+      <!-- Slide 14: Body Never Lies — Liver (brief cross-ref) -->
+      <section class="slide">
+        <div>
+          <h3 class="title">the body never lies</h3>
+          <h2 class="subtitle">liver messages (cross-ref)</h2>
+
+          <div class="body">
+            rate yourself 1–10 for: stress levels; tendency to anger easily; physical flexibility; emotional flexibility; ability to let go
+            <small>awareness helps you track and improve energy flow</small>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">use this as a quick daily check</div>
+          <div class="note">journal one short observation</div>
+        </div>
+      </section>
+
+      <!-- Slide 15: Closing / Next Steps -->
+      <section class="slide">
+        <div>
+          <h3 class="title">next steps</h3>
+          <h2 class="subtitle">continue & integrate</h2>
+
+          <div class="body">
+            if you want, combine weeks 2–4 into a single qigong & organ-focused workbook with trackers and clear headings
+            <br><br>
+            would you like me to build week 3 and 4 decks next?
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="note">save this file • practice daily</div>
+          <div class="note">ask for the liver deck next</div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- navigation UI -->
+    <div class="nav" aria-hidden="false">
+      <button class="arrow left" id="prev" aria-label="Previous slide">‹</button>
+      <button class="arrow right" id="next" aria-label="Next slide">›</button>
+
+      <div class="dots" id="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const track = document.getElementById('track');
+    const slides = Array.from(track.children);
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const dotsContainer = document.getElementById('dots');
+    let index = 0;
+
+    // create dots
+    slides.forEach((s,i)=>{
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i===0 ? ' active' : '');
+      dot.setAttribute('data-index', i);
+      dot.addEventListener('click', ()=> goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function update(){
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(${- index * slideWidth}px)`;
+      Array.from(dotsContainer.children).forEach((d,di)=> d.classList.toggle('active', di===index));
+      // accessibility aria-hidden
+      slides.forEach((s,i)=> s.setAttribute('aria-hidden', i===index ? 'false' : 'true'));
+    }
+
+    function goTo(i){
+      index = Math.max(0, Math.min(slides.length-1, i));
+      update();
+    }
+
+    prev.addEventListener('click', ()=> {
+      goTo(index-1);
+    });
+    next.addEventListener('click', ()=> {
+      goTo(index+1);
+    });
+
+    // keyboard
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowRight') goTo(index+1);
+      if(e.key === 'ArrowLeft') goTo(index-1);
+    });
+
+    // resize handler keeps alignment
+    window.addEventListener('resize', update);
+
+    // init
+    update();
+  })();
+</script>
+
+</body>
+</html>

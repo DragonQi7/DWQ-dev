@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wu Ming Week 2 — Liver & Gallbladder</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+  }
+
+  .slide {
+    max-width: 900px;
+    text-align: center;
+    padding: 40px;
+    display: none;
+  }
+
+  .slide.active {
+    display: block;
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .highlight {
+    color: #f39c12; /* golden orange accent */
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 16px 0 8px 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .nav-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    margin: 0 2px;
+  }
+  .nav-btn.active {
+    background: #f39c12;
+    color: #fff;
+  }
+  .nav-btn:hover {
+    background: #f39c12;
+    color: #fff;
+  }
+
+  button:hover {
+    background: #f39c12;
+    color: #fff;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 10px;
+    font-size: 0.8rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div id="slides">
+  <!-- Kidney & Bladder Slide -->
+  <div class="slide active">
+    <h1>🫀 Relationships: <span class="highlight">Kidney & Bladder</span></h1>
+    <ul>
+      <li>Partner organs supporting men’s health, memory, and mental clarity</li>
+      <li>Element: <b>Water</b> – powerful and unstoppable</li>
+      <li>Sense Organ: <b>Ear</b> – protects from cold winds</li>
+      <li>Tissue Organ: <b>Bone</b> – Kidney Qi supports bone and teeth health</li>
+      <li>Emotion: <b>Fear</b> – signal for energetic support</li>
+      <li>Season: <b>Winter</b> – time to rest, recharge, and restore Qi</li>
+      <li>Color: <b>Black or dark blue</b> – resonates with Kidney energy</li>
+      <li>Taste: <b>Salty</b> – shellfish and bone soups support Kidney Qi</li>
+    </ul>
+  </div>
+
+  <!-- Kidney Messages Slide -->
+  <div class="slide">
+    <h1>💡 The Body Never Lies: <span class="highlight">Kidney Messages</span></h1>
+    <ul>
+      <li>How do your daily activities leak energy?</li>
+      <li>What are you doing to acquire Qi?</li>
+      <li>Tip: Reflect on fears or memories that may affect your energy. Release what no longer serves you.</li>
+    </ul>
+  </div>
+
+  <!-- Weekly Action Plan Slide -->
+  <div class="slide">
+    <h1>🧘 Weekly Action Plan</h1>
+    <ul>
+      <li>Qigong Practice: Creating Flow</li>
+      <li>Practice movements 1–7 and 10 daily, hold #10 for 8+ minutes</li>
+      <li>Weekly Challenge: Add extra practice of movement #10 every day</li>
+    </ul>
+    <p><b>Movements:</b> The Dragon’s Toe Dance, Kicks Forward, Twist, Punch, Looks at Tail, Taps Foot, Rocking Baby Dragon, Stands Between Heaven and Earth</p>
+  </div>
+
+  <!-- Signs of Imbalance Slide -->
+  <div class="slide">
+    <h1>⚠️ Signs When Kidney/Bladder Qi Does Not Flow Smoothly</h1>
+    <ul>
+      <li>Hair loss, bone pain, fractures</li>
+      <li>Forgetfulness, memory loss</li>
+      <li>Knee/heel pain, chronic lower back pain</li>
+      <li>Ringing in ears, fear, anxiety, panic attacks</li>
+      <li>Dental problems, pain in feet, thyroid issues</li>
+      <li>Frequent urination, prostate/sexual issues, insomnia</li>
+      <li>Hot flashes, high blood pressure</li>
+    </ul>
+    <p><b>Tune Inward:</b> Identify daily activities that drain your energy. Reduce energy leaks.</p>
+  </div>
+
+  <!-- Closing Words Slide -->
+  <div class="slide">
+    <h1>✨ Closing Words for Week 2 (Recap)</h1>
+    <ul>
+      <li>Keep a Qigong log and prioritize quality practice</li>
+      <li>Evaluate stress levels and take proactive steps</li>
+      <li>Find time to relax, reconnect with Nature, and reawaken healing potential</li>
+      <li>Mantra: “I honor my body’s wisdom and allow Qi to flow freely.”</li>
+    </ul>
+  </div>
+
+  <!-- Week 3 at a Glance Slide -->
+  <div class="slide">
+    <h1>🗓 Week 3 at a Glance</h1>
+    <ul>
+      <li>Learn how Kidney & Bladder relate from Five Element Consciousness</li>
+      <li>Learn 2 more Qigong movements (total 8 daily)</li>
+      <li>Prepare Kidney-supportive foods</li>
+      <li>Understand how saving Qi leads to balance</li>
+    </ul>
+    <p><b>Quote:</b> “Your life is a candle. How wisely you nurture your flame determines how well you live.” — Grand Master Nan Lu</p>
+  </div>
+
+  <!-- Starting Week 3 Slide -->
+  <div class="slide">
+    <h1>🏁 Starting Week 3</h1>
+    <ul>
+      <li>Begin with awareness of physical and emotional changes</li>
+      <li>Track Qigong practice and how you feel afterward</li>
+      <li>Kidney holds all your body’s Qi and intelligence</li>
+      <li>Stores inherited Qi for growth, bones, teeth, hormones, reproduction</li>
+      <li>Wise use of inherited Qi maintains strength and vitality</li>
+    </ul>
+  </div>
+
+  <!-- Eating-for-Healing Plan Slide -->
+  <div class="slide">
+    <h1>🥗 Eating-for-Healing Plan (Week 3)</h1>
+    <ul>
+      <li>Reduce/eliminate meat and dairy</li>
+      <li>Eat seasonal, locally grown, warm foods</li>
+      <li>Include: Bamboo shoots, Lemon, Bee pollen, Pickled ginger, Broccoli rabe, Plums, Dandelion greens, Scallions, Eggplant, Sour pickles, Fennel, Vinegar, Green apples, Mung beans</li>
+      <li>🌿 Eating warm foods aids digestion and conserves Qi</li>
+    </ul>
+  </div>
+
+  <!-- Lifestyle Tips Slide -->
+  <div class="slide">
+    <h1>🌿 Lifestyle Tips</h1>
+    <ul>
+      <li>Reduce screen exposure to protect Liver energy</li>
+      <li>Recognize yourself as an energetic being</li>
+      <li>Relax and release stress — healthy releases help Liver Qi flow</li>
+      <li>Exercise: Breaking Eggs — release tension outdoors</li>
+    </ul>
+  </div>
+
+  <!-- Liver Messages Slide -->
+  <div class="slide">
+    <h1>🧠 The Body Never Lies: Liver Messages</h1>
+    <ul>
+      <li>Rate yourself 1–10 for: stress, anger, flexibility, letting go, awareness</li>
+      <li>Tracking helps improve energy flow</li>
+    </ul>
+  </div>
+
+  <!-- Liver & Gallbladder Slide (original content) -->
+  <div class="slide">
+    <h1>LIVER + <span class="highlight">GALLBLADDER</span></h1>
+    <ul>
+      <li>They move Qi, bile, and fat through the body.</li>
+      <li>The Gallbladder is your decision-maker.</li>
+      <li>This duo defines flexibility — physical, mental, and emotional.</li>
+    </ul>
+  </div>
+
+  <!-- Wood Element Slide (original content) -->
+  <div class="slide">
+    <h1><span class="highlight">WOOD</span> ELEMENT 🌳</h1>
+    <ul>
+      <li>Represents growth and free movement.</li>
+      <li>Flow = Health. Stagnation = Frustration.</li>
+      <li>Let your body move like branches in the wind.</li>
+    </ul>
+  </div>
+
+  <!-- Sense Organ: Eyes Slide (original content) -->
+  <div class="slide">
+    <h1>SENSE ORGAN: <span class="highlight">EYES 👁️</span></h1>
+    <ul>
+      <li>Reflects the health of your Liver.</li>
+      <li>Dry or itchy eyes signal imbalance.</li>
+      <li>Close your eyes to strengthen inner vision.</li>
+    </ul>
+  </div>
+
+  <!-- Tendons & Flexibility Slide (original content) -->
+  <div class="slide">
+    <h1><span class="highlight">TENDONS</span> & FLEXIBILITY</h1>
+    <ul>
+      <li>Strength in TCM comes from tendons, not muscles.</li>
+      <li>Stretching moves Liver Qi through sinews.</li>
+      <li>Emotional flexibility = physical grace.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="nav" id="nav">
+  <button class="nav-btn" data-slide="0">Kidney & Bladder</button>
+  <button class="nav-btn" data-slide="1">Kidney Messages</button>
+  <button class="nav-btn" data-slide="2">Weekly Plan</button>
+  <button class="nav-btn" data-slide="3">Signs</button>
+  <button class="nav-btn" data-slide="4">Recap</button>
+  <button class="nav-btn" data-slide="5">Week 3</button>
+  <button class="nav-btn" data-slide="6">Start Week 3</button>
+  <button class="nav-btn" data-slide="7">Eating Plan</button>
+  <button class="nav-btn" data-slide="8">Lifestyle</button>
+  <button class="nav-btn" data-slide="9">Liver Messages</button>
+  <button class="nav-btn" data-slide="10">Liver & Gallbladder</button>
+  <button class="nav-btn" data-slide="11">Wood Element</button>
+  <button class="nav-btn" data-slide="12">Eyes</button>
+  <button class="nav-btn" data-slide="13">Tendons</button>
+</div>
+
+<footer>Wu Ming Meridian Therapy — Week 2: Liver & Gallbladder</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const navBtns = document.querySelectorAll('.nav-btn');
+  let index = 0;
+
+  function showSlide(i) {
+    slides[index].classList.remove('active');
+    navBtns[index].classList.remove('active');
+    index = i;
+    slides[index].classList.add('active');
+    navBtns[index].classList.add('active');
+  }
+
+  navBtns.forEach((btn, i) => {
+    btn.onclick = () => showSlide(i);
+  });
+
+  // Keyboard navigation
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') showSlide((index + 1) % slides.length);
+    if (e.key === 'ArrowLeft') showSlide((index - 1 + slides.length) % slides.length);
+  });
+
+  // Set initial active nav button
+  navBtns[0].classList.add('active');
+</script>
+
+</body>
+</html>
