@@ -121,6 +121,35 @@
       color: #aaa;
     }
   </style>
+
+  <style>
+    /* center-block: centers a content block and constrains width for readability */
+    .hero-section .center-block {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    /* program-section: center the article but keep the checklist items left-aligned for readability */
+    .program-section {
+      max-width: 900px;
+      margin: 24px auto;
+      color: #fff; /* ensure contrast on dark hero */
+      text-align: center;
+    }
+
+    .program-section .checklist {
+      display: inline-block;
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .program-section .checklist li {
+      color: #fff; /* fix contrast for list items */
+    }
+  </style>
 </head>
 <body>
 
@@ -131,7 +160,7 @@
 
   
   <section class="hero">
-  <h1>Dragon’s Way Qigong®<br><span>Transform Stress into Energy and Productivity</span></h1>
+  <h1>Dragon’s Way Qigong®<br><span>Transform Stress <br> into Energy and Productivity</span></h1>
     <p>Feeling drained, overwhelmed, or stuck in a cycle of endless deadlines, meetings, and digital distractions? Burnout, workplace anxiety, chronic stress, and the struggle to maintain work-life balance are taking a serious toll on your energy, focus, and well-being. Many wellness programs promise relief, but most are surface-level solutions that don’t address the pressures unique to corporate and academic life.
         <br><br>
 
@@ -173,7 +202,14 @@ Step into Dragon’s Way Qigong® and experience a complete system for renewal. 
 <p>The secret of <span class="highlight-text">The Dragon’s Way Qigong®</span>—learning how to connect to the body’s “gates,” the energetic access points that access your level of flow, clarity, and balance. When these gates open, your energy rises, stress dissolves, and you move through challenges with strength and ease.</p> <p class="quote">“When the gates open and your energy aligns, life stops resisting you — and you begin to rise to your true level.”<br>– The Dragon’s Way Qigong®</p>
 
   </section>
- 
+
+  <style>
+ .hero-section h2 { text-align: center; }
+
+ .hero-section p { text-align: center; }
+</style>
+
+
 
   <section class="hero-section">
     <!-- Flowing energy particles -->
@@ -183,24 +219,27 @@ Step into Dragon’s Way Qigong® and experience a complete system for renewal. 
     <div class="center-learn"></div>
 
 
+
+  <div class="center-block">
     <h2>Inside, You’ll Learn How To</h2>
 
-<p><span class="arrow">↪</span> Break the cycle where, despite your <span class="highlight">effort, discipline, and professionalism</span>, your days still feel uphill and out of alignment.</p>
+    <p><span class="arrow">↪</span> Break the cycle where, despite your <span class="highlight">effort, discipline, and professionalism</span>, your days still feel uphill and out of alignment.</p>
 
-<p><span class="arrow">↪</span> Stop attracting <span class="highlight">draining situations, misaligned projects, and difficult dynamics</span> that constantly pull you off balance.</p>
+    <p><span class="arrow">↪</span> Stop attracting <span class="highlight">draining situations, misaligned projects, and difficult dynamics</span> that constantly pull you off balance.</p>
 
-<p><span class="arrow">↪</span> Reconnect with your <span class="highlight">natural state of flow and clarity</span>—even in high-pressure environments filled with deadlines, meetings, and digital overload.</p>
+    <p><span class="arrow">↪</span> Reconnect with your <span class="highlight">natural state of flow and clarity</span>—even in high-pressure environments filled with deadlines, meetings, and digital overload.</p>
 
-<p><span class="arrow">↪</span> Release the repeating <span class="highlight">stress loops, burnout cycles, and emotional patterns</span> that keep your energy stuck and your mind on overdrive.</p>
+    <p><span class="arrow">↪</span> Release the repeating <span class="highlight">stress loops, burnout cycles, and emotional patterns</span> that keep your energy stuck and your mind on overdrive.</p>
 
-<p><span class="arrow">↪</span> Rebuild trust in your <span class="highlight">intuition, insight, and internal signals</span> so decisions feel grounded, confident, and aligned—not second-guessed.</p>
+    <p><span class="arrow">↪</span> Rebuild trust in your <span class="highlight">intuition, insight, and internal signals</span> so decisions feel grounded, confident, and aligned—not second-guessed.</p>
 
-<p><span class="arrow">↪</span> Rediscover the <span class="highlight">quiet joy and steady presence</span> that gets lost when you’re constantly rushing, multitasking, or operating on autopilot.</p>
+    <p><span class="arrow">↪</span> Rediscover the <span class="highlight">quiet joy and steady presence</span> that gets lost when you’re constantly rushing, multitasking, or operating on autopilot.</p>
 
-<p><span class="arrow">↪</span> Reopen your inner guidance system—your personal “north star”—so <span class="highlight">creativity, focus, and purpose</span> return even when external stress rises.</p>
+    <p><span class="arrow">↪</span> Reopen your inner guidance system—your personal “north star”—so <span class="highlight">creativity, focus, and purpose</span> return even when external stress rises.</p>
+  </div>
 
 
-
+ 
      
 
     <div class="emphasis-box">
@@ -296,6 +335,15 @@ Step into Dragon’s Way Qigong® and experience a complete system for renewal. 
       font-size: 1.05rem;
       position: relative;
       z-index: 1;
+    }
+
+    /* Centered content block with controlled line length for readability */
+    .hero-section .center-block {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 16px;
+      box-sizing: border-box;
     }
 
     .hero-section .arrow {
@@ -518,21 +566,150 @@ Step into Dragon’s Way Qigong® and experience a complete system for renewal. 
       color:#333;
     }
     .bio-text strong{color:#000;}
+
+
+    
+    /* Flexible Section */
+    .flexible{
+      background:#fff;
+      color:#222;
+      padding: 60px 24px;
+    }
+    .flexible-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .portrait{
+      flex:0 0 260px;
+      text-align:center;
+    }
+    .portrait img{
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+    }
+    .flexible-text{
+      flex:1;
+      min-width:280px;
+    }
+    .flexible-text h2{
+      font-family:"Playfair Display", serif;
+      font-size:28px;
+      margin:0 0 16px;
+      color:#000;
+    }
+    .flexible-text p{
+      margin:0 0 14px;
+      font-size:16px;
+      color:#333;
+    }
+    .flexible-text strong{color:#000;}
+  </style>
   </style>
 </head>
 <body>
+
+
   <!-- Hero Section -->
  <section class="hero">
-  <h1>Your Moment Is Now</h1>
-  <p>The Universe rewards those who cultivate and harness <strong>Qi</strong>.</p>
-  <p>When you understand <strong>Everything is a circle </strong> No beginning, No end. as a sense experience.</p>
-  <p>You will write your own <strong>destiny!</strong></p>
-  <p>Chaos is a circle, Cosmos is a circle</p>
-  <p><strong> Move from Chaos to Cosmos! </strong> </p>
+<header>
+    <h1>Join Dragon’s Way Qigong® <br> Restore Balance, Resilience & Focus</h1>
+    <<p class="lead" A wellness program designed to strengthen resilience, reduce burnout, improve sleep, and boost professional performance.</p>
 
+  </header>
 
+  <article class="program-section" aria-labelledby="program-benefits">
+    <h2 id="program-benefits">What You’ll Improve in the Program</h2>
+
+    <ul class="checklist" role="list">
+      <li><strong>Burnout & Chronic Stress Management</strong> — Release internal pressure, reduce irritability, and build emotional elasticity so you adapt instead of break. Ideal for teams and leaders seeking evidence-based burnout prevention and real workplace resilience.</li>
+
+      <li><strong>Mental Health & Anxiety at Work</strong> — Restore clarity, confidence, and emotional spaciousness so employees can speak up, resolve conflict, and innovate without fear. Supports psychological safety and anxiety reduction in hybrid and high-pressure settings.</li>
+
+      <li><strong>Work–Life Balance & Flexibility</strong> — Learn when to expand, when to pause, and how to redirect energy to what matters. Practical systems reduce overextension, perfectionism, and chronic overwork.</li>
+
+      <li><strong>Digital Wellness & Screen-Time Overload</strong> — Strengthen the Wood/Liver connection to ease eye strain, tension headaches, and mental fatigue. Reclaim focus with tools to unplug, reset, and sustain attention.</li>
+ 
+
+      <li><strong>Sleep Optimization</strong> — Quiet the looping mind, reduce nighttime awakenings, and deepen restorative sleep. Better rest directly boosts decision-making, creativity, and daily performance.</li>
+    </ul>
+  </article>
+
+  <footer>
+    <p class="cta">Ready to solve workplace stress now? <a href="/programs/dragons-way" title="Join Dragon’s Way Qigong program">Join Dragon’s Way® Qigong</a> to build sustainable energy, improve sleep, and strengthen team resilience.</p>
+  </footer>
+
+  <style>
+    .program-section {
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      line-height: 1.6;
+      color: #fff; /* use light text on dark background */
+      text-align: center; /* Center headings */
+    }
+
+    /* Center the checklist container while keeping list items left-aligned for readability */
+    .program-section .checklist {
+      display: inline-block;
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    p, li {
+      text-align: justify; /* Justify main text */
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      color: #264d26;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checklist li {
+      padding: 0.9rem 0;
+       position: relative;
+      padding-left: 2.4rem;
+      color: #fff; /* ensure list text is visible on dark background */
+    }
+
+    .checklist li::before {
+      content: "✔";
+      position: absolute;
+      left: 0.5rem;
+      top: 0.9rem;
+      color: #2f8f2f;
+      font-weight: 700;
+    }
+
+    .cta {
+      margin-top: 1.2rem;
+      font-weight: 600;
+    }
+
+    .cta a {
+      color: #0b66c2;
+      text-decoration: none; /* Remove underline */
+    }
+
+    .cta a:hover {
+      text-decoration: none; /* Keep underline removed on hover */
+    }
+  </style>
 </section>
-
   <!-- Bio Section -->
   <section class="bio">
     <div class="bio-wrap">
