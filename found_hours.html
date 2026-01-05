@@ -1,0 +1,2145 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hour Star Finder</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#121a33;
+      --panel2:#0f1730;
+      --text:#e9ecff;
+      --muted:#aeb7e6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7aa6ff;
+      --good:#4ade80;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --shadow: 0 14px 35px rgba(0,0,0,.35);
+      --radius: 16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(122,166,255,.20), transparent 60%),
+        radial-gradient(900px 600px at 95% 10%, rgba(251,191,36,.12), transparent 55%),
+        radial-gradient(1000px 700px at 40% 120%, rgba(74,222,128,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+    header{
+      padding:18px 16px 8px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .title{
+      display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    }
+    h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:.2px;
+    }
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--line);
+      padding:3px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+    }
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:10px 16px 30px;
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap:14px;
+    }
+    @media (max-width: 980px){
+      main{grid-template-columns:1fr}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      background:rgba(0,0,0,.12);
+    }
+    .card .hd strong{font-size:13px; letter-spacing:.2px}
+    .card .bd{padding:14px}
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .row + .row{margin-top:12px}
+    label{
+      font-size:12px;
+      color:var(--muted);
+      display:block;
+      margin-bottom:6px;
+    }
+    input[type="text"], input[type="date"], textarea, select{
+      width:100%;
+      padding:11px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.20);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{
+      min-height:160px;
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.35;
+      resize:vertical;
+    }
+    .btns{display:flex; gap:8px; flex-wrap:wrap}
+    button{
+      appearance:none;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      transition: transform .05s ease, background .2s ease, border-color .2s ease;
+    }
+    button:hover{background:rgba(255,255,255,.10)}
+    button:active{transform: translateY(1px)}
+    .primary{
+      background:rgba(122,166,255,.20);
+      border-color: rgba(122,166,255,.55);
+    }
+    .primary:hover{background:rgba(122,166,255,.28)}
+    .ghost{
+      background:transparent;
+    }
+    .pill{
+      border-radius:999px;
+      padding:8px 10px;
+      font-size:12px;
+      font-weight:700;
+    }
+    .pill.on{
+      background:rgba(74,222,128,.18);
+      border-color: rgba(74,222,128,.55);
+    }
+    .help{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 520px){ .split{grid-template-columns:1fr} }
+    .outHead{
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(0,0,0,.10);
+    }
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .k{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .v{
+      font-weight:700;
+      font-size:13px;
+    }
+    .mono{font-family:var(--mono)}
+    .outBody{padding:14px}
+    .notice{
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(0,0,0,.18);
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(0,0,0,.18);
+    }
+    thead th{
+      text-align:left;
+      font-size:12px;
+      color:var(--muted);
+      padding:10px 10px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+    }
+    tbody td{
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      vertical-align:top;
+      font-size:13px;
+      line-height:1.25;
+    }
+    tbody tr:last-child td{border-bottom:none}
+    .nowRow{
+      outline:2px solid rgba(251,191,36,.55);
+      background:rgba(251,191,36,.10);
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .badge.now{
+      border-color: rgba(251,191,36,.6);
+      background:rgba(251,191,36,.18);
+      color:#fff3c4;
+    }
+    .gridDays{
+      display:grid;
+      gap:12px;
+    }
+    .dayCard{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      overflow:hidden;
+      background:rgba(0,0,0,.14);
+    }
+    .dayCard .top{
+      padding:12px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .dayCard .top .left{
+      display:flex; flex-direction:column; gap:3px;
+    }
+    .dayCard .top .left .date{
+      font-weight:900;
+      font-size:14px;
+    }
+    .dayCard .top .left .sub{
+      color:var(--muted);
+      font-size:12px;
+    }
+    .dayCard .mid{
+      padding:12px;
+    }
+    .starHits{
+      margin-top:10px;
+      border-top:1px dashed rgba(255,255,255,.10);
+      padding-top:10px;
+    }
+    .hit{
+      padding:10px 10px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      background:rgba(0,0,0,.12);
+    }
+    .hit + .hit{margin-top:8px}
+    .hit .line1{
+      display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+      font-weight:800;
+      font-size:13px;
+    }
+    .hit .line2{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+    .err{
+      border-color: rgba(251,113,133,.55);
+      background:rgba(251,113,133,.12);
+      color:#ffd2d9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Hour Star Finder</h1>
+      <span class="tag">UI wrapper (client-side JS)</span>
+      <span class="tag">Built-in Reference Table</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Controls -->
+    <section class="card">
+      <div class="hd"><strong>Inputs</strong><span class="tag">Tap buttons, then Run</span></div>
+      <div class="bd">
+        <div class="row split">
+          <div>
+            <label>Date</label>
+            <div class="btns" style="margin-bottom:8px">
+              <button class="pill on" id="btnToday" type="button">Today</button>
+              <button class="pill" id="btnPick" type="button">Pick</button>
+            </div>
+            <input id="datePicker" type="date" />
+            <div class="help" style="margin-top:8px">
+              If you prefer typing, you can also enter: <span class="mono">2025-12-28</span>, <span class="mono">12/28/2025</span>, <span class="mono">Dec 28, 2025</span>, <span class="mono">20251228</span>.
+            </div>
+          </div>
+
+          <div>
+            <label>Days</label>
+            <div class="btns" id="daysBtns">
+              <button type="button" class="pill on" data-days="1">1</button>
+              <button type="button" class="pill" data-days="3">3</button>
+              <button type="button" class="pill" data-days="7">7</button>
+              <button type="button" class="pill" data-days="14">14</button>
+              <button type="button" class="pill" data-days="30">30</button>
+            </div>
+            <div class="help" style="margin-top:10px">
+              Normal mode shows hour table for each day. Star Search mode shows only matching hour rows.
+            </div>
+          </div>
+        </div>
+
+        <div class="row split">
+          <div>
+            <label>Mode</label>
+            <select id="mode">
+              <option value="normal">Hour Stars (by date)</option>
+              <option value="star">Star Search (within range)</option>
+              <option value="lookup">Star Definition Lookup</option>
+            </select>
+          </div>
+          <div>
+            <label id="modeLabel">Star Name / Lookup</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <select id="starDropdown" style="flex:1; padding:10px; font-size:16px; border-radius:8px; border:1px solid #bbb;">
+                <option value="">-- Select a Star --</option>
+                <option value="Black Tortoise">Black Tortoise</option>
+                <option value="Bright Hall">Bright Hall</option>
+                <option value="Day Breaker">Day Breaker</option>
+                <option value="Day Combine">Day Combine</option>
+                <option value="Day Establish">Day Establish</option>
+                <option value="Day Harm">Day Harm</option>
+                <option value="Day Horse">Day Horse</option>
+                <option value="Day Punishment">Day Punishment</option>
+                <option value="Day Wealth">Day Wealth</option>
+                <option value="Golden Lock">Golden Lock</option>
+                <option value="Grappling Hook">Grappling Hook</option>
+                <option value="Green Dragon">Green Dragon</option>
+                <option value="Group Emptiness">Group Emptiness</option>
+                <option value="Happy Spirit">Happy Spirit</option>
+                <option value="Heavenly Noble">Heavenly Noble</option>
+                <option value="Heavenly Officer">Heavenly Officer</option>
+                <option value="Heavenly Punishment">Heavenly Punishment</option>
+                <option value="Jade Hall">Jade Hall</option>
+                <option value="Life Governor">Life Governor</option>
+                <option value="Non Eligible Day">Non Eligible Day</option>
+                <option value="Precious Light">Precious Light</option>
+                <option value="Prosperity Star">Prosperity Star</option>
+                <option value="Red Phoenix">Red Phoenix</option>
+                <option value="Road Emptiness">Road Emptiness</option>
+                <option value="Sky Jail">Sky Jail</option>
+                <option value="White Tiger">White Tiger</option>
+              </select>
+            </div>
+            <input id="query" type="text" placeholder='Or type custom: "Heavenly Noble", "Green Dragon"' style="margin-top:8px;" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="flex:1">
+            <label>Hour Reference Table.md (built-in)</label>
+            <textarea id="refMd" placeholder="Paste Hour Reference Table.md here..."></textarea>
+            <div class="help" style="margin-top:8px">
+              The reference table is built-in and loaded automatically. Use "Reload Built-in Reference Table" if needed.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="btns">
+            <button class="primary" id="runBtn" type="button">Run</button>
+            <button class="ghost" id="demoBtn" type="button">📂 Reload Built-in Reference Table</button>
+            <button class="ghost" id="clearBtn" type="button">Clear Output</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="notice">
+            This UI runs fully on-device (no server). It does <b>not</b> execute your Python file in-browser.
+            If you want â€œtap button â†’ run real Pythonâ€, use Pythonista/Pyto and wire this UI to them (I can show that wiring).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Output -->
+    <section class="card">
+      <div class="outHead">
+        <div class="meta">
+          <div>
+            <div class="k">Status</div>
+            <div class="v" id="status">Ready</div>
+          </div>
+          <div>
+            <div class="k">Day Pillar</div>
+            <div class="v mono" id="dayPillar">â€”</div>
+          </div>
+          <div>
+            <div class="k">Clash</div>
+            <div class="v" id="clash">â€”</div>
+          </div>
+        </div>
+        <div class="btns">
+          <button class="ghost" id="copyBtn" type="button">Copy Output</button>
+        </div>
+      </div>
+      <div class="outBody">
+        <div id="output" class="gridDays">
+          <div class="notice">Paste your <b>Hour Reference Table.md</b>, choose inputs, then tap <b>Run</b>.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+/* ===========================
+   Data + logic (ported)
+   =========================== */
+
+const HEAVENLY_STEMS = ['Jia','Yi','Bing','Ding','Wu','Ji','Geng','Xin','Ren','Gui'];
+const EARTHLY_BRANCHES = ['Zi','Chou','Yin','Mao','Chen','Si','Wu','Wei','Shen','You','Xu','Hai'];
+
+const STEM_ELEMENTS = {Jia:'Wood',Yi:'Wood',Bing:'Fire',Ding:'Fire',Wu:'Earth',Ji:'Earth',Geng:'Metal',Xin:'Metal',Ren:'Water',Gui:'Water'};
+const BRANCH_ANIMALS = {Zi:'Rat',Chou:'Ox',Yin:'Tiger',Mao:'Rabbit',Chen:'Dragon',Si:'Snake',Wu:'Horse',Wei:'Goat',Shen:'Monkey',You:'Rooster',Xu:'Dog',Hai:'Pig'};
+
+const STEM_CHINESE = {Jia:'\u7532',Yi:'\u4E59',Bing:'\u4E19',Ding:'\u4E01',Wu:'\u620A',Ji:'\u5DF1',Geng:'\u5E9A',Xin:'\u8F9B',Ren:'\u58EC',Gui:'\u7678'};
+const BRANCH_CHINESE = {Zi:'\u5B50',Chou:'\u4E11',Yin:'\u5BC5',Mao:'\u536F',Chen:'\u8FB0',Si:'\u5DF3',Wu:'\u5348',Wei:'\u672A',Shen:'\u7533',You:'\u9149',Xu:'\u620C',Hai:'\u4EA5'};
+
+// Built-in Hour Reference Table
+const BUILT_IN_REFERENCE_TABLE = `**Gui Mao Day**
+
+**Clash:** Xin You (Metal Rooster); Ding You (Fire Rooster)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---:|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Happy Spirit; Road Emptiness|
+| 1 am–2:59 am | Gui Chou | Water | Ox | Road; Emptiness; Grappling Hook |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Green Dragon |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Noble; Prosperity Star |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Happy Spirit; Day Harm |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Horse; Red Phoenix |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Golden Lock |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Precious Light; Non Eligible Day |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | White Tiger |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Jade Hall; Day Breaker |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Day Combine; Road Emptiness|
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Black Tortoise; Road Emptiness|
+
+**Gui Si Day**
+
+**Clash:** Ding Hai (Fire Pig); Yi Hai (Wood Pig)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---:|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Day Wealth; Road Emptiness|
+| 1 am–2:59 am | Gui Chou | Water | Ox | Jade Hall; Road Emptiness|
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Day Harm; Sky Jail |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Noble; Black Tortoise |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Heavenly Officer; Life Governor |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Establish Star; Grappling Hook |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Green Dragon; Group Emptiness |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Bright Hall; Non Eligible Day |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Day Combine; Heavenly Punishment |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Red Phoenix |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Golden Lock; Road Emptiness|
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Day Horse; Day Breaker |
+
+**Gui Wei Day**
+
+**Clash:** Ding Chou (Fire Ox); Xin Chou (Metal Ox)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---:|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Day Wealth; Road Emptiness|
+| 1 am–2:59 am | Gui Chou | Water | Ox | Day Breaker; Road Emptiness|
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Golden Lock |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Noble; Prosperity Star |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Heavenly Officer; White Tiger |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Heavenly Noble; Day Horse |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Day Combine; Sky Jail |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Day Establish Star; Non Eligible Day |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Life Governor; Group Emptiness |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Group Emptiness; Grappling Hook |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Heavenly Officer; Road Emptiness|
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Bright Hall; Road Emptiness|
+
+
+**Gui You Day**
+
+**Clash:** Ding Mao (Fire Rabbit); Yi Mao (Wood Rabbit)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---:|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Day Wealth; Road Emptiness|
+| 1 am–2:59 am | Gui Chou | Water | Ox | Road; Emptiness; Grappling Hook |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Green Dragon |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Prosperity Star; Day Breaker |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Day Combine; Heavenly Punishment |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Heavenly Noble; Red Phoenix |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Golden Lock; |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat |  Precious Light; Non Eligible Day;  |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | White Tiger  |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Day Establish Star;    Day Punishment |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Heavenly Officer; Group Emptiness |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Day Horse;  Group Emptiness |
+
+
+**Gui Hai Day**
+
+**Clash:** Ding Si (Fire Snake); Yi Si (Wood Snake)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---:|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Day Wealth; Road Emptiness|
+| 1 am–2:59 am | Gui Chou | Water | Ox | Jade Hall; Road Emptiness|
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Day Combine; Sky Jail |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Noble; Black Tortoise |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Heavenly Officer; Life Governor |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Horse; Grappling Hook |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Green Dragon |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Bright Hall; Non Eligible Day |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Heavenly Punishment; Day Harm |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Red Phoenix |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Heavenly Officer; Road Emptiness|
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Day Establish Star; Road Emptiness|
+
+**Gui Chou Day**
+
+**Clash:** Ding Wei (Fire Goat); Xin Wei (Metal Goat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---:|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Day Combine; Road Emptiness|
+| 1 am–2:59 am | Gui Chou | Water | Ox | Day Establish Star; Road Emptiness|
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Golden Lock; Group Emptiness |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Noble; Group Emptiness |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Heavenly Officer; White Tiger |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Heavenly Noble; Jade Hall |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Day Harm; Sky Jail |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Non Eligible Day; Day Breaker |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Life Governor |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Grappling Hook |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Heavenly Officer; Road Emptiness|
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Day Horse; Road Emptiness|
+                
+**Ren Yin Day**
+
+**Clash:** Geng Shen Metal Monkey; Bing Shen Fire Monkey
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Geng Zi — Metal Rat | Green Dragon |
+| 1 am–2:59 am | Xin Chou — Metal Ox | Heavenly Officer; Bright Hall |
+| 3 am–4:59 am | Ren Yin — Water Tiger | Day Establish Star; Road Emptiness|
+| 5 am–6:59 am | Gui Mao — Water Rabbit | Heavenly Noble; Road Emptiness|
+| 7 am–8:59 am | Jia Chen — Wood Dragon | Prosperity Star; Group Emptiness |
+| 9 am–10:59 am | Yi Si — Wood Snake | Heavenly Noble; Day Punishment |
+| 11 am–12:59 pm | Bing Wu — Fire Horse | Happy Spirit; White Tiger |
+| 1 pm–2:59 pm | Ding Wei — Fire Goat | Heavenly Officer; Jade Hall |
+| 3 pm–4:59 pm | Wu Shen — Earth Monkey | Day Horse; Sky Jail |
+| 5 pm–6:59 pm | Ji You — Earth Rooster | Black Tortoise |
+| 7 pm–8:59 pm | Geng Xu — Metal Dog | Life Governor |
+| 9 pm–10:59 pm | Xin Hai — Metal Pig | Day Horse; Grappling Hook |
+
+**Ren Chen Day**
+
+**Clash:** Bing Xu Fire Dog; Jia Xu Wood Dog
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Geng Zi — Metal Rat | Sky Jail |
+| 1 am–2:59 am | Xin Chou — Metal Ox | Heavenly Officer; Black Tortoise |
+| 3 am–4:59 am | Ren Yin — Water Tiger | Day Horse; Road Emptiness|
+| 5 am–6:59 am | Gui Mao — Water Rabbit | Heavenly Noble; Road Emptiness|
+| 7 am–8:59 am | Jia Chen — Wood Dragon | Prosperity Star; Day Punishment |
+| 9 am–10:59 am | Yi Si — Wood Snake | Heavenly Noble; Bright Hall |
+| 11 am–12:59 pm | Bing Wu — Fire Horse | Happy Spirit; Heavenly Punishment |
+| 1 pm–2:59 pm | Ding Wei — Fire Goat | Heavenly Officer; Group Emptiness |
+| 3 pm–4:59 pm | Wu Shen — Earth Monkey | Golden Lock; Non Eligible Day |
+| 5 pm–6:59 pm | Ji You — Earth Rooster | Day Combine; Precious Light |
+| 7 pm–8:59 pm | Geng Xu — Metal Dog | Day Breaker; White Tiger |
+| 9 pm–10:59 pm | Xin Hai — Metal Pig | Day Wealth; Jade Hall |
+
+**Ren Wu Day**
+
+**Clash:** Bing Zi Fire Rat; Geng Zi Metal Rat
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Geng Zi — Metal Rat | Golden Lock; Day Breaker |
+| 1 am–2:59 am | Xin Chou — Metal Ox | Heavenly Officer; Day Harm |
+| 3 am–4:59 am | Ren Yin — Water Tiger | Road; Emptiness; White Tiger |
+| 5 am–6:59 am | Gui Mao — Water Rabbit | Heavenly Noble; Road Emptiness|
+| 7 am–8:59 am | Jia Chen — Wood Dragon | Prosperity Star; Sky Jail |
+| 9 am–10:59 am | Yi Si — Wood Snake | Heavenly Noble; Black Tortoise |
+| 11 am–12:59 pm | Bing Wu — Fire Horse | Happy Spirit; Day Punishment |
+| 1 pm–2:59 pm | Ding Wei — Fire Goat | Day Combine; Grappling Hook |
+| 3 pm–4:59 pm | Wu Shen — Earth Monkey | Day Horse; Non Eligible Day |
+| 5 pm–6:59 pm | Ji You — Earth Rooster | Bright Hall; Group Emptiness |
+| 7 pm–8:59 pm | Geng Xu — Metal Dog | Heavenly Punishment |
+| 9 pm–10:59 pm | Xin Hai — Metal Pig | Day Wealth; Red Phoenix |
+
+**Ren Shen Day**
+
+**Clash:** Bing Yin Fire Tiger; Geng Yin Metal Tiger
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Geng Zi — Metal Rat | Green Dragon |
+| 1 am–2:59 am | Xin Chou — Metal Ox | Heavenly Officer; Bright Hall |
+| 3 am–4:59 am | Ren Yin — Water Tiger | Day Horse; Day Breaker |
+| 5 am–6:59 am | Gui Mao — Water Rabbit | Heavenly Noble; Road Emptiness|
+| 7 am–8:59 am | Jia Chen — Wood Dragon | Prosperity Star; Golden Lock |
+| 9 am–10:59 am | Yi Si — Wood Snake | Heavenly Noble; Day Combine |
+| 11 am–12:59 pm | Bing Wu — Fire Horse | Happy Spirit; White Tiger |
+| 1 pm–2:59 pm | Ding Wei — Fire Goat | Heavenly Officer; Jade Hall |
+| 3 pm–4:59 pm | Wu Shen — Earth Monkey | Day Establish Star; Non Eligible Day |
+| 5 pm–6:59 pm | Ji You — Earth Rooster | Black Tortoise |
+| 7 pm–8:59 pm | Geng Xu — Metal Dog | Life Governor; Group Emptiness |
+| 9 pm–10:59 pm | Xin Hai — Metal Pig | Day Horse; Group Emptiness |
+
+**Ren Xu Day**
+
+**Clash:** Bing Chen Fire Dragon; Jia Chen Wood Dragon
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Geng Zi — Metal Rat | Group Emptiness; Sky Jail |
+| 1 am–2:59 am | Xin Chou — Metal Ox | Heavenly Officer; Group Emptiness |
+| 3 am–4:59 am | Ren Yin — Water Tiger | Life Governor; Road Emptiness|
+| 5 am–6:59 am | Gui Mao — Water Rabbit | Day Combine; Road Emptiness|
+| 7 am–8:59 am | Jia Chen — Wood Dragon | Prosperity Star; Day Breaker |
+| 9 am–10:59 am | Yi Si — Wood Snake | Heavenly Noble; Bright Hall |
+| 11 am–12:59 pm | Bing Wu — Fire Horse | Happy Spirit; Heavenly Punishment |
+| 1 pm–2:59 pm | Ding Wei — Fire Goat | Heavenly Officer; Red Phoenix |
+| 3 pm–4:59 pm | Wu Shen — Earth Monkey | Day Horse; Non Eligible Day |
+| 5 pm–6:59 pm | Ji You — Earth Rooster | Precious Light; Day Harm |
+| 7 pm–8:59 pm | Geng Xu — Metal Dog | Day Establish Star; White Tiger |
+| 9 pm–10:59 pm | Xin Hai — Metal Pig | Day Wealth; Jade Hall |
+
+**Ren Zi Day**
+
+**Clash:** Bing Wu Fire Horse; Geng Wu Metal Horse
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Geng Zi — Metal Rat | Golden Lock; Day Establish Star |
+| 1 am–2:59 am | Xin Chou — Metal Ox | Day Combine; Heavenly Officer |
+| 3 am–4:59 am | Ren Yin — Water Tiger | Day Horse; Road Emptiness|
+| 5 am–6:59 am | Gui Mao — Water Rabbit | Heavenly Noble; Road Emptiness|
+| 7 am–8:59 am | Jia Chen — Wood Dragon | Prosperity Star; Sky Jail |
+| 9 am–10:59 am | Yi Si — Wood Snake | Heavenly Noble; Black Tortoise |
+| 11 am–12:59 pm | Bing Wu — Fire Horse | Life Governor; Day Breaker |
+| 1 pm–2:59 pm | Ding Wei — Fire Goat | Heavenly Officer; Day Harm |
+| 3 pm–4:59 pm | Wu Shen — Earth Monkey | Green Dragon; Non Eligible Day |
+| 5 pm–6:59 pm | Ji You — Earth Rooster | Bright Hall |
+| 7 pm–8:59 pm | Geng Xu — Metal Dog | Heavenly Punishment |
+| 9 pm–10:59 pm | Xin Hai — Metal Pig | Day Wealth; Red Phoenix |
+
+**Xin Chou Day**
+
+**Clash:** Yi Wei Wood Goat; Ding Wei Fire Goat
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Wu Zi — Earth Rat | Day Combine; Heavenly Punishment |
+| 1 am–2:59 am | Ji Chou — Earth Ox | Day Establish Star; Red Phoenix |
+| 3 am–4:59 am | Geng Yin — Metal Tiger | Heavenly Noble; Golden Lock |
+| 5 am–6:59 am | Xin Mao — Metal Rabbit | Precious Light |
+| 7 am–8:59 am | Ren Chen — Water Dragon | Road; Emptiness; White Tiger |
+| 9 am–10:59 am | Gui Si — Water Snake | Heavenly Officer; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu — Wood Horse | Heavenly Noble; Sky Jail |
+| 1 pm–2:59 pm | Yi Wei — Wood Goat | Black Tortoise; Day Breaker |
+| 3 pm–4:59 pm | Bing Shen — Fire Monkey | Happy Spirit; Life Governor |
+| 5 pm–6:59 pm | Ding You — Fire Rooster | Day Wealth; Non Eligible Day |
+| 7 pm–8:59 pm | Wu Xu — Earth Dog | Green Dragon; Day Punishment |
+| 9 pm–10:59 pm | Ji Hai — Earth Pig | Day Horse; Bright Hall |
+
+**Xin Mao Day**
+
+**Clash:** Yi You Wood Rooster; Ji You Earth Rooster
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Wu Zi — Earth Rat | Life Governor; Day Punishment |
+| 1 am–2:59 am | Ji Chou — Earth Ox | Grappling Hook |
+| 3 am–4:59 am | Geng Yin — Metal Tiger | Heavenly Noble; Green Dragon |
+| 5 am–6:59 am | Xin Mao — Metal Rabbit | Day Establish Star; Bright Hall |
+| 7 am–8:59 am | Ren Chen — Water Dragon | Road; Emptiness; Heavenly Punishment |
+| 9 am–10:59 am | Gui Si — Water Snake | Heavenly Officer; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu — Wood Horse | Golden Lock; Group Emptiness |
+| 1 pm–2:59 pm | Yi Wei — Wood Goat | Precious Light; Group Emptiness |
+| 3 pm–4:59 pm | Bing Shen — Fire Monkey | Green Dragon; White Tiger |
+| 5 pm–6:59 pm | Ding You — Fire Rooster | Day Establish Star; Non Eligible Day |
+| 7 pm–8:59 pm | Wu Xu — Earth Dog | Day Combine; Sky Jail |
+| 9 pm–10:59 pm | Ji Hai — Earth Pig | Black Tortoise |
+
+**Xin Si Day**
+
+**Clash:** Yi Hai Wood Pig; Ji Hai Earth Pig
+| Time | Pillar | Notes |
+|---|---|---|
+| 11 pm–12:59 am | Wu Zi — Earth Rat | White Tiger |
+| 1 am–2:59 am | Ji Chou — Earth Ox | Jade Hall |
+| 3 am–4:59 am | Geng Yin — Metal Tiger | Heavenly Noble; Sky Jail |
+| 5 am–6:59 am | Xin Mao — Metal Rabbit | Black Tortoise |
+| 7 am–8:59 am | Ren Chen — Water Dragon | Life Governor; Road Emptiness|
+| 9 am–10:59 am | Gui Si — Water Snake | Heavenly Officer; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu — Wood Horse | Heavenly Noble; Green Dragon |
+| 1 pm–2:59 pm | Yi Wei — Wood Goat | Bright Hall |
+| 3 pm–4:59 pm | Bing Shen — Fire Monkey | Day Combine; Group Emptiness |
+| 5 pm–6:59 pm | Ding You — Fire Rooster | Day Wealth; Non Eligible Day |
+| 7 pm–8:59 pm | Wu Xu — Earth Dog | Golden Lock |
+| 9 pm–10:59 pm | Ji Hai — Earth Pig | Precious Light; Day Breaker |
+
+---
+
+**丁卯 Ding Mao Day**
+
+**Clash:** Xin You (Metal Rooster)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Geng Zi | Metal | Rat | Life Governor |
+| 1 am–2:59 am | Xin Chou | Metal | Ox | Grappling Hook |
+| 3 am–4:59 am | Ren Yin | Water | Tiger | Green Dragon; Road Emptiness |
+| 5 am–6:59 am | Gui Mao | Water | Rabbit | Day Establish Star; Road Emptiness |
+| 7 am–8:59 am | Jia Chen | Wood | Dragon | Heavenly Punishment; Day Harm |
+| 9 am–10:59 am | Yi Si | Wood | Snake | Day Horse ; Red Phoenix |
+| 11 am–12:59 pm | Bing Wu | Fire | Horse | Happy Spirit; Day Wealth |
+| 1 pm–2:59 pm | Ding Wei | Fire | Goat | Precious Light |
+| 3 pm–4:59 pm | Wu Shen | Earth | Monkey | White Tiger |
+| 5 pm–6:59 pm | Ji You | Earth | Rooster | Heavenly Noble ; Day Breaker |
+| 7 pm–8:59 pm | Geng Xu | Metal | Dog | Day Combine; Group Emptiness |
+| 9 pm–10:59 pm | Xin Hai | Metal | Pig | Heavenly Noble; Group Emptiness |
+
+**丁巳 Ding Si Day**
+
+**Clash:** Xin Hai (Metal Pig) C
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Geng Zi | Metal | Rat | Group Emptiness; White Tiger |
+| 1 am–2:59 am | Xin Chou | Metal | Ox | Jade Hall ; Group Emptiness |
+| 3 am–4:59 am | Ren Yin | Water | Tiger | Sky Jail; Road Emptiness |
+| 5 am–6:59 am | Gui Mao | Water | Rabbit | Road Emptiness; Non Eligible Day |
+| 7 am–8:59 am | Jia Chen | Wood | Dragon | Life Governor |
+| 9 am–10:59 am | Yi Si | Wood | Snake | Day Establish Star; Grappling Hook |
+| 11 am–12:59 pm | Bing Wu | Fire | Horse | Day Wealth; Happy Spirit |
+| 1 pm–2:59 pm | Ding Wei | Fire | Goat | Bright Hall; |
+| 3 pm–4:59 pm | Wu Shen | Earth | Monkey |  Day Combine; Heavenly Punishment |
+| 5 pm–6:59 pm | Ji You | Earth | Rooster | Heavenly Noble; Red Phoenix |
+| 7 pm–8:59 pm | Geng Xu | Metal | Dog | Golden Lock  |
+| 9 pm–10:59 pm | Xin Hai | Metal | Pig | Heavenly Officer; Day Breaker |
+
+**丁未 Ding Wei Day**
+
+**Clash:** Ji Chou (Earth Ox); Xin Chou (Metal Ox)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Geng Zi | Metal | Rat | Day Harm; Heavenly Punishment |
+| 1 am–2:59 am | Xin Chou | Metal | Ox | Red Phoenix; Day Breaker |
+| 3 am–4:59 am | Ren Yin | Water | Tiger | Golden Lock; Road Emptiness |
+| 5 am–6:59 am | Gui Mao | Water | Rabbit | Precious Light; Road Emptiness|
+| 7 am–8:59 am | Jia Chen | Wood | Dragon | White Tiger |
+| 9 am–10:59 am | Yi Si | Wood | Snake | Day Horse; Jade Hall |
+| 11 am–12:59 pm | Bing Wu | Fire | Horse | Day Combine; Sky Jail |
+| 1 pm–2:59 pm | Ding Wei | Fire | Goat | Day Establish Star; Black Tortoise |
+| 3 pm–4:59 pm | Wu Shen | Earth | Monkey | Life Governor|
+| 5 pm–6:59 pm | Ji You | Earth | Rooster | Heavenly Noble; Grappling Hook |
+| 7 pm–8:59 pm | Geng Xu | Metal | Dog | Green Dragon; Bright Hall |
+| 9 pm–10:59 pm | Xin Hai | Metal | Pig | Heavenly Noble; Bright Hall |
+
+**丁酉 Ding You Day**
+
+**Clash:** Xin Mao (Metal Rabbit); Gui Mao (Water Rabbit)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Geng Zi | Metal | Rat | Life Governor |
+| 1 am–2:59 am | Xin Chou | Metal | Ox | Grappling Hook |
+| 3 am–4:59 am | Ren Yin | Water | Tiger | Green Dragon; Road Emptiness |
+| 5 am–6:59 am | Gui Mao | Water | Rabbit | Bright Hall ;  Day Breaker |
+| 7 am–8:59 am | Jia Chen | Wood | Dragon | Day Combine; Heavenly Punishment |
+| 9 am–10:59 am | Yi Si | Wood | Snake | Group Emptiness; Red Phoenix |
+| 11 am–12:59 pm | Bing Wu | Fire | Horse | Day Wealth; Happy Spirit |
+| 1 pm–2:59 pm | Ding Wei | Fire | Goat | Precious Light |
+| 3 pm–4:59 pm | Wu Shen | Earth | Monkey | White Tiger; |
+| 5 pm–6:59 pm | Ji You | Earth | Rooster | Heavenly Noble; Day Punishment|
+| 7 pm–8:59 pm | Geng Xu | Metal | Dog | Sky Jail; Day Harm |; 
+| 9 pm–10:59 pm | Xin Hai | Metal | Pig | Heavenly Officer ; Black Tortoise |
+
+**丁亥 Ding Hai Day**
+
+**Clash:** Xin Si (Metal Snake); Gui Si (Water Snake)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Geng Zi | Metal | Rat | White Tiger |
+| 1 am–2:59 am | Xin Chou | Metal | Ox | Jade Hall |
+| 3 am–4:59 am | Ren Yin | Water | Tiger | Day Combine;  Road Emptiness |
+| 5 am–6:59 am | Gui Mao | Water | Rabbit | Non Eligible Day;  Road Emptiness |
+| 7 am–8:59 am | Jia Chen | Wood | Dragon | Life Governor  |
+| 9 am–10:59 am | Yi Si | Wood | Snake | Day Horse; Day Breaker |
+| 11 am–12:59 pm | Bing Wu | Fire | Horse | Happy Spirit; Group Emptiness |
+| 1 pm–2:59 pm | Ding Wei | Fire | Goat | Bright Hall; Group Emptiness |
+| 3 pm–4:59 pm | Wu Shen | Earth | Monkey | Day Harm; Heavenly Punishment |
+| 5 pm–6:59 pm | Ji You | Earth | Rooster | Heavenly Noble; Red Phoenix |  |
+| 7 pm–8:59 pm | Geng Xu | Metal | Dog | Golden Lock |
+| 9 pm–10:59 pm | Xin Hai | Metal | Pig | Heavenly Officer; Day Punishment |
+
+**丁丑 Ding Chou Day**
+
+**Clash:** Xin Wei (Metal Goat); Ji Wei (Earth Goat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Geng Zi | Metal | Rat | Day Combine; Heavenly Punishment |
+| 1 am–2:59 am | Xin Chou | Metal | Ox | Day Establish Star; Red Phoenix |
+| 3 am–4:59 am | Ren Yin | Water | Tiger | Golden Lock; Road Emptiness |
+| 5 am–6:59 am | Gui Mao | Water | Rabbit | Precious Light; Non Eligible Day |
+| 7 am–8:59 am | Jia Chen | Wood | Dragon | White Tiger |
+| 9 am–10:59 am | Yi Si | Wood | Snake | Jade Hall |
+| 11 am–12:59 pm | Bing Wu | Fire | Horse | Day Wealth; Sky Jail |
+| 1 pm–2:59 pm | Ding Wei | Fire | Goat | Day Breaker; Black Tortoise |
+| 3 pm–4:59 pm | Wu Shen | Earth | Monkey | Life Governor; Group Emptiness |
+| 5 pm–6:59 pm | Ji You | Earth | Rooster | Heavenly Noble; Group Emptiness  |
+| 7 pm–8:59 pm | Geng Xu | Metal | Dog | Green Dragon; Day Punishment |
+| 9 pm–10:59 pm | Xin Hai | Metal | Pig |  Heavenly Officer; Heavenly Noble |
+
+---
+
+**丙寅 Bing Yin Day**
+
+**Clash:** Geng Shen (Metal Monkey)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Heavenly Officer; Prosperity Star |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Bright Hall |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Day Establish Star; Heavenly Punishment |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Red Phoenix |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Golden Lock; Road Emptiness |
+| 9 am–10:59 am | Gui Si | Water | Snake | Happy Spirit; Road Emptiness |
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | White Tiger |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Jade Hall;|
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey |  Happy Spirit ; Day Breaker |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Heavenly Noble;  Black Tortoise  |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog |Prosperity Star;  Group Emptiness|
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Heavenly Noble; Group Emptiness |
+
+**丙辰 Bing Chen Day**
+
+**Clash:** Geng Xu (Metal Dog)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Heavenly Officer; Sky Jail |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Group Emptiness; Black Tortoise  |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Day Horse ; Life Governor |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Day Harm; Grappling Hook;  |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Day Establish Star; Road Emptiness |
+| 9 am–10:59 am | Gui Si | Water | Snake | Day Wealth; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Heavenly Punishment;|
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat |  Red Phoenix  |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; Golden Lock |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Heavenly Noble; Day Combine |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Prosperity Star; Day Breaker |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Jade Hall | Heavenly Noble; Jade Hall |
+
+**丙午 Bing Wu Day**
+
+**Clash:** Wu Zi (Earth Rat); Geng Zi (Metal Rat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Heavenly Officer; Day Breaker |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Precious Light; Day Harm |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Group Emptiness; White Tiger |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Jade Hall; Group Emptiness |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Non Eligible Day; Road Emptiness|
+| 9 am–10:59 am | Gui Si | Water | Snake | Day Wealth; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Day Establish Star; Day Punishment |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Day Combine; Grappling Hook |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; Day Horse |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Heavenly Noble ; Bright Hall|
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Prosperity Star; Heavenly Punishment |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Heavenly Noble; Red Phoenix  |
+
+**丙申 Bing Shen Day**
+
+**Clash:** Geng Yin (Metal Tiger); Ren Yin (Water Tiger)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Heavenly Officer; Prosperity Star |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Bright Hall |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Day Horse; Heavenly Punishment  |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit |  Red Phoenix  |
+| 7 am–8:59 am | Ren Chen | Water | Dragon |  Golden Lock; Non Eligible Day |
+| 9 am–10:59 am | Gui Si | Water | Snake | Day Combine; Group Emptiness |
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | White Tiger;  |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Jade Hall  |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Day Establish ; Sky Jail |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Heavenly Noble; Black Tortoise |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Prosperity Star; Life Governor |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig |  Heavenly Noble ; Day Harm |
+
+**丙戌 Bing Xu Day**
+
+**Clash:** Geng Chen (Metal Dragon); Ren Chen (Water Dragon)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Heavenly Officer; Sky Jail |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Black Tortoise  |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger |Life Governor  ;|
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit |Day Combine ;  Grappling Hook |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Green Dragon;  Road Emptiness |
+| 9 am–10:59 am | Gui Si | Water | Snake |Day Wealth; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Heavenly Punishment; Group Emptiness |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Red Phoenix; Group Emptiness |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; Day Horse |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Heavenly Noble; Day Harm|
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Day Establish Star; White Tiger |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Heavenly Noble; Jade Hall |
+
+**丙子 Bing Zi Day**
+
+**Clash:** Geng Wu (Metal Horse); Wu Wu (Earth Horse)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Heavenly Officer; Prosperity Star |
+| 1 am–2:59 am | Ji Chou | Earth | Ox |  Day Combine; Precious Light |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Day Horse; White Tiger |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Jade Hall; Day Punishment |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Road Emptiness; Non Eligible Day |
+| 9 am–10:59 am | Gui Si | Water | Snake | Day Wealth; Road Emptiness|
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Life Governor; Day Breaker |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Grappling Hook; Day Harm |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; Group Emptiness |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Heavenly Noble; Group Emptiness   |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Prosperity Star; Heavenly Punishment |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Heavenly Noble ; Red Phoenix |
+
+---
+
+**乙丑 Yi Chou Day**
+
+**Clash:** Ji Wei (Earth Goat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Heavenly Noble; Heavenly Punishment |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Day Establish Star; Red Phoenix |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Golden Lock |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Day Wealth; Precious Light |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon |  White Tiger |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Jade Hall; Non Eligible Day|
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Sky Jail; Day Harm |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Road Emptiness; Day Breaker |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Heavenly Noble ; Heavenly Officer |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Grappling Hook;   |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit ; Group Emptiness |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Prosperity Star; Group Emptiness |
+
+**乙卯 Yi Mao Day**
+
+**Clash:** Ji You (Earth Rooster)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Heavenly Noble;  Day Punishment |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Prosperity Star; Group Emptiness |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Green Dragon |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Day Establish Star ;  Bright Hall |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Day Harm ; Heavenly Punishment |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Day Horse; Non Eligible Day |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Golden Lock; Road Emptiness |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Precious Light; Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Hevaenly Noble; White Tiger |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Jade Hall; Day Breaker |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Day Combine; Sky Jail |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Prosperity Star; Black Tortoise |
+
+**乙巳 Yi Si Day**
+
+**Clash:** Ji Hai (Earth Pig)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Heavenly Noble; White Tiger |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Prosperity Star; Jade Hall |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Sky Jail; Day Harm |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Day Wealth; Group Emptiness |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Life Governor |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Day Establish Star; Non Eligible Day|
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Green Dragon; Road Emptiness|
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Day Establish Star; Road Emptiness|
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Day Combine; Day Punishment |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Red Phoenix |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit; Golden Lock |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Precious Light; Day Breaker |
+
+**乙未 Yi Wei Day**
+
+**Clash:** Ji Chou (Earth Ox)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Heavenly Noble; Day Harm |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Prosperity Star; Day Punishment |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Golden Lock |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Day Wealth; Precious Light |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Group Emptiness;  White Tiger |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Day Horse; Non Eligible Day  |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Day Combine;  Road Emptiness|
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Day Establish Star; Road Emptiness|
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Heavenly Officer; Life Governor |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Grappling Hook  |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Green Dragon ; Happy Spirit |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Bright Hall ; Prosperity Star |
+
+**乙酉 Yi You Day**
+
+**Clash:** Ji Mao (Earth Rabbit); Ding Mao (Fire Rabbit)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Heavenly Noble; Life Governor |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Prosperity Star; Grappling Hook |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Green Dragon  |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Bright Hall;  Day Breaker |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Day Combine; Heavenly Punishment |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Non Eligible Day; Red Phoenix  |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Golden Lock; Road Emptiness|
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Precious Light; Road Emptiness|
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Heavenly Officer; White Tiger |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Day Establish Star; Day Punishment |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit; Sky Jail |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Prosperity Star; Black Tortoise |
+
+**乙亥 Yi Hai Day**
+
+**Clash:** Ji Si (Earth Snake); Xin Si (Metal Snake)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Heavenly Noble; White Tiger |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Prosperity Star; Jade Hall |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Day Combine;  Sky Jail |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Day Wealth; Black Tortoise |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Life Governor |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Day Horse;  Day Breaker |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Green Dragon; Road Emptiness|
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Bright Hall; Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Heavenly Officer; Group Emptiness |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Group Emptiness; Red Phoenix |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit; Golden Lock |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Day Establish Star; Day Punishment |
+
+---
+
+**庚子 Geng Zi Day**
+
+**Clash:** Jia Wu (Wood Horse); Bing Wu (Fire Horse)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Day Establish Star; Day Combine |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Heavenly Noble; Day Punishment |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Day Horse; White Tiger |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Jade Hall; Day Punishment |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Sky Jail; Group Emptiness|
+| 9 am–10:59 am | Xin Si | Metal | Snake | Group Emptiness; Black Tortoise |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Heavenly Noble; Day Breaker |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Heavenly Noble; Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Green Dragon; Day Wealth |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Bright Hall |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit; Non Eligible Day |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Red Phoenix |
+
+**庚寅 Geng Yin Day**
+
+**Clash:** Jia Shen (Wood Monkey); Wu Shen (Earth Monkey)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Green Dragon; Non Eligible Day |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Heavenly Noble; Bright Hall |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Day Establish Star; Heavenly Punishment |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit |Red Phoenix |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Golden Lock |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Precious Light; Day Harm |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Heavenly Officer;   Road Emptiness  |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Jade Hall;  Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Day Horse; Sky Jail |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Black Tortoise  |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Life Governor; Non Eligible Day|
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Day Combine; Grappling Hook |
+
+**庚辰 Geng Chen Day**
+
+**Clash:** Jia Xu (Wood Dog); Wu Xu (Earth Dog)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Sky Jail; Non Eligible Day |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Prosperity Star; Black Tortoise |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Day Horse; Life Governor |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Grappling Hook ; Day Harm  |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Day Establish Star; Day Punishment |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Bright Hall  |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Heavenly Officer; Road Emptiness |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Heavenly Noble; Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Day Wealth; Group Emptiness |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Day Combine; Group Emptiness |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit; Non Eligible Day |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Jade Hall |
+
+**庚午 Geng Wu Day**
+
+**Clash:** Jia Zi (Wood Rat); Bing Zi (Fire Rat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Golden Lock; Day Breaker |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Heavenly Noble; Day Harm |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Day Horse; White Tiger |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Jade Hall |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Sky Jail |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Black Tortoise |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Heavenly Officer; Road Emptiness |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Day Combine; Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Day Wealth; Green Dragon |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Bright Hall|
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Happy Spirit; Group Emptiness |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Group Emptiness; Red Phoenix |
+
+**庚申 Geng Shen Day**
+
+**Clash:** Jia Yin (Wood Tiger); Bing Yin (Fire Tiger)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Green Dragon; Non Eligible Day |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Heavenly Noble; Group Emptiness |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Day Horse; Heavenly Punishment |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Heavenly Noble; Red Phoenix |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Golden Lock |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Day Combine ; Precious Light |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Heavenly Officer; White Tiger |
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Day Establish ; Sky Jail |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Black Tortoise |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Life Governor; Non Eligible Day |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Day Harm; Grappling Hook |
+
+**庚戌 Geng Xu Day**
+
+**Clash:** Jia Chen (Wood Dragon); Wu Chen (Earth Dragon)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Bing Zi | Fire | Rat | Non Eligible Day; Sky Jail |
+| 1 am–2:59 am | Ding Chou | Fire | Ox | Heavenly Noble; Black Tortoise |
+| 3 am–4:59 am | Wu Yin | Earth | Tiger | Life Governor; Group Emptiness |
+| 5 am–6:59 am | Ji Mao | Earth | Rabbit | Day Combine;  Group Emptiness |
+| 7 am–8:59 am | Geng Chen | Metal | Dragon | Green Dragon; Day Breaker |
+| 9 am–10:59 am | Xin Si | Metal | Snake | Bright Hall |
+| 11 am–12:59 pm | Ren Wu | Water | Horse | Heavenly Officer; Road Emptiness|
+| 1 pm–2:59 pm | Gui Wei | Water | Goat | Heavenly Noble; Road Emptiness |
+| 3 pm–4:59 pm | Jia Shen | Wood | Monkey | Day Wealth; Day Horse |
+| 5 pm–6:59 pm | Yi You | Wood | Rooster | Precious Light; Day Harm |
+| 7 pm–8:59 pm | Bing Xu | Fire | Dog | Day Establish Star; Non Eligible Day |
+| 9 pm–10:59 pm | Ding Hai | Fire | Pig | Jade Hall |
+
+---
+
+**甲子 Jia Zi Day**
+
+**Clash:** Wu Wu (Earth Horse); Geng Wu (Metal Horse)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Day Establish Star; Golden Lock |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Heavenly Noble; Day Combine |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Happy Spirit; White Tiger |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Jade Hall; Day Punishment  |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Sky Jail|
+| 9 am–10:59 am | Ji Si | Earth | Snake | Black Tortoise |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Life Governor; Day Breaker |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Heavenly Noble; Day Harm |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Green Dragon; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Heavenly Officer; Road Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Heavenly Punishment; Group Emptiness |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Group Emptiness ;  Red Phoenix|
+
+**甲寅 Jia Yin Day**
+
+**Clash:** Wu Shen (Earth Monkey); Geng Shen (Metal Monkey)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Green Dragon; Group Emptiness |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Heavenly Noble; Group Emptiness |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Day Establish Star; Heavenly Punishment |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Red Phoenix |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Golden Lock; |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Precious Light; Day Harm |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Non Eligible Day; White Tiger |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Heavenly Noble; Jade Hall  |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Day Horse; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Heavenly Officer; Road Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Life Governor |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Day Combine; Grappling Hook |
+
+**甲辰 Jia Chen Day**
+
+**Clash:** Wu Xu (Earth Dog); Geng Xu (Metal Dog)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Sky Jail |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Heavenly Noble; Black Tortoise |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Day Horse; Group Emptiness |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Grappling Hook; Day Harm |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Day Establish Star ; Day Punishment |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Bright Hall |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Heavenly Punishment;  Non Eligible Day |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Hevaenly Noble; Red Phoenix |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Golden Lock ; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Day Combine; Road Emptiness|
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | White Tiger; Day Breaker |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Jade Hall |
+
+**甲午 Jia Wu Day**
+
+**Clash:** Wu Zi (Earth Rat); Ren Zi (Water Rat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Golden Lock; Day Breaker |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Heavenly Noble; Day Harm |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Day Wealth; White Tiger |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Jade Hall |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Sky Jail; Group Emptiness |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Black Tortoise ; Group Emptiness |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Establish Star; Non Eligible Day |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Day Combine; Grappling Hook |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Day Horse; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Heavenly Officer; Road Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Heavenly Punishment; |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig |  Red Phoenix |
+
+**甲申 Jia Shen Day**
+
+**Clash:** Wu Yin (Earth Tiger); Bing Yin (Fire Tiger)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Green Dragon  |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Heavenly Noble; Bright Hall |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Day Wealth; Red Phoenix |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Golden Lock |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Day Harm; Road Emptiness|
+| 9 am–10:59 am | Ji Si | Earth | Snake | Day Combine; Precious Light |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | White Tiger; Day Breaker |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Heavenly Noble; Group Emptiness |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Day Establish Star; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Heavenly Officer ; Road Emptiness  |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Life Governor |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Grappling Hook; Day Harm |
+
+**甲戌 Jia Xu Day**
+
+**Clash:** Wu Chen (Earth Dragon); Geng Chen (Metal Dragon)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Sky Jail |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Heavenly Noble; Black Tortoise |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Day Wealth; Happy Spirit |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit |Day Combine;  Grappling Hook |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Green Dragon; Day Breaker |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Bright Hall |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Heavenly Punishment; Non Eligible Day |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Heavenly Noble ; Day Punishment |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey |Day Horse; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Heavenly Officer; Group Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Green Dragon; White Tiger |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Jade Hall |
+
+---
+
+**己巳 Ji Si Day**
+
+**Clash:** Gui Hai (Water Pig); Yi Hai (Wood Pig)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Heavenly Noble; White Tiger |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Jade Hall; Non Eligible Day |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Heavenly Officer; Sky Jail |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Black Tortoise  |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Life Governor |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Day Establish Star; Grappling Hook |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Wealth; Green Dragon |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Prosperity Star;  Bright Hall |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Day Combine; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Road Emptiness; Red Phoenix |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Golden Lock; Group Emptiness|
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Day Horse; Day Breaker |
+
+**己未 Ji Wei Day**
+
+**Clash:** Gui Chou (Water Ox); Yi Chou (Wood Ox)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Heavenly Noble; Day Harm |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Day Horse; Day Breaker |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Heavenly Officer; Happy Spirit |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Precious Light |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | White Tiger |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Day Horse; Jade Hall |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Combine; Sky Jail |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Day Establish Star; Black Tortoise |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Life Governor; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Grappling Hook; Road Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Green Dragon;  |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Bright Hall; Non Eligible Day |
+
+**己酉 Ji You Day**
+
+**Clash:** Gui Mao (Water Rabbit); Yi Mao (Wood Rabbit)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Heavenly Noble; Life Governor |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Non Eligible Day; Grappling Hook |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Heavenly Officer; Group Emptiness |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Bright Hall; Group Emptiness  |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Day Combine; Heavenly Punishment |
+| 9 am–10:59 am | Ji Si | Earth | Snake |  Red Phoenix |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Wealth; Golden Lock |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Prosperity Star; Precious Light |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Heavenly Noble; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Day Establish Star;  Road Emptiness|
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Day Harm ; Sky Jail |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Day Horse; Black Tortoise |
+
+**己亥 Ji Hai Day**
+
+**Clash:** Gui Si (Water Snake); Yi Si (Wood Snake)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Heavenly Noble; White Tiger  |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Jade Hall; Non Eligible Day |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Day Combine; Sky Jail  |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Black Tortoise|
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Life Governor; Group Emptiness |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Day Horse; Day Breaker |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Wealth; Green Dragon |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Prosperity Star; Bright Hall  |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Heavenly Noble; Day Harm |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Red Phoenix ; Road Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Golden Lock  |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Day Wealth; Non Eligible Day |
+
+**己丑 Ji Chou Day**
+
+**Clash:** Gui Wei (Water Goat); Yi Wei (Wood Goat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Day Combine; Heavenly Punishment |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Day Establish Star; Non Eligible Day |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Happy Spirit; Heavenly Officer |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Precious Light |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | White Tiger |
+| 9 am–10:59 am | Ji Si | Earth | Snake | Jade Hall |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Wealth; Sky Jail |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Prosperity Star ; Day Breaker |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Heavenly Noble ; Road Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Road Emptiness; Grappling Hook |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Green Dragon; Day Punishment |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Day Horse; Non Eligible Day |
+
+**己卯 Ji Mao Day**
+
+**Clash:** Gui You (Water Rooster); Yi You (Wood Rooster)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Jia Zi | Wood | Rat | Heavenly Noble; Day Punishment |
+| 1 am–2:59 am | Yi Chou | Wood | Ox | Non Eligible Day; Grappling Hook |
+| 3 am–4:59 am | Bing Yin | Fire | Tiger | Heavenly Officer; Happy Spirit |
+| 5 am–6:59 am | Ding Mao | Fire | Rabbit | Day Establish Star; Bright Hall |
+| 7 am–8:59 am | Wu Chen | Earth | Dragon | Day Harm ; Heavenly Punishment|
+| 9 am–10:59 am | Ji Si | Earth | Snake | Day Horse ; Red Phoenix |
+| 11 am–12:59 pm | Geng Wu | Metal | Horse | Day Wealth; Precious Light; Golden Lock |
+| 1 pm–2:59 pm | Xin Wei | Metal | Goat | Precious Light ; Prosperity Star |
+| 3 pm–4:59 pm | Ren Shen | Water | Monkey | Heavenly Noble; Group Emptiness |
+| 5 pm–6:59 pm | Gui You | Water | Rooster | Jade Hall; Group Emptiness |
+| 7 pm–8:59 pm | Jia Xu | Wood | Dog | Day Combine; Sky Jail |
+| 9 pm–10:59 pm | Yi Hai | Wood | Pig | Black Tortoise; Non Eligible Day |
+
+---
+
+**戊辰 Wu Chen Day**
+
+**Clash:** Ren Xu (Water Dog); Jia Xu (Wood Dog)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Road Emptiness; Sky Jail |
+| 1 am–2:59 am | Gui Chou | Water | Ox | Heavenly Noble; Road Emptiness |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Life Governor; Non Eligible Day |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Officer ; Day Harm  |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Day Establish Star; Day Punishment |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Wealth ; Bright Hall |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Heavenly Punishment |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Heavenly Noble; Red Phoenix  |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Prosperity Star; Golden Lock  |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Day Combine ; Precious Light |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Road Emptiness; Day Breaker |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Jade Hall ; Road Emptiness |
+
+**戊午 Wu Wu Day**
+
+**Clash:** Ren Zi (Water Rat); Jia Zi (Wood Rat)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Golden Lock; Day Breaker |
+| 1 am–2:59 am | Gui Chou | Water | Ox | Heavenly Noble; Road Emptiness|
+| 3 am–4:59 am | Jia Yin | Wood | Tiger |   Non Eligible Day ; White Tiger |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Officer; Jade Hall |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Happy Spirit; Sky Jail |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Wealth ; Black Tortoise |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Day Punishment |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat |  Day Combine ; Grappling Hook   |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Green Dragon; Day Horse |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Bright Hall |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Road Emptiness ;  Heavenly Punishment;  |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Red Phoenix ;  Road Emptiness |
+
+**戊申 Wu Shen Day**  
+
+**Clash:** Ren Yin (Water Tiger); Jia Yin (Wood Tiger)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Green Dragon; Road Emptiness |
+| 1 am–2:59 am | Gui Chou | Water | Ox | Heavenly Noble; Road Emptiness |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Day Horse; Day Breaker |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Officer; Red Phoenix |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Golden Lock; Happy Spirit |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Wealth; Day Combine |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | White Tiger |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Heavenly Noble; Jade Hall|
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Day Establish Star; Sky Jail |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Black Tortoise |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Life Governor; Road Emptiness |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Day Harm; Road Emptiness |
+
+**戊戌 Wu Xu Day**
+
+**Clash:** Ren Chen (Water Dragon); Jia Chen (Wood Dragon)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Road Emptiness; Sky Jail |
+| 1 am–2:59 am | Gui Chou | Water | Ox | Heavenly Noble; Road Emptiness |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Life Governor;  Non Eligible Day |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit |  Day Combine; Grappling Hook |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon |   Happy Spirit; Day Breaker|
+| 9 am–10:59 am | Ding Si | Fire | Snake | Bright Hall ; Group Emptiness   |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Heavenly Punishment  |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Heavenly Noble; Day Punishment  |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Prosperity Star ; Day Horse |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Precious Light ; Day Harm |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Day Establish Star ; Road Emptiness |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Golden Lock ; Road Emptiness |
+
+**戊子 Wu Zi Day**
+
+**Clash:** Ren Wu (Water Horse); Jia Wu (Wood Horse)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Day Establish Star; Road Emptiness |
+| 1 am–2:59 am | Gui Chou | Water | Ox | Day Combine; Heavenly Noble; Road Emptiness |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger |  Day Horse; Non Eligible Day  |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit |  Heavenly Officer ; Day Punishment |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Life Governor; Sky Jail|
+| 9 am–10:59 am | Ding Si | Fire | Snake | Day Wealth ; Black Tortoise |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | Life Governor; Group Emptiness |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Heavenly Noble ; Day Harm |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Prosperity Star; Green Dragon |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Bright Hall;  |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Road Emptiness; Heavenly Punishment |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Road Emptiness; Red Phoenix  |
+
+**戊寅 Wu Yin Day**
+
+**Clash:** Ren Shen (Water Monkey); Jia Shen (Wood Monkey)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Ren Zi | Water | Rat | Green Dragon; Road Emptiness |
+| 1 am–2:59 am | Gui Chou | Water | Ox | Heavenly Noble; Road Emptiness |
+| 3 am–4:59 am | Jia Yin | Wood | Tiger | Day Establish Star; Non Eligible Day |
+| 5 am–6:59 am | Yi Mao | Wood | Rabbit | Heavenly Officer; Red Phoenix |
+| 7 am–8:59 am | Bing Chen | Fire | Dragon | Happy Spirit; Golden Lock |
+| 9 am–10:59 am | Ding Si | Fire | Snake | Precious Light; Day Punishment |
+| 11 am–12:59 pm | Wu Wu | Earth | Horse | White Tiger |
+| 1 pm–2:59 pm | Ji Wei | Earth | Goat | Heavenly Noble ; Jade Hall  |
+| 3 pm–4:59 pm | Geng Shen | Metal | Monkey | Prosperity Star; Day Breaker |
+| 5 pm–6:59 pm | Xin You | Metal | Rooster | Group Emptiness; Black Tortoise |
+| 7 pm–8:59 pm | Ren Xu | Water | Dog | Life Governor; Road Emptiness |
+| 9 pm–10:59 pm | Gui Hai | Water | Pig | Day Combine; Road Emptiness |
+
+---
+
+**辛未 Xin Wei Day**
+
+**Clash:** Yi Chou (Wood Ox); Ding Chou (Fire Ox)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Day Harm ; Heavenly Punishment |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Day Breaker; Red Phoenix |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Heavenly Noble; Golden Lock |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Precious Light |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Road; Emptiness; White Tiger |
+| 9 am–10:59 am | Gui Si | Water | Snake | Heavenly Officer; Road Emptiness |
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Day Combine;  Sky Jail |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Day Establish Star; Black Tortoise |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; Life Governor |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Day Wealth; Non Eligible Day |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Green Dragon; Group Emptiness |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig |Bright Hall; Group Emptiness  |
+ 
+**辛酉 Xin You Day**  C
+
+**Clash:** Yi Mao (Wood Rabbit); Ji Mao (Earth Rabbit)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | Life Governor; Group Emptiness |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Grappling Hook; Group Emptiness  |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Heavenly Noble; Green Dragon |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Bright Hall; Day Breaker |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Day Combine; Road Emptiness |
+| 9 am–10:59 am | Gui Si | Water | Snake | Heavenly Officer; Road Emptiness |
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Heavenly Noble; Golden Lock |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Precious Light |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; White Tiger |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Day Establish Star; Non Eligible Day |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Day Harm; Sky Jail |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Day Horse; Black Tortoise |
+
+**辛亥 Xin Hai Day**
+
+**Clash:** Yi Si (Wood Snake); Ji Si (Earth Snake)
+
+| Time | Pillar | Element | Animal | Notes |
+|---|---|---|---|---|
+| 11 pm–12:59 am | Wu Zi | Earth | Rat | White Tiger |
+| 1 am–2:59 am | Ji Chou | Earth | Ox | Jade Hall |
+| 3 am–4:59 am | Geng Yin | Metal | Tiger | Day Combine; Sky Jail |
+| 5 am–6:59 am | Xin Mao | Metal | Rabbit | Black Tortoise; Group Emptiness |
+| 7 am–8:59 am | Ren Chen | Water | Dragon | Life Governor; Road Emptiness |
+| 9 am–10:59 am | Gui Si | Water | Snake | Heavenly Noble; Day Breaker |
+| 11 am–12:59 pm | Jia Wu | Wood | Horse | Heavenly Noble; Green Dragon |
+| 1 pm–2:59 pm | Yi Wei | Wood | Goat | Bright Hall |
+| 3 pm–4:59 pm | Bing Shen | Fire | Monkey | Happy Spirit; Day Harm |
+| 5 pm–6:59 pm | Ding You | Fire | Rooster | Day Wealth; Non Eligible Day |
+| 7 pm–8:59 pm | Wu Xu | Earth | Dog | Golden Lock |
+| 9 pm–10:59 pm | Ji Hai | Earth | Pig | Day Establish Star; Day Punishment |`;
+
+// Reference date: Sep 10, 2025 = Ren Wu
+const REFERENCE_DATE = new Date(Date.UTC(2025, 8, 10)); // months 0-based; use UTC to avoid TZ drift
+const REFERENCE_STEM_INDEX = 8;  // Ren
+const REFERENCE_BRANCH_INDEX = 6; // Wu
+
+function daysBetweenUTC(a, b){
+  const ms = 24*60*60*1000;
+  const au = Date.UTC(a.getUTCFullYear(), a.getUTCMonth(), a.getUTCDate());
+  const bu = Date.UTC(b.getUTCFullYear(), b.getUTCMonth(), b.getUTCDate());
+  return Math.round((au - bu) / ms);
+}
+
+function parseDateFlexible(s){
+  if(!s) throw new Error("No date provided");
+  s = String(s).trim();
+
+  // If input is yyyy-mm-dd (from date picker)
+  if(/^\d{4}-\d{2}-\d{2}$/.test(s)){
+    const [y,m,d] = s.split("-").map(Number);
+    return new Date(Date.UTC(y, m-1, d));
+  }
+
+  // yyyymmdd
+  if(/^\d{8}$/.test(s)){
+    const y = Number(s.slice(0,4));
+    const m = Number(s.slice(4,6));
+    const d = Number(s.slice(6,8));
+    return new Date(Date.UTC(y, m-1, d));
+  }
+
+  // mm/dd/yyyy or dd/mm/yyyy (ambiguous; mimic your Python order: mm/dd then dd/mm)
+  if(/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(s)){
+    const [a,b,y] = s.split("/").map(Number);
+    // try mm/dd
+    let dt = new Date(Date.UTC(y, a-1, b));
+    if(dt.getUTCMonth() === a-1 && dt.getUTCDate() === b) return dt;
+    // fallback dd/mm
+    dt = new Date(Date.UTC(y, b-1, a));
+    if(dt.getUTCMonth() === b-1 && dt.getUTCDate() === a) return dt;
+  }
+
+  // "Dec 28, 2025" or "December 28, 2025"
+  // Let Date.parse handle English month names (Safari supports it reasonably well)
+  const parsed = Date.parse(s);
+  if(!Number.isNaN(parsed)){
+    const dt = new Date(parsed);
+    return new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate()));
+  }
+
+  throw new Error("Unable to parse date: " + s);
+}
+
+function getDayPillar(dateUTC){
+  const diff = daysBetweenUTC(dateUTC, REFERENCE_DATE);
+  const stemIndex = (REFERENCE_STEM_INDEX + diff) % 10;
+  const branchIndex = (REFERENCE_BRANCH_INDEX + diff) % 12;
+  const stem = HEAVENLY_STEMS[(stemIndex + 10) % 10];
+  const branch = EARTHLY_BRANCHES[(branchIndex + 12) % 12];
+  return {stem, branch};
+}
+
+// Parse Hour Reference Table.md (similar to your regex approach)
+function parseHourReferenceTable(md){
+  const dayData = {};
+  if(!md || !md.trim()) return dayData;
+
+  // Split into sections that begin with **... Day**
+  const sections = md.split(/(?=\*\*(?:[\u4e00-\u9fff]+\s+)?[A-Z][a-z]+\s+[A-Z][a-z]+\s+Day\*\*)/g);
+
+  const dayHeaderRe = /\*\*(?:[\u4e00-\u9fff]+\s+)?([A-Z][a-z]+)\s+([A-Z][a-z]+)\s+Day\*\*/;
+  const clashRe = /\*\*Clash:\*\*\s*(.+?)(?:\n|$)/;
+
+  for(const sec of sections){
+    if(!sec.trim()) continue;
+
+    const m = sec.match(dayHeaderRe);
+    if(!m) continue;
+    const stem = m[1], branch = m[2];
+    const dayPillar = `${stem} ${branch}`;
+
+    const clashMatch = sec.match(clashRe);
+    const clash = clashMatch ? clashMatch[1].trim() : "";
+
+    const has5 = /\|\s*Time\s*\|\s*Pillar\s*\|\s*Element\s*\|\s*Animal\s*\|\s*Notes\s*\|/i.test(sec);
+
+    let rows = [];
+    if(has5){
+      // | Time | Pillar | Element | Animal | Notes |
+      const re = /\|\s*(\d+\s*[ap]m[^|\n]+)\s*\|\s*([^|\n]+)\s*\|\s*([^|\n]*)\s*\|\s*([^|\n]*)\s*\|\s*([^|\n]*)\s*\|/g;
+      let r;
+      while((r = re.exec(sec)) !== null){
+        rows.push({time:r[1].trim(), pillar:r[2].trim(), element:r[3].trim(), animal:r[4].trim(), notes:(r[5]||"").trim()});
+      }
+    }else{
+      // | Time | Pillar | Notes |
+      const re = /\|\s*(\d+\s*[ap]m[^|\n]+)\s*\|\s*([^|\n]+)\s*\|\s*([^|\n]+)\s*\|/g;
+      let r;
+      while((r = re.exec(sec)) !== null){
+        rows.push({time:r[1].trim(), pillar:r[2].trim(), notes:(r[3]||"").trim()});
+      }
+    }
+
+    const hours = [];
+    for(const row of rows){
+      const pm = row.pillar.match(/([A-Z][a-z]+)\s+([A-Z][a-z]+)/);
+      if(!pm) continue;
+      const hourStem = pm[1], hourBranch = pm[2];
+
+      let element = row.element ?? STEM_ELEMENTS[hourStem] ?? "";
+      let animal  = row.animal  ?? BRANCH_ANIMALS[hourBranch] ?? "";
+      let notes = (row.notes || "")
+        .replace(/^[\s;|]+|[\s;|]+$/g, "")
+        .replace(/\s*;\s*/g, "; ");
+
+      hours.push({
+        time: row.time,
+        stem: hourStem,
+        branch: hourBranch,
+        element,
+        animal,
+        notes
+      });
+    }
+
+    if(hours.length){
+      dayData[dayPillar] = { stem, branch, clash, hours };
+    }
+  }
+
+  return dayData;
+}
+
+function isCurrentHourSlot(timeSlot){
+  // Mimic your Python: match start hour am/pm, end hour am/pm
+  const now = new Date();
+  const currentHour = now.getHours(); // local time
+  const m = String(timeSlot).toLowerCase().match(/(\d+)\s*(am|pm).*?(\d+)(?::\d+)?\s*(am|pm)/);
+  if(!m) return false;
+  let [_, sh, sampm, eh, eampm] = m;
+  sh = Number(sh); eh = Number(eh);
+
+  function to24(h, ap){
+    if(ap === 'am' && h === 12) return 0;
+    if(ap === 'pm' && h !== 12) return h + 12;
+    return h;
+  }
+  const s24 = to24(sh, sampm);
+  const e24 = to24(eh, eampm);
+
+  if(s24 > e24){
+    return currentHour >= s24 || currentHour <= e24; // overnight
+  }
+  return currentHour >= s24 && currentHour <= e24;
+}
+
+function getAllStars(dayData){
+  const set = new Set();
+  for(const pillar in dayData){
+    for(const h of dayData[pillar].hours || []){
+      for(const part of (h.notes || "").split(";")){
+        const star = part.trim();
+        if(star) set.add(star);
+      }
+    }
+  }
+  return Array.from(set).sort((a,b)=>a.localeCompare(b));
+}
+
+function findStarOccurrences(startDateUTC, numDays, starName, dayData){
+  const out = [];
+  const needle = String(starName||"").toLowerCase();
+  for(let i=0;i<numDays;i++){
+    const d = new Date(startDateUTC.getTime() + i*86400000);
+    const {stem, branch} = getDayPillar(d);
+    const dayPillar = `${stem} ${branch}`;
+    const info = dayData[dayPillar];
+    if(!info) continue;
+    for(const hour of info.hours || []){
+      const notes = hour.notes || "";
+      if(notes.toLowerCase().includes(needle)){
+        out.push({dateUTC:d, dayPillar, dayStem:stem, dayBranch:branch, clash:info.clash || "", hour});
+      }
+    }
+  }
+  return out;
+}
+
+/* ===========================
+   UI wiring
+   =========================== */
+
+const el = (id)=>document.getElementById(id);
+
+const state = {
+  useToday: true,
+  days: 1,
+};
+
+function setStatus(msg, isErr=false){
+  el("status").textContent = msg;
+  el("status").className = isErr ? "v err" : "v";
+}
+
+function fmtDateLong(dateUTC){
+  // Display in local-ish friendly format but based on UTC date
+  const y = dateUTC.getUTCFullYear();
+  const m = dateUTC.getUTCMonth();
+  const d = dateUTC.getUTCDate();
+  const local = new Date(y, m, d);
+  return local.toLocaleDateString(undefined, {weekday:"long", year:"numeric", month:"long", day:"2-digit"});
+}
+
+function fmtDateShort(dateUTC){
+  const y = dateUTC.getUTCFullYear();
+  const m = dateUTC.getUTCMonth();
+  const d = dateUTC.getUTCDate();
+  const local = new Date(y, m, d);
+  return local.toLocaleDateString(undefined, {year:"numeric", month:"short", day:"2-digit"});
+}
+
+function renderNormal(dayData, startDateUTC, numDays, isTodayMode){
+  const wrap = document.createElement("div");
+  wrap.className = "gridDays";
+
+  for(let i=0;i<numDays;i++){
+    const d = new Date(startDateUTC.getTime() + i*86400000);
+    const {stem, branch} = getDayPillar(d);
+    const dayPillar = `${stem} ${branch}`;
+    const info = dayData[dayPillar];
+
+    const chinese = `${STEM_CHINESE[stem]||""}${BRANCH_CHINESE[branch]||""}`;
+    const element = STEM_ELEMENTS[stem] || "";
+    const animal = BRANCH_ANIMALS[branch] || "";
+    const clash = info?.clash || "";
+
+    // Update header meta for first day
+    if(i===0){
+      el("dayPillar").textContent = `${chinese} ${dayPillar} (${element} ${animal})`;
+      el("clash").textContent = clash || "â€”";
+    }
+
+    const card = document.createElement("div");
+    card.className = "dayCard";
+
+    const top = document.createElement("div");
+    top.className = "top";
+    top.innerHTML = `
+      <div class="left">
+        <div class="date">${fmtDateLong(d)}</div>
+        <div class="sub"><span class="mono">${chinese} ${dayPillar}</span> Â· ${element} ${animal}${clash ? ` Â· Clash: ${clash}` : ""}</div>
+      </div>
+      ${ (isTodayMode && i===0) ? `<span class="badge now">NOW highlighting</span>` : `<span class="badge">Day ${i+1}/${numDays}</span>`}
+    `;
+
+    const mid = document.createElement("div");
+    mid.className = "mid";
+
+    if(!info || !info.hours?.length){
+      mid.innerHTML = `<div class="notice">No hour star data found for this day pillar in the reference table.</div>`;
+    }else{
+      const table = document.createElement("table");
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th style="width:18%">Time</th>
+            <th style="width:22%">Hour Pillar</th>
+            <th style="width:12%">Element</th>
+            <th style="width:12%">Animal</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      `;
+      const tbody = table.querySelector("tbody");
+
+      for(const hour of info.hours){
+        const isNow = (isTodayMode && i===0 && isCurrentHourSlot(hour.time));
+        const tr = document.createElement("tr");
+        if(isNow) tr.classList.add("nowRow");
+
+        const hp = `${hour.stem} ${hour.branch}`;
+        const hc = `${STEM_CHINESE[hour.stem]||""}${BRANCH_CHINESE[hour.branch]||""}`;
+        tr.innerHTML = `
+          <td>
+            ${hour.time}
+            ${isNow ? `<div style="margin-top:6px"><span class="badge now">NOW</span></div>` : ``}
+          </td>
+          <td class="mono">${hc} ${hp}</td>
+          <td>${hour.element || ""}</td>
+          <td>${hour.animal || ""}</td>
+          <td>${hour.notes || ""}</td>
+        `;
+        tbody.appendChild(tr);
+      }
+
+      mid.appendChild(table);
+    }
+
+    card.appendChild(top);
+    card.appendChild(mid);
+    wrap.appendChild(card);
+  }
+
+  return wrap;
+}
+
+function renderStarSearch(dayData, startDateUTC, numDays, starName){
+  const occ = findStarOccurrences(startDateUTC, numDays, starName, dayData);
+
+  el("dayPillar").textContent = "â€”";
+  el("clash").textContent = "â€”";
+
+  const wrap = document.createElement("div");
+  wrap.className = "gridDays";
+
+  const head = document.createElement("div");
+  head.className = "notice";
+  const endDateUTC = new Date(startDateUTC.getTime() + (numDays-1)*86400000);
+  head.innerHTML = `<b>Search:</b> <span class="mono">${escapeHtml(starName)}</span><br/>
+                    <b>Date range:</b> ${fmtDateShort(startDateUTC)} â†’ ${fmtDateShort(endDateUTC)} (${numDays} days)<br/>
+                    <b>Matches:</b> ${occ.length}`;
+  wrap.appendChild(head);
+
+  if(!occ.length){
+    const none = document.createElement("div");
+    none.className = "notice";
+    none.textContent = `No occurrences of "${starName}" found in the specified date range.`;
+    wrap.appendChild(none);
+    return wrap;
+  }
+
+  // Group by date
+  const byDate = new Map();
+  for(const o of occ){
+    const key = `${o.dateUTC.getUTCFullYear()}-${o.dateUTC.getUTCMonth()+1}-${o.dateUTC.getUTCDate()}`;
+    if(!byDate.has(key)) byDate.set(key, []);
+    byDate.get(key).push(o);
+  }
+
+  for(const [key, items] of byDate.entries()){
+    const d = items[0].dateUTC;
+    const {dayStem, dayBranch} = items[0];
+    const dayPillar = items[0].dayPillar;
+    const chinese = `${STEM_CHINESE[dayStem]||""}${BRANCH_CHINESE[dayBranch]||""}`;
+    const element = STEM_ELEMENTS[dayStem] || "";
+    const animal = BRANCH_ANIMALS[dayBranch] || "";
+    const clash = items[0].clash || "";
+
+    const card = document.createElement("div");
+    card.className = "dayCard";
+
+    const top = document.createElement("div");
+    top.className = "top";
+    top.innerHTML = `
+      <div class="left">
+        <div class="date">${fmtDateLong(d)}</div>
+        <div class="sub"><span class="mono">${chinese} ${dayPillar}</span> Â· ${element} ${animal}${clash ? ` Â· Clash: ${clash}` : ""}</div>
+      </div>
+      <span class="badge">${items.length} hit(s)</span>
+    `;
+
+    const mid = document.createElement("div");
+    mid.className = "mid";
+
+    const block = document.createElement("div");
+    block.className = "starHits";
+
+    for(const o of items){
+      const hour = o.hour;
+      const hp = `${hour.stem} ${hour.branch}`;
+      const hc = `${STEM_CHINESE[hour.stem]||""}${BRANCH_CHINESE[hour.branch]||""}`;
+      const hit = document.createElement("div");
+      hit.className = "hit";
+      hit.innerHTML = `
+        <div class="line1">
+          <span class="badge">${escapeHtml(hour.time)}</span>
+          <span class="mono">${hc} ${escapeHtml(hp)}</span>
+          <span class="tag">${escapeHtml(hour.element || "")} ${escapeHtml(hour.animal || "")}</span>
+        </div>
+        <div class="line2">${escapeHtml(hour.notes || "")}</div>
+      `;
+      block.appendChild(hit);
+    }
+
+    mid.appendChild(block);
+    card.appendChild(top);
+    card.appendChild(mid);
+    wrap.appendChild(card);
+  }
+
+  return wrap;
+}
+
+function renderLookupStub(query){
+  el("dayPillar").textContent = "â€”";
+  el("clash").textContent = "â€”";
+
+  const wrap = document.createElement("div");
+  wrap.className = "gridDays";
+
+  const n = document.createElement("div");
+  n.className = "notice";
+  n.innerHTML = `
+    <b>Lookup mode</b> is wired, but you still need to paste your <span class="mono">hour_star_definitions.md</span> parsing data into this page.
+    <div style="margin-top:8px">You searched: <span class="mono">${escapeHtml(query)}</span></div>
+    <div style="margin-top:8px">If you want, I can extend this page to include a second textarea for <span class="mono">hour_star_definitions.md</span> and fully implement lookup UI.</div>
+  `;
+  wrap.appendChild(n);
+  return wrap;
+}
+
+function escapeHtml(s){
+  return String(s)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+/* ===========================
+   Events
+   =========================== */
+
+function setDays(n){
+  state.days = n;
+  document.querySelectorAll('#daysBtns .pill').forEach(b=>{
+    b.classList.toggle("on", Number(b.dataset.days) === n);
+  });
+}
+
+document.querySelectorAll('#daysBtns button').forEach(btn=>{
+  btn.addEventListener("click", ()=> setDays(Number(btn.dataset.days)));
+});
+
+el("btnToday").addEventListener("click", ()=>{
+  state.useToday = true;
+  el("btnToday").classList.add("on");
+  el("btnPick").classList.remove("on");
+  // set datePicker to today for convenience
+  const t = new Date();
+  el("datePicker").value = `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
+});
+
+el("btnPick").addEventListener("click", ()=>{
+  state.useToday = false;
+  el("btnPick").classList.add("on");
+  el("btnToday").classList.remove("on");
+});
+
+// Star dropdown selection - populate query field
+el("starDropdown").addEventListener("change", ()=>{
+  const selected = el("starDropdown").value;
+  if(selected) {
+    el("query").value = selected;
+  }
+});
+el("clearBtn").addEventListener("click", ()=>{
+  el("output").innerHTML = `<div class="notice">Cleared.</div>`;
+  el("dayPillar").textContent = "â€”";
+  el("clash").textContent = "â€”";
+  setStatus("Ready");
+});
+
+el("copyBtn").addEventListener("click", async ()=>{
+  const txt = el("output").innerText;
+  try{
+    await navigator.clipboard.writeText(txt);
+    setStatus("Copied output to clipboard âœ…");
+  }catch(e){
+    setStatus("Copy failed (iOS may block clipboard). Select text manually.", true);
+  }
+});
+
+el("demoBtn").addEventListener("click", async ()=>{
+  el("refMd").value = BUILT_IN_REFERENCE_TABLE;
+  setStatus("Built-in Reference Table loaded - ready to use!");
+});
+
+el("runBtn").addEventListener("click", ()=>{
+  try{
+    const md = el("refMd").value;
+    const dayData = parseHourReferenceTable(md);
+
+    if(!Object.keys(dayData).length){
+      setStatus("No day pillars parsed. Paste Hour Reference Table.md first.", true);
+      el("output").innerHTML = `<div class="notice err">I couldnâ€™t parse any day sections. Make sure the file contains headings like <span class="mono">**Ren Wu Day**</span> and a markdown table.</div>`;
+      return;
+    }
+
+    const mode = el("mode").value;
+    const query = el("query").value.trim();
+
+    let startDateUTC;
+    if(state.useToday){
+      const now = new Date();
+      startDateUTC = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+    }else{
+      const dp = el("datePicker").value || query; // allow typed date if user pasted into query field accidentally
+      startDateUTC = parseDateFlexible(dp || el("datePicker").value);
+    }
+
+    const numDays = Math.max(1, Number(state.days||1));
+
+    let view;
+    if(mode === "normal"){
+      const isTodayMode = state.useToday;
+      view = renderNormal(dayData, startDateUTC, numDays, isTodayMode);
+      setStatus(`Rendered ${numDays} day(s).`);
+    }else if(mode === "star"){
+      if(!query) throw new Error("Enter a star name for Star Search.");
+      view = renderStarSearch(dayData, startDateUTC, numDays, query);
+      setStatus(`Star search complete.`);
+    }else{
+      if(!query) throw new Error("Enter a star name to look up.");
+      view = renderLookupStub(query);
+      setStatus(`Lookup UI shown (definitions not yet wired).`);
+    }
+
+    el("output").innerHTML = "";
+    el("output").appendChild(view);
+
+  }catch(err){
+    setStatus(err.message || String(err), true);
+    el("output").innerHTML = `<div class="notice err"><b>Error:</b> ${escapeHtml(err.message || String(err))}</div>`;
+  }
+});
+
+// initialize date picker to today
+(function init(){
+  const t = new Date();
+  el("datePicker").value = `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
+  // Load built-in reference table
+  el("refMd").value = BUILT_IN_REFERENCE_TABLE;
+})();
+</script>
+</body>
+</html>
+
