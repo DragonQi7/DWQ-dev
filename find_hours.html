@@ -1604,6 +1604,42 @@ const BUILT_IN_REFERENCE_TABLE = `**Gui Mao Day**
 | 7 pm–8:59 pm | Wu Xu | Earth | Dog | Golden Lock |
 | 9 pm–10:59 pm | Ji Hai | Earth | Pig | Day Establish Star; Day Punishment |`;
 
+// Star Definitions for Lookup Mode
+const STAR_DEFINITIONS = {
+  "Heavenly Virtue": { category: "⭐ Auspicious Stars / Deities", chinese: "天德", description: "Brings blessings, protection, and the ability to resolve conflicts. Excellent for most undertakings." },
+  "Golden Lock": { category: "⭐ Auspicious Stars / Deities", chinese: "金匮", description: "Symbol of wealth, prosperity, and abundance. Good for financial or business matters." },
+  "Heavenly Noble": { category: "⭐ Auspicious Stars / Deities", chinese: "天乙贵人", description: "A benefactor star. Indicates support from powerful helpers, mentors, or 'noble people.'" },
+  "Jade Hall": { category: "⭐ Auspicious Stars / Deities", chinese: "玉堂", description: "A star of elegance, learning, and stability. Good for education, ceremonies, and building foundations." },
+  "Bright Hall": { category: "⭐ Auspicious Stars / Deities", chinese: "明堂", description: "Symbol of clarity and recognition. Excellent for leadership, official matters, and career visibility." },
+  "Red Phoenix": { category: "⭐ Auspicious Stars / Deities", chinese: "朱雀", description: "Star of communication, announcements, and celebrations. Good for weddings, signing contracts, publicity." },
+  "Green Dragon": { category: "⭐ Auspicious Stars / Deities", chinese: "青龙", description: "A very auspicious star for growth, expansion, and smooth progress in endeavors." },
+  "Spirit": { category: "⚖️ Neutral / Double-Edged Influences", chinese: "天后 / 太阴", description: "Relates to intuition, spirituality, and feminine influence. Good for divination, meditation, healing." },
+  "Life": { category: "⚖️ Neutral / Double-Edged Influences", chinese: "天喜 / 天寿", description: "Star of vitality, joy, and life force. Auspicious for health, relationships, and new beginnings." },
+  "Life Governor": { category: "⚖️ Neutral / Double-Edged Influences", chinese: "天官", description: "Symbol of authority and guidance. Good for leadership, official matters, and promotions." },
+  "White Tiger": { category: "⛓️ Restrictive / Challenging Stars", chinese: "白虎", description: "Fierce energy; associated with injuries, accidents, or disputes. Used cautiously." },
+  "Black Tortoise": { category: "⛓️ Restrictive / Challenging Stars", chinese: "玄武", description: "Linked with secrecy, theft, or hidden problems. Avoid for financial/legal matters." },
+  "Sky Horse": { category: "⛓️ Restrictive / Challenging Stars", chinese: "天马", description: "A star of movement and change. Great for travel, relocation, business expansion, but unstable for long-term security." },
+  "Jail": { category: "⛓️ Restrictive / Challenging Stars", chinese: "勾陈 / 天狱", description: "Restriction, delays, confinement. Not suitable for starting major projects." },
+  "Day Punishment": { category: "⛓️ Restrictive / Challenging Stars", chinese: "日刑", description: "Indicates conflicts, punishments, or misunderstandings. Best avoided for negotiations." },
+  "Day Harm": { category: "⛓️ Restrictive / Challenging Stars", chinese: "日害", description: "Suggests hidden obstacles or harm. Activities may not go as planned." },
+  "Day Breaker": { category: "⛓️ Restrictive / Challenging Stars", chinese: "日破", description: "One of the most inauspicious; activities started may fail, collapse, or be undone." },
+  "Grappling Hook": { category: "⛓️ Restrictive / Challenging Stars", chinese: "勾绞", description: "A restrictive star associated with entanglement, accidents, or imprisonment." },
+  "Road Emptiness": { category: "🌀 Emptiness & Eligibility", chinese: "空亡", description: "Emptiness or void; things started may lack results or continuity. Best avoided for important beginnings." },
+  "Group Emptiness": { category: "🌀 Emptiness & Eligibility", chinese: "旬空", description: "Similar to Road Emptiness, but tied to cycles. Indicates temporary void or lack of support." },
+  "Non Eligible Day": { category: "🌀 Emptiness & Eligibility", chinese: "不将", description: "Day is weak in supportive influences; unsuitable for important matters." },
+  "Eligible Day": { category: "🌀 Emptiness & Eligibility", chinese: "将星", description: "A balanced, neutral day; suitable for general activities." },
+  "Happy Spirit": { category: "⭐ Auspicious Stars / Deities", chinese: "天喜", description: "Brings joy, celebration, and positive energy. Good for social events and creative endeavors." },
+  "Day Horse": { category: "⛓️ Restrictive / Challenging Stars", chinese: "天马", description: "Movement and change energy. Good for travel but can indicate instability." },
+  "Day Wealth": { category: "⭐ Auspicious Stars / Deities", chinese: "日财", description: "Financial prosperity and abundance. Excellent for money-related activities." },
+  "Day Establish Star": { category: "⭐ Auspicious Stars / Deities", chinese: "建星", description: "Stability and establishment. Good for starting new projects or businesses." },
+  "Day Combine": { category: "⭐ Auspicious Stars / Deities", chinese: "日合", description: "Harmony and cooperation. Good for partnerships and relationships." },
+  "Heavenly Officer": { category: "⚖️ Neutral / Double-Edged Influences", chinese: "天官", description: "Authority and official matters. Good for government or bureaucratic dealings." },
+  "Prosperity Star": { category: "⭐ Auspicious Stars / Deities", chinese: "禄星", description: "Career success and prosperity. Excellent for job-related matters." },
+  "Heavenly Punishment": { category: "⛓️ Restrictive / Challenging Stars", chinese: "天刑", description: "Punishment or legal issues. Best avoided for legal matters." },
+  "Sky Jail": { category: "⛓️ Restrictive / Challenging Stars", chinese: "天牢", description: "Confinement and restriction. Not suitable for travel or new beginnings." },
+  "Precious Light": { category: "⭐ Auspicious Stars / Deities", chinese: "宝光", description: "Rare and precious opportunities. Very auspicious for important decisions." }
+};
+
 // Reference date: Sep 10, 2025 = Ren Wu
 const REFERENCE_DATE = new Date(Date.UTC(2025, 8, 10)); // months 0-based; use UTC to avoid TZ drift
 const REFERENCE_STEM_INDEX = 8;  // Ren
@@ -2004,14 +2040,99 @@ function renderLookupStub(query){
   const wrap = document.createElement("div");
   wrap.className = "gridDays";
 
-  const n = document.createElement("div");
-  n.className = "notice";
-  n.innerHTML = `
-    <b>Lookup mode</b> is wired, but you still need to paste your <span class="mono">hour_star_definitions.md</span> parsing data into this page.
-    <div style="margin-top:8px">You searched: <span class="mono">${escapeHtml(query)}</span></div>
-    <div style="margin-top:8px">If you want, I can extend this page to include a second textarea for <span class="mono">hour_star_definitions.md</span> and fully implement lookup UI.</div>
+  const trimmedQuery = query.trim().toLowerCase();
+  if (!trimmedQuery) {
+    const n = document.createElement("div");
+    n.className = "notice";
+    n.innerHTML = `
+      <b>Lookup mode</b> - Search for hour star definitions
+      <div style="margin-top:8px">Enter a star name (e.g., "Heavenly Noble", "White Tiger", "Road Emptiness") to see its meaning and category.</div>
+      <div style="margin-top:8px">You can also search by keywords like "wealth", "auspicious", "restriction", etc.</div>
+    `;
+    wrap.appendChild(n);
+    return wrap;
+  }
+
+  // Search for matching stars
+  const matches = [];
+  for (const [starName, data] of Object.entries(STAR_DEFINITIONS)) {
+    const starLower = starName.toLowerCase();
+    const descLower = data.description.toLowerCase();
+    const categoryLower = data.category.toLowerCase();
+    const chineseLower = data.chinese.toLowerCase();
+
+    if (starLower.includes(trimmedQuery) ||
+        descLower.includes(trimmedQuery) ||
+        categoryLower.includes(trimmedQuery) ||
+        chineseLower.includes(trimmedQuery)) {
+      matches.push({ name: starName, ...data });
+    }
+  }
+
+  if (matches.length === 0) {
+    const n = document.createElement("div");
+    n.className = "notice";
+    n.innerHTML = `
+      <b>No matches found</b>
+      <div style="margin-top:8px">You searched: <span class="mono">${escapeHtml(query)}</span></div>
+      <div style="margin-top:8px">Try searching for star names like "Heavenly Noble", "White Tiger", or keywords like "auspicious", "wealth", "restriction".</div>
+    `;
+    wrap.appendChild(n);
+    return wrap;
+  }
+
+  // Group matches by category
+  const categories = {};
+  matches.forEach(match => {
+    if (!categories[match.category]) {
+      categories[match.category] = [];
+    }
+    categories[match.category].push(match);
+  });
+
+  // Display results grouped by category
+  for (const [category, stars] of Object.entries(categories)) {
+    const catDiv = document.createElement("div");
+    catDiv.style.marginBottom = "20px";
+
+    const catTitle = document.createElement("h3");
+    catTitle.textContent = category;
+    catTitle.style.marginBottom = "10px";
+    catTitle.style.color = "#666";
+    catDiv.appendChild(catTitle);
+
+    stars.forEach(star => {
+      const starDiv = document.createElement("div");
+      starDiv.style.marginBottom = "15px";
+      starDiv.style.padding = "12px";
+      starDiv.style.border = "1px solid #ddd";
+      starDiv.style.borderRadius = "6px";
+      starDiv.style.backgroundColor = "#fafafa";
+
+      starDiv.innerHTML = `
+        <div style="font-weight: bold; font-size: 16px; color: #333; margin-bottom: 4px;">
+          ${star.name} (${star.chinese})
+        </div>
+        <div style="color: #666; font-size: 14px;">
+          ${star.description}
+        </div>
+      `;
+
+      catDiv.appendChild(starDiv);
+    });
+
+    wrap.appendChild(catDiv);
+  }
+
+  // Add summary
+  const summary = document.createElement("div");
+  summary.className = "notice";
+  summary.style.marginTop = "20px";
+  summary.innerHTML = `
+    <b>Found ${matches.length} star${matches.length !== 1 ? 's' : ''} matching "${escapeHtml(query)}"</b>
   `;
-  wrap.appendChild(n);
+  wrap.appendChild(summary);
+
   return wrap;
 }
 
