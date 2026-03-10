@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon's Way Qigong® — Program Proposal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep:       #0c1a0f;
+      --forest:     #1a3a2a;
+      --jade:       #2d6a4f;
+      --sage:       #52796f;
+      --gold:       #d4a937;
+      --gold-light: #f0d68a;
+      --cream:      #faf8f0;
+      --warm:       #f5efe0;
+      --text:       #2c2c2c;
+      --text-light: #5a5a5a;
+      --loopwell:   #3a7ca5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── UTILITY ── */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--jade);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .center { text-align: center; }
+
+    /* ────────────────────────────────────────
+       HERO / COVER
+    ──────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #0c1a0f 0%, #1a3a2a 40%, #0f2018 100%);
+      padding: 80px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(212,169,55,0.08) 0%, transparent 70%);
+    }
+    .hero-logo {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 40px;
+      display: inline-block;
+      background: var(--cream);
+      padding: 32px 50px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .hero-logo img {
+      max-width: 440px;
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .hero-logo:hover img {
+      transform: scale(1.03);
+    }
+    @media (max-width: 768px) {
+      .hero-logo {
+        padding: 24px 36px;
+      }
+      .hero-logo img {
+        max-width: 300px;
+      }
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,169,55,0.15);
+      border: 1px solid rgba(212,169,55,0.35);
+      border-radius: 30px;
+      padding: 7px 20px;
+      margin-bottom: 28px;
+    }
+    .hero-badge span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240,214,138,0.6);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero h1 em { color: var(--gold-light); font-style: italic; }
+    .hero-tagline {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .hero-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      padding: 8px 20px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .hero-pill strong { color: var(--gold-light); }
+
+    /* ── DIVIDER ── */
+    .gold-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border: none;
+      margin: 0;
+    }
+
+    /* ────────────────────────────────────────
+       INTRO PROPOSAL STATEMENT
+    ──────────────────────────────────────── */
+    .intro-statement {
+      background: var(--warm);
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .intro-statement-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .intro-statement h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--forest);
+      margin-bottom: 20px;
+    }
+    .intro-statement p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+    .intro-statement .highlight {
+      color: var(--jade);
+      font-weight: 600;
+    }
+
+    /* ────────────────────────────────────────
+       ABOUT DRAGON'S WAY QIGONG
+    ──────────────────────────────────────── */
+    .about-dwq {
+      background: linear-gradient(160deg, #0c1a0f 0%, #1a3a2a 60%, #0f2018 100%);
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-dwq::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(212,169,55,0.07) 0%, transparent 65%);
+    }
+    .about-dwq-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .about-dwq .section-label { color: var(--gold-light); }
+    .about-dwq h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.3;
+    }
+    .about-dwq h2 em { color: var(--gold-light); font-style: italic; }
+    .about-dwq p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.9;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .about-dwq p strong { color: var(--gold-light); font-weight: 600; }
+    .about-dwq .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 48px 0;
+    }
+    .about-pillar {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(212,169,55,0.2);
+      border-radius: 14px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .about-pillar .pillar-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .about-pillar h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+    .about-pillar p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .about-dwq .about-quote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 28px;
+      margin: 40px auto;
+      max-width: 680px;
+      background: rgba(212,169,55,0.06);
+      border-radius: 0 10px 10px 0;
+    }
+    .about-dwq .about-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.9);
+      margin: 0 0 10px;
+    }
+    .about-dwq .about-quote cite {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      font-style: normal;
+      letter-spacing: 0.05em;
+    }
+
+    /* ────────────────────────────────────────
+       VIDEO EMBED
+    ──────────────────────────────────────── */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 0 auto 48px;
+      max-width: 760px;
+      border: 1px solid rgba(212,169,55,0.25);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.5);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ────────────────────────────────────────
+       ABOUT GRAND MASTER NAN LU
+    ──────────────────────────────────────── */
+    .about-gml {
+      background: #0d1c14;
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-gml::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(212,169,55,0.05) 0%, transparent 60%);
+    }
+    .about-gml-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .about-gml .section-label { color: var(--gold-light); }
+    .about-gml h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .about-gml h2 em { color: var(--gold-light); font-style: italic; }
+    .about-gml .gml-subtitle {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 48px;
+      letter-spacing: 0.03em;
+    }
+    .about-gml p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.95;
+      margin-bottom: 20px;
+    }
+    .about-gml p strong { color: var(--gold-light); font-weight: 600; }
+    .gml-quote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 28px;
+      margin: 40px auto;
+      max-width: 680px;
+      background: rgba(212,169,55,0.06);
+      border-radius: 0 10px 10px 0;
+    }
+    .gml-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 10px;
+    }
+    .gml-quote cite {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-style: normal;
+      letter-spacing: 0.05em;
+    }
+    .gml-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+    .gml-cred {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,169,55,0.18);
+      border-radius: 10px;
+      padding: 18px 28px;
+      text-align: center;
+      min-width: 160px;
+    }
+    .gml-cred .gc-n {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+    .gml-cred .gc-d {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    /* ────────────────────────────────────────
+       VIDEO FEATURE
+    ──────────────────────────────────────── */
+    .video-feature {
+      background: #080f0a;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .video-feature-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .video-feature .section-label { color: var(--gold-light); }
+    .video-feature h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .video-feature .video-feature-inner > p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ────────────────────────────────────────
+       QI IS REAL
+    ──────────────────────────────────────── */
+    .qi-real {
+      background: linear-gradient(160deg, #071510 0%, #0f2318 60%, #071510 100%);
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .qi-real::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 20%, rgba(212,169,55,0.09) 0%, transparent 60%);
+    }
+    .qi-real-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .qi-real .section-label { color: var(--gold-light); }
+    .qi-real h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.3;
+    }
+    .qi-real h2 em { color: var(--gold-light); font-style: italic; }
+    .qi-real p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.9;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .qi-real p strong { color: #fff; font-weight: 600; }
+    .qi-four {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .qi-tile {
+      background: rgba(212,169,55,0.08);
+      border: 1px solid rgba(212,169,55,0.25);
+      border-radius: 12px;
+      padding: 0 0 18px;
+      text-align: center;
+      min-width: 148px;
+      overflow: hidden;
+    }
+    .qi-tile img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .qt-label {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .qi-real .qi-quote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 28px;
+      margin: 36px auto;
+      max-width: 680px;
+      background: rgba(212,169,55,0.06);
+      border-radius: 0 10px 10px 0;
+    }
+    .qi-real .qi-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 10px;
+    }
+    .qi-real .qi-quote cite {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-style: normal;
+      letter-spacing: 0.05em;
+    }
+    .qi-closer {
+      font-size: 1.12rem !important;
+      color: rgba(255,255,255,0.88) !important;
+      margin-top: 8px !important;
+    }
+
+    /* ────────────────────────────────────────
+       WHO IT'S FOR
+    ──────────────────────────────────────── */
+    .who {
+      padding: 72px 24px;
+      background: var(--cream);
+    }
+    .who-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .who h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .who > .who-inner > p {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .who-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 24px;
+      border-left: 4px solid var(--jade);
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+    }
+    .who-card .icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+    .who-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .who-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .who-card:nth-child(4) {
+      display: none;
+    }
+    .who-card:nth-child(6) .icon::before {
+      content: "👨‍👩‍👧";
+      font-size: 1.8rem;
+    }
+    .who-card:nth-child(6) .icon {
+      font-size: 0;
+    }
+    .who-card:nth-child(7) .icon::before {
+      content: "🎓";
+      font-size: 1.8rem;
+    }
+    .who-card:nth-child(7) .icon {
+      font-size: 0;
+    }
+
+    /* ────────────────────────────────────────
+       PROGRAM OVERVIEW STRIP
+    ──────────────────────────────────────── */
+    .prog-strip {
+      background: linear-gradient(135deg, #0a0e1a 0%, #122015 50%, #0a0e1a 100%);
+      padding: 56px 24px;
+    }
+    .prog-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .prog-item {}
+    .prog-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .prog-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 4px;
+    }
+    .prog-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+    .prog-item + .prog-item {
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ────────────────────────────────────────
+       WHAT YOU WILL LEARN
+    ──────────────────────────────────────── */
+    .learn {
+      padding: 80px 24px;
+      background: var(--warm);
+    }
+    .learn-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .learn h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .learn > .learn-inner > p {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 620px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+    }
+    .learn-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 3px solid var(--gold);
+    }
+    .learn-card .lc-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+    .learn-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+    .learn-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .learn-card ul li {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      padding: 6px 0;
+      padding-left: 18px;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      line-height: 1.5;
+    }
+    .learn-card ul li:last-child { border-bottom: none; }
+    .learn-card ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--jade);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    /* ────────────────────────────────────────
+       WEEK-BY-WEEK
+    ──────────────────────────────────────── */
+    .weeks {
+      padding: 80px 24px;
+      background: var(--cream);
+    }
+    .weeks h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .weeks > .weeks-intro {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+    .weeks-timeline {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .weeks-timeline::before {
+      content: "";
+      position: absolute;
+      left: 48px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--jade), var(--gold), var(--jade));
+    }
+    .week-row {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 28px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .week-dot {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: var(--jade);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(45,106,79,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .week-content {
+      flex: 1;
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px 26px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+    }
+    .week-content .wk-meta {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--jade);
+      margin-bottom: 6px;
+    }
+    .week-row:last-child .wk-meta { color: var(--gold); }
+    .week-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .week-content p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
+    .week-content .corporate-note {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(45,106,79,0.08);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      color: var(--jade);
+      font-weight: 600;
+    }
+
+    /* ────────────────────────────────────────
+       WHAT'S INCLUDED
+    ──────────────────────────────────────── */
+    .included {
+      padding: 80px 24px;
+      background: var(--forest);
+      color: #fff;
+    }
+    .included h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .included > p {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      margin: 0 auto 56px;
+      line-height: 1.8;
+    }
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .included-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .included-card .ic-img {
+      width: 100%;
+      height: 220px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Placeholder styling — replace src with actual photo */
+    .included-card .ic-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .included-card .ic-img .photo-placeholder {
+      font-size: 3rem;
+      opacity: 0.3;
+    }
+    .included-card .ic-img .photo-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .included-card .ic-body { padding: 24px 24px; }
+    .included-card .ic-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .included-card .ic-badge.optional {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+    }
+    .included-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .included-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+    }
+    .included-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+      max-width: 840px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .included-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .included-list li .li-icon { font-size: 1.2rem; }
+
+    /* ────────────────────────────────────────
+       PRICING
+    ──────────────────────────────────────── */
+    .pricing {
+      padding: 80px 24px;
+      background: var(--warm);
+      text-align: center;
+    }
+    .pricing-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .pricing h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+    .pricing > .pricing-inner > p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .price-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 44px 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      border: 2px solid rgba(212,169,55,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--jade), var(--gold));
+    }
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-amount sup {
+      font-size: 1.8rem;
+      vertical-align: super;
+      font-weight: 400;
+    }
+    .price-sub {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+    .price-includes {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .price-includes li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .price-includes li:last-child { border-bottom: none; }
+    .price-includes li .check {
+      color: var(--jade);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .price-note {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-style: italic;
+      border-top: 1px solid rgba(0,0,0,0.07);
+      padding-top: 18px;
+      line-height: 1.7;
+    }
+    .per-session {
+      background: var(--warm);
+      border-radius: 10px;
+      padding: 12px 20px;
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--jade);
+      font-weight: 600;
+    }
+
+    /* ────────────────────────────────────────
+       WHAT TO WEAR / BRING
+    ──────────────────────────────────────── */
+    .prepare {
+      padding: 80px 24px;
+      background: var(--cream);
+    }
+    .prepare-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .prepare-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--forest);
+      margin-bottom: 24px;
+    }
+    .prepare-list {
+      list-style: none;
+      padding: 0;
+    }
+    .prepare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .prepare-list li:last-child { border-bottom: none; }
+    .prepare-list li .p-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .prepare-list li strong { color: var(--forest); display: block; font-size: 0.9rem; }
+    .prepare-list li span { font-size: 0.87rem; color: var(--text-light); }
+
+    /* ────────────────────────────────────────
+       FAQ
+    ──────────────────────────────────────── */
+    .faq {
+      padding: 80px 24px;
+      background: var(--warm);
+    }
+    .faq h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1020px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 14px;
+      padding: 26px 24px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--gold);
+    }
+    .faq-q {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
+
+    /* ────────────────────────────────────────
+       INSTRUCTOR
+    ──────────────────────────────────────── */
+    .instructor {
+      padding: 80px 24px;
+      background: var(--cream);
+    }
+    .instructor-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .instructor-photo {
+      flex-shrink: 0;
+      position: relative;
+    }
+    .instructor-photo img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 5%;
+      border: 3px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      display: block;
+      margin-bottom: 14px;
+    }
+    .instructor-photo .photo-ph {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: var(--warm);
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin-bottom: 14px;
+    }
+    .instructor-photo .badge-img {
+      position: absolute;
+      bottom: -5px;
+      right: -35px;
+      max-width: 55px;
+      width: 100%;
+      height: auto;
+      border: none;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    }
+    .instructor-text .section-label { margin-bottom: 6px; }
+    .instructor-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--forest);
+      margin-bottom: 16px;
+    }
+    .instructor-text p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .cred-row {
+      display: flex;
+      gap: 28px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .cred-item { text-align: center; }
+    .cred-item .cn {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--jade);
+      display: block;
+      line-height: 1;
+    }
+    .cred-item .cd {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    /* ────────────────────────────────────────
+       TESTIMONIALS
+    ──────────────────────────────────────── */
+    .testimonials {
+      background: var(--forest);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .testimonials .section-label { color: var(--gold-light); }
+    .testimonials h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      margin-bottom: 48px;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .t-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: left;
+    }
+    .t-card blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .t-card cite {
+      font-style: normal;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* ────────────────────────────────────────
+       CTA / REGISTER
+    ──────────────────────────────────────── */
+    .cta {
+      padding: 80px 24px;
+      text-align: center;
+      background: linear-gradient(rgba(12,26,15,0.9), rgba(12,26,15,0.95)),
+        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .cta-inner { max-width: 700px; margin: 0 auto; }
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+    .cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .cta-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .cta-detail {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 20px 14px;
+    }
+    .cta-detail .dl {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .cta-detail .dv {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 15px 44px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.3s;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+    .cta-sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 18px;
+    }
+
+    /* ────────────────────────────────────────
+       FOOTER
+    ──────────────────────────────────────── */
+    footer {
+      background: var(--deep);
+      padding: 40px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+    }
+    footer .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 8px;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    /* ────────────────────────────────────────
+       RESPONSIVE
+    ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .prepare-inner { grid-template-columns: 1fr; }
+      .instructor-inner { grid-template-columns: 1fr; }
+      .instructor-photo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .weeks-timeline::before { left: 28px; }
+      .week-dot { width: 40px; height: 40px; font-size: 1rem; }
+      .prog-item + .prog-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+      .price-card { padding: 32px 24px; }
+      .price-amount { font-size: 3rem; }
+    }
+    @media (max-width: 480px) {
+      .cta-details { grid-template-columns: 1fr 1fr; }
+      .learn-grid, .who-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HERO / COVER
+  ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-logo">
+      <img src="website images/dragons_way_logo_tagline_red.png" alt="Dragon's Way Qigong®">
+    </div>
+    <h1>Dragon's Way Qigong®<br><em>A 6-Week Transformational Program</em></h1>
+    <p class="hero-tagline">
+      Ancient wisdom — made practical for modern stress, burnout, and the everyday life demands.
+    </p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>6 Sessions</strong> · Weekly</div>
+      <div class="hero-pill"><strong>1.5 Hours</strong> · Per Session</div>
+      <div class="hero-pill"><strong>$239</strong> · Includes Guidebook</div>
+      <div class="hero-pill"><strong>Herbs</strong> · Optional Add-On</div>
+    </div>
+  </section>
+  <hr class="gold-divider">
+
+  <!-- ══════════════════════════════════════
+       INTRO PROPOSAL STATEMENT
+  ══════════════════════════════════════ -->
+  <section class="intro-statement">
+    <div class="intro-statement-inner">
+      <span class="section-label center">Why Dragon's Way Qigong®</span>
+      <h2>A Program That Meets People Where They Are</h2>
+      <p>
+        Dragon's Way Qigong® is a <span class="highlight">proven 6-week program</span> that addresses the real challenges people carry: stress, burnout, emotional fatigue, disrupted sleep, and the feeling of running on empty. It works precisely because it allows you to tap into your innate healing abilities — it gives you a framework for understanding your own body and energy.
+      </p>
+      <p>
+        Dragon's Way Qigong® is a <span class="highlight">journey of self-discovery</span>. Each session deepens your personal awareness and expands your understanding of who you are. Participants with dedicated practice have a growing realization that they are not separate from nature. They <em>are part of</em> nature. And that changes everything.
+      </p>
+      <p>
+        So what nature can do, you can do. Dragon's Way Qigong® helps you reconnect with the natural flow of energy within you and around you. It is a practice that helps you find balance in the midst of modern chaos. It is a practice that helps you tap into your own healing abilities and cultivate a deeper sense of well-being.
+      </p>
+      <p>
+        In our Dragon's Way Qigong® program, we care about each student's journey —
+        helping them understand Qi and how it can benefit their life. That understanding builds
+        a stronger, more connected group where real transformation happens together.
+      </p>
+      <p>
+        What kind of practice truly addresses the relationship between your body, your mind, your organs,
+        and the entire natural world — from how you eat, all the way to how you experience Qi directly?
+        Dragon Way Qigong is based on Wu Ming Qigong movements that help the body clear internal blockages and restore smooth flow. It allows the body to naturally release what has been stored, easing stress, relieving pain, and dissolving tension.
+      </p>
+      <p>
+        Each movement directly stimulates the body's meridians (energy network), allowing Qi to flow smoothly. When Qi flows smoothly, the body can rebalance itself. And when the body is in balance, healing happens.
+      </p>
+      <blockquote style="font-family:'Playfair Display',serif; font-style:italic; color:var(--jade); font-size:1.1rem; line-height:1.7; border-left:3px solid var(--gold); padding-left:20px; margin:24px 0;">
+        &ldquo;Don&rsquo;t think of it as a disease — just think of it as your body&rsquo;s story of imbalance.&rdquo;
+        <cite style="display:block; margin-top:8px; font-style:normal; font-size:0.82rem; color:var(--text-light);">— Grand Master Lu</cite>
+      </blockquote>
+      <p>
+        Emotions, Qi, and meridians are all connected — and when they fall out of balance, the body will show signs. <span class="highlight">Level then Balance. Once balance is achieved, harmony follows.</span> Then life carries you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ABOUT DRAGON'S WAY QIGONG
+  ══════════════════════════════════════ -->
+  <section class="about-dwq">
+    <div class="about-dwq-inner">
+      <span class="section-label center">About the Program</span>
+      <h2>Dragon's Way Qigong® Carries the Spirit<br><em>of Chinese Culture Forward</em></h2>
+
+      <div class="video-wrapper">
+        <iframe src="https://player.vimeo.com/video/1152667744?badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="About Dragon's Way Qigong"></iframe>
+      </div>
+
+      <p>
+        Chinese civilization has given the world two extraordinary gifts that have never stopped being relevant: <strong>Chinese Medicine</strong> as a healing art — addressing the whole person across body, mind, and spirit — and <strong>Chinese Martial Arts</strong> as a path of personal cultivation, demanding discipline, presence, and a sustained relationship with one&rsquo;s own inner power. Dragon&rsquo;s Way Qigong&reg; was created at the intersection of both.
+      </p>
+
+      <p>
+        At the heart of Chinese culture is the mystery of the Dragon — not as myth, but as symbol of <strong>invisible power</strong>. The dragon moves between the visible world and the invisible world. It is unfathomable, timeless and mysterious. The Dragon contains a mystery and connects with the liver meridians. You know it is there, yet you cannot see it. It appears in your dreams, in your Qi, in the profound shifts that happen when a student goes from understanding energy <em>intellectually</em> to experiencing it <em>directly</em>. That is the spirit of the Dragon this program carries.
+      </p>
+
+      <p>
+        Dragon's Way Qigong® was built on one question: <strong>What kind of practice truly addresses the relationship between your body, mind, and the consciousness?</strong> The answer unfolds across every level of the program — from the wisdom of how you eat, all the way to the direct, personal experience of Qi itself.
+      </p>
+
+      <div class="about-quote">
+        <p>&ldquo;Dragon&rsquo;s Way Qigong&reg; is not just an exercise program, not a new scientific technique, not another wellness trend. This program shows people the source of life itself &mdash; that both the visible world and the invisible world are real. Tell me what kind of program as of today represents this kind of consciousness.&rdquo;</p>
+        <cite>— Grand Master Lu, Dragon&rsquo;s Way Qigong® Founder</cite>
+      </div>
+
+      <p>
+        Dragon's Way Qigong® is powerful for one fundamental reason: <strong>the program itself follows natural law.</strong> It is not built on trend, theory, or technique alone — it is built on the same forces that govern all of life. Through this program, people begin to discover something most never encounter: that the invisible world is just as real as the visible one. The Qi, the source, the life force — these are not concepts. They are natural law. And that is what Dragon's Way Qigong® carries forward.
+      </p>
+
+      <div class="about-quote">
+        <p>&ldquo;The goal is to create balance. Yin and Yang must be balanced. When balance is achieved and Qi flows freely &mdash; disease cannot enter.&rdquo;</p>
+        <cite>— Grand Master Lu</cite>
+      </div>
+
+      <p>
+        Through understanding Qi, practicing correct movements with repeated effort, and following the guidance of a lineage thousands of years in the making — the student gains <strong>real, lasting health benefits</strong>. Not theory. Not temporary relief. A genuine shift in how the body functions, how energy flows, and how life is experienced. <strong>Every technique is real.</strong> The same life force that has sustained humanity across millennia is what this program teaches you to recognize, cultivate, and embody.
+      </p>
+    </div>
+  </section>
+  <hr class="gold-divider">
+
+  <!-- ══════════════════════════════════════
+       ABOUT GRAND MASTER NAN LU
+  ══════════════════════════════════════ -->
+  <section class="about-gml">
+    <div class="about-gml-inner">
+      <span class="section-label center">About the Founder</span>
+      <h2>Grand Master Nan Lu —<br><em>A Living Tradition</em></h2>
+      <p class="gml-subtitle">Founder, Dragon's Way Qigong® &amp; Wu Ming Qigong | TCM World Foundation</p>
+
+      <p>
+        Grand Master Nan Lu is a <strong>living Taoist master, healer, and teacher</strong> — and one of the most rare and authentic voices in traditional Chinese healing alive today. He is the founder of Dragon&rsquo;s Way Qigong&reg; and the carrier of the <strong>Wu Ming Qigong lineage</strong> in the West. In a world full of wellness programs and self-proclaimed masters, Grand Master Lu is, simply put, <strong>the real deal</strong>.
+      </p>
+
+      <p>
+        His lineage is not a modern synthesis or a curated wellness approach. Grand Master Lu himself teaches that there are three kinds of Qigong systems in the world — and Wu Ming Qigong belongs to the first: <strong>the traditional system, transmitted master to student, generation to generation, traceable all the way back through the lineages.</strong> You can follow the chain. It does not begin with him. It runs through him — from a living line that connects back to the ancient Taoist philosophers <strong>Lao Tzu</strong> and <strong>Zhuangzi</strong>.
+      </p>
+
+      <div class="gml-quote">
+        <p>&ldquo;The first qigong system is a traditional qigong system &mdash; a master passes to a student, the student passes to their student, generation to generation. You can trace back to their lineages. Our qigong, Wu Ming Qigong &mdash; the lineage is linked with Lao Tzu and Zhuang Tzu.&rdquo;</p>
+        <cite>&mdash; Grand Master Nan Lu</cite>
+      </div>
+
+      <p>
+        Grand Master Lu founded <strong>TCM World Foundation</strong> in New York with one purpose: to bring not just the techniques, but the <em>consciousness</em> of Traditional Chinese Medicine to the Western world. He has authored multiple books on Dragon's Way Qigong and trained hundreds of certified instructors who carry these teachings to students across the United States and beyond.
+      </p>
+
+      <p>
+        What distinguishes Grand Master Lu from nearly any other teacher in Qigong or integrative wellness is this: <strong>he does not teach techniques alone — he encourages to grow.</strong> Every class, every program, every conversation he offers is designed to awaken in students the direct, lived experience of Qi — that invisible yet undeniable life force that ancient Chinese masters understood as the foundation of all health, harmony, and transformation.
+      </p>
+
+      <p>
+        When you study Dragon's Way Qigong®, you are not studying a wellness trend. You are receiving something that has been <strong>preserved, passed down, and kept alive across thousands of years</strong> — for exactly this moment.
+      </p>
+
+      <div class="gml-creds">
+        <div class="gml-cred">
+          <span class="gc-n">2,500+</span>
+          <span class="gc-d">Years of Lineage</span>
+        </div>
+        <div class="gml-cred">
+          <span class="gc-n">Wu Ming</span>
+          <span class="gc-d">Qigong Tradition</span>
+        </div>
+        <div class="gml-cred">
+          <span class="gc-n">TCM World</span>
+          <span class="gc-d">Foundation, NYC</span>
+        </div>
+        <div class="gml-cred">
+          <span class="gc-n">100s</span>
+          <span class="gc-d">Certified Instructors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="gold-divider">
+
+  <!-- ══════════════════════════════════════
+       QI IS REAL
+  ══════════════════════════════════════ -->
+  <section class="qi-real">
+    <div class="qi-real-inner">
+      <span class="section-label center">About Qi</span>
+      <h2>Qi Is Real.<br><em>And Once You Experience It, Everything Changes.</em></h2>
+
+      <p>
+        There is a force coursing through your body right now. Moving through your organs, flowing through invisible channels, connecting you to the natural world and to something far larger than you can fully see. That force is <strong>Qi</strong> &mdash; and it is not a concept. It is not a metaphor. It is not a wellness trend borrowed from another culture.
+      </p>
+      <p>It is the source of your life.</p>
+
+      <div class="qi-quote">
+        <p>&ldquo;Without Qi, there is no life force. With the Qi, you are alive.&rdquo;</p>
+        <cite>&mdash; Grand Master Nan Lu</cite>
+      </div>
+
+      <p>Qi is simultaneously <strong>power, information, consciousness, and life source</strong>. It flows in your body, in nature, in the universal field &mdash; and those three streams are not separate. They are one connected whole, and you are part of it.</p>
+
+      <div class="qi-four">
+        <div class="qi-tile">
+          <img src="https://images.unsplash.com/photo-1527482937786-6608f6e14c15?w=400&q=80" alt="Lightning energy">
+          <span class="qt-label">Power</span>
+        </div>
+        <div class="qi-tile">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&q=80" alt="Cosmic field">
+          <span class="qt-label">Information</span>
+        </div>
+        <div class="qi-tile">
+          <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=400&q=80" alt="Flowing water ripples">
+          <span class="qt-label">Consciousness</span>
+        </div>
+        <div class="qi-tile">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Mountain mist">
+          <span class="qt-label">Life Source</span>
+        </div>
+      </div>
+
+      <p>Most people have heard the word. Very few have truly experienced what it means.</p>
+
+      <div class="qi-quote">
+        <p>&ldquo;You cannot just read the poetry and watch the love movie and think love exists &mdash; unless you are truly falling in love. You have to experience something real beyond the mind. Then you will understand: it&rsquo;s real, because the Qi is real.&rdquo;</p>
+        <cite>&mdash; Grand Master Nan Lu</cite>
+      </div>
+
+      <p><strong>This is what Dragon&rsquo;s Way Qigong&reg; gives you: the direct experience.</strong> From the very first practice, the program is designed not to explain Qi theoretically &mdash; but to guide you into <em>experiencing</em> it. The movements, the eating wisdom, the herbal supplements that give the body the material it needs, and the inner awareness &mdash; all of it structured to help you cross from understanding Qi as an idea to knowing it as a living reality inside your own body.</p>
+
+      <div class="qi-quote">
+        <p>&ldquo;Qigong practice gives you a stepping stone to allow you to experience that the invisible world exists. That&rsquo;s all.&rdquo;</p>
+        <cite>&mdash; Grand Master Nan Lu</cite>
+      </div>
+
+      <p>And once you experience it &mdash; even once &mdash; your understanding of your own life will shift permanently. You will begin to see why ancient masters held this knowledge as their greatest treasure. Why this practice has survived not decades, but <strong>millennia</strong>.</p>
+
+      <p class="qi-closer">
+        Qi is gold. It is the most precious thing in your life &mdash; and most people spend their entire lives without ever knowing it.<br>
+        <strong>Dragon&rsquo;s Way Qigong&reg; exists to change that.</strong>
+      </p>
+
+      <div class="qi-quote">
+        <p>Once you build a Qi practice, it is yours for your entire life. Unlike fitness, which fades the moment you stop &mdash; Qi, once cultivated, becomes a permanent resource in your body. The more you practice, the richer it becomes. That is why the ancient masters taught this first. That is why it has never stopped.</p>
+      </div>
+
+    </div>
+  </section>
+  <hr class="gold-divider">
+
+  <!-- ══════════════════════════════════════
+       WHO IT'S FOR
+  ══════════════════════════════════════ -->
+  <section class="who">
+    <div class="who-inner">
+      <span class="section-label center">Ideal Participants</span>
+      <h2>Who This Program Is Designed For</h2>
+      <p class="who-inner" style="text-align:center; color:var(--text-light); max-width:620px; margin: 0 auto 48px; line-height:1.8;">
+        Dragon's Way works for anyone — but it resonates most deeply with people who feel the weight of their responsibilities and are ready for something real.
+      </p>
+      <div class="who-grid">
+        <div class="who-card">
+          <span class="icon">💼</span>
+          <h3>Corporate Professionals &amp; High Performers</h3>
+          <p>Those living with chronic stress, back-to-back meetings, deadlines, and the emotional cost of always being "on." Qigong offers a way to recover and rebuild.</p>
+        </div>
+        <div class="who-card">
+          <span class="icon">🔥</span>
+          <h3>People Experiencing Burnout</h3>
+          <p>Persistent fatigue, foggy thinking, emotional flatness, sleep disruption. These aren't character flaws — they're Qi depletion. This program addresses the root.</p>
+        </div>
+        <div class="who-card">
+          <span class="icon">🌿</span>
+          <h3>Wellness Seekers Ready to Go Deeper</h3>
+          <p>Already interested in meditation, breathwork, or yoga but looking for something with a framework — something that connects the body, mind, and energy together.</p>
+        </div>
+        <div class="who-card">
+          <span class="icon">❤️</span>
+          <h3>Anyone Dealing With a Health Challenge</h3>
+          <p>From digestive issues to anxiety to chronic pain — many physical symptoms have energetic roots. Dragon's Way helps participants understand and address those roots.</p>
+        </div>
+        <div class="who-card">
+          <span class="icon">🧘</span>
+          <h3>No Experience Required</h3>
+          <p>Complete beginners are warmly welcome. The gentle standing movements are accessible at any age or fitness level — no flexibility, strength, or prior knowledge needed.</p>
+        </div>
+        <div class="who-card">
+          <span class="icon">�</span>
+          <h3>Parents &amp; Caregivers</h3>
+          <p>Managing your own stress while supporting others is exhausting. Learn to restore your energy daily so you can show up present and grounded for the people who need you.</p>
+        </div>
+        <div class="who-card">
+          <span class="icon">�🏢</span>
+          <h3>Students &amp; Young Professionals</h3>
+          <p>Build stress management and self-regulation skills early. Learn an energy practice that supports focus, emotional balance, and long-term wellbeing as you navigate academic and career demands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROGRAM OVERVIEW STRIP
+  ══════════════════════════════════════ -->
+  <div class="prog-strip">
+    <div class="prog-strip-inner">
+      <div class="prog-item">
+        <div class="prog-num">6</div>
+        <div class="prog-label">Weekly Sessions</div>
+        <div class="prog-sub">One session per week, same day and time</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-num">1.5</div>
+        <div class="prog-label">Hours Per Session</div>
+        <div class="prog-sub">Movement practice + teaching + discussion</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-num">5<span style="font-size:1.2rem; color: var(--gold-light);">+</span></div>
+        <div class="prog-label">Starting Group Size</div>
+        <div class="prog-sub">Small cohort to build community and momentum</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-num">10</div>
+        <div class="prog-label">Qigong Movements</div>
+        <div class="prog-sub">Learned progressively — 4 in week 1, full set by week 5</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-num">20</div>
+        <div class="prog-label">Min Daily Practice</div>
+        <div class="prog-sub">Simple home practice between sessions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       WHAT YOU WILL LEARN
+  ══════════════════════════════════════ -->
+  <section class="learn">
+    <div class="learn-inner">
+      <span class="section-label center">Curriculum Overview</span>
+      <h2>What Participants Learn</h2>
+      <p class="learn-inner" style="text-align:center; color:var(--text-light); max-width:620px; margin:0 auto 48px; line-height:1.8;">
+        Every session blends movement practice with teaching. Participants don't just practice Qigong — they understand <em>why</em> it works, and how to apply it to real life.
+      </p>
+      <div class="learn-grid">
+
+        <div class="learn-card">
+          <span class="lc-icon">⚡</span>
+          <h3>Understanding Qi — Your Life Force</h3>
+          <ul>
+            <li>What Qi is and why it matters</li>
+            <li>How Qi flows through the body's meridians</li>
+            <li>What blocked Qi feels like (symptoms, emotions, patterns)</li>
+            <li>How the body communicates through Qi</li>
+            <li>Why "healing without the mind" is possible</li>
+            <li>Your Qi, nature’s Qi, and the universal Qi — the three are your true identity, inseparable</li>
+          </ul>
+        </div>
+
+        <div class="learn-card">
+          <span class="lc-icon">🌊</span>
+          <h3>How to Build, Save &amp; Acquire Qi</h3>
+          <ul>
+            <li>Qi-building through standing postures and movement</li>
+            <li>How to conserve energy instead of wasting it</li>
+            <li>Foods and habits that support Qi</li>
+            <li>How emotions drain or replenish Qi</li>
+            <li>Using nature's cycles (seasons, moon) to charge your energy</li>
+            <li>Daily practices that maintain your Qi reserve</li>
+          </ul>
+        </div>
+
+        <div class="learn-card">
+          <span class="lc-icon">🎯</span>
+          <h3>Uses of Qi — Practical Application</h3>
+          <ul>
+            <li>Using Qi to regulate emotions under pressure</li>
+            <li>How Qi practice improves focus and decision-making</li>
+            <li>Qigong as a tool for recovery from stress and overwork</li>
+            <li>Using Qi to support the body's natural healing processes</li>
+            <li>Qi as a vehicle for personal and spiritual development</li>
+          </ul>
+        </div>
+
+        <div class="learn-card">
+          <span class="lc-icon">☯️</span>
+          <h3>Five Element Consciousness Framework</h3>
+          <ul>
+            <li>Wood · Fire · Earth · Metal · Water and their organ pairs</li>
+            <li>Each element's associated emotions and physical symptoms</li>
+            <li>How to read the body's messages using the Five Elements</li>
+            <li>Seasonal awareness — which organs need support when</li>
+            <li>Your unique elemental blueprint from birth</li>
+            <li>The organ-emotion-behavior connection in daily life</li>
+          </ul>
+        </div>
+
+        <div class="learn-card">
+          <span class="lc-icon">🏢</span>
+          <h3>Handling Stress &amp; Difficult Situations</h3>
+          <ul>
+            <li>How chronic stress depletes specific organs (kidney = fear, liver = frustration)</li>
+            <li>Conscious vs. unconscious practice — how movement rewires behavior</li>
+            <li>Qigong as an emotional exercise, not just physical</li>
+            <li>How to "put your foot down" — marching as boundary-setting</li>
+            <li>Using movement to reset after difficult interactions</li>
+            <li>Building resilience: the difference between energy management and willpower</li>
+          </ul>
+        </div>
+
+        <div class="learn-card">
+          <span class="lc-icon">🥗</span>
+          <h3>Eating for Healing &amp; Energy</h3>
+          <ul>
+            <li>Foods that nourish each organ system by season</li>
+            <li>Understanding cravings as body signals, not weaknesses</li>
+            <li>Warm, plant-forward foods that support Qi flow</li>
+            <li>How digestion connects to emotional clarity</li>
+            <li>Simple changes that align food with healing</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WEEK-BY-WEEK CURRICULUM
+  ══════════════════════════════════════ -->
+  <section class="weeks">
+    <span class="section-label center">Session by Session</span>
+    <h2>Your 6-Week Journey</h2>
+    <p class="weeks-intro">
+      Each week is mapped to a specific organ system and element of nature — so the body receives exactly what it needs, in sequence. The curriculum builds on itself; you can't rush it and you can't skip ahead.
+    </p>
+    <p style="text-align:center; font-family:'Playfair Display',serif; font-style:italic; color:var(--jade); font-size:1.05rem; max-width:620px; margin: -16px auto 40px; line-height:1.8;">
+      &ldquo;Balance, harmony, transformation &mdash; but before transformation, you have to get to balance.&rdquo;
+      <span style="display:block; font-style:normal; font-size:0.78rem; color:var(--text-light); margin-top:6px; letter-spacing:0.05em;">— Grand Master Lu</span>
+    </p>
+    <div style="text-align:center; margin:60px 0 50px; max-width:800px; margin-left:auto; margin-right:auto;">
+      <img src="website images/5 Element Framework.png" alt="5 Element Framework Chart" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+    </div>
+    <div class="weeks-timeline">
+
+      <div class="week-row">
+        <div class="week-dot">1</div>
+        <div class="week-content">
+          <div class="wk-meta">Week 1 · Opening the Path · Foundation</div>
+          <h3>What Is Qi? Starting Your Practice</h3>
+          <p>Introduction to Wu Ming Qigong. Learn the first 4 movements including Dragon Prayer (marching) and Dragon Stands Between Heaven and Earth. Introduce the Five Element Framework. Discuss what Qi is, how it moves, and what blocks it. Begin the eating-for-healing approach. Set the intention for the six weeks.</p>
+          <span class="corporate-note">💼 Corporate lens: What drains you at work — and why movement is the answer</span>
+          <span class="corporate-note" style="color:var(--jade);">&#127807; Wellness lens: Start where you are — even 10 minutes of practice opens the flow</span>
+        </div>
+      </div>
+
+      <div class="week-row">
+        <div class="week-dot">2</div>
+        <div class="week-content">
+          <div class="wk-meta">Week 2 · Wood Element · Spring · Liver &amp; Gallbladder</div>
+          <h3>🌿 Release Stress, Build Flexibility</h3>
+          <p>The liver governs the smooth flow of Qi — and is the most directly affected by chronic stress. When the liver is burdened, frustration, irritability, and rigidity follow. This week's practice and teaching focuses on releasing stuck energy, building emotional flexibility, and understanding how anger and resentment compress our energy.</p>
+          <span class="corporate-note">💼 Corporate lens: Stress, deadlines, and why your anger is costing you more than you think</span>
+          <span class="corporate-note" style="color:var(--jade);">&#127807; Wellness lens: Chronic tension, tight hips, stiff neck — your liver is speaking. This week, learn to listen.</span>
+        </div>
+      </div>
+
+      <div class="week-row">
+        <div class="week-dot">3</div>
+        <div class="week-content">
+          <div class="wk-meta">Week 3 · Water Element · Winter · Kidney &amp; Bladder</div>
+          <h3>💧 Rebuild Your Deepest Energy Reserve</h3>
+          <p>The kidneys are the foundation of all Qi in the body — your inherited energy storehouse. Fear, overwork, and pushing through exhaustion depletes this reserve. This week focuses on restoration, rebuilding stamina, addressing fear-based decision-making, and recovering from long-term energy debt.</p>
+          <span class="corporate-note">💼 Corporate lens: Why overachievers burn out — and how to refill what you've spent</span>
+          <span class="corporate-note" style="color:var(--jade);">&#127807; Wellness lens: Fatigue that sleep doesn't fix, low libido, back pain — these are signs of depleted kidney Qi. This week begins the rebuild.</span>
+        </div>
+      </div>
+
+      <div class="week-row">
+        <div class="week-dot">4</div>
+        <div class="week-content">
+          <div class="wk-meta">Week 4 · Earth Element · Late Summer · Spleen &amp; Stomach</div>
+          <h3>🌎 Ground Yourself, Improve Digestion</h3>
+          <p>Worry, overthinking, and mental overload burden the spleen and stomach — the organs of digestion, both physical and mental. This week focuses on grounding, releasing the need to control outcomes, and building the stable center that supports every other system. Digestive wellness and the relationship between food and thought.</p>
+          <span class="corporate-note">💼 Corporate lens: Overthinking costs Qi — how to process problems without losing yourself</span>
+          <span class="corporate-note" style="color:var(--jade);">&#127807; Wellness lens: Bloating, weight that won&rsquo;t move, constant worry — the earth element is out of balance. This week, you ground.</span>
+        </div>
+      </div>
+
+      <div class="week-row">
+        <div class="week-dot">5</div>
+        <div class="week-content">
+          <div class="wk-meta">Week 5 · Metal Element · Autumn · Lung &amp; Large Intestine</div>
+          <h3>🍂 Let Go of What No Longer Serves You</h3>
+          <p>The lungs govern breath — the body's constant communication with the outside world. Grief, holding on, and the inability to release burdens the lung. This week's focus is on letting go: of old habits, emotional attachments, and beliefs that limit healing. The colon is the lung's partner — physical and emotional release are connected.</p>
+          <span class="corporate-note">💼 Corporate lens: To receive new opportunities, you must first let go of old stories</span>
+          <span class="corporate-note" style="color:var(--jade);">&#127807; Wellness lens: Grief held in the body, respiratory issues, skin conditions — the lungs carry what we can&rsquo;t release. This week, you let go.</span>
+        </div>
+      </div>
+
+      <div class="week-row">
+        <div class="week-dot">6</div>
+        <div class="week-content">
+          <div class="wk-meta">Week 6 · Fire Element · Summer · Heart &amp; Small Intestine</div>
+          <h3>❤️ The Heart Is the King — Return to Joy</h3>
+          <p>The heart is the emperor of the organ system — when it is at peace, everything else follows. This final week integrates everything: practice review, the complete 10-movement sequence, and a focus on reconnecting with joy, presence, and purpose. Understanding the difference between the intuitive mind (heart) and the rational mind (head).</p>
+          <span class="corporate-note">💼 Corporate lens: Leadership that comes from the heart — and why that's not soft, it's strategic</span>
+          <span class="corporate-note" style="color:var(--jade);">&#127807; Wellness lens: Anxiety, insomnia, disconnection from joy — the heart needs peace to lead. This week, you return to yourself.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WHAT'S INCLUDED
+  ══════════════════════════════════════ -->
+  <section class="included">
+    <span class="section-label center" style="color:var(--gold-light);">Program Materials</span>
+    <h2>What's Included in Your Enrollment</h2>
+    <p>Your $239 enrollment covers everything you need to practice confidently — in class and at home.</p>
+
+    <div class="included-grid">
+
+      <!-- BOOKLET -->
+      <div class="included-card">
+        <div class="ic-img">
+          <img src="website images/DW-GuideBook.jpg" alt="Dragon's Way Qigong® Guidebook">
+        </div>
+        <div class="ic-body">
+          <span class="ic-badge">Included</span>
+          <h3>Dragon's Way Qigong® Guidebook</h3>
+          <p>Your take-home companion for the full six weeks. Covers the Five Element Consciousness Framework, all 10 Qigong movements with instructions, eating-for-healing guidance, and lifestyle principles. A reference you'll return to long after the program ends.</p>
+        </div>
+      </div>
+
+      <!-- HERBS -->
+      <div class="included-card">
+        <div class="ic-img">
+          <img src="website images/herbal supplements.jpg" alt="Dragon's Way Herbal Support" style="object-fit: contain; background: var(--warm);">
+        </div>
+        <div class="ic-body">
+          <span class="ic-badge optional">Optional Add-On</span>
+          <h3>Herbal Support</h3>
+          <p>Herbs contain unique natural essences that support the body's return to balance. For those dealing with chronic conditions, excess weight, or energy deficiency, tailored herbal support can accelerate results. Available as an optional add-on — details provided during Week 1.</p>
+        </div>
+      </div>
+
+      <!-- 6 CLASSES -->
+      <div class="included-card">
+        <div class="ic-img">
+          <img src="website images/JoinAclass.jpg" alt="Dragon's Way Qigong® Class">
+        </div>
+        <div class="ic-body">
+          <span class="ic-badge">Included</span>
+          <h3>Six Live Weekly Sessions</h3>
+          <p>1.5 hours per session. Movement instruction, form correction, concept teaching, group dialogue, and Q&amp;A. Small group setting with individualized attention throughout the program.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Included list summary -->
+    <ul class="included-list">
+      <li><span class="li-icon">📗</span> Dragon's Way Guidebook</li>
+      <li><span class="li-icon">🧘</span> 6 × 1.5-Hour Live Classes</li>
+      <li><span class="li-icon">☯️</span> Five Element Framework Teaching</li>
+      <li><span class="li-icon">🥦</span> Eating-for-Healing Guidance</li>
+      <li><span class="li-icon">🏠</span> Daily Home Practice Plan</li>
+      <li><span class="li-icon">🌿</span> Optional Herbal Support</li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PRICING
+  ══════════════════════════════════════ -->
+  <section class="pricing">
+    <div class="pricing-inner">
+      <span class="section-label center">Investment</span>
+      <h2>Simple, All-Inclusive Pricing</h2>
+      <p>One investment covers your full six-week journey — no hidden fees, no add-ons required.</p>
+
+      <div class="price-card">
+        <div class="price-amount"><sup>$</sup>239</div>
+        <div class="price-sub">Full 6-Week Program Enrollment</div>
+
+        <ul class="price-includes">
+          <li><span class="check">✓</span> Six weekly 1.5-hour sessions (in-person)</li>
+          <li><span class="check">✓</span> Dragon's Way Qigong® Guidebook (yours to keep)</li>
+          <li><span class="check">✓</span> Five Element Consciousness Framework teachings</li>
+          <li><span class="check">✓</span> Eating-for-Healing plan and food guidance</li>
+          <li><span class="check">✓</span> Personalized movement corrections each session</li>
+          <li><span class="check">✓</span> Daily home practice instructions</li>
+          <li><span class="check">⊕</span> <em>Optional: Herbal support (discussed in Week 1, priced separately)</em></li>
+        </ul>
+
+        <div class="per-session">Breaks down to just $39.83 per session — including your guidebook</div>
+
+        <p class="price-note">
+          A group of 5 or more is ideal to start. The group dynamic compounds the results —
+          Qi builds faster together, and the shared learning deepens everyone's transformation.
+          If you have colleagues or friends who could benefit, invite them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WHAT TO WEAR / WHAT TO BRING
+  ══════════════════════════════════════ -->
+  <section class="prepare">
+    <div style="text-align:center; margin-bottom: 48px;">
+      <span class="section-label center">Before You Arrive</span>
+      <h2 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--forest);">How to Come Prepared</h2>
+    </div>
+    <div class="prepare-inner">
+
+      <div class="prepare-block">
+        <h2>👕 What to Wear</h2>
+        <ul class="prepare-list">
+          <li>
+            <span class="p-icon">✔️</span>
+            <div><strong>Loose, comfortable clothing</strong><span>Anything you can move freely in — yoga pants, sweatpants, loose trousers, or athletic wear. No tight waistbands or restrictive layers.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">✔️</span>
+            <div><strong>Flat-soled shoes or socks</strong><span>We practice barefoot or in flat shoes/socks on the floor. No heels, no thick-soled athletic shoes. The foot connection to the ground is important — no mat required.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">✔️</span>
+            <div><strong>Layers are welcome</strong><span>The room temperature may vary. Bringing a light layer helps you stay comfortable during the quieter standing portions of class.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">✔️</span>
+            <div><strong>Natural fabrics preferred</strong><span>Cotton, linen, bamboo — if possible. Not required, but lighter fabrics tend to feel better during energy work.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">🚫</span>
+            <div><strong>Avoid tight belts or waistbands</strong><span>The Belt Meridian runs around the waist — keeping this area free supports energy flow during the practice.</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="prepare-block">
+        <h2>🎒 What to Bring</h2>
+        <ul class="prepare-list">
+          <li>
+            <span class="p-icon">📓</span>
+            <div><strong>A notebook or journal</strong><span>Many participants find it valuable to jot down observations, body sensations, or insights. The teachings go deep and you'll want to capture them.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">💧</span>
+            <div><strong>Water bottle</strong><span>Staying hydrated supports Qi flow. Warm or room-temperature water is preferred over cold during and after practice.</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="prepare-block">
+        <h2>🛠 How to Prepare</h2>
+        <ul class="prepare-list">
+          <li>
+            <span class="p-icon">📵</span>
+            <div><strong>Minimal devices</strong><span>Please put your phone on silent. The 1.5 hours are yours — give yourself the gift of being fully present. This is rare and valuable.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">🕐</span>
+            <div><strong>Arrive a few minutes early</strong><span>The first 5–10 minutes are settling-in time. Rushing in right at the start disrupts your own entry into the practice.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">🍽️</span>
+            <div><strong>Don't arrive on a full stomach</strong><span>Allow at least 1–1.5 hours after a heavy meal before practicing. A light snack beforehand is fine.</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="prepare-block">
+        <h2>✨ What to Expect</h2>
+        <ul class="prepare-list">
+          <li>
+            <span class="p-icon">🎵</span>
+            <div><strong>Gentle meditative music</strong><span>Soft, ambient music is played during practice to help set the tone and signal the transition from the outside world into your Qi space. Let it carry you in.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">🤝</span>
+            <div><strong>Meet nice people</strong><span>You'll practice alongside others on the same healing journey. A genuine community forms quickly, sharing the experience of discovering their Qi together.</span></div>
+          </li>
+          <li>
+            <span class="p-icon">🌟</span>
+            <div><strong>Have a great time</strong><span>This isn't clinical or cold. The practice is joyful. You'll feel calm, connected, and genuinely uplifted when you walk out.</span></div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════ -->
+  <section class="faq">
+    <span class="section-label center">Common Questions</span>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <div class="faq-q">Do I need any prior experience?</div>
+        <div class="faq-a">None. Dragon's Way Qigong® welcomes complete beginners. The movements are gentle standing postures — accessible at any age or fitness level. No strength, flexibility, or Qigong background required.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is this a workout? Will I get sweaty?</div>
+        <div class="faq-a">Qigong is not strenuous exercise. The movements are slow, deliberate, and standing. The focus is internal — cultivating energy — not burning calories or building muscle. Most people feel calm and centered afterward, not tired.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How much time does it take each week?</div>
+        <div class="faq-a">1.5 hours in class, plus 20 minutes of recommended daily home practice. Roughly 3–4 hours per week total — a modest investment for transformation that can last a lifetime.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if I miss a session?</div>
+        <div class="faq-a">Life happens. Reach out in advance and we'll provide a summary of what was covered. The program is cumulative, so attending consistently yields the best results — but missing one session won't derail your journey.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">When will I feel results?</div>
+        <div class="faq-a">Many participants notice changes in the first week — better sleep, more energy, or a calm they haven't felt in a while. Group practice accelerates results significantly. Everyone's timeline is different based on their starting point.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Do I have to change my diet?</div>
+        <div class="faq-a">The program introduces eating-for-healing principles — warm, plant-forward foods that energetically support your organ systems. This is not a restrictive diet. Most participants find the changes feel natural as their body begins to ask for different things.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What are the herbs about?</div>
+        <div class="faq-a">Herbs contain natural essences that support the body's return to balance. They are an optional add-on for those who want extra support — especially for chronic conditions, weight management, or significant energy depletion. They are not required to complete the program.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I combine this with yoga, meditation, or other practices?</div>
+        <div class="faq-a">Physical practices like yoga, Pilates, and stretching are fine to continue alongside Dragon's Way. For energy healing modalities (Reiki, other internal Qigong systems), a conversation with the instructor is recommended to avoid energetic interference.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What happens after the 6 weeks are complete?</div>
+        <div class="faq-a">"Think of the initial 6 weeks as an opening to a new journey. You've built a foundation — don't stop here. You've opened a door to a path that can support you for the rest of your life." Ongoing sessions and continuing programs are available.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is this connected to a specific tradition?</div>
+        <div class="faq-a">Yes. Dragon's Way Qigong® is part of the Wu Ming Qigong lineage, developed by Grand Master Nan Lu — a Taoist master whose teachings trace back to the philosophers Lao Tzu and Zhuangzi. The program is grounded in over 3,000 years of Traditional Chinese Medicine and Taoist philosophy.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is this suitable if I have a medical condition?</div>
+        <div class="faq-a">Dragon's Way is gentle and generally suitable for most conditions. Please let the instructor know before the program begins if you have specific health concerns. The practice is supportive and complementary — it is not a replacement for medical care.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How is this different from other Qigong classes?</div>
+        <div class="faq-a">Most Qigong classes are drop-in format — you learn movements without context. Dragon's Way is a structured 6-week curriculum with a teaching framework: the Five Element Consciousness Framework. You don't just practice — you understand why, and how to apply it to your daily life and health.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       INSTRUCTOR
+  ══════════════════════════════════════ -->
+  <section class="instructor">
+    <div class="instructor-inner">
+      <div class="instructor-photo">
+        <img src="website images/Tom Qigong.png" alt="Tom Lee">
+        <img src="website images/DW_Instructor_Badge_Red.png" class="badge-img" alt="Certified Dragon's Way Qigong Instructor">
+      </div>
+      <div class="instructor-text">
+        <span class="section-label">Your Instructor</span>
+        <h2>Tom Lee</h2>
+        <p>
+          Tom is a <strong>certified Dragon's Way Qigong® instructor</strong> with over 15 years of dedicated study under Grand Master Nan Lu — a living Taoist master whose lineage traces directly to the ancient sages Lao Tzu and Zhuangzi.
+        </p>
+        <p>
+          With more than 30 years in the corporate investment banking world, Tom brings something rare: the credibility of someone who has lived the stress he teaches people to manage. He understands back-to-back meetings, the emotional cost of leading a team, and what burnout feels like from the inside.
+        </p>
+        <p>
+          Tom combines deep Qigong training with practical, real-world insight — making ancient wisdom accessible, relevant, and immediately useful for modern professionals. He is known for his warmth, authenticity, and precision in teaching.
+        </p>
+        <div class="cred-row">
+          <div class="cred-item">
+            <span class="cn">15+</span>
+            <span class="cd">Years of Study</span>
+          </div>
+          <div class="cred-item">
+            <span class="cn">30+</span>
+            <span class="cd">Years Corporate</span>
+          </div>
+          <div class="cred-item">
+            <span class="cn">3,000</span>
+            <span class="cd">Year Lineage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════ -->
+  <section class="testimonials">
+    <span class="section-label center">From Students</span>
+    <h2>What People Experience</h2>
+    <p style="text-align:center; font-family:'Playfair Display',serif; font-style:italic; color:rgba(255,255,255,0.7); font-size:1.1rem; max-width:560px; margin: 0 auto 40px; line-height:1.8;">
+      &ldquo;The body can heal itself. Your heart never broke.&rdquo;
+      <span style="display:block; font-style:normal; font-size:0.78rem; color:rgba(255,255,255,0.4); margin-top:6px; letter-spacing:0.05em;">— Grand Master Lu</span>
+    </p>
+    <div class="testimonial-grid">
+
+      <div class="t-card">
+        <blockquote>
+          &ldquo;I've been practicing Qigong for many years — but I had never truly felt my Qi.
+          In just three weeks of the Dragon's Way program, something shifted.
+          I'm actually feeling Qi now.&rdquo;
+        </blockquote>
+        <cite>— Dragon's Way Student</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>
+          "In July 2018 I experienced extreme fatigue and joint pain. Walking became a challenge. After a Lyme diagnosis and treatment I still felt unwell and spiritually drained. After completing Dragon's Way Qigong, I no longer suffer joint pain or fatigue — I feel physically and mentally rejuvenated."
+        </blockquote>
+        <cite>— Sarah Mitchell</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>
+          "I'm a nurse and had chronic back pain for 10 years. About two weeks into Dragon Kicks Backward, I felt a release in my stomach and lower spine — the pain disappeared. Regular practice has helped me stay pain-free and restored my physical and mental wellbeing."
+        </blockquote>
+        <cite>— Jennifer Chen</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>
+          "The program opened healing energy throughout my body. With continued practice I saw improvements in shoulder, hip and neck pain, mental clarity, calmness, and sleep. If you stick with it, you'll continue to experience ever-growing benefits."
+        </blockquote>
+        <cite>— Michael Roberts</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>
+          "I began Dragon's Way at about 320 lbs and felt chronically unwell. After a year I lost 75 lbs and changed my eating habits. Practicing outdoors one morning, I felt connected to the earth and experienced a deep emotional shift. The program helped me reclaim my health."
+        </blockquote>
+        <cite>— David Thompson</cite>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       HEALING VIDEO
+  ══════════════════════════════════════ -->
+  <section class="video-feature">
+    <div class="video-feature-inner">
+      <span class="section-label center">See It in Action</span>
+      <h2>Dragon&rsquo;s Way Qigong&reg;: A Powerful Approach to Healing</h2>
+      <p>Grand Master Nan Lu and the TCM World team share what makes Dragon&rsquo;s Way Qigong&reg; unlike any other wellness program available today &mdash; and why this ancient approach remains the most powerful path to genuine healing.</p>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/zg9tHIfgsnA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Dragon's Way Qigong: A Powerful Approach to Healing"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA
+  ══════════════════════════════════════ -->
+  <section class="cta" id="register">
+    <div class="cta-inner">
+      <span class="section-label center" style="color:var(--gold-light);">Next Steps</span>
+      <h2>Ready to Get Started?</h2>
+      <p>
+        The next step is simple: schedule a brief in-person introduction so your group can see the practice firsthand. From there, we set a start date, open registration, and launch the first cohort.
+      </p>
+
+      <div class="cta-details">
+        <div class="cta-detail">
+          <div class="dl">⏱ Duration</div>
+          <div class="dv">6 Weeks<br>1.5 Hrs/Session</div>
+        </div>
+        <div class="cta-detail">
+          <div class="dl">💰 Investment</div>
+          <div class="dv">$239<br>Incl. Guidebook</div>
+        </div>
+        <div class="cta-detail">
+          <div class="dl">🌿 Herbs</div>
+          <div class="dv">Optional<br>Add-On</div>
+        </div>
+      </div>
+
+      <a href="mailto:tom@example.com" class="btn-gold">Contact Tom to Get Started →</a>
+
+      <p class="cta-sub">
+        No experience needed · All levels welcome · Questions? Let's talk.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer>
+    <span class="brand">Dragon's Way Qigong®</span>
+    <p>Rooted in 3,000 years of Taoist wisdom.</p>
+    <p style="margin-top: 10px;">
+      Instructor: Tom Lee &nbsp;·&nbsp; <a href="https://www.dragonswayqigong.com">dragonswayqigong.com</a>
+    </p>
+    <p style="margin-top: 20px; font-size: 0.75rem; opacity: 0.5;">© 2026 Dragon's Way Qigong®. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
