@@ -1235,6 +1235,19 @@
       line-height: 1.6;
       max-width: 440px;
     }
+    .cohort-price {
+      display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+      background: rgba(212,169,55,0.1); border: 1px solid rgba(212,169,55,0.3);
+      border-radius: 12px; padding: 0.9rem 1.5rem; text-align: center; white-space: nowrap;
+    }
+    .cohort-price .price-amount {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      color: var(--gold-light); line-height: 1;
+    }
+    .cohort-price .price-label {
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-top: 0.15rem;
+    }
     /* Guarantee strip */
     .cohort-guarantee {
       display: flex;
@@ -3204,6 +3217,10 @@
             <div class="cohort-enroll-text">
               <h4>Ready to invest in your most important asset?</h4>
               <p>Reserve your seat now. Once the cohort fills, enrollment closes until the next program cycle.</p>
+            </div>
+            <div class="cohort-price">
+              <span class="price-amount">$239</span>
+              <span class="price-label">per person &middot; 6 sessions</span>
             </div>
             <a href="#enroll" class="btn-primary" style="white-space:nowrap;">Reserve My Seat</a>
           </div>

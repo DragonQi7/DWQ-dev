@@ -939,6 +939,9 @@
     .cohort-enroll { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-top: 1px solid rgba(196,154,60,0.14); padding-top: 2rem; }
     .cohort-enroll-text h4 { font-family: var(--font-serif); font-size: 1.15rem; color: #fff; margin-bottom: 0.3rem; }
     .cohort-enroll-text p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .cohort-price { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; background: rgba(196,154,60,0.1); border: 1px solid rgba(196,154,60,0.3); border-radius: 12px; padding: 0.9rem 1.5rem; text-align: center; white-space: nowrap; }
+    .cohort-price .price-amount { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .cohort-price .price-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.15rem; }
     .cohort-guarantee { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
     .g-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
     @media (max-width: 600px) {
@@ -1729,6 +1732,10 @@
             <div class="cohort-enroll-text">
               <h4>Ready to begin your Dragon's Way journey?</h4>
               <p>Reserve your seat now. Once the cohort fills, enrollment closes until the next cycle.</p>
+            </div>
+            <div class="cohort-price">
+              <span class="price-amount">$239</span>
+              <span class="price-label">per person &middot; 6 sessions</span>
             </div>
             <a href="#register" class="btn-primary" style="white-space:nowrap;">Reserve My Seat</a>
           </div>
