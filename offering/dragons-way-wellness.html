@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dragon's Way Qigong® — 6-Week Program</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* =====================================================
+       DESIGN SYSTEM
+       Pillars: Mental · Physical · Spiritual · Social · Emotional · Environmental
+    ===================================================== */
+    :root {
+      --cream:    #f9f6f1;
+      --warm:     #f2ede4;
+      --linen:    #e8e0d4;
+      --stone:    #c9bcad;
+      --clay:     #a0876e;
+      --sage:     #7a9e7e;
+      --sage-dk:  #5a7a5e;
+      --forest:   #3a5a3e;
+      --terra:    #b85c38;
+      --gold:     #c49a3c;
+      --charcoal: #2c2c2c;
+      --mid:      #6b6b6b;
+      --light:    #9b9b9b;
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'Inter', system-ui, sans-serif;
+      --radius:     6px;
+      --shadow:     0 2px 20px rgba(0,0,0,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      background: var(--cream);
+    }
+
+    /* ---- Nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249,246,241,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--linen);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-brand {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--forest);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-tagline {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--mid);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: -2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-cta {
+      background: var(--sage);
+      color: #fff !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 2rem;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--forest) !important; color: #fff !important; }
+
+    /* ---- Hero ---- */
+    .hero {
+      background: var(--forest);
+      color: #fff;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      padding: 6rem 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(90,122,94,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 90%, rgba(196,154,60,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 4vw, 3.8rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .hero-meta-item .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .hero-meta-item .value {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--sage);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #5a8a5e; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.85);
+      padding: 0.85rem 2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+    /* Hero visual panel */
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+    }
+    .hero-card-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .pillar-chip {
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+    }
+    .stats-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.4rem;
+    }
+    .stat-item { flex: 1; text-align: center; }
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+    .gather-badge {
+      background: var(--gold);
+      color: var(--forest);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+
+    /* ---- Section wrapper ---- */
+    .section {
+      padding: 6rem 6vw;
+    }
+    .section-sm { padding: 4rem 6vw; }
+    .section-alt { background: var(--warm); }
+    .section-forest { background: var(--forest); color: #fff; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage-dk);
+      margin-bottom: 0.75rem;
+    }
+    .section-forest .section-label { color: var(--gold); }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--forest);
+      margin-bottom: 1.25rem;
+    }
+    .section-forest .section-title { color: #fff; }
+
+    .section-body {
+      font-size: 1.0rem;
+      color: var(--mid);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+    .section-forest .section-body { color: rgba(255,255,255,0.75); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    /* ---- Values section ---- */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .value-card {
+      background: #fff;
+      border: 1px solid var(--linen);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .value-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.3rem;
+    }
+    .value-card h3 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+    }
+    .value-card p {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ---- Journey intro ---- */
+    .journey-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .journey-intro-left { }
+    .journey-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-style: italic;
+      color: var(--forest);
+      line-height: 1.5;
+      border-left: 3px solid var(--sage);
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .journey-quote-attr {
+      font-size: 0.75rem;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+    }
+
+    .element-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+    .element-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .element-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.2;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+    .element-circle .week-num {
+      font-size: 0.55rem;
+      opacity: 0.8;
+      font-family: var(--font-sans);
+    }
+    .element-node-label {
+      font-size: 0.65rem;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+    }
+    .element-arrow {
+      width: 28px;
+      height: 1.5px;
+      background: var(--linen);
+      position: relative;
+    }
+    .element-arrow::after {
+      content: '›';
+      position: absolute;
+      right: -4px;
+      top: -9px;
+      font-size: 1rem;
+      color: var(--stone);
+    }
+    .el-foundation { background: var(--forest); }
+    .el-wood       { background: #6b8f5e; }
+    .el-water      { background: #4a7a9b; }
+    .el-earth      { background: #b8860b; }
+    .el-metal      { background: #8a8a8a; }
+    .el-fire       { background: #c0563a; }
+
+    /* ---- Week cards ---- */
+    .weeks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .week-card {
+      background: #fff;
+      border: 1px solid var(--linen);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 280px;
+      transition: box-shadow 0.2s;
+    }
+    .week-card:hover { box-shadow: var(--shadow); }
+
+    .week-sidebar {
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .week-sidebar::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .wk-foundation .week-sidebar { background: var(--forest); color: #fff; }
+    .wk-wood       .week-sidebar { background: #4a6b44; color: #fff; }
+    .wk-water      .week-sidebar { background: #2e5a7a; color: #fff; }
+    .wk-earth      .week-sidebar { background: #7a5c1e; color: #fff; }
+    .wk-metal      .week-sidebar { background: #5a5a5a; color: #fff; }
+    .wk-fire       .week-sidebar { background: #8c3a22; color: #fff; }
+
+    .week-number {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 0.5rem;
+    }
+    .week-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+    .week-subtitle {
+      font-size: 0.8rem;
+      opacity: 0.75;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .week-element-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 2rem;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .week-organs {
+      font-size: 0.72rem;
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+
+    .week-body {
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      align-content: start;
+    }
+    .week-col-title {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage-dk);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1.5px solid var(--linen);
+    }
+    .week-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .week-list li {
+      font-size: 0.83rem;
+      color: var(--mid);
+      line-height: 1.5;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .week-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+    }
+    .week-theme-tag {
+      display: inline-block;
+      background: var(--warm);
+      border: 1px solid var(--linen);
+      border-radius: 4px;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin: 0.25rem 0.25rem 0 0;
+    }
+    .week-footer {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--linen);
+      padding-top: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .week-challenge {
+      font-size: 0.78rem;
+      color: var(--mid);
+    }
+    .week-challenge strong {
+      color: var(--forest);
+      font-weight: 600;
+    }
+    .week-pillar-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage-dk);
+      background: rgba(122,158,126,0.1);
+      border-radius: 2rem;
+      padding: 0.25rem 0.7rem;
+    }
+
+    /* ---- Pillars section ---- */
+    .pillars-section {
+      margin-top: 3rem;
+    }
+    .pillars-main-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .pillar-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .pillar-card:hover { background: rgba(255,255,255,0.13); }
+    .pillar-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .pillar-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .pillar-desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+
+    /* ---- Format section ---- */
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .format-card {
+      background: #fff;
+      border: 1px solid var(--linen);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+    }
+    .format-number {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--linen);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .format-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+    }
+    .format-card p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .format-time {
+      display: inline-block;
+      background: var(--warm);
+      border-radius: 2rem;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--sage-dk);
+      margin-top: 1rem;
+    }
+
+    /* ---- For who ---- */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .who-card {
+      background: var(--cream);
+      border: 1px solid var(--linen);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+    }
+    .who-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+    .who-card p {
+      font-size: 0.8rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ---- Includes ---- */
+    .includes-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .include-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid var(--linen);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+    .include-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .include-text h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.25rem;
+    }
+    .include-text p {
+      font-size: 0.78rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    /* ---- Impact banner ---- */
+    .impact-banner {
+      background: var(--sage);
+      padding: 2.5rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .impact-text {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 640px;
+    }
+    .impact-text strong {
+      font-weight: 600;
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .impact-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      flex-shrink: 0;
+      min-width: 180px;
+    }
+    .impact-badge .icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .impact-badge p {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+    }
+
+    /* ---- CTA section ---- */
+    .cta-section {
+      background: var(--forest);
+      text-align: center;
+      padding: 7rem 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 100%, rgba(122,158,126,0.25), transparent);
+    }
+    .cta-section > * { position: relative; z-index: 1; }
+    .cta-section .section-label { color: var(--gold); }
+    .cta-section h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--forest);
+      padding: 0.95rem 2.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-gold:hover { opacity: 0.9; transform: translateY(-1px); }
+    .cta-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1.5rem;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      background: #1a2a1e;
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer p { font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-visual { display: none; }
+      .values-grid { grid-template-columns: repeat(3, 1fr); }
+      .pillars-main-grid { grid-template-columns: repeat(3, 1fr); }
+      .week-card { grid-template-columns: 200px 1fr; }
+    }
+    @media (max-width: 860px) {
+      .week-card { grid-template-columns: 1fr; }
+      .week-body { grid-template-columns: 1fr 1fr; }
+      .three-col { grid-template-columns: 1fr 1fr; }
+      .who-grid { grid-template-columns: 1fr 1fr; }
+      .format-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .journey-intro { grid-template-columns: 1fr; gap: 2rem; }
+      .element-flow { gap: 0.25rem; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 4rem 1.25rem; }
+      .hero { padding: 4rem 1.25rem; }
+      .week-body { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+      .who-grid { grid-template-columns: 1fr; }
+      .includes-list { grid-template-columns: 1fr; }
+      .format-grid { grid-template-columns: 1fr; }
+      .pillars-main-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-banner { flex-direction: column; }
+    }
+
+    /* ---- Schedule / Cohort ---- */
+    .schedule-section { background: var(--forest); padding: 6rem 6vw; position: relative; overflow: hidden; }
+    .schedule-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 50%, rgba(196,154,60,0.08) 0%, transparent 50%), radial-gradient(ellipse at 85% 20%, rgba(90,122,94,0.12) 0%, transparent 45%); }
+    .schedule-inner { position: relative; z-index: 1; }
+    .schedule-section .section-title { color: #fff; margin-bottom: 0.5rem; }
+    .schedule-sub { font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.8; margin-bottom: 3rem; }
+    .cohort-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,154,60,0.22); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; }
+    .cohort-banner { background: linear-gradient(135deg, var(--gold) 0%, #b8861f 100%); padding: 1.1rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; }
+    .cb-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--forest); }
+    .cb-spots { display: flex; align-items: center; gap: 0.5rem; background: rgba(0,0,0,0.12); border-radius: 2rem; padding: 0.3rem 0.85rem; font-size: 0.72rem; font-weight: 700; color: var(--forest); letter-spacing: 0.05em; }
+    .spot-dot { width: 7px; height: 7px; border-radius: 50%; background: #1a3a10; animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.75)} }
+    .cohort-body { padding: 2.5rem; }
+    .cohort-details { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 0; border: 1px solid rgba(196,154,60,0.14); border-radius: 10px; overflow: hidden; margin-bottom: 2.25rem; }
+    .cd-item { padding: 1.5rem 1.75rem; border-right: 1px solid rgba(196,154,60,0.14); display: flex; flex-direction: column; gap: 4px; }
+    .cd-item:last-child { border-right: none; }
+    .cd-icon { font-size: 1.3rem; margin-bottom: 4px; }
+    .cd-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .cd-value { font-family: var(--font-serif); font-size: 1.05rem; color: var(--gold); font-weight: 600; line-height: 1.3; }
+    .cd-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    .cohort-sessions-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.85rem; }
+    .cohort-dates { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
+    .date-chip { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(196,154,60,0.18); border-radius: 10px; padding: 0.75rem 1.1rem; min-width: 76px; gap: 2px; transition: background 0.2s, border-color 0.2s; }
+    .date-chip:hover { background: rgba(196,154,60,0.1); border-color: rgba(196,154,60,0.4); }
+    .date-chip.first-session { border-color: var(--gold); background: rgba(196,154,60,0.1); }
+    .dc-week { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .dc-day { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; color: var(--gold); line-height: 1; }
+    .dc-month { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+    .cohort-enroll { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-top: 1px solid rgba(196,154,60,0.14); padding-top: 2rem; }
+    .cohort-enroll-text h4 { font-family: var(--font-serif); font-size: 1.15rem; color: #fff; margin-bottom: 0.3rem; }
+    .cohort-enroll-text p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .cohort-guarantee { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
+    .g-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+    @media (max-width: 600px) {
+      .cohort-body { padding: 1.5rem 1.25rem; }
+      .cohort-banner { padding: 0.9rem 1.25rem; }
+      .cd-item { border-right: none; border-bottom: 1px solid rgba(196,154,60,0.14); }
+      .cd-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================== NAV ======================== -->
+  <nav>
+    <a href="#" class="nav-brand">
+      Dragon's Way Qigong&reg;
+      <span class="nav-tagline">6-Week Program &middot; [Location]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About the Practice</a></li>
+      <li><a href="#program">6-Week Journey</a></li>
+      <li><a href="#pillars">Well-Being</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#register" class="nav-cta">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Dragon's Way Qigong® at [Location]</span>
+      <h1>A 6-Week Journey<br /><em>Back to Yourself</em></h1>
+      <p class="hero-sub">
+        Move gently. Breathe deeply. Live fully. Dragon's Way Qigong® is an evidence-informed 
+        program built on the Five Element framework — a complete approach to restoring energy, 
+        reducing stress, and reconnecting all six dimensions of well-being.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">Duration</span>
+          <span class="value">6 Weeks · 90 Min/Session</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Format</span>
+          <span class="value">In-Person · Community</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Level</span>
+          <span class="value">All Welcome</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#register" class="btn-primary">Register Now</a>
+        <a href="#program" class="btn-outline">See the Program</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-title">The 6 Pillars of Well-Being — All 6 Addressed</div>
+        <div class="pillars-grid">
+          <div class="pillar-chip">🧠 Mental</div>
+          <div class="pillar-chip">🌿 Physical</div>
+          <div class="pillar-chip">✨ Spiritual</div>
+          <div class="pillar-chip">🤝 Social</div>
+          <div class="pillar-chip">💛 Emotional</div>
+          <div class="pillar-chip">🌱 Environmental</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">Program At a Glance</div>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Weeks</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10</span>
+            <span class="stat-label">Movements</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Elements</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Min Daily</span>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:1.25rem;">
+          <span class="gather-badge">3,000 Years of Practice</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT DRAGON'S WAY ======================== -->
+  <section class="section section-alt" id="about">
+    <div class="section-label">About Dragon's Way Qigong&reg;</div>
+    <div class="two-col">
+      <div>
+        <h2 class="section-title">Ancient wisdom.<br />Whole-person healing.</h2>
+        <p class="section-body">
+          Dragon's Way Qigong&reg; is a 6-week program developed by Grand Master Nan Lu of the TCM World
+          Foundation, rooted in over 3,000 years of Taoist philosophy and Traditional Chinese Medicine.
+          It is not exercise &mdash; it is energy cultivation, designed to restore the balance that chronic
+          stress, modern living, and emotional strain have quietly taken away.
+        </p>
+        <p class="section-body" style="margin-top:1rem;">
+          Through ten flowing movements, evidence-informed teaching, and Eating-for-Healing nutrition
+          guidance, participants rebuild their Qi &mdash; their life force &mdash; from the inside out.
+          The Five Element framework illuminates the connection between physical symptoms and emotional
+          patterns, giving each person a language for their own healing.
+        </p>
+      </div>
+      <div>
+        <p class="section-body">
+          What makes Dragon's Way singular is its insistence on community. Weekly group discussion is
+          never skipped &mdash; because real transformation happens in the presence of others who are also
+          doing the work. This is how it has always been practiced, and why the results go far beyond
+          what any solo effort can sustain.
+        </p>
+        <p class="section-body" style="margin-top:1rem;">
+          This program is offered at <strong style="color:var(--forest);">[Location]</strong> &mdash;
+          a thoughtfully created in-person space that shares Dragon's Way's commitment to whole-person
+          well-being. Grounded, inclusive, and built for real connection, it is exactly the kind of
+          setting where this practice comes alive.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Principles -->
+    <div style="margin-top:3rem;">
+      <div class="section-label" style="margin-bottom:0.5rem;">Core Principles of the Practice</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">&#x1F30A;</div>
+          <h3>Qi Flows</h3>
+          <p>Your body holds an innate intelligence. Dragon's Way restores the natural flow of energy that stress, emotion, and modern life quietly interrupt.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#x1F33F;</div>
+          <h3>Whole-Person</h3>
+          <p>Emotions live in the organs. Thoughts affect digestion. Dragon's Way treats the full human &mdash; not a symptom in isolation, but an interconnected living system.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#x1F504;</div>
+          <h3>Consistent Practice</h3>
+          <p>Transformation is cumulative. A daily 20&ndash;30 minute home practice between sessions is where the real shift compounds week by week.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#x1F310;</div>
+          <h3>All Are Welcome</h3>
+          <p>No prior experience, flexibility, or fitness level required. Dragon's Way meets you exactly where you are and works with your body as it is today.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#x1F91D;</div>
+          <h3>In Community</h3>
+          <p>Healing in the presence of others accelerates transformation. The group creates a field of support and accountability that extends well beyond any single session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 6-WEEK PROGRAM ======================== -->
+  <section class="section" id="program">
+    <div class="section-label">The 6-Week Journey</div>
+    <div class="journey-intro">
+      <div class="journey-intro-left">
+        <h2 class="section-title">From Depletion<br />to Harmony.</h2>
+        <p class="section-body" style="font-size:0.9rem;">
+          Each week of Dragon's Way Qigong® explores one of the Five Elements — the ancient framework for 
+          understanding how energy moves through the body, emotions, and daily life. Every session combines 
+          movement, teaching, and community discussion, building skill and insight week by week.
+        </p>
+        <p class="section-body" style="font-size:0.85rem; margin-top:0.75rem; color:var(--clay);">
+          90 minutes · 30 min Movement · 30 min Teaching · 30 min Community Discussion
+        </p>
+      </div>
+      <div>
+        <blockquote class="journey-quote">
+          "Balance, harmony, transformation — but before transformation, you have to get to balance."
+        </blockquote>
+        <p class="journey-quote-attr">— Grand Master Nan Lu, Founder of Dragon's Way Qigong®</p>
+      </div>
+    </div>
+
+    <!-- Element flow diagram -->
+    <div class="element-flow">
+      <div class="element-node">
+        <div class="element-circle el-foundation"><span class="week-num">WK 1</span>Foundation</div>
+        <div class="element-node-label">What Is Qi?</div>
+      </div>
+      <div class="element-arrow"></div>
+      <div class="element-node">
+        <div class="element-circle el-wood"><span class="week-num">WK 2</span>Wood</div>
+        <div class="element-node-label">Release</div>
+      </div>
+      <div class="element-arrow"></div>
+      <div class="element-node">
+        <div class="element-circle el-water"><span class="week-num">WK 3</span>Water</div>
+        <div class="element-node-label">Rebuild</div>
+      </div>
+      <div class="element-arrow"></div>
+      <div class="element-node">
+        <div class="element-circle el-earth"><span class="week-num">WK 4</span>Earth</div>
+        <div class="element-node-label">Ground</div>
+      </div>
+      <div class="element-arrow"></div>
+      <div class="element-node">
+        <div class="element-circle el-metal"><span class="week-num">WK 5</span>Metal</div>
+        <div class="element-node-label">Let Go</div>
+      </div>
+      <div class="element-arrow"></div>
+      <div class="element-node">
+        <div class="element-circle el-fire"><span class="week-num">WK 6</span>Fire</div>
+        <div class="element-node-label">Integrate</div>
+      </div>
+    </div>
+
+    <!-- WEEK CARDS -->
+    <div class="weeks-grid">
+
+      <!-- WEEK 1 -->
+      <div class="week-card wk-foundation">
+        <div class="week-sidebar">
+          <div>
+            <div class="week-number">Week 1</div>
+            <h3 class="week-title">Opening the Path</h3>
+            <p class="week-subtitle">What Is Qi?</p>
+          </div>
+          <div>
+            <span class="week-element-badge">Foundation</span>
+            <p class="week-organs" style="margin-top:0.6rem;">Five Element Framework · Meridian System</p>
+          </div>
+        </div>
+        <div class="week-body">
+          <div>
+            <div class="week-col-title">Movement Practice</div>
+            <ul class="week-list">
+              <li>The Dragon's Toe Dance</li>
+              <li>The Dragon Kicks Forward</li>
+              <li>The Dragon's Twist</li>
+              <li>The Dragon Stands Between Heaven and Earth</li>
+              <li>Proper stance, posture &amp; natural breath</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Core Teaching</div>
+            <ul class="week-list">
+              <li>What is Qi? Energy, information, life force</li>
+              <li>How Qi flows through meridians</li>
+              <li>What blocks Qi — stress, emotion, diet</li>
+              <li>The Five Elements &amp; organ-meridian connections</li>
+              <li>Eating-for-Healing principles introduced</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Well-Being Pillars</div>
+            <span class="week-pillar-tag">🌿 Physical</span>
+            <span class="week-pillar-tag">🧠 Mental</span>
+            <span class="week-pillar-tag">✨ Spiritual</span>
+            <span class="week-pillar-tag">🤝 Social</span>
+            <div style="margin-top:1rem;">
+              <div class="week-col-title">Discussion Focus</div>
+              <p style="font-size:0.8rem; color:var(--mid);">What brought you here? What does energy mean to you? What habits are draining your Qi?</p>
+            </div>
+          </div>
+          <div class="week-footer">
+            <p class="week-challenge">
+              <strong>Weekly Challenge:</strong> Observe your lifestyle habits this week — phone use, how you eat, stress responses.
+            </p>
+            <span class="week-theme-tag">Daily Practice: 4 Movements</span>
+            <span class="week-theme-tag">Guidebook Distributed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div class="week-card wk-wood">
+        <div class="week-sidebar">
+          <div>
+            <div class="week-number">Week 2</div>
+            <h3 class="week-title">Release Stress, Build Flexibility</h3>
+            <p class="week-subtitle">Wood Element</p>
+          </div>
+          <div>
+            <span class="week-element-badge">🌳 Wood Element</span>
+            <p class="week-organs">Liver &amp; Gallbladder Meridians · Spring Season</p>
+          </div>
+        </div>
+        <div class="week-body">
+          <div>
+            <div class="week-col-title">New Movements</div>
+            <ul class="week-list">
+              <li>The Dragon's Punch</li>
+              <li>The Dragon Looks at Its Tail</li>
+              <li>Sequence: Movements 1–5 + 10</li>
+              <li>Releasing tension through movement</li>
+              <li>The liver governs smooth Qi flow</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Core Teaching</div>
+            <ul class="week-list">
+              <li>Emotional connection: Anger, frustration, resentment</li>
+              <li>Physical: Tight hips, stiff neck, headaches</li>
+              <li>How chronic stress burdens the liver</li>
+              <li>Foods that support the liver — leafy greens, sour flavors</li>
+              <li>Physical stiffness = emotional stiffness</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Well-Being Pillars</div>
+            <span class="week-pillar-tag">🌿 Physical</span>
+            <span class="week-pillar-tag">💛 Emotional</span>
+            <span class="week-pillar-tag">🧠 Mental</span>
+            <div style="margin-top:1rem;">
+              <div class="week-col-title">Corporate &amp; Wellness Lens</div>
+              <p style="font-size:0.8rem; color:var(--mid);">Deadlines and stress cost more energy than you think. Anger compresses Qi; forgiveness releases it.</p>
+            </div>
+          </div>
+          <div class="week-footer">
+            <p class="week-challenge">
+              <strong>Weekly Challenge:</strong> Notice when frustration arises — can you release it instead of holding it?
+            </p>
+            <span class="week-theme-tag">Daily Practice: Movements 1–5 + 10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div class="week-card wk-water">
+        <div class="week-sidebar">
+          <div>
+            <div class="week-number">Week 3</div>
+            <h3 class="week-title">Rebuild Your Deepest Reserve</h3>
+            <p class="week-subtitle">Water Element</p>
+          </div>
+          <div>
+            <span class="week-element-badge">💧 Water Element</span>
+            <p class="week-organs">Kidney &amp; Bladder Meridians · Winter Season</p>
+          </div>
+        </div>
+        <div class="week-body">
+          <div>
+            <div class="week-col-title">New Movements</div>
+            <ul class="week-list">
+              <li>The Dragon Taps Its Foot</li>
+              <li>Rocking the Baby Dragon</li>
+              <li>Sequence: Movements 1–7 + 10</li>
+              <li>Building stamina through consistency</li>
+              <li>The kidneys store your deepest reserves</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Core Teaching</div>
+            <ul class="week-list">
+              <li>Emotional connection: Fear, anxiety, exhaustion</li>
+              <li>Physical: Chronic fatigue, lower back pain, dark circles</li>
+              <li>Understanding "energy debt" — burnout is depletion</li>
+              <li>Warming foods: soups, black beans, walnuts</li>
+              <li>Build recovery time into your schedule</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Well-Being Pillars</div>
+            <span class="week-pillar-tag">🌿 Physical</span>
+            <span class="week-pillar-tag">💛 Emotional</span>
+            <span class="week-pillar-tag">✨ Spiritual</span>
+            <div style="margin-top:1rem;">
+              <div class="week-col-title">Corporate &amp; Wellness Lens</div>
+              <p style="font-size:0.8rem; color:var(--mid);">High achievers burn out because they never refill the tank. Fear depletes faster than physical exertion.</p>
+            </div>
+          </div>
+          <div class="week-footer">
+            <p class="week-challenge">
+              <strong>Weekly Challenge:</strong> Get to bed 30 minutes earlier this week. Honor rest as refueling.
+            </p>
+            <span class="week-theme-tag">Daily Practice: Movements 1–7 + 10</span>
+            <span class="week-theme-tag">Hold Final Posture 15 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 4 -->
+      <div class="week-card wk-earth">
+        <div class="week-sidebar">
+          <div>
+            <div class="week-number">Week 4</div>
+            <h3 class="week-title">Ground Yourself, Improve Digestion</h3>
+            <p class="week-subtitle">Earth Element</p>
+          </div>
+          <div>
+            <span class="week-element-badge">🪨 Earth Element</span>
+            <p class="week-organs">Spleen &amp; Stomach Meridians · Late Summer</p>
+          </div>
+        </div>
+        <div class="week-body">
+          <div>
+            <div class="week-col-title">New Movements</div>
+            <ul class="week-list">
+              <li>The Dragon Kicks Backward</li>
+              <li>Sequence: Movements 1–8 + 10</li>
+              <li>Grounding through movement</li>
+              <li>The spleen governs mental digestion</li>
+              <li>Releasing the need to control outcomes</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Core Teaching</div>
+            <ul class="week-list">
+              <li>Emotional connection: Worry, overthinking, mental overload</li>
+              <li>Physical: Digestive issues, bloating, foggy thinking</li>
+              <li>How worry costs Qi</li>
+              <li>Simple, warm, cooked foods; chew thoroughly</li>
+              <li>The center — when weak, everything wobbles</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Well-Being Pillars</div>
+            <span class="week-pillar-tag">🌿 Physical</span>
+            <span class="week-pillar-tag">🧠 Mental</span>
+            <span class="week-pillar-tag">💛 Emotional</span>
+            <div style="margin-top:1rem;">
+              <div class="week-col-title">Corporate &amp; Wellness Lens</div>
+              <p style="font-size:0.8rem; color:var(--mid);">Overthinking is a habit, not a requirement. You can solve problems without exhausting yourself.</p>
+            </div>
+          </div>
+          <div class="week-footer">
+            <p class="week-challenge">
+              <strong>Weekly Challenge:</strong> Take mini meditation breaks — sit, breathe, and simply let thoughts pass.
+            </p>
+            <span class="week-theme-tag">Daily Practice: Movements 1–8 + 10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 5 -->
+      <div class="week-card wk-metal">
+        <div class="week-sidebar">
+          <div>
+            <div class="week-number">Week 5</div>
+            <h3 class="week-title">Let Go of What No Longer Serves</h3>
+            <p class="week-subtitle">Metal Element</p>
+          </div>
+          <div>
+            <span class="week-element-badge">🔘 Metal Element</span>
+            <p class="week-organs">Lung &amp; Large Intestine Meridians · Autumn</p>
+          </div>
+        </div>
+        <div class="week-body">
+          <div>
+            <div class="week-col-title">New Movements</div>
+            <ul class="week-list">
+              <li>The Dragon Rises from the Ocean</li>
+              <li>The full 10-movement sequence is now complete</li>
+              <li>The breath as constant exchange with the world</li>
+              <li>Physical and emotional release are connected</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Core Teaching</div>
+            <ul class="week-list">
+              <li>Emotional connection: Grief, holding on, inability to let go</li>
+              <li>Physical: Respiratory issues, skin, constipation</li>
+              <li>Releasing old habits, attachments, limiting beliefs</li>
+              <li>Lung-supporting foods: pears, white vegetables, ginger</li>
+              <li>To receive new, release the old</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Well-Being Pillars</div>
+            <span class="week-pillar-tag">🌿 Physical</span>
+            <span class="week-pillar-tag">💛 Emotional</span>
+            <span class="week-pillar-tag">✨ Spiritual</span>
+            <div style="margin-top:1rem;">
+              <div class="week-col-title">Corporate &amp; Wellness Lens</div>
+              <p style="font-size:0.8rem; color:var(--mid);">Letting go creates space for what's next. Grief held in the body burdens the lungs — this week, you release.</p>
+            </div>
+          </div>
+          <div class="week-footer">
+            <p class="week-challenge">
+              <strong>Weekly Challenge:</strong> Hold The Dragon Stands Between Heaven and Earth for an extra 10 minutes.
+            </p>
+            <span class="week-theme-tag">Daily Practice: Full 10-Movement Sequence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 6 -->
+      <div class="week-card wk-fire">
+        <div class="week-sidebar">
+          <div>
+            <div class="week-number">Week 6</div>
+            <h3 class="week-title">The Heart Is the King</h3>
+            <p class="week-subtitle">Fire Element — Integration</p>
+          </div>
+          <div>
+            <span class="week-element-badge">🔥 Fire Element</span>
+            <p class="week-organs">Heart &amp; Small Intestine Meridians · Summer</p>
+          </div>
+        </div>
+        <div class="week-body">
+          <div>
+            <div class="week-col-title">Movement Practice</div>
+            <ul class="week-list">
+              <li>Complete 10-movement sequence together</li>
+              <li>Extended group stillness — final posture</li>
+              <li>Moving with confidence and flow</li>
+              <li>Practicing from the heart, not the head</li>
+              <li>The movements are now yours — trust your body</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Core Teaching &amp; Integration</div>
+            <ul class="week-list">
+              <li>Emotional connection: Joy, presence, purpose</li>
+              <li>Physical: Anxiety, insomnia, disconnection</li>
+              <li>The heart as "emperor" — when at peace, all follows</li>
+              <li>Intuitive mind (heart) vs rational mind (head)</li>
+              <li>Review: Wood → Water → Earth → Metal → Fire</li>
+              <li>Celebrate individual &amp; collective transformation</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Well-Being Pillars</div>
+            <span class="week-pillar-tag">🌿 Physical</span>
+            <span class="week-pillar-tag">💛 Emotional</span>
+            <span class="week-pillar-tag">✨ Spiritual</span>
+            <span class="week-pillar-tag">🤝 Social</span>
+            <span class="week-pillar-tag">🧠 Mental</span>
+            <div style="margin-top:0.75rem;">
+              <div class="week-col-title">Corporate &amp; Wellness Lens</div>
+              <p style="font-size:0.8rem; color:var(--mid);">Calm leaders create calm teams. Joy is not frivolous — it's the heart's natural state of leadership.</p>
+            </div>
+          </div>
+          <div class="week-footer">
+            <p class="week-challenge">
+              <strong>Closing Circle:</strong> Each participant shares one word. Certificates of completion. Resources for ongoing practice and community.
+            </p>
+            <span class="week-theme-tag">Continue Daily Practice</span>
+            <span class="week-theme-tag">Maintain Eating-for-Healing</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /weeks-grid -->
+  </section>
+
+  <!-- ======================== 6 PILLARS ======================== -->
+  <section class="section section-forest" id="pillars">
+    <div class="section-label">Well-Being Through Dragon's Way</div>
+    <div class="two-col" style="align-items:center;">
+      <div>
+        <h2 class="section-title">Six Pillars.<br />One Practice.</h2>
+        <p class="section-body">
+          True well-being is not one-dimensional. Dragon's Way Qigong&reg; is one of the only practices that
+          addresses all six core pillars simultaneously &mdash; through movement, teaching, nutrition, and
+          community discussion woven together across six weeks.
+        </p>
+      </div>
+      <div>
+        <p class="section-body">
+          Unlike single-focus fitness or wellness approaches, this program meets you as a whole person.
+          Whether you are managing burnout, seeking connection, healing from chronic stress, or simply
+          looking to grow &mdash; there is a place for you here.
+        </p>
+        <p class="section-body" style="margin-top:0.75rem; font-style:italic; opacity:0.7;">
+          A key component of lasting well-being cannot be achieved from a screen or a solo app alone.
+          We look forward to practicing together, in person, at [Location].
+        </p>
+      </div>
+    </div>
+    <div class="pillars-main-grid pillars-section">
+      <div class="pillar-card">
+        <div class="pillar-icon">🧠</div>
+        <div class="pillar-name">Mental</div>
+        <p class="pillar-desc">Calm the overthinking mind. Build mental clarity, focus, and resilience week by week through practice and reflection.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🌿</div>
+        <div class="pillar-name">Physical</div>
+        <p class="pillar-desc">Gentle movement restores energy, improves digestion, reduces pain, and activates the body's natural healing capacity.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">✨</div>
+        <div class="pillar-name">Spiritual</div>
+        <p class="pillar-desc">Reconnect to your deepest self through qigong's ancient Five Element wisdom and intentional practice.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🤝</div>
+        <div class="pillar-name">Social</div>
+        <p class="pillar-desc">Practice in a caring, inclusive community. Weekly group discussions build connection and shared growth.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">💛</div>
+        <div class="pillar-name">Emotional</div>
+        <p class="pillar-desc">Process stress, frustration, grief, and fear through the body — not the mind. Emotions have a home in your organs and your breath.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🌱</div>
+        <div class="pillar-name">Environmental</div>
+        <p class="pillar-desc">Ground in sustainable rhythms and seasonal awareness. Qigong is practiced in harmony with nature's cycles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SESSION FORMAT ======================== -->
+  <section class="section section-alt">
+    <div class="section-label">Session Structure</div>
+    <h2 class="section-title">How Each 90-Minute<br />Session is Built</h2>
+    <p class="section-body">
+      Every session follows a consistent structure that builds skill, deepens understanding, and fosters 
+      community. This is not a workout — it is energy cultivation in practice and in conversation.
+    </p>
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="format-number">01</div>
+        <h3>Qigong Movement Practice</h3>
+        <p>Learn and practice Dragon's Way movements — introducing 1–2 new movements each week and reviewing the growing sequence. Movements build progressively across all 6 weeks until the full 10-movement sequence is complete.</p>
+        <span class="format-time">30 Minutes</span>
+      </div>
+      <div class="format-card">
+        <div class="format-number">02</div>
+        <h3>Course Material &amp; Teaching</h3>
+        <p>Explore the Five Element framework, organ-meridian connections, emotional patterns, and Eating-for-Healing principles. Each week's teaching directly supports understanding the element of that week.</p>
+        <span class="format-time">30 Minutes</span>
+      </div>
+      <div class="format-card">
+        <div class="format-number">03</div>
+        <h3>Group Discussion &amp; Q&A</h3>
+        <p>Share observations, ask questions, and grow in community. This is where the program becomes personal — guided prompts connect your life experience to that week's element and teaching. Never skipped.</p>
+        <span class="format-time">30 Minutes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WHO THIS IS FOR ======================== -->
+  <section class="section">
+    <div class="section-label">Who This Program Serves</div>
+    <h2 class="section-title">Designed for Every Body.<br />Welcoming to All.</h2>
+    <p class="section-body">
+      Dragon's Way Qigong&reg; requires no prior experience, no flexibility, and no fitness level.
+      The practice meets you exactly where you are &mdash; and [Location] provides the warm,
+      thoughtfully curated in-person setting where that meeting can truly happen.
+    </p>
+    <div class="who-grid">
+      <div class="who-card">
+        <h4>Feeling Burned Out</h4>
+        <p>Chronic exhaustion, sleep that doesn't refresh, and the sense of running on empty — this program was built around restoring what depletion has taken.</p>
+      </div>
+      <div class="who-card">
+        <h4>Managing Stress &amp; Anxiety</h4>
+        <p>Tight shoulders, racing thoughts, short fuse? Qigong directly addresses the physical patterns that stress creates in the body.</p>
+      </div>
+      <div class="who-card">
+        <h4>Seeking Real Connection</h4>
+        <p>A space to practice, grow, and be part of something with others on the same path. The weekly group discussion turns individual effort into shared transformation.</p>
+      </div>
+      <div class="who-card">
+        <h4>New to Mind-Body Practice</h4>
+        <p>Never tried qigong, yoga, or meditation? Dragon's Way is accessible, low-impact, and often described as the gentlest entry point into mind-body health.</p>
+      </div>
+      <div class="who-card">
+        <h4>Supporting Chronic Health</h4>
+        <p>Whether managing autoimmune conditions, digestive issues, hormonal imbalance, or pain — this program supports the body's innate self-healing capacity.</p>
+      </div>
+      <div class="who-card">
+        <h4>High Performers &amp; Leaders</h4>
+        <p>Executives, founders, and professionals who give more than they receive. This is the practice that refills the well so you can lead from overflow, not depletion.</p>
+      </div>
+      <div class="who-card">
+        <h4>Going Through Transition</h4>
+        <p>Career change, life shift, relationship change, or just a season of uncertainty. The Metal and Water elements especially support letting go and rebuilding.</p>
+      </div>
+      <div class="who-card">
+        <h4>Experienced Practitioners</h4>
+        <p>Already practice yoga, meditation, or wellness? Dragon's Way adds something distinct — an energy cultivation lens that deepens any existing practice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PRACTICE WITH PURPOSE ======================== -->
+  <div class="impact-banner">
+    <div class="impact-text">
+      <strong>Practice With Purpose</strong>
+      Dragon's Way Qigong&reg; has always understood that individual healing and community health are
+      inseparable. When you restore your own energy, you show up differently &mdash; for your family,
+      your work, and everyone around you. [Location] shares this understanding, creating a space where
+      personal practice and genuine community naturally meet.
+    </div>
+    <div style="display:flex; gap:1rem;">
+      <div class="impact-badge">
+        <div class="icon">&#x1F33F;</div>
+        <p>Whole-Person<br/>Approach</p>
+      </div>
+      <div class="impact-badge">
+        <div class="icon">&#x1F91D;</div>
+        <p>In-Person<br/>Community</p>
+      </div>
+      <div class="impact-badge">
+        <div class="icon">&#x2728;</div>
+        <p>3,000 Years<br/>of Practice</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== INCLUDES ======================== -->
+  <section class="section section-alt">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">Everything You Need<br />to Practice &amp; Grow.</h2>
+    <div class="includes-list">
+      <div class="include-item">
+        <div class="include-icon">📖</div>
+        <div class="include-text">
+          <h4>Dragon's Way Qigong® Guidebook</h4>
+          <p>The official program guidebook — Eating-for-Healing recipes, movement reference, Five Element teachings, and your weekly action plan.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">&#x1F33F;</div>
+        <div class="include-text">
+          <h4>6 Live In-Person Sessions</h4>
+          <p>90-minute weekly sessions at [Location]. Expert-led movement, teaching, and facilitated community discussion every week.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🍽️</div>
+        <div class="include-text">
+          <h4>Eating-for-Healing Nutrition Guidance</h4>
+          <p>Not a diet — an energy restoration plan. Weekly food recommendations aligned to each element: anti-inflammatory, whole food, and healing-oriented.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">💊</div>
+        <div class="include-text">
+          <h4>Herbal Supplement Introduction (Optional)</h4>
+          <p>Introduction to TCM World Foundation herbal supplements — Imperial Qi and Green Dragon — to support your energy restoration during the program.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🏡</div>
+        <div class="include-text">
+          <h4>Daily Home Practice Plan</h4>
+          <p>A simple 20–30 minute daily practice you can do at home between sessions. Practice cards and weekly reminders keep you on track.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">&#x1F310;</div>
+        <div class="include-text">
+          <h4>[Location] Community Access</h4>
+          <p>Stay connected beyond the 6 weeks &mdash; access to upcoming events, classes, and an expanding calendar of in-person well-being experiences at [Location].</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SCHEDULE ======================== -->
+  <section class="schedule-section" id="schedule">
+    <div class="schedule-inner">
+      <div class="section-label" style="color:var(--gold);">Now Enrolling</div>
+      <h2 class="section-title">Spring 2026 Program</h2>
+      <p class="schedule-sub">Seats are limited to maintain an intimate, high-quality group experience. Reserve your place before the cohort fills.</p>
+      <div class="cohort-card">
+        <div class="cohort-banner">
+          <div class="cb-label">Spring 2026 &middot; Dragon's Way Qigong&reg; 6-Week Program &middot; [Location]</div>
+          <div class="cb-spots"><span class="spot-dot"></span>Limited Spots Available</div>
+        </div>
+        <div class="cohort-body">
+          <div class="cohort-details">
+            <div class="cd-item"><div class="cd-icon">&#x1F4C5;</div><div class="cd-label">Start Date</div><div class="cd-value">March 26, 2026</div><div class="cd-note">First session</div></div>
+            <div class="cd-item"><div class="cd-icon">&#x23F0;</div><div class="cd-label">Time</div><div class="cd-value">6:30 PM</div><div class="cd-note">Every Thursday</div></div>
+            <div class="cd-item"><div class="cd-icon">&#x1F4C6;</div><div class="cd-label">Duration</div><div class="cd-value">6 Weeks</div><div class="cd-note">90 min per session</div></div>
+            <div class="cd-item"><div class="cd-icon">&#x1F4CD;</div><div class="cd-label">Format</div><div class="cd-value">In-Person</div><div class="cd-note">[Location] &middot; Small group</div></div>
+            <div class="cd-item"><div class="cd-icon">&#x1F3C1;</div><div class="cd-label">Program End</div><div class="cd-value">April 30, 2026</div><div class="cd-note">Final session</div></div>
+          </div>
+          <div class="cohort-sessions-label">Your Six Sessions</div>
+          <div class="cohort-dates">
+            <div class="date-chip first-session"><span class="dc-week">Week 1</span><span class="dc-day">26</span><span class="dc-month">Mar</span></div>
+            <div class="date-chip"><span class="dc-week">Week 2</span><span class="dc-day">2</span><span class="dc-month">Apr</span></div>
+            <div class="date-chip"><span class="dc-week">Week 3</span><span class="dc-day">9</span><span class="dc-month">Apr</span></div>
+            <div class="date-chip"><span class="dc-week">Week 4</span><span class="dc-day">16</span><span class="dc-month">Apr</span></div>
+            <div class="date-chip"><span class="dc-week">Week 5</span><span class="dc-day">23</span><span class="dc-month">Apr</span></div>
+            <div class="date-chip"><span class="dc-week">Week 6</span><span class="dc-day">30</span><span class="dc-month">Apr</span></div>
+          </div>
+          <div class="cohort-enroll">
+            <div class="cohort-enroll-text">
+              <h4>Ready to begin your Dragon's Way journey?</h4>
+              <p>Reserve your seat now. Once the cohort fills, enrollment closes until the next cycle.</p>
+            </div>
+            <a href="#register" class="btn-primary" style="white-space:nowrap;">Reserve My Seat</a>
+          </div>
+        </div>
+      </div>
+      <div class="cohort-guarantee">
+        <span>Thursdays &middot; 6:30&ndash;8:00 PM</span>
+        <span class="g-dot"></span>
+        <span>March 26 &ndash; April 30, 2026</span>
+        <span class="g-dot"></span>
+        <span>[Location]</span>
+        <span class="g-dot"></span>
+        <span>Dragon's Way Qigong&reg; Certified Instructor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA ======================== -->
+  <section class="cta-section" id="register">
+    <div class="section-label">Begin Your Journey</div>
+    <h2>Six weeks.<br />One ancient practice.</h2>
+    <p>
+      Your energy is worth investing in. Dragon's Way Qigong&reg; has guided people toward balance
+      and vitality for over 3,000 years &mdash; and this spring, it comes to you in person,
+      in community, at [Location].
+    </p>
+    <div class="cta-btns">
+      <a href="#" class="btn-gold">Register for the Program</a>
+      <a href="#about" class="btn-forest">Learn About Dragon's Way</a>
+    </div>
+    <p class="cta-note">In-person &middot; [Location] &middot; All levels welcome &middot; Space is limited</p>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer>
+    <div>
+      <div class="footer-brand">Dragon's Way Qigong&reg;</div>
+      <p style="margin-top:0.3rem;">6-Week Program &middot; In Partnership with <a href="#">[Location]</a></p>
+    </div>
+    <div style="text-align:right;">
+      <p>Dragon's Way Qigong&reg; is a registered trademark of the TCM World Foundation.</p>
+      <p style="margin-top:0.25rem;">Rooted in Taoist Philosophy &middot; Over 3,000 Years of Practice</p>
+    </div>
+  </footer>
+
+</body>
+</html>
