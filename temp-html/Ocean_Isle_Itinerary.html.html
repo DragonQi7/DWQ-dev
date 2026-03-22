@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerary · Mar 28 – Apr 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f5efe6; --sand-dark: #e8ddd0;
+    --ocean: #2a6b8a; --ocean-light: #d6eaf4;
+    --coral: #d4614a; --coral-light: #faeae7;
+    --teal: #2d8a7a; --teal-light: #d4f0eb;
+    --amber: #c47c2b; --amber-light: #fdf0dc;
+    --plum: #6b3d7a; --plum-light: #ede0f2;
+    --slate: #3d4d5c; --slate-light: #e2e8ed;
+    --ink: #1a2530; --muted: #7a8a96;
+    --green: #2e7d32; --green-light: #e8f5e9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--sand); color: var(--ink); }
+
+  .site-header {
+    background: var(--ocean); color: white;
+    padding: 2.5rem 2rem 2.2rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .site-header::before {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 36px; background: var(--sand);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .site-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem,3.5vw,2.5rem); font-weight: 400; margin-bottom: 0.3rem; }
+  .site-header .sub { font-size: 0.83rem; opacity: 0.8; letter-spacing: 0.09em; text-transform: uppercase; }
+  .home-base { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 4px 14px; font-size: 0.77rem; margin-top: 0.75rem; letter-spacing: 0.04em; }
+
+  .legend { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 1.1rem 1rem 0.75rem; }
+  .li { display: flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 500; color: var(--slate); }
+  .ld { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 0.5rem 1.25rem 3rem; }
+
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--sand-dark); }
+  thead th { background: var(--ocean); color: white; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.75rem 1rem; text-align: left; }
+  tbody tr { border-bottom: 1px solid #f0ece6; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover td { background-color: #fdf9f5 !important; }
+
+  tr.weekend td { background: #fdfaf7; }
+  tr.myrtle td  { background: #fdf5f3; }
+
+  td { padding: 0.65rem 0.9rem; vertical-align: middle; }
+
+  .dn { font-size: 0.68rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .dd { font-size: 0.92rem; font-weight: 500; color: var(--ink); }
+
+  .lb { display: inline-block; font-size: 0.6rem; font-weight: 500; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; margin-top: 4px; }
+  .loib  { background: var(--ocean-light); color: var(--ocean); }
+  .lmb   { background: var(--coral-light); color: var(--coral); }
+
+  .ac { display: flex; flex-direction: column; gap: 5px; }
+  .ar { display: flex; align-items: flex-start; gap: 7px; }
+
+  .tg { display: inline-block; font-size: 0.6rem; font-weight: 500; padding: 2px 7px; border-radius: 8px; letter-spacing: 0.03em; text-transform: uppercase; flex-shrink: 0; margin-top: 2px; white-space: nowrap; }
+  .to  { background: var(--teal-light);   color: var(--teal); }
+  .tf  { background: var(--amber-light);  color: var(--amber); }
+  .tm  { background: var(--ocean-light);  color: var(--ocean); }
+  .tc  { background: var(--plum-light);   color: var(--plum); }
+  .ta  { background: var(--coral-light);  color: var(--coral); }
+  .tfr { background: var(--green-light);  color: var(--green); }
+  .tr  { background: var(--slate-light);  color: var(--slate); }
+
+  .at { font-size: 0.83rem; color: var(--ink); line-height: 1.45; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Carolina Coast Itinerary</h1>
+  <p class="sub">March 28 – April 5, 2026</p>
+  <div class="home-base">Home base: Ocean Isle Beach, NC</div>
+</header>
+
+<div class="legend">
+  <span class="li"><span class="ld" style="background:#2d8a7a"></span>Outdoor</span>
+  <span class="li"><span class="ld" style="background:#c47c2b"></span>Food</span>
+  <span class="li"><span class="ld" style="background:#2a6b8a"></span>Family</span>
+  <span class="li"><span class="ld" style="background:#6b3d7a"></span>Culture</span>
+  <span class="li"><span class="ld" style="background:#d4614a"></span>Adults</span>
+  <span class="li"><span class="ld" style="background:#2e7d32"></span>Free</span>
+  <span class="li"><span class="ld" style="background:#3d4d5c;opacity:.6"></span>Rest</span>
+  <span class="li"><span class="ld" style="background:#d4614a;opacity:.4;border:1px solid #d4614a"></span>Myrtle Beach day trip</span>
+  <span class="li"><span class="ld" style="background:#2a6b8a;opacity:.4;border:1px solid #2a6b8a"></span>Ocean Isle Beach</span>
+</div>
+
+<div class="container">
+<table>
+  <thead>
+    <tr>
+      <th style="width:90px">Day</th>
+      <th style="width:120px">Where</th>
+      <th>Activities</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <!-- Mar 28 -->
+  <tr class="weekend">
+    <td><div class="dn">Sat</div><div class="dd">Mar 28</div></td>
+    <td><span class="lb loib">Drive Day</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg tr">Travel</span><span class="at">Depart home — road trip to Ocean Isle Beach, NC</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">Plan a midway rest stop for lunch on the road</span></div>
+      <div class="ar"><span class="tg tfr">Free</span><span class="at">Arrive in OIB area — grab essentials, dinner, early rest</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Mar 29 -->
+  <tr class="weekend">
+    <td><div class="dn">Sun</div><div class="dd">Mar 29</div></td>
+    <td><span class="lb loib">Ocean Isle</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg tfr">Free</span><span class="at">Check in to Ocean Isle Beach property — unpack & settle in</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">Grocery run & stock up for the week</span></div>
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">First beach walk — explore the shore & get your bearings</span></div>
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Sunset at OIB Pier — welcome to the coast</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Mar 30 -->
+  <tr class="myrtle">
+    <td><div class="dn">Mon</div><div class="dd">Mar 30</div></td>
+    <td><span class="lb lmb">Myrtle Beach <span style="font-size:0.55rem;opacity:0.8">(Day Trip)</span></span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg tr">Travel</span><span class="at">Drive to Myrtle Beach (~45 min) — day trip, back to OIB tonight</span></div>
+      <div class="ar"><span class="tg tfr">Free</span><span class="at">Myrtle Beach Boardwalk — oceanfront stroll, shops & casual lunch</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">Myrtle Beach SkyWheel — 187-ft Ferris wheel views</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">Broadway at the Beach — shops, games & evening entertainment</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">🦞 Dinner at Dead Dog Saloon (Myrtle) — waterfront seafood, crab legs & shrimp before heading back to OIB</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Mar 31 -->
+  <tr>
+    <td><div class="dn">Tue</div><div class="dd">Mar 31</div></td>
+    <td><span class="lb loib">Ocean Isle</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Easy morning beach walk — recover after the Myrtle day trip</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">Museum of Coastal Carolina — touch tanks, fossils & dry aquarium (great for kids)</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">🦞 Lunch at Boundary House Restaurant (Calabash) — famous all-you-can-eat fried seafood & hush puppies</span></div>
+      <div class="ar"><span class="tg tc">Culture</span><span class="at">Ingram Planetarium — afternoon star & laser show in Sunset Beach</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">🦀 Dinner at The Causeway Gourmet — local OIB waterfront seafood & sunsets</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Apr 1 -->
+  <tr class="myrtle">
+    <td><div class="dn">Wed</div><div class="dd">Apr 1</div></td>
+    <td><span class="lb lmb">Myrtle Beach <span style="font-size:0.55rem;opacity:0.8">(Day Trip)</span></span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg tr">Travel</span><span class="at">Drive to Myrtle Beach (~45 min) — second day trip, back to OIB tonight</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">🎭 Ripley's Aquarium — shark tunnel, touch tanks & stingray feeding (kids love it)</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">🎡 Family Kingdom Amusement Park — classic boardwalk rides & go-karts</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">🦐 Lunch at Drunken Jack's (Murrell's Inlet) — waterfront seafood on the marsh</span></div>
+      <div class="ar"><span class="tg tc">Culture</span><span class="at">Brookgreen Gardens — America's largest sculpture garden & wildlife zoo (en route back)</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">🦞 Dinner at Lee's Inlet Kitchen (Murrell's Inlet) — legendary seafood since 1948, head back to OIB after</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Apr 2 -->
+  <tr>
+    <td><div class="dn">Thu</div><div class="dd">Apr 2</div></td>
+    <td><span class="lb loib">Ocean Isle</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Morning beach walk — relax after two Myrtle day trips</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">🏄 Carolina School of Surf — surf lesson for the family (beginner-friendly, all ages)</span></div>
+      <div class="ar"><span class="tg tm">Family</span><span class="at">Town Center Park — splash pad & playground for the kids, pickleball for adults</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">🍤 Dinner at Seahawk Restaurant (OIB) — casual local seafood, family-friendly</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Apr 3 -->
+  <tr>
+    <td><div class="dn">Fri</div><div class="dd">Apr 3</div></td>
+    <td><span class="lb loib">Ocean Isle</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Shallotte River Swamp Park — zipline & eco boat tour (all day)</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">Dinner at a local OIB seafood restaurant</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Apr 4 -->
+  <tr class="weekend">
+    <td><div class="dn">Sat</div><div class="dd">Apr 4</div></td>
+    <td><span class="lb loib">Ocean Isle</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Kayak tour to Bird Island</span></div>
+      <div class="ar"><span class="tg tc">Culture</span><span class="at">Islands Art & Bookstore — local art & beach reads</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">Calabash dinner — try a second restaurant in town</span></div>
+    </div></td>
+  </tr>
+
+  <!-- Apr 5 -->
+  <tr class="weekend">
+    <td><div class="dn">Sun</div><div class="dd">Apr 5</div></td>
+    <td><span class="lb loib">Departure</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg tf">Food</span><span class="at">Early breakfast together — last meal at the property</span></div>
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Quick final walk on the beach before packing up</span></div>
+      <div class="ar"><span class="tg tr">Travel</span><span class="at">Check out & hit the road — safe travels home!</span></div>
+    </div></td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>
