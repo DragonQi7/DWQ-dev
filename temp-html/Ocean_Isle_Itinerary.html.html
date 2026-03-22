@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Itinerary · Mar 28 – Apr 5, 2026</title>
+<title>Itinerary · Mar 27 – Apr 5, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -68,16 +68,73 @@
   .tc  { background: var(--plum-light);   color: var(--plum); }
   .ta  { background: var(--coral-light);  color: var(--coral); }
   .tfr { background: var(--green-light);  color: var(--green); }
-  .tr  { background: var(--slate-light);  color: var(--slate); }
+  .th  { background: #e8edf2;  color: #3d4d5c; }
 
   .at { font-size: 0.83rem; color: var(--ink); line-height: 1.45; }
+
+  /* ── Photo Gallery ── */
+  .photo-gallery {
+    max-width: 800px; margin: 0 auto 0.5rem;
+    padding: 0.75rem 1.25rem 0;
+  }
+  .photo-gallery h2 {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 0.6rem; letter-spacing: 0.02em;
+  }
+  .photo-strip {
+    display: flex; gap: 10px;
+    overflow-x: auto; padding-bottom: 8px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  }
+  .photo-strip::-webkit-scrollbar { height: 4px; }
+  .photo-strip::-webkit-scrollbar-track { background: var(--sand-dark); border-radius: 4px; }
+  .photo-strip::-webkit-scrollbar-thumb { background: var(--ocean); border-radius: 4px; }
+  .photo-strip figure {
+    flex-shrink: 0; scroll-snap-align: start;
+    width: 220px; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    position: relative;
+  }
+  .photo-strip figure img {
+    width: 100%; height: 150px; object-fit: cover; display: block;
+  }
+  .photo-strip figcaption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.55));
+    color: white; font-size: 0.62rem; padding: 18px 8px 6px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── Mobile / iPhone ── */
+  @media (max-width: 600px) {
+    .photo-gallery { padding: 0.75rem 0.6rem 0; }
+    .photo-strip figure { width: 180px; }
+    .photo-strip figure img { height: 120px; }
+    .container { padding: 0.5rem 0.6rem 3rem; }
+    table { border-radius: 8px; display: block; overflow-x: hidden; }
+    thead { display: none; }
+    tbody { display: block; }
+    tbody tr { display: block; padding: 0.75rem 0.75rem 0.6rem; border-bottom: 2px solid var(--sand-dark); }
+    tbody tr:last-child { border-bottom: none; }
+    td { display: block; padding: 0.1rem 0; border: none; }
+    td:first-child { margin-bottom: 0.25rem; }
+    td:nth-child(2) { margin-bottom: 0.4rem; }
+    .dn { font-size: 0.62rem; }
+    .dd { font-size: 1rem; }
+    .at { font-size: 0.8rem; }
+    .tg { font-size: 0.55rem; padding: 2px 6px; }
+    .lb { font-size: 0.58rem; }
+    .site-header { padding: 1.75rem 1rem 1.8rem; }
+    .legend { gap: 7px; }
+    .li { font-size: 0.68rem; }
+  }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <h1>Carolina Coast Itinerary</h1>
-  <p class="sub">March 28 – April 5, 2026</p>
+  <p class="sub">March 27 – April 5, 2026</p>
   <div class="home-base">Home base: Ocean Isle Beach, NC</div>
 </header>
 
@@ -93,6 +150,36 @@
   <span class="li"><span class="ld" style="background:#2a6b8a;opacity:.4;border:1px solid #2a6b8a"></span>Ocean Isle Beach</span>
 </div>
 
+<div class="photo-gallery">
+  <h2>Ocean Isle Beach &amp; the Carolina Coast</h2>
+  <div class="photo-strip">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=440&h=300&auto=format&fit=crop" alt="Wide sandy beach with gentle waves" loading="lazy">
+      <figcaption>Ocean Isle Beach, NC</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?w=440&h=300&auto=format&fit=crop" alt="Wooden pier extending over the ocean at sunset" loading="lazy">
+      <figcaption>OIB Pier at sunset</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=440&h=300&auto=format&fit=crop" alt="Beach with clear water and blue sky" loading="lazy">
+      <figcaption>Carolina coastline</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=440&h=300&auto=format&fit=crop" alt="Ocean waves rolling onto shore" loading="lazy">
+      <figcaption>Atlantic waves</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=440&h=300&auto=format&fit=crop" alt="Coastal sand dunes with sea grass" loading="lazy">
+      <figcaption>NC coastal dunes</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1564419431231-c2a6f830f967?w=440&h=300&auto=format&fit=crop" alt="Colorful beach houses along the shore" loading="lazy">
+      <figcaption>Beach cottage row</figcaption>
+    </figure>
+  </div>
+</div>
+
 <div class="container">
 <table>
   <thead>
@@ -103,6 +190,17 @@
     </tr>
   </thead>
   <tbody>
+
+  <!-- Mar 27 -->
+  <tr>
+    <td><div class="dn">Fri</div><div class="dd">Mar 27</div></td>
+    <td><span class="lb loib">Drive Day 1</span></td>
+    <td><div class="ac">
+      <div class="ar"><span class="tg tr">Travel</span><span class="at">Depart home — head south toward Ocean Isle Beach</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">Dinner & check in to overnight stop</span></div>
+      <div class="ar"><span class="tg th">Hotel</span><span class="at">Country Inn &amp; Suites by Radisson, Chester, VA</span></div>
+    </div></td>
+  </tr>
 
   <!-- Mar 28 -->
   <tr class="weekend">
@@ -192,11 +290,13 @@
   <!-- Apr 4 -->
   <tr class="weekend">
     <td><div class="dn">Sat</div><div class="dd">Apr 4</div></td>
-    <td><span class="lb loib">Ocean Isle</span></td>
+    <td><span class="lb loib">Drive Home</span></td>
     <td><div class="ac">
-      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Kayak tour to Bird Island</span></div>
+      <div class="ar"><span class="tg to">Outdoor</span><span class="at">Kayak tour to Bird Island — morning activity before checkout</span></div>
       <div class="ar"><span class="tg tc">Culture</span><span class="at">Islands Art & Bookstore — local art & beach reads</span></div>
-      <div class="ar"><span class="tg tf">Food</span><span class="at">Calabash dinner — try a second restaurant in town</span></div>
+      <div class="ar"><span class="tg tf">Food</span><span class="at">Calabash lunch — last seafood stop before hitting the road</span></div>
+      <div class="ar"><span class="tg tr">Travel</span><span class="at">Head north — drive toward Fredericksburg, VA</span></div>
+      <div class="ar"><span class="tg th">Hotel</span><span class="at">Check in at 4:00 pm · Home2 Suites by Hilton Fredericksburg South</span></div>
     </div></td>
   </tr>
 
