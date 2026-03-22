@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Four Energy Gates wellness program for Qi cultivation, balance, and stress resilience. Learn how He Gu, Tan Zhong, Guan Yuan, and Huan Tiao can support your energy and vitality." />
+  <meta name="keywords" content="4 Energy Gates, Qi, qigong, wellness program, energy healing, traditional Chinese medicine, stress relief" />
+  <title>4 Energy Gates Wellness Program | Qi & TCM Balance</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #f7f3ee;
+    --card:     #ffffff;
+    --ink:      #1c1c1e;
+    --muted:    #6e6e73;
+    --border:   #e5ddd4;
+
+    --metal:    #7a8fa6;  --metal-l: #eaf0f5; --metal-d: #4a6278;
+    --fire:     #c0392b;  --fire-l:  #fdecea; --fire-d:  #8e1b11;
+    --water:    #2471a3;  --water-l: #e9f3fc; --water-d: #15527a;
+    --wood:     #27ae60;  --wood-l:  #eafaf1; --wood-d:  #1a7a42;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 48px; background: var(--bg);
+    clip-path: ellipse(60% 100% at 50% 100%);
+  }
+  .hero-symbol {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.85;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .hero .sub {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+  }
+  .hero-tagline {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 24px;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    opacity: 0.9;
+  }
+  .btn-primary {
+    margin-top: 1rem;
+    display: inline-block;
+    background: #9cbf8a;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .btn-primary:hover { background: #7a945f; }
+
+  /* ── OVERVIEW RIBBON ── */
+  .overview {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 1.5rem 0.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .ov-card {
+    flex: 1;
+    min-width: 180px;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    border: 1px solid transparent;
+  }
+  .ov-card.metal { background: var(--metal-l); border-color: var(--metal); }
+  .ov-card.fire  { background: var(--fire-l);  border-color: var(--fire);  }
+  .ov-card.water { background: var(--water-l); border-color: var(--water); }
+  .ov-card.wood  { background: var(--wood-l);  border-color: var(--wood);  }
+  .ov-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .metal .ov-num { color: var(--metal-d); }
+  .fire  .ov-num { color: var(--fire-d);  }
+  .water .ov-num { color: var(--water-d); }
+  .wood  .ov-num { color: var(--wood-d);  }
+  .ov-info { font-size: 0.78rem; line-height: 1.5; }
+  .ov-name { font-weight: 600; font-size: 0.88rem; }
+
+  /* ── MAIN LAYOUT ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* ── GATE CARD ── */
+  .gate {
+    background: var(--card);
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .gate-header {
+    padding: 1.6rem 2rem 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .gate-number {
+    font-family: 'Noto Serif', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+  .metal .gate-number { color: var(--metal); }
+  .fire  .gate-number { color: var(--fire);  }
+  .water .gate-number { color: var(--water); }
+  .wood  .gate-number { color: var(--wood);  }
+
+  .gate-title h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+  .gate-title .cn { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+  .gate-title .meaning {
+    font-family: 'Noto Serif', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+    color: var(--muted);
+  }
+
+  .gate-badge {
+    margin-left: auto;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .metal .gate-badge { background: var(--metal-l); color: var(--metal-d); }
+  .fire  .gate-badge { background: var(--fire-l);  color: var(--fire-d);  }
+  .water .gate-badge { background: var(--water-l); color: var(--water-d); }
+  .wood  .gate-badge { background: var(--wood-l);  color: var(--wood-d);  }
+
+  /* ── BODY SECTIONS ── */
+  .gate-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Five Elements table */
+  .elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.6rem;
+  }
+  .el-cell {
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.78rem;
+  }
+  .metal .el-cell { background: var(--metal-l); }
+  .fire  .el-cell { background: var(--fire-l);  }
+  .water .el-cell { background: var(--water-l); }
+  .wood  .el-cell { background: var(--wood-l);  }
+  .el-cell .el-key { font-weight: 600; font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 2px; }
+  .el-cell .el-val { font-weight: 500; }
+
+  /* Location strip */
+  .location-strip {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+  /* Relationships */
+  .rel-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .rel-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.83rem;
+    line-height: 1.55;
+  }
+  .rel-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+  }
+  .metal .rel-dot { background: var(--metal); }
+  .fire  .rel-dot { background: var(--fire);  }
+  .water .rel-dot { background: var(--water); }
+  .wood  .rel-dot { background: var(--wood);  }
+
+  /* Applications */
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem;
+  }
+  .app-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.45rem 0.6rem;
+    border-radius: 8px;
+    background: #fafafa;
+    border: 1px solid var(--border);
+  }
+  .app-icon { flex-shrink: 0; font-size: 0.9rem; }
+
+  /* Warning callout */
+  .callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 12px;
+    font-size: 0.83rem;
+    line-height: 1.6;
+  }
+  .callout.danger { background: #fff3f3; border: 1px solid #f9c0bb; }
+  .callout.info   { background: #f0f7ff; border: 1px solid #bdd8f5; }
+  .callout.gold   { background: #fffbef; border: 1px solid #f5dfa0; }
+  .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* dividers between sections */
+  .section-divider { height: 1px; background: var(--border); margin: 0.25rem 0; }
+
+  /* ── SUMMARY TABLE ── */
+  .summary-wrap {
+    background: var(--card);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .summary-head {
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: white;
+    padding: 1.25rem 1.75rem;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.15rem;
+  }
+  table.summary { width: 100%; border-collapse: collapse; }
+  table.summary th {
+    background: #f0ece6;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.65rem 1rem;
+    text-align: left;
+  }
+  table.summary td {
+    padding: 0.75rem 1rem;
+    font-size: 0.84rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  table.summary tr:last-child td { border-bottom: none; }
+  .elem-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  .et-metal { background: var(--metal-l); color: var(--metal-d); }
+  .et-fire  { background: var(--fire-l);  color: var(--fire-d);  }
+  .et-water { background: var(--water-l); color: var(--water-d); }
+  .et-wood  { background: var(--wood-l);  color: var(--wood-d);  }
+
+  @media (max-width: 600px) {
+    .gate-header { flex-direction: column; }
+    .gate-badge  { margin-left: 0; }
+    .gate-body   { padding: 1.25rem; }
+    .overview    { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-symbol">☯</div>
+  <h1>4 Energy Gates Wellness Program</h1>
+  <p class="sub">A practical Qi-building roadmap from TCM foundations to daily vitality</p>
+  <div class="hero-tagline">Align your body, mind, and energy with four signature gates for lasting balance.</div>
+  <a href="#enroll" class="btn-primary">Book Your Discovery Session</a>
+</header>
+
+<!-- OVERVIEW CARDS -->
+<div class="overview">
+  <div class="ov-card metal">
+    <div class="ov-num">1</div>
+    <div class="ov-info">
+      <div class="ov-name">He Gu · LI 4</div>
+      <div>Joining Valley · Metal</div>
+      <div>5am – 7am · West</div>
+    </div>
+  </div>
+  <div class="ov-card fire">
+    <div class="ov-num">2</div>
+    <div class="ov-info">
+      <div class="ov-name">Tan Zhong · CV 17</div>
+      <div>Chest Center · Fire</div>
+      <div>7pm – 9pm · South</div>
+    </div>
+  </div>
+  <div class="ov-card water">
+    <div class="ov-num">3</div>
+    <div class="ov-info">
+      <div class="ov-name">Guan Yuan · CV 4</div>
+      <div>Gate of Organ · Water</div>
+      <div>5pm – 7pm · North</div>
+    </div>
+  </div>
+  <div class="ov-card wood">
+    <div class="ov-num">4</div>
+    <div class="ov-info">
+      <div class="ov-name">Huan Tiao · GB 30</div>
+      <div>Jumping Circle · Wood</div>
+      <div>11am – 1pm · West</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ════════════════ GATE 1 ════════════════ -->
+  <div class="gate metal">
+    <div class="gate-header">
+      <div class="gate-number">1</div>
+      <div class="gate-title">
+        <div class="cn">He Gu · LI 4 · Large Intestine Meridian</div>
+        <h2>Joining Valley</h2>
+        <div class="meaning">First mystery point — allows you to see the entire body</div>
+      </div>
+      <div class="gate-badge">⚙ Metal<br>Element</div>
+    </div>
+    <div class="gate-body">
+      <div>
+        <div class="section-label">What You Discover</div>
+        <p>Gate 1 in this program is presented as a practical anchor for energy flow, resilience, and pain-free movement. Focused training helps release old tension and build trusted qi pathways.</p>
+      </div>
+      <div>
+        <div class="section-label">Benefits</div>
+        <div class="app-grid">
+          <div class="app-pill"><span class="app-icon">⚡</span>Improved breathing and circulation</div>
+          <div class="app-pill"><span class="app-icon">🛡</span>Resistance to stress and inflammation</div>
+          <div class="app-pill"><span class="app-icon">🧘</span>Better grounding in daily routine</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ GATE 2 ════════════════ -->
+  <div class="gate fire">
+    <div class="gate-header">
+      <div class="gate-number">2</div>
+      <div class="gate-title">
+        <div class="cn">Tan Zhong · CV 17 · Conception Vessel</div>
+        <h2>Chest Center</h2>
+        <div class="meaning">Entire body's Qi center — all meridian Qi function connects here</div>
+      </div>
+      <div class="gate-badge">🔥 Fire<br>Element</div>
+    </div>
+    <div class="gate-body">
+      <div>
+        <div class="section-label">What You Discover</div>
+        <p>Gate 2 stands for heart-centered clarity and emotional regulation. We use simple movement and breath guidance to open the chest space and release stuck tension.</p>
+      </div>
+      <div>
+        <div class="section-label">Benefits</div>
+        <div class="app-grid">
+          <div class="app-pill"><span class="app-icon">🌬</span>Ease anxiety and calm the nervous system</div>
+          <div class="app-pill"><span class="app-icon">💤</span>Support deeper, improved sleep</div>
+          <div class="app-pill"><span class="app-icon">🧘</span>Build emotional resilience and presence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ GATE 3 ════════════════ -->
+  <div class="gate water">
+    <div class="gate-header">
+      <div class="gate-number">3</div>
+      <div class="gate-title">
+        <div class="cn">Guan Yuan · CV 4 · Ren Meridian</div>
+        <h2>Gate of Organ</h2>
+        <div class="meaning">Closed Circle / Center Lock — your genetic code is buried here</div>
+      </div>
+      <div class="gate-badge">💧 Water<br>Element</div>
+    </div>
+    <div class="gate-body">
+      <div>
+        <div class="section-label">What You Discover</div>
+        <p>Gate 3 is the core life-force gateway. This part of the program shows how to safely strengthen your foundational Qi energy without complex theory.</p>
+      </div>
+      <div>
+        <div class="section-label">Benefits</div>
+        <div class="app-grid">
+          <div class="app-pill"><span class="app-icon">💪</span>Renewed stamina and vitality</div>
+          <div class="app-pill"><span class="app-icon">🧠</span>Clearer mind with better focus</div>
+          <div class="app-pill"><span class="app-icon">🧘</span>Stronger energetic core and natural stability</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ GATE 4 ════════════════ -->
+  <div class="gate wood">
+    <div class="gate-header">
+      <div class="gate-number">4</div>
+      <div class="gate-title">
+        <div class="cn">Huan Tiao · GB 30 · Gall Bladder Meridian</div>
+        <h2>Jumping Circle</h2>
+        <div class="meaning">Second mystery point — second largest gate in the human body</div>
+      </div>
+      <div class="gate-badge">🌿 Wood<br>Element</div>
+    </div>
+    <div class="gate-body">
+      <div>
+        <div class="section-label">What You Discover</div>
+        <p>A balanced Gate 4 supports movement, decision-making, and mental flexibility. Our practice gives you a clear, gentle path to open this energy channel in your daily wellness routine.</p>
+      </div>
+      <div>
+        <div class="section-label">Benefits</div>
+        <div class="app-grid">
+          <div class="app-pill"><span class="app-icon">🦵</span>Greater ease in hips and lower body</div>
+          <div class="app-pill"><span class="app-icon">🧠</span>Sharper decision-making and creativity</div>
+          <div class="app-pill"><span class="app-icon">🌿</span>Reduced stagnation, improved emotional flow</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ PROGRAM OFFERING ════════════════ -->
+  <div class="callout gold" style="margin:1.5rem 0;">
+    <span class="callout-icon">✨</span>
+    <span>You’re invited to join the 4 Energy Gates Program — a self-paced, body-centered wellness journey that uses proven qigong and TCM gateway practices to raise your vitality, reduce stress, and stabilize Qi in daily life. Includes guided tutorials, weekly check-in journal prompts, and a supportive community path.</span>
+  </div>
+  <div class="callout info" style="margin-bottom:1.5rem;">
+    <span class="callout-icon">🎯</span>
+    <span>Who this is for: busy adults, energy seekers, chronic stress responders, movement learners, and people who want a simple daily practice that feels effective within weeks.</span>
+  </div>
+  <div class="callout" style="background:#fff7e8;border:1px solid #f5dfa0;margin-bottom:2rem;">
+    <span class="callout-icon">🚀</span>
+    <span><strong>Sign up now</strong> and receive a free intro mini-session: <em>Morning Wake-up Qi</em>, plus a downloadable guide for building your own energy map. (Limited priority spots available.)</span>
+  </div>
+
+  <!-- ════════════════ SUMMARY TABLE ════════════════ -->
+  <div class="summary-wrap">
+    <div class="summary-head">Four Gates — Quick Reference</div>
+    <table class="summary">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Point</th>
+          <th>Name</th>
+          <th>Element</th>
+          <th>Time</th>
+          <th>Direction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td><strong>LI 4</strong></td>
+          <td>He Gu — Joining Valley</td>
+          <td><span class="elem-tag et-metal">Metal</span></td>
+          <td>5am – 7am</td>
+          <td>West</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td><strong>CV 17</strong></td>
+          <td>Tan Zhong — Chest Center</td>
+          <td><span class="elem-tag et-fire">Fire</span></td>
+          <td>7pm – 9pm</td>
+          <td>South</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td><strong>CV 4</strong></td>
+          <td>Guan Yuan — Gate of Organ</td>
+          <td><span class="elem-tag et-water">Water</span></td>
+          <td>5pm – 7pm</td>
+          <td>North</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td><strong>GB 30</strong></td>
+          <td>Huan Tiao — Jumping Circle</td>
+          <td><span class="elem-tag et-wood">Wood</span></td>
+          <td>11am – 1pm</td>
+          <td>West</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section id="enroll" style="background:#f4f8f4;border:1px solid #dbeddb;border-radius:16px;padding:1.25rem 1.5rem;margin-top:2rem;text-align:center;">
+    <h3 style="font-family:'Noto Serif', serif;margin-bottom:0.5rem;">Ready to unlock your Qi?</h3>
+    <p style="margin-bottom:1rem;color:#4d5b51;">Register for the 4 Energy Gates program and get the first module delivered instantly. Includes video guidance, daily energy prompts, and a small group support invitation.</p>
+    <a href="mailto:info@tcmworld.org?subject=4%20Energy%20Gates%20Program%20Inquiry" class="btn-primary" style="margin-top:0;">Email to Enroll</a>
+  </section>
+
+  <p style="text-align:center;margin-top:2rem;font-size:0.75rem;color:var(--muted);font-style:italic;">
+    Together, the Four Energy Gates address the full spectrum of physical, emotional, and energetic health — from immune function and organ health to brain clarity, longevity, and life force.
+  </p>
+
+</div>
+</body>
+</html>
