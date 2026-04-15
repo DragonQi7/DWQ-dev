@@ -1,0 +1,3780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>武术套路 Wushu Taolu — Complete Deduction Reference</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      padding: 32px 24px;
+    }
+    h1.page-title {
+      text-align: center;
+      color: #e2b96f;
+      font-size: 1.8em;
+      margin-bottom: 6px;
+    }
+    .page-sub {
+      text-align: center;
+      color: #718096;
+      font-size: 0.9em;
+      margin-bottom: 40px;
+    }
+    /* NAV */
+    .nav {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+    }
+    .nav-group {
+      width: 100%;
+      text-align: center;
+      color: #718096;
+      font-size: 0.75em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 8px 0 4px;
+    }
+    .nav a {
+      display: inline-block; background: #0f3460; color: #90cdf4; text-decoration: none;
+      padding: 6px 14px; border-radius: 8px; font-size: 0.82em; transition: background .2s;
+    }
+    .nav a:hover { background: #e2b96f; color: #1a1a2e; }
+    /* CATEGORY LABEL */
+    .category-label {
+      text-align: center;
+      font-size: 1.4em;
+      color: #90cdf4;
+      margin: 48px auto 24px;
+      max-width: 860px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #2d3748;
+      padding-bottom: 10px;
+    }
+    /* CARD */
+    .card {
+      max-width: 860px; width: 100%; margin: 0 auto 48px;
+      background: #16213e; border-radius: 14px; padding: 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .header { text-align: center; margin-bottom: 24px; }
+    .header h1, .header h2 { font-size: 1.4em; color: #e2b96f; margin-bottom: 4px; }
+    .header .chinese { font-size: 1.05em; color: #90cdf4; margin-bottom: 6px; }
+    .badge {
+      display: inline-block; background: #e53e3e; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    .badge-weapon {
+      display: inline-block; background: #6b46c1; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    .badge-nanquan {
+      display: inline-block; background: #d69e2e; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    .cat-badge {
+      display: inline-block; background: #2d3748; color: #90cdf4;
+      font-size: 0.75em; font-weight: 600; padding: 3px 12px;
+      border-radius: 20px; margin-left: 6px;
+    }
+    .subtitle { color: #718096; font-size: 0.82em; margin-top: 8px; }
+    .layout { display: flex; gap: 28px; align-items: flex-start; }
+    .diagram-area { flex: 0 0 auto; width: 310px; }
+    .diagram-area svg { width: 100%; display: block; }
+    .diagram-note {
+      text-align: center; font-size: 0.72em; color: #718096; margin-top: 8px; line-height: 1.4;
+    }
+    .diagram-note .green { color: #68d391; font-weight: bold; }
+    .diagram-note span { color: #68d391; font-weight: bold; }
+    .faults-area { flex: 1; min-width: 0; }
+    .fault-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 18px; }
+    .fault-num {
+      flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+      background: #e53e3e; color: white; font-size: 1.1em; font-weight: bold;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fault-text h3 { color: #f0c27f; font-size: 0.9em; font-weight: 600; margin-bottom: 3px; }
+    /* Support both .zh (old files) and .chinese-label (newer files) */
+    .fault-text .zh, .fault-text .chinese-label {
+      color: #90cdf4; font-size: 0.78em; margin-bottom: 4px;
+    }
+    .fault-text p { color: #b0bec5; font-size: 0.82em; line-height: 1.5; }
+    .divider { border: none; border-top: 1px solid #2d3748; margin: 18px 0; }
+    .note-box {
+      background: #0f3460; border-left: 3px solid #e2b96f; border-radius: 6px;
+      padding: 10px 14px; font-size: 0.8em; color: #aaa; line-height: 1.55;
+    }
+    .note-box strong { color: #e2b96f; }
+    /* Standards card */
+    .standards-card {
+      max-width: 860px; width: 100%; background: #0f3460;
+      border-radius: 14px; padding: 28px 32px; margin: 0 auto 36px;
+      border-left: 4px solid #e2b96f;
+    }
+    .standards-card h2 { color: #e2b96f; font-size: 1.2em; margin-bottom: 14px; }
+    .standards-card ul { list-style: none; padding: 0; }
+    .standards-card li {
+      margin-bottom: 14px; padding-left: 20px; position: relative;
+      color: #b0bec5; font-size: 0.9em; line-height: 1.7;
+    }
+    .standards-card li::before { content: '•'; position: absolute; left: 4px; color: #e2b96f; font-weight: bold; }
+    .standards-card .ch { color: #90cdf4; display: block; font-size: 0.95em; margin-bottom: 2px; }
+    @media (max-width: 640px) {
+      .layout { flex-direction: column; }
+      .diagram-area { width: 100%; }
+    }
+    .badge-taiji {
+      display: inline-block; background: #38b2ac; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    .badge-duilian {
+      display: inline-block; background: #ed8936; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    .badge-jiti {
+      display: inline-block; background: #ed64a6; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    .badge-error {
+      display: inline-block; background: #c53030; color: white;
+      font-size: 0.82em; font-weight: bold; padding: 3px 14px;
+      border-radius: 20px; letter-spacing: 0.5px;
+    }
+    /* Table cards for Duilian/Jiti/Other Errors */
+    .table-card {
+      max-width: 860px; width: 100%; margin: 0 auto 48px;
+      background: #16213e; border-radius: 14px; padding: 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .table-card h2 { color: #e2b96f; font-size: 1.3em; margin-bottom: 6px; text-align: center; }
+    .table-card .subtitle { text-align: center; margin-bottom: 20px; }
+    .table-card table { width: 100%; border-collapse: collapse; }
+    .table-card th {
+      background: #0f3460; color: #e2b96f; padding: 10px 14px;
+      text-align: left; font-size: 0.85em; border-bottom: 2px solid #2d3748;
+    }
+    .table-card td {
+      padding: 10px 14px; border-bottom: 1px solid #2d3748;
+      color: #b0bec5; font-size: 0.85em; line-height: 1.5;
+    }
+    .table-card tr:hover td { background: rgba(144,205,244,0.05); }
+    .table-card .code-col { color: #e2b96f; font-weight: bold; width: 60px; }
+    .table-card .cat-col { color: #90cdf4; width: 120px; }
+    .table-card .deduction-col { color: #ed8936; font-weight: 600; width: 70px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">武术套路竞赛裁判法 — Complete Deduction Reference</h1>
+<p class="page-sub">
+  Table 10-1-1 Changquan, Jianshu, Daoshu, Qiangshu &amp; Gunshu &middot;
+  Table 10-1-2 Nanquan, Nandao &amp; Nangun &middot;
+  Table 10-1-3 Taijiquan &amp; Taijijian &middot;
+  Duilian &middot; Jiti &middot; Other Errors
+</p>
+
+<nav class="nav">
+  <div class="nav-group">Hand Forms</div>
+  <a href="#code01">01 Fist</a>
+  <a href="#code02">02 Palm</a>
+  <a href="#code03">03 Hook</a>
+  <a href="#code04">04 Sword Fingers</a>
+  <div class="nav-group">Balance</div>
+  <a href="#code10">10 Vert. Leg Hold</a>
+  <a href="#code11">11 Backward Lean</a>
+  <a href="#code12">12 Cross Balance</a>
+  <a href="#code14">14 Cross-Legged</a>
+  <a href="#code15">15 Sideways/Ocean</a>
+  <a href="#code16">16 Gazing Moon</a>
+  <div class="nav-group">Leg Tech</div>
+  <a href="#code20">20 Front Sweep</a>
+  <a href="#code21">21 Back Sweep</a>
+  <a href="#code22">22 Front Split</a>
+  <a href="#code23">23 Snap Kick</a>
+  <a href="#code24">24 Stretch Kick</a>
+  <a href="#code25">25 Slap Kick</a>
+  <a href="#code26">26 Knee Raise</a>
+  <div class="nav-group">Jumping</div>
+  <a href="#code30">30 Jump Slap</a>
+  <a href="#code31">31 Jump Straight</a>
+  <a href="#code32">32 Aerial Cartwheel</a>
+  <a href="#code33">33 Butterfly</a>
+  <a href="#code34">34 Jump Snap Kick</a>
+  <div class="nav-group">Stances</div>
+  <a href="#code50">50 Bow Stance</a>
+  <a href="#code51">51 Horse Stance</a>
+  <a href="#code52">52 Empty Stance</a>
+  <a href="#code53">53 Crouch Stance</a>
+  <a href="#code54">54 Cross-Crouch</a>
+  <a href="#code58">58 Cross-Sit</a>
+  <div class="nav-group">Weapons</div>
+  <a href="#code60">60 Sword Hook/Cut</a>
+  <a href="#code61">61 Sword Grip</a>
+  <a href="#code62">62 Broadsword Wrap</a>
+  <a href="#code63">63 Spear Block/Thrust</a>
+  <a href="#code64">64 Cudgel Windmill</a>
+  <a href="#code65">65 Vert. Figure 8</a>
+  <a href="#code66">66 Weapon Throw-Catch</a>
+  <div class="nav-group">Nanquan</div>
+  <a href="#nq01">NQ01 Fist</a>
+  <a href="#nq02">NQ02 Tiger Claw</a>
+  <a href="#nq03">NQ03 Crane Beak</a>
+  <a href="#nq04">NQ04 Single Finger</a>
+  <a href="#nq25">NQ25 Back Crescent</a>
+  <a href="#nq27">NQ27 Nail Kick</a>
+  <a href="#nq40">NQ40 Flying Cross 360</a>
+  <a href="#nq42">NQ42 Dbl Side Kick</a>
+  <a href="#nq55">NQ55 Butterfly St.</a>
+  <a href="#nq56">NQ56 Kneeling St.</a>
+  <a href="#nq57">NQ57 Dragon Riding</a>
+  <a href="#nq67">NQ67 Cudgel Plant</a>
+  <div class="nav-group">Taijiquan</div>
+  <a href="#tj05">TJ05 Hand Tech.</a>
+  <a href="#tj06">TJ06 Body Posture</a>
+  <a href="#tj17">TJ17 Sole Kick Bal.</a>
+  <a href="#tj18">TJ18 Low Bal. Fwd</a>
+  <a href="#tj19">TJ19 Low Bal. Cross</a>
+  <a href="#tj22">TJ22 Hurdler Split</a>
+  <a href="#tj23">TJ23 Parting Kick</a>
+  <a href="#tj25">TJ25 Lotus Slap</a>
+  <a href="#tj59">TJ59 Stepping</a>
+  <a href="#tj68">TJ68 Sword Envelop</a>
+  <div class="nav-group">Duilian</div>
+  <a href="#duilian">90–95 Sparring</a>
+  <div class="nav-group">Jiti</div>
+  <a href="#jiti">90–97 Group</a>
+  <div class="nav-group">Other Errors</div>
+  <a href="#errors">70–79 All Events</a>
+</nav>
+
+
+<div class="category-label">手型 Hand Forms</div>
+
+
+<!-- code01 -->
+
+<div class="card" id="code01">
+<div class="header">
+<div class="chinese">拳 Quán — Fist</div>
+<h2>Hand Form Deduction <span class="badge">Code 01</span> <span class="cat-badge">手型 Hand Forms</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 260">
+<rect fill="#0f3460" height="260" rx="8" width="280"></rect>
+<defs>
+<marker id="a01" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Fist outline (side view) -->
+<!-- Fingers curled -->
+<rect fill="none" height="100" rx="22" stroke="#90cdf4" stroke-width="2.5" width="160" x="60" y="60"></rect>
+<!-- Finger segment lines -->
+<line stroke="#90cdf4" stroke-width="1.5" x1="100" x2="100" y1="160" y2="130"></line>
+<line stroke="#90cdf4" stroke-width="1.5" x1="130" x2="130" y1="160" y2="130"></line>
+<line stroke="#90cdf4" stroke-width="1.5" x1="160" x2="160" y1="160" y2="130"></line>
+<!-- Finger tips curled in -->
+<path d="M80,160 Q80,145 100,130" fill="none" stroke="#90cdf4" stroke-width="1.5"></path>
+<path d="M100,160 Q100,145 130,130" fill="none" stroke="#90cdf4" stroke-width="1.5"></path>
+<path d="M130,160 Q130,145 160,130" fill="none" stroke="#90cdf4" stroke-width="1.5"></path>
+<path d="M160,160 Q160,145 180,130" fill="none" stroke="#90cdf4" stroke-width="1.5"></path>
+<!-- Thumb wrapping over -->
+<ellipse cx="90" cy="115" fill="none" rx="18" ry="12" stroke="#90cdf4" stroke-width="2"></ellipse>
+<!-- Label: face of fist -->
+<text fill="#4a5568" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="52">← face of fist →</text>
+<line stroke="#4a5568" stroke-dasharray="3,2" stroke-width="1" x1="75" x2="205" y1="56" y2="56"></line>
+<!-- Label: thumb -->
+<text fill="#4a5568" font-family="sans-serif" font-size="8" text-anchor="middle" x="90" y="100">THUMB</text>
+<!-- Label: 2nd segments -->
+<text fill="#4a5568" font-family="sans-serif" font-size="8" text-anchor="middle" x="140" y="180">index &amp; middle 2nd segments</text>
+<!-- Fault 1 marker at fist face -->
+<circle cx="250" cy="56" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="250" y="60">1</text>
+<line marker-end="url(#a01)" stroke="#e53e3e" stroke-width="1.5" x1="238" x2="210" y1="56" y2="56"></line>
+<!-- Fault 2 marker at thumb -->
+<circle cx="40" cy="115" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="40" y="119">2</text>
+<line marker-end="url(#a01)" stroke="#e53e3e" stroke-width="1.5" x1="52" x2="72" y1="115" y2="115"></line>
+<!-- Correct position note -->
+<rect fill="#16213e" height="36" rx="6" stroke="#68d391" stroke-width="1" width="200" x="40" y="210"></rect>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="224">✓ Fist face flat</text>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="238">✓ Thumb presses on 2nd segments</text>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones   <span class="green">□</span> green = correct</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Face of Fist Uneven</h3>
+<div class="zh">拳面不平</div>
+<p>The striking surface of the fist must be flat — all four knuckles aligned. An uneven fist face (one knuckle protruding) is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Thumb Not Pressing on Index &amp; Middle Finger</h3>
+<div class="zh">拇指未压在食指和中指第二节上</div>
+<p>The thumb must wrap around and press firmly on the second segment (middle phalanx) of both the index and middle fingers. A loose or misplaced thumb is a fault.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Deduction:</strong> 0.1 per occurrence. If both faults appear in one technique, only 0.1 is deducted once for that technique.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code02 -->
+
+<div class="card" id="code02">
+<div class="header">
+<div class="chinese">掌 Zhǎng — Palm</div>
+<h2>Hand Form Deduction <span class="badge">Code 02</span> <span class="cat-badge">手型 Hand Forms</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 280">
+<rect fill="#0f3460" height="280" rx="8" width="280"></rect>
+<defs>
+<marker id="a02" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Palm / wrist -->
+<rect fill="none" height="50" rx="8" stroke="#90cdf4" stroke-width="2.2" width="80" x="100" y="180"></rect>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="210">palm</text>
+<!-- Four fingers extended straight up -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="110" x2="110" y1="180" y2="60"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="127" x2="127" y1="180" y2="50"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="144" x2="144" y1="180" y2="55"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="161" x2="161" y1="180" y2="70"></line>
+<!-- Finger tips -->
+<circle cx="110" cy="60" fill="#90cdf4" r="3"></circle>
+<circle cx="127" cy="50" fill="#90cdf4" r="3"></circle>
+<circle cx="144" cy="55" fill="#90cdf4" r="3"></circle>
+<circle cx="161" cy="70" fill="#90cdf4" r="3"></circle>
+<!-- Bracket: 4 fingers together -->
+<path d="M105,40 L105,35 L166,35 L166,40" fill="none" stroke="#68d391" stroke-width="1.2"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="136" y="30">4 fingers straight &amp; together</text>
+<!-- Thumb bent into tiger mouth -->
+<path d="M100,195 Q70,195 65,175 Q60,155 75,150" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<circle cx="75" cy="150" fill="#90cdf4" r="3"></circle>
+<text fill="#4a5568" font-family="sans-serif" font-size="8" text-anchor="middle" transform="rotate(-70,52,170)" x="52" y="170">thumb</text>
+<!-- Tiger mouth label -->
+<path d="M95,185 Q85,180 82,172" fill="none" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="7.5" text-anchor="middle" x="60" y="135">虎口 tiger mouth</text>
+<!-- Fault 1 -->
+<circle cx="245" cy="55" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="245" y="59">1</text>
+<line marker-end="url(#a02)" stroke="#e53e3e" stroke-width="1.5" x1="233" x2="168" y1="58" y2="60"></line>
+<!-- Fault 2 -->
+<circle cx="30" cy="200" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="30" y="204">2</text>
+<line marker-end="url(#a02)" stroke="#e53e3e" stroke-width="1.5" x1="42" x2="62" y1="198" y2="180"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Four Fingers Not Straight and Held Together</h3>
+<div class="zh">四指未伸直并拢</div>
+<p>All four fingers must be fully extended and pressed tightly together with no gaps. Bent or splayed fingers are a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Thumb Not Bent and Held Tightly</h3>
+<div class="zh">拇指未弯曲紧扣于虎口处</div>
+<p>The thumb must be bent inward and pressed firmly into the "tiger's mouth" (虎口) — the web between thumb and index finger. A loose or straight thumb is a deduction.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Deduction:</strong> 0.1 per occurrence. If both faults appear in one technique, only 0.1 is deducted once for that technique.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code03 -->
+
+<div class="card" id="code03">
+<div class="header">
+<div class="chinese">勾手 Gōu Shǒu — Hook Hand</div>
+<h2>Hand Form Deduction <span class="badge">Code 03</span> <span class="cat-badge">手型 Hand Forms</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 270">
+<rect fill="#0f3460" height="270" rx="8" width="280"></rect>
+<defs>
+<marker id="a03" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Forearm -->
+<line stroke="#90cdf4" stroke-width="3" x1="140" x2="140" y1="30" y2="100"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="160" y="60">forearm</text>
+<!-- Wrist hook bend -->
+<path d="M140,100 Q140,140 120,160" fill="none" stroke="#90cdf4" stroke-width="3"></path>
+<!-- Five fingers pinched together -->
+<circle cx="118" cy="166" fill="none" r="14" stroke="#90cdf4" stroke-width="2.5"></circle>
+<circle cx="118" cy="166" fill="#90cdf4" r="4"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="118" y="195">5 fingers pinched</text>
+<!-- Wrist angle arc -->
+<path d="M150,85 Q155,115 140,130" fill="none" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="175" y="115">wrist hook</text>
+<!-- Fault 1: fingers not pinched -->
+<circle cx="55" cy="166" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="55" y="170">1</text>
+<line marker-end="url(#a03)" stroke="#e53e3e" stroke-width="1.5" x1="67" x2="102" y1="166" y2="166"></line>
+<!-- Fault 2: wrist not hooked -->
+<circle cx="230" cy="115" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="230" y="119">2</text>
+<line marker-end="url(#a03)" stroke="#e53e3e" stroke-width="1.5" x1="218" x2="158" y1="115" y2="115"></line>
+<!-- Correct zone -->
+<rect fill="#16213e" height="34" rx="6" stroke="#68d391" stroke-width="1" width="180" x="50" y="220"></rect>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="234">✓ Fingertips pinched to one point</text>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="247">✓ Wrist fully flexed downward</text>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Five Fingers Not Pinched Together</h3>
+<div class="zh">五指未拢拢</div>
+<p>All five fingertips must come together to a single point, like a beak. If any fingers are splayed or separated, it's a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Wrist Not Hooked Completely</h3>
+<div class="zh">腕未屈</div>
+<p>The wrist must be fully flexed (hooked downward) so the pinched fingertips point toward the ground. An incomplete hook is a deduction.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Deduction:</strong> 0.1 per occurrence. If both faults appear in one technique, only 0.1 is deducted once for that technique.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code04 -->
+
+<div class="card" id="code04">
+<div class="header">
+<div class="chinese">剑指 Jiàn Zhǐ — Sword Fingers</div>
+<h2>Hand Form Deduction <span class="badge">Code 04</span> <span class="cat-badge">手型 Hand Forms</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 280">
+<rect fill="#0f3460" height="280" rx="8" width="280"></rect>
+<defs>
+<marker id="a04" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Palm base -->
+<rect fill="none" height="55" rx="10" stroke="#90cdf4" stroke-width="2.2" width="100" x="90" y="170"></rect>
+<!-- Index + Middle extended straight -->
+<line stroke="#90cdf4" stroke-width="2.8" x1="120" x2="120" y1="170" y2="45"></line>
+<line stroke="#90cdf4" stroke-width="2.8" x1="140" x2="140" y1="170" y2="40"></line>
+<circle cx="120" cy="45" fill="#90cdf4" r="3"></circle>
+<circle cx="140" cy="40" fill="#90cdf4" r="3"></circle>
+<!-- Bracket: together -->
+<path d="M115,35 L115,30 L145,30 L145,35" fill="none" stroke="#68d391" stroke-width="1.2"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="130" y="25">straight &amp; together</text>
+<!-- Ring + Little fingers curled -->
+<path d="M160,170 Q165,155 163,145 Q160,138 155,140" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<path d="M175,172 Q180,160 177,152 Q174,146 170,148" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<text fill="#4a5568" font-family="sans-serif" font-size="7.5" x="195" y="155">ring &amp; little</text>
+<text fill="#4a5568" font-family="sans-serif" font-size="7.5" x="195" y="165">(curled)</text>
+<!-- Thumb pressing over ring+little -->
+<path d="M90,188 Q70,178 68,162 Q66,150 78,144 Q90,140 100,145" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<text fill="#4a5568" font-family="sans-serif" font-size="8" text-anchor="middle" x="42" y="160">thumb</text>
+<!-- Arrow: thumb presses on ring+little -->
+<path d="M100,145 L155,143" fill="none" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="7" text-anchor="middle" x="130" y="138">presses on</text>
+<!-- Fault 1 -->
+<circle cx="245" cy="45" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="245" y="49">1</text>
+<line marker-end="url(#a04)" stroke="#e53e3e" stroke-width="1.5" x1="233" x2="148" y1="48" y2="44"></line>
+<!-- Fault 2 -->
+<circle cx="30" cy="145" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="30" y="149">2</text>
+<line marker-end="url(#a04)" stroke="#e53e3e" stroke-width="1.5" x1="42" x2="64" y1="148" y2="154"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Index &amp; Middle Fingers Not Straight and Together</h3>
+<div class="zh">食指与中指未伸直并拢</div>
+<p>The index and middle fingers must be fully extended and pressed tightly together, forming the "sword blade." Bent or separated fingers are a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Thumb Not Pressing on Ring &amp; Little Finger</h3>
+<div class="zh">拇指未压在无名指与小指上</div>
+<p>The thumb must curl in and press firmly on the ring and little fingers (which are themselves curled in). A loose or misplaced thumb is a deduction.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Deduction:</strong> 0.1 per occurrence. If both faults appear in one technique, only 0.1 is deducted once for that technique.
+      </div>
+</div>
+</div>
+</div>
+
+<div class="category-label">平衡 Balance Techniques</div>
+
+
+<!-- code10 -->
+
+<div class="card" id="code10">
+<div class="header">
+<div class="chinese">搬脚朝天直立 Bān Jiǎo Cháo Tiān Zhí Lì / 侧踢抱脚直立 Cè Tī Bào Jiǎo Zhí Lì</div>
+<h1>Vertical Leg Hold Standing <span class="badge">Code 10</span></h1>
+<div class="subtitle">Grasp foot to head level · Side kick catch at head level</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a10" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head -->
+<circle cx="155" cy="42" fill="none" r="15" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="57" y2="155"></line>
+<!-- Arms holding raised leg -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="185" y1="95" y2="55"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="125" y1="95" y2="55"></line>
+<!-- Supporting leg (straight, vertical) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="155" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="170" y1="265" y2="268"></line>
+<!-- Raised leg (vertical, straight up) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="175" y1="155" y2="35"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="175" x2="180" y1="35" y2="25"></line>
+<!-- Green ref: vertical line for raised leg -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="160" x2="160" y1="25" y2="155"></line>
+<!-- Fault 1: Supporting leg bent -->
+<circle cx="110" cy="210" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="110" y="215">1</text>
+<line marker-end="url(#a10)" stroke="#e53e3e" stroke-width="1.5" x1="123" x2="150" y1="210" y2="210"></line>
+<!-- Fault 2: Raised leg bent -->
+<circle cx="220" cy="80" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="220" y="85">2</text>
+<line marker-end="url(#a10)" stroke="#e53e3e" stroke-width="1.5" x1="207" x2="178" y1="80" y2="70"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct alignment<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Supporting Leg Bent</h3>
+<div class="chinese-label">支撑腿弯曲</div>
+<p>The standing/supporting leg must remain fully straight throughout the hold. Any noticeable bend at the knee is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Raised Leg Bent</h3>
+<div class="chinese-label">上举腿弯曲</div>
+<p>The raised leg must be fully extended and straight while held vertically. Any bend at the knee constitutes a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code11 -->
+
+<div class="card" id="code11">
+<div class="header">
+<div class="chinese">仰身平衡 Yǎng Shēn Píng Héng</div>
+<h1>Backward Leaning Balance <span class="badge">Code 11</span></h1>
+<div class="subtitle">Torso leans back while front leg is raised</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a11" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head (leaning back) -->
+<circle cx="105" cy="90" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (leaning back ~45°) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="115" x2="155" y1="102" y2="170"></line>
+<!-- Arms spread back -->
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="85" y1="128" y2="110"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="145" y1="128" y2="100"></line>
+<!-- Supporting leg (straight, vertical) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="170" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="170" y1="265" y2="268"></line>
+<!-- Raised front leg (should be at or above horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="245" y1="170" y2="130"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="245" x2="255" y1="130" y2="125"></line>
+<!-- Green ref: horizontal at hip -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="155" x2="270" y1="170" y2="170"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="9" x="272" y="174">horiz.</text>
+<!-- Fault 1: raised leg below horizontal -->
+<circle cx="270" cy="115" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="270" y="120">1</text>
+<line marker-end="url(#a11)" stroke="#e53e3e" stroke-width="1.5" x1="257" x2="248" y1="120" y2="130"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zone</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Raised Leg Below Horizontal</h3>
+<div class="chinese-label">前举腿低于水平</div>
+<p>The front raised leg must be at or above horizontal level. If it drops below the horizontal plane it is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code12 -->
+
+<div class="card" id="code12">
+<div class="header">
+<div class="chinese">十字平衡 Shí Zì Píng Héng</div>
+<h1>Forward Leaning Balance (Arms Outspread) <span class="badge">Code 12</span></h1>
+<div class="subtitle">Cross-shaped balance — torso and raised leg horizontal</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a12b" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head (forward lean) -->
+<circle cx="230" cy="108" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (horizontal, leaning forward) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="220" x2="155" y1="118" y2="155"></line>
+<!-- Arms outspread -->
+<line stroke="#90cdf4" stroke-width="2" x1="190" x2="215" y1="135" y2="165"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="190" x2="240" y1="135" y2="140"></line>
+<!-- Supporting leg (straight, vertical) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="155" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="170" y1="265" y2="268"></line>
+<!-- Raised back leg (horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="65" y1="155" y2="125"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="65" x2="55" y1="125" y2="120"></line>
+<!-- Green ref: horizontal at hip -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="55" x2="250" y1="155" y2="155"></line>
+<!-- Fault 1: supporting leg bent -->
+<circle cx="115" cy="210" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="115" y="215">1</text>
+<line marker-end="url(#a12b)" stroke="#e53e3e" stroke-width="1.5" x1="128" x2="150" y1="210" y2="210"></line>
+<!-- Fault 2: torso below horizontal -->
+<circle cx="260" cy="140" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="145">2</text>
+<line marker-end="url(#a12b)" stroke="#e53e3e" stroke-width="1.5" x1="247" x2="225" y1="140" y2="120"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Supporting Leg Bent</h3>
+<div class="chinese-label">支撑腿弯曲</div>
+<p>The standing leg must be completely straight. Any visible bend at the knee is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Torso Below Horizontal</h3>
+<div class="chinese-label">躯干低于水平</div>
+<p>The torso must be at or above horizontal level. If the torso dips below the horizontal plane, it is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code14 -->
+
+<div class="card" id="code14">
+<div class="header">
+<div class="chinese">扣腿平衡 Kòu Tuǐ Píng Héng / 盘腿平衡 Pán Tuǐ Píng Héng</div>
+<h1>Cross-Legged Balance <span class="badge">Code 14</span></h1>
+<div class="subtitle">Rear cross-legged balance · Front cross-legged balance</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a14" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head -->
+<circle cx="155" cy="42" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="56" y2="145"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="195" y1="90" y2="75"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="115" y1="90" y2="75"></line>
+<!-- Supporting leg (bent at thigh level, thigh horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="145" y2="170"></line>
+<!-- Supporting thigh horizontal -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="170" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="170" y1="265" y2="268"></line>
+<!-- Crossed leg (folded across front of supporting thigh) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="190" y1="145" y2="165"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="190" x2="175" y1="165" y2="190"></line>
+<circle cx="190" cy="165" fill="#90cdf4" r="3"></circle>
+<!-- Green ref: horizontal at thigh -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="100" x2="210" y1="170" y2="170"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="9" x="215" y="174">horiz.</text>
+<!-- Fault 1: supporting thigh not at horizontal -->
+<circle cx="80" cy="170" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="175">1</text>
+<line marker-end="url(#a14)" stroke="#e53e3e" stroke-width="1.5" x1="93" x2="145" y1="170" y2="170"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zone</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Supporting Thigh Not at Horizontal</h3>
+<div class="chinese-label">支撑腿大腿未达水平</div>
+<p>The thigh of the supporting leg must be held at horizontal level. If it rises or dips away from horizontal, it is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code15 -->
+
+<div class="card" id="code15">
+<div class="header">
+<div class="chinese">侧身平衡 Cè Shēn Píng Héng / 探海平衡 Tàn Hǎi Píng Héng</div>
+<h1>Sideways · Exploring the Ocean Balance <span class="badge">Code 15</span></h1>
+<div class="subtitle">Sideways leaning balance · Forward tip balance with rear leg raised</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a15" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head (leaning sideways/forward) -->
+<circle cx="220" cy="125" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (leaning forward) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="212" x2="165" y1="136" y2="165"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="190" x2="240" y1="148" y2="155"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="190" x2="200" y1="148" y2="178"></line>
+<!-- Supporting leg (must be straight) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="165" x2="165" y1="165" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="165" x2="180" y1="265" y2="268"></line>
+<!-- Raised back leg (must be straight, extended back) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="165" x2="70" y1="165" y2="115"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="70" x2="58" y1="115" y2="110"></line>
+<!-- Green ref: horizontal -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="55" x2="250" y1="165" y2="165"></line>
+<!-- Fault 1: supporting leg bent -->
+<circle cx="125" cy="215" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="125" y="220">1</text>
+<line marker-end="url(#a15)" stroke="#e53e3e" stroke-width="1.5" x1="138" x2="160" y1="215" y2="215"></line>
+<!-- Fault 2: raised leg bent -->
+<circle cx="50" cy="80" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="50" y="85">2</text>
+<line marker-end="url(#a15)" stroke="#e53e3e" stroke-width="1.5" x1="58" x2="67" y1="90" y2="110"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Supporting Leg Bent</h3>
+<div class="chinese-label">支撑腿弯曲</div>
+<p>The supporting leg must be perfectly straight. Any bend at the knee is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Raised Leg Bent</h3>
+<div class="chinese-label">后举腿弯曲</div>
+<p>The rear raised leg must remain straight and extended. Any bend at the knee constitutes a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code16 -->
+
+<div class="card" id="code16">
+<div class="header">
+<div class="chinese">望月平衡 Wàng Yuè Píng Héng</div>
+<h1>Gazing at the Moon Balance <span class="badge">Code 16</span></h1>
+<div class="subtitle">Torso horizontal, waist twisted to look back over supporting leg</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a16" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head (twisted back, looking up) -->
+<circle cx="190" cy="108" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- "Eye" gaze arrow up -->
+<line stroke="#e2b96f" stroke-dasharray="3,2" stroke-width="1.5" x1="192" x2="200" y1="96" y2="78"></line>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" x="205" y="76">🌙</text>
+<!-- Torso (leaning forward, near horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="183" x2="160" y1="120" y2="160"></line>
+<!-- Supporting leg -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="160" x2="160" y1="160" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="160" x2="175" y1="265" y2="268"></line>
+<!-- Raised bent leg (back, instep extended) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="160" x2="100" y1="160" y2="130"></line>
+<line stroke="#90cdf4" stroke-width="2.3" x1="100" x2="85" y1="130" y2="150"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="85" x2="80" y1="150" y2="160"></line>
+<circle cx="100" cy="130" fill="#90cdf4" r="3"></circle>
+<!-- Green ref: horizontal at hip (torso should be ≤45° above it) -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="80" x2="250" y1="160" y2="160"></line>
+<!-- 45° ref line -->
+<line opacity="0.5" stroke="#e2b96f" stroke-dasharray="3,3" stroke-width="1" x1="160" x2="210" y1="160" y2="125"></line>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="215" y="123">45°</text>
+<!-- Fault 1: torso too high -->
+<circle cx="240" cy="108" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="240" y="113">1</text>
+<line marker-end="url(#a16)" stroke="#e53e3e" stroke-width="1.5" x1="227" x2="198" y1="112" y2="118"></line>
+<!-- Fault 2: waist not twisted -->
+<circle cx="140" cy="130" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="140" y="135">2</text>
+<line marker-end="url(#a16)" stroke="#e53e3e" stroke-width="1.5" x1="147" x2="158" y1="140" y2="155"></line>
+<!-- Fault 3: instep not flat -->
+<circle cx="55" cy="165" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="55" y="170">3</text>
+<line marker-end="url(#a16)" stroke="#e53e3e" stroke-width="1.5" x1="65" x2="78" y1="160" y2="155"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Torso 45° or More Above Horizontal</h3>
+<div class="chinese-label">躯干高于水平45°或超过45°</div>
+<p>The torso must be kept low — no more than 45° above horizontal. Standing too upright is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Waist Not Twisted to Look Back</h3>
+<div class="chinese-label">未向支撑腿侧拧腰后视</div>
+<p>The waist must twist toward the supporting-leg side so the athlete gazes to the rear. Failing to twist counts as a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Instep of Bent Leg Not Extended Flat</h3>
+<div class="chinese-label">屈收腿脚背未绷平</div>
+<p>The instep (top of foot) of the raised bent leg must be pointed and extended flat. A relaxed or flexed foot is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-label">腿法 Leg Techniques</div>
+
+
+<!-- code20 -->
+
+<div class="card" id="code20">
+<div class="header">
+<div class="chinese">前扫腿 Qián Sǎo Tuǐ</div>
+<h1>Front Sweep <span class="badge">Code 20</span></h1>
+<div class="subtitle">Low spinning sweep with supporting leg crouched</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a20" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head (low, crouching) -->
+<circle cx="155" cy="145" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (low, somewhat upright) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="158" y2="210"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="190" y1="175" y2="160"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="120" y1="175" y2="160"></line>
+<!-- Supporting leg (fully crouched — thigh on calf) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="175" y1="210" y2="240"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="175" x2="165" y1="240" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="165" x2="180" y1="265" y2="268"></line>
+<circle cx="175" cy="240" fill="#90cdf4" r="3"></circle>
+<!-- Sweeping leg (extended, sole on floor) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="55" y1="210" y2="260"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="55" x2="40" y1="260" y2="268"></line>
+<!-- Sweep arc arrow -->
+<path d="M 70 255 A 60 60 0 0 1 130 268" fill="none" stroke="#e2b96f" stroke-dasharray="4,3" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" text-anchor="middle" x="90" y="280">sweep →</text>
+<!-- Green ref: horizontal at supporting thigh -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="120" x2="200" y1="210" y2="210"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="203" y="214">horiz.</text>
+<!-- Fault 1: supporting thigh above horizontal -->
+<circle cx="220" cy="195" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="220" y="200">1</text>
+<line marker-end="url(#a20)" stroke="#e53e3e" stroke-width="1.5" x1="207" x2="180" y1="200" y2="210"></line>
+<!-- Fault 2: sweeping sole leaves ground -->
+<circle cx="30" cy="240" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="30" y="245">2</text>
+<line marker-end="url(#a20)" stroke="#e53e3e" stroke-width="1.5" x1="40" x2="48" y1="248" y2="258"></line>
+<!-- Fault 3: sweeping leg bent -->
+<circle cx="85" cy="220" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="85" y="225">3</text>
+<line marker-end="url(#a20)" stroke="#e53e3e" stroke-width="1.5" x1="92" x2="105" y1="230" y2="240"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Supporting Thigh Above Horizontal</h3>
+<div class="chinese-label">支撑腿大腿高于水平</div>
+<p>The supporting leg must be crouched low enough that the thigh is at or below horizontal. Rising too high is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Sweeping Foot Leaves the Ground</h3>
+<div class="chinese-label">扫转腿脚掌在扫转时触地后离地</div>
+<p>The sole of the sweeping foot must maintain contact with the ground throughout the sweep. Lifting off the floor after initial contact is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Sweeping Leg Bent 45° or More</h3>
+<div class="chinese-label">扫转腿弯曲45°或超过45°</div>
+<p>The sweeping leg must remain extended. Bending the knee 45° or more during the sweep is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code21 -->
+
+<div class="card" id="code21">
+<div class="header">
+<div class="chinese">后扫腿 Hòu Sǎo Tuǐ</div>
+<h1>Back Sweep <span class="badge">Code 21</span></h1>
+<div class="subtitle">Reverse low sweeping rotation</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a21" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head (crouching) -->
+<circle cx="155" cy="150" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="163" y2="215"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="190" y1="180" y2="165"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="120" y1="180" y2="165"></line>
+<!-- Supporting leg (crouched) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="135" y1="215" y2="245"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="135" x2="145" y1="245" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="145" x2="160" y1="265" y2="268"></line>
+<circle cx="135" cy="245" fill="#90cdf4" r="3"></circle>
+<!-- Sweeping leg (extended, sole on floor, sweeping back) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="260" y1="215" y2="260"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="260" x2="275" y1="260" y2="268"></line>
+<!-- Sweep arc -->
+<path d="M 240 258 A 50 50 0 0 0 195 268" fill="none" stroke="#e2b96f" stroke-dasharray="4,3" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" text-anchor="middle" x="215" y="280">← sweep</text>
+<!-- Fault 1: sweeping sole leaves ground -->
+<circle cx="280" cy="240" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="280" y="245">1</text>
+<line marker-end="url(#a21)" stroke="#e53e3e" stroke-width="1.5" x1="272" x2="265" y1="250" y2="260"></line>
+<!-- Fault 2: sweeping leg bent -->
+<circle cx="220" cy="220" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="220" y="225">2</text>
+<line marker-end="url(#a21)" stroke="#e53e3e" stroke-width="1.5" x1="215" x2="210" y1="232" y2="240"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct alignment<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Sweeping Foot Leaves the Ground</h3>
+<div class="chinese-label">扫转腿脚掌离地</div>
+<p>The sole of the sweeping foot must stay in contact with the ground throughout the sweeping action. Lifting off is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Sweeping Leg Bent 45° or More</h3>
+<div class="chinese-label">扫转腿弯曲45°或超过45°</div>
+<p>The sweeping leg must remain extended and as straight as possible. A bend of 45° or more at the knee is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code22 -->
+
+<div class="card" id="code22">
+<div class="header">
+<div class="chinese">跌竖叉 Diē Shù Chā</div>
+<h1>Falling Front Split <span class="badge">Code 22</span></h1>
+<div class="subtitle">Drop into a full front split position</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a22" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="248" y2="248"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="265">— ground —</text>
+<!-- Head -->
+<circle cx="155" cy="155" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (upright, sitting in split) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="168" y2="225"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="190" y1="190" y2="175"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="120" y1="190" y2="175"></line>
+<!-- Front leg (extended forward, flat on ground) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="265" y1="225" y2="245"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="265" x2="280" y1="245" y2="240"></line>
+<!-- Back leg (extended back, flat on ground) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="45" y1="225" y2="245"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="45" x2="32" y1="245" y2="248"></line>
+<!-- Green ref: parallel lines -->
+<line opacity="0.5" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1" x1="40" x2="280" y1="238" y2="238"></line>
+<!-- Fault 1: front foot turned inward -->
+<circle cx="275" cy="222" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="275" y="227">1</text>
+<line marker-end="url(#a22)" stroke="#e53e3e" stroke-width="1.5" x1="268" x2="268" y1="232" y2="240"></line>
+<!-- Fault 2: legs not forming parallel lines -->
+<circle cx="80" cy="215" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="220">2</text>
+<line marker-end="url(#a22)" stroke="#e53e3e" stroke-width="1.5" x1="88" x2="100" y1="225" y2="235"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = reference line<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Front Foot Turns Inward and Touches Ground</h3>
+<div class="chinese-label">前脚内扣触地</div>
+<p>The sole of the front foot must not turn inward to touch the ground. The foot should face upward or forward.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Legs Not Forming Parallel Straight Lines</h3>
+<div class="chinese-label">两腿未前后形成两条平行直线</div>
+<p>The front and rear legs must extend in two parallel straight lines. Misalignment or skewing to one side is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code23 -->
+
+<div class="card" id="code23">
+<div class="header">
+<div class="chinese">弹腿 · 蹬腿 · 踹腿 — Snap Kick · Heel Push Kick · Side Kick</div>
+<h2>Leg Technique Deduction <span class="badge">Code 23</span> <span class="cat-badge">腿法 Leg Techniques</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 280">
+<rect fill="#0f3460" height="280" rx="8" width="280"></rect>
+<defs>
+<marker id="a23" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Ground -->
+<line stroke="#2d3748" stroke-width="2" x1="20" x2="260" y1="250" y2="250"></line>
+<!-- Standing/supporting leg -->
+<circle cx="100" cy="42" fill="none" r="14" stroke="#90cdf4" stroke-width="2"></circle>
+<line stroke="#90cdf4" stroke-width="2.5" x1="100" x2="100" y1="56" y2="130"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="100" x2="95" y1="130" y2="200"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="95" x2="90" y1="200" y2="248"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="90" x2="75" y1="248" y2="250"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="100" x2="60" y1="85" y2="110"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="100" x2="140" y1="85" y2="75"></line>
+<!-- Kicking leg: BENT phase (ghost) -->
+<line stroke="#4a5568" stroke-dasharray="5,3" stroke-width="2" x1="100" x2="140" y1="130" y2="140"></line>
+<line stroke="#4a5568" stroke-dasharray="5,3" stroke-width="2" x1="140" x2="135" y1="140" y2="170"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="8" x="155" y="157">bent ≥45°</text>
+<!-- Kicking leg: EXTENDED phase (solid) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="100" x2="230" y1="130" y2="125"></line>
+<circle cx="230" cy="125" fill="#90cdf4" r="4"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="230" y="115">fully straight</text>
+<!-- 45° angle arc from bent to extended -->
+<path d="M145,155 Q160,140 165,125" fill="none" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="178" y="143">≥ 45°</text>
+<!-- Arrow: transition -->
+<path d="M138,162 Q175,150 220,128" fill="none" stroke="#e2b96f" stroke-dasharray="4,2" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="180" y="165">transition</text>
+<!-- Fault 1: insufficient range -->
+<circle cx="245" cy="165" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="245" y="169">1</text>
+<line marker-end="url(#a23)" stroke="#e53e3e" stroke-width="1.5" x1="235" x2="188" y1="158" y2="140"></line>
+</svg>
+<p class="diagram-note">Dashed = bent start position · Solid = extended final position</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Kicking Leg Does Not Show Obvious Bend-to-Straight Transition</h3>
+<div class="zh">弹（蹬、踹）腿由屈到伸摆动小于45°</div>
+<p>The kicking leg must start from a clearly bent position (45° or more) and extend to completely straight. If the range of motion from bent to straight is less than 45°, it's a deduction — the kick looks like a "push" instead of a snap.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Applies to all three kicks:</strong> Snap Kick (弹腿), Heel Push Kick (蹬腿), and Side Kick (踹腿). The same "bend-to-straight" criterion applies to each.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code24 -->
+
+<div class="card" id="code24">
+<div class="header">
+<div class="chinese">正踢腿 · 侧踢腿 — Front Stretch Kick · Side Stretch Kick</div>
+<h2>Leg Technique Deduction <span class="badge">Code 24</span> <span class="cat-badge">腿法 Leg Techniques</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 280">
+<rect fill="#0f3460" height="280" rx="8" width="280"></rect>
+<defs>
+<marker id="a24" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Ground -->
+<line stroke="#2d3748" stroke-width="2" x1="20" x2="260" y1="255" y2="255"></line>
+<!-- Head -->
+<circle cx="130" cy="38" fill="none" r="14" stroke="#90cdf4" stroke-width="2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="130" y1="52" y2="135"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="90" y1="85" y2="115"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="170" y1="85" y2="70"></line>
+<!-- Supporting leg (straight, planted) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="125" y1="135" y2="210"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="125" x2="122" y1="210" y2="253"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="122" x2="108" y1="253" y2="255"></line>
+<circle cx="122" cy="253" fill="#90cdf4" r="4"></circle>
+<!-- Kicking leg (straight, kicked high) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="200" y1="135" y2="40"></line>
+<circle cx="200" cy="40" fill="#90cdf4" r="4"></circle>
+<!-- Green dashed: straight line reference on kicking leg -->
+<line opacity="0.5" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2" x1="130" x2="210" y1="135" y2="30"></line>
+<!-- Fault 1: knee bent at apex -->
+<circle cx="245" cy="68" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="245" y="72">1</text>
+<line marker-end="url(#a24)" stroke="#e53e3e" stroke-width="1.5" x1="233" x2="176" y1="65" y2="68"></line>
+<!-- Fault 2: supporting heel off floor -->
+<circle cx="68" cy="248" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="68" y="252">2</text>
+<line marker-end="url(#a24)" stroke="#e53e3e" stroke-width="1.5" x1="80" x2="114" y1="250" y2="254"></line>
+<!-- Labels -->
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="200" y="25">knee straight at apex</text>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="end" x="85" y="262">heel planted</text>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones   <span class="green">- - -</span> green = correct</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Knee Bent at Apex of the Kick</h3>
+<div class="zh">膝关节弯曲</div>
+<p>At the highest point of the kick, the kicking leg must be completely straight — no bend at the knee whatsoever.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Heel of Supporting Leg Off the Floor</h3>
+<div class="zh">支撑腿脚跟离地</div>
+<p>The standing leg's heel must stay firmly on the ground throughout the kick. Rising onto the ball of the foot is a deduction.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Deduction:</strong> 0.1 per occurrence. Applies to both Front Stretch Kick (正踢腿) and Side Stretch Kick (侧踢腿).
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code25 -->
+
+<div class="card" id="code25">
+<div class="header">
+<div class="chinese">里合拍脚 · 摆莲拍脚 · 单拍脚 — Inward / Lotus / Front Slap Kick</div>
+<h2>Leg Technique Deduction <span class="badge">Code 25</span> <span class="cat-badge">腿法 Leg Techniques</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 280">
+<rect fill="#0f3460" height="280" rx="8" width="280"></rect>
+<defs>
+<marker id="a25" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Ground -->
+<line stroke="#2d3748" stroke-width="2" x1="20" x2="260" y1="255" y2="255"></line>
+<!-- Head -->
+<circle cx="140" cy="58" fill="none" r="14" stroke="#90cdf4" stroke-width="2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="140" y1="72" y2="150"></line>
+<!-- Shoulder line / reference -->
+<line opacity="0.6" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2" x1="95" x2="185" y1="95" y2="95"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="200" y="98">shoulder</text>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="140" x2="100" y1="100" y2="125"></line>
+<!-- Slapping hand reaches up to meet foot -->
+<line stroke="#90cdf4" stroke-width="2" x1="140" x2="185" y1="100" y2="62"></line>
+<circle cx="185" cy="62" fill="#e2b96f" r="5"></circle>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="210" y="56">SLAP</text>
+<!-- Supporting leg -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="130" y1="150" y2="210"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="125" y1="210" y2="253"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="125" x2="110" y1="253" y2="255"></line>
+<!-- Kicking leg — foot above shoulder to slap hand -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="175" y1="150" y2="100"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="175" x2="185" y1="100" y2="65"></line>
+<!-- Fault 1: foot not above shoulder -->
+<circle cx="245" cy="95" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="245" y="99">1</text>
+<line marker-end="url(#a25)" stroke="#e53e3e" stroke-width="1.5" x1="233" x2="195" y1="95" y2="80"></line>
+<!-- Fault 2: slap missed -->
+<circle cx="225" cy="42" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="225" y="46">2</text>
+<line marker-end="url(#a25)" stroke="#e53e3e" stroke-width="1.5" x1="214" x2="193" y1="48" y2="58"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e2b96f;">●</strong> gold = slap contact   <strong style="color:#e53e3e;">●</strong> red = faults</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Slapped Foot Not Above Shoulder Height</h3>
+<div class="zh">击响腿脚尖未过肩</div>
+<p>The toes of the kicking foot must reach above shoulder level before the slap. If the foot is below the shoulder line, it's a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Slap Missed and/or Inaudible</h3>
+<div class="zh">未击响</div>
+<p>The hand must make clear, audible contact with the foot. A missed slap or a slap that cannot be heard by the judges is a fault.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Applies to:</strong> Inward Slap Kick (里合拍脚), Lotus Slap Kick (摆莲拍脚), and Front Slap Kick (单拍脚). Both faults use the same Code 25.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code26 -->
+
+<div class="card" id="code26">
+<div class="header">
+<div class="chinese">提膝（独立）Tí Xī Dú Lì — Single Knee Raised Position</div>
+<h2>Leg Technique Deduction <span class="badge">Code 26</span> <span class="cat-badge">腿法 Leg Techniques</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 290">
+<rect fill="#0f3460" height="290" rx="8" width="280"></rect>
+<defs>
+<marker id="a26" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Ground -->
+<line stroke="#2d3748" stroke-width="2" x1="20" x2="260" y1="265" y2="265"></line>
+<!-- Head -->
+<circle cx="130" cy="35" fill="none" r="14" stroke="#90cdf4" stroke-width="2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="130" y1="49" y2="140"></line>
+<!-- Waist reference line -->
+<line opacity="0.6" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2" x1="80" x2="200" y1="140" y2="140"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="210" y="143">waist</text>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="90" y1="80" y2="60"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="175" y1="80" y2="70"></line>
+<!-- Supporting leg -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="125" y1="140" y2="210"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="125" x2="122" y1="210" y2="263"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="122" x2="108" y1="263" y2="265"></line>
+<!-- Raised leg: thigh (up above waist line) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="175" y1="140" y2="110"></line>
+<!-- Knee joint -->
+<circle cx="175" cy="110" fill="#90cdf4" r="4"></circle>
+<!-- Shank hanging down and inward -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="175" x2="160" y1="110" y2="175"></line>
+<!-- Foot — toes pointed down and inward -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="160" x2="152" y1="175" y2="195"></line>
+<circle cx="152" cy="195" fill="#90cdf4" r="3"></circle>
+<!-- Inward direction indicators -->
+<path d="M162,180 Q155,185 150,192" fill="none" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="7" text-anchor="middle" x="138" y="210">toes pointed</text>
+<text fill="#68d391" font-family="sans-serif" font-size="7" text-anchor="middle" x="138" y="220">&amp; inward</text>
+<!-- Fault 1: knee not above waist -->
+<circle cx="238" cy="140" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="238" y="144">1</text>
+<line marker-end="url(#a26)" stroke="#e53e3e" stroke-width="1.5" x1="226" x2="185" y1="135" y2="118"></line>
+<!-- Fault 2: shank not obliquely inward -->
+<circle cx="220" cy="175" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="220" y="179">2</text>
+<line marker-end="url(#a26)" stroke="#e53e3e" stroke-width="1.5" x1="208" x2="170" y1="175" y2="163"></line>
+<!-- Fault 3: toes not pointed inward -->
+<circle cx="210" cy="215" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="210" y="219">3</text>
+<line marker-end="url(#a26)" stroke="#e53e3e" stroke-width="1.5" x1="198" x2="162" y1="210" y2="197"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones   <span class="green">- - -</span> green = correct</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Raised Knee Not Above Waist Level</h3>
+<div class="zh">提膝未过腰</div>
+<p>The knee of the raised leg must be lifted above waist height. A low knee position is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Shank/Calf Not Turning Obliquely Inwards</h3>
+<div class="zh">提起腿小腿未斜垂里扣</div>
+<p>The lower leg (shank) must hang downward and angle obliquely inward, not straight down or outward.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Foot Toes Not Pointed and Hooking Inwards</h3>
+<div class="zh">提起腿脚未崩平内收</div>
+<p>The toes of the raised foot must be pointed (extended) and turned/hooked inward. Relaxed or outward-pointing toes are a fault.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Deduction:</strong> 0.1 per occurrence. All three faults share Code 26 — judges record just one deduction per technique even if multiple faults occur.
+      </div>
+</div>
+</div>
+</div>
+
+<div class="category-label">跳跃 Jumping Techniques</div>
+
+
+<!-- code30 -->
+
+<div class="card" id="code30">
+<div class="header">
+<div class="chinese">腾空飞脚 · 旋风脚 · 腾空摆莲 — Jumping Aerial Slap Kicks</div>
+<h2>Jumping Technique Deduction <span class="badge">Code 30</span> <span class="cat-badge">跳跃 Jumping</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 290">
+<rect fill="#0f3460" height="290" rx="8" width="280"></rect>
+<defs>
+<marker id="a30" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Ground (figure is airborne above it) -->
+<line stroke="#2d3748" stroke-width="2" x1="20" x2="260" y1="270" y2="270"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="8" text-anchor="middle" x="140" y="284">— ground —</text>
+<!-- Airborne indicator -->
+<text fill="#4a5568" font-family="sans-serif" font-size="8" x="50" y="255">↑ airborne ↑</text>
+<!-- Head -->
+<circle cx="120" cy="60" fill="none" r="14" stroke="#90cdf4" stroke-width="2"></circle>
+<!-- Shoulder line = shoulder reference -->
+<line opacity="0.6" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2" x1="75" x2="190" y1="95" y2="95"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="205" y="98">shoulder</text>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="120" x2="120" y1="74" y2="155"></line>
+<!-- Slapping arm up -->
+<line stroke="#90cdf4" stroke-width="2" x1="120" x2="180" y1="100" y2="55"></line>
+<circle cx="180" cy="55" fill="#e2b96f" r="5"></circle>
+<!-- Other arm -->
+<line stroke="#90cdf4" stroke-width="2" x1="120" x2="75" y1="100" y2="120"></line>
+<!-- Hanging leg (lower) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="120" x2="110" y1="155" y2="210"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="110" x2="105" y1="210" y2="245"></line>
+<!-- Kicking leg (high, to slap) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="120" x2="165" y1="155" y2="110"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="165" x2="180" y1="110" y2="60"></line>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="185" y="42">SLAP</text>
+<!-- Fault 1: foot not above shoulder -->
+<circle cx="240" cy="95" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="240" y="99">1</text>
+<line marker-end="url(#a30)" stroke="#e53e3e" stroke-width="1.5" x1="228" x2="190" y1="90" y2="72"></line>
+<!-- Fault 2: slap missed -->
+<circle cx="230" cy="40" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="230" y="44">2</text>
+<line marker-end="url(#a30)" stroke="#e53e3e" stroke-width="1.5" x1="218" x2="190" y1="45" y2="53"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e2b96f;">●</strong> gold = slap contact   <strong style="color:#e53e3e;">●</strong> red = faults</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Toes of Slapped Foot Not Above Shoulder Level</h3>
+<div class="zh">击响腿脚尖未过肩</div>
+<p>While airborne, the kicking foot must reach above shoulder height before the slap occurs. Below-shoulder kicks are a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Slap Missed and/or Inaudible</h3>
+<div class="zh">未击响</div>
+<p>The hand must make clear, audible contact with the foot at the top of the kick. A whiff or quiet slap is a fault.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Applies to 5 techniques:</strong> Jumping Front Slap Kick (腾空飞脚), Jumping Slant Kick (腾空斜飞脚), Jumping Double Front Slap Kick (腾空双飞脚), Tornado Kick (旋风脚), and Jumping Lotus Kick (腾空摆莲).
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code31 -->
+
+<div class="card" id="code31">
+<div class="header">
+<div class="chinese">腾空正踢腿 Téng Kōng Zhèng Tī Tuǐ — Jumping Front Straight Kick</div>
+<h2>Jumping Technique Deduction <span class="badge">Code 31</span> <span class="cat-badge">跳跃 Jumping</span></h2>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 280 300">
+<rect fill="#0f3460" height="300" rx="8" width="280"></rect>
+<defs>
+<marker id="a31" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Ground -->
+<line stroke="#2d3748" stroke-width="2" x1="20" x2="260" y1="280" y2="280"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="8" text-anchor="middle" x="140" y="294">— ground —</text>
+<!-- Head -->
+<circle cx="130" cy="40" fill="none" r="14" stroke="#90cdf4" stroke-width="2"></circle>
+<!-- Forehead reference line -->
+<line opacity="0.6" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2" x1="100" x2="200" y1="34" y2="34"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="215" y="37">forehead</text>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="130" y1="54" y2="150"></line>
+<!-- Arms out to sides -->
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="80" y1="90" y2="75"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="180" y1="90" y2="80"></line>
+<!-- Kicking leg — straight up to forehead -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="170" y1="150" y2="38"></line>
+<circle cx="170" cy="38" fill="#90cdf4" r="4"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="7" text-anchor="middle" x="170" y="26">toes touch forehead</text>
+<!-- Hanging leg -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="130" x2="115" y1="150" y2="240"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="115" x2="110" y1="240" y2="260"></line>
+<!-- Angle arc: torso to hanging leg (should be ≥135°) -->
+<path d="M130,120 Q120,160 115,185" fill="none" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.2"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="7" x="95" y="170">≥ 135°</text>
+<!-- Fault 1: hanging leg bent -->
+<circle cx="55" cy="230" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="55" y="234">1</text>
+<line marker-end="url(#a31)" stroke="#e53e3e" stroke-width="1.5" x1="67" x2="108" y1="233" y2="238"></line>
+<!-- Fault 2: angle < 135° -->
+<circle cx="55" cy="170" fill="#e53e3e" r="12"></circle>
+<text fill="white" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" x="55" y="174">2</text>
+<line marker-end="url(#a31)" stroke="#e53e3e" stroke-width="1.5" x1="67" x2="105" y1="167" y2="160"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = fault zones   <span class="green">- - -</span> green = correct</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Hanging Leg Bent at Moment of Kick</h3>
+<div class="zh">踢腿脚触及或超过前额瞬间悬垂腿弯曲</div>
+<p>At the exact moment the kicking foot's toes touch or pass the forehead, the hanging (non-kicking) leg must be completely straight. Any bend in the hanging leg is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Torso-to-Hanging-Leg Angle Less Than 135°</h3>
+<div class="zh">踢腿脚触及或超过前额瞬间躯干与悬垂腿夹角小于135°</div>
+<p>At the moment the kicking toes reach the forehead, the angle between the torso and the hanging leg must be at least 135°. If the body "tucks" too far forward (angle &lt; 135°), it's a fault — the torso must remain relatively upright.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Key timing:</strong> Both faults are judged at one specific instant — the moment the kicking foot's toes touch or pass the forehead. Everything else about the jump is irrelevant to Code 31.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code32 -->
+
+<div class="card" id="code32">
+<div class="header">
+<div class="chinese">侧空翻 Cè Kōng Fān / 侧空翻转体 Cè Kōng Fān Zhuǎn Tǐ</div>
+<h1>Aerial Cartwheel · Aerial Cartwheel Twist <span class="badge">Code 32</span></h1>
+<div class="subtitle">No-handed cartwheel and twist variation in the air</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a32" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Airborne figure (inverted, cartwheel position) -->
+<!-- Head (inverted, at top) -->
+<circle cx="155" cy="70" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (inverted, roughly vertical) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="83" y2="145"></line>
+<!-- Arms (tucked or extended) -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="125" y1="110" y2="95"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="185" y1="110" y2="95"></line>
+<!-- Legs (should be straight, spread in cartwheel) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="110" y1="145" y2="185"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="110" x2="95" y1="185" y2="200"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="200" y1="145" y2="185"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="200" x2="215" y1="185" y2="200"></line>
+<!-- Air indicator -->
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="155" y="240">— AIRBORNE —</text>
+<!-- Rotation arc -->
+<path d="M 100 50 A 80 80 0 0 1 210 50" fill="none" stroke="#e2b96f" stroke-dasharray="4,3" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="42">rotation</text>
+<!-- Fault 1: legs bent in air -->
+<circle cx="245" cy="175" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="245" y="180">1</text>
+<line marker-end="url(#a32)" stroke="#e53e3e" stroke-width="1.5" x1="232" x2="218" y1="178" y2="188"></line>
+<circle cx="65" cy="175" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="65" y="180">1</text>
+<line marker-end="url(#a32)" stroke="#e53e3e" stroke-width="1.5" x1="78" x2="92" y1="178" y2="188"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Leg/s Bent 45° or More While in the Air</h3>
+<div class="chinese-label">空中腿弯曲45°或超过45°</div>
+<p>Both legs must remain straight during the aerial cartwheel. Bending either leg 45° or more at the knee while airborne is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code33 -->
+
+<div class="card" id="code33">
+<div class="header">
+<div class="chinese">旋子 Xuán Zǐ / 旋子转体 Xuán Zǐ Zhuǎn Tǐ</div>
+<h1>Butterfly Kick · Butterfly Twist <span class="badge">Code 33</span></h1>
+<div class="subtitle">Spinning horizontal aerial with body near horizontal</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a33" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Airborne figure (horizontal butterfly position) -->
+<!-- Head -->
+<circle cx="235" cy="108" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (near horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="222" x2="155" y1="112" y2="130"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="190" x2="210" y1="120" y2="145"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="190" x2="195" y1="120" y2="95"></line>
+<!-- Legs (extended, horizontal, scissoring) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="90" y1="130" y2="105"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="90" x2="70" y1="105" y2="98"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="100" y1="130" y2="155"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="100" x2="82" y1="155" y2="162"></line>
+<!-- Air / horizontal plane ref -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="50" x2="270" y1="130" y2="130"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="272" y="134">horiz.</text>
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="155" y="200">— AIRBORNE —</text>
+<!-- 45° ref for torso -->
+<line opacity="0.5" stroke="#e2b96f" stroke-dasharray="3,3" stroke-width="1" x1="155" x2="210" y1="130" y2="85"></line>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="215" y="83">45°</text>
+<!-- Fault 1: legs bent -->
+<circle cx="55" cy="80" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="55" y="85">1</text>
+<line marker-end="url(#a33)" stroke="#e53e3e" stroke-width="1.5" x1="62" x2="78" y1="90" y2="100"></line>
+<!-- Fault 2: torso above 45° -->
+<circle cx="260" cy="80" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="85">2</text>
+<line marker-end="url(#a33)" stroke="#e53e3e" stroke-width="1.5" x1="250" x2="238" y1="88" y2="105"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal plane<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Leg/s Bent 45° or More in the Air</h3>
+<div class="chinese-label">空中腿弯曲45°或超过45°</div>
+<p>The legs must remain straight and extended during the butterfly motion. Bending 45° or more at the knee is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Torso 45° or More Above Horizontal During Twist</h3>
+<div class="chinese-label">转体时躯干高于水平45°或超过45°</div>
+<p>During the twist, the torso must stay close to horizontal. Rising 45° or more above horizontal level is a deduction (twist variation only).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code34 -->
+
+<div class="card" id="code34">
+<div class="header">
+<div class="chinese">腾空箭弹 Téng Kōng Jiàn Tán / 腾空蹬腿 Téng Kōng Dèng Tuǐ</div>
+<h1>Jumping Snap Kick · Jumping Heel Push Kick <span class="badge">Code 34</span></h1>
+<div class="subtitle">Airborne snapping/pushing kick extending from bent to straight</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a34" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Airborne figure -->
+<!-- Head -->
+<circle cx="140" cy="60" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="140" y1="73" y2="145"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="140" x2="110" y1="100" y2="85"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="140" x2="170" y1="100" y2="85"></line>
+<!-- Supporting/hanging leg -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="120" y1="145" y2="210"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="120" x2="115" y1="210" y2="228"></line>
+<!-- Kicking leg (extending forward from bent to straight) -->
+<!-- Show "snap" motion: ghost bent position in dim -->
+<line opacity="0.4" stroke="#90cdf4" stroke-dasharray="3,3" stroke-width="1.2" x1="140" x2="175" y1="145" y2="130"></line>
+<line opacity="0.4" stroke="#90cdf4" stroke-dasharray="3,3" stroke-width="1.2" x1="175" x2="195" y1="130" y2="145"></line>
+<!-- Final extended position -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="240" y1="145" y2="130"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="240" x2="255" y1="130" y2="128"></line>
+<!-- Horizontal ref at hip -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="100" x2="270" y1="145" y2="145"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="272" y="149">horiz.</text>
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="155" y="250">— AIRBORNE —</text>
+<!-- Snap motion arrow -->
+<path d="M 195 145 A 30 30 0 0 0 240 132" fill="none" stroke="#e2b96f" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="218" y="155">snap →</text>
+<!-- Fault 1: kick doesn't go from bent to straight -->
+<circle cx="205" cy="110" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="205" y="115">1</text>
+<line marker-end="url(#a34)" stroke="#e53e3e" stroke-width="1.5" x1="215" x2="230" y1="118" y2="128"></line>
+<!-- Fault 2: kick below horizontal -->
+<circle cx="270" cy="160" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="270" y="165">2</text>
+<line marker-end="url(#a34)" stroke="#e53e3e" stroke-width="1.5" x1="260" x2="250" y1="155" y2="145"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal plane<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Kick Does Not Transit From Bent to Straight</h3>
+<div class="chinese-label">弹（蹬）腿由屈到伸摆动小于45°</div>
+<p>The snapping/pushing leg must show a clear transition from a bent position (45° or more) to fully straight. A lazy, barely extending kick is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Kick Below Horizontal Level</h3>
+<div class="chinese-label">弹（蹬）出腿低于水平</div>
+<p>The kicking leg must reach at least horizontal level at full extension. A kick that stays below the horizontal plane is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-label">步型 Stances &amp; Footwork</div>
+
+
+<!-- code50 -->
+
+<div class="card" id="code50">
+<div class="header">
+<div class="chinese">弓步 Gōng Bù — Bow Stance</div>
+<h1>Technique Deduction Reference <span class="badge">Code 50</span></h1>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="arr-red" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="248" y2="248"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="265">— ground —</text>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="16">→  facing direction  →</text>
+<circle cx="186" cy="46" fill="none" r="15" stroke="#90cdf4" stroke-width="2.2"></circle>
+<line stroke="#90cdf4" stroke-width="2.5" x1="186" x2="183" y1="61" y2="145"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="184" x2="234" y1="105" y2="90"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="184" x2="148" y1="105" y2="118"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="190" x2="252" y1="145" y2="157"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="252" x2="258" y1="157" y2="245"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="258" x2="285" y1="246" y2="248"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="177" x2="97" y1="145" y2="245"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="97" x2="128" y1="246" y2="248"></line>
+<circle cx="252" cy="157" fill="#90cdf4" r="4"></circle>
+<circle cx="258" cy="245" fill="#90cdf4" r="4"></circle>
+<circle cx="97" cy="245" fill="#90cdf4" r="4"></circle>
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="190" x2="268" y1="145" y2="145"></line>
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="252" x2="252" y1="153" y2="250"></line>
+<circle cx="286" cy="155" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="286" y="160">1</text>
+<line marker-end="url(#arr-red)" stroke="#e53e3e" stroke-width="1.5" x1="273" x2="261" y1="155" y2="157"></line>
+<circle cx="286" cy="106" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="286" y="111">2</text>
+<line marker-end="url(#arr-red)" stroke="#e53e3e" stroke-width="1.5" x1="273" x2="225" y1="106" y2="150"></line>
+<circle cx="55" cy="276" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="55" y="281">3</text>
+<line marker-end="url(#arr-red)" stroke="#e53e3e" stroke-width="1.5" x1="62" x2="97" y1="265" y2="249"></line>
+<circle cx="28" cy="238" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="28" y="243">4</text>
+<line marker-end="url(#arr-red)" stroke="#e53e3e" stroke-width="1.5" x1="41" x2="94" y1="241" y2="247"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="260" y="262">FRONT</text>
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="110" y="262">BACK</text>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Front Knee Not Above Instep</h3>
+<div class="chinese-label">前膝膝部未达脚背</div>
+<p>The front knee must come forward far enough to be directly above (or past) the instep of the front foot.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Front Thigh Not Parallel to the Ground</h3>
+<div class="chinese-label">前腿大腿未达水平</div>
+<p>The thigh of the bending (front) leg must be fully horizontal — parallel to the ground.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Rear Foot Sole Off the Floor</h3>
+<div class="chinese-label">后腿脚掌任一部位明显离地</div>
+<p>The entire sole of the back foot must stay flat on the ground. Lifting even slightly counts as a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">4</div>
+<div class="fault-text">
+<h3>Rear Foot Not Hooked Inward</h3>
+<div class="chinese-label">后腿脚尖未内扣</div>
+<p>The back foot must angle obliquely inward toward the front — toes should face partly forward.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code51 -->
+
+<div class="card" id="code51">
+<div class="header">
+<div class="chinese">马步 Mǎ Bù — Horse Stance</div>
+<h1>Technique Deduction Reference <span class="badge">Code 51</span></h1>
+<div class="subtitle">Symmetrical wide squat with thighs horizontal</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a51" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head -->
+<circle cx="155" cy="60" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (upright) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="74" y2="150"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="200" y1="110" y2="100"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="110" y1="110" y2="100"></line>
+<!-- Left thigh (horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="90" y1="150" y2="155"></line>
+<!-- Left shin (vertical) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="90" x2="82" y1="155" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="82" x2="62" y1="265" y2="268"></line>
+<circle cx="90" cy="155" fill="#90cdf4" r="3"></circle>
+<!-- Right thigh (horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="220" y1="150" y2="155"></line>
+<!-- Right shin (vertical) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="220" x2="228" y1="155" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="228" x2="248" y1="265" y2="268"></line>
+<circle cx="220" cy="155" fill="#90cdf4" r="3"></circle>
+<!-- Green ref: horizontal at thigh -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="70" x2="240" y1="150" y2="150"></line>
+<!-- Shoulder width ref -->
+<line opacity="0.5" stroke="#68d391" stroke-dasharray="3,3" stroke-width="1" x1="100" x2="210" y1="278" y2="278"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="155" y="290">≥ shoulder width</text>
+<!-- Fault 1: thighs not horizontal -->
+<circle cx="40" cy="135" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="40" y="140">1</text>
+<line marker-end="url(#a51)" stroke="#e53e3e" stroke-width="1.5" x1="53" x2="85" y1="140" y2="152"></line>
+<!-- Fault 2: feet too narrow -->
+<circle cx="155" cy="258" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="155" y="263">2</text>
+<!-- Fault 3: knees buckling inward -->
+<circle cx="270" cy="155" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="270" y="160">3</text>
+<line marker-end="url(#a51)" stroke="#e53e3e" stroke-width="1.5" x1="257" x2="228" y1="155" y2="155"></line>
+<!-- Fault 4: heels off ground -->
+<circle cx="50" cy="268" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="50" y="273">4</text>
+<line marker-end="url(#a51)" stroke="#e53e3e" stroke-width="1.5" x1="63" x2="78" y1="268" y2="268"></line>
+<!-- Fault 5: toes outward 45°+ -->
+<circle cx="263" cy="268" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="263" y="273">5</text>
+<line marker-end="url(#a51)" stroke="#e53e3e" stroke-width="1.5" x1="253" x2="250" y1="268" y2="268"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Thighs Not Horizontal</h3>
+<div class="chinese-label">大腿未达水平</div>
+<p>Both thighs must be parallel to the ground. A stance that is too high (thighs angled upward) is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Feet Narrower Than Shoulder Width</h3>
+<div class="chinese-label">两脚内侧间距小于本人肩宽</div>
+<p>The inner edges of the feet must be at least shoulder-width apart. A narrow stance is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Knee/s Buckling Inwards</h3>
+<div class="chinese-label">膝内跪</div>
+<p>The knees must track outward over the feet. Caving the knees inward is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">4</div>
+<div class="fault-text">
+<h3>Heel/s Raised Off the Ground</h3>
+<div class="chinese-label">脚跟离地</div>
+<p>Both heels must stay fully planted on the floor. Lifting either heel is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">5</div>
+<div class="fault-text">
+<h3>Toes Pointing Outward 45° or More</h3>
+<div class="chinese-label">脚尖外展45°或超过45°</div>
+<p>The toes of each foot should not splay outward 45° or more from forward.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code52 -->
+
+<div class="card" id="code52">
+<div class="header">
+<div class="chinese">虚步 Xū Bù — Empty Stance</div>
+<h1>Technique Deduction Reference <span class="badge">Code 52</span></h1>
+<div class="subtitle">Weight on rear leg, front foot lightly touching</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a52" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="258" y2="258"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="275">— ground —</text>
+<!-- Head -->
+<circle cx="145" cy="50" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (slightly back) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="145" x2="145" y1="64" y2="148"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="145" x2="185" y1="100" y2="85"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="145" x2="105" y1="100" y2="90"></line>
+<!-- Back/supporting leg (bent, carrying weight, thigh should be horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="145" x2="110" y1="148" y2="168"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="110" x2="120" y1="168" y2="255"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="120" x2="140" y1="255" y2="258"></line>
+<circle cx="110" cy="168" fill="#90cdf4" r="3"></circle>
+<!-- Front/empty leg (lightly touching, toe or ball of foot) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="145" x2="210" y1="148" y2="180"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="210" x2="220" y1="180" y2="245"></line>
+<line stroke="#90cdf4" stroke-width="1.8" x1="220" x2="228" y1="245" y2="255"></line>
+<circle cx="210" cy="180" fill="#90cdf4" r="3"></circle>
+<text fill="#4a5568" font-family="sans-serif" font-size="8" x="235" y="255">empty</text>
+<!-- Green ref: horizontal at thigh -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="90" x2="200" y1="168" y2="168"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="203" y="172">horiz.</text>
+<!-- Fault 1: thigh not horizontal -->
+<circle cx="60" cy="158" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="60" y="163">1</text>
+<line marker-end="url(#a52)" stroke="#e53e3e" stroke-width="1.5" x1="73" x2="105" y1="162" y2="168"></line>
+<!-- Fault 2: heel off ground -->
+<circle cx="90" cy="255" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="90" y="260">2</text>
+<line marker-end="url(#a52)" stroke="#e53e3e" stroke-width="1.5" x1="103" x2="116" y1="255" y2="255"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = horizontal reference<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Thigh of Squatting Leg Not Horizontal</h3>
+<div class="chinese-label">屈蹲腿大腿未达水平</div>
+<p>The thigh of the supporting (squatting) leg must be parallel to the ground. A high stance is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Heel of Supporting Foot Off the Ground</h3>
+<div class="chinese-label">屈蹲腿脚跟离地</div>
+<p>The heel of the rear supporting foot must remain flat on the floor. Lifting it is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code53 -->
+
+<div class="card" id="code53">
+<div class="header">
+<div class="chinese">仆步 Pū Bù — Crouching Stance</div>
+<h1>Technique Deduction Reference <span class="badge">Code 53</span></h1>
+<div class="subtitle">Deep side squat with one leg fully extended</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a53" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="258" y2="258"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="275">— ground —</text>
+<!-- Head (low) -->
+<circle cx="210" cy="145" fill="none" r="13" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (low, leaning slightly) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="210" x2="200" y1="158" y2="215"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="205" x2="240" y1="180" y2="170"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="205" x2="170" y1="180" y2="175"></line>
+<!-- Squatting leg (fully crouched — thigh on calf) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="200" x2="225" y1="215" y2="238"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="225" x2="215" y1="238" y2="255"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="215" x2="230" y1="255" y2="258"></line>
+<circle cx="225" cy="238" fill="#90cdf4" r="3"></circle>
+<!-- Extended leg (straight, extended to side, foot flat and turned inward) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="200" x2="60" y1="215" y2="252"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="60" x2="45" y1="252" y2="258"></line>
+<!-- Green ref for extended leg alignment -->
+<line opacity="0.4" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1" x1="55" x2="205" y1="245" y2="215"></line>
+<!-- Fault 1: not fully crouched -->
+<circle cx="260" cy="225" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="230">1</text>
+<line marker-end="url(#a53)" stroke="#e53e3e" stroke-width="1.5" x1="247" x2="230" y1="228" y2="235"></line>
+<!-- Fault 2: extended leg not straight -->
+<circle cx="120" cy="218" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="120" y="223">2</text>
+<line marker-end="url(#a53)" stroke="#e53e3e" stroke-width="1.5" x1="125" x2="130" y1="230" y2="238"></line>
+<!-- Fault 3: extended foot not turned inward -->
+<circle cx="30" cy="238" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="30" y="243">3</text>
+<line marker-end="url(#a53)" stroke="#e53e3e" stroke-width="1.5" x1="40" x2="50" y1="245" y2="252"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct alignment<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Squatting Leg Not Fully Crouched</h3>
+<div class="chinese-label">屈蹲腿未全蹲</div>
+<p>The back of the thigh must be in full contact with the calf — a full deep squat. Any gap between thigh and calf is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Extended Leg Not Completely Straight</h3>
+<div class="chinese-label">平铺腿未伸直</div>
+<p>The extended leg must be fully straight with no bend at the knee.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Extended Foot Not Turned Inward &amp; Flat</h3>
+<div class="chinese-label">平铺腿全脚掌未内扣着地</div>
+<p>The foot of the extended leg must be turned inward with the entire sole flat on the ground.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code54 -->
+
+<div class="card" id="code54">
+<div class="header">
+<div class="chinese">歇步 Xiē Bù — Cross-Legged Crouching Stance</div>
+<h1>Technique Deduction Reference <span class="badge">Code 54</span></h1>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a54" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="268" y2="268"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="285">— ground —</text>
+<!-- Head -->
+<circle cx="155" cy="68" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (upright, sitting low) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="82" y2="168"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="200" y1="120" y2="108"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="110" y1="120" y2="108"></line>
+<!-- Front leg: thigh crosses over -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="190" y1="168" y2="200"></line>
+<!-- Front shin folds back under -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="190" x2="170" y1="200" y2="255"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="170" x2="180" y1="255" y2="265"></line>
+<circle cx="190" cy="200" fill="#90cdf4" r="3"></circle>
+<!-- Back leg: thigh goes under/behind front -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="120" y1="168" y2="200"></line>
+<!-- Back shin tucks under buttocks -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="120" x2="140" y1="200" y2="248"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="140" x2="150" y1="248" y2="258"></line>
+<circle cx="120" cy="200" fill="#90cdf4" r="3"></circle>
+<!-- Cross indication -->
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="195">✕ cross</text>
+<!-- Buttocks level indicator -->
+<line opacity="0.65" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2" x1="130" x2="175" y1="240" y2="240"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="185" y="243">sit</text>
+<!-- Fault 1: thighs not crossed -->
+<circle cx="50" cy="185" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="50" y="190">1</text>
+<line marker-end="url(#a54)" stroke="#e53e3e" stroke-width="1.5" x1="63" x2="115" y1="188" y2="198"></line>
+<!-- Fault 2: buttocks not on calf -->
+<circle cx="260" cy="240" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="245">2</text>
+<line marker-end="url(#a54)" stroke="#e53e3e" stroke-width="1.5" x1="247" x2="180" y1="240" y2="240"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct alignment<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Thighs Not Crossed and Closed Together</h3>
+<div class="chinese-label">两腿未交叉靠拢</div>
+<p>The two thighs must be tightly crossed and pressed together. Any visible gap or failure to cross is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Buttocks Not in Contact With Calf</h3>
+<div class="chinese-label">臀部未贴坐小腿</div>
+<p>The buttocks must be sitting fully on the calf of the lower (sitting) leg. Any gap between buttocks and calf is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code58 -->
+
+<div class="card" id="code58">
+<div class="header">
+<div class="chinese">坐盘 Zuò Pán — Cross-Legged Sitting</div>
+<h1>Technique Deduction Reference <span class="badge">Code 58</span></h1>
+<div class="subtitle">Applies to: Changquan · Jianshu · Daoshu · Qiangshu · Gunshu</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a58" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<line stroke="#2d3748" stroke-width="2" x1="28" x2="282" y1="258" y2="258"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" x="30" y="275">— ground —</text>
+<!-- Head -->
+<circle cx="155" cy="108" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso (upright, sitting on floor) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="122" y2="210"></line>
+<!-- Arms -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="200" y1="160" y2="145"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="110" y1="160" y2="145"></line>
+<!-- Cross-legged: Left leg folds across -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="105" y1="210" y2="230"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="105" x2="130" y1="230" y2="255"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="130" x2="140" y1="255" y2="258"></line>
+<circle cx="105" cy="230" fill="#90cdf4" r="3"></circle>
+<!-- Right leg folds across (on top) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="205" y1="210" y2="230"></line>
+<line stroke="#90cdf4" stroke-width="2.5" x1="205" x2="180" y1="230" y2="252"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="180" x2="170" y1="252" y2="255"></line>
+<circle cx="205" cy="230" fill="#90cdf4" r="3"></circle>
+<!-- Buttock contact with ground -->
+<ellipse cx="155" cy="255" fill="none" opacity="0.65" rx="30" ry="5" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1.2"></ellipse>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="210" y="260">contact</text>
+<!-- Fault 1: buttocks not on floor -->
+<circle cx="60" cy="250" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="60" y="255">1</text>
+<line marker-end="url(#a58)" stroke="#e53e3e" stroke-width="1.5" x1="73" x2="122" y1="252" y2="255"></line>
+<!-- Fault 2: foot off floor -->
+<circle cx="255" cy="248" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="255" y="253">2</text>
+<line marker-end="url(#a58)" stroke="#e53e3e" stroke-width="1.5" x1="242" x2="195" y1="250" y2="253"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = ground contact zone<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Buttocks Not in Contact With the Floor</h3>
+<div class="chinese-label">臀部未点坐地面</div>
+<p>At least one buttock must be touching the floor. Hovering above the ground without contact is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Foot/Feet Off the Floor</h3>
+<div class="chinese-label">脚离地</div>
+<p>Both feet must remain in contact with the floor. Either foot lifting off the ground is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-label">器械方法 Weapon Techniques</div>
+
+
+<!-- code60 -->
+
+<div class="card" id="code60">
+<div class="header">
+<div class="chinese">挂剑 Guà Jiàn / 撩剑 Liāo Jiàn</div>
+<h1>Sword Hooking Parry · Sword Uppercut <span class="badge badge-weapon">Code 60</span></h1>
+<div class="subtitle">Straight sword circular techniques requiring wrist articulation</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a60" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<!-- Arm + wrist + sword assembly -->
+<!-- Forearm -->
+<line stroke="#90cdf4" stroke-width="3" x1="40" x2="140" y1="165" y2="155"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" text-anchor="middle" x="85" y="178">forearm</text>
+<!-- Wrist joint (must be bent, NOT straight) -->
+<circle cx="140" cy="155" fill="#68d391" r="5" stroke="#68d391" stroke-width="1"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="142">wrist</text>
+<!-- Sword (angled off the forearm line showing wrist bend) -->
+<line stroke="#d4d4d4" stroke-width="2.5" x1="140" x2="255" y1="155" y2="110"></line>
+<!-- Sword tip -->
+<circle cx="255" cy="110" fill="#d4d4d4" r="3"></circle>
+<text fill="#d4d4d4" font-family="sans-serif" font-size="9" x="265" y="108">tip</text>
+<!-- Guard -->
+<rect fill="none" height="14" rx="2" stroke="#e2b96f" stroke-width="1.5" width="12" x="135" y="148"></rect>
+<!-- Vertical circle path (correct technique) -->
+<ellipse cx="195" cy="155" fill="none" opacity="0.6" rx="65" ry="70" stroke="#68d391" stroke-dasharray="6,4" stroke-width="1.5"></ellipse>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="195" y="240">vertical circle plane</text>
+<!-- Arrow showing rotation -->
+<path d="M 240 90 A 60 65 0 0 1 255 145" fill="none" stroke="#e2b96f" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="268" y="125">↻</text>
+<!-- FAULT: straight wrist (ghost showing bad alignment) -->
+<line opacity="0.4" stroke="#e53e3e" stroke-dasharray="3,3" stroke-width="1.2" x1="140" x2="250" y1="155" y2="148"></line>
+<text fill="#e53e3e" font-family="sans-serif" font-size="7" opacity="0.6" x="250" y="145">✗ straight</text>
+<!-- Fault 1: wrist straight -->
+<circle cx="45" cy="125" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="45" y="130">1</text>
+<line marker-end="url(#a60)" stroke="#e53e3e" stroke-width="1.5" x1="55" x2="132" y1="133" y2="152"></line>
+<!-- Fault 2: no vertical circle -->
+<circle cx="45" cy="260" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="45" y="265">2</text>
+<line marker-end="url(#a60)" stroke="#e53e3e" stroke-width="1.5" x1="58" x2="128" y1="257" y2="220"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct vertical circle<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Wrist Straight (Sword Aligned With Forearm)</h3>
+<div class="chinese-label">直腕</div>
+<p>The wrist must be bent so the sword blade angles away from the forearm. A straight wrist where the sword is simply an extension of the arm is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>No Obvious Vertical Circle Formed</h3>
+<div class="chinese-label">未明显呈立圆</div>
+<p>The sword tip must trace a clear vertical circle. If the circular path deviates 45° or more from the vertical plane, it is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code61 -->
+
+<div class="card" id="code61">
+<div class="header">
+<div class="chinese">握剑 Wò Jiàn — Gripping the Straight Sword</div>
+<h1>Sword Grip Technique <span class="badge badge-weapon">Code 61</span></h1>
+<div class="subtitle">Fingers must not touch the blade edge above the guard</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a61" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<!-- Sword blade (vertical, pointing up) -->
+<line stroke="#d4d4d4" stroke-width="3" x1="155" x2="155" y1="30" y2="135"></line>
+<text fill="#d4d4d4" font-family="sans-serif" font-size="9" x="170" y="50">blade edge</text>
+<!-- Guard (horizontal bar) -->
+<rect fill="#e2b96f" height="10" opacity="0.8" rx="3" width="50" x="130" y="135"></rect>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" x="195" y="144">guard</text>
+<!-- Handle -->
+<rect fill="#90cdf4" height="55" opacity="0.5" rx="3" width="14" x="148" y="145"></rect>
+<text fill="#90cdf4" font-family="sans-serif" font-size="9" x="175" y="175">handle</text>
+<!-- Hand gripping handle (simplified fingers) -->
+<!-- Correct grip: fingers around handle, below guard -->
+<path d="M 142 155 Q 135 165 138 180 Q 140 190 148 195" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<path d="M 168 155 Q 175 165 172 180 Q 170 190 162 195" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Danger zone: above guard on blade -->
+<rect fill="#e53e3e" height="25" opacity="0.15" rx="2" stroke="#e53e3e" stroke-dasharray="3,2" stroke-width="1" width="20" x="145" y="110"></rect>
+<text fill="#e53e3e" font-family="sans-serif" font-size="8" x="180" y="125">✗ no fingers here</text>
+<!-- Green zone: proper grip area -->
+<rect fill="#68d391" height="50" opacity="0.1" rx="3" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1" width="26" x="142" y="148"></rect>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="end" x="100" y="175">✓ grip here</text>
+<!-- Fault 1: finger touching blade -->
+<circle cx="80" cy="115" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="120">1</text>
+<line marker-end="url(#a61)" stroke="#e53e3e" stroke-width="1.5" x1="93" x2="142" y1="118" y2="120"></line>
+<!-- Note at bottom -->
+<text fill="#718096" font-family="sans-serif" font-size="10" text-anchor="middle" x="155" y="250">Cross-section view of grip</text>
+</svg>
+<p class="diagram-note"><strong style="color:#68d391;">○</strong> green = correct grip zone<br/><strong style="color:#e53e3e;">●</strong> red = forbidden zone</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Finger Touches the Blade Edge</h3>
+<div class="chinese-label">手指触及剑刃</div>
+<p>No finger should wrap around the top of the hand guard and touch the edge of the blade. The grip must remain entirely on or below the guard.</p>
+</div>
+</div>
+<hr class="divider"/>
+<div class="note-box">
+<strong>Key point:</strong> This is a safety and technique issue. In competition, any grip where a finger creeps above the guard onto the blade — even momentarily — triggers Code 61.
+      </div>
+</div>
+</div>
+</div>
+
+<!-- code62 -->
+
+<div class="card" id="code62">
+<div class="header">
+<div class="chinese">缠头 Chán Tóu / 裹脑 Guǒ Nǎo</div>
+<h1>Broadsword Twining · Wrapping <span class="badge badge-weapon">Code 62</span></h1>
+<div class="subtitle">Blade wraps close around the head and body</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a62" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<!-- Simplified figure (front view) -->
+<!-- Head -->
+<circle cx="155" cy="60" fill="none" r="16" stroke="#90cdf4" stroke-width="2.2"></circle>
+<!-- Torso -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="76" y2="180"></line>
+<!-- Shoulders -->
+<line stroke="#90cdf4" stroke-width="2" x1="115" x2="195" y1="100" y2="100"></line>
+<!-- Arms (sword arm wrapping) -->
+<line stroke="#90cdf4" stroke-width="2" x1="195" x2="210" y1="100" y2="135"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="115" x2="100" y1="100" y2="135"></line>
+<!-- Legs -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="130" y1="180" y2="265"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="180" y1="180" y2="265"></line>
+<!-- Broadsword wrapping around head/body (correct: close) -->
+<path d="M 210 135 Q 220 80 170 45 Q 120 35 90 70 Q 80 100 100 135" fill="none" stroke="#e2b96f" stroke-width="2.5"></path>
+<!-- Blade back label -->
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" x="75" y="60">blade back</text>
+<!-- Close-to-body zone (green ring) -->
+<ellipse cx="155" cy="65" fill="none" opacity="0.6" rx="40" ry="30" stroke="#68d391" stroke-dasharray="5,3" stroke-width="1.5"></ellipse>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="155" y="115">keep blade close</text>
+<!-- Far-from-body zone (red, bad) -->
+<path d="M 235 135 Q 250 70 180 25 Q 100 10 60 60" fill="none" opacity="0.4" stroke="#e53e3e" stroke-dasharray="3,3" stroke-width="1.2"></path>
+<text fill="#e53e3e" font-family="sans-serif" font-size="7" opacity="0.6" x="248" y="95">✗ too far</text>
+<!-- Fault 1: blade back far from body -->
+<circle cx="260" cy="55" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="60">1</text>
+<line marker-end="url(#a62)" stroke="#e53e3e" stroke-width="1.5" x1="247" x2="222" y1="58" y2="68"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = close-to-body zone<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zone</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Blade Back Not Kept Close to the Body</h3>
+<div class="chinese-label">刀背远离身体</div>
+<p>During twining (缠头) and wrapping (裹脑), the back of the broadsword blade must stay close to the head and body. Swinging the blade far away from the body is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code63 -->
+
+<div class="card" id="code63">
+<div class="header">
+<div class="chinese">拦枪 Lán Qiāng / 拿枪 Ná Qiāng / 扎枪 Zhā Qiāng</div>
+<h1>Spear Block · Inward Block · Spear Thrust <span class="badge badge-weapon">Code 63</span></h1>
+<div class="subtitle">Outward block, inward block, and thrusting techniques with the spear</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 310">
+<defs>
+<marker id="a63" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="310" rx="8" width="310"></rect>
+<!-- SECTION A: Block arc (top half) -->
+<text fill="#e2b96f" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle" x="155" y="20">Lán / Ná — Blocking</text>
+<!-- Spear shaft -->
+<line stroke="#d4d4d4" stroke-width="2.5" x1="30" x2="280" y1="80" y2="80"></line>
+<!-- Spear head -->
+<polygon fill="#d4d4d4" points="280,74 295,80 280,86"></polygon>
+<text fill="#d4d4d4" font-family="sans-serif" font-size="8" x="285" y="72">tip</text>
+<!-- Arc path the spear tip should trace -->
+<path d="M 250 50 Q 280 80 250 110" fill="none" stroke="#68d391" stroke-dasharray="5,3" stroke-width="2"></path>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="middle" x="255" y="125">clear arc</text>
+<!-- Rear hand grip area -->
+<circle cx="40" cy="80" fill="none" r="8" stroke="#90cdf4" stroke-width="2"></circle>
+<text fill="#90cdf4" font-family="sans-serif" font-size="8" text-anchor="middle" x="40" y="105">rear hand</text>
+<!-- Rear end should not protrude -->
+<line opacity="0.5" stroke="#e53e3e" stroke-dasharray="3,2" stroke-width="2" x1="10" x2="32" y1="80" y2="80"></line>
+<text fill="#e53e3e" font-family="sans-serif" font-size="7" opacity="0.7" x="18" y="72">✗ protrude</text>
+<!-- Divider -->
+<line stroke="#2d3748" stroke-width="1" x1="30" x2="280" y1="150" y2="150"></line>
+<!-- SECTION B: Thrust (bottom half) -->
+<text fill="#e2b96f" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle" x="155" y="172">Zhā — Thrust</text>
+<!-- Arm (horizontal) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="50" x2="145" y1="210" y2="210"></line>
+<text fill="#90cdf4" font-family="sans-serif" font-size="8" text-anchor="middle" x="95" y="228">thrusting arm</text>
+<!-- Spear shaft (must be straight line with arm) -->
+<line stroke="#d4d4d4" stroke-width="2.5" x1="145" x2="280" y1="210" y2="210"></line>
+<polygon fill="#d4d4d4" points="280,204 295,210 280,216"></polygon>
+<!-- Green ref: straight horizontal line -->
+<line opacity="0.4" stroke="#68d391" stroke-dasharray="4,3" stroke-width="1" x1="50" x2="290" y1="210" y2="210"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="275" y="200">straight line</text>
+<!-- Fault 1: tip no arc -->
+<circle cx="280" cy="45" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="280" y="50">1</text>
+<!-- Fault 2: rear handle protrudes -->
+<circle cx="30" cy="130" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="30" y="135">2</text>
+<line marker-end="url(#a63)" stroke="#e53e3e" stroke-width="1.5" x1="30" x2="28" y1="117" y2="92"></line>
+<!-- Fault 3: arm and spear not in line -->
+<circle cx="155" cy="250" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="155" y="255">3</text>
+<line marker-end="url(#a63)" stroke="#e53e3e" stroke-width="1.5" x1="155" x2="155" y1="237" y2="218"></line>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct references<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Spear Tip Not Tracing a Clear Arc</h3>
+<div class="chinese-label">拦、拿枪枪尖未明显划弧</div>
+<p>During outward and inward blocking, the spear head must travel in a clearly defined arc. A stiff, arc-less motion is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Rear Handle Protruding Past Grip</h3>
+<div class="chinese-label">后手把柄</div>
+<p>The rear end of the spear shaft must not extend past the rear gripping hand. Any visible protrusion beyond the grip is a fault.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">3</div>
+<div class="fault-text">
+<h3>Thrust: Arm and Spear Not in a Straight Line</h3>
+<div class="chinese-label">平扎枪臂与枪身未成水平直线</div>
+<p>During a horizontal thrust, the thrusting arm and the spear shaft must form one continuous straight horizontal line. Any bend or angle is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code64 -->
+
+<div class="card" id="code64">
+<div class="header">
+<div class="chinese">平抡棍 Píng Lún Gùn</div>
+<h1>Horizontal Cudgel Windmill <span class="badge badge-weapon">Code 64</span></h1>
+<div class="subtitle">One-handed horizontal waving — tip must trace a flat circle</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a64" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<!-- Top-down view label -->
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="155" y="20">Top-down view (bird's eye)</text>
+<!-- Horizontal circle (correct) -->
+<ellipse cx="155" cy="145" fill="none" opacity="0.7" rx="100" ry="80" stroke="#68d391" stroke-dasharray="6,4" stroke-width="2"></ellipse>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="240">horizontal circle plane</text>
+<!-- Athlete (center dot) -->
+<circle cx="155" cy="145" fill="#90cdf4" opacity="0.6" r="8"></circle>
+<text fill="white" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle" x="155" y="149">⬤</text>
+<!-- Cudgel (one position, extending from center) -->
+<line stroke="#d4d4d4" stroke-width="3" x1="155" x2="255" y1="145" y2="130"></line>
+<circle cx="255" cy="130" fill="#d4d4d4" r="3"></circle>
+<text fill="#d4d4d4" font-family="sans-serif" font-size="8" x="265" y="128">tip</text>
+<!-- Rotation arrows -->
+<path d="M 250 110 A 95 80 0 0 1 200 65" fill="none" stroke="#e2b96f" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="10" x="235" y="80">↻</text>
+<path d="M 60 175 A 95 80 0 0 1 110 225" fill="none" stroke="#e2b96f" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="10" x="75" y="210">↻</text>
+<!-- Fault 1: no horizontal circle -->
+<circle cx="45" cy="55" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="45" y="60">1</text>
+<line marker-end="url(#a64)" stroke="#e53e3e" stroke-width="1.5" x1="55" x2="85" y1="63" y2="90"></line>
+<!-- Side note -->
+<text fill="#718096" font-family="sans-serif" font-size="8" text-anchor="middle" x="155" y="270">Plane tilts ≥ 45° off horizontal = fault</text>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct horizontal plane<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zone</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>No Obvious Horizontal Circle Formed</h3>
+<div class="chinese-label">未明显呈平圆</div>
+<p>The cudgel tip must trace a clear horizontal circle. If the plane of rotation tilts 45° or more off the horizontal, it is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code65 -->
+
+<div class="card" id="code65">
+<div class="header">
+<div class="chinese">立舞花枪 Lì Wǔ Huā Qiāng / 立舞花棍 Lì Wǔ Huā Gùn / 双手提撩花棍</div>
+<h1>Vertical Figure "8" <span class="badge badge-weapon">Code 65</span></h1>
+<div class="subtitle">Spear or cudgel rotates in a clear vertical plane</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a65" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<!-- Side view label -->
+<text fill="#4a5568" font-family="sans-serif" font-size="10" text-anchor="middle" x="155" y="18">Side view</text>
+<!-- Vertical circle (correct plane) -->
+<ellipse cx="155" cy="145" fill="none" opacity="0.7" rx="80" ry="95" stroke="#68d391" stroke-dasharray="6,4" stroke-width="2"></ellipse>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="258">vertical circle plane</text>
+<!-- Athlete (simplified, standing behind plane) -->
+<circle cx="155" cy="165" fill="#90cdf4" opacity="0.5" r="6"></circle>
+<!-- Spear/cudgel (one snapshot position) -->
+<line stroke="#d4d4d4" stroke-width="2.5" x1="155" x2="190" y1="165" y2="55"></line>
+<circle cx="190" cy="55" fill="#d4d4d4" r="3"></circle>
+<text fill="#d4d4d4" font-family="sans-serif" font-size="8" x="200" y="53">tip</text>
+<!-- Handle end -->
+<line stroke="#d4d4d4" stroke-width="2.5" x1="155" x2="120" y1="165" y2="235"></line>
+<!-- Rotation arrows -->
+<path d="M 200 60 A 80 95 0 0 1 230 150" fill="none" stroke="#e2b96f" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="12" x="238" y="110">↻</text>
+<path d="M 80 230 A 80 95 0 0 1 80 60" fill="none" stroke="#e2b96f" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="12" x="68" y="145">↻</text>
+<!-- Fault 1: no vertical circle -->
+<circle cx="265" cy="55" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="265" y="60">1</text>
+<line marker-end="url(#a65)" stroke="#e53e3e" stroke-width="1.5" x1="252" x2="237" y1="58" y2="85"></line>
+<!-- Side note -->
+<text fill="#718096" font-family="sans-serif" font-size="8" text-anchor="middle" x="155" y="280">Plane tilts ≥ 45° off vertical = fault</text>
+</svg>
+<p class="diagram-note"><span>- - -</span> green = correct vertical plane<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zone</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>No Obvious Vertical Circle Formed</h3>
+<div class="chinese-label">未明显呈立圆</div>
+<p>The spear or cudgel must rotate in a clearly defined vertical plane. If the rotation plane deviates 45° or more from vertical, it is a deduction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- code66 -->
+
+<div class="card" id="code66">
+<div class="header">
+<div class="chinese">器械抛接 Qì Xiè Pāo Jiē</div>
+<h1>Weapon Throwing &amp; Catching <span class="badge badge-weapon">Code 66</span></h1>
+<div class="subtitle">Toss and catch technique for all long and short weapons</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<defs>
+<marker id="a66" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<!-- Figure -->
+<circle cx="155" cy="90" fill="none" r="14" stroke="#90cdf4" stroke-width="2.2"></circle>
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="155" y1="104" y2="195"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="130" y1="195" y2="270"></line>
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="180" y1="195" y2="270"></line>
+<!-- Catching arm (reaching up, single hand) -->
+<line stroke="#90cdf4" stroke-width="2.5" x1="155" x2="210" y1="135" y2="85"></line>
+<!-- Open single hand -->
+<circle cx="210" cy="85" fill="none" r="6" stroke="#68d391" stroke-width="2"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="8" x="225" y="82">single hand</text>
+<!-- Other arm -->
+<line stroke="#90cdf4" stroke-width="2" x1="155" x2="100" y1="135" y2="120"></line>
+<!-- Weapon (sword shape, falling toward hand) -->
+<line stroke="#d4d4d4" stroke-width="3" x1="195" x2="235" y1="30" y2="70"></line>
+<!-- Handle end marker -->
+<rect fill="#e2b96f" height="6" rx="2" transform="rotate(40 236 68)" width="12" x="230" y="65"></rect>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="252" y="62">handle</text>
+<!-- Arc of throw -->
+<path d="M 135 170 Q 100 30 195 30" fill="none" stroke="#e2b96f" stroke-dasharray="5,3" stroke-width="1.5"></path>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="100" y="80">throw arc</text>
+<!-- BAD: hugging catch (ghost) -->
+<path d="M 130 120 Q 150 80 180 95 Q 200 115 175 140" fill="none" opacity="0.4" stroke="#e53e3e" stroke-dasharray="3,2" stroke-width="1.2"></path>
+<text fill="#e53e3e" font-family="sans-serif" font-size="7" opacity="0.6" x="70" y="175">✗ no hugging catch</text>
+<!-- Fault 1: hugging manner -->
+<circle cx="55" cy="145" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="55" y="150">1</text>
+<!-- Fault 2: not single hand by handle/shaft -->
+<circle cx="265" cy="95" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="265" y="100">2</text>
+<line marker-end="url(#a66)" stroke="#e53e3e" stroke-width="1.5" x1="252" x2="220" y1="92" y2="87"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#68d391;">○</strong> green = correct single-hand catch<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Weapon Caught in a Hugging Manner</h3>
+<div class="chinese-label">抱接器械</div>
+<p>The weapon must not be caught by hugging or cradling it against the body or with both arms. A clean catch is required.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Not Caught Single-Handed by Handle/Shaft</h3>
+<div class="chinese-label">未单手接握剑柄、刀柄、枪身、棍身</div>
+<p>The weapon must be caught with a single hand gripping the proper part — the handle (for sword/broadsword) or the shaft (for spear/cudgel). Fumbling or two-hand catches are a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="category-label">南拳补充 Nanquan — Additional Codes</div>
+
+<!-- nq25 -->
+<div class="card" id="nq25">
+  <div class="header">
+    <div class="chinese">转身后摆腿 Zhuǎn Shēn Hòu Bǎi Tuǐ — Turning Back Crescent Kick</div>
+    <h1>Turning Back Crescent Kick <span class="badge badge-nanquan">NQ Code 25</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Kicking Leg Bent</h3>
+          <div class="chinese-label">踢腿弯曲</div>
+          <p>The kicking leg must remain straight throughout the crescent movement. Any visible bend is a deduction.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Toes Below Waist Height</h3>
+          <div class="chinese-label">踢腿脚尖未超过腰高</div>
+          <p>The toes of the kicking leg must exceed waist height. If they remain below waist level, it is a fault.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq27 -->
+<div class="card" id="nq27">
+  <div class="header">
+    <div class="chinese">横钉腿 Héng Dīng Tuǐ — Horizontal Nail Kick</div>
+    <h1>Horizontal Nail Kick <span class="badge badge-nanquan">NQ Code 27</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>No Bent-to-Straight Transition</h3>
+          <div class="chinese-label">前腿未由屈到直</div>
+          <p>The front (kicking) leg must transition from bent (less than 45&deg;) to completely straight.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Kick Not Horizontal</h3>
+          <div class="chinese-label">前腿未横向踢出</div>
+          <p>The front (kicking) leg must travel horizontally across to the opposite side of the body.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">3</div>
+        <div class="fault-text">
+          <h3>Toes Not Pulled Back</h3>
+          <div class="chinese-label">踢脚脚尖未回勾</div>
+          <p>The toes of the kicking foot must be pulled back (flexed). Pointed toes are a deduction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq40 -->
+<div class="card" id="nq40">
+  <div class="header">
+    <div class="chinese">腾空盘腿360°侧扑 Téng Kōng Pán Tuǐ 360° Cè Pū</div>
+    <h1>Flying Cross-Legged Kick 360&deg; to Falling on Side <span class="badge badge-nanquan">NQ Code 40</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Toes Below Head Level</h3>
+          <div class="chinese-label">踢腿脚尖未超过头部高度</div>
+          <p>The toes of the kicking leg must exceed head level during the airborne phase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq42 -->
+<div class="card" id="nq42">
+  <div class="header">
+    <div class="chinese">腾空双侧踹 Téng Kōng Shuāng Cè Chuài</div>
+    <h1>Jumping Double Side Kick <span class="badge badge-nanquan">NQ Code 42</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Legs Not Together / Bent</h3>
+          <div class="chinese-label">双腿未并拢或明显弯曲</div>
+          <p>Both legs must be held close together and straight when kicked out. Separated or obviously bent legs are a deduction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq55 -->
+<div class="card" id="nq55">
+  <div class="header">
+    <div class="chinese">蝶步 Dié Bù — Butterfly Stance</div>
+    <h1>Butterfly Stance <span class="badge badge-nanquan">NQ Code 55</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Shank/Calf Not on Ground</h3>
+          <div class="chinese-label">外展腿小腿内侧未贴地</div>
+          <p>The inner part of the shank/calf of the splayed leg(s) must be fully in contact with the ground.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Ankle Not on Ground</h3>
+          <div class="chinese-label">外展腿踝关节内侧未贴地</div>
+          <p>The inner part of the ankle/heel of the splayed leg(s) must be fully in contact with the ground.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq56 -->
+<div class="card" id="nq56">
+  <div class="header">
+    <div class="chinese">跪步 Guì Bù — Single Kneeling Stance</div>
+    <h1>Single Kneeling Stance <span class="badge badge-nanquan">NQ Code 56</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Knee Touches Ground</h3>
+          <div class="chinese-label">下跪腿膝关节触地</div>
+          <p>The knee of the lower kneeling leg must not touch the ground.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Buttock Not on Calf</h3>
+          <div class="chinese-label">臀部未坐在下跪腿小腿上</div>
+          <p>The buttock must sit fully on the shank/calf of the lower kneeling leg.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq57 -->
+<div class="card" id="nq57">
+  <div class="header">
+    <div class="chinese">骑龙步 Qí Lóng Bù — Dragon Riding Stance</div>
+    <h1>Dragon Riding Stance <span class="badge badge-nanquan">NQ Code 57</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Front Thigh Not at Correct Angle</h3>
+          <div class="chinese-label">前腿大腿未在水平至45°范围</div>
+          <p>The thigh of the front leg must be held at a range from horizontal to 45&deg; above horizontal (excluding 45&deg;).</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Back Knee on Ground</h3>
+          <div class="chinese-label">后腿膝关节触地</div>
+          <p>The knee of the back leg must not make contact with the ground.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nq67 -->
+<div class="card" id="nq67">
+  <div class="header">
+    <div class="chinese">顶棍 Dǐng Gùn — Cudgel Handle Planting</div>
+    <h1>Cudgel Handle Planting <span class="badge badge-nanquan">NQ Code 67</span></h1>
+    <div class="subtitle">Applies to: Nanquan &middot; Nandao &middot; Nangun</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Handle Not Planted Firmly</h3>
+          <div class="chinese-label">棍把端未牢固顶地</div>
+          <p>The end of the cudgel handle must be planted firmly on the ground.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Tip Below Head Level</h3>
+          <div class="chinese-label">棍梢低于运动员头部</div>
+          <p>The tip of the cudgel must be at or above the athlete&rsquo;s head level.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="standards-card">
+<h2>2.1.2. Changquan, Jianshu, Daoshu, Qiangshu &amp; Gunshu — Deduction Standards</h2>
+<ul>
+<li>
+<span class="ch">一个动作出现一种或多种错误内容，均一次性扣0.1分。</span>
+      Within a single technique, should there be 1 or more errors, <strong style="color:#e2b96f;">0.1 point</strong> will be deducted once.
+    </li>
+<li>
+<span class="ch">一个组合动作出现两个以上同一器械方法错误内容，均一次性扣0.1分。</span>
+      Within a single group of movements, should there be 2 or more occurrences of the same weapon technique errors, <strong style="color:#e2b96f;">0.1 point</strong> will only be deducted once.
+    </li>
+<li>
+<span class="ch">"未明显呈立（平）圆"是指剑尖或棍梢（枪尖）运动轨迹形成的圆平面偏离垂直（水平）面超过45°。</span>
+      "No obvious vertical/horizontal circle formed" means the tip of the weapon rotates at an angle of <strong style="color:#e2b96f;">45° or more</strong> off of the vertical/horizontal plane.
+    </li>
+</ul>
+</div>
+
+
+<div class="category-label">南拳 · 南刀 · 南棍 Nanquan Hand Forms</div>
+
+
+<!-- nq01 -->
+
+<div class="card" id="nq01">
+<div class="header">
+<div class="chinese">拳 Quán — Fist (Nanquan)</div>
+<h1>Hand Form Deduction Reference <span class="badge badge-nanquan">NQ Code 01</span></h1>
+<div class="subtitle">Applies to: Nanquan · Nandao · Nangun</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<defs>
+<marker id="nq01" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Fist (side view, fingers curled) -->
+<!-- Palm/back of hand outline -->
+<path d="M 90 100 L 90 210 Q 90 230 110 230 L 210 230 Q 230 230 230 210 L 230 140 Q 230 120 210 120 L 180 120" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Curled fingers (four) -->
+<path d="M 180 120 Q 170 105 155 110 Q 140 115 140 130" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<path d="M 140 130 Q 135 118 120 122 Q 110 128 115 145" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<!-- Fist face (flat front) -->
+<line stroke="#68d391" stroke-width="2.5" x1="90 " x2="180" y1="100" y2="100"></line>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="135" y="90">fist face — must be flat</text>
+<!-- Thumb pressing on 2nd segment -->
+<ellipse cx="120" cy="200" fill="none" rx="30" ry="15" stroke="#e2b96f" stroke-width="2"></ellipse>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle" x="120" y="205">thumb</text>
+<!-- Arrow: thumb presses on index+middle -->
+<line stroke="#e2b96f" stroke-dasharray="3,2" stroke-width="1.5" x1="120" x2="140" y1="185" y2="150"></line>
+<text fill="#e2b96f" font-family="sans-serif" font-size="7" x="165" y="158">presses 2nd seg.</text>
+<!-- Fault 1: fist face uneven -->
+<circle cx="60" cy="100" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="60" y="105">1</text>
+<line marker-end="url(#nq01)" stroke="#e53e3e" stroke-width="1.5" x1="73" x2="87" y1="100" y2="100"></line>
+<!-- Fault 2: thumb not pressing -->
+<circle cx="60" cy="200" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="60" y="205">2</text>
+<line marker-end="url(#nq01)" stroke="#e53e3e" stroke-width="1.5" x1="73" x2="88" y1="200" y2="200"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#68d391;">—</strong> green = flat fist face<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Face of Fist Uneven</h3>
+<div class="chinese-label">拳面不平</div>
+<p>The striking surface (fist face) must be flat and even. Fingers protruding or receding unevenly is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Thumb Not Pressing on Index &amp; Middle Finger</h3>
+<div class="chinese-label">拇指未压在食指和中指第二节上</div>
+<p>The thumb must press firmly on the second segment of both the index and middle fingers. A loose or misplaced thumb is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- nq02 -->
+
+<div class="card" id="nq02">
+<div class="header">
+<div class="chinese">虎爪 Hǔ Zhǎo — Tiger's Claw (Nanquan)</div>
+<h1>Hand Form Deduction Reference <span class="badge badge-nanquan">NQ Code 02</span></h1>
+<div class="subtitle">Applies to: Nanquan · Nandao · Nangun</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<defs>
+<marker id="nq02" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Tiger claw (front view, fingers spread and hooked) -->
+<!-- Palm (center) -->
+<ellipse cx="155" cy="175" fill="none" rx="50" ry="40" stroke="#90cdf4" stroke-width="2.5"></ellipse>
+<!-- Palm center pushed out -->
+<circle cx="155" cy="170" fill="#68d391" opacity="0.15" r="15" stroke="#68d391" stroke-dasharray="3,2" stroke-width="1.5"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle" x="155" y="175">push out</text>
+<!-- Five fingers (spread, hooked/clawed) -->
+<!-- Thumb -->
+<path d="M 105 165 Q 75 145 70 120 Q 68 108 75 105" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Index -->
+<path d="M 120 140 Q 110 105 115 80 Q 118 68 125 72" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Middle -->
+<path d="M 145 138 Q 145 95 150 65 Q 153 52 160 58" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Ring -->
+<path d="M 175 140 Q 185 100 190 78 Q 193 65 198 72" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Pinky -->
+<path d="M 200 155 Q 220 130 230 110 Q 233 100 238 105" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Hooked tips (claw shape) indicated -->
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="48">fingers hooked ↩</text>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" text-anchor="middle" x="155" y="250">— front view of tiger claw —</text>
+<!-- Fault 1: fingers not separated/hooked -->
+<circle cx="260" cy="70" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="75">1</text>
+<line marker-end="url(#nq02)" stroke="#e53e3e" stroke-width="1.5" x1="248" x2="210" y1="75" y2="85"></line>
+<!-- Fault 2: palm not pushed out -->
+<circle cx="55" cy="215" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="55" y="220">2</text>
+<line marker-end="url(#nq02)" stroke="#e53e3e" stroke-width="1.5" x1="68" x2="138" y1="210" y2="178"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#68d391;">○</strong> green = palm pushed out<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Fingers Not Separated, Hooked &amp; Flexed</h3>
+<div class="chinese-label">五指未弯曲分开后张</div>
+<p>All five fingers must be spread apart with the first and second segments hooked/flexed like a tiger's claws. Straight or closed fingers are a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Center of Palm Not Pushed Out</h3>
+<div class="chinese-label">掌心未凸出</div>
+<p>The center of the palm must be protruding/pushed outward, creating a convex shape. A flat or concave palm is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- nq03 -->
+
+<div class="card" id="nq03">
+<div class="header">
+<div class="chinese">鹤嘴（顶）手 Hè Zuǐ — Crane's Beak (Nanquan)</div>
+<h1>Hand Form Deduction Reference <span class="badge badge-nanquan">NQ Code 03</span></h1>
+<div class="subtitle">Applies to: Nanquan · Nandao · Nangun</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<defs>
+<marker id="nq03" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Side view: forearm, wrist, pinched fingers -->
+<!-- Forearm -->
+<line stroke="#90cdf4" stroke-width="3" x1="30" x2="140" y1="150" y2="150"></line>
+<text fill="#4a5568" font-family="sans-serif" font-size="9" text-anchor="middle" x="85" y="170">forearm</text>
+<!-- Wrist — should be STRAIGHT (not bent) when striking -->
+<circle cx="140" cy="150" fill="#68d391" r="5"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="9" text-anchor="middle" x="140" y="135">wrist (straight)</text>
+<!-- Hand/fingers pinched together (crane beak shape) -->
+<path d="M 140 150 L 200 145 Q 215 143 220 140" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<path d="M 140 150 L 200 155 Q 215 157 220 155" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<!-- Pinched tip -->
+<circle cx="222" cy="147" fill="#90cdf4" opacity="0.5" r="6"></circle>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" x="240" y="150">5 fingers</text>
+<text fill="#e2b96f" font-family="sans-serif" font-size="9" x="240" y="162">pinched</text>
+<!-- Strike direction -->
+<line stroke="#e2b96f" stroke-width="1.5" x1="222" x2="270" y1="147" y2="140"></line>
+<polygon fill="#e2b96f" points="270,136 280,140 270,144"></polygon>
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" x="280" y="138">strike</text>
+<!-- BAD: wrist bent (ghost) -->
+<path d="M 140 150 Q 150 170 170 180 L 210 185" fill="none" opacity="0.4" stroke="#e53e3e" stroke-dasharray="3,2" stroke-width="1.5"></path>
+<text fill="#e53e3e" font-family="sans-serif" font-size="7" opacity="0.6" x="175" y="200">✗ wrist bent</text>
+<!-- Fault 1: fingers not pinched -->
+<circle cx="255" cy="105" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="255" y="110">1</text>
+<line marker-end="url(#nq03)" stroke="#e53e3e" stroke-width="1.5" x1="245" x2="228" y1="115" y2="140"></line>
+<!-- Fault 2: wrist flexed on strike -->
+<circle cx="130" cy="210" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="130" y="215">2</text>
+<line marker-end="url(#nq03)" stroke="#e53e3e" stroke-width="1.5" x1="135" x2="140" y1="197" y2="158"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#68d391;">●</strong> green = correct wrist position<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Five Fingers Not Pinched Together</h3>
+<div class="chinese-label">五指未拢拢</div>
+<p>All five fingertips must be tightly pinched together to form the crane's beak shape. Loose or separated fingers are a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Wrist Flexed (Bent) When Striking</h3>
+<div class="chinese-label">屈腕</div>
+<p>When striking with the crane's beak, the wrist must remain straight. A bent/flexed wrist upon impact is a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- nq04 -->
+
+<div class="card" id="nq04">
+<div class="header">
+<div class="chinese">单指掌（手）Dān Zhǐ Zhǎng — Single Finger Palm (Nanquan)</div>
+<h1>Hand Form Deduction Reference <span class="badge badge-nanquan">NQ Code 04</span></h1>
+<div class="subtitle">Applies to: Nanquan · Nandao · Nangun</div>
+</div>
+<div class="layout">
+<div class="diagram-area">
+<svg viewbox="0 0 310 295">
+<rect fill="#0f3460" height="295" rx="8" width="310"></rect>
+<defs>
+<marker id="nq04" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0,0 L0,6 L8,3 z" fill="#e53e3e"></path></marker>
+</defs>
+<!-- Side view of hand -->
+<!-- Palm/back of hand -->
+<path d="M 80 120 L 80 220 Q 80 240 100 240 L 200 240 Q 220 240 220 220 L 220 120" fill="none" stroke="#90cdf4" stroke-width="2.5"></path>
+<!-- Four fingers curled tightly (middle, ring, pinky, thumb) -->
+<path d="M 220 120 Q 230 100 215 95 Q 200 93 195 105 L 190 130" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<path d="M 190 130 Q 195 115 185 108 Q 175 105 170 115 L 168 135" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<path d="M 168 135 Q 172 120 162 112 Q 152 108 148 120 L 147 140" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<!-- Thumb curled tight -->
+<path d="M 80 120 Q 65 105 70 90 Q 78 82 90 88 L 105 110" fill="none" stroke="#90cdf4" stroke-width="2"></path>
+<!-- Curled area label -->
+<text fill="#e2b96f" font-family="sans-serif" font-size="8" text-anchor="middle" x="170" y="80">4 fingers tightly hooked ↩</text>
+<!-- INDEX FINGER (straight, extended, highlighted) -->
+<line stroke="#68d391" stroke-width="3.5" x1="120" x2="120" y1="120" y2="40"></line>
+<circle cx="120" cy="38" fill="#68d391" r="3"></circle>
+<text fill="#68d391" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="end" x="100" y="35">index</text>
+<text fill="#68d391" font-family="sans-serif" font-size="8" text-anchor="end" x="100" y="48">straight ↑</text>
+<!-- Fault 1: index not straight -->
+<circle cx="55" cy="60" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="55" y="65">1</text>
+<line marker-end="url(#nq04)" stroke="#e53e3e" stroke-width="1.5" x1="68" x2="114" y1="60" y2="55"></line>
+<!-- Fault 2: other 4 fingers not hooked -->
+<circle cx="250" cy="100" fill="#e53e3e" r="13"></circle>
+<text fill="white" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="250" y="105">2</text>
+<line marker-end="url(#nq04)" stroke="#e53e3e" stroke-width="1.5" x1="237" x2="222" y1="102" y2="105"></line>
+</svg>
+<p class="diagram-note"><strong style="color:#68d391;">|</strong> green = straight index finger<br/><strong style="color:#e53e3e;">●</strong> red = deduction fault zones</p>
+</div>
+<div class="faults-area">
+<div class="fault-item">
+<div class="fault-num">1</div>
+<div class="fault-text">
+<h3>Index Finger Not Straight</h3>
+<div class="chinese-label">食指未伸直</div>
+<p>The index finger must be fully extended and straight. Any bend or curl in the index finger is a deduction.</p>
+</div>
+</div>
+<div class="fault-item">
+<div class="fault-num">2</div>
+<div class="fault-text">
+<h3>Other Four Fingers Not Tightly Hooked</h3>
+<div class="chinese-label">其余四指未弯曲扣紧</div>
+<p>The remaining four fingers (plus thumb) must be tightly bent and hooked in. Loose or partially open fingers are a fault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="max-width:860px; margin:48px auto 0; text-align:center; padding-bottom:32px;">
+  <div class="note-box" style="text-align:left; margin-bottom:16px;">
+    <strong>Deduction Standard:</strong><br>
+    Within a single technique, should there be 1 or more errors, <strong>0.1 point</strong> will be deducted once.<br>
+    一个动作出现一种或多种错误内容，均一次性扣0.1分。
+  </div>
+  <p style="color:#4a5568; font-size:0.78em;">
+    Source: IWUF Wushu Taolu Competition Rules &middot; Chapter 10 &middot; Tables 10-1-1 &amp; 10-1-2<br>
+    Visual reference only &mdash; always consult the official rulebook for judging.
+  </p>
+</div>
+
+
+<div class="standards-card">
+  <h2>南拳·南刀·南棍 Nanquan, Nandao &amp; Nangun &mdash; Deduction Standards</h2>
+  <ul>
+    <li>
+      Single technique with 1 or more errors &rarr; <strong style="color:#e53e3e;">&minus;0.1</strong> deducted once.<br>
+      一个动作出现一种或多种错误内容，均一次性扣0.1分。
+    </li>
+    <li>
+      Same weapon technique error repeated 2+ times in a single group of movements &rarr; <strong style="color:#e53e3e;">&minus;0.1</strong> deducted once only.
+    </li>
+    <li>
+      It is permitted to not slap the kicking foot during Téng Kōng Wài Bǎi Tuǐ (Jumping Lotus Kick).
+    </li>
+  </ul>
+  <p style="color:#4a5568; font-size:0.78em; margin-top:12px;">
+    Source: IWUF Wushu Taolu Competition Rules &middot; Chapter 10 &middot; Table 10-1-2
+  </p>
+</div>
+
+
+
+<div class="category-label">太极拳·太极剑 Taijiquan &amp; Taijijian</div>
+
+<!-- tj05 -->
+<div class="card" id="tj05">
+  <div class="header">
+    <div class="chinese">手法 Shǒu Fǎ — Hand Technique</div>
+    <h1>Hand Technique <span class="badge badge-taiji">TJ Code 05</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Elbow Lifted</h3>
+          <div class="chinese-label">抬肘</div>
+          <p>The elbow must not be lifted above the natural position. An elevated elbow is a deduction.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Arm Straight</h3>
+          <div class="chinese-label">直臂</div>
+          <p>The arm must maintain a slight curve; a fully straightened arm is a fault.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">3</div>
+        <div class="fault-text">
+          <h3>Armpit Closed</h3>
+          <div class="chinese-label">夹腋</div>
+          <p>The armpit must remain open. Clamping the arm tightly to the body is a deduction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj06 -->
+<div class="card" id="tj06">
+  <div class="header">
+    <div class="chinese">身型 Shēn Xíng — Body Posture</div>
+    <h1>Body Posture <span class="badge badge-taiji">TJ Code 06</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Head &amp; Body Not Aligned</h3>
+          <div class="chinese-label">头与身体不正</div>
+          <p>The head and body must be properly aligned and upright.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Shoulders Hunched / Rounded Back / Buttocks Out</h3>
+          <div class="chinese-label">含胸弓背或凸臀</div>
+          <p>The chest should be relaxed but not collapsed; the back straight, not rounded; buttocks tucked.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">3</div>
+        <div class="fault-text">
+          <h3>Shoulders Shrugged</h3>
+          <div class="chinese-label">耸肩</div>
+          <p>Shoulders must remain relaxed and lowered. Shrugged or tensed shoulders are a fault.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">4</div>
+        <div class="fault-text">
+          <h3>Waist Twisted</h3>
+          <div class="chinese-label">扭腰</div>
+          <p>The waist must follow the movement naturally without excessive or incorrect twisting.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">5</div>
+        <div class="fault-text">
+          <h3>Buttocks Protruding</h3>
+          <div class="chinese-label">突臀</div>
+          <p>The buttocks must not protrude or stick out. Tucked pelvis alignment is required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj17 -->
+<div class="card" id="tj17">
+  <div class="header">
+    <div class="chinese">低势前蹬踩脚平衡 Dīshì Qián Dēng Cǎi Jiǎo Píng Héng</div>
+    <h1>Forward Sole Kick &mdash; Low Step Balance <span class="badge badge-taiji">TJ Code 17</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Heel of Supporting Leg Raised</h3>
+          <div class="chinese-label">支撑腿脚跟抬起</div>
+          <p>The heel of the supporting leg must remain on the ground throughout the balance.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Kicking Leg Bent</h3>
+          <div class="chinese-label">蹬踩腿膝关节弯曲</div>
+          <p>The kicking leg must be straight at the knee during the kick phase.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">3</div>
+        <div class="fault-text">
+          <h3>Foot Not Turned Outwards</h3>
+          <div class="chinese-label">蹬踩脚未外展</div>
+          <p>The foot of the kicking leg must be turned outwards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj18 -->
+<div class="card" id="tj18">
+  <div class="header">
+    <div class="chinese">前举腿低势平衡 Qián Jǔ Tuǐ Dī Shì Píng Héng</div>
+    <h1>Low Balance &mdash; Leg Stretched Forward <span class="badge badge-taiji">TJ Code 18</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Leg Bends or Drops During Transition</h3>
+          <div class="chinese-label">前伸腿在站立到下蹲过程中弯曲或低于水平</div>
+          <p>The forward stretched leg must not bend or drop below horizontal level at any point during the transition from standing to squatting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj19 -->
+<div class="card" id="tj19">
+  <div class="header">
+    <div class="chinese">后插腿低势平衡 Hòu Chā Tuǐ Dī Shì Píng Héng</div>
+    <h1>Low Balance &mdash; Leg Crossed Behind <span class="badge badge-taiji">TJ Code 19</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Crossed Leg Touches Ground</h3>
+          <div class="chinese-label">后插腿脚接触地面</div>
+          <p>The foot of the leg crossed behind the supporting leg must not make contact with the ground.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj22 -->
+<div class="card" id="tj22">
+  <div class="header">
+    <div class="chinese">跌叉 Diē Chā — Hurdler&rsquo;s Split (Taiji)</div>
+    <h1>Hurdler&rsquo;s Split Position <span class="badge badge-taiji">TJ Code 22</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Front Foot Turns In</h3>
+          <div class="chinese-label">前脚内扣触地</div>
+          <p>The front foot must not turn inward and touch the carpet/floor.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Angle Between Legs &le; 45&deg;</h3>
+          <div class="chinese-label">两腿夹角小于等于45°</div>
+          <p>The angle between the two legs must be greater than 45&deg;.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj23 -->
+<div class="card" id="tj23">
+  <div class="header">
+    <div class="chinese">分脚 / 蹬脚 Fēn Jiǎo / Dēng Jiǎo — Parting / Heel Kick</div>
+    <h1>Parting Kick / Heel Kick <span class="badge badge-taiji">TJ Code 23</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Raised Leg Bent</h3>
+          <div class="chinese-label">举腿弯曲</div>
+          <p>The raised leg must be straight. Any visible bend at the knee is a deduction.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Raised Leg Below Horizontal</h3>
+          <div class="chinese-label">举腿低于水平</div>
+          <p>The raised leg must be at or above horizontal level.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj25 -->
+<div class="card" id="tj25">
+  <div class="header">
+    <div class="chinese">摆莲拍脚 / 单拍脚 Bǎi Lián Pāi Jiǎo / Dān Pāi Jiǎo</div>
+    <h1>Lotus Slap Kick / Front Slap Kick <span class="badge badge-taiji">TJ Code 25</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Kicking Leg Bent When Slapped</h3>
+          <div class="chinese-label">拍脚时踢腿弯曲</div>
+          <p>The kicking leg must be straight at the moment of the slap.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Slap Missed / Inaudible</h3>
+          <div class="chinese-label">拍脚未响</div>
+          <p>The slap must connect and produce an audible sound. A missed or silent slap is a fault.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj59 -->
+<div class="card" id="tj59">
+  <div class="header">
+    <div class="chinese">步法 Shàng Bù / Tuì Bù / Jìn Bù / Gēn Bù / Cè Xíng Bù</div>
+    <h1>Stepping Techniques <span class="badge badge-taiji">TJ Code 59</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Knee &amp; Toes Misaligned</h3>
+          <div class="chinese-label">支撑腿膝尖与脚不对正</div>
+          <p>The knee-tip of the supporting leg must not be drawn inward past the medial portion of the supporting foot when stepping.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">2</div>
+        <div class="fault-text">
+          <h3>Foot Dragged When Stepping</h3>
+          <div class="chinese-label">迈步时脚拖地</div>
+          <p>The foot must be lifted cleanly off the ground when stepping (excluding special techniques).</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">3</div>
+        <div class="fault-text">
+          <h3>Center of Gravity Rising/Falling</h3>
+          <div class="chinese-label">行步时重心起伏</div>
+          <p>The center of gravity must remain level during stepping, without rising and falling.</p>
+        </div>
+      </div>
+      <div class="fault-item">
+        <div class="fault-num">4</div>
+        <div class="fault-text">
+          <h3>Foot Raised Too High</h3>
+          <div class="chinese-label">迈步时脚抬过高</div>
+          <p>The foot must not be raised excessively high off the ground when stepping.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- tj68 -->
+<div class="card" id="tj68">
+  <div class="header">
+    <div class="chinese">绞剑 Jiǎo Jiàn — Straight Sword Enveloping</div>
+    <h1>Straight Sword Enveloping <span class="badge badge-taiji">TJ Code 68</span></h1>
+    <div class="subtitle">Applies to: Taijiquan &middot; Taijijian</div>
+  </div>
+  <div class="layout">
+    <div class="faults-area" style="flex:1; max-width:100%;">
+
+      <div class="fault-item">
+        <div class="fault-num">1</div>
+        <div class="fault-text">
+          <h3>Tip Not Travelling in Circle</h3>
+          <div class="chinese-label">剑尖未走明显圆弧</div>
+          <p>The tip of the straight sword must travel in a clearly defined circle. Absence of an obvious circular path is a deduction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="standards-card">
+  <h2>太极拳·太极剑 Taijiquan &amp; Taijijian &mdash; Deduction Standards</h2>
+  <ul>
+    <li>
+      Single technique with 1 or more errors &rarr; <strong style="color:#e53e3e;">&minus;0.1</strong> deducted once.<br>
+      一个动作出现一种或多种错误内容，均一次性扣0.1分。
+    </li>
+    <li>
+      Same weapon technique error repeated 2+ times in a single group &rarr; <strong style="color:#e53e3e;">&minus;0.1</strong> deducted once only.
+    </li>
+    <li>
+      Same footwork error repeated 2+ times in a single group &rarr; <strong style="color:#e53e3e;">&minus;0.1</strong> deducted once only.
+    </li>
+    <li>
+      Same stance error repeated 2+ times in a single group &rarr; <strong style="color:#e53e3e;">&minus;0.1</strong> deducted once only.
+    </li>
+    <li>
+      Within a single routine, deductions for Quán, Zhǎng, Jiàn Zhǐ, Hand Technique, and Body Posture may each be deducted at most <strong style="color:#e53e3e;">3 times</strong> respectively (electronic system cap: &minus;0.3).
+    </li>
+  </ul>
+  <p style="color:#4a5568; font-size:0.78em; margin-top:12px;">
+    Source: IWUF Wushu Taolu Competition Rules &middot; Chapter 10 &middot; Table 10-1-3
+  </p>
+</div>
+
+
+
+
+<div class="category-label" id="duilian">对练 Duilian — Choreographed Sparring Routines</div>
+
+<div class="table-card">
+  <h2>Duilian &mdash; Technical Deduction Codes <span class="badge-duilian" style="font-size:0.7em;">90&ndash;95</span></h2>
+  <div class="subtitle">Each technical error: <strong style="color:#ed8936;">&minus;0.10</strong> &mdash; deducted cumulatively as they occur</div>
+  <table>
+    <thead>
+      <tr><th class="code-col">Code</th><th class="cat-col">Category</th><th>Deduction Content</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code-col">90</td><td class="cat-col">Method</td><td>Attack wide of or off of target area</td></tr>
+      <tr><td class="code-col">91</td><td class="cat-col">Method</td><td>Motionless state held for more than 3 seconds</td></tr>
+      <tr><td class="code-col">92</td><td class="cat-col">Method</td><td>Duration without attack and defense exceeds 3 seconds</td></tr>
+      <tr><td class="code-col">93</td><td class="cat-col">Co-Operation</td><td>Misses in attack or defense</td></tr>
+      <tr><td class="code-col">94</td><td class="cat-col">Co-Operation</td><td>Waiting for partner&rsquo;s attack technique</td></tr>
+      <tr><td class="code-col">95</td><td class="cat-col">Co-Operation</td><td>Mishit on partner(s)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="category-label" id="jiti">集体 Jiti — Group Routine Events</div>
+
+<div class="table-card">
+  <h2>Jiti &mdash; Technical Deduction Codes <span class="badge-jiti" style="font-size:0.7em;">90&ndash;97</span></h2>
+  <div class="subtitle">Each technical error: <strong style="color:#ed64a6;">&minus;0.10</strong> &mdash; deducted cumulatively as they occur</div>
+  <table>
+    <thead>
+      <tr><th class="code-col">Code</th><th class="cat-col">Category</th><th>Deduction Content</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code-col">90</td><td class="cat-col">Method</td><td>Footwork/stance or leg technique not meeting requirements</td></tr>
+      <tr><td class="code-col">91</td><td class="cat-col">Method</td><td>Jumping or tumbling technique not meeting requirements</td></tr>
+      <tr><td class="code-col">92</td><td class="cat-col">Method</td><td>Weapon technique not meeting requirements</td></tr>
+      <tr><td class="code-col">93</td><td class="cat-col">Co-Operation</td><td>Misses in attack or defense during sparring content</td></tr>
+      <tr><td class="code-col">94</td><td class="cat-col">Co-Operation</td><td>Waiting for partner&rsquo;s attack technique during sparring content</td></tr>
+      <tr><td class="code-col">95</td><td class="cat-col">Co-Operation</td><td>Mishit on partner(s) during sparring content</td></tr>
+      <tr><td class="code-col">96</td><td class="cat-col">Uniformity</td><td>Single technique not executed uniformly</td></tr>
+      <tr><td class="code-col">97</td><td class="cat-col">Uniformity</td><td>Group formation not uniform</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="category-label" id="errors">其他错误 Other Errors — All Events (Codes 70&ndash;79)</div>
+
+<div class="table-card">
+  <h2>Other Errors &mdash; Deduction Table <span class="badge-error" style="font-size:0.7em;">70&ndash;79</span></h2>
+  <div class="subtitle">Deducted cumulatively as they occur &mdash; applies to all events</div>
+  <table>
+    <thead>
+      <tr><th class="code-col">Code</th><th class="cat-col">Category</th><th>Deduction Content</th><th class="deduction-col">Amount</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code-col">70</td><td class="cat-col">Loss of Balance</td><td>Torso sways</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">70</td><td class="cat-col">Loss of Balance</td><td>Foot shuffles or skips</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">71</td><td class="cat-col">Loss of Balance</td><td>Additional support used (hand, elbow, knee, non-supporting leg, or weapon)</td><td class="deduction-col">&minus;0.20</td></tr>
+      <tr><td class="code-col">72</td><td class="cat-col">Loss of Balance</td><td>Fall (both hands, head, shoulder, torso, or buttocks contact the floor)</td><td class="deduction-col">&minus;0.30</td></tr>
+      <tr><td class="code-col">73</td><td class="cat-col">Weapons &amp; Apparel</td><td>Weapon unintentionally contacts the floor</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">73</td><td class="cat-col">Weapons &amp; Apparel</td><td>Loss of grip</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">73</td><td class="cat-col">Weapons &amp; Apparel</td><td>Weapon strikes the body</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">73</td><td class="cat-col">Weapons &amp; Apparel</td><td>Weapon deforms (in excess of 45&deg; from original shape)</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">74</td><td class="cat-col">Weapons &amp; Apparel</td><td>Weapon broken</td><td class="deduction-col">&minus;0.20</td></tr>
+      <tr><td class="code-col">75</td><td class="cat-col">Weapons &amp; Apparel</td><td>Weapon dropped on the floor</td><td class="deduction-col">&minus;0.30</td></tr>
+      <tr><td class="code-col">76</td><td class="cat-col">Weapons &amp; Apparel</td><td>Broadsword ribbon / sword tassel / spear tassel / garment / headwear dropped</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">76</td><td class="cat-col">Weapons &amp; Apparel</td><td>Broadsword ribbon / sword tassel / soft weapon entangles hand or body</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">77</td><td class="cat-col">Other</td><td>Balance technique not maintained for at least 2 seconds</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">78</td><td class="cat-col">Other</td><td>Any part of competitor&rsquo;s body touches floor outside carpet boundary line</td><td class="deduction-col">&minus;0.10</td></tr>
+      <tr><td class="code-col">79</td><td class="cat-col">Other</td><td>Forgetting (movement forgotten &mdash; pauses or chaotic movements)</td><td class="deduction-col">&minus;0.10</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="standards-card">
+  <h2>Other Errors &mdash; Definitions</h2>
+  <ul>
+    <li>
+      <strong style="color:#e2b96f;">Sway (70):</strong> Athlete&rsquo;s upper body is displaced in 2 different directions &mdash; e.g., leans left/right, forward/backward, or circular &mdash; while attempting to maintain balance.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Shuffle (70):</strong> While standing or landing on one or both feet, any supporting foot moves or is displaced laterally.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Skip (70):</strong> While standing or landing on one or both feet, any supporting foot leaves the carpet in a skip or hop.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Additional Support (71):</strong> Athlete loses balance and uses a hand, elbow, knee, non-supporting leg, or the weapon as additional support. If the weapon hits the floor without force applied as support, it is a weapon-touching-floor deduction, not additional support.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Fall (72):</strong> Athlete contacts the floor with both hands, head, upper arm (above elbow), shoulder, torso, or buttocks &mdash; or any two or more body parts simultaneously &mdash; or one body part and the weapon. Intentional falls in Duilian are not deducted.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Weapon Deformed (73):</strong> Weapon deformed in excess of 45&deg; from its original intended shape.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Out-of-Bounds (78):</strong> Any part of the athlete&rsquo;s body touches the floor outside the boundary line. Weapon touching the floor outside the boundary, or body part extended past the boundary without floor contact, does not count.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Balance Timing (77):</strong> Timer begins when movement first stops in a static/motionless state. Applies to Changquan, Jianshu, Daoshu, Qiangshu &amp; Gunshu events only.
+    </li>
+    <li>
+      <strong style="color:#e2b96f;">Forgetting (79):</strong> Athlete has a lapse of memory and pauses unconventionally or produces chaotic movements.
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+</body>
+</html>
