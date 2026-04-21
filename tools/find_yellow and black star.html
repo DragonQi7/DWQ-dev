@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auxiliary Star Finder</title>
+  <style>
+    :root {
+      --bg: #0c1224;
+      --panel: #121b33;
+      --panel2: #0f1730;
+      --text: #eef2ff;
+      --muted: #aeb7dc;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #7dd3fc;
+      --accent-2: #f5c451;
+      --yellow: #f4d35e;
+      --yellow-bg: rgba(244, 211, 94, 0.16);
+      --black: #94a3b8;
+      --black-bg: rgba(148, 163, 184, 0.16);
+      --bad: #fb7185;
+      --shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+      --radius: 16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: "Segoe UI", "Trebuchet MS", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(125, 211, 252, 0.18), transparent 60%),
+        radial-gradient(900px 600px at 95% 10%, rgba(245, 196, 81, 0.12), transparent 55%),
+        radial-gradient(1000px 700px at 40% 120%, rgba(255, 255, 255, 0.05), transparent 55%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      padding: 18px 16px 8px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.2px;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 16px 30px;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 980px) {
+      main { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card .hd {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .card .hd strong {
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    .card .bd { padding: 14px; }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .row + .row { margin-top: 12px; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+
+    @media (max-width: 560px) {
+      .split { grid-template-columns: 1fr; }
+    }
+
+    .field {
+      width: 100%;
+    }
+
+    .field.dimmed {
+      opacity: 0.56;
+    }
+
+    label {
+      font-size: 12px;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.2);
+      color: var(--text);
+      outline: none;
+      font: inherit;
+    }
+
+    input[disabled],
+    select[disabled],
+    button[disabled] {
+      cursor: not-allowed;
+    }
+
+    .btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    button:hover { background: rgba(255, 255, 255, 0.1); }
+    button:active { transform: translateY(1px); }
+
+    .primary {
+      background: rgba(125, 211, 252, 0.18);
+      border-color: rgba(125, 211, 252, 0.5);
+    }
+
+    .primary:hover { background: rgba(125, 211, 252, 0.26); }
+
+    .ghost { background: transparent; }
+
+    .pill {
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .pill.on {
+      background: rgba(245, 196, 81, 0.18);
+      border-color: rgba(245, 196, 81, 0.5);
+    }
+
+    .help {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .notice,
+    .summary {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.18);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .summary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .mono { font-family: var(--mono); }
+
+    .outHead {
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .metaBox {
+      min-width: 130px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .k {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .v {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .v.err { color: #ffd2d9; }
+
+    .outBody { padding: 14px; }
+
+    .gridDays {
+      display: grid;
+      gap: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    thead th {
+      text-align: left;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.18);
+      position: sticky;
+      top: 0;
+    }
+
+    tbody td {
+      padding: 10px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tbody tr.todayRow {
+      outline: 2px solid rgba(245, 196, 81, 0.45);
+      background: rgba(245, 196, 81, 0.08);
+    }
+
+    .badge,
+    .beltBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .beltBadge.yellow {
+      background: var(--yellow-bg);
+      border-color: rgba(244, 211, 94, 0.45);
+      color: #fff0b8;
+    }
+
+    .beltBadge.black {
+      background: var(--black-bg);
+      border-color: rgba(148, 163, 184, 0.45);
+      color: #dce5f5;
+    }
+
+    .starGrid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .groupBlock {
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.14);
+    }
+
+    .groupTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .starCard {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.16);
+      display: grid;
+      gap: 10px;
+    }
+
+    .starCard .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .starName {
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .keyword {
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+    }
+
+    .details {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Auxiliary Star Finder</h1>
+      <span class="tag">Yellow / Black Belt</span>
+      <span class="tag">Client-side JS</span>
+      <span class="tag">Logic ported from find_auxiliary_star.py</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="hd">
+        <strong>Inputs</strong>
+        <span class="tag">Standalone HTML</span>
+      </div>
+      <div class="bd">
+        <div class="row split">
+          <div class="field" id="dateField">
+            <label>Date</label>
+            <div class="btns" style="margin-bottom:8px">
+              <button class="pill on" id="btnToday" type="button">Today</button>
+              <button class="pill" id="btnPick" type="button">Pick</button>
+            </div>
+            <input id="datePicker" type="date" />
+            <input id="dateText" type="text" placeholder="Or type: 2026-04-21, 04/21/2026, Apr 21, 2026" style="margin-top:8px" />
+            <div class="help" style="margin-top:8px">
+              Uses the same date parsing order as the Python script: YYYY-MM-DD, MM/DD/YYYY, DD/MM/YYYY, month-name formats, or YYYYMMDD.
+            </div>
+          </div>
+
+          <div class="field" id="daysField">
+            <label>Days</label>
+            <div class="btns" id="daysBtns">
+              <button type="button" class="pill on" data-days="1">1</button>
+              <button type="button" class="pill" data-days="7">7</button>
+              <button type="button" class="pill" data-days="14">14</button>
+              <button type="button" class="pill" data-days="30">30</button>
+              <button type="button" class="pill" data-days="90">90</button>
+              <button type="button" class="pill" data-days="365">365</button>
+            </div>
+            <div class="help" style="margin-top:10px">
+              Range mode walks forward day by day from the selected start date and applies the same month-animal and auxiliary-star rules as the Python file.
+            </div>
+          </div>
+        </div>
+
+        <div class="row split">
+          <div class="field">
+            <label>Mode</label>
+            <select id="mode">
+              <option value="range">Date Range Results</option>
+              <option value="lookup">Single Star Lookup</option>
+              <option value="list">List All Stars</option>
+            </select>
+          </div>
+
+          <div class="field" id="beltField">
+            <label>Belt Filter</label>
+            <select id="belt">
+              <option value="all">All Belts</option>
+              <option value="yellow">Yellow Belt</option>
+              <option value="black">Black Belt</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row split">
+          <div class="field">
+            <label id="modeLabel">Star Filter / Lookup</label>
+            <select id="starDropdown"></select>
+            <input id="query" type="text" placeholder="Optional partial match, for example: Green Dragon or jade" style="margin-top:8px" />
+          </div>
+
+          <div class="field">
+            <label>Quick Notes</label>
+            <div class="summary" id="modeHint">
+              Range mode shows one row per day. Star Filter and Belt Filter are optional and behave like the Python CLI.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="btns">
+            <button class="primary" id="runBtn" type="button">Run</button>
+            <button class="ghost" id="resetBtn" type="button">Reset Filters</button>
+            <button class="ghost" id="clearBtn" type="button">Clear Output</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="notice">
+            This page runs fully in the browser. It does not call Python directly. The day-pillar anchor, Jieqi month boundaries, auxiliary-star lookup table, belt classification, and star definitions are all embedded from the current Python logic.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="outHead">
+        <div class="meta">
+          <div class="metaBox">
+            <div class="k">Status</div>
+            <div class="v" id="status">Ready</div>
+          </div>
+          <div class="metaBox">
+            <div class="k">Day Pillar</div>
+            <div class="v mono" id="dayPillar">-</div>
+          </div>
+          <div class="metaBox">
+            <div class="k">Month Animal</div>
+            <div class="v" id="monthAnimal">-</div>
+          </div>
+          <div class="metaBox">
+            <div class="k">Auxiliary Star</div>
+            <div class="v" id="auxStar">-</div>
+          </div>
+        </div>
+        <div class="btns">
+          <button class="ghost" id="copyBtn" type="button">Copy Output</button>
+        </div>
+      </div>
+      <div class="outBody">
+        <div id="output" class="gridDays">
+          <div class="notice">Choose a mode, set your filters, then click Run.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const HEAVENLY_STEMS = [
+      { char: "\u7532", pinyin: "Jia", element: "Yang Wood" },
+      { char: "\u4e59", pinyin: "Yi", element: "Yin Wood" },
+      { char: "\u4e19", pinyin: "Bing", element: "Yang Fire" },
+      { char: "\u4e01", pinyin: "Ding", element: "Yin Fire" },
+      { char: "\u620a", pinyin: "Wu", element: "Yang Earth" },
+      { char: "\u5df1", pinyin: "Ji", element: "Yin Earth" },
+      { char: "\u5e9a", pinyin: "Geng", element: "Yang Metal" },
+      { char: "\u8f9b", pinyin: "Xin", element: "Yin Metal" },
+      { char: "\u58ec", pinyin: "Ren", element: "Yang Water" },
+      { char: "\u7678", pinyin: "Gui", element: "Yin Water" }
+    ];
+
+    const EARTHLY_BRANCHES = [
+      { char: "\u5b50", pinyin: "Zi", animal: "Rat" },
+      { char: "\u4e11", pinyin: "Chou", animal: "Ox" },
+      { char: "\u5bc5", pinyin: "Yin", animal: "Tiger" },
+      { char: "\u536f", pinyin: "Mao", animal: "Rabbit" },
+      { char: "\u8fb0", pinyin: "Chen", animal: "Dragon" },
+      { char: "\u5df3", pinyin: "Si", animal: "Snake" },
+      { char: "\u5348", pinyin: "Wu", animal: "Horse" },
+      { char: "\u672a", pinyin: "Wei", animal: "Goat" },
+      { char: "\u7533", pinyin: "Shen", animal: "Monkey" },
+      { char: "\u9149", pinyin: "You", animal: "Rooster" },
+      { char: "\u620c", pinyin: "Xu", animal: "Dog" },
+      { char: "\u4ea5", pinyin: "Hai", animal: "Pig" }
+    ];
+
+    const BASE_DATE_UTC = Date.UTC(2026, 0, 2);
+    const BASE_STEM_INDEX = 2;
+    const BASE_BRANCH_INDEX = 0;
+
+    const JIEQI_MONTH_BOUNDARIES = [
+      [1, 5, "Chou Ox"],
+      [2, 4, "Yin Tiger"],
+      [3, 6, "Mao Rabbit"],
+      [4, 5, "Chen Dragon"],
+      [5, 6, "Si Snake"],
+      [6, 6, "Wu Horse"],
+      [7, 7, "Wei Goat"],
+      [8, 8, "Shen Monkey"],
+      [9, 8, "You Rooster"],
+      [10, 8, "Xu Dog"],
+      [11, 7, "Hai Pig"],
+      [12, 7, "Zi Rat"]
+    ];
+
+    const COL_1 = {
+      Rat: "Green Dragon",
+      Ox: "Bright Hall",
+      Tiger: "Heavenly Punishment",
+      Rabbit: "Red Phoenix",
+      Dragon: "Golden Lock",
+      Snake: "Precious Light",
+      Horse: "White Tiger",
+      Goat: "Jade Hall",
+      Monkey: "Heavenly Jail",
+      Rooster: "Black Tortoise",
+      Dog: "Life Governor",
+      Pig: "Grappling Hook"
+    };
+
+    const COL_2 = {
+      Tiger: "Green Dragon",
+      Rabbit: "Bright Hall",
+      Dragon: "Heavenly Punishment",
+      Snake: "Red Phoenix",
+      Horse: "Golden Lock",
+      Goat: "Precious Light",
+      Monkey: "White Tiger",
+      Rooster: "Jade Hall",
+      Dog: "Heavenly Jail",
+      Pig: "Black Tortoise",
+      Rat: "Life Governor",
+      Ox: "Grappling Hook"
+    };
+
+    const COL_3 = {
+      Dragon: "Green Dragon",
+      Snake: "Bright Hall",
+      Horse: "Heavenly Punishment",
+      Goat: "Red Phoenix",
+      Monkey: "Golden Lock",
+      Rooster: "Precious Light",
+      Dog: "White Tiger",
+      Pig: "Jade Hall",
+      Rat: "Heavenly Jail",
+      Ox: "Black Tortoise",
+      Tiger: "Life Governor",
+      Rabbit: "Grappling Hook"
+    };
+
+    const COL_4 = {
+      Horse: "Green Dragon",
+      Goat: "Bright Hall",
+      Monkey: "Heavenly Punishment",
+      Rooster: "Red Phoenix",
+      Dog: "Golden Lock",
+      Pig: "Precious Light",
+      Rat: "White Tiger",
+      Ox: "Jade Hall",
+      Tiger: "Heavenly Jail",
+      Rabbit: "Black Tortoise",
+      Dragon: "Life Governor",
+      Snake: "Grappling Hook"
+    };
+
+    const COL_5 = {
+      Monkey: "Green Dragon",
+      Rooster: "Bright Hall",
+      Dog: "Heavenly Punishment",
+      Pig: "Red Phoenix",
+      Rat: "Golden Lock",
+      Ox: "Precious Light",
+      Tiger: "White Tiger",
+      Rabbit: "Jade Hall",
+      Dragon: "Heavenly Jail",
+      Snake: "Black Tortoise",
+      Horse: "Life Governor",
+      Goat: "Grappling Hook"
+    };
+
+    const COL_6 = {
+      Dog: "Green Dragon",
+      Pig: "Bright Hall",
+      Rat: "Heavenly Punishment",
+      Ox: "Red Phoenix",
+      Tiger: "Golden Lock",
+      Rabbit: "Precious Light",
+      Dragon: "White Tiger",
+      Snake: "Jade Hall",
+      Horse: "Heavenly Jail",
+      Goat: "Black Tortoise",
+      Monkey: "Life Governor",
+      Rooster: "Grappling Hook"
+    };
+
+    const AUXILIARY_STAR_TABLE = {
+      Tiger: COL_1,
+      Monkey: COL_1,
+      Rabbit: COL_2,
+      Rooster: COL_2,
+      Dragon: COL_3,
+      Dog: COL_3,
+      Snake: COL_4,
+      Pig: COL_4,
+      Horse: COL_5,
+      Rat: COL_5,
+      Goat: COL_6,
+      Ox: COL_6
+    };
+
+    const YELLOW_BELT = new Set([
+      "Green Dragon",
+      "Bright Hall",
+      "Golden Lock",
+      "Precious Light",
+      "Jade Hall",
+      "Life Governor"
+    ]);
+
+    const BLACK_BELT = new Set([
+      "Heavenly Punishment",
+      "Red Phoenix",
+      "White Tiger",
+      "Heavenly Jail",
+      "Black Tortoise",
+      "Grappling Hook"
+    ]);
+
+    const ALL_STARS = [
+      "Green Dragon",
+      "Bright Hall",
+      "Golden Lock",
+      "Precious Light",
+      "Jade Hall",
+      "Life Governor",
+      "Heavenly Punishment",
+      "Red Phoenix",
+      "White Tiger",
+      "Heavenly Jail",
+      "Black Tortoise",
+      "Grappling Hook"
+    ];
+
+    const STAR_DEFINITIONS = {
+      "Green Dragon": {
+        keyword: "Multiply & Elite Nobleman",
+        belt: "Yellow Belt",
+        details: "Most auspicious of all 12. Brings high-quality wealth and high-quality noblemen - not a quick win but a long-term foundation for compounding success. Best for sales proposals, marketing, reaching elite contacts, networking with high-level people."
+      },
+      "Bright Hall": {
+        keyword: "Visibility & Recognition",
+        belt: "Yellow Belt",
+        details: "Named after the emperor's reception hall where capable officials gathered - you become the brightest person in the room. Best for public speaking, branding, media, political speeches, social grace. Secondary power: reveals truth and grants clarity in confusing situations - great for starting a difficult subject."
+      },
+      "Golden Lock": {
+        keyword: "Wealth Accumulation",
+        belt: "Yellow Belt",
+        details: "Money comes in and stays in. Best for depositing large sums, buying gold, closing deals, receiving payments, securing deposits, and marriage. Warning: do not use for storing warehouse inventory because it locks stock in and makes it hard to move."
+      },
+      "Precious Light": {
+        keyword: "Divine Protection & Inspiration",
+        belt: "Yellow Belt",
+        details: "Star of divine protection. It minimizes bad luck and softens disputes. Great for meditation, spiritual rituals, detox, and creative work. This is the light-bulb day when inspiration and new ideas surface naturally."
+      },
+      "Jade Hall": {
+        keyword: "Wealth + Intelligent Nobleman",
+        belt: "Yellow Belt",
+        details: "A wealth star that combines money with high-caliber help. Best for asking for funding, pitching investors, requesting mentorship, and seeking favors from influential people."
+      },
+      "Life Governor": {
+        keyword: "Official Authorization",
+        belt: "Yellow Belt",
+        details: "Make it official. Best for permits, visas, licenses, citizenship, official approvals, ribbon-cutting ceremonies, and promotions. A strong day to petition anyone in a position of power."
+      },
+      "Heavenly Punishment": {
+        keyword: "Divine Penalty",
+        belt: "Black Belt",
+        details: "Cosmic payback day. If anything questionable has been going on, this is the day consequences surface through legal notices, tax letters, or authority responses."
+      },
+      "Red Phoenix": {
+        keyword: "Verbal Conflict & Fire",
+        belt: "Black Belt",
+        details: "Arguments, gossip, and heated exchanges escalate quickly. Watch every word. Secondary risk includes fire or technical glitches such as electrical faults and server crashes."
+      },
+      "White Tiger": {
+        keyword: "Physical Injury & Blood",
+        belt: "Black Belt",
+        details: "The aggression star. It triggers tempers, confrontation, and accidents. Avoid surgery, long journeys, or activities involving cutting or physical danger."
+      },
+      "Heavenly Jail": {
+        keyword: "Trap & Restriction",
+        belt: "Black Belt",
+        details: "A day of confinement and binding consequences. Avoid starting contracts, new relationships, or fresh obligations that can box you in unexpectedly."
+      },
+      "Black Tortoise": {
+        keyword: "Petty People & Scams",
+        belt: "Black Belt",
+        details: "The most vulnerable day for deception. Petty people, fraud, theft, hacking, and too-good-to-be-true offers become more dangerous on this day."
+      },
+      "Grappling Hook": {
+        keyword: "Delays & Old Baggage",
+        belt: "Black Belt",
+        details: "Projects begun on this day tend to drag on. It also resurrects old grievances and emotionally loaded history. Avoid important launches or charged conversations."
+      }
+    };
+
+    const state = {
+      useToday: true,
+      days: 1
+    };
+
+    const el = (id) => document.getElementById(id);
+
+    function todayUTC() {
+      const now = new Date();
+      return new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+    }
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function dateToInputValue(dateUTC) {
+      return [
+        dateUTC.getUTCFullYear(),
+        pad(dateUTC.getUTCMonth() + 1),
+        pad(dateUTC.getUTCDate())
+      ].join("-");
+    }
+
+    function setStatus(message, isError = false) {
+      const node = el("status");
+      node.textContent = message;
+      node.className = isError ? "v err" : "v";
+    }
+
+    function setMeta(row) {
+      if (!row) {
+        el("dayPillar").textContent = "-";
+        el("monthAnimal").textContent = "-";
+        el("auxStar").textContent = "-";
+        return;
+      }
+
+      el("dayPillar").textContent = formatDayPillarMeta(row);
+      el("monthAnimal").textContent = row.monthAnimal;
+      el("auxStar").textContent = row.star;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function parseDateFlexible(input) {
+      if (!input) {
+        throw new Error("No date provided.");
+      }
+
+      const value = String(input).trim();
+      if (!value) {
+        throw new Error("No date provided.");
+      }
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+        const [year, month, day] = value.split("-").map(Number);
+        return new Date(Date.UTC(year, month - 1, day));
+      }
+
+      if (/^\d{8}$/.test(value)) {
+        const year = Number(value.slice(0, 4));
+        const month = Number(value.slice(4, 6));
+        const day = Number(value.slice(6, 8));
+        return new Date(Date.UTC(year, month - 1, day));
+      }
+
+      if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(value)) {
+        const [a, b, year] = value.split("/").map(Number);
+
+        let date = new Date(Date.UTC(year, a - 1, b));
+        if (date.getUTCMonth() === a - 1 && date.getUTCDate() === b) {
+          return date;
+        }
+
+        date = new Date(Date.UTC(year, b - 1, a));
+        if (date.getUTCMonth() === b - 1 && date.getUTCDate() === a) {
+          return date;
+        }
+      }
+
+      const parsed = Date.parse(value);
+      if (!Number.isNaN(parsed)) {
+        const date = new Date(parsed);
+        return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+      }
+
+      throw new Error("Unable to parse date: " + value);
+    }
+
+    function daysBetweenUTC(dateUTC, baseUtcMs) {
+      const dayMs = 24 * 60 * 60 * 1000;
+      const targetUtcMs = Date.UTC(
+        dateUTC.getUTCFullYear(),
+        dateUTC.getUTCMonth(),
+        dateUTC.getUTCDate()
+      );
+      return Math.round((targetUtcMs - baseUtcMs) / dayMs);
+    }
+
+    function getDayPillar(dateUTC) {
+      const delta = daysBetweenUTC(dateUTC, BASE_DATE_UTC);
+      const stem = HEAVENLY_STEMS[(BASE_STEM_INDEX + delta + 1000) % 10];
+      const branch = EARTHLY_BRANCHES[(BASE_BRANCH_INDEX + delta + 1200) % 12];
+      return { stem, branch };
+    }
+
+    function getMonthAnimal(dateUTC) {
+      const year = dateUTC.getUTCFullYear();
+      const boundaries = JIEQI_MONTH_BOUNDARIES.map(([month, day, animal]) => [
+        Date.UTC(year, month - 1, day),
+        animal
+      ]);
+
+      const targetMs = Date.UTC(year, dateUTC.getUTCMonth(), dateUTC.getUTCDate());
+      if (targetMs < boundaries[0][0]) {
+        return "Zi Rat";
+      }
+
+      let current = boundaries[0][1];
+      for (const [cutoff, animal] of boundaries) {
+        if (targetMs >= cutoff) {
+          current = animal;
+        } else {
+          break;
+        }
+      }
+      return current;
+    }
+
+    function getAuxiliaryStar(monthAnimal, dayAnimal) {
+      const monthBare = monthAnimal.split(" ").slice(-1)[0];
+      const dayMap = AUXILIARY_STAR_TABLE[monthBare];
+      if (!dayMap) {
+        return "Unknown";
+      }
+      return dayMap[dayAnimal] || "Unknown";
+    }
+
+    function beltOf(star) {
+      if (YELLOW_BELT.has(star)) {
+        return "yellow";
+      }
+      if (BLACK_BELT.has(star)) {
+        return "black";
+      }
+      return "unknown";
+    }
+
+    function beltLabel(star) {
+      if (YELLOW_BELT.has(star)) {
+        return "Yellow Belt";
+      }
+      if (BLACK_BELT.has(star)) {
+        return "Black Belt";
+      }
+      return "Unknown";
+    }
+
+    function buildRow(dateUTC) {
+      const { stem, branch } = getDayPillar(dateUTC);
+      const monthAnimal = getMonthAnimal(dateUTC);
+      const star = getAuxiliaryStar(monthAnimal, branch.animal);
+      const definition = STAR_DEFINITIONS[star] || { keyword: "", details: "", belt: beltLabel(star) };
+      return {
+        dateUTC,
+        stem,
+        branch,
+        monthAnimal,
+        dayAnimal: branch.animal,
+        star,
+        belt: beltOf(star),
+        beltLabel: beltLabel(star),
+        keyword: definition.keyword,
+        details: definition.details
+      };
+    }
+
+    function getRangeRows(startDateUTC, numDays, starFilter, beltFilter) {
+      const rows = [];
+      const query = starFilter ? starFilter.toLowerCase() : "";
+
+      for (let i = 0; i < numDays; i += 1) {
+        const dateUTC = new Date(startDateUTC.getTime() + i * 86400000);
+        const row = buildRow(dateUTC);
+
+        if (query && !row.star.toLowerCase().includes(query)) {
+          continue;
+        }
+
+        if (beltFilter !== "all" && row.belt !== beltFilter) {
+          continue;
+        }
+
+        rows.push(row);
+      }
+
+      return rows;
+    }
+
+    function findStarsByQuery(query, beltFilter = "all") {
+      const needle = String(query || "").trim().toLowerCase();
+      return ALL_STARS.filter((star) => {
+        if (beltFilter !== "all" && beltOf(star) !== beltFilter) {
+          return false;
+        }
+        if (!needle) {
+          return true;
+        }
+        return star.toLowerCase().includes(needle);
+      });
+    }
+
+    function formatDateLong(dateUTC) {
+      const local = new Date(dateUTC.getUTCFullYear(), dateUTC.getUTCMonth(), dateUTC.getUTCDate());
+      return local.toLocaleDateString(undefined, {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "2-digit"
+      });
+    }
+
+    function formatDateShort(dateUTC) {
+      const local = new Date(dateUTC.getUTCFullYear(), dateUTC.getUTCMonth(), dateUTC.getUTCDate());
+      return local.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "2-digit"
+      });
+    }
+
+    function formatDayPillarShort(row) {
+      return row.stem.pinyin + " " + row.branch.pinyin + " - " + row.stem.element + " " + row.branch.animal;
+    }
+
+    function formatDayPillarMeta(row) {
+      return row.stem.char + row.branch.char + " " + row.stem.pinyin + " " + row.branch.pinyin;
+    }
+
+    function isSameUtcDay(a, b) {
+      return (
+        a.getUTCFullYear() === b.getUTCFullYear() &&
+        a.getUTCMonth() === b.getUTCMonth() &&
+        a.getUTCDate() === b.getUTCDate()
+      );
+    }
+
+    function renderBeltBadge(star) {
+      const belt = beltOf(star);
+      const label = beltLabel(star);
+      return "<span class=\"beltBadge " + belt + "\">" + escapeHtml(label) + "</span>";
+    }
+
+    function renderRangeResults(rows, startDateUTC, numDays, starFilter, beltFilter) {
+      const wrap = document.createElement("div");
+      wrap.className = "gridDays";
+
+      const summary = document.createElement("div");
+      summary.className = "summary";
+      const endDateUTC = new Date(startDateUTC.getTime() + (numDays - 1) * 86400000);
+      const filters = [];
+      if (starFilter) {
+        filters.push("star contains \"" + escapeHtml(starFilter) + "\"");
+      }
+      if (beltFilter !== "all") {
+        filters.push(beltLabel(beltFilter === "yellow" ? "Green Dragon" : "Black Tortoise"));
+      }
+      summary.innerHTML = "<b>Range:</b> " + escapeHtml(formatDateShort(startDateUTC)) +
+        " to " + escapeHtml(formatDateShort(endDateUTC)) +
+        " (" + numDays + " day" + (numDays === 1 ? "" : "s") + ")<br>" +
+        "<b>Results:</b> " + rows.length +
+        (filters.length ? "<br><b>Filters:</b> " + filters.join("; ") : "");
+      wrap.appendChild(summary);
+
+      if (!rows.length) {
+        const empty = document.createElement("div");
+        empty.className = "notice";
+        empty.textContent = "No matching days found in the requested range.";
+        wrap.appendChild(empty);
+        return wrap;
+      }
+
+      const table = document.createElement("table");
+      table.innerHTML = [
+        "<thead>",
+        "<tr>",
+        "<th style=\"width: 16%\">Date</th>",
+        "<th style=\"width: 23%\">Day Pillar</th>",
+        "<th style=\"width: 14%\">Month</th>",
+        "<th style=\"width: 10%\">Day Animal</th>",
+        "<th style=\"width: 17%\">Auxiliary Star</th>",
+        "<th style=\"width: 10%\">Belt</th>",
+        "<th style=\"width: 10%\">Keyword</th>",
+        "</tr>",
+        "</thead>",
+        "<tbody></tbody>"
+      ].join("");
+
+      const tbody = table.querySelector("tbody");
+      const today = todayUTC();
+
+      rows.forEach((row) => {
+        const tr = document.createElement("tr");
+        if (isSameUtcDay(row.dateUTC, today)) {
+          tr.className = "todayRow";
+        }
+        tr.innerHTML = [
+          "<td>",
+          escapeHtml(formatDateShort(row.dateUTC)),
+          isSameUtcDay(row.dateUTC, today) ? "<div style=\"margin-top:6px\"><span class=\"badge\">Today</span></div>" : "",
+          "</td>",
+          "<td class=\"mono\">" + escapeHtml(formatDayPillarShort(row)) + "</td>",
+          "<td>" + escapeHtml(row.monthAnimal) + "</td>",
+          "<td>" + escapeHtml(row.dayAnimal) + "</td>",
+          "<td title=\"" + escapeHtml(row.details) + "\">" + escapeHtml(row.star) + "</td>",
+          "<td>" + renderBeltBadge(row.star) + "</td>",
+          "<td>" + escapeHtml(row.keyword || "") + "</td>"
+        ].join("");
+        tbody.appendChild(tr);
+      });
+
+      wrap.appendChild(table);
+      return wrap;
+    }
+
+    function renderStarCard(star) {
+      const info = STAR_DEFINITIONS[star];
+      const card = document.createElement("div");
+      card.className = "starCard";
+      card.innerHTML = [
+        "<div class=\"top\">",
+        "<div>",
+        "<div class=\"starName\">" + escapeHtml(star) + "</div>",
+        "<div class=\"keyword\">" + escapeHtml(info.keyword) + "</div>",
+        "</div>",
+        renderBeltBadge(star),
+        "</div>",
+        "<div class=\"details\">" + escapeHtml(info.details) + "</div>"
+      ].join("");
+      return card;
+    }
+
+    function renderLookupResults(query) {
+      const matches = findStarsByQuery(query, "all");
+      const wrap = document.createElement("div");
+      wrap.className = "gridDays";
+
+      const summary = document.createElement("div");
+      summary.className = "summary";
+      summary.innerHTML = "<b>Lookup:</b> \"" + escapeHtml(query) + "\"<br><b>Matches:</b> " + matches.length;
+      wrap.appendChild(summary);
+
+      if (!matches.length) {
+        const empty = document.createElement("div");
+        empty.className = "notice";
+        empty.textContent = "No star found matching that query.";
+        wrap.appendChild(empty);
+        return wrap;
+      }
+
+      const grid = document.createElement("div");
+      grid.className = "starGrid";
+      matches.forEach((star) => grid.appendChild(renderStarCard(star)));
+      wrap.appendChild(grid);
+      return wrap;
+    }
+
+    function renderListResults(query, beltFilter) {
+      const matches = findStarsByQuery(query, beltFilter);
+      const wrap = document.createElement("div");
+      wrap.className = "gridDays";
+
+      const summary = document.createElement("div");
+      summary.className = "summary";
+      summary.innerHTML = "<b>Stars Listed:</b> " + matches.length +
+        (query ? "<br><b>Name Filter:</b> \"" + escapeHtml(query) + "\"" : "") +
+        (beltFilter !== "all" ? "<br><b>Belt Filter:</b> " + escapeHtml(beltFilter === "yellow" ? "Yellow Belt" : "Black Belt") : "");
+      wrap.appendChild(summary);
+
+      if (!matches.length) {
+        const empty = document.createElement("div");
+        empty.className = "notice";
+        empty.textContent = "No stars match the current filters.";
+        wrap.appendChild(empty);
+        return wrap;
+      }
+
+      const groups = [
+        { key: "yellow", title: "Yellow Belt", stars: matches.filter((star) => beltOf(star) === "yellow") },
+        { key: "black", title: "Black Belt", stars: matches.filter((star) => beltOf(star) === "black") }
+      ];
+
+      groups.forEach((group) => {
+        if (!group.stars.length) {
+          return;
+        }
+        const block = document.createElement("div");
+        block.className = "groupBlock";
+        const title = document.createElement("div");
+        title.className = "groupTitle";
+        title.innerHTML = "<span>" + escapeHtml(group.title) + "</span><span class=\"badge\">" + group.stars.length + "</span>";
+        block.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.className = "starGrid";
+        group.stars.forEach((star) => grid.appendChild(renderStarCard(star)));
+        block.appendChild(grid);
+        wrap.appendChild(block);
+      });
+
+      return wrap;
+    }
+
+    function setDays(days) {
+      state.days = days;
+      document.querySelectorAll("#daysBtns .pill").forEach((button) => {
+        button.classList.toggle("on", Number(button.dataset.days) === days);
+      });
+    }
+
+    function populateStarDropdown() {
+      const dropdown = el("starDropdown");
+      dropdown.innerHTML = "<option value=\"\">-- Select a star --</option>" +
+        ALL_STARS.map((star) => "<option value=\"" + escapeHtml(star) + "\">" + escapeHtml(star) + "</option>").join("");
+    }
+
+    function getQueryValue() {
+      return (el("query").value || el("starDropdown").value || "").trim();
+    }
+
+    function getStartDateUTC() {
+      if (state.useToday) {
+        return todayUTC();
+      }
+
+      if (el("dateText").value.trim()) {
+        return parseDateFlexible(el("dateText").value.trim());
+      }
+
+      if (el("datePicker").value) {
+        return parseDateFlexible(el("datePicker").value);
+      }
+
+      throw new Error("Select or enter a start date.");
+    }
+
+    function syncDateControls() {
+      const today = todayUTC();
+      el("datePicker").value = dateToInputValue(today);
+      if (state.useToday) {
+        el("dateText").value = "";
+      }
+    }
+
+    function setFieldDimmed(id, isDimmed) {
+      const node = el(id);
+      node.classList.toggle("dimmed", isDimmed);
+      node.querySelectorAll("input, select, button").forEach((control) => {
+        if (control.id === "btnToday" || control.id === "btnPick") {
+          return;
+        }
+        control.disabled = isDimmed;
+      });
+    }
+
+    function updateModeUi() {
+      const mode = el("mode").value;
+      const label = el("modeLabel");
+      const hint = el("modeHint");
+
+      if (mode === "range") {
+        label.textContent = "Star Filter / Lookup";
+        hint.textContent = "Range mode shows one row per day. Star Filter and Belt Filter are optional and behave like the Python CLI.";
+        setFieldDimmed("dateField", false);
+        setFieldDimmed("daysField", false);
+        setFieldDimmed("beltField", false);
+      } else if (mode === "lookup") {
+        label.textContent = "Star Name";
+        hint.textContent = "Lookup mode ignores date, days, and belt. Use a full or partial star name to show the embedded keyword and details.";
+        setFieldDimmed("dateField", true);
+        setFieldDimmed("daysField", true);
+        setFieldDimmed("beltField", true);
+      } else {
+        label.textContent = "Optional Name Filter";
+        hint.textContent = "List mode ignores date and days. Belt and name filters are optional and only affect which definition cards are shown.";
+        setFieldDimmed("dateField", true);
+        setFieldDimmed("daysField", true);
+        setFieldDimmed("beltField", false);
+      }
+    }
+
+    function clearOutput() {
+      el("output").innerHTML = "<div class=\"notice\">Cleared.</div>";
+      setMeta(null);
+      setStatus("Ready");
+    }
+
+    document.querySelectorAll("#daysBtns button").forEach((button) => {
+      button.addEventListener("click", () => setDays(Number(button.dataset.days)));
+    });
+
+    el("btnToday").addEventListener("click", () => {
+      state.useToday = true;
+      el("btnToday").classList.add("on");
+      el("btnPick").classList.remove("on");
+      syncDateControls();
+    });
+
+    el("btnPick").addEventListener("click", () => {
+      state.useToday = false;
+      el("btnPick").classList.add("on");
+      el("btnToday").classList.remove("on");
+    });
+
+    el("datePicker").addEventListener("change", () => {
+      if (el("datePicker").value) {
+        state.useToday = false;
+        el("btnPick").classList.add("on");
+        el("btnToday").classList.remove("on");
+      }
+    });
+
+    el("dateText").addEventListener("input", () => {
+      if (el("dateText").value.trim()) {
+        state.useToday = false;
+        el("btnPick").classList.add("on");
+        el("btnToday").classList.remove("on");
+      }
+    });
+
+    el("starDropdown").addEventListener("change", () => {
+      const selected = el("starDropdown").value;
+      if (selected) {
+        el("query").value = selected;
+      }
+    });
+
+    el("query").addEventListener("input", () => {
+      if (!el("query").value.trim()) {
+        el("starDropdown").value = "";
+      }
+    });
+
+    el("mode").addEventListener("change", updateModeUi);
+
+    el("clearBtn").addEventListener("click", clearOutput);
+
+    el("resetBtn").addEventListener("click", () => {
+      state.useToday = true;
+      el("btnToday").classList.add("on");
+      el("btnPick").classList.remove("on");
+      setDays(1);
+      el("mode").value = "range";
+      el("belt").value = "all";
+      el("starDropdown").value = "";
+      el("query").value = "";
+      syncDateControls();
+      updateModeUi();
+      setStatus("Filters reset.");
+    });
+
+    el("copyBtn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(el("output").innerText);
+        setStatus("Copied output to clipboard.");
+      } catch (error) {
+        setStatus("Copy failed. Select the output manually.", true);
+      }
+    });
+
+    el("runBtn").addEventListener("click", () => {
+      try {
+        const mode = el("mode").value;
+        const query = getQueryValue();
+        const beltFilter = el("belt").value;
+        let view;
+
+        if (mode === "range") {
+          const startDateUTC = getStartDateUTC();
+          const previewRow = buildRow(startDateUTC);
+          const rows = getRangeRows(startDateUTC, state.days, query, beltFilter);
+          setMeta(previewRow);
+          view = renderRangeResults(rows, startDateUTC, state.days, query, beltFilter);
+          setStatus("Rendered " + rows.length + " result(s).");
+        } else if (mode === "lookup") {
+          if (!query) {
+            throw new Error("Enter a star name to look up.");
+          }
+          setMeta(null);
+          view = renderLookupResults(query);
+          setStatus("Lookup complete.");
+        } else {
+          setMeta(null);
+          view = renderListResults(query, beltFilter);
+          setStatus("List generated.");
+        }
+
+        el("output").innerHTML = "";
+        el("output").appendChild(view);
+      } catch (error) {
+        setStatus(error.message || String(error), true);
+        el("output").innerHTML = "<div class=\"notice\"><b>Error:</b> " + escapeHtml(error.message || String(error)) + "</div>";
+      }
+    });
+
+    (function init() {
+      populateStarDropdown();
+      syncDateControls();
+      setDays(1);
+      updateModeUi();
+    }());
+  </script>
+</body>
+</html>
