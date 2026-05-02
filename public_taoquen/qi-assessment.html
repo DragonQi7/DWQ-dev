@@ -1015,6 +1015,43 @@
       inset: 0;
       background: linear-gradient(to top, rgba(26,8,4,0.7) 0%, transparent 60%);
     }
+    .program-title-banner {
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 28px 32px;
+      text-align: center;
+      color: #fff;
+    }
+    .ptb-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+    .ptb-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .ptb-divider {
+      width: 36px;
+      height: 0.5px;
+      background: rgba(255,255,255,0.4);
+    }
+    .ptb-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      opacity: 0.5;
+    }
+    .ptb-feg  { background: linear-gradient(135deg, #2a0f0a 0%, #55160A 55%, #7a1e0e 100%); }
+    .ptb-3es  { background: linear-gradient(135deg, #0d1f0a 0%, #1e5018 55%, #2e6622 100%); }
     .program-body {
       padding: 28px;
       flex: 1;
@@ -1650,9 +1687,10 @@
     .kl-chip .kl-age { font-weight: 600; color: var(--text-light); }
     .kl-drain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 28px 0 56px; }
     @media (max-width: 720px) { .kl-drain-grid { grid-template-columns: 1fr; } }
-    .kl-drain-card { background: var(--card-bg); border-radius: 14px; padding: 36px 28px; text-align: center; border: 1px solid var(--card-border); transition: transform 0.2s, border-color 0.2s; }
+    .kl-drain-card { background: var(--card-bg); border-radius: 14px; padding: 0; text-align: center; border: 1px solid var(--card-border); transition: transform 0.2s, border-color 0.2s; overflow: hidden; }
     .kl-drain-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .kl-drain-card .icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .kl-drain-card-img { display: block; width: 100%; height: 220px; object-fit: cover; }
+    .kl-drain-card-body { padding: 28px 28px 36px; }
     .kl-drain-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 10px; }
     .kl-drain-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; }
     .kl-reversal { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 46px 54px; margin-bottom: 44px; }
@@ -1665,6 +1703,45 @@
     .kl-quote { border-left: 3px solid var(--jade-light); padding: 20px 24px; background: var(--glass-bg); border-radius: 0 8px 8px 0; margin-top: 24px; }
     .kl-quote p { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold-light); font-size: 1.1rem; margin: 0 0 8px; }
     .kl-quote cite { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.06em; font-style: normal; }
+
+    /* ── Cohort Calendar ─────────────────────────────────────── */
+    .cohort-section { margin: 40px 0 52px; }
+    .cohort-section-head { text-align: center; margin-bottom: 40px; }
+    .cohort-section-head h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+    .cohort-section-head h3 em { font-style: italic; color: var(--gold-light); }
+    .cohort-section-sub { font-size: 0.97rem; color: var(--text-muted); max-width: 580px; margin: 0 auto; line-height: 1.8; }
+    .cohort-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; margin-bottom: 28px; box-shadow: 0 2px 16px rgba(85,22,10,0.06); }
+    .cohort-banner { background: linear-gradient(135deg, #55160A 0%, #3a0e08 100%); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .cohort-banner .cb-label { font-weight: 700; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,235,210,0.9); }
+    .cohort-banner .cb-spots { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border-radius: 30px; padding: 4px 13px; font-size: 0.75rem; font-weight: 700; color: rgba(255,235,210,0.85); letter-spacing: 0.05em; }
+    .cb-spots .spot-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff9a7a; animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.75); } }
+    .cohort-body { padding: 36px; }
+    .cohort-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 0; border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: rgba(255,255,255,0.4); }
+    .cd-item { padding: 20px 22px; border-right: 1px solid var(--card-border); display: flex; flex-direction: column; gap: 5px; }
+    .cd-item:last-child { border-right: none; }
+    @media (max-width: 700px) { .cd-item { border-right: none; border-bottom: 1px solid var(--card-border); } .cd-item:last-child { border-bottom: none; } .cohort-body { padding: 22px 18px; } .cohort-banner { padding: 14px 18px; } }
+    .cd-icon { font-size: 1.25rem; margin-bottom: 2px; }
+    .cd-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+    .cd-value { font-family: 'Playfair Display', serif; font-size: 0.98rem; color: var(--text); font-weight: 600; line-height: 1.3; }
+    .cd-note { font-size: 0.72rem; color: var(--text-muted); }
+    .cohort-sessions-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+    .cohort-dates { display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 0; }
+    .date-chip { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.6); border: 1px solid var(--card-border); border-radius: 10px; padding: 11px 14px; min-width: 68px; gap: 3px; transition: background 0.2s, border-color 0.2s; }
+    .date-chip:hover { background: rgba(85,22,10,0.06); border-color: var(--gold-light); }
+    .date-chip.first-session { border-color: var(--gold-light); background: rgba(192,32,38,0.07); }
+    .date-chip .dc-week { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+    .date-chip.first-session .dc-week { color: var(--gold-light); }
+    .date-chip .dc-day { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--text); line-height: 1; }
+    .date-chip .dc-month { font-size: 0.65rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em; }
+    .cohort-enroll-note { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--card-border); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    .cohort-enroll-note strong { color: var(--gold-light); font-weight: 600; }
+    .cohort-enroll-note .enroll-arrow { font-size: 1.1rem; color: var(--gold-light); animation: bounce-down 1.6s ease-in-out infinite; display: inline-block; }
+    @keyframes bounce-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+    .cohort-guarantee { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0 0; font-size: 0.76rem; color: var(--text-muted); letter-spacing: 0.03em; flex-wrap: wrap; }
+    .cohort-guarantee .g-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--card-border); flex-shrink: 0; }
+    .cohort-card.muted { opacity: 0.78; }
+    .cohort-card.muted .cohort-banner { background: linear-gradient(135deg, #7a6a5a 0%, #5a4a3a 100%); }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -2202,6 +2279,134 @@
     }
 
     /* =========================================
+       TAO QUEN MODAL
+       ========================================= */
+    .tq-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,8,4,0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 9000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .tq-modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .tq-modal-box {
+      background: #f5f2ed;
+      border-radius: 20px;
+      max-width: 540px;
+      width: 100%;
+      padding: 56px 48px 52px;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.35s ease;
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .tq-modal-overlay.open .tq-modal-box {
+      transform: translateY(0);
+    }
+    .tq-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #9a9088;
+      line-height: 1;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .tq-modal-close:hover { background: rgba(0,0,0,0.06); }
+    .tq-modal-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .tq-modal-wordmark {
+      font-family: 'Cinzel', serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #9a9088;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .tq-modal-wordmark span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: #b89a6a;
+      margin-top: 2px;
+    }
+    .tq-modal-headline {
+      font-size: clamp(1.55rem, 4vw, 2.1rem);
+      font-weight: 200;
+      font-style: italic;
+      line-height: 1.35;
+      color: #0e0d0b;
+      margin-bottom: 28px;
+    }
+    .tq-modal-headline em {
+      font-style: normal;
+      font-weight: 300;
+      color: #b89a6a;
+    }
+    .tq-modal-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .tq-modal-divider-line { height: 0.5px; width: 36px; background: #b89a6a; opacity: 0.5; }
+    .tq-modal-divider-glyph {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #9a9088;
+    }
+    .tq-modal-body { display: flex; flex-direction: column; gap: 20px; }
+    .tq-modal-body p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #3d3830;
+    }
+    .tq-modal-wu {
+      font-style: italic;
+      color: #0e0d0b !important;
+      border-left: 1px solid #b89a6a;
+      padding-left: 20px;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 380px;
+    }
+    .tq-modal-closer strong {
+      font-weight: 500;
+      font-style: italic;
+      color: #b89a6a;
+    }
+    @media (max-width: 560px) {
+      .tq-modal-box { padding: 44px 28px 40px; }
+    }
+
+    /* =========================================
        JUMP TO ASSESSMENT BUTTON
        ========================================= */
     .jump-assess-btn {
@@ -2374,7 +2579,7 @@
   <nav class="site-nav" id="siteNav">
     <div class="container">
       <div class="nav-inner">
-        <a href="#" class="nav-logo">
+        <a href="#" class="nav-logo" title="About Tao Quen" onclick="openTaoQuenModal(event)">
           <svg class="nav-logo-mark" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="18" stroke="#f5c876" stroke-width="1.5" fill="none"/>
             <path d="M20 4 C28 4, 28 20, 20 20 C12 20, 12 36, 20 36" stroke="#f5c876" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -3013,19 +3218,25 @@
       <h3 class="kl-sub reveal">What Quietly Drains Your <em>Kidney Qi Account</em></h3>
       <div class="kl-drain-grid">
         <div class="kl-drain-card reveal">
-          <div class="icon">&#128293;</div>
-          <h3>Chronic Stress &amp; Overwork</h3>
-          <p>When the body's daily Qi budget runs short, it converts Kidney Essence into emergency operational energy. Deadline culture, always-on devices, and no true recovery force constant withdrawals from the deepest savings account you have — one that cannot simply be refilled.</p>
+          <img class="kl-drain-card-img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Person exhausted at desk — burnout from chronic stress and overwork" loading="lazy" />
+          <div class="kl-drain-card-body">
+            <h3>Chronic Stress &amp; Overwork</h3>
+            <p>When the body's daily Qi budget runs short, it converts Kidney Essence into emergency operational energy. Deadline culture, always-on devices, and no true recovery force constant withdrawals from the deepest savings account you have — one that cannot simply be refilled.</p>
+          </div>
         </div>
         <div class="kl-drain-card reveal reveal-delay-1">
-          <div class="icon">&#127754;</div>
-          <h3>Fear &amp; Anxiety</h3>
-          <p>In TCM, fear is the emotion directly associated with the Kidney system. A culture anchored in fear — news cycles, financial anxiety, health scares, existential uncertainty — quietly and chronically drains Kidney Qi without a single dramatic event. The slow bleed is the most dangerous kind.</p>
+          <img class="kl-drain-card-img" src="https://images.unsplash.com/photo-1512757776214-26d36777b513?auto=format&fit=crop&w=800&q=80" alt="Person sitting alone looking anxious and isolated — fear and emotional drain" loading="lazy" />
+          <div class="kl-drain-card-body">
+            <h3>Fear &amp; Anxiety</h3>
+            <p>In TCM, fear is the emotion directly associated with the Kidney system. A culture anchored in fear — news cycles, financial anxiety, health scares, existential uncertainty — quietly and chronically drains Kidney Qi without a single dramatic event. The slow bleed is the most dangerous kind.</p>
+          </div>
         </div>
         <div class="kl-drain-card reveal reveal-delay-2">
-          <div class="icon">&#10052;</div>
-          <h3>Cold Foods, Stimulants &amp; Poor Sleep</h3>
-          <p>Cold essence — raw foods, iced drinks, over-hydration — weakens the Kidney's digestive fire. Stimulants draw on reserve energy instead of generating it. And sleep that doesn't restore doesn't just leave you tired — it depletes the very reserves that govern longevity, immunity, and reproductive health.</p>
+          <img class="kl-drain-card-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Coffee and stimulants late at night — disrupted sleep and depleted Kidney energy" loading="lazy" />
+          <div class="kl-drain-card-body">
+            <h3>Cold Foods, Stimulants &amp; Poor Sleep</h3>
+            <p>Cold essence — raw foods, iced drinks, over-hydration — weakens the Kidney's digestive fire. Stimulants draw on reserve energy instead of generating it. And sleep that doesn't restore doesn't just leave you tired — it depletes the very reserves that govern longevity, immunity, and reproductive health.</p>
+          </div>
         </div>
       </div>
 
@@ -3566,6 +3777,122 @@
         <p>Every day you wait, the energy debt compounds. The patterns don't fix themselves — but they do deepen. These programs meet you exactly where you are, with a 5,000-year-old system proven to work.</p>
       </div>
 
+      <!--
+        Edit the cohort cards directly in the HTML below.
+        Duplicate a .cohort-card block to add another cohort.
+        Update dates, times, session chips, and the enroll button as needed.
+      -->
+      <div class="cohort-section reveal" id="eventsCalendar">
+
+        <div class="cohort-section-head">
+          <h3>Join an <em>Upcoming</em> Program</h3>
+          <p class="cohort-section-sub">Seats are limited to maintain an intimate, high-attention group experience. Reserve your place in the next cohort before the group fills.</p>
+        </div>
+
+        <!-- ── COHORT 1: edit dates, times, session chips below ── -->
+        <div class="cohort-card">
+          <div class="cohort-banner">
+            <div class="cb-label">Summer 2026 Cohort &nbsp;&middot;&nbsp; Dragon's Way Qigong&reg; 6-Week Program</div>
+            <div class="cb-spots"><span class="spot-dot"></span>Limited Spots Available</div>
+          </div>
+          <div class="cohort-body">
+            <div class="cohort-details">
+              <div class="cd-item">
+                <div class="cd-icon">&#128197;</div>
+                <div class="cd-label">Start Date</div>
+                <div class="cd-value">June 3, 2026</div>
+                <div class="cd-note">First session</div>
+              </div>
+              <div class="cd-item">
+                <div class="cd-icon">&#9200;</div>
+                <div class="cd-label">Time</div>
+                <div class="cd-value">7:00 PM EST</div>
+                <div class="cd-note">Every Wednesday</div>
+              </div>
+              <div class="cd-item">
+                <div class="cd-icon">&#128198;</div>
+                <div class="cd-label">Duration</div>
+                <div class="cd-value">6 Weeks</div>
+                <div class="cd-note">1.5 hrs per session</div>
+              </div>
+              <div class="cd-item">
+                <div class="cd-icon">&#127758;</div>
+                <div class="cd-label">Format</div>
+                <div class="cd-value">Live Online</div>
+                <div class="cd-note">Small group &amp; interactive</div>
+              </div>
+              <div class="cd-item">
+                <div class="cd-icon">&#127937;</div>
+                <div class="cd-label">Program End</div>
+                <div class="cd-value">July 8, 2026</div>
+                <div class="cd-note">Final session</div>
+              </div>
+            </div>
+            <div class="cohort-sessions-label">Your Six Sessions</div>
+            <div class="cohort-dates">
+              <div class="date-chip first-session"><span class="dc-week">Week 1</span><span class="dc-day">3</span><span class="dc-month">Jun</span></div>
+              <div class="date-chip"><span class="dc-week">Week 2</span><span class="dc-day">10</span><span class="dc-month">Jun</span></div>
+              <div class="date-chip"><span class="dc-week">Week 3</span><span class="dc-day">17</span><span class="dc-month">Jun</span></div>
+              <div class="date-chip"><span class="dc-week">Week 4</span><span class="dc-day">24</span><span class="dc-month">Jun</span></div>
+              <div class="date-chip"><span class="dc-week">Week 5</span><span class="dc-day">1</span><span class="dc-month">Jul</span></div>
+              <div class="date-chip"><span class="dc-week">Week 6</span><span class="dc-day">8</span><span class="dc-month">Jul</span></div>
+            </div>
+            <div class="cohort-enroll-note">
+              <span class="enroll-arrow">&#8595;</span>
+              <span>Dates confirmed &mdash; <strong>choose your program below</strong> to reserve your seat</span>
+            </div>
+          </div>
+        </div>
+        <div class="cohort-guarantee">
+          <span>Wednesdays &nbsp;7:00&ndash;8:30 PM EST</span>
+          <span class="g-dot"></span>
+          <span>June 3 &ndash; July 8, 2026</span>
+          <span class="g-dot"></span>
+          <span>Dragon's Way Qigong&reg; Certified Instructor</span>
+        </div>
+
+        <!-- ── COHORT 2: duplicate block above to add more cohorts ── -->
+        <div style="margin-top:2.5rem;">
+          <div class="section-label" style="text-align:center;opacity:0.55;">Fall 2026 &mdash; Coming Soon</div>
+        </div>
+        <div class="cohort-card muted">
+          <div class="cohort-banner">
+            <div class="cb-label" style="color:#fff;">Fall 2026 Cohort &nbsp;&middot;&nbsp; Dragon's Way Qigong&reg; 6-Week Program</div>
+            <div class="cb-spots" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);"><span class="spot-dot" style="background:#ccc;animation:none;"></span>Enrollment Opens Summer 2026</div>
+          </div>
+          <div class="cohort-body">
+            <div class="cohort-details">
+              <div class="cd-item"><div class="cd-icon">&#128197;</div><div class="cd-label">Start Date</div><div class="cd-value">September 3, 2026</div><div class="cd-note">First session</div></div>
+              <div class="cd-item"><div class="cd-icon">&#9200;</div><div class="cd-label">Time</div><div class="cd-value">6:30 PM EST</div><div class="cd-note">Every Thursday</div></div>
+              <div class="cd-item"><div class="cd-icon">&#128198;</div><div class="cd-label">Duration</div><div class="cd-value">6 Weeks</div><div class="cd-note">1.5 hrs per session</div></div>
+              <div class="cd-item"><div class="cd-icon">&#127758;</div><div class="cd-label">Format</div><div class="cd-value">Live Online</div><div class="cd-note">Small group &amp; interactive</div></div>
+              <div class="cd-item"><div class="cd-icon">&#127937;</div><div class="cd-label">Program End</div><div class="cd-value">October 8, 2026</div><div class="cd-note">Final session</div></div>
+            </div>
+            <div class="cohort-sessions-label">Your Six Sessions</div>
+            <div class="cohort-dates">
+              <div class="date-chip first-session"><span class="dc-week">Week 1</span><span class="dc-day">3</span><span class="dc-month">Sep</span></div>
+              <div class="date-chip"><span class="dc-week">Week 2</span><span class="dc-day">10</span><span class="dc-month">Sep</span></div>
+              <div class="date-chip"><span class="dc-week">Week 3</span><span class="dc-day">17</span><span class="dc-month">Sep</span></div>
+              <div class="date-chip"><span class="dc-week">Week 4</span><span class="dc-day">24</span><span class="dc-month">Sep</span></div>
+              <div class="date-chip"><span class="dc-week">Week 5</span><span class="dc-day">1</span><span class="dc-month">Oct</span></div>
+              <div class="date-chip"><span class="dc-week">Week 6</span><span class="dc-day">8</span><span class="dc-month">Oct</span></div>
+            </div>
+            <div class="cohort-enroll-note">
+              <span class="enroll-arrow">&#8595;</span>
+              <span>Enrollment opens Summer 2026 &mdash; <strong>join the waitlist below</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="cohort-guarantee">
+          <span>Thursdays &nbsp;6:30&ndash;8:00 PM EST</span>
+          <span class="g-dot"></span>
+          <span>September 3 &ndash; October 8, 2026</span>
+          <span class="g-dot"></span>
+          <span>Dragon's Way Qigong&reg; Certified Instructor</span>
+        </div>
+
+      </div>
+
       <div class="programs-grid">
         <!-- Program 1: Dragon's Way Qigong -->
         <div class="program-card featured reveal">
@@ -3604,9 +3931,11 @@
 
         <!-- Program 2: Four Energy Gates -->
         <div class="program-card reveal reveal-delay-1">
-          <div class="program-img">
-            <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=90" alt="Water Element — flowing water carving through ancient stone, the Four Energy Gates opening">
-            <div class="program-img-overlay"></div>
+          <div class="program-title-banner ptb-feg">
+            <span class="ptb-label">Specialized 4-Week Program</span>
+            <span class="ptb-name">Four Energy Gates</span>
+            <div class="ptb-divider"></div>
+            <span class="ptb-sub">&#9679;&nbsp; Open the 4 Critical Meridian Junctions &nbsp;&#9679;</span>
           </div>
           <div class="program-body">
             <div class="program-type">Specialized 4-Week Program</div>
@@ -3633,9 +3962,11 @@
 
         <!-- Program 3: 3Es -->
         <div class="program-card reveal reveal-delay-2">
-          <div class="program-img">
-            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=90" alt="Wood Element — morning light through ancient forest, the daily living energy of 3Es Qigong">
-            <div class="program-img-overlay"></div>
+          <div class="program-title-banner ptb-3es">
+            <span class="ptb-label">Daily Practice Program</span>
+            <span class="ptb-name">3Es &mdash; Energy,<br>Everyone, Everyday</span>
+            <div class="ptb-divider"></div>
+            <span class="ptb-sub">&#9679;&nbsp; 10 Minutes a Day. For Life. &nbsp;&#9679;</span>
           </div>
           <div class="program-body">
             <div class="program-type">Daily Practice Program</div>
@@ -3719,10 +4050,12 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="footer-logo">
-            <span style="font-family:'Cinzel',serif; font-size:0.95rem; font-weight:700; color:rgba(245,200,118,0.5); letter-spacing:0.2em; text-transform:uppercase; display:block; margin-bottom:4px;">TAOQUEN</span>
-            Dragon's Way Qigong®
+            <span style="font-family:'Cinzel',serif; font-size:1.1rem; font-weight:700; color:var(--text); letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:3px;">Tao Quen</span>
+            <span style="font-family:'Cinzel',serif; font-size:0.72rem; font-weight:400; color:var(--text-muted); letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:10px;">Quantum Entanglement</span>
+            <em style="font-style:italic; font-size:0.9rem; opacity:0.7;">Qi is real.<br>But someone has to<br>make it real for you.</em>
           </div>
-          <p>Rooted in the ancient wisdom of Traditional Chinese Medicine, Dragon's Way Qigong® is Grand Master Nan Lu's signature healing program — practiced by thousands worldwide for over 30 years.</p>
+          <p style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.18em; color:rgba(245,200,118,0.3); margin-bottom:10px;">&#36947; &middot; &#27668; &middot; &#28961;</p>
+          <p>Qi is just a word. Words can only point &mdash; they are not the thing itself. Qi becomes real when someone who has experienced it passes it to you directly.</p>
         </div>
         <div class="footer-col">
           <h4>Programs</h4>
@@ -3745,7 +4078,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Dragon's Way Qigong® · TCM World Foundation</p>
+        <p>Tao Quen &nbsp;&middot;&nbsp; Quantum Entanglement</p>
         <p class="footer-disclaimer">
           This page is for educational purposes. TCM practices are complementary and not a substitute for medical advice. Always consult a qualified healthcare provider for medical conditions.
         </p>
@@ -4118,6 +4451,66 @@
           window.scrollTo({ top, behavior: 'smooth' });
         }
       });
+    });
+  </script>
+
+  <!-- TAO QUEN MODAL -->
+  <div id="taoQuenModal" class="tq-modal-overlay" role="dialog" aria-modal="true" aria-label="About Tao Quen" onclick="if(event.target===this)closeTaoQuenModal()">
+    <div class="tq-modal-box">
+      <button class="tq-modal-close" onclick="closeTaoQuenModal()" aria-label="Close">&times;</button>
+
+      <div class="tq-modal-mark">
+        <svg width="38" height="38" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="20.5" stroke="#b89a6a" stroke-width="0.5"/>
+          <circle cx="22" cy="22" r="1.6" fill="#b89a6a"/>
+          <path d="M22 22 Q 12 11 22 6 Q 32 11 22 22" fill="none" stroke="#b89a6a" stroke-width="0.6" stroke-linecap="round"/>
+          <path d="M22 22 Q 32 33 22 38 Q 12 33 22 22" fill="none" stroke="#9a9088" stroke-width="0.6" stroke-linecap="round"/>
+          <path d="M6 22 Q 12 11 22 22 Q 32 33 38 22" fill="none" stroke="#c8c0b4" stroke-width="0.4" stroke-dasharray="2 3" stroke-linecap="round"/>
+        </svg>
+        <div class="tq-modal-wordmark">
+          Tao Quen
+          <span>Quantum Entanglement</span>
+        </div>
+      </div>
+
+      <p class="tq-modal-headline">
+        Qi is real.<br>
+        But someone has to<br>
+        <em>make it real for you.</em>
+      </p>
+
+      <div class="tq-modal-divider">
+        <div class="tq-modal-divider-line"></div>
+        <div class="tq-modal-divider-glyph">&#36947; &middot; &#27668; &middot; &#28961;</div>
+        <div class="tq-modal-divider-line"></div>
+      </div>
+
+      <div class="tq-modal-body">
+        <p>Qi is just a word. Words can only point &mdash; they are not the thing itself. Qi becomes real when someone who has experienced it passes it to you directly.</p>
+        <p class="tq-modal-wu">Wu is real. Wu is love. Love is real. Wu is the Tao.</p>
+        <p class="tq-modal-closer">That transmission is <strong>Tao Quen.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTaoQuenModal(e) {
+      e.preventDefault();
+      const m = document.getElementById('taoQuenModal');
+      m.removeAttribute('hidden');
+      requestAnimationFrame(() => m.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTaoQuenModal() {
+      const m = document.getElementById('taoQuenModal');
+      m.classList.remove('open');
+      m.addEventListener('transitionend', () => {
+        m.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }, { once: true });
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !document.getElementById('taoQuenModal').hasAttribute('hidden')) closeTaoQuenModal();
     });
   </script>
 </body>
