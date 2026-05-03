@@ -99,83 +99,55 @@
        NAVIGATION
        ========================================= */
     .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 16px 0;
-      background: transparent;
-      transition: background 0.4s var(--ease), padding 0.4s var(--ease), backdrop-filter 0.4s;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 18px 0; background: transparent;
+      transition: background 0.4s var(--ease), padding 0.4s, box-shadow 0.4s;
     }
     .site-nav.scrolled {
       background: rgba(233,228,218,0.97);
       backdrop-filter: blur(12px);
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(85,22,10,0.15);
+      padding: 12px 0;
       box-shadow: 0 2px 20px rgba(85,22,10,0.08);
+      border-bottom: 1px solid rgba(85,22,10,0.12);
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .site-nav.scrolled::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent 0%, #55160A 25%, #C02026 50%, #55160A 75%, transparent 100%);
     }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo-mark { flex-shrink: 0; }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; gap: 5px; }
     .nav-logo-wordmark {
-      font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #55160A;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700;
+      color: #55160A; letter-spacing: 0.2em; text-transform: uppercase;
     }
-    .nav-logo-sub {
-      font-family: 'Cinzel', serif;
-      font-size: 0.5rem;
-      font-weight: 400;
-      color: #55160A;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-top: 5px;
-      display: block;
+    .nav-logo-divider {
+      display: flex; align-items: center; gap: 6px;
     }
-    .nav-logo-sub sup {
-      font-size: 0.7em;
-      vertical-align: super;
-      letter-spacing: 0;
-      color: #c9a030;
+    .nav-logo-divider-line {
+      height: 1px; flex: 1; background: rgba(85,22,10,0.2);
     }
+    .nav-logo-divider-glyph {
+      font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.18em;
+      color: rgba(85,22,10,0.4); text-transform: uppercase;
+    }
+    .nav-logo-divider-glyph sup { font-size: 0.7em; color: #c9a030; letter-spacing: 0; }
     .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-      align-items: center;
+      display: flex; gap: 32px; list-style: none; align-items: center;
     }
     .nav-links a {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+      color: var(--text-muted); font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
-      background: var(--gold);
-      color: white !important;
-      padding: 8px 20px;
-      border-radius: 4px;
-      font-weight: 600 !important;
-      transition: background 0.2s !important, transform 0.2s !important;
+      background: var(--gold); color: white !important;
+      padding: 8px 20px; border-radius: 3px; font-weight: 600 !important;
+      transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
 
     /* =========================================
        HERO
@@ -236,6 +208,25 @@
       height: 1px;
       background: var(--gold);
       opacity: 0.6;
+    }
+    .hero-dwq-logo {
+      width: min(480px, 82vw);
+      margin: 0 auto 36px;
+      display: block;
+      mix-blend-mode: multiply;
+      opacity: 0;
+      animation: fadeInDown 0.9s 0.3s forwards;
+    }
+    .hero-program-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0; animation: fadeIn 0.8s 0.55s forwards;
+    }
+    .hero-program-badge::before, .hero-program-badge::after {
+      content: ''; display: block; width: 30px; height: 1px;
+      background: var(--gold); opacity: 0.5;
     }
     .hero-title {
       font-size: clamp(2.6rem, 6vw, 5rem);
@@ -2581,14 +2572,18 @@
       <div class="nav-inner">
         <a href="index.html" class="nav-logo" title="About Tao Quen" onclick="openTaoQuenModal(event)">
           <svg class="nav-logo-mark" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" stroke="#f5c876" stroke-width="1.5" fill="none"/>
-            <path d="M20 4 C28 4, 28 20, 20 20 C12 20, 12 36, 20 36" stroke="#f5c876" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="20" cy="20" r="18" stroke="#55160A" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M20 4 C28 4, 28 20, 20 20 C12 20, 12 36, 20 36" stroke="#55160A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
             <circle cx="20" cy="11" r="2.8" fill="#e87007"/>
-            <circle cx="20" cy="29" r="2.8" fill="#f5c876"/>
+            <circle cx="20" cy="29" r="2.8" fill="#55160A" opacity="0.4"/>
           </svg>
           <div class="nav-logo-text">
             <span class="nav-logo-wordmark">TAOQUEN</span>
-            <span class="nav-logo-sub">Tao Quantum Entanglement<sup>&#8482;</sup></span>
+            <div class="nav-logo-divider">
+              <span class="nav-logo-divider-line"></span>
+              <span class="nav-logo-divider-glyph">Tao Quantum Entanglement<sup>&#8482;</sup></span>
+              <span class="nav-logo-divider-line"></span>
+            </div>
           </div>
         </a>
         <ul class="nav-links">
@@ -2607,9 +2602,11 @@
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Dragon&rsquo;s Way Qigong&reg; &bull; 6-Week Transformation Program</div>
+      <img src="images/dragons_way_logo_tagline_red.png"
+           alt="Dragon&rsquo;s Way Qigong&reg; &mdash; Ancient Wisdom &middot; Modern Life"
+           class="hero-dwq-logo">
+      <div class="hero-program-badge">6-Week Transformation Program</div>
       <h1 class="hero-title">
-        Ancient wisdom.<br>
         <em>Measurable results.</em><br>Guaranteed.
       </h1>
       <p class="hero-subtitle">
