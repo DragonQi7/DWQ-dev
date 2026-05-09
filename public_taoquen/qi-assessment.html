@@ -120,14 +120,9 @@
       align-items: center;
       justify-content: space-between;
     }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo-mark { flex-shrink: 0; }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; gap: 5px; }
     .nav-logo-wordmark {
       font-family: 'Cinzel', serif;
       font-size: 1.05rem;
@@ -136,35 +131,24 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
-    .nav-logo-sub {
-      font-family: 'Cinzel', serif;
-      font-size: 0.5rem;
-      font-weight: 400;
-      color: #55160A;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-top: 5px;
-      display: block;
-    }
-    .nav-logo-sub sup {
-      font-size: 0.7em;
-      vertical-align: super;
-      letter-spacing: 0;
-      color: #c9a030;
-    }
+    .nav-logo-divider { display: flex; align-items: center; gap: 6px; }
+    .nav-logo-divider-line { height: 1px; width: 18px; flex-shrink: 0; background: rgba(85,22,10,0.2); }
+    .nav-logo-divider-glyph { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.18em; color: rgba(85,22,10,0.4); text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-divider-glyph sup { font-size: 0.7em; color: #c9a030; letter-spacing: 0; }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 20px;
       list-style: none;
       align-items: center;
     }
     .nav-links a {
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       transition: color 0.2s;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
@@ -191,23 +175,13 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=2400&q=90');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      transform: scale(1.05);
-      transition: transform 8s ease-out;
+      background: linear-gradient(145deg, #2a0805 0%, #55160A 55%, #3a0e08 100%);
     }
-    .hero-bg.loaded { transform: scale(1); }
+    .hero-bg.loaded { opacity: 1; }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(233,228,218,0.88) 0%,
-        rgba(233,228,218,0.80) 40%,
-        rgba(233,228,218,0.88) 100%
-      );
+      background: radial-gradient(ellipse at 50% 55%, rgba(192,32,38,0.12) 0%, transparent 65%);
     }
     .hero-content {
       position: relative;
@@ -224,7 +198,7 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: rgba(255,230,180,0.78);
       margin-bottom: 28px;
       opacity: 0;
       animation: fadeInDown 0.8s 0.3s forwards;
@@ -234,24 +208,24 @@
       display: block;
       width: 40px;
       height: 1px;
-      background: var(--gold);
-      opacity: 0.6;
+      background: rgba(255,230,180,0.4);
+      opacity: 1;
     }
     .hero-title {
       font-size: clamp(2.6rem, 6vw, 5rem);
       font-weight: 700;
-      color: var(--text);
+      color: #fff8f4;
       margin-bottom: 28px;
       opacity: 0;
       animation: fadeInUp 0.9s 0.5s forwards;
     }
     .hero-title em {
       font-style: italic;
-      color: var(--gold-light);
+      color: #e8a04a;
     }
     .hero-subtitle {
       font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--text-light);
+      color: rgba(255,248,244,0.68);
       max-width: 680px;
       margin: 0 auto 44px;
       font-weight: 300;
@@ -2579,22 +2553,29 @@
   <nav class="site-nav" id="siteNav">
     <div class="container">
       <div class="nav-inner">
-        <a href="#" class="nav-logo" title="About Tao Quen" onclick="openTaoQuenModal(event)">
-          <svg class="nav-logo-mark" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" stroke="#f5c876" stroke-width="1.5" fill="none"/>
-            <path d="M20 4 C28 4, 28 20, 20 20 C12 20, 12 36, 20 36" stroke="#f5c876" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <a href="index.html" class="nav-logo" title="About Tao Quen" onclick="openTaoQuenModal(event)">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="rgba(255,248,244,0.55)" stroke-width="1.5" fill="none"/>
+            <path d="M20 4 C28 4, 28 20, 20 20 C12 20, 12 36, 20 36" stroke="rgba(255,248,244,0.7)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
             <circle cx="20" cy="11" r="2.8" fill="#e87007"/>
-            <circle cx="20" cy="29" r="2.8" fill="#f5c876"/>
+            <circle cx="20" cy="29" r="2.8" fill="rgba(255,248,244,0.6)"/>
           </svg>
           <div class="nav-logo-text">
             <span class="nav-logo-wordmark">TAOQUEN</span>
-            <span class="nav-logo-sub">Tao Quantum Entanglement<sup>&#8482;</sup></span>
+            <div class="nav-logo-divider">
+              <span class="nav-logo-divider-line"></span>
+              <span class="nav-logo-divider-glyph">Tao Quantum Entanglement<sup>&#8482;</sup></span>
+              <span class="nav-logo-divider-line"></span>
+            </div>
           </div>
         </a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#assessment">Assessment</a></li>
-          <li><a href="dwq.html">DWQ Program</a></li>
+          <li><a href="qi-assessment.html" class="active-page">Free Assessment</a></li>
+          <li><a href="dwq.html">DWQ Qigong</a></li>
+          <li><a href="tcm.html">Learn TCM</a></li>
+          <li><a href="four-energy-gates.html">Self-Care</a></li>
+          <li><a href="programs.html">Programs</a></li>
           <li><a href="dwq.html#testimonials">Testimonials</a></li>
           <li><a href="dwq.html#programs" class="nav-cta">Enroll Now</a></li>
         </ul>
