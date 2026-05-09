@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigail & Elodie Turn 11! 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --orange: #FF6B00; --yellow: #FFD700; --green: #00C853;
+    --pink: #FF3D8B; --purple: #7B2D8B; --dark: #0D0D1A;
+    --red: #FF2D55; --lightblue: #5AC8FA; --rose: #FF6B9D;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--dark); color: #fff; overflow-x: hidden; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, #FF2D55 0%, #FF6B9D 35%, #c060d0 60%, #5AC8FA 100%);
+    padding: 3.5rem 2rem 5.5rem; text-align: center; overflow: hidden;
+  }
+  .hero-circles { position: absolute; inset: 0; pointer-events: none; }
+  .hero-circles span { position: absolute; border-radius: 50%; background: rgba(255,255,255,.07); animation: float 6s ease-in-out infinite; }
+  .hero-circles span:nth-child(1){ width:300px;height:300px;top:-80px;left:-60px;animation-delay:0s; }
+  .hero-circles span:nth-child(2){ width:200px;height:200px;top:20px;right:-40px;animation-delay:1.5s; }
+  .hero-circles span:nth-child(3){ width:140px;height:140px;bottom:80px;left:22%;animation-delay:3s; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+
+  .confetti-wrap { position:absolute;inset:0;pointer-events:none;overflow:hidden; }
+  .cc { position:absolute;border-radius:2px;animation:cffall linear infinite; }
+  @keyframes cffall { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(500px) rotate(720deg);opacity:0} }
+
+  .nick-badge { display:inline-block;background:rgba(0,0,0,.3);border:2px solid rgba(255,255,255,.4);color:#fff;font-family:'Boogaloo',cursive;font-size:1rem;padding:.35rem 1.4rem;border-radius:30px;margin-bottom:1.2rem;letter-spacing:2px;text-transform:uppercase; }
+  .hero h1 { font-family:'Boogaloo',cursive;font-size:clamp(2.8rem,9vw,5.5rem);line-height:1.05;text-shadow:4px 4px 0 rgba(0,0,0,.25);margin-bottom:.6rem;animation:bounceIn .9s ease both; }
+  .hero h1 em { font-style:normal;display:inline-block;animation:wiggle 2.2s ease-in-out infinite; }
+
+  /* BALLOONS */
+  .balloons { position:absolute;inset:0;pointer-events:none;overflow:hidden; }
+  .balloon { position:absolute;font-size:2.4rem;animation:riseUp linear infinite;opacity:.85; }
+  @keyframes riseUp { 0%{transform:translateY(110%) rotate(-8deg);opacity:0} 15%{opacity:.85} 85%{opacity:.85} 100%{transform:translateY(-110%) rotate(8deg);opacity:0} }
+  .hero .tagline { font-size:clamp(1rem,3vw,1.4rem);font-weight:600;opacity:.9;margin-bottom:1.8rem; }
+  .location-pill { display:inline-block;background:rgba(0,0,0,.35);padding:.5rem 1.5rem;border-radius:30px;font-size:1rem;font-weight:700; }
+  @keyframes bounceIn { 0%{transform:scale(.5);opacity:0} 65%{transform:scale(1.08)} 100%{transform:scale(1);opacity:1} }
+  @keyframes wiggle { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+
+  /* SLIME */
+  .slime-row { display:flex;overflow:hidden;height:70px;margin-top:-2px; }
+  .slime-svg { width:100%;height:70px;display:block; }
+
+  /* INFO */
+  .info-section { background:#0D0D1A;padding:3.5rem 1.5rem 3rem; }
+  .section-head { text-align:center;margin-bottom:2rem; }
+  .section-head h2 { font-family:'Boogaloo',cursive;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--orange); }
+  .section-head p { opacity:.6;font-size:.95rem;margin-top:.3rem; }
+  .info-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1.25rem;max-width:860px;margin:0 auto; }
+  .info-card { background:linear-gradient(135deg,#1C1C38,#22223F);border:2px solid;border-radius:20px;padding:1.75rem 1.25rem;text-align:center;transition:transform .3s,box-shadow .3s; }
+  .info-card:hover { transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.4); }
+  .info-card:nth-child(1){border-color:var(--red)} .info-card:nth-child(2){border-color:var(--lightblue)} .info-card:nth-child(3){border-color:var(--rose)} .info-card:nth-child(4){border-color:var(--lightblue)}
+  .info-icon { font-size:2.5rem;margin-bottom:.6rem;display:block; }
+  .info-label { font-size:.75rem;text-transform:uppercase;letter-spacing:2px;opacity:.5;margin-bottom:.3rem; }
+  .info-value { font-family:'Boogaloo',cursive;font-size:1.35rem;color:var(--yellow); }
+
+  /* PHOTO GALLERY */
+  .gallery-section { background:#0D0D1A;padding:3rem 1.5rem; }
+  .gallery-title { font-family:'Boogaloo',cursive;font-size:clamp(1.8rem,4vw,2.8rem);text-align:center;margin-bottom:.4rem; }
+  .gallery-title span { color:var(--green); }
+  .gallery-sub { text-align:center;opacity:.6;margin-bottom:2rem;font-size:.95rem; }
+
+  .gallery-grid { display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 220px;gap:12px;max-width:960px;margin:0 auto; }
+  .photo-card { position:relative;border-radius:18px;overflow:hidden;background:#1a1a35; }
+  .photo-card.tall { grid-row:span 2; }
+  .photo-card img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,filter .4s; }
+  .photo-card:hover img { transform:scale(1.06);filter:brightness(1.08); }
+  .photo-card .badge { position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.68);backdrop-filter:blur(6px);border-radius:10px;padding:.35rem .85rem;font-family:'Boogaloo',cursive;font-size:.88rem;border:1px solid rgba(255,255,255,.2); }
+  .badge-orange { border-color:var(--red)!important;color:var(--red); }
+  .badge-green { border-color:var(--lightblue)!important;color:var(--lightblue); }
+  .badge-yellow { border-color:var(--rose)!important;color:var(--rose); }
+  .badge-pink { border-color:var(--pink)!important;color:var(--pink); }
+
+  /* SVG placeholder fills */
+  .photo-card .ph { width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;position:absolute;top:0;left:0;transition:opacity .4s; }
+  .photo-card img.loaded ~ .ph, .photo-card img.loaded + .ph { opacity:0; }
+  .photo-card img { position:relative;z-index:2; }
+
+  /* RIDES */
+  .rides-section { background:linear-gradient(180deg,#0D0D1A,#130D22);padding:3rem 1.5rem; }
+  .rides-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;max-width:960px;margin:0 auto; }
+  .ride-card { background:linear-gradient(135deg,#1E1A3E,#221D44);border-radius:16px;padding:1.25rem 1rem;border:1.5px solid rgba(255,255,255,.08);text-align:center;transition:all .3s; }
+  .ride-card:hover { border-color:var(--orange);transform:scale(1.04); }
+  .ride-emoji { font-size:2rem;margin-bottom:.4rem;display:block; }
+  .ride-name { font-family:'Boogaloo',cursive;font-size:.95rem;color:var(--yellow);margin-bottom:.2rem; }
+  .ride-desc { font-size:.75rem;opacity:.6;line-height:1.35; }
+
+  /* COUNTDOWN */
+  .countdown-section { background:linear-gradient(135deg,#FF2D55,#c0396e);padding:2.5rem 1.5rem;text-align:center; }
+  .countdown-title { font-family:'Boogaloo',cursive;font-size:1.6rem;margin-bottom:1.5rem;text-shadow:2px 2px 0 rgba(0,0,0,.2); }
+  .countdown-grid { display:flex;justify-content:center;gap:1rem;flex-wrap:wrap; }
+  .count-box { background:rgba(0,0,0,.25);border-radius:16px;padding:1rem 1.5rem;min-width:82px; }
+  .count-num { font-family:'Boogaloo',cursive;font-size:2.6rem;line-height:1;display:block; }
+  .count-label { font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.8; }
+
+  /* RSVP */
+  .rsvp-section { background:linear-gradient(135deg,#0D0D1A,#130D22);padding:4rem 1.5rem;text-align:center; }
+  .slime-title { font-family:'Boogaloo',cursive;font-size:clamp(2rem,5vw,3.5rem);background:linear-gradient(90deg,#00C853,#69F0AE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.4rem; }
+  .rsvp-form { max-width:480px;margin:2rem auto 0;background:#1A1A30;border-radius:24px;padding:2.5rem 2rem;border:2px solid rgba(0,200,83,.3);box-shadow:0 0 50px rgba(0,200,83,.08); }
+  .form-field { margin-bottom:1.2rem;text-align:left; }
+  .form-label { display:block;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:.45rem;text-transform:uppercase;letter-spacing:1px; }
+  .form-input,.form-select { width:100%;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.13);border-radius:12px;padding:.8rem 1rem;color:#fff;font-family:'Nunito',sans-serif;font-size:.95rem;transition:border-color .3s;outline:none; }
+  .form-input:focus,.form-select:focus { border-color:#00C853; }
+  .form-select option { background:#1A1A30; }
+  .submit-btn { width:100%;background:linear-gradient(135deg,#00C853,#00E676);border:none;border-radius:50px;padding:1rem;font-family:'Boogaloo',cursive;font-size:1.45rem;color:#002200;cursor:pointer;transition:all .3s;margin-top:.5rem; }
+  .submit-btn:hover { transform:scale(1.03);box-shadow:0 8px 28px rgba(0,200,83,.5); }
+  .success-msg { display:none;background:linear-gradient(135deg,#002800,#003500);border:2px solid #00C853;border-radius:16px;padding:1.5rem;color:#00E676;font-family:'Boogaloo',cursive;font-size:1.3rem;text-align:center;margin-top:1rem; }
+
+  footer { background:#060610;padding:2rem 1.5rem;text-align:center;opacity:.5;font-size:.82rem; }
+
+  .stars { position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:hidden; }
+  .star { position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:twinkle linear infinite;opacity:.2; }
+  @keyframes twinkle { 0%,100%{opacity:.05} 50%{opacity:.45} }
+
+  @media(max-width:600px){
+    .gallery-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto; }
+    .photo-card.tall { grid-row:span 1; }
+  }
+
+  @media(max-width:1100px){ .char-left,.char-right{display:none;} }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="confetti-wrap" id="confetti"></div>
+  <div class="hero-circles"><span></span><span></span><span></span></div>
+  <div class="balloons" id="balloons"></div>
+  <div class="nick-badge">🎂 Twins' 11th Birthday · Nickelodeon Universe</div>
+  <div style="display:block;margin:0 auto 1.2rem;width:min(90%,420px);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.45);border:3px solid rgba(255,255,255,.25);">
+    <img src="WhatsApp Image 2026-05-09 at 9.42.34 AM.jpeg" alt="Abigail and Elodie" style="width:100%;height:auto;display:block;transform:scale(1.2);transform-origin:center center;">
+  </div>
+  <h1>Happy Birthday<br><em><span style="color:#FF2D55;text-shadow:3px 3px 0 rgba(0,0,0,.3)">Abigail</span> &amp; <span style="color:#5AC8FA;text-shadow:3px 3px 0 rgba(0,0,0,.3)">Elodie</span>! 🎂🎂</em></h1>
+  <p class="tagline">They're celebrating their 11th birthday at Nickelodeon Universe — and you're all invited! 🎉</p>
+  <p style="font-size:clamp(.95rem,2.5vw,1.2rem);opacity:.85;margin-bottom:1.4rem;">Please sign up below. See details for time and where to meet.<br>It's going to be super fun — hope you can all join! 🥳</p>
+  <div class="location-pill">📍 American Dream Mall · East Rutherford, NJ</div>
+</section>
+
+<!-- SLIME DRIP -->
+<div class="slime-row">
+  <svg class="slime-svg" viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF3D8B"/><stop offset="100%" stop-color="#0D0D1A"/></linearGradient></defs>
+    <path fill="url(#sg)" d="M0,0 L1200,0 L1200,20 Q1140,20 1120,50 Q1100,70 1080,50 Q1060,20 1040,50 Q1020,70 1000,50 Q980,20 960,50 Q940,70 920,50 Q900,20 880,50 Q860,70 840,50 Q820,20 800,55 Q780,70 760,50 Q740,20 720,50 Q700,70 680,50 Q660,20 640,55 Q620,70 600,50 Q580,20 560,50 Q540,70 520,50 Q500,20 480,50 Q460,70 440,50 Q420,20 400,55 Q380,70 360,50 Q340,20 320,50 Q300,70 280,50 Q260,20 240,55 Q220,70 200,50 Q180,20 160,50 Q140,70 120,50 Q100,20 80,55 Q60,70 40,50 Q20,20 0,20 Z"/>
+  </svg>
+</div>
+
+<!-- EVENT DETAILS -->
+<section class="info-section">
+  <div class="section-head"><h2>🎉 Party Details</h2><p>Save the date — it's gonna be epic!</p></div>
+  <div class="info-grid">
+    <div class="info-card"><span class="info-icon">📅</span><p class="info-label">Date</p><p class="info-value">June 5th, 2025</p></div>
+    <div class="info-card"><span class="info-icon">🕐</span><p class="info-label">Time</p><p class="info-value">12:00 – 5:00 PM</p></div>
+    <div class="info-card"><span class="info-icon">📍</span><p class="info-label">Location</p><p class="info-value">Nickelodeon Universe</p></div>
+    <div class="info-card"><span class="info-icon">🎡</span><p class="info-label">Park</p><p class="info-value">Largest Indoor Park in the US</p></div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery-section">
+  <h2 class="gallery-title">Rides & <span>Fun Await!</span> 🎢</h2>
+  <p class="gallery-sub">35+ attractions, 5 roller coasters, characters & slime — all indoors at American Dream!</p>
+
+  <div class="gallery-grid">
+
+    <!-- Card 1: tall — Shellraiser -->
+    <div class="photo-card tall">
+      <img id="img1" alt="TMNT Shellraiser roller coaster at Nickelodeon Universe" style="height:100%;min-height:440px;">
+      <div class="badge badge-orange">🐢 The Shellraiser</div>
+    </div>
+
+    <!-- Card 2: Shredder -->
+    <div class="photo-card">
+      <img id="img2" alt="The Shredder free spin coaster">
+      <div class="badge badge-yellow">😤 The Shredder</div>
+    </div>
+
+    <!-- Card 3: Slime Streak -->
+    <div class="photo-card">
+      <img id="img3" alt="Nickelodeon Slime Streak roller coaster">
+      <div class="badge badge-green">🟢 Slime Streak</div>
+    </div>
+
+    <!-- Card 4: Fairly OddAirways -->
+    <div class="photo-card">
+      <img id="img4" alt="Fairly OddAirways ride">
+      <div class="badge badge-pink">✈️ Fairly OddAirways</div>
+    </div>
+
+    <!-- Card 5: Park overview -->
+    <div class="photo-card">
+      <img id="img5" alt="Nickelodeon Universe park overview">
+      <div class="badge badge-orange">🏟️ The Park</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RIDES LIST -->
+<section class="rides-section">
+  <div class="section-head" style="margin-bottom:2rem;">
+    <h2 style="font-family:'Boogaloo',cursive;font-size:clamp(1.7rem,4vw,2.6rem);color:var(--pink);">35+ Rides & Attractions</h2>
+    <p style="opacity:.6;font-size:.95rem;margin-top:.3rem;">Something for every age and thrill level!</p>
+  </div>
+  <div class="rides-grid">
+    <div class="ride-card"><span class="ride-emoji">🐢</span><p class="ride-name">The Shellraiser</p><p class="ride-desc">World's steepest indoor drop — TMNT style</p></div>
+    <div class="ride-card"><span class="ride-emoji">😤</span><p class="ride-name">The Shredder</p><p class="ride-desc">World's tallest &amp; longest free-spin coaster</p></div>
+    <div class="ride-card"><span class="ride-emoji">🟢</span><p class="ride-name">Slime Streak</p><p class="ride-desc">Family coaster on a bright orange track</p></div>
+    <div class="ride-card"><span class="ride-emoji">🛹</span><p class="ride-name">Timmy's Half-Pipe</p><p class="ride-desc">Skateboard shuttle — totally wild!</p></div>
+    <div class="ride-card"><span class="ride-emoji">✈️</span><p class="ride-name">Fairly OddAirways</p><p class="ride-desc">Take flight with Timmy Turner</p></div>
+    <div class="ride-card"><span class="ride-emoji">🌊</span><p class="ride-name">Sandy's Blasting Bronco</p><p class="ride-desc">Launches forward AND backward!</p></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+  <p class="countdown-title">⏳ Counting Down to June 5th!</p>
+  <div class="countdown-grid">
+    <div class="count-box"><span class="count-num" id="days">--</span><span class="count-label">Days</span></div>
+    <div class="count-box"><span class="count-num" id="hours">--</span><span class="count-label">Hours</span></div>
+    <div class="count-box"><span class="count-num" id="minutes">--</span><span class="count-label">Mins</span></div>
+    <div class="count-box"><span class="count-num" id="seconds">--</span><span class="count-label">Secs</span></div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp-section">
+  <h2 class="slime-title">You're Invited — Sign Up Below! 🟢</h2>
+  <p style="opacity:.85;margin-bottom:.3rem;font-size:1.05rem;">Check the details above for time and where to meet.<br>Let us know you're coming so we can save your spot! 🎉</p>
+  <div class="rsvp-form">
+    <div class="form-field"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Enter your name" id="nameInput"></div>
+    <div class="form-field"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="your@email.com" id="emailInput"></div>
+    <div class="form-field"><label class="form-label">How Many Are Coming?</label>
+      <select class="form-select" id="guestsInput"><option>Just me (1)</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select>
+    </div>
+    <div class="form-field"><label class="form-label">Message for the Twins 🎉</label><input class="form-input" type="text" placeholder="Can't wait to celebrate! 🥳" id="msgInput"></div>
+    <button class="submit-btn" onclick="submitRSVP()">🟢 Count Me In!</button>
+    <div class="success-msg" id="successMsg">🎉 YESSSS! You're on the list!<br>See you June 5th at Nickelodeon Universe! 🥳🎢</div>
+  </div>
+</section>
+
+<footer><p>🎂 Made with love for Abigail &amp; Elodie's 11th Birthday 2025 · Nickelodeon Universe · American Dream Mall, East Rutherford NJ 🎂</p></footer>
+
+<script>
+// Balloons
+const balloonColors=['🎈','🎀','🎊','💙','❤️'];
+const blEl=document.getElementById('balloons');
+for(let i=0;i<12;i++){const b=document.createElement('div');b.className='balloon';const em=balloonColors[i%balloonColors.length];b.textContent=em;b.style.cssText=`left:${5+Math.random()*90}%;bottom:0;animation-duration:${4+Math.random()*5}s;animation-delay:${Math.random()*6}s;`;blEl.appendChild(b);}
+
+// Stars
+const stEl=document.getElementById('stars');
+for(let i=0;i<80;i++){const s=document.createElement('div');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;`;stEl.appendChild(s);}
+
+// Confetti
+const cfColors=['#FF6B00','#FFD700','#00C853','#FF3D8B','#0090D0','#7B2D8B'];
+const cfEl=document.getElementById('confetti');
+for(let i=0;i<50;i++){const c=document.createElement('div');c.className='cc';const sz=6+Math.random()*8;c.style.cssText=`left:${Math.random()*100}%;top:-10px;background:${cfColors[Math.floor(Math.random()*cfColors.length)]};width:${sz}px;height:${sz}px;border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${2.5+Math.random()*4}s;animation-delay:${Math.random()*6}s;`;cfEl.appendChild(c);}
+
+// Load photos from official American Dream CDN
+const photos = [
+  { id:'img1', url:'https://images.ctfassets.net/7bug8zo4c05d/36wdQp5Iy1YRabYdM5KDjD/f9b2a27677cf99d14a30e6c29652f1af/ride_card_19.png' },
+  { id:'img2', url:'https://images.ctfassets.net/7bug8zo4c05d/4xlBEkye1a81yzF6czQzfn/a451b359b5a281eb93a4334bb0a9af72/ride_card_21.png' },
+  { id:'img3', url:'https://images.ctfassets.net/7bug8zo4c05d/2BKsS1OLLNlUJjlTP9iEiU/73d113edfee42c3684ba43511886a688/nickelodeon_sllime_strake.png' },
+  { id:'img4', url:'https://images.ctfassets.net/7bug8zo4c05d/73xXL0JO01z580MtnYOZ3X/80cf59c9a9f652cfb0fe4a0428e279c9/nu-lp-rides-guppy-402-2.webp' },
+  { id:'img5', url:'https://images.ctfassets.net/7bug8zo4c05d/1PhCdHeJ8MfcjaHOO2GRzg/a80e73141761f680c03125c7c29f4a89/nickelodeon-universe.jpg' }
+];
+
+// Illustrated fallback colors + icons
+const fallbacks = [
+  { bg:'linear-gradient(135deg,#0a2a0a,#1a4a1a)', icon:'🐢', label:'The Shellraiser' },
+  { bg:'linear-gradient(135deg,#2a1a0a,#4a3a1a)', icon:'😤', label:'The Shredder' },
+  { bg:'linear-gradient(135deg,#003300,#005500)', icon:'🟢', label:'Slime Streak' },
+  { bg:'linear-gradient(135deg,#2a001a,#4a0030)', icon:'✈️', label:'Fairly OddAirways' },
+  { bg:'linear-gradient(135deg,#1a0a30,#2a1540)', icon:'🎡', label:'Nickelodeon Universe' }
+];
+
+photos.forEach(({id, url}, i) => {
+  const img = document.getElementById(id);
+  const card = img.parentElement;
+  
+  // Set fallback background
+  card.style.background = fallbacks[i].bg;
+  
+  // Create illustrated placeholder
+  const ph = document.createElement('div');
+  ph.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;z-index:1;';
+  ph.innerHTML = `<div style="font-size:3.5rem">${fallbacks[i].icon}</div><div style="font-family:Boogaloo,cursive;font-size:1.1rem;color:rgba(255,255,255,0.7);text-align:center;padding:0 1rem">${fallbacks[i].label}</div>`;
+  card.insertBefore(ph, img);
+
+  img.style.cssText = 'position:relative;z-index:2;width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,filter .4s;';
+  img.onload = () => { ph.style.display = 'none'; };
+  img.onerror = () => { img.style.display = 'none'; ph.style.display = 'flex'; };
+  img.src = url;
+});
+
+// Countdown
+function tick(){
+  const diff=new Date('2025-06-05T12:00:00')-new Date();
+  if(diff<=0){['days','hours','minutes','seconds'].forEach((id,i)=>document.getElementById(id).textContent=['🎉','🎂','🎊','🥳'][i]);return;}
+  document.getElementById('days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('minutes').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('seconds').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+// RSVP
+function submitRSVP(){
+  const n=document.getElementById('nameInput').value.trim();
+  const e=document.getElementById('emailInput').value.trim();
+  if(!n||!e){alert('Please fill in your name and email! 🙏');return;}
+  document.getElementById('successMsg').innerHTML='🎉 YESSSS! You\'re on the list!<br>See you June 5th at Nickelodeon Universe for Abigail &amp; Elodie\'s 11th Birthday! 🥳🎢';
+  document.getElementById('successMsg').style.display='block';
+  document.querySelector('.submit-btn').style.display='none';
+}
+</script>
+</body>
+</html>
