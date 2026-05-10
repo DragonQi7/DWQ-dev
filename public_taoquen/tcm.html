@@ -83,24 +83,31 @@
     .nav-logo-text { display: flex; flex-direction: column; line-height: 1; gap: 5px; }
     .nav-logo-wordmark {
       font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700;
-      color: #55160A; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,248,244,0.92); letter-spacing: 0.18em; text-transform: uppercase;
+      transition: color 0.4s;
     }
+    .site-nav.scrolled .nav-logo-wordmark { color: #55160A; }
     .nav-logo-divider { display: flex; align-items: center; gap: 6px; }
-    .nav-logo-divider-line { height: 1px; width: 18px; flex-shrink: 0; background: rgba(85,22,10,0.2); }
-    .nav-logo-divider-glyph { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.18em; color: rgba(85,22,10,0.4); text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-divider-line { height: 1px; width: 18px; flex-shrink: 0; background: rgba(255,248,244,0.25); transition: background 0.4s; }
+    .site-nav.scrolled .nav-logo-divider-line { background: rgba(85,22,10,0.2); }
+    .nav-logo-divider-glyph { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.18em; color: rgba(255,248,244,0.35); text-transform: uppercase; white-space: nowrap; transition: color 0.4s; }
+    .site-nav.scrolled .nav-logo-divider-glyph { color: rgba(85,22,10,0.4); }
     .nav-logo-divider-glyph sup { font-size: 0.7em; color: #c9a030; letter-spacing: 0; }
     .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
     .nav-links a {
-      color: var(--text-muted); font-size: 0.72rem; font-weight: 500;
+      color: rgba(255,248,244,0.65); font-size: 0.72rem; font-weight: 500;
       letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap;
     }
-    .nav-links a:hover, .nav-links a.active-page { color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active-page { color: rgba(255,248,244,1); }
+    .site-nav.scrolled .nav-links a { color: var(--text-muted); }
+    .site-nav.scrolled .nav-links a:hover, .site-nav.scrolled .nav-links a.active-page { color: var(--gold); }
     .nav-cta {
-      background: var(--gold); color: white !important;
+      background: rgba(192,32,38,0.85); color: white !important;
       padding: 8px 20px; border-radius: 4px; font-weight: 600 !important;
       transition: background 0.2s !important;
     }
     .nav-cta:hover { background: var(--gold-light) !important; }
+    .site-nav.scrolled .nav-cta { background: var(--gold) !important; }
 
     /* ── SECTION LABEL ── */
     .section-label {
@@ -691,7 +698,7 @@
   <nav class="site-nav" id="siteNav">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="nav-logo" title="About Tao Quen" onclick="openTaoQuenModal(event)">
+        <a href="index.html" class="nav-logo" title="About Taoquen" onclick="openTaoQuenModal(event)">
           <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="18" stroke="rgba(255,248,244,0.55)" stroke-width="1.5" fill="none"/>
             <path d="M20 4 C28 4, 28 20, 20 20 C12 20, 12 36, 20 36" stroke="rgba(255,248,244,0.7)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -710,12 +717,12 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="qi-assessment.html">Free Assessment</a></li>
-          <li><a href="dwq.html">DWQ Qigong</a></li>
+          <li><a href="dwq.html">Dragon&rsquo;s Way</a></li>
           <li><a href="tcm.html" class="active-page">Learn TCM</a></li>
           <li><a href="four-energy-gates.html">Self-Care</a></li>
           <li><a href="programs.html">Programs</a></li>
           <li><a href="dwq.html#testimonials">Testimonials</a></li>
-          <li><a href="dwq.html#programs" class="nav-cta">Enroll Now</a></li>
+          <li><a href="programs.html#paid-programs" class="nav-cta">Enroll Now</a></li>
         </ul>
       </div>
     </div>
@@ -1343,8 +1350,8 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:0.22em;text-transform:uppercase;display:block;margin-bottom:3px;">Tao Quen</div>
-          <div style="font-family:'Cinzel',serif;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.22em;text-transform:uppercase;display:block;margin-bottom:12px;">Quantum Entanglement</div>
+          <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:0.22em;text-transform:uppercase;display:block;margin-bottom:3px;">Taoquen</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.22em;text-transform:uppercase;display:block;margin-bottom:12px;">TCM Healing Studio</div>
           <p>A certified Dragon&rsquo;s Way Qigong&reg; studio. Rooted in the Wu Ming Qigong lineage of Grand Master Nan Lu &amp; TCM World Foundation.</p>
         </div>
         <div class="footer-col">
@@ -1371,7 +1378,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Tao Quen &nbsp;&middot;&nbsp; Quantum Entanglement</p>
+        <p>Taoquen &nbsp;&middot;&nbsp; TCM Healing Studio</p>
         <p class="footer-disclaimer">
           This site is for educational purposes. TCM practices are complementary and not a substitute for medical advice. Always consult a qualified healthcare provider for medical conditions.
         </p>
@@ -1433,7 +1440,7 @@
   </script>
 
   <!-- TAO QUEN MODAL -->
-  <div id="taoQuenModal" class="tq-modal-overlay" role="dialog" aria-modal="true" aria-label="About Tao Quen" onclick="if(event.target===this)closeTaoQuenModal()" hidden>
+  <div id="taoQuenModal" class="tq-modal-overlay" role="dialog" aria-modal="true" aria-label="About Taoquen" onclick="if(event.target===this)closeTaoQuenModal()" hidden>
     <div class="tq-modal-box">
       <button class="tq-modal-close" onclick="closeTaoQuenModal()" aria-label="Close">&times;</button>
       <div class="tq-modal-mark">
@@ -1445,8 +1452,8 @@
           <path d="M6 22 Q 12 11 22 22 Q 32 33 38 22" fill="none" stroke="#c8c0b4" stroke-width="0.4" stroke-dasharray="2 3" stroke-linecap="round"/>
         </svg>
         <div class="tq-modal-wordmark">
-          Tao Quen
-          <span>Quantum Entanglement</span>
+          Taoquen
+          <span>TCM Healing Studio</span>
         </div>
       </div>
       <p class="tq-modal-headline">

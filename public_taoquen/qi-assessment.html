@@ -127,13 +127,17 @@
       font-family: 'Cinzel', serif;
       font-size: 1.05rem;
       font-weight: 700;
-      color: #55160A;
+      color: rgba(255,248,244,0.92);
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      transition: color 0.4s;
     }
+    .site-nav.scrolled .nav-logo-wordmark { color: #55160A; }
     .nav-logo-divider { display: flex; align-items: center; gap: 6px; }
-    .nav-logo-divider-line { height: 1px; width: 18px; flex-shrink: 0; background: rgba(85,22,10,0.2); }
-    .nav-logo-divider-glyph { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.18em; color: rgba(85,22,10,0.4); text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-divider-line { height: 1px; width: 18px; flex-shrink: 0; background: rgba(255,248,244,0.25); transition: background 0.4s; }
+    .site-nav.scrolled .nav-logo-divider-line { background: rgba(85,22,10,0.2); }
+    .nav-logo-divider-glyph { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.18em; color: rgba(255,248,244,0.35); text-transform: uppercase; white-space: nowrap; transition: color 0.4s; }
+    .site-nav.scrolled .nav-logo-divider-glyph { color: rgba(85,22,10,0.4); }
     .nav-logo-divider-glyph sup { font-size: 0.7em; color: #c9a030; letter-spacing: 0; }
     .nav-links {
       display: flex;
@@ -142,7 +146,7 @@
       align-items: center;
     }
     .nav-links a {
-      color: var(--text-muted);
+      color: rgba(255,248,244,0.65);
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.05em;
@@ -150,9 +154,11 @@
       transition: color 0.2s;
       white-space: nowrap;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: rgba(255,248,244,1); }
+    .site-nav.scrolled .nav-links a { color: var(--text-muted); }
+    .site-nav.scrolled .nav-links a:hover { color: var(--gold); }
     .nav-cta {
-      background: var(--gold);
+      background: rgba(192,32,38,0.85);
       color: white !important;
       padding: 8px 20px;
       border-radius: 4px;
@@ -160,6 +166,7 @@
       transition: background 0.2s !important, transform 0.2s !important;
     }
     .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+    .site-nav.scrolled .nav-cta { background: var(--gold) !important; }
 
     /* =========================================
        HERO
@@ -2572,12 +2579,12 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="qi-assessment.html" class="active-page">Free Assessment</a></li>
-          <li><a href="dwq.html">DWQ Qigong</a></li>
+          <li><a href="dwq.html">Dragon&rsquo;s Way</a></li>
           <li><a href="tcm.html">Learn TCM</a></li>
           <li><a href="four-energy-gates.html">Self-Care</a></li>
           <li><a href="programs.html">Programs</a></li>
           <li><a href="dwq.html#testimonials">Testimonials</a></li>
-          <li><a href="dwq.html#programs" class="nav-cta">Enroll Now</a></li>
+          <li><a href="programs.html#paid-programs" class="nav-cta">Enroll Now</a></li>
         </ul>
       </div>
     </div>

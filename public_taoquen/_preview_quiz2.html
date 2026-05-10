@@ -1,0 +1,978 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCM Five Element Quizzes — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:       #E9E4DA;
+      --dark-2:     #DED8CC;
+      --jade:       #55160A;
+      --jade-light: #C02026;
+      --text:       #1a0804;
+      --text-muted: #6b4030;
+      --card-bg:    rgba(255,255,255,0.82);
+      --card-border:rgba(85,22,10,0.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.7; min-height: 100vh; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* ── Header ── */
+    .site-header { background: var(--jade); color: #fff; text-align: center; padding: 44px 24px 36px; }
+    .site-header h1 { font-size: 1.9rem; letter-spacing: 0.02em; }
+    .site-header p { opacity: 0.68; margin-top: 10px; font-size: 0.88rem; }
+
+    /* ── Quiz Tab Nav ── */
+    .quiz-nav { display: flex; justify-content: center; background: rgba(85,22,10,0.05); border-bottom: 2px solid var(--card-border); }
+    .quiz-tab { flex: 1; max-width: 300px; padding: 18px 16px 16px; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; background: transparent; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.83rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
+    .quiz-tab:hover { color: var(--jade-light); }
+    .quiz-tab.active { color: var(--jade); border-bottom-color: var(--jade-light); font-weight: 600; }
+    .quiz-tab .tab-num { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.65; margin-bottom: 4px; }
+
+    /* ── Quiz Sections ── */
+    .quiz-section { display: none; padding: 48px 24px 80px; max-width: 660px; margin: 0 auto; }
+    .quiz-section.active { display: block; }
+
+    /* ── Card ── */
+    .q-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px 32px; box-shadow: 0 4px 28px rgba(85,22,10,0.08); }
+
+    /* ── Progress ── */
+    .q-progress { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .q-bar { flex: 1; height: 5px; background: rgba(85,22,10,0.1); border-radius: 3px; overflow: hidden; }
+    .q-fill { height: 100%; background: linear-gradient(to right, var(--jade), var(--jade-light)); border-radius: 3px; transition: width 0.4s ease; }
+    .q-ptext { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--text-muted); white-space: nowrap; }
+    .q-score-badge { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--jade-light); white-space: nowrap; }
+
+    /* ── Prompt ── */
+    .q-label { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--jade-light); margin-bottom: 8px; display: block; }
+    .q-prompt { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--jade); margin-bottom: 22px; line-height: 1.55; }
+
+    /* ── Feedback ── */
+    .q-feedback { padding: 14px 18px; border-radius: 10px; font-size: 0.86rem; margin-top: 16px; display: none; line-height: 1.65; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #e8f5e9; color: #1b5e20; border: 1px solid #a5d6a7; }
+    .q-feedback.wrong   { background: #fce4e4; color: #7f0000; border: 1px solid #ef9a9a; }
+
+    /* ── Footer ── */
+    .q-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; flex-wrap: wrap; gap: 12px; }
+    .q-next-btn { padding: 11px 28px; border-radius: 10px; border: 1.5px solid var(--jade); background: transparent; color: var(--jade); font-size: 0.83rem; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .q-next-btn:hover { background: var(--jade); color: #fff; }
+    .q-next-btn:disabled { opacity: 0.35; cursor: default; }
+
+    /* ── Result screen ── */
+    .q-result { text-align: center; padding: 12px 0 4px; display: none; }
+    .q-result.show { display: block; }
+    .q-result-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; color: var(--jade); line-height: 1; }
+    .q-result-of  { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 4px; }
+    .q-result-msg { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: var(--jade); margin: 16px auto 22px; max-width: 380px; line-height: 1.6; }
+    .q-restart { padding: 12px 30px; border-radius: 10px; border: none; background: var(--jade-light); color: #fff; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .q-restart:hover { background: var(--jade); }
+
+    /* ═══════════════════════════
+       QUIZ 1 — Organ Wisdom
+       ═══════════════════════════ */
+    .organ-display { text-align: center; margin-bottom: 26px; }
+    .organ-circle {
+      width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 14px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 2.8rem; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      transition: transform 0.3s;
+    }
+    .organ-circle:hover { transform: scale(1.04); }
+    .organ-name { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; color: var(--jade); }
+    .organ-element-tag { display: inline-block; margin-top: 6px; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); padding: 4px 14px; background: rgba(85,22,10,0.07); border-radius: 20px; }
+
+    .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ans-btn {
+      padding: 14px 14px; border-radius: 10px; border: 1.5px solid var(--card-border);
+      background: #fff; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.84rem;
+      font-weight: 400; color: var(--text); transition: all 0.2s; text-align: left;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .ans-letter {
+      width: 24px; height: 24px; border-radius: 50%; background: var(--dark-2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700;
+      flex-shrink: 0; color: var(--text-muted); margin-top: 1px;
+    }
+    .ans-btn:hover { border-color: var(--jade-light); background: rgba(192,32,38,0.04); transform: translateY(-1px); }
+    .ans-btn:disabled { cursor: default; transform: none; }
+    .ans-btn.correct { background: #e8f5e9; border-color: #388e3c; color: #1b5e20; }
+    .ans-btn.correct .ans-letter { background: #388e3c; color: #fff; }
+    .ans-btn.wrong   { background: #fce4e4; border-color: #c62828; color: #7f0000; }
+    .ans-btn.wrong   .ans-letter { background: #c62828; color: #fff; }
+    .ans-btn.reveal  { background: rgba(85,22,10,0.06); border-color: var(--jade); }
+    @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+    .ans-btn.correct { animation: pulse 0.35s ease; }
+
+    /* ═══════════════════════════
+       QUIZ 2 — Elements & Organs
+       ═══════════════════════════ */
+    .elem-display {
+      border-radius: 16px; padding: 28px 20px; text-align: center;
+      margin-bottom: 26px; position: relative; overflow: hidden;
+    }
+    .elem-emoji { font-size: 3.8rem; display: block; margin-bottom: 8px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
+    .elem-name  { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 700; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    .elem-attrs { display: flex; justify-content: center; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+    .elem-attr  { background: rgba(255,255,255,0.22); backdrop-filter: blur(4px); border-radius: 20px; padding: 4px 14px; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.92); }
+
+    /* attr-to-elem display card */
+    .attr-display {
+      border-radius: 16px; padding: 28px 20px; text-align: center;
+      margin-bottom: 26px; background: rgba(85,22,10,0.06);
+      border: 1px solid var(--card-border);
+    }
+    .attr-clue-big { font-size: 3rem; display: block; margin-bottom: 10px; }
+    .attr-clue-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--jade-light); display: block; margin-bottom: 8px; }
+    .attr-clue-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--jade); line-height: 1.5; }
+    /* element choice buttons (attr-to-elem) */
+    .ec-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .ec-btn {
+      flex: 1 1 calc(20% - 8px); min-width: 90px;
+      padding: 12px 6px; border-radius: 10px; border: 1.5px solid var(--card-border);
+      background: #fff; cursor: pointer; font-size: 0.78rem; font-weight: 600;
+      text-align: center; transition: all 0.2s; font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .ec-btn .ec-icon { font-size: 1.4rem; }
+    .ec-btn:hover { transform: translateY(-2px); border-color: var(--jade-light); box-shadow: 0 4px 12px rgba(85,22,10,0.1); }
+    .ec-btn:disabled { cursor: default; transform: none; box-shadow: none; }
+    .ec-btn.correct { background: #e8f5e9; border-color: #388e3c; color: #1b5e20; }
+    .ec-btn.wrong   { background: #fce4e4; border-color: #c62828; color: #7f0000; }
+    .ec-btn.reveal  { background: rgba(85,22,10,0.07); border-color: var(--jade); }
+
+    .organ-pair-list { display: flex; flex-direction: column; gap: 10px; }
+    .op-btn {
+      padding: 14px 18px; border-radius: 10px; border: 1.5px solid var(--card-border);
+      background: #fff; cursor: pointer; font-family: 'Playfair Display', serif;
+      font-size: 0.96rem; color: var(--text); transition: all 0.2s;
+      text-align: left; display: flex; align-items: center; gap: 14px;
+    }
+    .op-btn .op-icon { font-size: 1.25rem; }
+    .op-btn:hover { border-color: var(--jade-light); background: rgba(192,32,38,0.04); transform: translateX(4px); }
+    .op-btn:disabled { cursor: default; transform: none; }
+    .op-btn.correct { background: #e8f5e9; border-color: #388e3c; color: #1b5e20; }
+    .op-btn.wrong   { background: #fce4e4; border-color: #c62828; color: #7f0000; }
+    .op-btn.reveal  { background: rgba(85,22,10,0.06); border-color: var(--jade); }
+
+    /* ═══════════════════════════
+       QUIZ 3 — Food & Organs
+       ═══════════════════════════ */
+    .food-text-card {
+      border-radius: 14px; padding: 32px 28px; margin-bottom: 22px;
+      background: linear-gradient(135deg, rgba(85,22,10,0.08), rgba(192,32,38,0.06));
+      border: 1px solid var(--card-border); text-align: center;
+    }
+    .food-taste { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--jade-light); display: block; margin-bottom: 10px; }
+    .food-name-text { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--jade); line-height: 1.2; }
+
+    .organ-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .ob-btn {
+      flex: 1 1 calc(33.33% - 10px); min-width: 110px;
+      padding: 13px 10px; border-radius: 12px; border: 1.5px solid var(--card-border);
+      background: #fff; cursor: pointer; font-size: 0.82rem; font-weight: 500;
+      text-align: center; transition: all 0.2s; font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+    }
+    .ob-btn .ob-icon { font-size: 1.3rem; }
+    .ob-btn:hover { border-color: var(--jade-light); transform: translateY(-2px); box-shadow: 0 5px 14px rgba(85,22,10,0.1); }
+    .ob-btn:disabled { cursor: default; transform: none; box-shadow: none; }
+    .ob-btn.correct { background: #e8f5e9; border-color: #388e3c; color: #1b5e20; }
+    .ob-btn.wrong   { background: #fce4e4; border-color: #c62828; color: #7f0000; }
+    .ob-btn.reveal  { background: rgba(85,22,10,0.07); border-color: var(--jade); }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>Five Element Wisdom — Assessment</h1>
+  <p>Let's discover more about Dragon's Way Qigong®</p>
+
+<!-- Tab Nav -->
+<div class="quiz-nav">
+  <button class="quiz-tab active" onclick="switchQuiz('q1',this)">
+    <span class="tab-num">Quiz 1</span>Organ Wisdom
+  </button>
+  <button class="quiz-tab" onclick="switchQuiz('q2',this)">
+    <span class="tab-num">Quiz 2</span>Elements &amp; Organs
+  </button>
+  <button class="quiz-tab" onclick="switchQuiz('q3',this)">
+    <span class="tab-num">Quiz 3</span>Food &amp; Healing
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     QUIZ 1 — What does this organ do?
+═══════════════════════════════════════════════════════ -->
+<div id="q1" class="quiz-section active">
+  <div class="q-card">
+    <!-- progress -->
+    <div class="q-progress">
+      <span class="q-ptext" id="q1-ptext">1 of 5</span>
+      <div class="q-bar"><div class="q-fill" id="q1-fill" style="width:20%"></div></div>
+      <span class="q-score-badge" id="q1-score">Score 0</span>
+    </div>
+
+    <!-- organ display -->
+    <div class="organ-display">
+      <div class="organ-circle" id="q1-circle">⚪</div>
+      <div class="organ-name" id="q1-oname">Lung</div>
+      <div class="organ-element-tag" id="q1-etag">Metal Element</div>
+    </div>
+
+    <span class="q-label">Quiz 1 — Organ Wisdom</span>
+    <p class="q-prompt" id="q1-prompt">Which emotion is the Lung most connected to?</p>
+
+    <div class="ans-grid" id="q1-answers"></div>
+    <div class="q-feedback" id="q1-fb"></div>
+
+    <div class="q-footer">
+      <button class="q-next-btn" id="q1-next" onclick="nextQ1()" disabled>Next →</button>
+      <span class="q-score-badge" id="q1-footer-score"></span>
+    </div>
+
+    <!-- result -->
+    <div class="q-result" id="q1-result">
+      <div class="q-result-num" id="q1-rnum">0</div>
+      <div class="q-result-of">out of 5 correct</div>
+      <div class="q-result-msg" id="q1-rmsg"></div>
+      <button class="q-restart" onclick="startQ1()">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     QUIZ 2 — Which element → which organ?
+═══════════════════════════════════════════════════════ -->
+<div id="q2" class="quiz-section">
+  <div class="q-card">
+    <div class="q-progress">
+      <span class="q-ptext" id="q2-ptext">1 of 5</span>
+      <div class="q-bar"><div class="q-fill" id="q2-fill" style="width:20%"></div></div>
+      <span class="q-score-badge" id="q2-score">Score 0</span>
+    </div>
+
+    <div id="q2-display-area"></div>
+
+    <span class="q-label">Quiz 2 — Elements &amp; Organs</span>
+    <p class="q-prompt" id="q2-prompt"></p>
+
+    <div id="q2-answers"></div>
+    <div class="q-feedback" id="q2-fb"></div>
+
+    <div class="q-footer">
+      <button class="q-next-btn" id="q2-next" onclick="nextQ2()" disabled>Next →</button>
+      <span class="q-score-badge" id="q2-footer-score"></span>
+    </div>
+
+    <div class="q-result" id="q2-result">
+      <div class="q-result-num" id="q2-rnum">0</div>
+      <div class="q-result-of">out of 5 correct</div>
+      <div class="q-result-msg" id="q2-rmsg"></div>
+      <button class="q-restart" onclick="startQ2()">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     QUIZ 3 — Which organ does this food support?
+═══════════════════════════════════════════════════════ -->
+<div id="q3" class="quiz-section">
+  <div class="q-card">
+    <div class="q-progress">
+      <span class="q-ptext" id="q3-ptext">1 of 5</span>
+      <div class="q-bar"><div class="q-fill" id="q3-fill" style="width:20%"></div></div>
+      <span class="q-score-badge" id="q3-score">Score 0</span>
+    </div>
+
+    <div class="food-text-card">
+      <span class="food-taste" id="q3-taste"></span>
+      <div class="food-name-text" id="q3-fname"></div>
+    </div>
+
+    <span class="q-label">Quiz 3 — Food &amp; Healing</span>
+    <p class="q-prompt">Which organ does this food most support?</p>
+
+    <div class="organ-row" id="q3-answers"></div>
+    <div class="q-feedback" id="q3-fb"></div>
+
+    <div class="q-footer">
+      <button class="q-next-btn" id="q3-next" onclick="nextQ3()" disabled>Next →</button>
+      <span class="q-score-badge" id="q3-footer-score"></span>
+    </div>
+
+    <div class="q-result" id="q3-result">
+      <div class="q-result-num" id="q3-rnum">0</div>
+      <div class="q-result-of">out of 5 correct</div>
+      <div class="q-result-msg" id="q3-rmsg"></div>
+      <button class="q-restart" onclick="startQ3()">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════
+   UTILITY
+══════════════════════════════════════════ */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const QPR = 5; // questions per round
+
+const ELEMS = [
+  {emoji:'🌿', label:'Wood'},
+  {emoji:'🔥', label:'Fire'},
+  {emoji:'🌍', label:'Earth'},
+  {emoji:'⚪', label:'Metal'},
+  {emoji:'💧', label:'Water'}
+];
+const ORGAN_PAIRS = [
+  {icon:'🌿', label:'Liver & Gallbladder'},
+  {icon:'🔥', label:'Heart & Small Intestine'},
+  {icon:'🌍', label:'Stomach & Spleen'},
+  {icon:'⚪', label:'Lung & Large Intestine'},
+  {icon:'💧', label:'Kidney & Bladder'}
+];
+
+/* ══════════════════════════════════════════
+   QUIZ 1 DATA — 35 Organ Wisdom questions
+══════════════════════════════════════════ */
+const Q1_ALL = [
+  // EMOTIONS
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'Which emotion is the Lung most connected to?',
+   options:['Anger & Frustration','Grief & Letting Go','Fear & Anxiety','Worry & Overthinking'], answer:1,
+   explain:'The Lung governs grief and the capacity to let go. Unresolved grief weakens Lung energy — Autumn is nature\'s invitation to release what no longer serves us.'},
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'Which emotion is the Liver most connected to?',
+   options:['Grief & Sorrow','Joy & Excitement','Anger & Frustration','Fear & Anxiety'], answer:2,
+   explain:'The Liver governs smooth Qi flow. When Liver Qi stagnates from chronic stress, anger and frustration rise naturally — like a river blocked from flowing freely.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'Which emotion most directly drains Kidney energy?',
+   options:['Anger','Joy','Worry','Fear & Anxiety'], answer:3,
+   explain:'Fear is the emotion of the Kidney. Chronic fear and anxiety drain Kidney Jing — the deep essence that governs our vitality, courage, and will to live.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'Which emotion, in excess, harms the Heart in TCM?',
+   options:['Anger','Excessive Joy','Grief','Worry'], answer:1,
+   explain:'Even joy can be harmful in excess. Over-stimulation and constant excitement scatter Heart energy, disturbing the Shen (spirit) and disrupting sleep.'},
+  {organ:'Spleen', elem:'Earth Element', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)',
+   prompt:'Chronic worry and overthinking most directly weakens which organ?',
+   options:['Heart','Liver','Spleen','Kidney'], answer:2,
+   explain:'The Spleen is the organ of thought and digestion. Overthinking disrupts Spleen\'s ability to transform food into Qi and Blood — often showing up as fatigue and digestive issues.'},
+  // FUNCTIONS
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'What does the Heart "house" in Traditional Chinese Medicine?',
+   options:['Essence (Jing)','Spirit (Shen)','Ancestral Qi','Defensive Wei Qi'], answer:1,
+   explain:'The Heart houses the Shen — spirit or consciousness. When Heart energy is strong, the mind is clear, sleep is peaceful, and joy flows naturally.'},
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'The Liver primarily ensures what in TCM?',
+   options:['Deep, restful sleep','Smooth flow of Qi throughout the body','Strong immunity','Transformation of food'], answer:1,
+   explain:'The Liver is the "General" organ — it plans, directs, and ensures everything flows. When Liver Qi stagnates, symptoms can arise in any part of the body.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'The Kidney stores our constitutional life essence, called what in TCM?',
+   options:['Shen','Wei Qi','Jing','Zong Qi'], answer:2,
+   explain:'Jing is our constitutional life force — inherited at birth and gradually consumed through life. The Kidney stores and protects it. Protecting Kidney Jing is the foundation of longevity.'},
+  {organ:'Spleen', elem:'Earth Element', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)',
+   prompt:'The Spleen and Stomach together govern which primary function?',
+   options:['Breathing & immunity','Transformation of food into Qi & Blood','Smooth flow of emotions','Storing reproductive essence'], answer:1,
+   explain:'The Stomach receives food; the Spleen transforms it into Qi and Blood. They are the "Root of Post-Heaven Qi" — our primary energy source generated after birth.'},
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'Beyond breathing, which body surface does the Lung govern in TCM?',
+   options:['Nails','Bones','Skin & body hair','Tendons'], answer:2,
+   explain:'The Lung governs the skin, pores, and body hair. Lung energy is reflected in the skin quality — dryness, sensitivity, and poor immunity often trace back to Lung weakness.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'The Kidney is the root of what in the whole body?',
+   options:['All Blood','Smooth Qi flow','All Yin and Yang','Consciousness & spirit'], answer:2,
+   explain:'The Kidney is the root of all Yin (cooling, nourishing) and Yang (warming, activating) in the body. Supporting the Kidney supports every organ at its deepest level.'},
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'Which organ stores and regulates Blood during rest and sleep?',
+   options:['Heart','Spleen','Liver','Kidney'], answer:2,
+   explain:'During rest, Blood returns to the Liver for nourishment and filtration. Poor sleep quality, dry eyes, and brittle nails are often signs of Liver Blood deficiency.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'Which organ is called the "Emperor" and governs blood circulation?',
+   options:['Spleen','Liver','Lung','Heart'], answer:3,
+   explain:'The Heart is the Emperor organ — it governs blood circulation and houses the Shen. All mental clarity, emotional stability, and spiritual well-being root in Heart energy.'},
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'Which organ governs the body\'s defensive energy (Wei Qi) and immunity?',
+   options:['Spleen','Liver','Kidney','Lung'], answer:3,
+   explain:'The Lung governs Wei Qi — the defensive energy that circulates on the body\'s surface, protecting against pathogens. Strong Lung energy means stronger resistance to colds and illness.'},
+  // SEASONS
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'Spring is the season of which organ?',
+   options:['Kidney','Lung','Liver','Heart'], answer:2,
+   explain:'Spring is the Liver\'s season — the time of rising, expanding energy. Best for cleansing the Liver, eating bitter greens, and practising Qigong outdoors.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'Which organ needs the most attention and support during Summer?',
+   options:['Kidney','Heart','Lung','Spleen'], answer:1,
+   explain:'Summer is Fire season — the Heart is at its peak. Red foods, joyful connection, and outdoor activity nourish Heart energy. Excess summer heat can overstimulate the Shen.'},
+  {organ:'Spleen', elem:'Earth Element', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)',
+   prompt:'Which organ is most active during Late Summer, the season of harvest?',
+   options:['Liver','Lung','Heart','Stomach & Spleen'], answer:3,
+   explain:'Late Summer is Earth element\'s season. The Spleen and Stomach are most active — the best time to eat warming, sweet foods to strengthen digestion before colder months.'},
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'Which organ most needs support during Autumn?',
+   options:['Kidney','Heart','Spleen','Lung'], answer:3,
+   explain:'Autumn belongs to Metal and the Lung. The air turns dry and cool — the perfect time for pear, honey, and lily bulb to protect Lung health and ease the grief of letting go.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'Winter is the season to conserve energy for which organ?',
+   options:['Heart','Liver','Lung','Kidney'], answer:3,
+   explain:'Winter is Water season — the Kidney\'s time. Sleep more, stay warm, eat black and warming foods, and protect Jing. Winter is not for depletion; it is for deep restoration.'},
+  // TASTES
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'Sour-tasting foods resonate with and nourish which organ?',
+   options:['Heart','Spleen','Liver','Lung'], answer:2,
+   explain:'Sour is the taste of Wood. Small amounts of sour — lemon, vinegar, blueberries — gently tonify Liver energy. Excessive sour, however, can cause Liver Qi to contract.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'Bitter-tasting foods resonate with which organ in TCM?',
+   options:['Kidney','Heart','Spleen','Liver'], answer:1,
+   explain:'Bitter is the taste of Fire and the Heart. Bitter foods — dandelion, dark cacao, bitter melon — clear excess Heart heat, support circulation, and calm an overactive mind.'},
+  {organ:'Spleen', elem:'Earth Element', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)',
+   prompt:'Naturally sweet-tasting foods primarily nourish which organ pair?',
+   options:['Liver & Gallbladder','Heart & Small Intestine','Stomach & Spleen','Kidney & Bladder'], answer:2,
+   explain:'Sweet is Earth\'s taste. Naturally sweet foods — sweet potato, millet, carrots, honey — strengthen Spleen and Stomach, supporting digestion and Qi production.'},
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'Pungent or spicy-tasting foods resonate with which organ?',
+   options:['Heart','Lung','Kidney','Liver'], answer:1,
+   explain:'Pungent is Metal\'s taste. Foods like scallion, ginger, and radish push energy to the body\'s surface, support Lung function, and help disperse early-stage colds.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'Salty-tasting foods in small amounts support which organ?',
+   options:['Spleen','Liver','Heart','Kidney'], answer:3,
+   explain:'Salty is Water\'s taste. Natural salt or salty foods — seaweed, miso, black beans — gently nourish Kidney energy. Excess salt, however, over time weakens the Kidney.'},
+  // COLOURS
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'Green-coloured foods resonate most with which organ?',
+   options:['Heart','Kidney','Lung','Liver'], answer:3,
+   explain:'Green is Wood\'s colour — spring growth and rising energy. Dark leafy greens naturally nourish and cleanse the Liver and Gallbladder.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'Red-coloured foods naturally resonate with which organ?',
+   options:['Liver','Spleen','Heart','Lung'], answer:2,
+   explain:'Red is Fire\'s colour. Red foods — goji berries, tomato, red peppers, strawberries — energetically resonate with the Heart, supporting circulation and the Shen.'},
+  {organ:'Spleen', elem:'Earth Element', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)',
+   prompt:'Yellow and orange foods resonate with which organ system?',
+   options:['Lung','Kidney','Liver','Stomach & Spleen'], answer:3,
+   explain:'Yellow is Earth\'s colour — harvest and nourishment. Pumpkin, sweet potato, carrots, and millet all carry Earth\'s energetic signature, supporting digestive function.'},
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'White-coloured foods resonate with which organ?',
+   options:['Spleen','Lung','Kidney','Liver'], answer:1,
+   explain:'White is Metal\'s colour. Pear, daikon, lily bulb, almonds, and mushrooms carry Lung-nourishing energy — especially important in Autumn when the Lung needs moistening.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'Black and dark-coloured foods strongly nourish which organ?',
+   options:['Heart','Liver','Lung','Kidney'], answer:3,
+   explain:'Black is Water\'s colour. Black beans, black sesame, seaweed, and walnuts all carry Kidney-nourishing energy. Dark foods naturally draw energy downward to the body\'s deepest reserve.'},
+  // PARTNER ORGANS & OTHER
+  {organ:'Lung', elem:'Metal Element', emoji:'⚪', bg:'linear-gradient(135deg,#90a4ae,#455a64)',
+   prompt:'The Large Intestine is the partner organ to which?',
+   options:['Heart','Spleen','Liver','Lung'], answer:3,
+   explain:'Lung and Large Intestine form the Metal pair. Both govern letting go — the Lung releases stale air, the Large Intestine releases physical waste. Both are supported by pungent, fibrous foods.'},
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'The Gallbladder is the partner organ to which?',
+   options:['Heart','Liver','Spleen','Kidney'], answer:1,
+   explain:'Liver and Gallbladder form the Wood pair. While the Liver governs planning and vision, the Gallbladder governs decision-making — the courage to actually take action.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'The Small Intestine is the partner organ to which?',
+   options:['Spleen','Heart','Liver','Lung'], answer:1,
+   explain:'Heart and Small Intestine form the Fire pair. The Small Intestine separates the pure from the impure — both physically in digestion and in terms of discerning what serves us.'},
+  {organ:'Spleen', elem:'Earth Element', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)',
+   prompt:'Which habit most weakens the Spleen according to TCM?',
+   options:['Exercising daily','Eating excessive cold & raw foods','Drinking green tea','Sleeping 8 hours'], answer:1,
+   explain:'The Spleen is a warm organ — it needs warmth to transform food efficiently. Cold, raw foods and iced drinks weaken Spleen Yang and impair digestion over time.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'The Kidney governs bones and is reflected in the quality of which structure?',
+   options:['Nails','Skin','Teeth & hair','The eyes'], answer:2,
+   explain:'The Kidney governs bones and marrow. Strong Kidney Jing is reflected in healthy bones, teeth, and hair. Bone loss and hair thinning in older age both signal Kidney Jing depletion.'},
+  {organ:'Liver', elem:'Wood Element', emoji:'🌿', bg:'linear-gradient(135deg,#66bb6a,#2e7d32)',
+   prompt:'When Liver energy is balanced, which quality naturally thrives?',
+   options:['Deep stillness','Creativity & smooth emotional flow','Strong immunity','Robust digestion'], answer:1,
+   explain:'A balanced Liver ensures smooth Qi flow — emotions arise and pass without getting stuck. Creativity, flexibility, and a sense of forward movement are hallmarks of healthy Liver energy.'},
+  {organ:'Heart', elem:'Fire Element', emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)',
+   prompt:'The Heart governs which sensory organ (opens into)?',
+   options:['The ears','The eyes','The tongue','The nose'], answer:2,
+   explain:'The Heart opens into the tongue in TCM. The colour, coating, and tip of the tongue reflect Heart health — a red tip or cracked centre often indicate Heart heat or Shen disturbance.'},
+  {organ:'Kidney', elem:'Water Element', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)',
+   prompt:'The Kidney opens into which sensory organ?',
+   options:['Eyes','Tongue','Nose','Ears'], answer:3,
+   explain:'The Kidney opens into the ears. Hearing loss, tinnitus, and ear issues in older age are strongly connected to declining Kidney Jing. Strengthening Kidney energy can support hearing health.'},
+];
+
+/* ══════════════════════════════════════════
+   QUIZ 2 DATA — 35 questions, two types:
+   elem-to-organ: show element → pick organ pair
+   attr-to-elem : show attribute clue → pick element
+══════════════════════════════════════════ */
+const Q2_ALL = [
+  // ELEMENT → ORGAN PAIR (10)
+  {qtype:'elem-to-organ', elem:'Wood',  emoji:'🌿', bg:'linear-gradient(135deg,#81c784,#2e7d32)', attrs:['Spring','Sour Taste','Green Colour','Rising Energy','Anger Emotion'], answer:0,
+   explain:'Wood governs the Liver & Gallbladder. Spring is its season, sour its taste. The Liver ensures smooth Qi flow — like a tree\'s rising, creative energy pushing upward.'},
+  {qtype:'elem-to-organ', elem:'Fire',  emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)', attrs:['Summer','Bitter Taste','Red Colour','Expanding Energy','Joy Emotion'], answer:1,
+   explain:'Fire governs the Heart & Small Intestine. Summer is its season, bitter its taste. The Heart houses the Shen and governs blood circulation — it is the Emperor organ.'},
+  {qtype:'elem-to-organ', elem:'Earth', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)', attrs:['Late Summer','Sweet Taste','Yellow Colour','Centering Energy','Worry Emotion'], answer:2,
+   explain:'Earth governs the Stomach & Spleen. Late Summer is its season, sweet its taste. The Spleen transforms food into Qi and Blood — the root of all energy after birth.'},
+  {qtype:'elem-to-organ', elem:'Metal', emoji:'⚪', bg:'linear-gradient(135deg,#b0bec5,#546e7a)', attrs:['Autumn','Pungent Taste','White Colour','Contracting Energy','Grief Emotion'], answer:3,
+   explain:'Metal governs the Lung & Large Intestine. Autumn is its season, pungent its taste. The Lung governs breath, skin, immunity, and the capacity to let go.'},
+  {qtype:'elem-to-organ', elem:'Water', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)', attrs:['Winter','Salty Taste','Black Colour','Conserving Energy','Fear Emotion'], answer:4,
+   explain:'Water governs the Kidney & Bladder. Winter is its season, salty its taste. The Kidney stores our Jing and is the root of all Yin and Yang in the body.'},
+  {qtype:'elem-to-organ', elem:'Wood',  emoji:'🌿', bg:'linear-gradient(135deg,#81c784,#2e7d32)', attrs:['Spring Season','Creativity & Vision','Sour Taste','Green Foods'], answer:0,
+   explain:'Wood governs Liver & Gallbladder. The Liver is the "General" — it plans, directs, and ensures everything flows. When Wood is strong, we move through life with creative clarity.'},
+  {qtype:'elem-to-organ', elem:'Fire',  emoji:'🔥', bg:'linear-gradient(135deg,#ef5350,#b71c1c)', attrs:['Summer Season','Shen / Spirit','Red Foods','Bitter Taste'], answer:1,
+   explain:'Fire governs Heart & Small Intestine. The Heart\'s health is reflected in the clarity of the mind and the brightness of the eyes. Joy is its natural expression when balanced.'},
+  {qtype:'elem-to-organ', elem:'Earth', emoji:'🌍', bg:'linear-gradient(135deg,#ffb74d,#e65100)', attrs:['Late Summer','Harvest Season','Sweet Foods','Yellow-Orange Colour'], answer:2,
+   explain:'Earth governs Stomach & Spleen. The Spleen is the "Root of Post-Heaven Qi" — after birth, it is our primary energy source, transforming all food and drink into life force.'},
+  {qtype:'elem-to-organ', elem:'Metal', emoji:'⚪', bg:'linear-gradient(135deg,#b0bec5,#546e7a)', attrs:['Autumn Season','Wei Qi (Immunity)','White Foods','Letting Go'], answer:3,
+   explain:'Metal governs Lung & Large Intestine. The Lung governs Wei Qi — our defensive energy. Strong Lung energy protects us from external pathogens and supports the skin.'},
+  {qtype:'elem-to-organ', elem:'Water', emoji:'💧', bg:'linear-gradient(135deg,#42a5f5,#0d47a1)', attrs:['Winter Season','Jing / Essence','Black Foods','Deep Reserves'], answer:4,
+   explain:'Water governs Kidney & Bladder. The Kidney stores Jing — our constitutional essence inherited at birth. Protecting Kidney Jing is the foundation of longevity in TCM.'},
+  // ATTRIBUTE → ELEMENT (25)
+  // Seasons
+  {qtype:'attr-to-elem', clue:'🌱 Spring', clue2:'The season of new growth, rising energy, and renewal', answer:0,
+   explain:'Spring belongs to Wood. The Liver is most active. Best for cleansing, creativity, and forward movement. Eat green foods and bitter greens, and practise Qigong outdoors.'},
+  {qtype:'attr-to-elem', clue:'☀️ Summer', clue2:'The season of peak Yang energy, warmth, and expansion', answer:1,
+   explain:'Summer belongs to Fire. The Heart thrives in summer\'s warmth. Red foods, outdoor connection, and joyful activity nourish Fire energy. Avoid overheating and overstimulation.'},
+  {qtype:'attr-to-elem', clue:'🌾 Late Summer', clue2:'The season of harvest, abundance, and grounding', answer:2,
+   explain:'Late Summer belongs to Earth. Stomach and Spleen thrive in this transitional season. Warm, sweet foods and gentle walks support Earth\'s centering energy.'},
+  {qtype:'attr-to-elem', clue:'🍂 Autumn', clue2:'The season of letting go, contraction, and inward turning', answer:3,
+   explain:'Autumn belongs to Metal. The Lung is most active. Moistening foods like pear and honey protect against Autumn dryness and support the natural process of letting go.'},
+  {qtype:'attr-to-elem', clue:'❄️ Winter', clue2:'The season of stillness, conservation, and deep rest', answer:4,
+   explain:'Winter belongs to Water. The Kidney governs this season. Sleep more, eat warming dark foods, protect your Jing, and allow the body to restore its deepest reserves.'},
+  // Tastes
+  {qtype:'attr-to-elem', clue:'🍋 Sour Taste', clue2:'Lemon, vinegar, blueberries, plums, and fermented foods', answer:0,
+   explain:'Sour belongs to Wood. In small amounts, sour foods gently tonify Liver energy — gathering and strengthening. They support the Liver\'s function of storing Blood and regulating Qi flow.'},
+  {qtype:'attr-to-elem', clue:'☕ Bitter Taste', clue2:'Dandelion, dark cacao, bitter melon, coffee, and radicchio', answer:1,
+   explain:'Bitter belongs to Fire. Bitter foods clear Heart heat, calm the mind, and support blood circulation. They have a descending, draining quality that clears excess from the top of the body.'},
+  {qtype:'attr-to-elem', clue:'🍯 Sweet Taste', clue2:'Natural sweetness — sweet potato, millet, carrots, and honey', answer:2,
+   explain:'Sweet belongs to Earth. Naturally sweet foods — not refined sugar — strengthen Spleen and Stomach, building Qi and Blood. Refined sugar creates Dampness and weakens Earth.'},
+  {qtype:'attr-to-elem', clue:'🌶️ Pungent Taste', clue2:'Ginger, scallion, radish, garlic, and onion', answer:3,
+   explain:'Pungent belongs to Metal. Pungent foods disperse Qi to the surface, support Lung function, and help release early-stage colds. They have an outward, dispersing movement.'},
+  {qtype:'attr-to-elem', clue:'🧂 Salty Taste', clue2:'Seaweed, miso, black beans, and natural sea salt', answer:4,
+   explain:'Salty belongs to Water. In small amounts, salty foods nourish Kidney energy and soften hardness. Excess salt, however, overburdens the Kidney and hardens the arteries.'},
+  // Colours
+  {qtype:'attr-to-elem', clue:'🟢 Green Colour', clue2:'The colour of spring leaves, rising sap, and new growth', answer:0,
+   explain:'Green belongs to Wood. Green foods — leafy greens, cucumber, kale, dandelion — carry Liver-nourishing energy. Chlorophyll-rich foods resonate with the Liver\'s detoxifying function.'},
+  {qtype:'attr-to-elem', clue:'🔴 Red Colour', clue2:'The colour of warmth, blood, and the heart\'s fire', answer:1,
+   explain:'Red belongs to Fire. Red foods — goji berries, tomatoes, red peppers, strawberries — resonate with Heart energy. Their red pigments support cardiovascular health.'},
+  {qtype:'attr-to-elem', clue:'🟡 Yellow & Orange', clue2:'The colour of harvest, abundance, and earth\'s nourishment', answer:2,
+   explain:'Yellow belongs to Earth. Sweet potato, pumpkin, carrots, millet, and corn carry the centering, grounding energy of Spleen and Stomach. Eat these to strengthen your digestive centre.'},
+  {qtype:'attr-to-elem', clue:'⚪ White Colour', clue2:'The colour of metal, refined air, and the autumn sky', answer:3,
+   explain:'White belongs to Metal. Pear, daikon, lily bulb, almonds, and mushrooms all resonate with Lung energy. White is the colour of refinement and the gift of letting go.'},
+  {qtype:'attr-to-elem', clue:'⚫ Black & Dark', clue2:'The colour of water\'s depth, winter nights, and deep reserves', answer:4,
+   explain:'Black belongs to Water. Black beans, black sesame, seaweed, and walnuts carry Kidney-nourishing energy. Dark foods naturally draw energy downward to the body\'s deepest reserve.'},
+  // Emotions
+  {qtype:'attr-to-elem', clue:'😤 Anger & Frustration', clue2:'When Qi rises and gets stuck — irritability, resentment, tension in the neck', answer:0,
+   explain:'Anger is the emotion of Wood. It signals Liver Qi stagnation. Appropriate anger can motivate action — like a tree pushing through soil — but chronic anger depletes Liver energy.'},
+  {qtype:'attr-to-elem', clue:'😂 Excessive Joy', clue2:'Constant seeking of stimulation, scattered excitement, inability to settle', answer:1,
+   explain:'Joy is Fire\'s emotion, but in excess it scatters Heart energy and disturbs the Shen. People who cannot slow down or need constant entertainment often have a Heart imbalance.'},
+  {qtype:'attr-to-elem', clue:'😟 Worry & Overthinking', clue2:'Mental looping, rumination, inability to stop planning and analysing', answer:2,
+   explain:'Worry is Earth\'s emotion. Chronic overthinking ties the Spleen in knots, impairing digestion and Qi production. Digestive discomfort and fatigue after stress are often Earth imbalances.'},
+  {qtype:'attr-to-elem', clue:'😢 Grief & Sorrow', clue2:'Loss, inability to let go, heaviness in the chest, shallow breathing', answer:3,
+   explain:'Grief is Metal\'s emotion. Unresolved grief weakens Lung energy — literally constricting the chest and breath. Autumn invites us to practise the art of conscious letting go.'},
+  {qtype:'attr-to-elem', clue:'😨 Fear & Anxiety', clue2:'Deep existential fear, lack of will, cold limbs, inability to move forward', answer:4,
+   explain:'Fear is Water\'s emotion. Chronic fear drains Kidney Jing. When Kidney energy is strong, we have will, courage, and the groundedness to face life\'s challenges.'},
+  // Five Element Generation Cycle
+  {qtype:'attr-to-elem', clue:'🌊 Mother of Wood', clue2:'This element nourishes and gives birth to Wood in the Five Element cycle', answer:4,
+   explain:'Water is the mother of Wood. Just as water nourishes trees, Kidney energy supports Liver energy. Strong Kidney Jing is essential for healthy Liver function and creative vitality.'},
+  {qtype:'attr-to-elem', clue:'🌿 Mother of Fire', clue2:'This element nourishes and gives birth to Fire in the Five Element cycle', answer:0,
+   explain:'Wood is the mother of Fire. Liver energy fuels Heart energy. When Liver Qi flows freely, it naturally nourishes Heart energy — supporting clarity, joy, and circulation.'},
+  {qtype:'attr-to-elem', clue:'🔥 Mother of Earth', clue2:'This element nourishes and gives birth to Earth in the Five Element cycle', answer:1,
+   explain:'Fire is the mother of Earth. Heart warmth supports Spleen function. When the Heart is joyful, digestion and the transformation of food into Qi flows smoothly.'},
+  {qtype:'attr-to-elem', clue:'🌍 Mother of Metal', clue2:'This element nourishes and gives birth to Metal in the Five Element cycle', answer:2,
+   explain:'Earth is the mother of Metal. Strong Spleen energy ensures the Lung is well-nourished. Poor digestion often leads to chronic Lung weakness and excess phlegm.'},
+  {qtype:'attr-to-elem', clue:'⚪ Mother of Water', clue2:'This element nourishes and gives birth to Water in the Five Element cycle', answer:3,
+   explain:'Metal is the mother of Water. Lung energy supports Kidney energy. Deep, full breathing generates and descends Qi to the Kidney. Shallow breathing is a subtle cause of Kidney depletion.'},
+];
+
+/* ══════════════════════════════════════════
+   QUIZ 3 DATA — 35 Food & Healing questions
+   answer: 0=Liver 1=Heart 2=Stomach&Spleen 3=Lung 4=Kidney
+══════════════════════════════════════════ */
+const Q3_ALL = [
+  // LIVER (7)
+  {name:'Dandelion Greens', taste:'Bitter · Green · Wood Element', answer:0,
+   explain:'"Nothing is better for Liver energy than the humble dandelion." Bitter greens support Liver detoxification and smooth Qi flow throughout the body.'},
+  {name:'Mung Beans', taste:'Cooling · Green · Wood Element', answer:0,
+   explain:'Mung beans enhance Liver function, cool and detoxify the blood, and are especially valuable in Spring when the Liver is most active.'},
+  {name:'Blueberries', taste:'Sour-Sweet · Blue-Purple · Wood Element', answer:0,
+   explain:'Blueberries carry a sour essence that resonates with the Liver. They support Liver Qi and nourish Liver Blood — ideal for Spring eating.'},
+  {name:'Kale', taste:'Bitter · Dark Green · Wood Element', answer:0,
+   explain:'Kale goes directly to the Liver in TCM. Its deep green colour and bitter taste make it a powerful Liver-support food, especially in Spring.'},
+  {name:'Apple Cider Vinegar', taste:'Sour · Clear · Wood Element', answer:0,
+   explain:'Sour taste resonates with the Liver. Vinegar aids digestion, helps move stagnant Liver Qi, and is a traditional TCM ingredient used to support the Wood element.'},
+  {name:'Bamboo Shoots', taste:'Cool · Green · Wood Element', answer:0,
+   explain:'Bamboo shoots provide direct Liver support in TCM. Their fast, rising growth mirrors the Liver\'s own upward, creative energy of the Wood element.'},
+  {name:'Scallion Greens', taste:'Pungent · Green tops · Wood Element', answer:0,
+   explain:'The green tops of scallions support Liver function and have detoxifying properties. In TCM, they help move stagnant Qi and clear toxic heat from the Liver.'},
+  // HEART (7)
+  {name:'Goji Berries', taste:'Sweet · Red · Fire Element', answer:1,
+   explain:'Goji berries nourish the Heart and the blood. Their red colour resonates with Fire Element energy — one of the most revered longevity foods in TCM.'},
+  {name:'Tomato', taste:'Sour-Sweet · Red · Fire Element', answer:1,
+   explain:'Plum tomatoes directly benefit the Heart in TCM. Their red colour carries Fire element energy, and they cool the body while supporting Heart circulation.'},
+  {name:'Red Bell Peppers', taste:'Sweet · Red · Fire Element', answer:1,
+   explain:'Red peppers give a direct boost to the Heart. Their vibrant red colour signals their Fire element resonance — they support cardiovascular health and the Shen.'},
+  {name:'Raw Cacao', taste:'Bitter · Dark · Fire Element', answer:1,
+   explain:'Raw cacao is great for the Heart in TCM — its bitterness resonates with Fire, supporting circulation. Its compounds also support mood and the Shen (spirit).'},
+  {name:'Lotus Seeds', taste:'Sweet-Astringent · White · Fire Element', answer:1,
+   explain:'Lotus seeds support the Heart in TCM. They calm the Shen, support sleep, and nourish Heart Qi — often used in soups and congees for emotional balance.'},
+  {name:'Watermelon', taste:'Sweet · Red · Fire Element', answer:1,
+   explain:'Watermelon is a classic summer Heart food. It cools the body, clears summer heat from the Heart, and replenishes fluids — perfectly aligned with Fire season.'},
+  {name:'Cherries', taste:'Sweet-Sour · Red · Fire Element', answer:1,
+   explain:'Cherries nourish the Heart in TCM. Their deep red colour carries Heart-resonant energy, and their sweet-sour taste supports Blood production and circulation.'},
+  // STOMACH & SPLEEN (7)
+  {name:'Sweet Potato', taste:'Sweet · Orange · Earth Element', answer:2,
+   explain:'Sweet potato is a classic Earth food — its warming sweetness directly nourishes Stomach and Spleen, strengthening digestion and the production of Qi and Blood.'},
+  {name:'Pumpkin', taste:'Sweet · Orange · Earth Element', answer:2,
+   explain:'Pumpkin is excellent support for the Stomach and digestive system. Its warm, sweet nature resonates with Earth and helps transform dampness.'},
+  {name:'Ginger', taste:'Pungent-Warm · Yellow · Earth/Metal', answer:2,
+   explain:'Ginger is TCM\'s foundational warming herb. It warms the digestive system, relieves nausea, strengthens Spleen Yang, and is used in nearly every season.'},
+  {name:'Millet', taste:'Sweet · Yellow · Earth Element', answer:2,
+   explain:'Millet strengthens digestion and Qi. It is one of the most tonifying grains for the Spleen in TCM — easy to digest, warming, and deeply nourishing.'},
+  {name:'Chinese Barley', taste:'Sweet-Bland · White · Earth Element', answer:2,
+   explain:'Chinese barley (Job\'s tears) balances Qi of the digestive system, especially Spleen and Stomach. It also removes dampness and excess water from the body.'},
+  {name:'Honey', taste:'Sweet · Golden · Earth Element', answer:2,
+   explain:'Honey strengthens the Stomach and Spleen, moistens the Lung, and builds Blood. In TCM, it is a gentle tonic used to harmonise all the organs.'},
+  {name:'Cinnamon', taste:'Sweet-Pungent · Warm · Earth/Metal', answer:2,
+   explain:'Cinnamon has thousands of years of traditional Stomach support in TCM. It warms the middle burner, aids digestion, and helps dispel cold from the body.'},
+  // LUNG (7)
+  {name:'Pear', taste:'Sweet-Cool · White · Metal Element', answer:3,
+   explain:'Pear cools and moistens the Lung — used in TCM for centuries for coughs, dry Lung conditions, and autumn protection. Its white colour resonates with Metal.'},
+  {name:'Almonds', taste:'Sweet · White · Metal Element', answer:3,
+   explain:'Almonds benefit the Lungs in TCM. They moisten Lung dryness, ease coughs, and are often combined with pear or honey for respiratory support.'},
+  {name:'Lily Bulb', taste:'Sweet-Slightly Bitter · White · Metal Element', answer:3,
+   explain:'Lily bulb supports Lung and Spleen function. It aids in the release of mucus and is especially effective for chronic cough — a TCM classic for Lung health.'},
+  {name:'Lotus Root', taste:'Sweet · White · Metal Element', answer:3,
+   explain:'Lotus root has been used for thousands of years to support Lung function. It cools Lung heat, stops coughs, and also benefits the Liver and Blood.'},
+  {name:'Mushrooms', taste:'Umami · White-Brown · Metal Element', answer:3,
+   explain:'All mushroom varieties support Lung function and boost the immune system (Wei Qi) in TCM. Shiitake, wood ear, and cremini are all excellent Lung tonics.'},
+  {name:'Daikon Radish', taste:'Pungent-Sweet · White · Metal Element', answer:3,
+   explain:'Daikon supports healthy Stomach and Lung function. Its pungent quality disperses Lung Qi, helps move phlegm, and is especially useful in autumn and winter.'},
+  {name:'Scallion Whites', taste:'Pungent · White · Metal Element', answer:3,
+   explain:'The white bulb of scallions supports Lung function. Pungent in nature, they push energy to the surface — useful at the onset of a cold or cough.'},
+  // KIDNEY (7)
+  {name:'Black Beans', taste:'Salty · Black · Water Element', answer:4,
+   explain:'Black beans resonate deeply with Kidney energy. Their dark colour matches the Water element, and they nourish Kidney Qi, boost blood circulation, and strengthen the Spleen.'},
+  {name:'Walnuts', taste:'Sweet · Brown · Water Element', answer:4,
+   explain:'Walnuts support Kidney function in TCM. Their shape mirrors the kidney organ — and they genuinely nourish Kidney Yang, support brain health, and warm cold conditions.'},
+  {name:'Black Sesame', taste:'Sweet · Black · Water Element', answer:4,
+   explain:'Black sesame seeds nourish the Kidneys and build Blood. They are used in TCM to strengthen hair, nourish Kidney Yin, and support healthy ageing.'},
+  {name:'Seaweed', taste:'Salty · Dark Green-Black · Water Element', answer:4,
+   explain:'Seaweed strongly benefits Kidney energy through its ocean connection and salty nature. It has anti-tumour properties and is a powerful mineral-rich Kidney tonic.'},
+  {name:'Salmon', taste:'Sweet · Pink · Water Element', answer:4,
+   explain:'Salmon strengthens Kidney Qi — its strength from swimming upstream makes it a powerful Kidney tonic food in TCM, especially in winter.'},
+  {name:'Chestnuts', taste:'Sweet · Brown · Water Element', answer:4,
+   explain:'Chestnuts support the Kidney in TCM. Warming and nourishing, they tonify Kidney Yang and Spleen Qi — especially valued in winter for building deep reserves.'},
+  {name:'Bone Broth', taste:'Salty-Rich · Deep · Water Element', answer:4,
+   explain:'Bone broth builds strong Kidney function and is one of the most deeply restorative foods in TCM. Best consumed in winter, it nourishes Jing and supports bone health.'},
+];
+
+const Q3_ORGANS = [
+  {icon:'🌿', label:'Liver'},
+  {icon:'🔥', label:'Heart'},
+  {icon:'🌍', label:'Stomach & Spleen'},
+  {icon:'⚪', label:'Lung'},
+  {icon:'💧', label:'Kidney'}
+];
+
+/* ══════════════════════════════════════════
+   RESULT MESSAGES
+══════════════════════════════════════════ */
+const RESULT_MSGS = [
+  ['A strong start!','Keep exploring the Five Element Framework — each quiz builds your TCM intuition.'],
+  ['You\'re learning!','The Five Elements are a lifetime of study. Every insight is a step deeper.'],
+  ['Solid knowledge!','You have a real feel for TCM. Keep going — the wisdom only deepens.'],
+  ['Impressive!','Your understanding of the Five Elements is growing strong.'],
+  ['Excellent!','You have a strong grasp of the Five Element Framework. Your Qi flows freely!'],
+  ['Perfect score!','A deep understanding of TCM wisdom. You have a true feel for the Five Element Framework.']
+];
+function getMsg(score, total) {
+  const idx = Math.min(Math.floor((score / total) * (RESULT_MSGS.length - 1)), RESULT_MSGS.length - 1);
+  return '<strong>' + RESULT_MSGS[idx][0] + '</strong><br>' + RESULT_MSGS[idx][1];
+}
+
+/* ══════════════════════════════════════════
+   TAB SWITCH
+══════════════════════════════════════════ */
+function switchQuiz(id, tab) {
+  document.querySelectorAll('.quiz-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.quiz-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  tab.classList.add('active');
+}
+
+/* ══════════════════════════════════════════
+   QUIZ 1 ENGINE
+══════════════════════════════════════════ */
+let q1Pool = [], q1Idx = 0, q1Score = 0, q1Answered = false;
+
+function startQ1() {
+  q1Pool = shuffle(Q1_ALL).slice(0, QPR);
+  q1Idx = 0; q1Score = 0; q1Answered = false;
+  document.getElementById('q1-result').classList.remove('show');
+  document.getElementById('q1-next').disabled = true;
+  document.getElementById('q1-footer-score').textContent = '';
+  renderQ1();
+}
+
+function renderQ1() {
+  const d = q1Pool[q1Idx];
+  document.getElementById('q1-circle').textContent = d.emoji;
+  document.getElementById('q1-circle').style.background = d.bg;
+  document.getElementById('q1-oname').textContent = d.organ;
+  document.getElementById('q1-etag').textContent = d.elem;
+  document.getElementById('q1-prompt').textContent = d.prompt;
+  document.getElementById('q1-ptext').textContent = (q1Idx + 1) + ' of ' + QPR;
+  document.getElementById('q1-fill').style.width = ((q1Idx + 1) / QPR * 100) + '%';
+  document.getElementById('q1-score').textContent = 'Score ' + q1Score;
+  document.getElementById('q1-fb').className = 'q-feedback';
+  document.getElementById('q1-fb').textContent = '';
+  document.getElementById('q1-next').disabled = true;
+  q1Answered = false;
+
+  const letters = ['A', 'B', 'C', 'D'];
+  const container = document.getElementById('q1-answers');
+  container.innerHTML = '';
+  d.options.forEach(function(opt, i) {
+    const btn = document.createElement('button');
+    btn.className = 'ans-btn';
+    btn.innerHTML = '<span class="ans-letter">' + letters[i] + '</span>' + opt;
+    btn.onclick = function() { answerQ1(btn, i); };
+    container.appendChild(btn);
+  });
+}
+
+function answerQ1(btn, chosen) {
+  if (q1Answered) return;
+  q1Answered = true;
+  const d = q1Pool[q1Idx];
+  const btns = document.querySelectorAll('#q1-answers .ans-btn');
+  btns.forEach(function(b) { b.disabled = true; });
+  const fb = document.getElementById('q1-fb');
+  fb.className = 'q-feedback show';
+  if (chosen === d.answer) {
+    btn.classList.add('correct');
+    fb.classList.add('correct');
+    fb.innerHTML = '✓ Correct! ' + d.explain;
+    q1Score++;
+  } else {
+    btn.classList.add('wrong');
+    btns[d.answer].classList.add('reveal');
+    fb.classList.add('wrong');
+    fb.innerHTML = '✗ Not quite. ' + d.explain;
+  }
+  document.getElementById('q1-score').textContent = 'Score ' + q1Score;
+  document.getElementById('q1-next').disabled = false;
+  document.getElementById('q1-footer-score').textContent = q1Score + ' / ' + (q1Idx + 1) + ' correct';
+}
+
+function nextQ1() {
+  q1Idx++;
+  if (q1Idx >= QPR) {
+    document.getElementById('q1-rnum').textContent = q1Score;
+    document.querySelector('#q1-result .q-result-of').textContent = 'out of ' + QPR + ' correct';
+    document.getElementById('q1-rmsg').innerHTML = getMsg(q1Score, QPR);
+    document.getElementById('q1-result').classList.add('show');
+    document.getElementById('q1-next').disabled = true;
+    document.getElementById('q1-answers').innerHTML = '';
+    document.getElementById('q1-fb').className = 'q-feedback';
+  } else {
+    renderQ1();
+  }
+}
+
+/* ══════════════════════════════════════════
+   QUIZ 2 ENGINE — dual-mode renderer
+══════════════════════════════════════════ */
+let q2Pool = [], q2Idx = 0, q2Score = 0, q2Answered = false;
+
+function startQ2() {
+  q2Pool = shuffle(Q2_ALL).slice(0, QPR);
+  q2Idx = 0; q2Score = 0; q2Answered = false;
+  document.getElementById('q2-result').classList.remove('show');
+  document.getElementById('q2-next').disabled = true;
+  document.getElementById('q2-footer-score').textContent = '';
+  renderQ2();
+}
+
+function renderQ2() {
+  const d = q2Pool[q2Idx];
+  document.getElementById('q2-ptext').textContent = (q2Idx + 1) + ' of ' + QPR;
+  document.getElementById('q2-fill').style.width = ((q2Idx + 1) / QPR * 100) + '%';
+  document.getElementById('q2-score').textContent = 'Score ' + q2Score;
+  document.getElementById('q2-fb').className = 'q-feedback';
+  document.getElementById('q2-fb').textContent = '';
+  document.getElementById('q2-next').disabled = true;
+  q2Answered = false;
+
+  if (d.qtype === 'elem-to-organ') {
+    var attrsHtml = d.attrs.map(function(a) {
+      return '<span class="elem-attr">' + a + '</span>';
+    }).join('');
+    document.getElementById('q2-display-area').innerHTML =
+      '<div class="elem-display" style="background:' + d.bg + ';border-radius:16px;padding:28px 20px;text-align:center;margin-bottom:26px;">' +
+        '<span class="elem-emoji" style="font-size:3.8rem;display:block;margin-bottom:8px;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25));">' + d.emoji + '</span>' +
+        '<div class="elem-name" style="font-family:\'Playfair Display\',serif;font-size:2.1rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3);">' + d.elem + '</div>' +
+        '<div class="elem-attrs">' + attrsHtml + '</div>' +
+      '</div>';
+    document.getElementById('q2-prompt').textContent = d.elem + ' Element governs which organ pair?';
+
+    var container = document.getElementById('q2-answers');
+    container.innerHTML = '';
+    ORGAN_PAIRS.forEach(function(op, i) {
+      var btn = document.createElement('button');
+      btn.className = 'op-btn';
+      btn.innerHTML = '<span class="op-icon">' + op.icon + '</span>' + op.label;
+      btn.onclick = function() { answerQ2(btn, i, 'organ-pair'); };
+      container.appendChild(btn);
+    });
+  } else {
+    // attr-to-elem
+    var emoji = d.clue.split(' ')[0];
+    document.getElementById('q2-display-area').innerHTML =
+      '<div class="attr-display">' +
+        '<span class="attr-clue-big">' + emoji + '</span>' +
+        '<span class="attr-clue-label">' + d.clue + '</span>' +
+        '<div class="attr-clue-text">' + d.clue2 + '</div>' +
+      '</div>';
+    document.getElementById('q2-prompt').textContent = 'This attribute belongs to which of the Five Elements?';
+
+    var container = document.getElementById('q2-answers');
+    container.innerHTML = '<div class="ec-row"></div>';
+    var row = container.querySelector('.ec-row');
+    ELEMS.forEach(function(el, i) {
+      var btn = document.createElement('button');
+      btn.className = 'ec-btn';
+      btn.innerHTML = '<span class="ec-icon">' + el.emoji + '</span>' + el.label;
+      btn.onclick = function() { answerQ2(btn, i, 'element'); };
+      row.appendChild(btn);
+    });
+  }
+}
+
+function answerQ2(btn, chosen, ansType) {
+  if (q2Answered) return;
+  q2Answered = true;
+  const d = q2Pool[q2Idx];
+  const selector = ansType === 'organ-pair' ? '#q2-answers .op-btn' : '#q2-answers .ec-btn';
+  const btns = document.querySelectorAll(selector);
+  btns.forEach(function(b) { b.disabled = true; });
+  const fb = document.getElementById('q2-fb');
+  fb.className = 'q-feedback show';
+  if (chosen === d.answer) {
+    btn.classList.add('correct');
+    fb.classList.add('correct');
+    fb.innerHTML = '✓ Correct! ' + d.explain;
+    q2Score++;
+  } else {
+    btn.classList.add('wrong');
+    btns[d.answer].classList.add('reveal');
+    fb.classList.add('wrong');
+    fb.innerHTML = '✗ Not quite. ' + d.explain;
+  }
+  document.getElementById('q2-score').textContent = 'Score ' + q2Score;
+  document.getElementById('q2-next').disabled = false;
+  document.getElementById('q2-footer-score').textContent = q2Score + ' / ' + (q2Idx + 1) + ' correct';
+}
+
+function nextQ2() {
+  q2Idx++;
+  if (q2Idx >= QPR) {
+    document.getElementById('q2-rnum').textContent = q2Score;
+    document.querySelector('#q2-result .q-result-of').textContent = 'out of ' + QPR + ' correct';
+    document.getElementById('q2-rmsg').innerHTML = getMsg(q2Score, QPR);
+    document.getElementById('q2-result').classList.add('show');
+    document.getElementById('q2-next').disabled = true;
+    document.getElementById('q2-display-area').innerHTML = '';
+    document.getElementById('q2-answers').innerHTML = '';
+    document.getElementById('q2-fb').className = 'q-feedback';
+  } else {
+    renderQ2();
+  }
+}
+
+/* ══════════════════════════════════════════
+   QUIZ 3 ENGINE
+══════════════════════════════════════════ */
+let q3Pool = [], q3Idx = 0, q3Score = 0, q3Answered = false;
+
+function startQ3() {
+  q3Pool = shuffle(Q3_ALL).slice(0, QPR);
+  q3Idx = 0; q3Score = 0; q3Answered = false;
+  document.getElementById('q3-result').classList.remove('show');
+  document.getElementById('q3-next').disabled = true;
+  document.getElementById('q3-footer-score').textContent = '';
+  renderQ3();
+}
+
+function renderQ3() {
+  const d = q3Pool[q3Idx];
+  document.getElementById('q3-taste').textContent = d.taste;
+  document.getElementById('q3-fname').textContent = d.name;
+  document.getElementById('q3-ptext').textContent = (q3Idx + 1) + ' of ' + QPR;
+  document.getElementById('q3-fill').style.width = ((q3Idx + 1) / QPR * 100) + '%';
+  document.getElementById('q3-score').textContent = 'Score ' + q3Score;
+  document.getElementById('q3-fb').className = 'q-feedback';
+  document.getElementById('q3-fb').textContent = '';
+  document.getElementById('q3-next').disabled = true;
+  q3Answered = false;
+
+  const container = document.getElementById('q3-answers');
+  container.innerHTML = '';
+  Q3_ORGANS.forEach(function(org, i) {
+    var btn = document.createElement('button');
+    btn.className = 'ob-btn';
+    btn.innerHTML = '<span class="ob-icon">' + org.icon + '</span>' + org.label;
+    btn.onclick = function() { answerQ3(btn, i); };
+    container.appendChild(btn);
+  });
+}
+
+function answerQ3(btn, chosen) {
+  if (q3Answered) return;
+  q3Answered = true;
+  const d = q3Pool[q3Idx];
+  const btns = document.querySelectorAll('#q3-answers .ob-btn');
+  btns.forEach(function(b) { b.disabled = true; });
+  const fb = document.getElementById('q3-fb');
+  fb.className = 'q-feedback show';
+  if (chosen === d.answer) {
+    btn.classList.add('correct');
+    fb.classList.add('correct');
+    fb.innerHTML = '✓ Correct! ' + d.explain;
+    q3Score++;
+  } else {
+    btn.classList.add('wrong');
+    btns[d.answer].classList.add('reveal');
+    fb.classList.add('wrong');
+    fb.innerHTML = '✗ Not quite. ' + d.explain;
+  }
+  document.getElementById('q3-score').textContent = 'Score ' + q3Score;
+  document.getElementById('q3-next').disabled = false;
+  document.getElementById('q3-footer-score').textContent = q3Score + ' / ' + (q3Idx + 1) + ' correct';
+}
+
+function nextQ3() {
+  q3Idx++;
+  if (q3Idx >= QPR) {
+    document.getElementById('q3-rnum').textContent = q3Score;
+    document.querySelector('#q3-result .q-result-of').textContent = 'out of ' + QPR + ' correct';
+    document.getElementById('q3-rmsg').innerHTML = getMsg(q3Score, QPR);
+    document.getElementById('q3-result').classList.add('show');
+    document.getElementById('q3-next').disabled = true;
+    document.getElementById('q3-answers').innerHTML = '';
+    document.getElementById('q3-fb').className = 'q-feedback';
+  } else {
+    renderQ3();
+  }
+}
+
+/* ── Init ── */
+startQ1(); startQ2(); startQ3();
+</script>
+</body>
+</html>
