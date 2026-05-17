@@ -51,20 +51,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --dark:        #E9E4DA;
-      --dark-2:      #DED8CC;
-      --dark-3:      #D2CCC0;
-      --jade:        #55160A;
-      --jade-light:  #C02026;
-      --gold:        #55160A;
-      --gold-light:  #C02026;
-      --gold-dim:    rgba(85,22,10,0.1);
-      --text:        #1a0804;
-      --text-muted:  #6b4030;
-      --text-light:  #4a2a1a;
-      --card-bg:     rgba(255,255,255,0.55);
-      --card-border: rgba(85,22,10,0.15);
-      --glass-bg:    rgba(85,22,10,0.06);
+      --dark:        #fdfbf2;
+      --dark-2:      #f5f2e4;
+      --dark-3:      #edeadb;
+      --jade:        #141806;
+      --jade-light:  #2a3010;
+      --gold:        #c8901a;
+      --gold-light:  #e8a830;
+      --gold-dim:    rgba(200,144,26,0.1);
+      --text:        #141806;
+      --text-muted:  #7a5808;
+      --text-light:  #4a4010;
+      --card-bg:     rgba(250,246,228,0.65);
+      --card-border: rgba(200,144,26,0.18);
+      --glass-bg:    rgba(200,144,26,0.06);
       --ease:        cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -112,17 +112,17 @@
       transition: background 0.4s var(--ease), padding 0.4s, box-shadow 0.4s;
     }
     .site-nav.scrolled {
-      background: rgba(233,228,218,0.97);
+      background: rgba(253,251,242,0.97);
       backdrop-filter: blur(12px);
       padding: 12px 0;
-      box-shadow: 0 2px 20px rgba(85,22,10,0.08);
-      border-bottom: 1px solid rgba(85,22,10,0.12);
+      box-shadow: 0 2px 20px rgba(42,48,16,0.08);
+      border-bottom: 1px solid rgba(42,48,16,0.12);
     }
     /* Accent line at very top when scrolled */
     .site-nav.scrolled::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent 0%, #55160A 25%, #C02026 50%, #55160A 75%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, #141806 25%, #c8901a 50%, #141806 75%, transparent 100%);
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
     /* Logo */
@@ -134,7 +134,7 @@
       color: rgba(255,248,244,0.92); letter-spacing: 0.2em; text-transform: uppercase;
       transition: color 0.4s;
     }
-    .site-nav.scrolled .nav-logo-wordmark { color: #55160A; }
+    .site-nav.scrolled .nav-logo-wordmark { color: #141806; }
     .nav-logo-divider {
       display: flex; align-items: center; gap: 6px;
     }
@@ -143,20 +143,20 @@
       background: rgba(255,248,244,0.25);
       transition: background 0.4s;
     }
-    .site-nav.scrolled .nav-logo-divider-line { background: rgba(85,22,10,0.2); }
+    .site-nav.scrolled .nav-logo-divider-line { background: rgba(42,48,16,0.2); }
     .nav-logo-divider-glyph {
       font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.18em;
       color: rgba(255,248,244,0.35); text-transform: uppercase; white-space: nowrap;
       transition: color 0.4s;
     }
-    .site-nav.scrolled .nav-logo-divider-glyph { color: rgba(85,22,10,0.4); }
+    .site-nav.scrolled .nav-logo-divider-glyph { color: rgba(42,48,16,0.4); }
     .nav-logo-sub {
       font-family: 'Cinzel', serif; font-size: 0.48rem; font-weight: 400;
       color: rgba(255,248,244,0.38); letter-spacing: 0.22em; text-transform: uppercase;
       transition: color 0.4s;
     }
     .nav-logo-sub sup { font-size: 0.7em; color: rgba(232,160,74,0.7); letter-spacing: 0; }
-    .site-nav.scrolled .nav-logo-sub { color: rgba(85,22,10,0.5); }
+    .site-nav.scrolled .nav-logo-sub { color: rgba(42,48,16,0.5); }
     .site-nav.scrolled .nav-logo-sub sup { color: #c9a030; }
     /* Links */
     .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
@@ -168,12 +168,25 @@
     .site-nav.scrolled .nav-links a { color: var(--text-muted); }
     .site-nav.scrolled .nav-links a:hover { color: var(--gold); }
     .nav-cta {
-      background: rgba(192,32,38,0.85); color: white !important;
+      background: rgba(200,144,26,0.85); color: white !important;
       padding: 8px 20px; border-radius: 3px; font-weight: 600 !important;
       transition: background 0.2s !important;
     }
     .nav-cta:hover { background: var(--gold-light) !important; }
     .site-nav.scrolled .nav-cta { background: var(--gold) !important; }
+    .nav-login-pill {
+      padding: 7px 16px;
+      border-radius: 4px;
+      border: 1.5px solid rgba(255,248,244,0.4);
+      color: rgba(255,248,244,0.85) !important;
+      font-size: 0.72rem !important;
+      font-weight: 500 !important;
+      transition: all 0.2s !important;
+      white-space: nowrap;
+    }
+    .nav-login-pill:hover { border-color: rgba(255,248,244,0.8); color: #fff8f4 !important; background: rgba(255,248,244,0.08); }
+    .site-nav.scrolled .nav-login-pill { border-color: rgba(42,48,16,0.3); color: var(--text-muted) !important; }
+    .site-nav.scrolled .nav-login-pill:hover { border-color: var(--jade-light); color: var(--jade) !important; }
 
     /* ── HERO ── */
     .hero {
@@ -182,12 +195,12 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: linear-gradient(145deg, #2a0805 0%, #55160A 50%, #3a0e08 100%);
+      background: linear-gradient(145deg, #141806 0%, #2a3010 50%, #1e240a 100%);
     }
     .hero-bg.loaded { opacity: 1; }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 55%, rgba(192,32,38,0.1) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 50% 55%, rgba(200,144,26,0.12) 0%, transparent 65%);
     }
     .hero-content {
       position: relative; z-index: 2; text-align: center;
@@ -207,8 +220,9 @@
       font-size: clamp(2.8rem, 6vw, 5.2rem); font-weight: 700;
       color: #fff8f4; margin-bottom: 28px;
       opacity: 0; animation: fadeInUp 0.9s 0.5s forwards;
+      line-height: 1.15; letter-spacing: -0.02em;
     }
-    .hero-title em { font-style: italic; color: #e8a04a; }
+    .hero-title em { font-style: italic; color: #e8a04a; font-weight: 700; text-shadow: 0 2px 12px rgba(232,160,74,0.25); }
     .hero-subtitle {
       font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,248,244,0.7);
       max-width: 700px; margin: 0 auto 48px; font-weight: 300;
@@ -228,17 +242,17 @@
     }
     .btn-primary:hover {
       background: var(--gold-light); transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(192,32,38,0.25); color: white;
+      box-shadow: 0 8px 30px rgba(200,144,26,0.3); color: white;
     }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 10px;
       background: transparent; color: var(--text); padding: 15px 32px;
       border-radius: 4px; font-family: 'Inter', sans-serif;
       font-size: 0.95rem; font-weight: 500; letter-spacing: 0.03em;
-      cursor: pointer; border: 1px solid rgba(85,22,10,0.3);
+      cursor: pointer; border: 1px solid rgba(42,48,16,0.3);
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(85,22,10,0.06); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,144,26,0.06); }
     .hero .btn-outline { color: rgba(255,248,244,0.85); border-color: rgba(255,248,244,0.3); }
     .hero .btn-outline:hover { border-color: rgba(255,248,244,0.7); color: #fff8f4; background: rgba(255,255,255,0.08); }
     .hero-scroll-indicator {
@@ -255,7 +269,7 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     /* ── STUDIO IDENTITY (MANIFESTO) ── */
-    .identity-section { background: #1a0603; padding: 88px 0 80px; }
+    .identity-section { background: #1a2008; padding: 88px 0 80px; }
     .manifesto-statement {
       text-align: center; max-width: 740px; margin: 0 auto 60px; padding: 0 24px;
     }
@@ -267,57 +281,57 @@
     .manifesto-pillars {
       display: flex; align-items: flex-start; justify-content: center;
       max-width: 960px; margin: 0 auto; padding: 48px 40px 0;
-      border-top: 1px solid rgba(255,248,244,0.1);
+      border-top: 1px solid rgba(200,144,26,0.2);
     }
     .manifesto-pillar { flex: 1; text-align: center; padding: 0 40px; }
-    .manifesto-pillar + .manifesto-pillar { border-left: 1px solid rgba(255,248,244,0.1); }
+    .manifesto-pillar + .manifesto-pillar { border-left: 1px solid rgba(200,144,26,0.2); }
     .mp-label {
-      font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.28em;
-      text-transform: uppercase; color: rgba(232,160,74,0.8); margin-bottom: 14px; display: block;
+      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(232,160,74,0.9); margin-bottom: 14px; display: block;
     }
     .mp-title {
-      font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700;
       color: #fff8f4; margin-bottom: 10px; line-height: 1.3;
     }
-    .mp-body { font-size: 0.84rem; color: rgba(255,248,244,0.5); line-height: 1.7; margin: 0; }
+    .mp-body { font-size: 0.92rem; color: rgba(255,248,244,0.82); line-height: 1.75; margin: 0; }
     @media (max-width: 768px) {
       .manifesto-pillars { flex-direction: column; gap: 0; padding: 40px 24px 0; }
-      .manifesto-pillar + .manifesto-pillar { border-left: none; border-top: 1px solid rgba(255,248,244,0.1); padding: 32px 0 0; margin-top: 32px; }
+      .manifesto-pillar + .manifesto-pillar { border-left: none; border-top: 1px solid rgba(200,144,26,0.2); padding: 32px 0 0; margin-top: 32px; }
       .manifesto-pillar { padding: 0; }
     }
 
     /* ── THE MIRROR (INTERACTIVE) ── */
     .mirror-section {
-      background: #0f0603; padding: 100px 0 96px;
-      border-top: 1px solid rgba(255,248,244,0.06);
+      background: #1a2008; padding: 100px 0 96px;
+      border-top: 1px solid rgba(200,144,26,0.15);
     }
     .mirror-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
     .mirror-title {
       font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
-      font-size: clamp(2rem, 3.5vw, 3rem); color: #fff8f4; line-height: 1.3; margin-bottom: 16px;
+      font-size: clamp(2rem, 3.5vw, 3rem); color: #fdfbf2; line-height: 1.3; margin-bottom: 16px;
     }
     .mirror-sub {
       font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,248,244,0.3); font-family: 'Cinzel', serif;
+      color: rgba(253,251,242,0.65); font-family: 'Cinzel', serif;
     }
     .mirror-phrases {
       max-width: 880px; margin: 0 auto;
       display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; padding: 0 24px;
     }
     .mirror-phrase {
-      background: rgba(255,248,244,0.04); border: 1px solid rgba(255,248,244,0.1);
-      color: rgba(255,248,244,0.6); padding: 13px 22px; border-radius: 40px;
-      font-size: 0.9rem; font-weight: 300; cursor: pointer; user-select: none;
+      background: rgba(253,251,242,0.07); border: 1px solid rgba(253,251,242,0.22);
+      color: rgba(253,251,242,0.88); padding: 13px 22px; border-radius: 40px;
+      font-size: 0.92rem; font-weight: 400; cursor: pointer; user-select: none;
       transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.18s;
       line-height: 1.4;
     }
     .mirror-phrase:hover {
-      background: rgba(255,248,244,0.08); border-color: rgba(255,248,244,0.25);
-      color: rgba(255,248,244,0.85); transform: translateY(-2px);
+      background: rgba(200,144,26,0.14); border-color: rgba(200,144,26,0.55);
+      color: #fdfbf2; transform: translateY(-2px);
     }
     .mirror-phrase.selected {
-      background: rgba(232,160,74,0.15); border-color: rgba(232,160,74,0.6);
-      color: #e8a04a;
+      background: rgba(200,144,26,0.2); border-color: rgba(200,144,26,0.7);
+      color: #e8b840;
     }
     .mirror-reflection {
       max-width: 680px; margin: 64px auto 0; text-align: center; padding: 0 24px;
@@ -328,22 +342,22 @@
     .mirror-reflection.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .mirror-reflection-line {
       display: block; width: 40px; height: 1px;
-      background: rgba(232,160,74,0.4); margin: 0 auto 32px;
+      background: rgba(200,144,26,0.45); margin: 0 auto 32px;
     }
     .mirror-reflection-text {
       font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
-      font-size: clamp(1.15rem, 2.2vw, 1.55rem); color: rgba(255,248,244,0.82);
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem); color: rgba(253,251,242,0.9);
       line-height: 1.7; margin-bottom: 36px;
     }
     .mirror-reflection-text em { font-style: normal; color: #e8a04a; }
     .mirror-cta {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(192,32,38,0.8); color: white;
+      background: rgba(200,144,26,0.9); color: white;
       padding: 14px 32px; border-radius: 4px;
       font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
       transition: background 0.2s, transform 0.2s;
     }
-    .mirror-cta:hover { background: #C02026; color: white; transform: translateY(-2px); }
+    .mirror-cta:hover { background: #c8901a; color: white; transform: translateY(-2px); }
     @media (max-width: 768px) {
       .mirror-phrase { font-size: 0.84rem; padding: 11px 18px; }
     }
@@ -371,7 +385,7 @@
     }
     .path-track::before {
       content: ''; position: absolute; top: 18px; left: 80px; right: 80px; height: 1px;
-      background: linear-gradient(to right, rgba(85,22,10,0.15), rgba(192,32,38,0.35), rgba(85,22,10,0.15));
+      background: linear-gradient(to right, rgba(42,48,16,0.15), rgba(200,144,26,0.35), rgba(42,48,16,0.15));
     }
     .path-node {
       display: flex; flex-direction: column; align-items: center;
@@ -396,7 +410,7 @@
     .path-link { font-size: 0.78rem; font-weight: 600; color: var(--gold-light); letter-spacing: 0.05em; }
     @media (max-width: 768px) {
       .path-track { flex-direction: column; align-items: flex-start; padding: 0 24px; }
-      .path-track::before { top: 18px; left: 41px; right: auto; bottom: 18px; width: 1px; height: auto; background: linear-gradient(to bottom, rgba(85,22,10,0.15), rgba(192,32,38,0.35), rgba(85,22,10,0.15)); }
+      .path-track::before { top: 18px; left: 41px; right: auto; bottom: 18px; width: 1px; height: auto; background: linear-gradient(to bottom, rgba(42,48,16,0.15), rgba(200,144,26,0.35), rgba(42,48,16,0.15)); }
       .path-node { flex-direction: row; align-items: flex-start; gap: 20px; max-width: 100%; padding-bottom: 44px; text-align: left; }
       .path-node:last-child { padding-bottom: 0; }
       .path-dot { margin-bottom: 0; }
@@ -407,18 +421,18 @@
     .offers-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
     .offers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
     .offer-card {
-      background: var(--card-bg); border: 1px solid rgba(85,22,10,0.1);
+      background: var(--card-bg); border: 1px solid rgba(42,48,16,0.1);
       border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
       transition: transform 0.3s var(--ease), box-shadow 0.3s, border-color 0.3s;
     }
     .offer-card:hover {
-      transform: translateY(-6px); box-shadow: 0 24px 60px rgba(85,22,10,0.13);
-      border-color: rgba(85,22,10,0.25);
+      transform: translateY(-6px); box-shadow: 0 24px 60px rgba(42,48,16,0.13);
+      border-color: rgba(42,48,16,0.25);
     }
     .offer-card.featured { border-color: var(--gold); }
     .offer-banner {
       padding: 36px 28px 28px; text-align: center;
-      background: linear-gradient(135deg, #55160A 0%, #3a0e08 100%);
+      background: linear-gradient(135deg, #2a3010 0%, #141806 100%);
       color: white;
     }
     .offer-banner .ob-icon { font-size: 2.8rem; margin-bottom: 12px; display: block; }
@@ -440,7 +454,7 @@
 
     /* ── TESTIMONIAL PULL QUOTE ── */
     .quote-section {
-      background: linear-gradient(135deg, #55160A 0%, #3a0e08 100%);
+      background: linear-gradient(135deg, #2a3010 0%, #141806 100%);
       padding: 80px 24px; text-align: center;
     }
     .quote-inner { max-width: 760px; margin: 0 auto; }
@@ -466,7 +480,7 @@
     }
     .about-pull {
       position: relative; padding-left: 36px;
-      border-left: 2px solid rgba(85,22,10,0.22);
+      border-left: 2px solid rgba(42,48,16,0.22);
     }
     .about-pull blockquote {
       font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
@@ -499,7 +513,7 @@
     /* ── FOOTER ── */
     footer {
       background: var(--dark-3);
-      border-top: 1px solid rgba(85,22,10,0.12);
+      border-top: 1px solid rgba(42,48,16,0.12);
       padding: 56px 0 32px;
     }
     .footer-inner {
@@ -516,7 +530,7 @@
     .footer-col ul li a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.2s; }
     .footer-col ul li a:hover { color: var(--gold); }
     .footer-bottom {
-      border-top: 1px solid rgba(85,22,10,0.12); padding-top: 24px;
+      border-top: 1px solid rgba(42,48,16,0.12); padding-top: 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
     .footer-bottom p { font-size: 0.78rem; color: var(--text-muted); }
@@ -525,7 +539,7 @@
     /* ── BACK TO TOP ── */
     .back-to-top {
       position: fixed; bottom: 60px; right: 32px; width: 44px; height: 44px;
-      background: var(--jade); border: 1px solid rgba(85,22,10,0.2); border-radius: 50%;
+      background: var(--jade); border: 1px solid rgba(42,48,16,0.2); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer; opacity: 0; pointer-events: none;
       transition: opacity 0.3s, transform 0.2s; z-index: 999; font-size: 1.1rem; color: white;
@@ -572,12 +586,12 @@
     /* Right: signup card */
     .selfcare-card {
       background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(85,22,10,0.12);
+      border: 1px solid rgba(42,48,16,0.12);
       border-radius: 20px; overflow: hidden;
-      box-shadow: 0 8px 40px rgba(85,22,10,0.08);
+      box-shadow: 0 8px 40px rgba(42,48,16,0.08);
     }
     .selfcare-card-header {
-      background: linear-gradient(135deg, #55160A 0%, #3a0e08 100%);
+      background: linear-gradient(135deg, #2a3010 0%, #141806 100%);
       padding: 36px 36px 28px; text-align: center;
     }
     .selfcare-card-eyebrow {
@@ -596,7 +610,7 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px;
     }
     .sgp-item {
-      background: rgba(85,22,10,0.05); border: 1px solid rgba(85,22,10,0.1);
+      background: rgba(42,48,16,0.05); border: 1px solid rgba(42,48,16,0.1);
       border-radius: 10px; padding: 14px 16px;
     }
     .sgp-item .sgp-label {
@@ -609,13 +623,13 @@
     .selfcare-form { display: flex; flex-direction: column; gap: 12px; }
     .selfcare-form input {
       width: 100%; padding: 13px 16px;
-      border: 1px solid rgba(85,22,10,0.2); border-radius: 8px;
+      border: 1px solid rgba(42,48,16,0.2); border-radius: 8px;
       background: white; font-family: 'Inter', sans-serif; font-size: 0.9rem;
       color: var(--text); outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     .selfcare-form input:focus {
-      border-color: var(--jade); box-shadow: 0 0 0 3px rgba(85,22,10,0.08);
+      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,144,26,0.12);
     }
     .selfcare-form input::placeholder { color: rgba(107,64,48,0.5); }
     .selfcare-form button {
@@ -627,7 +641,7 @@
     }
     .selfcare-form button:hover {
       background: var(--jade-light); transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(192,32,38,0.22);
+      box-shadow: 0 6px 20px rgba(200,144,26,0.28);
     }
     .selfcare-form-note {
       font-size: 0.75rem; color: var(--text-muted); text-align: center; line-height: 1.5;
@@ -706,8 +720,8 @@
 
     /* ── OPTION D: PATTERN INTERRUPT ── */
     .pattern-interrupt { text-align: center; margin-bottom: 52px; padding: 0 16px; }
-    .pattern-interrupt p { font-size: 0.97rem; color: rgba(255,235,218,0.72); max-width: 640px; margin: 0 auto 14px; line-height: 1.9; }
-    .pattern-interrupt p strong { color: rgba(255,235,218,0.96); font-weight: 500; }
+    .pattern-interrupt p { font-size: 0.97rem; color: rgba(253,251,242,0.88); max-width: 640px; margin: 0 auto 14px; line-height: 1.9; }
+    .pattern-interrupt p strong { color: rgba(253,251,242,0.98); font-weight: 600; }
     .pattern-interrupt .pi-divider { width: 40px; height: 1px; background: var(--card-border); margin: 20px auto 0; }
 
     /* ── OPTION A: TWO-PATH STORY ── */
@@ -717,7 +731,7 @@
     .two-path-header p { font-size: 0.97rem; color: var(--text-muted); max-width: 520px; margin: 0 auto; }
     .two-path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 940px; margin: 0 auto; }
     .two-path-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 40px 36px; }
-    .two-path-card.path-without { border-left: 3px solid rgba(85,22,10,0.2); }
+    .two-path-card.path-without { border-left: 3px solid rgba(42,48,16,0.2); }
     .two-path-card.path-with { border-left: 3px solid var(--jade-light); }
     .two-path-card-label { font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; display: block; }
     .path-without .two-path-card-label { color: var(--text-muted); }
@@ -789,6 +803,7 @@
           <li><a href="dwq.html">Dragon&rsquo;s Way</a></li>
           <li><a href="programs.html">Programs</a></li>
           <li><a href="programs.html#paid-programs" class="nav-cta">Enroll Now</a></li>
+          <li><a href="login.html" class="nav-login-pill" id="navLoginBtn">Log In</a></li>
         </ul>
       </div>
     </div>
@@ -799,19 +814,19 @@
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Taoquen &bull; TCM Healing Studio</div>
+      <div class="hero-eyebrow">Taoquen &bull; Wu Ming Qigong Lineage</div>
       <h1 class="hero-title">
-        Real healing is already<br>
-        <em>inside you.</em>
+        Real Qigong. Unbroken lineage.<br>
+        <em>Three paths into TCM.</em>
       </h1>
       <p class="hero-subtitle">
-        Taoquen is a Traditional Chinese Medicine studio. We offer one signature program &mdash; Dragon&rsquo;s Way Qigong&reg; &mdash; a 6-week practice that puts 5,000 years of TCM healing science to work inside your body. Not theory. Not supplements. Qi.
+        Welcome to Taoquen. We offer three unique Qigong programs in the Wu Ming tradition of Grand Master Nan Lu &mdash; because you cannot understand Traditional Chinese Medicine until you have experienced Qi.
       </p>
       <p style="font-size:0.88rem;color:rgba(255,248,244,0.75);margin-bottom:28px;font-style:italic;">
-        Next Dragon&rsquo;s Way cohort: <strong style="color:#e8a04a;font-style:normal;">June 14, 2026</strong> &mdash; summer is the ideal season to begin. Limited spots per cohort.
+        The lineage is unbroken. The practice is real. <strong style="color:#e8a04a;font-style:normal;">Start wherever you are.</strong>
       </p>
       <div class="hero-ctas">
-        <a href="dwq.html#programs" class="btn-primary">Enroll in Dragon&rsquo;s Way &rarr;</a>
+        <a href="programs.html" class="btn-primary">Explore Our Programs &rarr;</a>
         <a href="qi-assessment.html" class="btn-outline">Take the Free Assessment</a>
       </div>
     </div>
@@ -825,18 +840,18 @@
   <div class="proof-bar">
     <div class="proof-bar-inner">
       <div class="proof-stat">
-        <span class="proof-num">20+ Years</span>
-        <span class="proof-label">TCM Practice</span>
+        <span class="proof-num">3 Unique Programs</span>
+        <span class="proof-label">One Lineage</span>
       </div>
       <div class="proof-divider"></div>
       <div class="proof-stat">
-        <span class="proof-num">Dragon&rsquo;s Way&reg; Certified</span>
-        <span class="proof-label">Wu Ming Lineage</span>
-      </div>
-      <div class="proof-divider"></div>
-      <div class="proof-stat">
-        <span class="proof-num">Wu Ming Lineage</span>
+        <span class="proof-num">Wu Ming Tradition</span>
         <span class="proof-label">Grand Master Nan Lu</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat">
+        <span class="proof-num">5,000+ Years</span>
+        <span class="proof-label">TCM Lineage</span>
       </div>
       <div class="proof-divider"></div>
       <div class="proof-stat">
@@ -852,41 +867,41 @@
 
       <!-- OPTION D: PATTERN INTERRUPT -->
       <div class="pattern-interrupt reveal">
-        <p><strong>Wellness has become a word for giving up.</strong> Supplements that &ldquo;support&rdquo; something. Programs that make you feel better for a week. Advice that tells you to manage stress and sleep more. If any of that had worked, you would not still be searching. Traditional Chinese Medicine asks a different question: <strong>not what are your symptoms &mdash; but why do they exist?</strong></p>
+        <p><strong>Most people spend years reading about TCM and never experience Qi.</strong> That is because Qi cannot be learned from a book or a wellness app. To experience Qi, you have to practice Qigong &mdash; with real time, real effort, and real attention to the details of every movement. <strong>The quality of your practice is what opens the door &mdash; nothing else.</strong></p>
         <div class="pi-divider"></div>
       </div>
 
       <div class="manifesto-statement reveal">
-        <p>Something in you already knows<br>
-        you are meant for more than this.<br>
-        <em>That feeling is not wishful thinking. It is guidance.</em></p>
+        <p>To understand TCM, you must understand Qi.<br>
+        To understand Qi, you need more than words.<br>
+        <em>You need a practice &mdash; one with roots deep enough to reach you.</em></p>
       </div>
 
       <div class="manifesto-pillars">
 
         <div class="manifesto-pillar reveal">
-          <span class="mp-label">01 &nbsp;&middot;&nbsp; You Are Held</span>
-          <div class="mp-title">You have more support than you know</div>
-          <p class="mp-body">When life feels heavy and the body struggles, it is easy to feel alone in it. But there is a current underneath everything &mdash; a vitality that does not abandon you. Qi practice is how you learn to feel it again. To draw from it. To let it carry some of the weight.</p>
+          <span class="mp-label">01 &nbsp;&middot;&nbsp; Real Qigong</span>
+          <div class="mp-title">Not all Qigong is the same</div>
+          <p class="mp-body">There is a difference between movement that looks like Qigong and Qigong that actually builds Qi. That difference is practice quality &mdash; the precision of each posture, the attention brought to every detail, the commitment to doing it well. At Taoquen, every program teaches exactly that, through the Wu Ming tradition of Grand Master Nan Lu.</p>
         </div>
 
         <div class="manifesto-pillar reveal reveal-delay-1">
-          <span class="mp-label">02 &nbsp;&middot;&nbsp; Nothing Is Isolated</span>
-          <div class="mp-title">Your body is in conversation with everything</div>
-          <p class="mp-body">A chronic symptom is rarely just a symptom. A low mood is rarely just a mood. In TCM, the body, the mind, and the world around you are one continuous system &mdash; and when you work with that system instead of against it, things that felt stuck for years begin to move.</p>
+          <span class="mp-label">02 &nbsp;&middot;&nbsp; The TCM Gateway</span>
+          <div class="mp-title">Qi is the door to everything else</div>
+          <p class="mp-body">TCM is a complete map of how the body generates, distributes, and renews energy. The Five Elements. Organ meridian systems. Seasonal healing. But the map only makes sense once you have experienced Qi in your own body. Qigong is how that door opens &mdash; nothing else comes close.</p>
         </div>
 
         <div class="manifesto-pillar reveal reveal-delay-2">
-          <span class="mp-label">03 &nbsp;&middot;&nbsp; You Arrived Here</span>
-          <div class="mp-title">The detours were not wasted</div>
-          <p class="mp-body">Every failed attempt. Every treatment that didn&rsquo;t hold. Every moment of wondering why your body won&rsquo;t cooperate &mdash; none of it was wasted. It brought you to the place of asking a deeper question. And that question is the beginning of real healing.</p>
+          <span class="mp-label">03 &nbsp;&middot;&nbsp; Three Paths, One Root</span>
+          <div class="mp-title">Start where you are &mdash; go as deep as you want</div>
+          <p class="mp-body">Taoquen offers three unique programs &mdash; each grounded in the same unbroken lineage, each meeting you at a different point of readiness. Whether you are just discovering Qi or ready for a full six-week transformation, there is a path here that was built for you.</p>
         </div>
 
       </div>
 
       <div class="reveal" style="text-align:center;margin-top:56px;">
-        <p style="font-size:0.97rem;color:rgba(255,235,218,0.7);margin-bottom:28px;line-height:1.75;">These three principles are the foundation of every Dragon&rsquo;s Way session.<br>Ready to feel what that means?</p>
-        <a href="dwq.html" class="btn-primary" style="display:inline-flex;">Discover Dragon&rsquo;s Way Qigong&reg; &rarr;</a>
+        <p style="font-size:0.97rem;color:rgba(253,251,242,0.85);margin-bottom:28px;line-height:1.75;">These three principles shape every program at Taoquen.<br>Ready to find your path in?</p>
+        <a href="programs.html" class="btn-primary" style="display:inline-flex;">Explore All Three Programs &rarr;</a>
       </div>
 
     </div>
@@ -896,11 +911,11 @@
   <section style="padding:80px 0;background:var(--dark-2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);">
     <div class="container" style="max-width:760px;text-align:center;">
       <div class="reveal">
-        <span class="section-label">The people who feel well</span>
-        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin:16px 0 28px;line-height:1.3;">They are not lucky.<br><em style="color:var(--jade-light);">They are working with a different system.</em></h2>
-        <p style="font-size:1.02rem;color:var(--text-muted);line-height:1.9;margin-bottom:20px;">The people who feel genuinely well into their 50s, 60s, and 70s are not just &ldquo;eating healthy&rdquo; or hitting the gym more. They are working with their body as a living system &mdash; reading its signals, supporting its cycles, building energy instead of borrowing it from tomorrow.</p>
-        <p style="font-size:1.02rem;color:var(--text-muted);line-height:1.9;margin-bottom:32px;">That is exactly what Traditional Chinese Medicine teaches. It is a complete map of how the human body generates, distributes, and depletes energy. And Dragon&rsquo;s Way Qigong&reg; is how that map becomes something you can <em>feel</em> &mdash; not just read about.</p>
-        <a href="dwq.html" class="btn-primary" style="display:inline-flex;">Discover Dragon&rsquo;s Way &rarr;</a>
+        <span class="section-label">The honest truth about Qi</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin:16px 0 28px;line-height:1.3;">Qi is earned through practice.<br><em style="color:var(--jade-light);">Not through reading about it.</em></h2>
+        <p style="font-size:1.02rem;color:var(--text-muted);line-height:1.9;margin-bottom:20px;">To experience Qi, you have to practice Qigong &mdash; consistently, attentively, and with real commitment to the details. The quality of your movement matters. The precision of each posture matters. The focus you bring to every session matters. Qi does not respond to approximation.</p>
+        <p style="font-size:1.02rem;color:var(--text-muted);line-height:1.9;margin-bottom:32px;">That is why all three Taoquen programs are built around detailed, guided instruction in the Wu Ming tradition of Grand Master Nan Lu. Not to make Qigong easy &mdash; but to make sure the effort you put in is effort that actually builds Qi, practiced well, with every detail in place.</p>
+        <a href="tcm.html" class="btn-primary" style="display:inline-flex;">Discover the TCM Framework &rarr;</a>
       </div>
     </div>
   </section>
@@ -909,7 +924,7 @@
   <section class="mirror-section">
     <div class="container">
       <div class="mirror-header reveal">
-        <h2 class="mirror-title">&ldquo;What has your body been saying?&rdquo;</h2>
+        <h2 class="mirror-title">&ldquo;Where does your Qi journey begin?&rdquo;</h2>
         <p class="mirror-sub">Select what resonates &mdash; there are no wrong answers</p>
       </div>
 
@@ -938,8 +953,8 @@
       <div class="mirror-reflection" id="mirrorReflection">
         <span class="mirror-reflection-line"></span>
         <p class="mirror-reflection-text">
-          Your body has been sending these signals for a long time.<br>
-          Working with your Qi is how you <em>finally answer them.</em>
+          Your body already knows what it needs.<br>
+          Real Qigong from a real lineage is how you <em>finally hear it.</em>
         </p>
         <a href="qi-assessment.html" class="mirror-cta">Start understanding your Qi &rarr;</a>
       </div>
@@ -951,8 +966,8 @@
     <div class="container">
       <div class="hierarchy-header reveal">
         <span class="section-label">How it fits together</span>
-        <h2 class="section-title">One studio. One system. One program.</h2>
-        <p class="section-lead">Taoquen is the studio. Traditional Chinese Medicine is the system it teaches. Dragon&rsquo;s Way Qigong&reg; is how that system becomes something you feel &mdash; not something you read about.</p>
+        <h2 class="section-title">One studio. One lineage. Three programs.</h2>
+        <p class="section-lead">Taoquen is the studio. Traditional Chinese Medicine is the world it opens. Three Qigong programs &mdash; each rooted in the Wu Ming lineage of Grand Master Nan Lu &mdash; are how that world becomes something you feel, not just read about.</p>
       </div>
 
       <div class="path-track">
@@ -982,8 +997,8 @@
           <div>
             <div class="path-sublabel">The Practice</div>
             <div class="path-title">Dragon&rsquo;s Way Qigong&reg;</div>
-            <p class="path-desc">The six-week program. Qigong movement, eating-for-healing, and Five Element consciousness &mdash; TCM made real inside your body, week by week.</p>
-            <a href="dwq.html" class="path-link">About the program &rarr;</a>
+            <p class="path-desc">Three distinct programs &mdash; each grounded in the same unbroken lineage. From a free 20-minute daily practice to a full six-week transformation. Start wherever you are.</p>
+            <a href="programs.html" class="path-link">See all programs &rarr;</a>
           </div>
         </div>
 
@@ -996,39 +1011,39 @@
     <div class="container">
       <div class="two-path-header reveal">
         <span class="section-label">Two Paths &bull; One Choice</span>
-        <h2>Which version of this year<br><em>are you choosing?</em></h2>
-        <p>The difference between these two paths is not willpower, information, or luck. It is the system you are working with.</p>
+        <h2>Still learning about Qi &mdash;<br><em>or actually feeling it?</em></h2>
+        <p>The difference between these two paths is not effort or intention. It is whether you have a real lineage to practice with.</p>
       </div>
 
       <div class="two-path-grid">
         <div class="two-path-card path-without reveal">
-          <span class="two-path-card-label">Without Dragon&rsquo;s Way</span>
-          <h3>The year your body keeps sending the same signals &mdash; and nothing changes.</h3>
+          <span class="two-path-card-label">Without Real Lineage</span>
+          <h3>Reading about Qi &mdash; and never actually feeling it.</h3>
           <ul>
-            <li>Managing the same symptoms with the same approaches</li>
-            <li>Energy that never quite comes back, no matter how much you rest</li>
-            <li>Trying things that work temporarily, then plateau</li>
-            <li>Waking up in December wondering why you still feel this way</li>
-            <li>Treating the body as a problem to be fixed, not a system to be understood</li>
+            <li>TCM stays a fascinating theory, never a lived experience</li>
+            <li>Practicing Qigong without guidance on the details that actually build Qi</li>
+            <li>The concepts make sense &mdash; but nothing in the body shifts</li>
+            <li>More information, less clarity &mdash; the framework never clicks</li>
+            <li>Working on your health without the system that makes it work</li>
           </ul>
         </div>
 
         <div class="two-path-card path-with reveal reveal-delay-1">
-          <span class="two-path-card-label">Inside Dragon&rsquo;s Way</span>
-          <h3>Six weeks to understand why your body does what it does &mdash; and what to do about it.</h3>
+          <span class="two-path-card-label">Inside Taoquen&rsquo;s Lineage</span>
+          <h3>Three programs. One root. The actual experience of Qi in your body.</h3>
           <ul>
-            <li>Root causes addressed through Qigong, food, and Five Element awareness</li>
-            <li>Energy that builds week by week, not borrowed from tomorrow</li>
-            <li>A framework you carry for life, not a program you complete and forget</li>
-            <li>A body that finally feels like it is on your side</li>
-            <li>The actual experience of Qi &mdash; not a concept, but something real in your body</li>
+            <li>Qi stops being a word &mdash; it becomes something you can feel and direct</li>
+            <li>TCM opens as a living framework, not an academic subject</li>
+            <li>Each program builds on the same lineage &mdash; so every step deepens the last</li>
+            <li>Grand Master Nan Lu&rsquo;s Wu Ming tradition, accessible wherever you are</li>
+            <li>A practice you carry for life &mdash; rooted in 5,000 years of unbroken wisdom</li>
           </ul>
         </div>
       </div>
 
       <div class="two-path-closer reveal">
-        <p>Two paths. One six-week commitment.<br><em>Which one are you choosing?</em></p>
-        <a href="dwq.html#programs" class="btn-primary">Enroll in Dragon&rsquo;s Way &rarr;</a>
+        <p>Two paths. Three programs to choose from.<br><em>Which one are you ready for?</em></p>
+        <a href="programs.html" class="btn-primary">Find Your Program &rarr;</a>
       </div>
     </div>
   </section>
@@ -1038,8 +1053,8 @@
     <div class="container">
       <div class="offers-header reveal">
         <span class="section-label">What we offer</span>
-        <h2 class="section-title">Two ways to begin</h2>
-        <p style="font-size:1.05rem;color:var(--text-muted);">Start wherever you are. Each path leads to the same place: a body that heals, sustains, and transforms itself.</p>
+        <h2 class="section-title">Three programs. One lineage.</h2>
+        <p style="font-size:1.05rem;color:var(--text-muted);">Start wherever you are. Each program is rooted in the Wu Ming tradition of Grand Master Nan Lu &mdash; and each one leads to the same place: the direct experience of Qi working in your body.</p>
       </div>
 
       <div class="offers-grid">
@@ -1052,7 +1067,7 @@
             <h3>Qi Assessment</h3>
           </div>
           <div class="offer-body">
-            <p>Not sure where to start? Take the free TCM symptom assessment. Select what you&rsquo;re experiencing and discover which organ systems need support &mdash; with personalized food guidance and a recommended healing path.</p>
+            <p>Not sure where to start? Take the free TCM symptom assessment. Select what you&rsquo;re experiencing and discover which organ systems need support &mdash; and which of our three programs is the right first step for you.</p>
             <a href="qi-assessment.html" class="offer-cta">Take the Free Assessment &rarr;</a>
           </div>
         </div>
@@ -1061,18 +1076,18 @@
         <div class="offer-card featured reveal reveal-delay-1">
           <div class="offer-banner">
             <span class="ob-icon">&#9775;</span>
-            <div class="ob-type">6-Week Program &bull; Live Online</div>
-            <h3>Dragon&rsquo;s Way Qigong&reg;</h3>
+            <div class="ob-type">Three Programs &bull; One Lineage</div>
+            <h3>All Taoquen Programs</h3>
           </div>
           <div class="offer-body">
-            <p>The flagship 6-week TCM healing program. Qigong movement, eating-for-healing, and Five Element consciousness &mdash; combined into a complete, guaranteed system for root-cause transformation. Limited spots per cohort.</p>
-            <a href="dwq.html#programs" class="offer-cta">See Enrollment Details &rarr;</a>
+            <p>Three unique Qigong programs in the Wu Ming tradition of Grand Master Nan Lu. From a free daily practice to a full six-week transformation &mdash; each one grounded in the same unbroken lineage, designed to make Qi real in your body.</p>
+            <a href="programs.html" class="offer-cta">Explore All Programs &rarr;</a>
           </div>
         </div>
 
       </div>
 
-      <p class="reveal" style="text-align:center;margin-top:32px;font-size:0.9rem;color:var(--text-muted);">Want to understand the theory first? &nbsp;<a href="tcm.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Explore the TCM Framework &rarr;</a></p>
+      <p class="reveal" style="text-align:center;margin-top:32px;font-size:0.9rem;color:var(--text-muted);">Want to understand the world behind the practice? &nbsp;<a href="tcm.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Explore the TCM Framework &rarr;</a></p>
     </div>
   </section>
 
@@ -1115,10 +1130,10 @@
         <!-- LEFT: Pull quote -->
         <div class="about-pull reveal">
           <blockquote>
-            &ldquo;Qi is real.<br>
-            But someone has<br>
-            to <em>make it real</em><br>
-            for you.&rdquo;
+            &ldquo;The lineage<br>
+            is the practice.<br>
+            <em>Everything else</em><br>
+            is just information.&rdquo;
           </blockquote>
           <div class="about-pull-attr">
             <span class="about-pull-name">Taoquen</span>
@@ -1129,23 +1144,20 @@
         <!-- RIGHT: Text -->
         <div class="about-text reveal reveal-delay-1">
           <span class="section-label">About Taoquen</span>
-          <h2>Where Qi stops being a word &mdash;<br><em>and starts being real</em></h2>
+          <h2>Where the TCM world<br><em>becomes real</em></h2>
           <p>
-            Taoquen is for those who are ready to hear this: your body has the capacity to heal itself. Qi is how that happens.
+            Taoquen is a certified Qigong studio built around one conviction: that you cannot understand Traditional Chinese Medicine until you have experienced Qi.
           </p>
           <p>
-            We are a TCM wellness studio built around the direct experience of ancient healing &mdash; not as theory, but as a living practice. We teach Traditional Chinese Medicine through the body: how Qi moves and what happens when it does.
+            We offer three unique Qigong programs &mdash; each rooted in the Wu Ming lineage of Grand Master Nan Lu, one of the foremost Qigong masters alive today. That lineage is unbroken. It traces back thousands of years and has been passed directly, master to student, through every generation.
           </p>
           <p>
-            Our signature program is Dragon&rsquo;s Way Qigong&reg; &mdash; a six-week healing practice in the Wu Ming lineage of Grand Master Nan Lu, one of the foremost Qigong masters alive today.
+            To learn TCM, you must learn Qi. To learn Qi, you need Qigong with real roots &mdash; not just movement &mdash; but movement practiced well. Every detail, every posture, every quality of attention. That is what every Taoquen program is built to teach: the precise, consistent work that makes Qi real.
           </p>
           <p>
-            Taoquen was built around a single conviction: that the most important thing about TCM is not reading about it &mdash; it is feeling it. Every session and practice is designed around one outcome: the direct, embodied experience of Qi working in your body.
+            When Qi becomes real for you, the entire TCM world opens. That is what Taoquen exists to make happen.
           </p>
-          <p>
-            When Qi becomes real for you, everything changes. That is what Taoquen exists to make happen.
-          </p>
-          <a href="dwq.html" class="btn-primary" style="display:inline-flex;margin-top:24px;">Explore Dragon&rsquo;s Way Qigong&reg; &rarr;</a>
+          <a href="programs.html" class="btn-primary" style="display:inline-flex;margin-top:24px;">Explore All Three Programs &rarr;</a>
         </div>
       </div>
     </div>
@@ -1154,16 +1166,16 @@
   <!-- SELF-CARE: TEASER STRIP -->
   <section id="self-care" style="background:var(--dark-2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);padding:80px 0;text-align:center;">
     <div class="container reveal" style="max-width:680px;">
-      <span class="section-label">Self-Care &bull; Daily Practice</span>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);margin-bottom:20px;line-height:1.2;">Twenty minutes.<br><em style="color:var(--jade-light);font-style:italic;">A lifetime of difference.</em></h2>
-      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:14px;">Not ready for Dragon&rsquo;s Way yet? Start here &mdash; free, no experience needed, and it works on its own.</p>
+      <span class="section-label">Begin Here &bull; Free Daily Practice</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);margin-bottom:20px;line-height:1.2;">Your first step<br><em style="color:var(--jade-light);font-style:italic;">into the lineage.</em></h2>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:14px;">Not sure where to begin? Start here &mdash; free, no experience needed, and it works from day one.</p>
       <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.9;margin-bottom:16px;">
-        The Four Energy Gates is a free 20-minute daily Qigong practice rooted in TCM acupressure, developed by Grand Master Nan Lu for modern lives. One practice. Four points. Your entire energy network.
+        The Four Energy Gates is a free 20-minute daily Qigong practice developed by Grand Master Nan Lu for modern lives. Rooted in the same Wu Ming lineage that runs through every Taoquen program &mdash; one practice, four points, your entire energy network.
       </p>
       <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.8;margin-bottom:36px;font-style:italic;">
-        Twenty minutes is 1.4% of your waking day. Compounded over six weeks, it rewires how your body manages energy &mdash; not for the week, but for the decade.
+        Twenty minutes is 1.4% of your waking day. Practiced consistently, it opens the door to everything TCM teaches &mdash; not as theory, but as something your body starts to know.
       </p>
-      <a href="four-energy-gates.html" class="btn-primary" style="display:inline-flex;">Explore the Four Energy Gates &rarr;</a>
+      <a href="four-energy-gates.html" class="btn-primary" style="display:inline-flex;">Start with the Four Energy Gates &rarr;</a>
     </div>
   </section>
 
@@ -1208,7 +1220,7 @@
   <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
 
   <!-- CONTACT BAR -->
-  <div style="position:fixed;bottom:0;left:0;right:0;z-index:1000;background:#1a0804;border-top:1px solid rgba(192,32,38,0.35);display:flex;align-items:center;justify-content:center;gap:36px;padding:10px 24px;flex-wrap:wrap;">
+  <div style="position:fixed;bottom:0;left:0;right:0;z-index:1000;background:#141806;border-top:1px solid rgba(200,144,26,0.35);display:flex;align-items:center;justify-content:center;gap:36px;padding:10px 24px;flex-wrap:wrap;">
     <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,235,218,0.45);flex-shrink:0;">Taoquen · TCM Healing Studio</span>
     <a href="mailto:hello@taoquen.com" style="display:flex;align-items:center;gap:8px;color:rgba(255,235,218,0.75);font-size:0.8rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#e8c49a'" onmouseout="this.style.color='rgba(255,235,218,0.75)'">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1222,7 +1234,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       @taoquen
     </a>
-    <a href="programs.html#paid-programs" style="background:rgba(192,32,38,0.85);color:#fff;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:7px 18px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background 0.2s;flex-shrink:0;" onmouseover="this.style.background='#C02026'" onmouseout="this.style.background='rgba(192,32,38,0.85)'">Reserve a Spot &rarr;</a>
+    <a href="programs.html#paid-programs" style="background:rgba(200,144,26,0.9);color:#fff;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:7px 18px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background 0.2s;flex-shrink:0;" onmouseover="this.style.background='#c8901a'" onmouseout="this.style.background='rgba(200,144,26,0.9)'">Reserve a Spot &rarr;</a>
   </div>
   <!-- / CONTACT BAR -->
 
@@ -1337,10 +1349,26 @@
       <div class="tq-modal-body">
         <p>Qi is just a word. Words can only point &mdash; they are not the thing itself. Qi becomes real when someone who has experienced it passes it to you directly.</p>
         <p class="tq-modal-wu">Wu is real. Wu is love. Love is real. Wu is the Tao.</p>
-        <p class="tq-modal-closer">That transmission is <strong>Tao Quen.</strong></p>
+        <p class="tq-modal-closer">That practice is <strong>Tao Quen.</strong></p>
       </div>
     </div>
   </div>
+
+  <script>
+    /* Update Login button if user is already logged in */
+    const _tqSession = localStorage.getItem('tq_session');
+    if (_tqSession) {
+      try {
+        const _s = JSON.parse(_tqSession);
+        const btn = document.getElementById('navLoginBtn');
+        if (btn) {
+          btn.textContent = (_s.first || 'My Account') + ' →';
+          btn.href = 'members-main.html';
+          btn.title = 'Go to Members Area';
+        }
+      } catch(e) {}
+    }
+  </script>
 
 </body>
 </html>
