@@ -853,6 +853,62 @@
     .fit-finder-cta-wrap { text-align: center; flex-shrink: 0; }
     .fit-finder-note { font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; letter-spacing: 0.04em; }
     @media (max-width: 720px) { .fit-finder-inner { grid-template-columns: 1fr; gap: 32px; } .fit-finder-cta-wrap { text-align: left; } }
+
+    /* QI DIAGRAM */
+    .qi-diagram-section { padding: 80px 0; background: var(--dark-3); border-top: 1px solid var(--card-border); }
+    .qi-diagram-inner { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+    .qi-diagram-header { text-align: center; margin-bottom: 56px; }
+    .qi-diagram-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--text); margin-bottom: 12px; }
+    .qi-diagram-lead { color: var(--text-muted); font-size: 0.97rem; max-width: 560px; margin: 0 auto; }
+    .qi-diagram-layout { display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: center; }
+    .qi-diagram-canvas { position: relative; width: 320px; height: 320px; flex-shrink: 0; }
+    .qi-ring {
+      position: absolute; top: 50%; left: 50%;
+      border-radius: 50%; transform: translate(-50%, -50%);
+      transition: width 0.55s cubic-bezier(0.4,0,0.2,1), height 0.55s cubic-bezier(0.4,0,0.2,1), background 0.55s, border-color 0.55s;
+      border: 2px solid;
+    }
+    .qi-ring.qr4 { width: 320px; height: 320px; background: rgba(200,144,26,0.06); border-color: rgba(200,144,26,0.3); }
+    .qi-ring.qr3 { width: 236px; height: 236px; background: rgba(200,144,26,0.09); border-color: rgba(200,144,26,0.4); transition-delay: 0.07s; }
+    .qi-ring.qr2 { width: 156px; height: 156px; background: rgba(200,144,26,0.13); border-color: rgba(200,144,26,0.55); transition-delay: 0.14s; }
+    .qi-ring.qr1 { width: 82px; height: 82px; background: rgba(200,144,26,0.2); border-color: rgba(200,144,26,0.8); transition-delay: 0.21s; }
+    .qi-center {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 36px; height: 36px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-size: 0.5rem; font-weight: 700;
+      color: var(--dark); letter-spacing: 0.05em; z-index: 5;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    .qi-diagram-canvas.falling .qr4 { width: 180px; height: 180px; background: rgba(180,40,40,0.07); border-color: rgba(180,40,40,0.28); }
+    .qi-diagram-canvas.falling .qr3 { width: 142px; height: 142px; background: rgba(180,40,40,0.1); border-color: rgba(180,40,40,0.38); }
+    .qi-diagram-canvas.falling .qr2 { width: 108px; height: 108px; background: rgba(180,40,40,0.15); border-color: rgba(180,40,40,0.52); }
+    .qi-diagram-canvas.falling .qr1 { width: 66px; height: 66px; background: rgba(180,40,40,0.22); border-color: rgba(180,40,40,0.75); }
+    .qi-diagram-canvas.falling .qi-center { background: #b42828; box-shadow: 0 0 14px rgba(180,40,40,0.5); }
+    .qi-toggle-bar { display: flex; gap: 10px; margin-bottom: 28px; }
+    .qi-btn { padding: 9px 22px; border-radius: 6px; border: 1px solid var(--card-border); background: transparent; color: var(--text-muted); font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; cursor: pointer; transition: all 0.2s; }
+    .qi-btn.qi-btn--active { background: var(--gold); border-color: var(--gold); color: var(--dark); font-weight: 700; }
+    .qi-btn:not(.qi-btn--active):hover { border-color: var(--gold); color: var(--gold); }
+    .qi-labels { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .qi-label-row { display: flex; align-items: baseline; gap: 12px; }
+    .qi-label-ring { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.12em; color: var(--gold); min-width: 40px; flex-shrink: 0; }
+    .qi-label-text { font-size: 0.86rem; color: var(--text-muted); line-height: 1.4; }
+    .qi-label-state { font-size: 0.72rem; font-style: italic; }
+    .qi-labels.falling-labels .qi-label-ring { color: #c84040; }
+    .qi-caption { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--card-border); padding-top: 20px; }
+    .qi-subcaption { display: block; font-size: 0.8rem; opacity: 0.7; margin-top: 10px; line-height: 1.7; }
+    @media (max-width: 720px) {
+      .qi-diagram-layout { grid-template-columns: 1fr; }
+      .qi-diagram-canvas { width: 260px; height: 260px; margin: 0 auto 32px; }
+      .qi-ring.qr4 { width: 260px; height: 260px; }
+      .qi-ring.qr3 { width: 192px; height: 192px; }
+      .qi-ring.qr2 { width: 126px; height: 126px; }
+      .qi-ring.qr1 { width: 66px; height: 66px; }
+      .qi-diagram-canvas.falling .qr4 { width: 148px; height: 148px; }
+      .qi-diagram-canvas.falling .qr3 { width: 116px; height: 116px; }
+      .qi-diagram-canvas.falling .qr2 { width: 88px; height: 88px; }
+      .qi-diagram-canvas.falling .qr1 { width: 54px; height: 54px; }
+    }
   </style>
 </head>
 <body>
@@ -1063,6 +1119,89 @@
 
       <p class="qi-story-close">The more Qi you have, the more your body finds its balance. And when the body is balanced, disease and illness begin to lose their hold. Disease and illness are not random &mdash; they are signs your body has drifted out of balance.</p>
     </div>
+  </section>
+
+  <!-- QI DIAGRAM -->
+  <section class="qi-diagram-section">
+    <div class="qi-diagram-inner">
+      <div class="qi-diagram-header reveal">
+        <span class="section-label">The Qi Cascade</span>
+        <h2 class="qi-diagram-title">See what happens as Qi rises &mdash; and falls</h2>
+        <p class="qi-diagram-lead">Toggle between states to understand how your energy level shapes every layer of your life.</p>
+      </div>
+
+      <div class="qi-diagram-layout">
+        <div class="qi-diagram-canvas" id="qCanvas">
+          <div class="qi-ring qr4" id="qr4"></div>
+          <div class="qi-ring qr3" id="qr3"></div>
+          <div class="qi-ring qr2" id="qr2"></div>
+          <div class="qi-ring qr1" id="qr1"></div>
+          <div class="qi-center" id="qrc"><span id="qrc-label">QI</span></div>
+        </div>
+
+        <div class="qi-diagram-side">
+          <div class="qi-toggle-bar">
+            <button class="qi-btn qi-btn--active" id="qBtnFull" onclick="qSet(true)">Full Qi</button>
+            <button class="qi-btn" id="qBtnFall" onclick="qSet(false)">Qi Falling</button>
+          </div>
+          <div class="qi-labels" id="qlabels"></div>
+          <p class="qi-caption" id="qcaption"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    (function () {
+      var qStates = {
+        full: {
+          rings: [
+            { ring: 'Ring 4', text: 'Joy &amp; Love', state: 'Expanding' },
+            { ring: 'Ring 3', text: 'Relationships &amp; Connection', state: 'Growing' },
+            { ring: 'Ring 2', text: 'Resources &amp; Mental Clarity', state: 'Building' },
+            { ring: 'Ring 1', text: 'Stress Capacity &amp; Energy', state: 'High' }
+          ],
+          caption: 'When Qi is full, every layer of your life expands — energy, clarity, connection, and joy.',
+          center: 'QI'
+        },
+        falling: {
+          rings: [
+            { ring: 'Ring 4', text: 'Depression &amp; Isolation', state: 'Settling in' },
+            { ring: 'Ring 3', text: 'Frustration · Emotions Off Balance', state: 'Deepening' },
+            { ring: 'Ring 2', text: 'Anxiety · Worry · Illness &amp; Disease', state: 'Spreading' },
+            { ring: 'Ring 1', text: 'Fatigue · Pain · Insomnia', state: 'Worsening' }
+          ],
+          caption: 'As Qi falls, the body goes off balance — and the circles collapse inward.',
+          subcaption: 'Disease and illness are not random. They are signs the body has lost its equilibrium.',
+          center: 'OFF BAL'
+        }
+      };
+
+      window.qSet = function (isFull) {
+        var s = isFull ? qStates.full : qStates.falling;
+        var canvas = document.getElementById('qCanvas');
+        var labels = document.getElementById('qlabels');
+        var caption = document.getElementById('qcaption');
+        var centerLabel = document.getElementById('qrc-label');
+        var btnFull = document.getElementById('qBtnFull');
+        var btnFall = document.getElementById('qBtnFall');
+
+        canvas.classList.toggle('falling', !isFull);
+        btnFull.classList.toggle('qi-btn--active', isFull);
+        btnFall.classList.toggle('qi-btn--active', !isFull);
+        centerLabel.textContent = s.center;
+
+        labels.innerHTML = s.rings.map(function (r) {
+          return '<div class="qi-label-row"><span class="qi-label-ring">' + r.ring + '</span>'
+            + '<span class="qi-label-text">' + r.text + ' <em class="qi-label-state">— ' + r.state + '</em></span></div>';
+        }).join('');
+        labels.classList.toggle('falling-labels', !isFull);
+
+        caption.innerHTML = s.caption + (s.subcaption ? '<span class="qi-subcaption">' + s.subcaption + '</span>' : '');
+      };
+
+      document.addEventListener('DOMContentLoaded', function () { window.qSet(true); });
+    })();
+    </script>
   </section>
 
   <!-- THE MIRROR -->
