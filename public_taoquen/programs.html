@@ -391,6 +391,70 @@
     .free-signup-success p { font-size: 0.9rem; color: var(--c-gate); }
     @media (max-width: 860px) { .live-session-wrap { grid-template-columns: 1fr; gap: 40px; } }
 
+    /* ── STRIPE SIMULATION ── */
+    .stripe-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+    }
+    .stripe-overlay[hidden] { display: none; }
+    .stripe-modal {
+      background: #fff; border-radius: 8px; padding: 28px 32px;
+      max-width: 440px; width: 100%; position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    }
+    .stripe-close {
+      position: absolute; top: 12px; right: 16px;
+      background: none; border: none; cursor: pointer;
+      font-size: 1.4rem; color: #9ca3af; line-height: 1;
+    }
+    .stripe-close:hover { color: #374151; }
+    .stripe-test-banner {
+      background: #fff3cd; border: 1px solid #fbbf24; border-radius: 4px;
+      padding: 6px 12px; font-size: 0.75rem; color: #92400e;
+      margin-bottom: 20px; text-align: center; font-weight: 500;
+    }
+    .stripe-product-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+    }
+    .stripe-merchant-logo {
+      width: 40px; height: 40px; border-radius: 6px;
+      background: #141806; color: #c8901a;
+      font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .stripe-merchant-name { font-size: 0.75rem; color: #6b7280; }
+    .stripe-program-name { font-size: 0.92rem; font-weight: 600; color: #111827; }
+    .stripe-program-price { margin-left: auto; font-size: 1.1rem; font-weight: 700; color: #111827; white-space: nowrap; }
+    .stripe-divider { height: 1px; background: #e5e7eb; margin-bottom: 20px; }
+    .stripe-field-group { margin-bottom: 14px; }
+    .stripe-label { display: block; font-size: 0.78rem; font-weight: 500; color: #374151; margin-bottom: 4px; }
+    .stripe-input {
+      width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px;
+      font-size: 0.92rem; color: #111827; outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    }
+    .stripe-input:focus { border-color: #635bff; box-shadow: 0 0 0 3px rgba(99,91,255,0.15); }
+    .stripe-card-block { border: 1px solid #d1d5db; border-radius: 4px; overflow: hidden; }
+    .stripe-card-block .stripe-input { border: none; border-radius: 0; }
+    .stripe-card-block .stripe-input:focus { box-shadow: none; border-color: transparent; }
+    .stripe-card-number { border-bottom: 1px solid #d1d5db !important; }
+    .stripe-card-row { display: grid; grid-template-columns: 1fr 1fr; }
+    .stripe-card-row .stripe-input:first-child { border-right: 1px solid #d1d5db !important; }
+    .stripe-pay-btn {
+      width: 100%; padding: 13px; margin-top: 8px;
+      background: #635bff; color: white; border: none; border-radius: 4px;
+      font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .stripe-pay-btn:hover { background: #4f46e5; }
+    .stripe-footer {
+      display: flex; align-items: center; gap: 6px; margin-top: 16px;
+      font-size: 0.75rem; color: #9ca3af;
+    }
+
     /* ── ENROLLMENT MODAL ── */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 9000;
@@ -1019,7 +1083,7 @@
             <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:4px;">Total value: <del>$1,632</del></p>
             <p><strong style="font-size:1.25rem;">$299</strong> &nbsp;<span style="font-size:0.78rem;color:var(--text-muted);">per person &mdash; one cohort</span></p>
           </div>
-          <a href="https://buy.stripe.com/REPLACE_DRAGONS_WAY" target="_blank" rel="noopener" class="btn-primary program-cta">
+          <a href="#" onclick="openStripeMock(event, 'Dragon\'s Way Qigong® — 6-Week Program', '$299.00')" class="btn-primary program-cta">
             Enroll in Dragon&rsquo;s Way &rarr;
           </a>
           <p class="program-guarantee">&#128737; Full satisfaction guarantee or complete refund</p>
@@ -1051,7 +1115,7 @@
             <p>4-week immersive program.<br>
             <strong>Enrollment by inquiry</strong> &mdash; limited spots per cohort.</p>
           </div>
-          <a href="https://buy.stripe.com/REPLACE_FOUR_GATES" target="_blank" rel="noopener" class="btn-primary program-cta program-cta-gate">
+          <a href="#" onclick="openStripeMock(event, 'Four Energy Gates — 4-Week Program', '$199.00')" class="btn-primary program-cta program-cta-gate">
             Reserve Your Spot &rarr;
           </a>
           <p class="program-guarantee">&#128737; Satisfaction guaranteed</p>
@@ -1085,7 +1149,7 @@
             <p>Self-paced with live monthly support.<br>
             <strong>Enrollment open year-round</strong> &mdash; begin anytime.</p>
           </div>
-          <a href="https://buy.stripe.com/REPLACE_3ES" target="_blank" rel="noopener" class="btn-primary program-cta program-cta-3es">
+          <a href="#" onclick="openStripeMock(event, '3Es — Energy, Everyone, Everyday', '$149.00')" class="btn-primary program-cta program-cta-3es">
             Begin the 3Es Practice &rarr;
           </a>
           <p class="program-guarantee">&#128737; Satisfaction guaranteed</p>
@@ -1094,6 +1158,70 @@
       </div>
     </div>
   </section>
+
+  <!-- STRIPE SIMULATION MODAL -->
+  <div id="stripeMock" class="stripe-overlay" hidden>
+    <div class="stripe-modal">
+      <button class="stripe-close" onclick="closeStripeMock()" aria-label="Close">&times;</button>
+
+      <div class="stripe-test-banner">&#9888; Test mode &mdash; no real charges</div>
+
+      <div class="stripe-product-row">
+        <div class="stripe-merchant-logo">T</div>
+        <div class="stripe-product-info">
+          <div class="stripe-merchant-name">Taoquen</div>
+          <div class="stripe-program-name" id="stripeProgramName">Dragon&rsquo;s Way Qigong&reg;</div>
+        </div>
+        <div class="stripe-program-price" id="stripeProgramPrice">$299.00</div>
+      </div>
+
+      <div class="stripe-divider"></div>
+
+      <form onsubmit="handleStripeSimulate(event)" id="stripeSimForm">
+        <div class="stripe-field-group">
+          <label class="stripe-label">Email</label>
+          <input type="email" class="stripe-input" placeholder="your@email.com" required>
+        </div>
+        <div class="stripe-field-group">
+          <label class="stripe-label">Card information</label>
+          <div class="stripe-card-block">
+            <input type="text" class="stripe-input stripe-card-number" placeholder="1234 1234 1234 1234" maxlength="19">
+            <div class="stripe-card-row">
+              <input type="text" class="stripe-input" placeholder="MM / YY" maxlength="7">
+              <input type="text" class="stripe-input" placeholder="CVC" maxlength="4">
+            </div>
+          </div>
+        </div>
+        <div class="stripe-field-group">
+          <label class="stripe-label">Name on card</label>
+          <input type="text" class="stripe-input" placeholder="Full name">
+        </div>
+        <div class="stripe-field-group">
+          <label class="stripe-label">Country or region</label>
+          <select class="stripe-input">
+            <option>United States</option>
+            <option>Canada</option>
+            <option>United Kingdom</option>
+            <option>Australia</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="stripe-pay-btn">Pay <span id="stripePayAmount">$299.00</span></button>
+      </form>
+
+      <div id="stripeSuccess" style="display:none; text-align:center; padding:24px 0;">
+        <div style="font-size:2.8rem; margin-bottom:12px;">&#10003;</div>
+        <div style="font-size:1.1rem; font-weight:600; color:#1a1a2e; margin-bottom:8px;">Payment successful</div>
+        <div style="font-size:0.88rem; color:#6b7280;">Check your email for your receipt and next steps.</div>
+      </div>
+
+      <div class="stripe-footer">
+        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="opacity:0.4"><rect x="1" y="6" width="10" height="9" rx="1.5" stroke="#555" stroke-width="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 015 0V6" stroke="#555" stroke-width="1.5"/></svg>
+        <span>Powered by <strong>Stripe</strong></span>
+        <span style="margin-left:auto; font-size:0.72rem; color:#9ca3af;">Terms &middot; Privacy</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ENROLLMENT MODAL -->
   <div id="enrollModal" class="modal-overlay" hidden>
@@ -1190,6 +1318,33 @@
   <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
 
   <script>
+    // ── Stripe simulation ──
+    function openStripeMock(e, programName, price) {
+      e.preventDefault();
+      document.getElementById('stripeProgramName').textContent = programName;
+      document.getElementById('stripeProgramPrice').textContent = price;
+      document.getElementById('stripePayAmount').textContent = price;
+      document.getElementById('stripeSimForm').style.display = '';
+      document.getElementById('stripeSuccess').style.display = 'none';
+      document.getElementById('stripeMock').removeAttribute('hidden');
+    }
+    function closeStripeMock() {
+      document.getElementById('stripeMock').setAttribute('hidden', '');
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('stripeMock').addEventListener('click', function(e) {
+        if (e.target === this) closeStripeMock();
+      });
+    });
+    function handleStripeSimulate(e) {
+      e.preventDefault();
+      document.getElementById('stripeSimForm').style.display = 'none';
+      document.getElementById('stripeSuccess').style.display = 'block';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeStripeMock();
+    });
+
     // ── Nav scroll ──
     const nav = document.getElementById('siteNav');
     window.addEventListener('scroll', () => {
