@@ -199,9 +199,41 @@
     .burnout-foot a { font-size: 0.9rem; color: var(--ink-mid); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
     .burnout-foot a:hover { color: var(--accent); border-color: var(--accent); }
 
+    /* Food for your burnout type */
+    .food-types { padding: 88px 0; background: var(--bg-2); }
+    .food-types-head { text-align: center; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; padding: 0 24px; }
+    .food-types-head h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); margin-bottom: 12px; }
+    .food-types-head h2 em { font-style: italic; font-weight: 500; color: var(--accent); }
+    .food-types-head p { font-size: 0.98rem; color: var(--ink-mid); }
+    .food-types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .food-type-card { background: white; border-radius: 16px; padding: 28px 24px; border: 1px solid var(--line-soft); }
+    .food-type-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 10px; display: block; }
+    .food-type-title { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 16px; }
+    .food-type-list { list-style: none; margin-bottom: 16px; }
+    .food-type-list li { font-size: 0.9rem; color: var(--ink); font-weight: 600; padding: 6px 0; border-bottom: 1px solid var(--line-soft); }
+    .food-type-list li:last-child { border-bottom: none; }
+    .food-type-why { font-size: 0.84rem; color: var(--ink-mid); line-height: 1.65; font-style: italic; }
+
+    /* 5 foods, 5 elements */
+    .food-five { padding: 88px 0; background: var(--bg-tint); }
+    .food-five-head { text-align: center; margin-bottom: 48px; max-width: 580px; margin-left: auto; margin-right: auto; padding: 0 24px; }
+    .food-five-head h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); margin-bottom: 12px; }
+    .food-five-head p { font-size: 0.98rem; color: var(--ink-mid); }
+    .food-five-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .food-tile { background: white; border-radius: 14px; padding: 22px 16px; text-align: center; border: 1px solid var(--line-soft); }
+    .food-tile-emoji { font-size: 1.6rem; display: block; margin-bottom: 10px; }
+    .food-tile-name { font-size: 0.96rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .food-tile-benefit { font-size: 0.8rem; color: var(--ink-mid); line-height: 1.5; margin-bottom: 12px; }
+    .food-tile-element { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent); }
+    .food-five-foot { text-align: center; margin-top: 32px; padding: 0 24px; font-size: 0.88rem; color: var(--ink-mid); }
+    .food-five-foot a { color: var(--accent); border-bottom: 1px solid rgba(90,138,58,0.3); padding-bottom: 1px; }
+    .food-five-foot a:hover { color: var(--accent-light); }
+
     @media (max-width: 760px) {
       .recog-grid { grid-template-columns: 1fr; }
       .burnout-grid { grid-template-columns: 1fr; }
+      .food-types-grid { grid-template-columns: 1fr; }
+      .food-five-grid { grid-template-columns: repeat(2, 1fr); }
       .works-grid { grid-template-columns: 1fr; }
       .practice-inner { grid-template-columns: 1fr; gap: 36px; }
       .voices-grid { grid-template-columns: 1fr; }
@@ -428,6 +460,92 @@
         <a href="blog/five-elements-tcm.html">Learn what the Five Elements are &rarr;</a>
       </div>
     </div>
+  </section>
+
+  <section class="food-types">
+    <div class="container">
+      <div class="food-types-head">
+        <span class="tiny">What to eat for your type</span>
+        <h2>The same pattern in your energy<br><em>shows up in what your body craves.</em></h2>
+        <p>TCM maps specific foods to specific patterns. Once you know your type, you know what to reach for.</p>
+      </div>
+      <div class="food-types-grid">
+        <div class="food-type-card">
+          <span class="food-type-label">💧 Bone-tired &amp; anxious &middot; Water</span>
+          <p class="food-type-title">Build your reserves back</p>
+          <ul class="food-type-list">
+            <li>Black beans</li>
+            <li>Walnuts</li>
+            <li>Sesame seeds</li>
+            <li>Warm bone broth</li>
+          </ul>
+          <p class="food-type-why">Salty, dark, warming foods rebuild the body&rsquo;s deepest reserves. Eat warm. Eat regularly. Avoid cold drinks.</p>
+        </div>
+        <div class="food-type-card">
+          <span class="food-type-label">🌿 Wired &amp; stuck &middot; Wood</span>
+          <p class="food-type-title">Help your body release</p>
+          <ul class="food-type-list">
+            <li>Blueberries</li>
+            <li>Mung beans</li>
+            <li>Lemon water</li>
+            <li>Leafy greens</li>
+          </ul>
+          <p class="food-type-why">Sour foods help the body release what it&rsquo;s holding. Light, fresh, green &mdash; let the energy move.</p>
+        </div>
+        <div class="food-type-card">
+          <span class="food-type-label">🌾 Overthinking &amp; unsettled &middot; Earth</span>
+          <p class="food-type-title">Ground the system first</p>
+          <ul class="food-type-list">
+            <li>Warm ginger tea</li>
+            <li>Sweet potato</li>
+            <li>Oats or millet</li>
+            <li>Pumpkin</li>
+          </ul>
+          <p class="food-type-why">Regular, warm meals ground an overthinking system. Eat before your big study blocks &mdash; not during.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="food-five">
+    <div class="food-five-head">
+      <span class="tiny">Start here</span>
+      <h2>Five elements. Five foods.<br>All of them in a grocery store.</h2>
+      <p>These are not superfoods. They are signals to specific systems in the body.</p>
+    </div>
+    <div class="food-five-grid">
+      <div class="food-tile">
+        <span class="food-tile-emoji">💧</span>
+        <p class="food-tile-name">Black beans</p>
+        <p class="food-tile-benefit">Rebuilds the body&rsquo;s deepest reserves</p>
+        <span class="food-tile-element">Water</span>
+      </div>
+      <div class="food-tile">
+        <span class="food-tile-emoji">🌿</span>
+        <p class="food-tile-name">Blueberries</p>
+        <p class="food-tile-benefit">Clears stress, helps energy flow</p>
+        <span class="food-tile-element">Wood</span>
+      </div>
+      <div class="food-tile">
+        <span class="food-tile-emoji">🌾</span>
+        <p class="food-tile-name">Ginger</p>
+        <p class="food-tile-benefit">Warms and grounds the stomach</p>
+        <span class="food-tile-element">Earth</span>
+      </div>
+      <div class="food-tile">
+        <span class="food-tile-emoji">🔥</span>
+        <p class="food-tile-name">Strawberries</p>
+        <p class="food-tile-benefit">Lifts flatness, supports circulation</p>
+        <span class="food-tile-element">Fire</span>
+      </div>
+      <div class="food-tile">
+        <span class="food-tile-emoji">🍂</span>
+        <p class="food-tile-name">Pear</p>
+        <p class="food-tile-benefit">Clears heat, moistens, lets go</p>
+        <span class="food-tile-element">Metal</span>
+      </div>
+    </div>
+    <p class="food-five-foot">These pairings come from thousands of years of TCM food medicine &mdash; <a href="blog/five-elements-tcm.html">learn the full framework &rarr;</a></p>
   </section>
 
   <section class="works">
