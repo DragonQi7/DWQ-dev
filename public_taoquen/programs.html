@@ -334,28 +334,34 @@
 
     /* ── FREE INTRO SECTION ── */
     .free-intro-section { padding: 96px 0; background: var(--dark); }
-    .free-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+    .live-session-wrap {
+      display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: start;
     }
-    .free-card {
+    .live-session-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: white;
+      background: #2e7d56; padding: 5px 14px; border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    .live-dot { width: 6px; height: 6px; background: #7dffb3; border-radius: 50%; animation: blink 1.8s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .live-session-info h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--text); margin-bottom: 16px; }
+    .live-session-info > p { font-size: 1rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 36px; }
+    .session-agenda { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+    .session-agenda li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; }
+    .session-agenda li::before { content: ''; width: 5px; height: 5px; background: var(--gold-light); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+    .session-meta { display: flex; flex-direction: column; gap: 10px; }
+    .session-meta-row { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; }
+    .session-meta-label { font-family: 'Cinzel', serif; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.6rem; color: var(--text-muted); width: 72px; flex-shrink: 0; }
+    .session-meta-value { color: var(--text); font-weight: 500; }
+    .live-session-form-card {
       background: var(--card-bg); border: 1px solid var(--card-border);
       border-radius: 10px; padding: 36px 32px;
-      display: flex; flex-direction: column; gap: 0;
-      transition: box-shadow 0.3s, transform 0.3s;
     }
-    .free-card:hover {
-      box-shadow: 0 12px 40px rgba(85,22,10,0.09);
-      transform: translateY(-3px);
-    }
-    .free-badge {
-      display: inline-block; font-family: 'Cinzel', serif;
-      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: white;
-      background: #2e7d56; padding: 4px 12px; border-radius: 2px;
-      margin-bottom: 18px; align-self: flex-start;
-    }
-    .free-card h3 { font-size: 1.2rem; color: var(--text); margin-bottom: 10px; }
-    .free-card p  { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+    .form-card-eyebrow { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 10px; display: block; }
+    .form-card-title { font-size: 1.3rem; color: var(--text); margin-bottom: 8px; }
+    .form-card-note { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
     .free-signup-form { display: flex; flex-direction: column; gap: 10px; }
     .free-signup-form input[type="text"],
     .free-signup-form input[type="email"] {
@@ -367,21 +373,23 @@
     }
     .free-signup-form input:focus { border-color: rgba(85,22,10,0.5); }
     .free-signup-form button {
-      width: 100%; padding: 12px 20px;
+      width: 100%; padding: 13px 20px;
       background: rgba(85,22,10,0.85); color: white;
       border: none; border-radius: 4px; cursor: pointer;
-      font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+      font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600;
       letter-spacing: 0.06em; text-transform: uppercase;
       transition: background 0.2s;
     }
     .free-signup-form button:hover { background: var(--gold-light); }
+    .form-card-disclaimer { font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; line-height: 1.6; text-align: center; }
     .free-signup-success {
       display: none; text-align: center; padding: 20px;
       background: rgba(46,125,86,0.08); border: 1px solid rgba(46,125,86,0.2);
-      border-radius: 6px; color: var(--c-gate);
+      border-radius: 6px;
     }
     .free-signup-success.show { display: block; }
     .free-signup-success p { font-size: 0.9rem; color: var(--c-gate); }
+    @media (max-width: 860px) { .live-session-wrap { grid-template-columns: 1fr; gap: 40px; } }
 
     /* ── ENROLLMENT MODAL ── */
     .modal-overlay {
@@ -899,94 +907,66 @@
   </section>
 
   <!-- FREE INTRO PROGRAMS -->
-  <section id="free-intro" class="free-intro-section" style="background:var(--dark-2);">  <!-- moved above paid -->
+  <section id="free-intro" class="free-intro-section" style="background:var(--dark-2);">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="divider-ornament"><span>No Cost &middot; No Commitment</span></div>
-        <span class="section-eyebrow">Free Introduction Programs</span>
-        <h2>Begin Your Journey &mdash; Free</h2>
-        <p>
-          Not sure where to start? Each free intro is a complete introduction to its program &mdash;
-          a genuine first step, not a teaser. Enter your name and email below and we&rsquo;ll
-          send your access immediately.
-        </p>
-      </div>
+      <div class="live-session-wrap reveal">
 
-      <div class="free-grid">
-
-        <!-- Free 1: Intro to Dragon's Way -->
-        <div class="free-card reveal reveal-delay-1">
-          <span class="free-badge">Free Intro</span>
-          <h3>Intro to Dragon&rsquo;s Way Qigong<sup style="font-size:0.55em;">&reg;</sup></h3>
+        <!-- Left: info -->
+        <div class="live-session-info">
+          <span class="live-session-badge"><span class="live-dot"></span> Free &middot; Live &middot; Quarterly</span>
+          <h2>See who&rsquo;s behind Taoquen &mdash; live.</h2>
           <p>
-            Discover what Dragon&rsquo;s Way Qigong&reg; actually is &mdash; and why it works when everything
-            else has failed. Learn the Five Element framework, meet the Wu Ming lineage, and experience
-            your first movement practice in this free introductory session.
+            Most wellness websites have no one behind them. A program description, a testimonial section, and a form.
           </p>
-          <form class="free-signup-form" data-program="Intro to Dragon's Way Qigong" onsubmit="handleFreeSignup(event, this)">
-            <input type="text"  name="name"  placeholder="Your name"  required autocomplete="name">
-            <input type="email" name="email" placeholder="Your email" required autocomplete="email">
-            <button type="submit">Get Free Access &rarr;</button>
-          </form>
-          <div class="free-signup-success">
-            <p>&#10003;&nbsp; You&rsquo;re in! Check your inbox for access details.</p>
+          <p>
+            Once a quarter, we open a free group session. You get 60 minutes with the team &mdash; ask anything,
+            including the questions a program page never answers. Leave knowing exactly which program fits
+            where you are right now. Or whether none of them do.
+          </p>
+          <p style="color:var(--text); font-weight:500; margin-bottom:28px;">
+            That level of access is rare. It is also only available four times a year.
+          </p>
+          <ul class="session-agenda">
+            <li>What Wu Ming Qigong is &mdash; and why it works when conventional approaches haven&rsquo;t</li>
+            <li>How to read your own Five Element pattern directly from your symptoms</li>
+            <li>A walk through each program and exactly who it is designed for</li>
+            <li>Open Q&amp;A &mdash; nothing is off the table</li>
+          </ul>
+          <div class="session-meta">
+            <div class="session-meta-row">
+              <span class="session-meta-label">Next</span>
+              <span class="session-meta-value">September 2026 &mdash; date TBC</span>
+            </div>
+            <div class="session-meta-row">
+              <span class="session-meta-label">Format</span>
+              <span class="session-meta-value">Online &middot; Group &middot; 60 min</span>
+            </div>
+            <div class="session-meta-row">
+              <span class="session-meta-label">Spots</span>
+              <span class="session-meta-value">Limited per session</span>
+            </div>
+            <div class="session-meta-row">
+              <span class="session-meta-label">Cost</span>
+              <span class="session-meta-value">Free</span>
+            </div>
           </div>
         </div>
 
-        <!-- Free 2: Intro to Four Energy Gates -->
-        <div class="free-card reveal reveal-delay-2">
-          <span class="free-badge">Free Intro</span>
-          <h3>Intro to Four Energy Gates</h3>
-          <p>
-            Learn which of your four primary energy gates is most congested right now &mdash;
-            and what it means for your health. Includes a guided self-assessment and a
-            sample practice for each gate so you can feel the difference yourself.
-          </p>
-          <form class="free-signup-form" data-program="Intro to Four Energy Gates" onsubmit="handleFreeSignup(event, this)">
-            <input type="text"  name="name"  placeholder="Your name"  required autocomplete="name">
-            <input type="email" name="email" placeholder="Your email" required autocomplete="email">
-            <button type="submit">Get Free Access &rarr;</button>
-          </form>
-          <div class="free-signup-success">
-            <p>&#10003;&nbsp; You&rsquo;re in! Check your inbox for access details.</p>
-          </div>
-        </div>
-
-        <!-- Free 3: Intro to 3Es -->
-        <div class="free-card reveal reveal-delay-3">
-          <span class="free-badge">Free Intro</span>
-          <h3>Intro to 3Es &mdash; Energy, Everyone, Everyday</h3>
-          <p>
-            Experience your first 10-minute 3Es morning practice. This free intro teaches
-            the foundational movement, explains the TCM science behind morning energy cultivation,
-            and gives you a week-long starter schedule you can use right away.
-          </p>
-          <form class="free-signup-form" data-program="Intro to 3Es" onsubmit="handleFreeSignup(event, this)">
-            <input type="text"  name="name"  placeholder="Your name"  required autocomplete="name">
-            <input type="email" name="email" placeholder="Your email" required autocomplete="email">
-            <button type="submit">Get Free Access &rarr;</button>
-          </form>
-          <div class="free-signup-success">
-            <p>&#10003;&nbsp; You&rsquo;re in! Check your inbox for access details.</p>
-          </div>
-        </div>
-
-        <!-- Free 4: Intro to Taoquen TCM -->
-        <div class="free-card reveal reveal-delay-4">
-          <span class="free-badge">Free Intro</span>
-          <h3>Intro to Taoquen TCM</h3>
-          <p>
-            A guided introduction to Traditional Chinese Medicine as a complete healing philosophy.
-            Understand Qi, meridians, the Five Elements, and how TCM reads the body &mdash;
-            the foundational framework behind every Taoquen program.
-          </p>
-          <form class="free-signup-form" data-program="Intro to Taoquen TCM" onsubmit="handleFreeSignup(event, this)">
-            <input type="text"  name="name"  placeholder="Your name"  required autocomplete="name">
-            <input type="email" name="email" placeholder="Your email" required autocomplete="email">
-            <button type="submit">Get Free Access &rarr;</button>
-          </form>
-          <div class="free-signup-success">
-            <p>&#10003;&nbsp; You&rsquo;re in! Check your inbox for access details.</p>
+        <!-- Right: form -->
+        <div class="live-session-form-wrap">
+          <div class="live-session-form-card">
+            <span class="form-card-eyebrow">Next session &mdash; September 2026</span>
+            <h3 class="form-card-title">Spots are limited.</h3>
+            <p class="form-card-note">This session runs once a quarter. If you miss it, the next one is three months away. Add your name now and we will hold your spot.</p>
+            <form class="free-signup-form" data-program="Free Live Group Session" onsubmit="handleFreeSignup(event, this)">
+              <input type="text"  name="name"  placeholder="Your name"  required autocomplete="name">
+              <input type="email" name="email" placeholder="Your email" required autocomplete="email">
+              <button type="submit">Reserve My Spot &rarr;</button>
+            </form>
+            <div class="free-signup-success">
+              <p>&#10003;&nbsp; You&rsquo;re on the list. We&rsquo;ll confirm the date and link 2 weeks before.</p>
+            </div>
+            <p class="form-card-disclaimer">No commitment. We&rsquo;ll confirm the date and send the link 2 weeks before.</p>
           </div>
         </div>
 
