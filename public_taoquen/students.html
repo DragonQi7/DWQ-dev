@@ -187,7 +187,15 @@
     .burnout-reset p { flex: 1; margin-bottom: 20px; }
     .burnout-element { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-top: auto; }
     .burnout-element:hover { color: var(--accent-light); }
-    .burnout-foot { text-align: center; margin-top: 40px; padding: 0 24px; }
+    .burnout-more { max-width: 1000px; margin: 32px auto 0; padding: 28px 24px 0; border-top: 1px solid var(--line-soft); }
+    .burnout-more-label { font-size: 0.88rem; color: var(--ink-mid); margin-bottom: 18px; text-align: center; }
+    .burnout-more-label strong { color: var(--ink); }
+    .burnout-more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 660px; margin: 0 auto 24px; }
+    .burnout-more-item { background: var(--bg-2); border-radius: 12px; padding: 18px 20px; display: flex; gap: 12px; align-items: flex-start; }
+    .burnout-more-emoji { font-size: 1.2rem; flex-shrink: 0; line-height: 1.4; }
+    .burnout-more-text strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .burnout-more-text span { font-size: 0.86rem; color: var(--ink-mid); line-height: 1.5; }
+    .burnout-foot { text-align: center; margin-top: 0; padding: 0 24px 0; }
     .burnout-foot a { font-size: 0.9rem; color: var(--ink-mid); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
     .burnout-foot a:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -394,6 +402,25 @@
             <span class="burnout-reset-label">Reset</span>
             <p>Ground first. Eat something warm. Sit, breathe, feel your feet on the floor. Pick one task only &mdash; nothing else.</p>
             <a href="blog/five-elements-tcm.html#earth" class="burnout-element">TCM calls this: Earth &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="burnout-more">
+        <p class="burnout-more-label"><strong>There are five elements, not three.</strong> These two show up differently &mdash; but they are patterns too.</p>
+        <div class="burnout-more-grid">
+          <div class="burnout-more-item">
+            <span class="burnout-more-emoji">&#128293;</span>
+            <div class="burnout-more-text">
+              <strong>Fire &mdash; going through the motions</strong>
+              <span>Disconnected, flat, present in body but not really there. Even good things feel muted.</span>
+            </div>
+          </div>
+          <div class="burnout-more-item">
+            <span class="burnout-more-emoji">&#127810;</span>
+            <div class="burnout-more-text">
+              <strong>Metal &mdash; a sadness you can&rsquo;t name</strong>
+              <span>A background sense that something is missing. Hard to let go. Hard to feel settled.</span>
+            </div>
           </div>
         </div>
       </div>
