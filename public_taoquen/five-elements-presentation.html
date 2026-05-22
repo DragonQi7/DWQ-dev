@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five Elements — Wu Xing 五行</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --wood:#27AE60;--wood-dark:#145A32;--wood-light:#A9DFBF;
+  --fire:#E74C3C;--fire-dark:#922B21;--fire-light:#FAC5C0;
+  --earth:#E67E22;--earth-dark:#784212;--earth-light:#FAD7A0;
+  --metal:#808B96;--metal-dark:#2C3E50;--metal-light:#D5D8DC;
+  --water:#2471A3;--water-dark:#1A5276;--water-light:#85C1E9;
+  --gold:#F0C040;
+}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Georgia','Times New Roman',serif;background:#0D1117}
+
+/* ── SLIDESHOW ── */
+.slideshow{width:100vw;height:100vh;position:relative}
+.slide{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:40px 60px 90px;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.55s ease;
+}
+.slide.active{opacity:1;pointer-events:all}
+
+/* ── NAV ── */
+.nav-bar{
+  position:fixed;bottom:0;left:0;right:0;height:64px;
+  display:flex;align-items:center;justify-content:center;gap:18px;
+  background:rgba(0,0,0,0.65);backdrop-filter:blur(12px);z-index:999;
+}
+.nav-btn{
+  background:rgba(255,255,255,0.12);color:#fff;
+  border:1px solid rgba(255,255,255,0.25);
+  padding:9px 26px;border-radius:30px;cursor:pointer;
+  font-size:13px;letter-spacing:1.5px;transition:all .2s;font-family:inherit;
+}
+.nav-btn:hover{background:rgba(255,255,255,0.25)}
+.slide-counter{
+  position:fixed;bottom:20px;right:28px;
+  color:rgba(255,255,255,0.38);font-size:12px;letter-spacing:1px;z-index:1000;
+}
+.dots{position:fixed;bottom:23px;left:28px;display:flex;gap:7px;z-index:1000}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.28);cursor:pointer;transition:all .2s}
+.dot.active{background:#fff;transform:scale(1.4)}
+
+/* ── BACKGROUNDS ── */
+.bg-cover{background:radial-gradient(ellipse at 40% 40%,#2a1a0a 0%,#0a0608 100%)}
+.bg-title{background:radial-gradient(ellipse at center,#1a2a4a 0%,#06080f 100%)}
+.bg-wood{background:radial-gradient(ellipse at 30% 50%,#0f2e19 0%,#060d09 100%);color:var(--wood-light)}
+.bg-fire{background:radial-gradient(ellipse at 50% 30%,#3a0d0d 0%,#0d0404 100%);color:var(--fire-light)}
+.bg-earth{background:radial-gradient(ellipse at 50% 70%,#3a2008 0%,#0d0803 100%);color:var(--earth-light)}
+.bg-metal{background:radial-gradient(ellipse at 70% 40%,#1c1e28 0%,#08090e 100%);color:var(--metal-light)}
+.bg-water{background:radial-gradient(ellipse at 30% 30%,#081630 0%,#030610 100%);color:var(--water-light)}
+.bg-diagram{background:radial-gradient(ellipse at center,#131320 0%,#060609 100%)}
+.bg-close{background:radial-gradient(ellipse at center,#1a2a4a 0%,#06080f 100%)}
+.bg-kids{background:radial-gradient(ellipse at center,#0d1a2e 0%,#060a12 100%)}
+
+/* ── ANIMATIONS ── */
+@keyframes qi-pulse{
+  0%,100%{text-shadow:0 0 40px rgba(240,192,64,.5),0 0 80px rgba(240,192,64,.2)}
+  50%{text-shadow:0 0 70px rgba(240,192,64,.9),0 0 140px rgba(240,192,64,.4),0 0 220px rgba(240,192,64,.15)}
+}
+@keyframes float-up{
+  0%,100%{transform:translateY(0px)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes spin-slow{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes bounce-in{
+  0%{transform:scale(0.8);opacity:0}
+  60%{transform:scale(1.05)}
+  100%{transform:scale(1);opacity:1}
+}
+.qi-pulse{animation:qi-pulse 2.8s ease-in-out infinite}
+.float-anim{animation:float-up 3.5s ease-in-out infinite}
+.slide.active .kid-card{animation:bounce-in 0.4s ease forwards}
+.slide.active .kid-card:nth-child(1){animation-delay:0.05s;opacity:0}
+.slide.active .kid-card:nth-child(2){animation-delay:0.12s;opacity:0}
+.slide.active .kid-card:nth-child(3){animation-delay:0.19s;opacity:0}
+.slide.active .kid-card:nth-child(4){animation-delay:0.26s;opacity:0}
+.slide.active .kid-card:nth-child(5){animation-delay:0.33s;opacity:0}
+.slide.active .conn-row{animation:bounce-in 0.35s ease forwards;opacity:0}
+.slide.active .conn-row:nth-child(1){animation-delay:0.04s}
+.slide.active .conn-row:nth-child(2){animation-delay:0.1s}
+.slide.active .conn-row:nth-child(3){animation-delay:0.16s}
+.slide.active .conn-row:nth-child(4){animation-delay:0.22s}
+.slide.active .conn-row:nth-child(5){animation-delay:0.28s}
+
+/* ── TITLE SLIDE ── */
+.title-char{font-size:170px;color:var(--gold);text-shadow:0 0 80px rgba(240,192,64,.45);line-height:1;font-weight:normal;margin-bottom:8px}
+.title-pinyin{font-size:50px;color:#fff;letter-spacing:14px;text-transform:uppercase;margin-bottom:6px}
+.title-en{font-size:18px;color:rgba(255,255,255,.5);letter-spacing:7px;text-transform:uppercase;margin-bottom:56px}
+.title-dots{display:flex;gap:14px;margin-bottom:50px}
+.el-dot{width:16px;height:16px;border-radius:50%}
+
+/* ── ELEMENT SLIDES ── */
+.el-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;width:100%;max-width:1080px;align-items:center}
+.el-left{display:flex;flex-direction:column;align-items:center;gap:14px}
+.big-char{font-size:150px;line-height:1;font-weight:normal}
+.el-name{font-size:32px;letter-spacing:8px;text-transform:uppercase}
+.el-pinyin{font-size:18px;letter-spacing:4px;opacity:.6}
+.el-right{display:flex;flex-direction:column;gap:9px}
+.attr{display:flex;gap:14px;align-items:baseline}
+.lbl{font-size:10px;text-transform:uppercase;letter-spacing:2.5px;opacity:.45;min-width:90px;flex-shrink:0}
+.val{font-size:16px;letter-spacing:.5px}
+.divider{width:50px;height:1px;background:currentColor;opacity:.2;margin:6px 0}
+
+/* ── DIAGRAM SLIDE ── */
+.diag-head{text-align:center;margin-bottom:24px}
+.diag-title{font-size:26px;color:var(--gold);letter-spacing:4px;text-transform:uppercase}
+.diag-sub{font-size:13px;color:rgba(255,255,255,.35);letter-spacing:2px;margin-top:6px}
+.diag-legend{display:flex;gap:36px;margin-top:16px;justify-content:center}
+.leg-item{display:flex;align-items:center;gap:9px;font-size:12px;letter-spacing:1.5px}
+
+/* ── ACUPRESSURE SLIDES ── */
+.acup-head{text-align:center;margin-bottom:28px}
+.acup-badge{font-size:12px;letter-spacing:4px;text-transform:uppercase;opacity:.45;margin-bottom:10px}
+.acup-char{font-size:72px;font-weight:normal;line-height:1}
+.acup-name{font-size:26px;letter-spacing:6px;text-transform:uppercase;margin-top:6px}
+.acup-sub{font-size:13px;letter-spacing:2px;opacity:.55;margin-top:4px}
+.acup-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;width:100%;max-width:1000px;align-items:start}
+.acup-info{display:flex;flex-direction:column;gap:14px}
+.acup-info h3{font-size:17px;letter-spacing:2px;margin-bottom:2px}
+.acup-info p{font-size:14px;line-height:1.75;opacity:.82}
+.steps{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:8px}
+.steps li{display:flex;gap:11px;align-items:flex-start;font-size:13px;line-height:1.6;opacity:.85}
+.snum{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;opacity:.65}
+
+/* ── CLOSING ── */
+.close-chars{display:flex;gap:28px;margin:32px 0}
+.close-el{text-align:center}
+.close-el .ch{font-size:38px;font-weight:normal}
+.close-el .nm{font-size:10px;letter-spacing:2px;opacity:.55;margin-top:3px}
+
+/* ── QI CANVAS FLOW ── */
+#qi-canvas{position:fixed;inset:0;pointer-events:none;z-index:1}
+
+/* ── QUIZ MODE — card selection & sparkles ── */
+@keyframes sparkle-fly{
+  0%{transform:translate(-50%,-50%) scale(1.3);opacity:1}
+  100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(0);opacity:0}
+}
+@keyframes badge-pop{
+  0%{transform:translateX(-50%) scale(0.5);opacity:0}
+  70%{transform:translateX(-50%) scale(1.1)}
+  100%{transform:translateX(-50%) scale(1);opacity:1}
+}
+.sparkle-pt{
+  position:fixed;width:10px;height:10px;border-radius:50%;
+  pointer-events:none;z-index:9999;
+  animation:sparkle-fly .55s ease-out forwards;
+}
+/* Override transition so position:relative is set */
+.kid-card{position:relative;cursor:pointer}
+.me-cards{overflow:visible!important}
+.kid-card.selected{
+  transform:translateY(-8px) scale(1.06)!important;
+  filter:brightness(1.2);
+  box-shadow:0 0 0 3px var(--sel-color,#F0C040),0 12px 40px rgba(0,0,0,.5)!important;
+}
+.kid-card.selected .kid-emoji{animation:float-up 1.8s ease-in-out infinite}
+.el-badge{
+  display:none;position:absolute;bottom:-28px;left:50%;
+  transform:translateX(-50%);
+  background:var(--sel-color,#F0C040);color:#111;
+  font-size:10px;font-weight:900;letter-spacing:1.5px;
+  padding:5px 14px;border-radius:14px;white-space:nowrap;
+  font-family:sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.45);
+  animation:badge-pop .3s ease;
+}
+.kid-card.selected .el-badge{display:block}
+
+/* ── COVER SLIDE (Chinese Culture = Qi Culture) ── */
+.cover-kicker{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,165,0,.55);margin-bottom:14px;font-family:sans-serif}
+.cover-qi{font-size:160px;font-weight:normal;line-height:1;margin-bottom:4px}
+.cover-title{font-size:30px;font-weight:bold;letter-spacing:2px;text-align:center;line-height:1.35;max-width:700px;font-family:sans-serif}
+.cover-title em{color:var(--gold);font-style:normal}
+.cover-sub{font-size:16px;text-align:center;max-width:600px;line-height:1.7;color:rgba(255,220,100,.75);margin-top:12px;font-family:sans-serif}
+.cover-qi-label{font-size:13px;letter-spacing:3px;color:rgba(255,255,255,.35);margin-top:6px;font-family:sans-serif}
+.cover-dots{display:flex;gap:12px;margin-top:28px}
+.cover-dot{width:18px;height:18px;border-radius:50%}
+.cover-flow{position:absolute;pointer-events:none;opacity:.12}
+
+/* ── KID SLIDES SHARED ── */
+.kid-slide-header{text-align:center;margin-bottom:22px}
+.kid-title{font-size:28px;font-weight:bold;letter-spacing:1px;font-family:sans-serif;color:#fff}
+.kid-sub{font-size:14px;color:rgba(255,255,255,.45);letter-spacing:2px;margin-top:5px;font-family:sans-serif}
+
+/* ── SLIDE: 5 ELEMENTS AND ME ── */
+.me-cards{display:flex;gap:14px;width:100%;max-width:1140px;align-items:stretch}
+.kid-card{
+  flex:1;border-radius:18px;padding:18px 14px 16px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  border:2px solid;text-align:center;cursor:default;
+  transition:transform .2s,box-shadow .2s;
+}
+.kid-card:hover{transform:translateY(-5px) scale(1.03)}
+.kid-emoji{font-size:44px;line-height:1;margin-bottom:2px}
+.kid-char{font-size:54px;font-weight:normal;line-height:1}
+.kid-el-name{font-size:13px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;opacity:.8;font-family:sans-serif}
+.kid-el-pinyin{font-size:11px;letter-spacing:2px;opacity:.5;font-family:sans-serif}
+.kid-el-feel{font-size:11px;line-height:1.55;opacity:.85;font-family:sans-serif;margin-top:4px}
+.kid-tag{
+  display:inline-block;padding:3px 10px;border-radius:12px;
+  font-size:10px;font-weight:bold;letter-spacing:1.5px;
+  text-transform:uppercase;font-family:sans-serif;margin-top:2px;
+  background:rgba(0,0,0,.25);
+}
+
+/* Wood card */
+.card-wood{background:rgba(39,174,96,.18);border-color:#27AE60;color:#A9DFBF}
+.card-wood .kid-char{color:#4ECB71}
+.card-wood .kid-tag{color:#4ECB71}
+/* Fire card */
+.card-fire{background:rgba(231,76,60,.18);border-color:#E74C3C;color:#FAC5C0}
+.card-fire .kid-char{color:#FF6B4A}
+.card-fire .kid-tag{color:#FF6B4A}
+/* Earth card */
+.card-earth{background:rgba(230,126,34,.18);border-color:#E67E22;color:#FAD7A0}
+.card-earth .kid-char{color:#F5CBA7}
+.card-earth .kid-tag{color:#F5CBA7}
+/* Metal card */
+.card-metal{background:rgba(128,139,150,.18);border-color:#808B96;color:#D5D8DC}
+.card-metal .kid-char{color:#BDC3C7}
+.card-metal .kid-tag{color:#BDC3C7}
+/* Water card */
+.card-water{background:rgba(36,113,163,.22);border-color:#2471A3;color:#85C1E9}
+.card-water .kid-char{color:#5DADE2}
+.card-water .kid-tag{color:#5DADE2}
+
+/* ── SLIDE: HOW YOU CONNECT ── */
+.conn-rows{display:flex;flex-direction:column;gap:10px;width:100%;max-width:1050px}
+.conn-row{
+  display:grid;grid-template-columns:68px 160px 1fr auto;
+  align-items:center;gap:18px;
+  border-radius:16px;padding:12px 20px;
+  border-left:4px solid;
+}
+.conn-emoji{font-size:36px;line-height:1;text-align:center}
+.conn-el{display:flex;flex-direction:column;gap:2px}
+.conn-el-char{font-size:36px;font-weight:normal;line-height:1}
+.conn-el-name{font-size:11px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;font-family:sans-serif;opacity:.7}
+.conn-vline{width:1px;height:36px;background:currentColor;opacity:.2;display:none}
+.conn-text{font-size:14px;line-height:1.6;font-family:sans-serif}
+.conn-text strong{font-size:15px;display:block;margin-bottom:1px}
+.conn-tip{
+  padding:6px 14px;border-radius:20px;font-size:11px;font-weight:bold;
+  text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;
+  font-family:sans-serif;background:rgba(0,0,0,.3);
+}
+.row-wood{background:rgba(39,174,96,.12);border-color:#27AE60;color:#A9DFBF}
+.row-wood .conn-el-char{color:#4ECB71}
+.row-wood .conn-tip{color:#4ECB71;border:1px solid #4ECB7160}
+.row-fire{background:rgba(231,76,60,.12);border-color:#E74C3C;color:#FAC5C0}
+.row-fire .conn-el-char{color:#FF6B4A}
+.row-fire .conn-tip{color:#FF6B4A;border:1px solid #FF6B4A60}
+.row-earth{background:rgba(230,126,34,.12);border-color:#E67E22;color:#FAD7A0}
+.row-earth .conn-el-char{color:#F5CBA7}
+.row-earth .conn-tip{color:#F5CBA7;border:1px solid #F5CBA760}
+.row-metal{background:rgba(128,139,150,.12);border-color:#808B96;color:#D5D8DC}
+.row-metal .conn-el-char{color:#BDC3C7}
+.row-metal .conn-tip{color:#BDC3C7;border:1px solid #BDC3C760}
+.row-water{background:rgba(36,113,163,.15);border-color:#2471A3;color:#85C1E9}
+.row-water .conn-el-char{color:#5DADE2}
+.row-water .conn-tip{color:#5DADE2;border:1px solid #5DADE260}
+</style>
+</head>
+<body>
+<canvas id="qi-canvas"></canvas>
+<div class="slideshow">
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 0  ·  COVER — Chinese Culture is a Qi Culture
+════════════════════════════════════════════════ -->
+<div class="slide bg-cover active" id="s-cover">
+  <!-- decorative flowing circles -->
+  <svg class="cover-flow" style="top:0;left:0;width:100%;height:100%" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+    <circle cx="150" cy="200" r="260" fill="none" stroke="#F0C040" stroke-width="0.8"/>
+    <circle cx="1050" cy="500" r="300" fill="none" stroke="#E67E22" stroke-width="0.6"/>
+    <circle cx="600" cy="350" r="480" fill="none" stroke="#E74C3C" stroke-width="0.4"/>
+    <circle cx="600" cy="350" r="320" fill="none" stroke="#F0C040" stroke-width="0.3"/>
+  </svg>
+
+  <div class="cover-kicker">Traditional Chinese Medicine</div>
+
+  <!-- Qi character + glow -->
+  <div class="cover-qi qi-pulse" style="color:var(--gold)">氣</div>
+  <div class="cover-qi-label">Qì — Life Energy</div>
+
+  <div style="height:18px"></div>
+
+  <div class="cover-title" style="color:#fff">
+    Chinese Culture is a <em>Qi Culture</em>
+  </div>
+  <div class="cover-sub">
+    "Qi (say it: <strong style="color:#F0C040">chee ✨</strong>) is the energy flowing through<br>
+    every living thing — including <strong style="color:#F0C040">YOU!</strong>"
+  </div>
+
+  <!-- Five element dots -->
+  <div class="cover-dots">
+    <div class="cover-dot float-anim" style="background:#27AE60;animation-delay:0s" title="Wood"></div>
+    <div class="cover-dot float-anim" style="background:#E74C3C;animation-delay:.3s" title="Fire"></div>
+    <div class="cover-dot float-anim" style="background:#E67E22;animation-delay:.6s" title="Earth"></div>
+    <div class="cover-dot float-anim" style="background:#808B96;animation-delay:.9s" title="Metal"></div>
+    <div class="cover-dot float-anim" style="background:#2471A3;animation-delay:1.2s" title="Water"></div>
+  </div>
+  <p style="color:rgba(255,255,255,.2);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-family:sans-serif">
+    木 · 火 · 土 · 金 · 水
+  </p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 1  ·  WU XING TITLE
+════════════════════════════════════════════════ -->
+<div class="slide bg-title" id="s0">
+  <div class="title-char">五行</div>
+  <div class="title-pinyin">Wu Xing</div>
+  <div class="title-en">The Five Elements</div>
+  <div class="title-dots">
+    <div class="el-dot" style="background:var(--wood)"></div>
+    <div class="el-dot" style="background:var(--fire)"></div>
+    <div class="el-dot" style="background:var(--earth)"></div>
+    <div class="el-dot" style="background:var(--metal)"></div>
+    <div class="el-dot" style="background:var(--water)"></div>
+  </div>
+  <p style="color:rgba(255,255,255,.25);font-size:12px;letter-spacing:4px;text-transform:uppercase">Ancient Chinese Cosmological Framework</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 2  ·  WOOD
+════════════════════════════════════════════════ -->
+<div class="slide bg-wood" id="s1">
+  <div class="el-grid">
+    <div class="el-left">
+      <div class="big-char" style="color:#4ECB71;filter:drop-shadow(0 0 30px #27AE6080)">木</div>
+      <div class="el-name">Wood</div>
+      <div class="el-pinyin">Mù</div>
+      <svg width="130" height="135" viewBox="0 0 130 135" style="margin-top:8px">
+        <rect x="55" y="88" width="18" height="42" fill="#5D3A1A" rx="3"/>
+        <line x1="55" y1="125" x2="30" y2="135" stroke="#5D3A1A" stroke-width="3" stroke-linecap="round"/>
+        <line x1="64" y1="130" x2="64" y2="135" stroke="#5D3A1A" stroke-width="3" stroke-linecap="round"/>
+        <line x1="73" y1="125" x2="98" y2="135" stroke="#5D3A1A" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="64" cy="62" rx="42" ry="32" fill="#27AE60" opacity=".8"/>
+        <ellipse cx="64" cy="44" rx="32" ry="26" fill="#2ECC71" opacity=".85"/>
+        <ellipse cx="64" cy="27" rx="20" ry="18" fill="#52D68A" opacity=".9"/>
+        <circle cx="36" cy="56" r="5" fill="#A9DFBF" opacity=".75"/>
+        <circle cx="91" cy="50" r="4" fill="#A9DFBF" opacity=".75"/>
+        <circle cx="52" cy="20" r="3.5" fill="#A9DFBF" opacity=".75"/>
+      </svg>
+    </div>
+    <div class="el-right">
+      <div class="attr"><span class="lbl">Season</span><span class="val">Spring</span></div>
+      <div class="attr"><span class="lbl">Direction</span><span class="val">East</span></div>
+      <div class="attr"><span class="lbl">Color</span><span class="val">Green</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Yin Organ</span><span class="val">Liver 肝</span></div>
+      <div class="attr"><span class="lbl">Yang Organ</span><span class="val">Gallbladder 胆</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Emotion</span><span class="val">Anger → Vision</span></div>
+      <div class="attr"><span class="lbl">Sound</span><span class="val">Shouting</span></div>
+      <div class="attr"><span class="lbl">Taste</span><span class="val">Sour</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Quality</span><span class="val">Growth · Rising · Expansion</span></div>
+      <div class="attr"><span class="lbl">Peak Time</span><span class="val">11 pm – 3 am</span></div>
+      <div class="attr"><span class="lbl">Climate</span><span class="val">Wind</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 3  ·  FIRE
+════════════════════════════════════════════════ -->
+<div class="slide bg-fire" id="s2">
+  <div class="el-grid">
+    <div class="el-left">
+      <div class="big-char" style="color:#FF6B4A;filter:drop-shadow(0 0 30px #E74C3C80)">火</div>
+      <div class="el-name">Fire</div>
+      <div class="el-pinyin">Huǒ</div>
+      <svg width="110" height="145" viewBox="0 0 110 145" style="margin-top:8px">
+        <path d="M55,142 C18,142 4,108 18,72 C28,46 18,28 32,12 C35,32 42,38 37,62 C52,42 46,18 55,4 C64,18 58,42 73,62 C68,38 75,32 78,12 C92,28 82,46 92,72 C106,108 92,142 55,142Z" fill="#C0392B" opacity=".8"/>
+        <path d="M55,136 C32,136 20,112 32,82 C39,65 36,48 45,32 C47,50 53,53 49,72 C59,57 56,38 62,22 C69,38 65,58 75,72 C71,53 77,50 79,32 C88,48 85,65 92,82 C104,112 78,136 55,136Z" fill="#E67E22" opacity=".9"/>
+        <path d="M55,130 C40,130 33,112 42,93 C47,81 47,68 53,56 C55,70 60,73 57,88 C63,76 61,62 65,52 C71,64 69,80 75,93 C84,112 70,130 55,130Z" fill="#F39C12"/>
+        <ellipse cx="55" cy="20" rx="5" ry="7" fill="#FFF3CD" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="el-right">
+      <div class="attr"><span class="lbl">Season</span><span class="val">Summer</span></div>
+      <div class="attr"><span class="lbl">Direction</span><span class="val">South</span></div>
+      <div class="attr"><span class="lbl">Color</span><span class="val">Red</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Yin Organ</span><span class="val">Heart 心</span></div>
+      <div class="attr"><span class="lbl">Yang Organ</span><span class="val">Small Intestine 小肠</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Emotion</span><span class="val">Anxiety → Joy</span></div>
+      <div class="attr"><span class="lbl">Sound</span><span class="val">Laughing</span></div>
+      <div class="attr"><span class="lbl">Taste</span><span class="val">Bitter</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Quality</span><span class="val">Joy · Warmth · Illumination</span></div>
+      <div class="attr"><span class="lbl">Peak Time</span><span class="val">11 am – 3 pm</span></div>
+      <div class="attr"><span class="lbl">Climate</span><span class="val">Heat</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 4  ·  EARTH
+════════════════════════════════════════════════ -->
+<div class="slide bg-earth" id="s3">
+  <div class="el-grid">
+    <div class="el-left">
+      <div class="big-char" style="color:#F5CBA7;filter:drop-shadow(0 0 30px #E67E2280)">土</div>
+      <div class="el-name">Earth</div>
+      <div class="el-pinyin">Tǔ</div>
+      <svg width="150" height="125" viewBox="0 0 150 125" style="margin-top:8px">
+        <rect x="0" y="100" width="150" height="25" fill="#5D4037" opacity=".7" rx="3"/>
+        <polygon points="90,100 125,38 158,100" fill="#795548" opacity=".45"/>
+        <polygon points="0,100 48,18 96,100" fill="#8D6E63"/>
+        <polygon points="30,100 75,8 120,100" fill="#A1887F"/>
+        <polygon points="60,18 75,6 90,18 75,13" fill="#F5F5F5" opacity=".8"/>
+        <ellipse cx="75" cy="104" rx="58" ry="7" fill="#6D4C41" opacity=".4"/>
+        <circle cx="28" cy="112" r="2" fill="#795548"/>
+        <circle cx="55" cy="117" r="2" fill="#795548"/>
+        <circle cx="80" cy="112" r="2" fill="#795548"/>
+        <circle cx="108" cy="115" r="2" fill="#795548"/>
+        <circle cx="126" cy="110" r="2" fill="#795548"/>
+      </svg>
+    </div>
+    <div class="el-right">
+      <div class="attr"><span class="lbl">Season</span><span class="val">Late Summer / Center</span></div>
+      <div class="attr"><span class="lbl">Direction</span><span class="val">Center</span></div>
+      <div class="attr"><span class="lbl">Color</span><span class="val">Yellow / Brown</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Yin Organ</span><span class="val">Spleen 脾</span></div>
+      <div class="attr"><span class="lbl">Yang Organ</span><span class="val">Stomach 胃</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Emotion</span><span class="val">Worry → Trust</span></div>
+      <div class="attr"><span class="lbl">Sound</span><span class="val">Singing</span></div>
+      <div class="attr"><span class="lbl">Taste</span><span class="val">Sweet</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Quality</span><span class="val">Nourishment · Stability · Center</span></div>
+      <div class="attr"><span class="lbl">Peak Time</span><span class="val">7 am – 11 am</span></div>
+      <div class="attr"><span class="lbl">Climate</span><span class="val">Dampness</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 5  ·  METAL
+════════════════════════════════════════════════ -->
+<div class="slide bg-metal" id="s4">
+  <div class="el-grid">
+    <div class="el-left">
+      <div class="big-char" style="color:#BDC3C7;filter:drop-shadow(0 0 30px #80808060)">金</div>
+      <div class="el-name">Metal</div>
+      <div class="el-pinyin">Jīn</div>
+      <svg width="130" height="140" viewBox="0 0 130 140" style="margin-top:8px">
+        <polygon points="65,8 98,32 102,72 65,128 28,72 32,32" fill="#566573" opacity=".3"/>
+        <polygon points="65,8 98,32 65,68" fill="#BDC3C7" opacity=".9"/>
+        <polygon points="65,8 32,32 65,68" fill="#D5D8DC" opacity=".9"/>
+        <polygon points="32,32 65,68 28,72" fill="#AEB6BF" opacity=".8"/>
+        <polygon points="98,32 65,68 102,72" fill="#AAB7B8" opacity=".8"/>
+        <polygon points="28,72 65,68 65,128" fill="#717D7E" opacity=".7"/>
+        <polygon points="102,72 65,68 65,128" fill="#5D6D7E" opacity=".7"/>
+        <circle cx="67" cy="28" r="4" fill="white" opacity=".65"/>
+        <circle cx="60" cy="36" r="2" fill="white" opacity=".4"/>
+        <ellipse cx="65" cy="128" rx="28" ry="5" fill="#4A4A55" opacity=".5"/>
+      </svg>
+    </div>
+    <div class="el-right">
+      <div class="attr"><span class="lbl">Season</span><span class="val">Autumn</span></div>
+      <div class="attr"><span class="lbl">Direction</span><span class="val">West</span></div>
+      <div class="attr"><span class="lbl">Color</span><span class="val">White / Silver</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Yin Organ</span><span class="val">Lung 肺</span></div>
+      <div class="attr"><span class="lbl">Yang Organ</span><span class="val">Large Intestine 大肠</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Emotion</span><span class="val">Grief → Gratitude</span></div>
+      <div class="attr"><span class="lbl">Sound</span><span class="val">Weeping</span></div>
+      <div class="attr"><span class="lbl">Taste</span><span class="val">Pungent / Spicy</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Quality</span><span class="val">Letting Go · Clarity · Precision</span></div>
+      <div class="attr"><span class="lbl">Peak Time</span><span class="val">3 am – 7 am</span></div>
+      <div class="attr"><span class="lbl">Climate</span><span class="val">Dryness</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 6  ·  WATER
+════════════════════════════════════════════════ -->
+<div class="slide bg-water" id="s5">
+  <div class="el-grid">
+    <div class="el-left">
+      <div class="big-char" style="color:#5DADE2;filter:drop-shadow(0 0 30px #2471A380)">水</div>
+      <div class="el-name">Water</div>
+      <div class="el-pinyin">Shuǐ</div>
+      <svg width="145" height="120" viewBox="0 0 145 120" style="margin-top:8px">
+        <rect x="0" y="58" width="145" height="62" fill="#1A5276" opacity=".55" rx="4"/>
+        <path d="M0,58 Q18,43 38,53 Q58,63 78,48 Q98,33 118,46 Q138,59 145,50 L145,78 Q128,86 108,73 Q88,60 68,73 Q48,86 28,73 Q8,60 0,70Z" fill="#2471A3" opacity=".7"/>
+        <path d="M0,74 Q24,61 48,71 Q72,81 96,67 Q120,53 145,64 L145,100 Q120,108 96,95 Q72,82 48,95 Q24,108 0,98Z" fill="#1F618D" opacity=".8"/>
+        <ellipse cx="38" cy="53" rx="14" ry="3" fill="white" opacity=".18"/>
+        <ellipse cx="92" cy="63" rx="11" ry="2" fill="white" opacity=".13"/>
+        <path d="M72,4 Q78,14 83,21 Q83,31 72,31 Q61,31 61,21 Q66,14 72,4Z" fill="#85C1E9" opacity=".8"/>
+        <ellipse cx="69" cy="17" rx="3" ry="5" fill="white" opacity=".3"/>
+      </svg>
+    </div>
+    <div class="el-right">
+      <div class="attr"><span class="lbl">Season</span><span class="val">Winter</span></div>
+      <div class="attr"><span class="lbl">Direction</span><span class="val">North</span></div>
+      <div class="attr"><span class="lbl">Color</span><span class="val">Black / Dark Blue</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Yin Organ</span><span class="val">Kidney 肾</span></div>
+      <div class="attr"><span class="lbl">Yang Organ</span><span class="val">Bladder 膀胱</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Emotion</span><span class="val">Fear → Wisdom</span></div>
+      <div class="attr"><span class="lbl">Sound</span><span class="val">Groaning</span></div>
+      <div class="attr"><span class="lbl">Taste</span><span class="val">Salty</span></div>
+      <div class="divider"></div>
+      <div class="attr"><span class="lbl">Quality</span><span class="val">Wisdom · Depth · Will Power</span></div>
+      <div class="attr"><span class="lbl">Peak Time</span><span class="val">3 pm – 7 pm</span></div>
+      <div class="attr"><span class="lbl">Climate</span><span class="val">Cold</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 7  ·  5 ELEMENTS AND ME  ★ KID SLIDE
+════════════════════════════════════════════════ -->
+<div class="slide bg-kids" id="s-me">
+  <div class="kid-slide-header">
+    <div class="kid-title">🌟 5 Elements &amp; Me! 🌟</div>
+    <div class="kid-sub">Which one sounds like YOU right now?</div>
+  </div>
+
+  <div class="me-cards">
+
+    <!-- WOOD -->
+    <div class="kid-card card-wood">
+      <div class="kid-emoji">🌿</div>
+      <div class="kid-char">木</div>
+      <div class="kid-el-name">Wood</div>
+      <div class="kid-el-pinyin">Mù</div>
+      <div class="kid-el-feel">
+        I feel like Wood when I<br>
+        <strong>grow &amp; explore!</strong><br>
+        I love learning new things<br>and going on adventures.
+      </div>
+      <div class="kid-tag">😤 Excited or Frustrated</div>
+      <span class="el-badge" style="--sel-color:#4ECB71">⭐ YOUR ELEMENT!</span>
+    </div>
+
+    <!-- FIRE -->
+    <div class="kid-card card-fire">
+      <div class="kid-emoji">🔥</div>
+      <div class="kid-char">火</div>
+      <div class="kid-el-name">Fire</div>
+      <div class="kid-el-pinyin">Huǒ</div>
+      <div class="kid-el-feel">
+        I feel like Fire when I<br>
+        <strong>laugh &amp; play!</strong><br>
+        I love being with friends<br>and making people smile.
+      </div>
+      <div class="kid-tag">😂 Happy &amp; Joyful</div>
+      <span class="el-badge" style="--sel-color:#FF6B4A">⭐ YOUR ELEMENT!</span>
+    </div>
+
+    <!-- EARTH -->
+    <div class="kid-card card-earth">
+      <div class="kid-emoji">🌍</div>
+      <div class="kid-char">土</div>
+      <div class="kid-el-name">Earth</div>
+      <div class="kid-el-pinyin">Tǔ</div>
+      <div class="kid-el-feel">
+        I feel like Earth when I<br>
+        <strong>feel safe &amp; cozy!</strong><br>
+        I love yummy food and<br>hugging people I love.
+      </div>
+      <div class="kid-tag">🤗 Comfy or Worried</div>
+      <span class="el-badge" style="--sel-color:#F5CBA7;color:#333">⭐ YOUR ELEMENT!</span>
+    </div>
+
+    <!-- METAL -->
+    <div class="kid-card card-metal">
+      <div class="kid-emoji">✨</div>
+      <div class="kid-char">金</div>
+      <div class="kid-el-name">Metal</div>
+      <div class="kid-el-pinyin">Jīn</div>
+      <div class="kid-el-feel">
+        I feel like Metal when I<br>
+        <strong>breathe &amp; let go!</strong><br>
+        I release what's bothering<br>me and feel clear inside.
+      </div>
+      <div class="kid-tag">😌 Peaceful or Sad</div>
+      <span class="el-badge" style="--sel-color:#BDC3C7;color:#222">⭐ YOUR ELEMENT!</span>
+    </div>
+
+    <!-- WATER -->
+    <div class="kid-card card-water">
+      <div class="kid-emoji">💧</div>
+      <div class="kid-char">水</div>
+      <div class="kid-el-name">Water</div>
+      <div class="kid-el-pinyin">Shuǐ</div>
+      <div class="kid-el-feel">
+        I feel like Water when I<br>
+        <strong>rest &amp; dream!</strong><br>
+        I love being quiet and<br>curious about the world.
+      </div>
+      <div class="kid-tag">😴 Calm or Scared</div>
+      <span class="el-badge" style="--sel-color:#5DADE2">⭐ YOUR ELEMENT!</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 8  ·  HOW YOU CONNECT  ★ KID SLIDE
+════════════════════════════════════════════════ -->
+<div class="slide bg-kids" id="s-connect">
+  <div class="kid-slide-header">
+    <div class="kid-title">🌈 How Do YOU Connect to the 5 Elements?</div>
+    <div class="kid-sub">You're already doing it every day — you just didn't know!</div>
+  </div>
+
+  <div class="conn-rows">
+
+    <!-- WOOD -->
+    <div class="conn-row row-wood">
+      <div class="conn-emoji">🌿</div>
+      <div class="conn-el">
+        <div class="conn-el-char">木</div>
+        <div class="conn-el-name">Wood</div>
+      </div>
+      <div class="conn-text">
+        <strong>Move your body!</strong>
+        Stretch your arms up like a tall tree. Run, jump, and play outside — especially in spring!
+      </div>
+      <div class="conn-tip">Spring · Stretch</div>
+    </div>
+
+    <!-- FIRE -->
+    <div class="conn-row row-fire">
+      <div class="conn-emoji">🔥</div>
+      <div class="conn-el">
+        <div class="conn-el-char">火</div>
+        <div class="conn-el-name">Fire</div>
+      </div>
+      <div class="conn-text">
+        <strong>Laugh &amp; dance!</strong>
+        Sing your favorite song, be silly with your friends, and let joy fill your whole body.
+      </div>
+      <div class="conn-tip">Summer · Laugh</div>
+    </div>
+
+    <!-- EARTH -->
+    <div class="conn-row row-earth">
+      <div class="conn-emoji">🌍</div>
+      <div class="conn-el">
+        <div class="conn-el-char">土</div>
+        <div class="conn-el-name">Earth</div>
+      </div>
+      <div class="conn-text">
+        <strong>March &amp; feel the ground!</strong>
+        Lift your knees slowly — heel, then whole foot. 36 steps wakes up your tummy energy!
+      </div>
+      <div class="conn-tip">Center · March ➜</div>
+    </div>
+
+    <!-- METAL -->
+    <div class="conn-row row-metal">
+      <div class="conn-emoji">✨</div>
+      <div class="conn-el">
+        <div class="conn-el-char">金</div>
+        <div class="conn-el-name">Metal</div>
+      </div>
+      <div class="conn-text">
+        <strong>Press He Gu &amp; breathe!</strong>
+        Find the web between your thumb and index finger. Press gently and take 3 slow deep breaths.
+      </div>
+      <div class="conn-tip">Autumn · He Gu ➜</div>
+    </div>
+
+    <!-- WATER -->
+    <div class="conn-row row-water">
+      <div class="conn-emoji">💧</div>
+      <div class="conn-el">
+        <div class="conn-el-char">水</div>
+        <div class="conn-el-name">Water</div>
+      </div>
+      <div class="conn-text">
+        <strong>Rest &amp; be still!</strong>
+        Find a quiet place, close your eyes, and just listen. Your Qi gets stronger when you rest.
+      </div>
+      <div class="conn-tip">Winter · Be Still</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 9  ·  INTERRELATIONSHIP DIAGRAM
+════════════════════════════════════════════════ -->
+<div class="slide bg-diagram" id="s6">
+  <div class="diag-head">
+    <div class="diag-title">五行相生相克</div>
+    <div class="diag-sub">Five Element Interrelationships</div>
+  </div>
+  <svg width="500" height="440" viewBox="0 0 500 440">
+    <defs>
+      <marker id="aw" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3Z" fill="rgba(255,255,255,.45)"/></marker>
+      <marker id="aw-w" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3Z" fill="#4ECB71"/></marker>
+      <marker id="aw-f" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3Z" fill="#FF6B4A"/></marker>
+      <marker id="aw-e" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3Z" fill="#F5CBA7"/></marker>
+      <marker id="aw-m" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3Z" fill="#BDC3C7"/></marker>
+      <marker id="aw-wa" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3Z" fill="#5DADE2"/></marker>
+    </defs>
+    <g opacity=".35" stroke-dasharray="5,4" fill="none">
+      <line x1="250" y1="58" x2="354" y2="390" stroke="#4ECB71" stroke-width="1.5"/>
+      <line x1="354" y1="390" x2="82" y2="183" stroke="#F5CBA7" stroke-width="1.5"/>
+      <line x1="82" y1="183" x2="418" y2="183" stroke="#5DADE2" stroke-width="1.5"/>
+      <line x1="418" y1="183" x2="146" y2="390" stroke="#FF6B4A" stroke-width="1.5"/>
+      <line x1="146" y1="390" x2="250" y2="58" stroke="#BDC3C7" stroke-width="1.5"/>
+    </g>
+    <path d="M267,70 Q370,95 408,172" stroke="#4ECB71" stroke-width="2.2" fill="none" marker-end="url(#aw-f)"/>
+    <path d="M415,202 Q408,308 362,378" stroke="#FF6B4A" stroke-width="2.2" fill="none" marker-end="url(#aw-e)"/>
+    <path d="M333,398 Q250,424 168,398" stroke="#F5CBA7" stroke-width="2.2" fill="none" marker-end="url(#aw-m)"/>
+    <path d="M134,378 Q85,305 84,204" stroke="#BDC3C7" stroke-width="2.2" fill="none" marker-end="url(#aw-wa)"/>
+    <path d="M94,166 Q140,78 233,62" stroke="#5DADE2" stroke-width="2.2" fill="none" marker-end="url(#aw-w)"/>
+    <!-- Wood node -->
+    <circle cx="250" cy="58" r="36" fill="#0f2e19" stroke="#27AE60" stroke-width="2"/>
+    <text x="250" y="53" text-anchor="middle" font-size="26" fill="#4ECB71" font-family="serif">木</text>
+    <text x="250" y="76" text-anchor="middle" font-size="10" fill="#A9DFBF" letter-spacing="1.5" font-family="sans-serif">WOOD</text>
+    <!-- Fire node -->
+    <circle cx="418" cy="183" r="36" fill="#3a0d0d" stroke="#E74C3C" stroke-width="2"/>
+    <text x="418" y="178" text-anchor="middle" font-size="26" fill="#FF6B4A" font-family="serif">火</text>
+    <text x="418" y="201" text-anchor="middle" font-size="10" fill="#FAC5C0" letter-spacing="1.5" font-family="sans-serif">FIRE</text>
+    <!-- Earth node -->
+    <circle cx="354" cy="390" r="36" fill="#3a2008" stroke="#E67E22" stroke-width="2"/>
+    <text x="354" y="385" text-anchor="middle" font-size="26" fill="#F5CBA7" font-family="serif">土</text>
+    <text x="354" y="408" text-anchor="middle" font-size="10" fill="#FAD7A0" letter-spacing="1.5" font-family="sans-serif">EARTH</text>
+    <!-- Metal node -->
+    <circle cx="146" cy="390" r="36" fill="#1c1e28" stroke="#808B96" stroke-width="2"/>
+    <text x="146" y="385" text-anchor="middle" font-size="26" fill="#BDC3C7" font-family="serif">金</text>
+    <text x="146" y="408" text-anchor="middle" font-size="10" fill="#D5D8DC" letter-spacing="1.5" font-family="sans-serif">METAL</text>
+    <!-- Water node -->
+    <circle cx="82" cy="183" r="36" fill="#081630" stroke="#2471A3" stroke-width="2"/>
+    <text x="82" y="178" text-anchor="middle" font-size="26" fill="#5DADE2" font-family="serif">水</text>
+    <text x="82" y="201" text-anchor="middle" font-size="10" fill="#85C1E9" letter-spacing="1.5" font-family="sans-serif">WATER</text>
+  </svg>
+  <div class="diag-legend">
+    <div class="leg-item" style="color:rgba(255,255,255,.65)">
+      <svg width="32" height="10"><line x1="0" y1="5" x2="25" y2="5" stroke="white" stroke-width="2.2"/><polygon points="19,2 27,5 19,8" fill="white"/></svg>
+      Generating 相生 — Nurtures
+    </div>
+    <div class="leg-item" style="color:rgba(255,255,255,.3)">
+      <svg width="32" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="rgba(255,255,255,.35)" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
+      Controlling 相克 — Balances
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 10  ·  HE GU — METAL
+════════════════════════════════════════════════ -->
+<div class="slide bg-metal" id="s7">
+  <div class="acup-head">
+    <div class="acup-badge">Connecting with Metal 金</div>
+    <div class="acup-char" style="color:#BDC3C7">合谷</div>
+    <div class="acup-name">He Gu — Joining Valley</div>
+    <div class="acup-sub">Large Intestine 4 · LI-4</div>
+  </div>
+  <div class="acup-grid">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="210" height="255" viewBox="0 0 210 255">
+        <rect x="55" y="215" width="100" height="35" rx="10" fill="#9E8060" opacity=".65"/>
+        <ellipse cx="105" cy="170" rx="62" ry="58" fill="#C49A6C" opacity=".75"/>
+        <ellipse cx="35" cy="140" rx="20" ry="38" fill="#BA9060" opacity=".75" transform="rotate(-22 35 140)"/>
+        <rect x="83" y="60" width="21" height="72" rx="10" fill="#C49A6C" opacity=".78"/>
+        <rect x="106" y="46" width="21" height="84" rx="10" fill="#C49A6C" opacity=".78"/>
+        <rect x="129" y="56" width="19" height="76" rx="9" fill="#BA9060" opacity=".75"/>
+        <rect x="150" y="76" width="17" height="62" rx="8" fill="#B08050" opacity=".7"/>
+        <circle cx="66" cy="148" r="12" fill="none" stroke="#D5D8DC" stroke-width="1.8" stroke-dasharray="4,3"/>
+        <circle cx="66" cy="148" r="5" fill="#E8E8F0" opacity=".9"/>
+        <circle cx="66" cy="148" r="18" fill="none" stroke="#BDC3C7" stroke-width="1" opacity=".35"/>
+        <circle cx="66" cy="148" r="26" fill="none" stroke="#BDC3C7" stroke-width=".6" opacity=".18"/>
+        <line x1="66" y1="143" x2="14" y2="100" stroke="#D5D8DC" stroke-width="1" opacity=".6"/>
+        <text x="10" y="95" text-anchor="middle" font-size="11" fill="#D5D8DC" font-family="serif">合谷</text>
+        <text x="10" y="108" text-anchor="middle" font-size="8" fill="#AEB6BF" font-family="sans-serif">LI-4</text>
+        <path d="M66,143 Q78,132 90,108 Q96,90 94,70" stroke="#808B96" stroke-width="1.3" fill="none" stroke-dasharray="3,3" opacity=".4"/>
+      </svg>
+      <p style="font-size:11px;color:rgba(255,255,255,.35);text-align:center;letter-spacing:1px">Dorsum of hand · between 1st &amp; 2nd metacarpal</p>
+    </div>
+    <div class="acup-info">
+      <div>
+        <h3 style="color:#D5D8DC">Location</h3>
+        <p>In the webbing between the thumb and index finger, at the midpoint of the 2nd metacarpal bone on the back of the hand.</p>
+      </div>
+      <div>
+        <h3 style="color:#D5D8DC">Metal Element Connection</h3>
+        <p>He Gu opens the Lung and Large Intestine — the organs of receiving and releasing. Pressing here supports letting go of grief, clearing the lungs, and sharpening clarity.</p>
+      </div>
+      <ul class="steps">
+        <li><div class="snum" style="border-color:var(--metal-light)">1</div><span>Relax the right hand, palm facing down</span></li>
+        <li><div class="snum" style="border-color:var(--metal-light)">2</div><span>Place left thumb on the web between thumb and index finger</span></li>
+        <li><div class="snum" style="border-color:var(--metal-light)">3</div><span>Press gently inward toward the 2nd metacarpal bone</span></li>
+        <li><div class="snum" style="border-color:var(--metal-light)">4</div><span>Hold and breathe slowly — exhale grief, inhale clarity</span></li>
+        <li><div class="snum" style="border-color:var(--metal-light)">5</div><span>Repeat on the left hand for balance</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 11  ·  MARCHING — EARTH
+════════════════════════════════════════════════ -->
+<div class="slide bg-earth" id="s8">
+  <div class="acup-head">
+    <div class="acup-badge">Connecting with Earth 土</div>
+    <div class="acup-char" style="color:#F5CBA7">踏步</div>
+    <div class="acup-name">Marching</div>
+    <div class="acup-sub">Activating Earth Energy · Spleen &amp; Stomach Meridians</div>
+  </div>
+  <div class="acup-grid">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="190" height="255" viewBox="0 0 190 255">
+        <defs>
+          <marker id="aup" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,6 L3,0 L6,6Z" fill="#FAD7A0"/>
+          </marker>
+        </defs>
+        <ellipse cx="95" cy="238" rx="55" ry="10" fill="#E67E22" opacity=".15"/>
+        <line x1="25" y1="228" x2="165" y2="228" stroke="#784212" stroke-width="1.5" opacity=".45"/>
+        <circle cx="95" cy="32" r="20" fill="#C8A882"/>
+        <rect x="78" y="55" width="34" height="58" rx="8" fill="#E67E22" opacity=".7"/>
+        <rect x="75" y="105" width="40" height="6" rx="3" fill="#D4AC0D" opacity=".8"/>
+        <path d="M78,68 Q54,77 44,97" stroke="#C8A882" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <path d="M112,68 Q136,82 144,104" stroke="#C8A882" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <path d="M86,113 Q82,148 72,165 Q66,178 62,193" stroke="#D4A976" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <path d="M62,193 Q54,197 49,195 Q44,192 46,188" stroke="#C8A882" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <path d="M104,113 Q108,155 110,192" stroke="#D4A976" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <path d="M110,192 Q116,198 128,200 Q136,201 136,196" stroke="#C8A882" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="118" cy="158" r="7" fill="none" stroke="#F39C12" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <circle cx="118" cy="158" r="3" fill="#FAD7A0" opacity=".85"/>
+        <path d="M87,125 Q84,148 78,170" stroke="#F39C12" stroke-width="1" stroke-dasharray="3,3" opacity=".4" fill="none"/>
+        <path d="M95,106 Q90,90 95,80" stroke="#FAD7A0" stroke-width="1.4" fill="none" opacity=".5" marker-end="url(#aup)"/>
+      </svg>
+      <p style="font-size:11px;color:rgba(255,255,255,.35);text-align:center;letter-spacing:1px">Lift knees · activate the center · feel the ground</p>
+    </div>
+    <div class="acup-info">
+      <div>
+        <h3 style="color:#FAD7A0">The Practice</h3>
+        <p>Marching in place activates the Stomach and Spleen meridians running along the front and inner legs. Earth governs digestion, nourishment, and our capacity to receive.</p>
+      </div>
+      <div>
+        <h3 style="color:#FAD7A0">Earth Element Connection</h3>
+        <p>Lifting and placing the foot with intention connects us to the ground — the source of Earth Qi. The steady rhythm quiets overthinking and returns us to center.</p>
+      </div>
+      <ul class="steps">
+        <li><div class="snum" style="border-color:var(--earth-light)">1</div><span>Stand feet shoulder-width apart, arms soft at sides</span></li>
+        <li><div class="snum" style="border-color:var(--earth-light)">2</div><span>Slowly lift one knee — feel the inner thigh (Spleen meridian) engage</span></li>
+        <li><div class="snum" style="border-color:var(--earth-light)">3</div><span>Place the foot down mindfully — heel first, then full sole</span></li>
+        <li><div class="snum" style="border-color:var(--earth-light)">4</div><span>Alternate legs in a slow, steady rhythm — 36 steps total</span></li>
+        <li><div class="snum" style="border-color:var(--earth-light)">5</div><span>Keep belly soft, lower abdomen relaxed, mind settled at center</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 12  ·  CLOSING
+════════════════════════════════════════════════ -->
+<div class="slide bg-close" id="s9" style="text-align:center;gap:0">
+  <div style="font-size:140px;font-weight:normal;color:var(--gold);text-shadow:0 0 80px rgba(240,192,64,.35);line-height:1;margin-bottom:16px">五行</div>
+  <div style="font-size:18px;color:rgba(255,255,255,.55);letter-spacing:8px;text-transform:uppercase;margin-bottom:40px">Five Elements in Practice</div>
+  <div class="close-chars">
+    <div class="close-el" style="color:var(--wood-light)"><div class="ch" style="color:#4ECB71">木</div><div class="nm">WOOD</div></div>
+    <div class="close-el" style="color:var(--fire-light)"><div class="ch" style="color:#FF6B4A">火</div><div class="nm">FIRE</div></div>
+    <div class="close-el" style="color:var(--earth-light)"><div class="ch" style="color:#F5CBA7">土</div><div class="nm">EARTH</div></div>
+    <div class="close-el" style="color:var(--metal-light)"><div class="ch" style="color:#BDC3C7">金</div><div class="nm">METAL</div></div>
+    <div class="close-el" style="color:var(--water-light)"><div class="ch" style="color:#5DADE2">水</div><div class="nm">WATER</div></div>
+  </div>
+  <p style="max-width:480px;color:rgba(255,255,255,.55);font-size:15px;line-height:1.95;letter-spacing:.5px;margin-bottom:48px">
+    Each element reflects a phase of nature's cycle — and a quality of our own energy. When we practice with awareness, we restore balance among all five.
+  </p>
+  <div style="display:flex;gap:56px;align-items:center">
+    <div style="text-align:center">
+      <div style="font-size:28px;color:#BDC3C7;font-weight:normal;margin-bottom:6px">合谷</div>
+      <div style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:2.5px">METAL · HE GU</div>
+    </div>
+    <div style="width:1px;height:44px;background:rgba(255,255,255,.15)"></div>
+    <div style="text-align:center">
+      <div style="font-size:28px;color:#E67E22;font-weight:normal;margin-bottom:6px">踏步</div>
+      <div style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:2.5px">EARTH · MARCHING</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end slideshow -->
+
+<!-- ── NAV ── -->
+<div class="nav-bar">
+  <button class="nav-btn" onclick="prev()">← Prev</button>
+  <button class="nav-btn" onclick="next()">Next →</button>
+</div>
+<div class="dots" id="dots"></div>
+<div class="slide-counter"><span id="cn">1</span> / <span id="ct"></span></div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   FEATURE 4 — Qi Flow Canvas Animation
+   Soft expanding rings drift across every slide.
+   Color shifts to match the current element.
+═══════════════════════════════════════════════ */
+(function initQiCanvas() {
+  const canvas = document.getElementById('qi-canvas');
+  const ctx    = canvas.getContext('2d');
+  let W, H;
+
+  // Per-slide RGB color  [r,g,b]
+  const SLIDE_COLORS = [
+    [240,192, 64],  //  0 cover     — gold
+    [240,192, 64],  //  1 wu xing   — gold
+    [ 39,174, 96],  //  2 wood      — green
+    [231, 76, 60],  //  3 fire      — red
+    [230,126, 34],  //  4 earth     — orange
+    [128,139,150],  //  5 metal     — silver
+    [ 36,113,163],  //  6 water     — blue
+    [240,192, 64],  //  7 me        — gold
+    [240,192, 64],  //  8 connect   — gold
+    [240,192, 64],  //  9 diagram   — gold
+    [128,139,150],  // 10 he gu     — silver
+    [230,126, 34],  // 11 marching  — orange
+    [240,192, 64],  // 12 closing   — gold
+  ];
+
+  // Smooth color interpolation target
+  let targetColor = [...SLIDE_COLORS[0]];
+  let currentColor = [...SLIDE_COLORS[0]];
+
+  window.setQiColor = function(idx) {
+    targetColor = SLIDE_COLORS[idx] || SLIDE_COLORS[0];
+  };
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Ring pool
+  const rings = [];
+  function spawn() {
+    rings.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 40,
+      maxR: 160 + Math.random() * 320,
+      speed: 0.35 + Math.random() * 0.55,
+    });
+  }
+  for (let i = 0; i < 7; i++) spawn();
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Ease color toward target
+    currentColor = currentColor.map((v, i) => lerp(v, targetColor[i], 0.03));
+    const [r, g, b] = currentColor.map(Math.round);
+
+    if (Math.random() < 0.022) spawn();
+
+    for (let i = rings.length - 1; i >= 0; i--) {
+      const rg = rings[i];
+      rg.r += rg.speed;
+      const progress = rg.r / rg.maxR;
+      const alpha = 0.09 * (1 - progress);
+      if (alpha <= 0.001) { rings.splice(i, 1); continue; }
+
+      ctx.beginPath();
+      ctx.arc(rg.x, rg.y, rg.r, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(${r},${g},${b},${alpha})`;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+
+/* ═══════════════════════════════════════════════
+   FEATURE 1 — Quiz Mode (5 Elements & Me slide)
+   Click a card → sparkles + "YOUR ELEMENT!" badge.
+   Click again → deselect.
+═══════════════════════════════════════════════ */
+(function initQuiz() {
+  const cards = document.querySelectorAll('.kid-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      const wasSelected = this.classList.contains('selected');
+
+      // Deselect everything
+      cards.forEach(c => c.classList.remove('selected'));
+
+      if (!wasSelected) {
+        this.classList.add('selected');
+
+        // Burst sparkles from the card centre
+        const rect = this.getBoundingClientRect();
+        const cx = rect.left + rect.width  / 2;
+        const cy = rect.top  + rect.height / 2;
+        const badge = this.querySelector('.el-badge');
+        const color = badge
+          ? getComputedStyle(badge).getPropertyValue('--sel-color').trim() || '#F0C040'
+          : '#F0C040';
+        burst(cx, cy, color);
+      }
+    });
+  });
+
+  function burst(cx, cy, color) {
+    const COUNT = 16;
+    for (let i = 0; i < COUNT; i++) {
+      const angle = (i / COUNT) * Math.PI * 2;
+      const dist  = 55 + Math.random() * 75;
+      const size  = 6 + Math.random() * 6;
+      const el = document.createElement('div');
+      el.className = 'sparkle-pt';
+      el.style.cssText = [
+        `left:${cx}px`,
+        `top:${cy}px`,
+        `width:${size}px`,
+        `height:${size}px`,
+        `background:${color}`,
+        `--dx:${(Math.cos(angle) * dist).toFixed(1)}px`,
+        `--dy:${(Math.sin(angle) * dist).toFixed(1)}px`,
+        `animation-duration:${0.45 + Math.random() * 0.25}s`,
+      ].join(';');
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 750);
+    }
+    // Second micro-burst (star shapes)
+    for (let i = 0; i < 8; i++) {
+      const angle = (i / 8) * Math.PI * 2 + 0.2;
+      const dist  = 25 + Math.random() * 40;
+      const el = document.createElement('div');
+      el.className = 'sparkle-pt';
+      el.style.cssText = [
+        `left:${cx}px`,
+        `top:${cy}px`,
+        `width:4px`,
+        `height:4px`,
+        `background:#fff`,
+        `--dx:${(Math.cos(angle) * dist).toFixed(1)}px`,
+        `--dy:${(Math.sin(angle) * dist).toFixed(1)}px`,
+        `animation-duration:${0.3 + Math.random() * 0.2}s`,
+      ].join(';');
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 600);
+    }
+  }
+})();
+
+
+/* ═══════════════════════════════════════════════
+   SLIDE NAVIGATION
+═══════════════════════════════════════════════ */
+let cur = 0;
+const slides = document.querySelectorAll('.slide');
+const N      = slides.length;
+const dotsEl = document.getElementById('dots');
+document.getElementById('ct').textContent = N;
+
+for (let i = 0; i < N; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => go(i);
+  dotsEl.appendChild(d);
+}
+
+function go(n) {
+  slides[cur].classList.remove('active');
+  dotsEl.children[cur].classList.remove('active');
+
+  // Deselect any quiz cards when leaving that slide
+  document.querySelectorAll('.kid-card.selected')
+    .forEach(c => c.classList.remove('selected'));
+
+  cur = (n + N) % N;
+  slides[cur].classList.add('active');
+  dotsEl.children[cur].classList.add('active');
+  document.getElementById('cn').textContent = cur + 1;
+
+  // Shift Qi canvas colour
+  if (typeof setQiColor === 'function') setQiColor(cur);
+}
+
+function next() { go(cur + 1); }
+function prev() { go(cur - 1); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next();
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prev();
+});
+
+let tx = null;
+document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.addEventListener('touchend',   e => {
+  if (tx === null) return;
+  const d = e.changedTouches[0].clientX - tx;
+  if (Math.abs(d) > 50) d < 0 ? next() : prev();
+  tx = null;
+});
+</script>
+</body>
+</html>

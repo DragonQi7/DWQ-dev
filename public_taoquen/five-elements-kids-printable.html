@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five Elements – Kids Printable Cards</title>
+<style>
+/* ─── PRINT + SCREEN BASE ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --wood-bg:#E8F8EE; --wood-border:#27AE60; --wood-char:#1A7A42; --wood-badge:#27AE60;
+  --fire-bg:#FFF0EE; --fire-border:#E74C3C; --fire-char:#C0392B; --fire-badge:#E74C3C;
+  --earth-bg:#FFF8E8; --earth-border:#E67E22; --earth-char:#A04000; --earth-badge:#E67E22;
+  --metal-bg:#F4F6F8; --metal-border:#5D6D7E; --metal-char:#2C3E50; --metal-badge:#5D6D7E;
+  --water-bg:#EBF5FB; --water-border:#2471A3; --water-char:#1A5276; --water-badge:#2471A3;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+/* ─── SCREEN: page wrapper ─── */
+.page {
+  background: white;
+  width: 277mm;
+  margin: 0 auto 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,.15);
+}
+
+/* PAGE 1 — Cover */
+.cover-page {
+  padding: 18mm 20mm 14mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 190mm;
+  background: linear-gradient(135deg,#0a1628 0%,#1a2a4a 60%,#0a0e18 100%);
+  color: white;
+  text-align: center;
+}
+.cover-qi-char {
+  font-size: 130px;
+  color: #F0C040;
+  font-weight: normal;
+  line-height: 1;
+  text-shadow: 0 0 60px rgba(240,192,64,.6);
+  margin-bottom: 10px;
+}
+.cover-main-title {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+.cover-main-title span { color: #F0C040; }
+.cover-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.8;
+  max-width: 200mm;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+.cover-el-row {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+.cover-el-pip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.cover-el-pip .ch {
+  font-size: 38px;
+  font-weight: normal;
+  line-height: 1;
+}
+.cover-el-pip .nm {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  opacity: .65;
+}
+.cover-cut-note {
+  margin-top: 22px;
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+/* PAGE 2 — 5 Cards */
+.cards-page {
+  padding: 8mm 7mm 14mm;
+  min-height: 190mm;
+  background: white;
+}
+.cards-page-title {
+  text-align: center;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid #eee;
+}
+.cards-page-title span { color: #888; font-weight: normal; font-size: 11px; display:block; margin-top:3px; letter-spacing:1.5px; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5mm;
+  width: 100%;
+}
+
+/* Individual card */
+.el-card {
+  border-radius: 14px;
+  border: 3px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 6px 10px;
+  text-align: center;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.el-card .card-emoji   { font-size: 38px; line-height: 1; margin-bottom: 5px; }
+.el-card .card-ch      { font-size: 64px; font-weight: normal; line-height: 1; margin-bottom: 3px; }
+.el-card .card-name    { font-size: 15px; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; font-family: sans-serif; }
+.el-card .card-pinyin  { font-size: 11px; letter-spacing: 2px; font-family: sans-serif; opacity: .65; margin-bottom: 6px; }
+.el-card .card-divider { width: 80%; height: 1px; background: currentColor; opacity: .2; margin: 5px 0; }
+.el-card .card-feel    { font-size: 11px; line-height: 1.55; font-family: sans-serif; margin-bottom: 6px; }
+.el-card .card-attrs   { width: 100%; display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.el-card .attr-row     { display: flex; justify-content: space-between; font-size: 9.5px; font-family: sans-serif; }
+.el-card .attr-row .al { opacity: .55; text-transform: uppercase; letter-spacing: 1px; }
+.el-card .attr-row .av { font-weight: bold; }
+.el-card .card-emotion-tag {
+  margin-top: 8px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  background: rgba(0,0,0,.07);
+  white-space: nowrap;
+}
+
+/* Element-specific card styles */
+.card-wood { background:var(--wood-bg); border-color:var(--wood-border); color:var(--wood-char); }
+.card-fire { background:var(--fire-bg); border-color:var(--fire-border); color:var(--fire-char); }
+.card-earth{ background:var(--earth-bg);border-color:var(--earth-border);color:var(--earth-char);}
+.card-metal{ background:var(--metal-bg);border-color:var(--metal-border);color:var(--metal-char);}
+.card-water{ background:var(--water-bg);border-color:var(--water-border);color:var(--water-char);}
+
+/* PAGE 3 — Body + Connection reference */
+.ref-page {
+  padding: 10mm 14mm 10mm;
+  min-height: 190mm;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ref-title {
+  text-align: center;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid #eee;
+}
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 11px;
+}
+.ref-table thead tr { background: #222; color: white; }
+.ref-table thead th {
+  padding: 7px 10px;
+  text-align: left;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+.ref-table tbody tr:nth-child(even) { background: #fafafa; }
+.ref-table tbody td {
+  padding: 9px 10px;
+  border-bottom: 1px solid #ebebeb;
+  vertical-align: middle;
+}
+.ref-table .el-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ref-table .el-emoji { font-size: 20px; }
+.ref-table .el-ch    { font-size: 22px; font-weight: normal; line-height: 1; }
+.ref-table .el-en    { font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 10px; }
+.ref-table .tip-box  {
+  background: rgba(0,0,0,.05);
+  border-radius: 8px;
+  padding: 4px 10px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 10px;
+}
+.row-wood td { color: #145A32; }
+.row-fire td { color: #922B21; }
+.row-earth td{ color: #784212; }
+.row-metal td{ color: #2C3E50; }
+.row-water td{ color: #1A5276; }
+.row-wood  { background: #F0FAF4!important; }
+.row-fire  { background: #FDF2F1!important; }
+.row-earth { background: #FDF6EC!important; }
+.row-metal { background: #F4F6F8!important; }
+.row-water { background: #EEF5FB!important; }
+
+/* Cut-line decoration */
+.cut-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 5mm 0 3mm;
+  color: #bbb;
+  font-size: 9px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+.cut-line::before, .cut-line::after {
+  content:'';
+  flex:1;
+  border-top: 1px dashed #ccc;
+}
+
+/* ─── PRINT OVERRIDES ─── */
+@media print {
+  body { padding: 0; background: white; }
+  .page { box-shadow: none; border-radius: 0; margin: 0; }
+  .cover-page { min-height: auto; padding: 14mm 16mm; }
+  .cards-page, .ref-page { min-height: auto; }
+  .page + .page { page-break-before: always; }
+  .no-print { display: none; }
+  /* Force background colours in print */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ─── SCREEN ONLY CONTROLS ─── */
+.print-bar {
+  width: 277mm;
+  margin: 0 auto 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+.print-btn {
+  background: #1a2a4a;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.print-btn:hover { background: #27AE60; }
+</style>
+</head>
+<body>
+
+<!-- ── SCREEN CONTROLS ── -->
+<div class="print-bar no-print">
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <span>Best printed on A4 or Letter · Landscape orientation recommended</span>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 1 — COVER
+════════════════════════════════════════ -->
+<div class="page">
+  <div class="cover-page">
+
+    <div class="cover-qi-char">氣</div>
+
+    <div class="cover-main-title">
+      Chinese Culture is a <span>Qi Culture</span>
+    </div>
+
+    <div class="cover-desc">
+      Qi (say: "chee" ✨) is the life energy that flows through every living thing —<br>
+      plants, animals, and <strong style="color:#F0C040">YOU!</strong><br><br>
+      Ancient Chinese wisdom teaches us that this energy moves through<br>
+      <strong style="color:#F0C040">Five Elements</strong> —
+      each one a different quality of Qi in nature and in us.
+    </div>
+
+    <div class="cover-el-row">
+      <div class="cover-el-pip">
+        <div class="ch" style="color:#4ECB71">木</div>
+        <div class="nm" style="color:#A9DFBF">WOOD</div>
+      </div>
+      <div class="cover-el-pip">
+        <div class="ch" style="color:#FF6B4A">火</div>
+        <div class="nm" style="color:#FAC5C0">FIRE</div>
+      </div>
+      <div class="cover-el-pip">
+        <div class="ch" style="color:#F5CBA7">土</div>
+        <div class="nm" style="color:#FAD7A0">EARTH</div>
+      </div>
+      <div class="cover-el-pip">
+        <div class="ch" style="color:#BDC3C7">金</div>
+        <div class="nm" style="color:#D5D8DC">METAL</div>
+      </div>
+      <div class="cover-el-pip">
+        <div class="ch" style="color:#5DADE2">水</div>
+        <div class="nm" style="color:#85C1E9">WATER</div>
+      </div>
+    </div>
+
+    <div class="cover-cut-note">✂ Cut out the cards on the next page and keep them!</div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 2 — FIVE ELEMENT KID CARDS
+════════════════════════════════════════ -->
+<div class="page">
+  <div class="cards-page">
+
+    <div class="cards-page-title">
+      🌟 5 Elements &amp; Me!
+      <span>Cut out each card · Colour them in · Keep your favourite!</span>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- WOOD -->
+      <div class="el-card card-wood">
+        <div class="card-emoji">🌿</div>
+        <div class="card-ch">木</div>
+        <div class="card-name">Wood</div>
+        <div class="card-pinyin">Mù</div>
+        <div class="card-divider"></div>
+        <div class="card-feel">
+          I feel like Wood when I<br>
+          <strong>grow &amp; explore!</strong><br>
+          I love learning new things<br>
+          and going on adventures.
+        </div>
+        <div class="card-attrs">
+          <div class="attr-row"><span class="al">Season</span><span class="av">Spring 🌸</span></div>
+          <div class="attr-row"><span class="al">Organs</span><span class="av">Liver · Gallbladder</span></div>
+          <div class="attr-row"><span class="al">Taste</span><span class="av">Sour 🍋</span></div>
+          <div class="attr-row"><span class="al">Color</span><span class="av">Green</span></div>
+        </div>
+        <div class="card-emotion-tag">😤 Excited or Frustrated</div>
+      </div>
+
+      <!-- FIRE -->
+      <div class="el-card card-fire">
+        <div class="card-emoji">🔥</div>
+        <div class="card-ch">火</div>
+        <div class="card-name">Fire</div>
+        <div class="card-pinyin">Huǒ</div>
+        <div class="card-divider"></div>
+        <div class="card-feel">
+          I feel like Fire when I<br>
+          <strong>laugh &amp; play!</strong><br>
+          I love being with friends<br>
+          and making people smile.
+        </div>
+        <div class="card-attrs">
+          <div class="attr-row"><span class="al">Season</span><span class="av">Summer ☀️</span></div>
+          <div class="attr-row"><span class="al">Organs</span><span class="av">Heart · Sm. Intestine</span></div>
+          <div class="attr-row"><span class="al">Taste</span><span class="av">Bitter ☕</span></div>
+          <div class="attr-row"><span class="al">Color</span><span class="av">Red</span></div>
+        </div>
+        <div class="card-emotion-tag">😂 Happy &amp; Joyful</div>
+      </div>
+
+      <!-- EARTH -->
+      <div class="el-card card-earth">
+        <div class="card-emoji">🌍</div>
+        <div class="card-ch">土</div>
+        <div class="card-name">Earth</div>
+        <div class="card-pinyin">Tǔ</div>
+        <div class="card-divider"></div>
+        <div class="card-feel">
+          I feel like Earth when I<br>
+          <strong>feel safe &amp; cozy!</strong><br>
+          I love yummy food and<br>
+          hugging people I love.
+        </div>
+        <div class="card-attrs">
+          <div class="attr-row"><span class="al">Season</span><span class="av">Late Summer 🌾</span></div>
+          <div class="attr-row"><span class="al">Organs</span><span class="av">Spleen · Stomach</span></div>
+          <div class="attr-row"><span class="al">Taste</span><span class="av">Sweet 🍯</span></div>
+          <div class="attr-row"><span class="al">Color</span><span class="av">Yellow/Brown</span></div>
+        </div>
+        <div class="card-emotion-tag">🤗 Comfy or Worried</div>
+      </div>
+
+      <!-- METAL -->
+      <div class="el-card card-metal">
+        <div class="card-emoji">✨</div>
+        <div class="card-ch">金</div>
+        <div class="card-name">Metal</div>
+        <div class="card-pinyin">Jīn</div>
+        <div class="card-divider"></div>
+        <div class="card-feel">
+          I feel like Metal when I<br>
+          <strong>breathe &amp; let go!</strong><br>
+          I release what bothers me<br>
+          and feel clear inside.
+        </div>
+        <div class="card-attrs">
+          <div class="attr-row"><span class="al">Season</span><span class="av">Autumn 🍂</span></div>
+          <div class="attr-row"><span class="al">Organs</span><span class="av">Lung · Large Intestine</span></div>
+          <div class="attr-row"><span class="al">Taste</span><span class="av">Pungent 🌶️</span></div>
+          <div class="attr-row"><span class="al">Color</span><span class="av">White/Silver</span></div>
+        </div>
+        <div class="card-emotion-tag">😌 Peaceful or Sad</div>
+      </div>
+
+      <!-- WATER -->
+      <div class="el-card card-water">
+        <div class="card-emoji">💧</div>
+        <div class="card-ch">水</div>
+        <div class="card-name">Water</div>
+        <div class="card-pinyin">Shuǐ</div>
+        <div class="card-divider"></div>
+        <div class="card-feel">
+          I feel like Water when I<br>
+          <strong>rest &amp; dream!</strong><br>
+          I love being quiet and<br>
+          curious about the world.
+        </div>
+        <div class="card-attrs">
+          <div class="attr-row"><span class="al">Season</span><span class="av">Winter ❄️</span></div>
+          <div class="attr-row"><span class="al">Organs</span><span class="av">Kidney · Bladder</span></div>
+          <div class="attr-row"><span class="al">Taste</span><span class="av">Salty 🌊</span></div>
+          <div class="attr-row"><span class="al">Color</span><span class="av">Dark Blue/Black</span></div>
+        </div>
+        <div class="card-emotion-tag">😴 Calm or Scared</div>
+      </div>
+
+    </div><!-- end cards-grid -->
+
+    <div class="cut-line">✂ cut here</div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 3 — HOW TO CONNECT (reference table)
+════════════════════════════════════════ -->
+<div class="page">
+  <div class="ref-page">
+
+    <div class="ref-title">
+      🌈 How Do YOU Connect to the 5 Elements?
+    </div>
+
+    <table class="ref-table">
+      <thead>
+        <tr>
+          <th style="width:120px">Element</th>
+          <th>What it means</th>
+          <th>Try this every day!</th>
+          <th>Secret body tip ✨</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="row-wood">
+          <td>
+            <div class="el-col">
+              <span class="el-emoji">🌿</span>
+              <span class="el-ch" style="color:#1A7A42">木</span>
+              <span class="el-en" style="color:#1A7A42">Wood</span>
+            </div>
+          </td>
+          <td>Wood energy helps you <strong>grow, plan,</strong> and feel <strong>excited</strong> about life. When Wood is balanced, you feel creative and free!</td>
+          <td>Stretch your arms up tall like a tree 🌳 · Run and jump · Go outside in spring · Draw or make something new</td>
+          <td><span class="tip-box" style="background:#E8F8EE;color:#145A32">Eyes need rest 👁️ · Sleep before midnight</span></td>
+        </tr>
+
+        <tr class="row-fire">
+          <td>
+            <div class="el-col">
+              <span class="el-emoji">🔥</span>
+              <span class="el-ch" style="color:#C0392B">火</span>
+              <span class="el-en" style="color:#C0392B">Fire</span>
+            </div>
+          </td>
+          <td>Fire energy brings <strong>joy, warmth,</strong> and <strong>connection</strong>. When Fire is balanced, you love being with people and feel happy inside!</td>
+          <td>Laugh out loud 😂 · Dance to your favourite song · Hug a friend · Do something kind for someone</td>
+          <td><span class="tip-box" style="background:#FFF0EE;color:#922B21">Heart loves joy ❤️ · Say something kind today</span></td>
+        </tr>
+
+        <tr class="row-earth">
+          <td>
+            <div class="el-col">
+              <span class="el-emoji">🌍</span>
+              <span class="el-ch" style="color:#A04000">土</span>
+              <span class="el-en" style="color:#A04000">Earth</span>
+            </div>
+          </td>
+          <td>Earth energy gives you <strong>stability, nourishment,</strong> and a feeling of <strong>home</strong>. When Earth is balanced, your tummy feels good and you feel safe!</td>
+          <td>March slowly in place — heel first, 36 steps 🚶 · Eat without rushing · Hug someone you love</td>
+          <td><span class="tip-box" style="background:#FFF8E8;color:#784212">Tummy tip 🌾 · Chew food slowly · Press your belly button gently</span></td>
+        </tr>
+
+        <tr class="row-metal">
+          <td>
+            <div class="el-col">
+              <span class="el-emoji">✨</span>
+              <span class="el-ch" style="color:#2C3E50">金</span>
+              <span class="el-en" style="color:#2C3E50">Metal</span>
+            </div>
+          </td>
+          <td>Metal energy helps you <strong>let go, breathe,</strong> and feel <strong>clear</strong>. When Metal is balanced, you can release worries and feel fresh inside!</td>
+          <td>Take 3 deep breaths 💨 · Press He Gu (web between thumb &amp; index finger) · Tidy your room · Look at the sky</td>
+          <td><span class="tip-box" style="background:#F4F6F8;color:#2C3E50">He Gu 合谷 ✋ · Press the web of your hand for 30 sec</span></td>
+        </tr>
+
+        <tr class="row-water">
+          <td>
+            <div class="el-col">
+              <span class="el-emoji">💧</span>
+              <span class="el-ch" style="color:#1A5276">水</span>
+              <span class="el-en" style="color:#1A5276">Water</span>
+            </div>
+          </td>
+          <td>Water energy brings <strong>wisdom, rest,</strong> and <strong>courage</strong>. When Water is balanced, you feel calm even when things are scary, and you love learning!</td>
+          <td>Rest and be still 🌙 · Drink water · Close your eyes and breathe · Read a book quietly before bed</td>
+          <td><span class="tip-box" style="background:#EEF5FB;color:#1A5276">Kidney loves warmth 🫘 · Keep lower back warm in winter</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="cut-line" style="margin-top:8mm">Remember: You have ALL 5 elements inside you — they work together like a team! 🌟</div>
+
+    <div style="text-align:center;margin-top:6mm;font-family:sans-serif;font-size:10px;color:#aaa;letter-spacing:2px;text-transform:uppercase">
+      五行 Wu Xing · Five Elements · Traditional Chinese Medicine
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
