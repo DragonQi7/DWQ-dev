@@ -23,6 +23,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+  html { scroll-behavior: smooth; }
 
   /* HERO */
   .hero {
@@ -134,6 +135,7 @@
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--card);
+    scroll-margin-top: 16px;
   }
 
   .day-header {
@@ -169,6 +171,11 @@
     font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px;
     margin-left: 6px; vertical-align: middle; font-family: 'DM Sans', sans-serif;
   }
+  .fathers-badge {
+    display: inline-block; background: #4a90d9; color: white;
+    font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px;
+    margin-left: 6px; vertical-align: middle; font-family: 'DM Sans', sans-serif;
+  }
 
   /* HOTEL BOX */
   .hotel-box {
@@ -190,10 +197,12 @@
   }
   .activity:last-child { border-bottom: none; }
   .activity.tip-row { background: #fffbf0; }
+  .activity.alt-row { background: #f3f0fa; }
   .act-icon { font-size: 15px; line-height: 1; padding-top: 1px; }
   .act-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: var(--muted); padding-right: 8px; }
   .act-text { font-size: 13px; color: var(--text); line-height: 1.5; }
   .act-text.tip { color: #7a5a00; font-style: italic; }
+  .act-text.alt { color: #5a3a8a; font-style: italic; }
   .act-cost { font-size: 11px; color: #888; }
 
   /* BIRTHDAY SPECIAL */
@@ -221,6 +230,45 @@
   .mimaru-stars { color: #f0a500; font-size: 11px; }
   .mimaru-detail { font-size: 11px; color: #555; margin-top: 3px; }
 
+  /* REFERENCE JUMP LINK (in day cards) */
+  .ref-jump {
+    display: flex; align-items: center; gap: 8px;
+    margin: 0 18px 12px; padding: 9px 14px;
+    background: #eef4ff; border: 1.5px dashed #9ab8ec; border-radius: 10px;
+    color: #1a4a7a; font-size: 12px; font-weight: 600; text-decoration: none;
+    transition: background 0.15s;
+  }
+  .ref-jump:hover { background: #dde9ff; }
+  .ref-jump .chev { margin-left: auto; font-size: 14px; }
+
+  /* REFERENCE IMAGE SECTION */
+  .ref-section { margin: 28px 16px; }
+  .ref-section-title {
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--text); margin-bottom: 4px;
+  }
+  .ref-section-sub { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+  .ref-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    scroll-margin-top: 16px;
+  }
+  .ref-card-head {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    padding: 12px 16px; background: var(--osaka);
+  }
+  .ref-card-head.kyoto { background: #2a1f3a; }
+  .ref-card-head.nara { background: #2a3320; }
+  .ref-name { color: #fff; font-weight: 600; font-size: 14px; }
+  .ref-back {
+    color: #fff; font-size: 11px; text-decoration: none; font-weight: 600;
+    background: rgba(255,255,255,0.16); padding: 6px 12px; border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.28); white-space: nowrap;
+  }
+  .ref-back:hover { background: rgba(255,255,255,0.3); }
+  .ref-card img { width: 100%; display: block; }
+  .ref-figcap { padding: 10px 16px; font-size: 11px; color: var(--muted); }
+
   /* BUDGET SECTION */
   .budget-section { margin: 20px 16px; }
   .budget-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -235,6 +283,7 @@
   /* FOOTER */
   .footer { padding: 32px 16px; text-align: center; color: var(--muted); font-size: 12px; }
   .footer strong { color: var(--text); }
+  .to-top { display:inline-block; margin-top:14px; font-size:11px; font-weight:600; color:#1a4a7a; text-decoration:none; }
 
   /* CITY DIVIDER */
   .city-divider {
@@ -249,7 +298,7 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 <!-- HERO -->
 <div class="hero">
@@ -284,20 +333,20 @@
 <div class="book-alert">
   <strong>⚠️ Book These In Advance</strong>
   <div class="book-items">
-    <span class="book-item">🎬 Ghibli Museum — lottery, book NOW</span>
-    <span class="book-item">🎀 Sanrio Puroland</span>
-    <span class="book-item">🎨 teamLab Planets</span>
-    <span class="book-item">🌇 Shibuya Sky</span>
-    <span class="book-item">🎢 USJ + Express Pass</span>
-    <span class="book-item">🌸 Kirby Cafe</span>
-    <span class="book-item">🎂 Ming Court HK — +852 3552 3388</span>
+    <span class="book-item">🏰 Tokyo DisneySea — Jun 23 (buy tickets)</span>
+    <span class="book-item">🎨 teamLab Planets — Jun 22, 6pm</span>
+    <span class="book-item">🌇 Shibuya Sky — Jun 22, 2pm</span>
+    <span class="book-item">🎢 USJ + Express Pass — Jun 26</span>
+    <span class="book-item">🐶 Cinnamoroll Café — Jun 26, 5pm</span>
+    <span class="book-item">🎂 HK Birthday Dinner — reserve 2–3 wks</span>
+    <span class="book-item" style="opacity:.7;">↺ Alts: Ghibli lottery · Puroland · Kirby Café</span>
   </div>
 </div>
 
 <!-- MAP LINKS -->
 <div class="map-bar">
-  <a href="https://www.google.com/maps/dir/Hotel+Metropolitan+Edmont+Tokyo/Sanrio+World+Ginza/Uobei+Shibuya+Dogenzaka/Mount+Fuji+5th+Station/Shibuya+Sky/Shibuya+Crossing/Reissue+Cafe+Harajuku/Takeshita+Street+Tokyo/Sanrio+Puroland/Ghibli+Museum+Mitaka/Pokemon+Center+Ikebukuro/Kirby+Cafe+Tokyo+Skytree/Senso-ji+Temple/teamLab+Planets+Tokyo" target="_blank" class="map-link tokyo">🗺️ Open Tokyo Map (14 stops) ↗</a>
-  <a href="https://www.google.com/maps/dir/Dotonbori+Osaka/Nara+Park+Japan/Todaiji+Temple+Nara/Osaka+Castle/Fushimi+Inari+Taisha+Kyoto/Arashiyama+Bamboo+Forest+Kyoto/Kinkakuji+Kyoto/Gion+District+Kyoto/Universal+Studios+Japan+Osaka" target="_blank" class="map-link osaka">🗺️ Open Osaka/Kyoto/Nara Map (9 stops) ↗</a>
+  <a href="https://www.google.com/maps/dir/Hotel+Metropolitan+Edmont+Tokyo/Uohide+Shibuya/Imperial+Palace+Tokyo/Senso-ji+Temple/Nakamise+Shopping+Street/Akihabara+Station/Cat+Street+Harajuku/Shibuya+Sky/Shibuya+Crossing/Shibuya+PARCO/Miyashita+Park/Don+Quijote+Shibuya/teamLab+Planets+TOKYO/Tokyo+DisneySea" target="_blank" class="map-link tokyo">🗺️ Open Tokyo Map (14 stops) ↗</a>
+  <a href="https://www.google.com/maps/dir/MIMARU+Osaka+Namba+Station/Kuromon+Ichiba+Market/Dotonbori+Osaka/Nara+Park+Japan/Todaiji+Temple+Nara/Byodoin+Temple+Uji/Universal+Studios+Japan+Osaka/Tombori+River+Cruise+Osaka/Cinnamoroll+Cafe+Namba/Osaka+Castle/Fushimi+Inari+Taisha+Kyoto/Kinkakuji+Kyoto/Arashiyama+Bamboo+Forest+Kyoto/Gion+District+Kyoto" target="_blank" class="map-link osaka">🗺️ Open Osaka/Kyoto/Nara Map (14 stops) ↗</a>
 </div>
 
 <!-- TAGGED TILES -->
@@ -310,7 +359,7 @@
     <div class="tagged-tile">
       <img src="https://unsplash.com/photos/t3GrQGwFX84/download?force=true&w=400" alt="Osaka cherry blossoms">
       <div class="tagged-tile-label">Osaka · Kyoto · Nara</div>
-      <span class="tagged-tile-tag">4 Days</span>
+      <span class="tagged-tile-tag">5 Days</span>
     </div>
   <div class="tagged-tile">
     <img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=400&q=80" alt="Hong Kong">
@@ -341,71 +390,73 @@
 
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
-  <!-- Day 2 -->
-  <div class="day-card">
+  <!-- Jun 19 Arrive -->
+  <div class="day-card" id="day-jun19">
     <div class="day-header tokyo-h">
       <div class="day-label">Tokyo · Day 1 of 6 · June 19 (Fri)</div>
-      <div class="day-title">🗼 Arrive Tokyo — Settle In & Ginza</div>
+      <div class="day-title">🗼 Arrive Tokyo — Settle In & Explore</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏨</div><div class="act-label">Check In</div><div class="act-text">Hotel Metropolitan Edmont Tokyo (~$150/night)</div></div>
-      <div class="activity"><div class="act-icon">🚶</div><div class="act-label">Afternoon</div><div class="act-text">Easy walk around Ginza — pop into Sanrio World Ginza for Hello Kitty merch (~45 min, free entry)</div></div>
-      <div class="activity"><div class="act-icon">🍣</div><div class="act-label">Dinner</div><div class="act-text">Uobei Shibuya Dogenzaka — sushi on a mini conveyor belt train, kids love it! (~$15/person)</div></div>
+      <div class="activity"><div class="act-icon">🏨</div><div class="act-label">Check In</div><div class="act-text">Hotel Metropolitan Edmont Tokyo (~$150/night) — drop bags & settle in</div></div>
+      <div class="activity"><div class="act-icon">🚶</div><div class="act-label">Afternoon</div><div class="act-text">Arrive & explore the neighborhood at an easy pace — first konbini run, stretch the legs after the flight</div></div>
+      <div class="activity"><div class="act-icon">🍚</div><div class="act-label">Dinner</div><div class="act-text">Hunt down an <strong>ochoko-don / kaisendon</strong> spot — e.g. <strong>Uohide (魚秀)</strong> · 〒150-0031 Tokyo, Shibuya, Sakuragaokacho 15–17, 1F (~$20/person)</div></div>
+      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Keep Day 1 light — jet lag hits hardest tonight. Grab Suica cards at the airport on the way in.</div></div>
     </div>
   </div>
 
-  <!-- Day 3 -->
-  <div class="day-card">
+  <!-- Jun 20 Imperial Palace + Akihabara -->
+  <div class="day-card" id="day-jun20">
     <div class="day-header tokyo-h">
       <div class="day-label">Tokyo · Day 2 of 6 · June 20 (Sat)</div>
-      <div class="day-title">🗻 Mount Fuji Day Trip</div>
+      <div class="day-title">🏯 Imperial Palace & Akihabara</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🗻</div><div class="act-label">All Day</div><div class="act-text">Mount Fuji full day trip — bus from Shinjuku to Fuji 5th Station (~$30/person round trip). Hike or enjoy the iconic views.</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">June can be cloudy at Fuji — finalise this day closer to the date depending on weather forecast.</div></div>
-      <div class="activity"><div class="act-icon">🍜</div><div class="act-label">Dinner</div><div class="act-text">Back in Tokyo, ramen near the hotel (~$20/person)</div></div>
+      <div class="activity"><div class="act-icon">🏯</div><div class="act-label">Morning</div><div class="act-text">Imperial Palace East Gardens — easy walk from the hotel; moats, stone walls & gardens (free)</div></div>
+      <div class="activity"><div class="act-icon">🎮</div><div class="act-label">Afternoon</div><div class="act-text">Akihabara — anime shops, multi-floor arcades, gachapon halls & retro games (browse free; budget for capsules!)</div></div>
+      <div class="activity"><div class="act-icon">🍜</div><div class="act-label">Dinner</div><div class="act-text">Casual ramen or curry around Akihabara / near the hotel (~$20/person)</div></div>
+      <div class="activity alt-row"><div class="act-icon">↺</div><div class="act-label">Alternate</div><div class="act-text alt">Mount Fuji day trip — bus from Shinjuku to Fuji 5th Station (~$30/person). Swap in if the forecast is clear and you'd rather do Fuji.</div></div>
     </div>
   </div>
 
-  <!-- Day 4 BIRTHDAY -->
-  <div class="day-card">
+  <!-- Jun 21 Asakusa + Birthday + Father's Day -->
+  <div class="day-card" id="day-jun21">
     <div class="day-header tokyo-h">
       <div class="day-label">Tokyo · Day 3 of 6 · June 21 (Sun)</div>
-      <div class="day-title">🎂 Twins Birthday! — Shibuya & Harajuku <span class="birthday-badge">🎂 BIRTHDAY</span></div>
+      <div class="day-title">🎂 Asakusa & Twins Birthday <span class="birthday-badge">🎂 BIRTHDAY</span><span class="fathers-badge">👔 FATHER'S DAY</span></div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🌇</div><div class="act-label">Morning</div><div class="act-text">Shibuya Sky rooftop observation deck — 360° Tokyo views ($20/person, book ahead!)</div></div>
-      <div class="activity"><div class="act-icon">🚦</div><div class="act-label">Mid-Morning</div><div class="act-text">Shibuya Crossing & Hachiko Statue right below (free)</div></div>
-      <div class="activity"><div class="act-icon">☕</div><div class="act-label">Afternoon</div><div class="act-text">Reissue Cafe, Harajuku — famous 3D animal foam art drinks (~$10/person)</div></div>
-      <div class="activity"><div class="act-icon">🛒</div><div class="act-label">Late Arvo</div><div class="act-text">Takeshita Street + Kiddy Land — Sanrio, Pokemon, all the cute character merch</div></div>
-      <div class="activity birthday-row"><div class="act-icon">🎂</div><div class="act-label">Birthday!</div><div class="act-text">Birthday dinner in Harajuku — celebrate in style! (~$30/person) 🎈</div></div>
+      <div class="activity"><div class="act-icon">⛩️</div><div class="act-label">Morning</div><div class="act-text">Asakusa — Senso-ji Temple & Nakamise Street; melon pan, dango & ningyo-yaki snacks (free, arrive early before the crowds)</div></div>
+      <div class="activity"><div class="act-icon">🛶</div><div class="act-label">Midday</div><div class="act-text">Optional Sumida River stroll / riverside views of Tokyo Skytree, or relaxed shopping along Nakamise</div></div>
+      <div class="activity birthday-row"><div class="act-icon">🎂</div><div class="act-label">Birthday!</div><div class="act-text">Twins' birthday celebration dinner — pick somewhere fun (~$30/person) 🎈 · and a Father's Day toast 👔</div></div>
     </div>
   </div>
 
-  <!-- Day 5 Puroland -->
-  <div class="day-card">
+  <!-- Jun 22 Harajuku/Shibuya + teamLab -->
+  <div class="day-card" id="day-jun22">
     <div class="day-header tokyo-h">
       <div class="day-label">Tokyo · Day 4 of 6 · June 22 (Mon)</div>
-      <div class="day-title">🎀 Sanrio Puroland — Full Day</div>
+      <div class="day-title">🌇 Harajuku → Shibuya & teamLab Planets</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🎀</div><div class="act-label">All Day</div><div class="act-text">Sanrio Puroland theme park in Tama (~$40/person) — Hello Kitty, My Melody, Cinnamoroll & more!</div></div>
-      <div class="activity"><div class="act-icon">🍔</div><div class="act-label">Meals</div><div class="act-text">Character-themed food inside the park all day (~$30/person)</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Book tickets online in advance. Check the parade & show times at the entrance.</div></div>
+      <div class="activity"><div class="act-icon">🛍️</div><div class="act-label">Morning</div><div class="act-text">Harajuku — Takeshita Street & Kiddy Land, then walk down to Shibuya via <strong>Cat Street</strong> (boutiques & cafes)</div></div>
+      <div class="activity"><div class="act-icon">🌇</div><div class="act-label">2:00pm</div><div class="act-text">Shibuya Sky rooftop observation deck — 360° Tokyo views ($20/person, <strong>book ahead!</strong>)</div></div>
+      <div class="activity"><div class="act-icon">🚦</div><div class="act-label">Afternoon</div><div class="act-text">Shibuya Crossing — watch the scramble from Shibuya Scramble Square or the MAGNET rooftop · Shibuya PARCO (Nintendo/Pokemon/Jump) · Miyashita Park outdoor mall · Mega Don Quijote</div></div>
+      <div class="activity"><div class="act-icon">🎨</div><div class="act-label">6:00pm</div><div class="act-text"><strong>teamLab Planets TOKYO DMM</strong> — 6 Chome-1-16 Toyosu, Koto City, Tokyo 135-0061 — immersive barefoot digital art (~$30/person, <strong>book ahead, sells out!</strong>)</div></div>
+      <div class="activity alt-row"><div class="act-icon">↺</div><div class="act-label">Alternate</div><div class="act-text alt">Sanrio Puroland full day in Tama (~$40/person) — Hello Kitty, My Melody, Cinnamoroll. Swap in if you'd rather do the theme park.</div></div>
     </div>
   </div>
 
-  <!-- Day 6 Ghibli -->
-  <div class="day-card">
+  <!-- Jun 23 DisneySea -->
+  <div class="day-card" id="day-jun23">
     <div class="day-header tokyo-h">
       <div class="day-label">Tokyo · Day 5 of 6 · June 23 (Tue)</div>
-      <div class="day-title">🎬 Ghibli Museum, Kichijoji & Ikebukuro</div>
+      <div class="day-title">🏰 Tokyo DisneySea — Full Day</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🎬</div><div class="act-label">Morning</div><div class="act-text">Ghibli Museum, Mitaka (~$7/person) — Totoro statue, rooftop robot, exclusive short film & whimsical exhibits. MUST book months ahead at ghibli-museum.jp!</div></div>
-      <div class="activity"><div class="act-icon">🍱</div><div class="act-label">Lunch</div><div class="act-text">Local restaurant in Kichijoji area near the museum (~$20/person)</div></div>
-      <div class="activity"><div class="act-icon">🎮</div><div class="act-label">Afternoon</div><div class="act-text">Ikebukuro: Sunshine City gachapon floor, Tamagotchi Store & Pokemon Center Ikebukuro — free entry, tons of exclusive merch!</div></div>
-      <div class="activity"><div class="act-icon">🌸</div><div class="act-label">Dinner</div><div class="act-text">Kirby Cafe at Tokyo Skytree (~$30/person — book ahead!)</div></div>
+      <div class="activity"><div class="act-icon">🏰</div><div class="act-label">All Day</div><div class="act-text">Tokyo DisneySea — the only DisneySea in the world! Fantasy Springs (Frozen, Tangled, Peter Pan), Mediterranean Harbor & more (~$75/person, <strong>buy tickets ahead</strong>)</div></div>
+      <div class="activity"><div class="act-icon">🍔</div><div class="act-label">Meals</div><div class="act-text">In-park dining all day — gyoza dog, seasonal popcorn, themed treats (~$30/person)</div></div>
+      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Use the Tokyo Disney Resort app for ride wait times & Premier Access. Arrive at opening for Fantasy Springs.</div></div>
+      <div class="activity alt-row"><div class="act-icon">↺</div><div class="act-label">Alternate</div><div class="act-text alt">Ghibli Museum, Mitaka (lottery at ghibli-museum.jp) + Ikebukuro (Pokemon Center, gachapon) & Kirby Café at Skytree. Swap in if you'd rather do the Ghibli/character day.</div></div>
     </div>
   </div>
 
@@ -416,81 +467,85 @@
 
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
-  <!-- Day 7 Travel + Osaka -->
-  <div class="day-card">
+  <!-- Jun 24 DisneySea wrap + Travel to Osaka -->
+  <div class="day-card" id="day-jun24">
     <div class="day-header osaka-h">
       <div class="day-label">Osaka · Day 1 of 5 · June 24 (Wed)</div>
-      <div class="day-title">🚄 Senso-ji, teamLab & Travel to Osaka</div>
+      <div class="day-title">🚄 Last Tokyo Morning & Travel to Osaka</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">⛩️</div><div class="act-label">Early AM</div><div class="act-text">Senso-ji Temple & Nakamise Street — melon pan, dango snacks (free, arrive early before crowds!)</div></div>
-      <div class="activity"><div class="act-icon">🎨</div><div class="act-label">Late AM</div><div class="act-text">teamLab Planets (~$30/person) — immersive digital art, book ahead, sells out fast!</div></div>
-      <div class="activity"><div class="act-icon">🚄</div><div class="act-label">Afternoon</div><div class="act-text">Shinkansen Tokyo → Osaka (~2h 30min, ~$130/person) — check into MIMARU Osaka Namba Station</div></div>
-      <div class="activity"><div class="act-icon">🍢</div><div class="act-label">Evening</div><div class="act-text">Dotonbori first look — takoyaki, okonomiyaki, street food & Glico Running Man sign (~$20/person)</div></div>
+      <div class="activity"><div class="act-icon">🏰</div><div class="act-label">Morning</div><div class="act-text">Free morning — wander around before leaving Tokyo (squeeze in extra DisneySea time or last-minute shopping), then check out</div></div>
+      <div class="activity"><div class="act-icon">🚄</div><div class="act-label">2:00pm</div><div class="act-text">Shinkansen Tokyo → Osaka (~2h 30min, ~$130/person) — check into MIMARU Osaka Namba Station</div></div>
+      <div class="activity"><div class="act-icon">🍢</div><div class="act-label">Evening</div><div class="act-text">Kuromon Ichiba Market — sushi, wagyu skewers, fresh fruit & street food, ~5 min walk from the hotel (~$20/person)</div></div>
     </div>
     <div class="mimaru-box">
       <div class="mimaru-name">🏨 MIMARU Osaka Namba Station</div>
       <div class="mimaru-stars">★★★★★ 4.7 (544 reviews)</div>
       <div class="mimaru-detail">3-6-24 Nipponbashi, Naniwa Ward, Osaka · +81 6-6567-8237</div>
-      <div class="mimaru-detail">Apartment-style suites · board games · coin laundry · 2 min walk to Namba Station · walking distance to Dotonbori</div>
+      <div class="mimaru-detail">Apartment-style suites · board games · coin laundry · 2 min walk to Namba Station · walking distance to Dotonbori & Kuromon Market</div>
     </div>
     <div style="height:12px;"></div>
   </div>
 
-  <!-- Day 8 Nara + Osaka Castle -->
-  <div class="day-card">
+  <!-- Jun 25 Nara + Uji -->
+  <div class="day-card" id="day-jun25">
     <div class="day-header nara-osaka-h">
-      <div class="day-label">Nara + Osaka · Day 2 of 5 · June 25 (Thu)</div>
-      <div class="day-title">🦌 Nara Half-Day, Osaka Castle & Dotonbori</div>
+      <div class="day-label">Nara + Uji · Day 2 of 5 · June 25 (Thu)</div>
+      <div class="day-title">🦌 Nara Park & Uji Day Trip — with Uncle & Family</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🚄</div><div class="act-label">Morning</div><div class="act-text">Osaka → Nara by train (~45 min, ~$8/person). Nara Park — feed the bowing deer! Todai-ji temple with the giant bronze Buddha ($6 entry). Kakinoha sushi lunch in Nara town (~$15/person). Back to Osaka by early afternoon — Nara is a perfect half-day!</div></div>
-      <div class="activity"><div class="act-icon">🏯</div><div class="act-label">Afternoon</div><div class="act-text">Osaka Castle & surrounding park — explore the grounds and head up for city views (free outside, $6 inside). A great use of the afternoon after returning from Nara!</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Den Den Town (Osaka's anime & electronics district) is just a 5-minute walk from Osaka Castle — worth a browse on the way back if the kids have energy!</div></div>
-      <div class="activity"><div class="act-icon">🍢</div><div class="act-label">Evening</div><div class="act-text">Back to Dotonbori for dinner — try kushikatsu (deep-fried skewers, Osaka specialty!) (~$20/person) · 🎂 Celebrate Tom's Birthday 🎂</div></div>
+      <div class="activity"><div class="act-icon">🦌</div><div class="act-label">Morning</div><div class="act-text">Osaka → Nara (~45 min, ~$8/person). Nara Park — feed the bowing deer! Todai-ji temple with the giant bronze Buddha ($6 entry)</div></div>
+      <div class="activity"><div class="act-icon">🍵</div><div class="act-label">Midday</div><div class="act-text">Continue to Uji — Byodo-in Temple (the ¥10-coin temple) & matcha everything along Byodo-in Omotesando; lunch en route (~$15/person)</div></div>
+      <div class="activity"><div class="act-icon">👨‍👩‍👧‍👦</div><div class="act-label">Family</div><div class="act-text">Day out together with Uncle & the family</div></div>
+      <div class="activity birthday-row"><div class="act-icon">🎂</div><div class="act-label">Evening</div><div class="act-text">Back to Osaka — Dotonbori dinner (kushikatsu, takoyaki) · Celebrate Tom's Birthday 🎂</div></div>
     </div>
+    <a href="#ref-nara" class="ref-jump">📎 Open the Nara Park reference guide <span class="chev">↓</span></a>
   </div>
 
-  <!-- Day 9 USJ -->
-  <div class="day-card">
+  <!-- Jun 26 USJ + Cruise + Cinnamoroll -->
+  <div class="day-card" id="day-jun26">
     <div class="day-header osaka-h">
       <div class="day-label">Osaka · Day 3 of 5 · June 26 (Fri)</div>
-      <div class="day-title">🎢 Universal Studios Japan — Full Day</div>
+      <div class="day-title">🎢 Universal Studios, River Cruise & Cinnamoroll Café</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🎢</div><div class="act-label">All Day</div><div class="act-text">Universal Studios Japan — Harry Potter World, Nintendo World, Minion Park ($80/person, book ahead!) — arrive at opening for max time!</div></div>
-      <div class="activity"><div class="act-icon">🍔</div><div class="act-label">Meals</div><div class="act-text">Breakfast early before gates open. Lunch & dinner inside the park (~$40/person)</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Get the Express Pass if budget allows — saves hours of queuing. Arrive at opening!</div></div>
+      <div class="activity"><div class="act-icon">🎢</div><div class="act-label">Morning–PM</div><div class="act-text">Meet Uncle → Universal Studios Japan — Super Nintendo World, Harry Potter, Minion Park ($80/person, book ahead; Express Pass saves hours). Arrive at opening!</div></div>
+      <div class="activity"><div class="act-icon">🚤</div><div class="act-label">Late PM</div><div class="act-text">Tombori River Cruise / Osaka Wonder Cruise along the Dotonbori canal — relaxed loop past the Glico sign (~$10/person)</div></div>
+      <div class="activity"><div class="act-icon">🐶</div><div class="act-label">5:00pm</div><div class="act-text"><strong>Cinnamoroll Café</strong> — 1-5-14 Namba, Chuo Ward, Osaka City, Osaka 542-0076 (reserve ahead; themed sweets & drinks)</div></div>
+      <div class="activity"><div class="act-icon">🍽️</div><div class="act-label">Evening</div><div class="act-text">Dinner around Namba / Dotonbori (~$25/person)</div></div>
+      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Leave USJ by mid-afternoon to make the 5pm café — it's a ~25 min ride back to Namba.</div></div>
     </div>
   </div>
 
-  <!-- Day 10 Kyoto Part 1 -->
-  <div class="day-card">
-    <div class="day-header kyoto-h">
-      <div class="day-label">Kyoto · Day 4 of 5 · June 27 (Sat)</div>
-      <div class="day-title">⛩️ Kyoto Part 1 — Kinkaku-ji, Ninenzaka & Gion</div>
+  <!-- Jun 27 Shopping & Osaka -->
+  <div class="day-card" id="day-jun27">
+    <div class="day-header osaka-h">
+      <div class="day-label">Osaka · Day 4 of 5 · June 27 (Sat)</div>
+      <div class="day-title">🛍️ Shopping & Exploring Osaka</div>
     </div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🚄</div><div class="act-label">Travel</div><div class="act-text">Osaka → Kyoto by train (~30 min, ~$5/person). Day trip only — luggage stays at MIMARU.</div></div>
-      <div class="activity"><div class="act-icon">🥇</div><div class="act-label">Morning</div><div class="act-text">Kinkaku-ji Golden Pavilion ($5 entry) — arrive early for the best light and fewer crowds.</div></div>
-      <div class="activity"><div class="act-icon">🏮</div><div class="act-label">Midday</div><div class="act-text">Ninenzaka & Sannenzaka cobblestone streets — beautiful preserved historic lanes, great for souvenirs and snacks (~$10/person for treats).</div></div>
-      <div class="activity"><div class="act-icon">🛒</div><div class="act-label">Afternoon</div><div class="act-text">Nishiki Market — Kyoto's famous covered food market. Try street snacks and pick up tea and treats to bring home (~$10/person).</div></div>
-      <div class="activity"><div class="act-icon">🏮</div><div class="act-label">Evening</div><div class="act-text">Gion district evening walk — lantern-lit streets, machiya townhouses, possible geisha sightings. Head back to Osaka for the night.</div></div>
+      <div class="activity"><div class="act-icon">🛍️</div><div class="act-label">Daytime</div><div class="act-text">Explore Osaka — Shinsaibashi-suji covered arcade, Amerikamura, Pokemon Center Osaka & Den Den Town (anime & electronics, ~5 min from the hotel)</div></div>
+      <div class="activity"><div class="act-icon">🏯</div><div class="act-label">Optional</div><div class="act-text">Osaka Castle & park — grounds free, $6 inside for the city views (great if you want a sightseeing break from shopping)</div></div>
+      <div class="activity"><div class="act-icon">🍢</div><div class="act-label">Evening</div><div class="act-text">Back to Dotonbori — takoyaki, okonomiyaki, kushikatsu & the Glico Running Man (~$20/person)</div></div>
     </div>
+    <a href="#ref-osaka" class="ref-jump">📎 Open the Osaka one-day reference guide <span class="chev">↓</span></a>
   </div>
 
-  <!-- Day 11 Kyoto Part 2 -->
-  <div class="day-card">
+  <!-- Jun 28 Kyoto Day Trip -->
+  <div class="day-card" id="day-jun28">
     <div class="day-header kyoto-h">
       <div class="day-label">Kyoto · Day 5 of 5 · June 28 (Sun)</div>
-      <div class="day-title">⛩️ Kyoto Part 2 — Kimono, Fushimi Inari & Arashiyama</div>
+      <div class="day-title">⛩️ Kyoto Day Trip</div>
     </div>
     <div class="activities">
       <div class="activity"><div class="act-icon">🚄</div><div class="act-label">Travel</div><div class="act-text">Osaka → Kyoto by train (~30 min, ~$5/person). Day trip only — luggage stays at MIMARU.</div></div>
-      <div class="activity"><div class="act-icon">🎎</div><div class="act-label">Morning</div><div class="act-text">Kimono rental in Kyoto (~$30–50/person, includes dressing service). Walk to Fushimi Inari Shrine and hike the famous torii gates — stunning in kimono! (free entry)</div></div>
-      <div class="activity"><div class="act-icon">🍱</div><div class="act-label">Lunch</div><div class="act-text">Lunch near Fushimi Inari or in Arashiyama (~$15/person)</div></div>
-      <div class="activity"><div class="act-icon">🎋</div><div class="act-label">Afternoon</div><div class="act-text">Arashiyama Bamboo Forest (free) + Tenryu-ji Garden ($10). Iwatayama Monkey Park if energy allows (~$6). Return kimonos before heading back to Osaka in the evening.</div></div>
+      <div class="activity"><div class="act-icon">⛩️</div><div class="act-label">Morning</div><div class="act-text">Fushimi Inari Shrine — hike the thousands of red torii gates (free, arrive early to beat crowds)</div></div>
+      <div class="activity"><div class="act-icon">🥇</div><div class="act-label">Midday</div><div class="act-text">Kinkaku-ji Golden Pavilion ($5) — and optional kimono rental for photos (~$30–50/person)</div></div>
+      <div class="activity"><div class="act-icon">🎋</div><div class="act-label">Afternoon</div><div class="act-text">Arashiyama Bamboo Grove (free) + Tenryu-ji Garden ($10); Iwatayama Monkey Park if energy allows (~$6)</div></div>
+      <div class="activity"><div class="act-icon">🏮</div><div class="act-label">Evening</div><div class="act-text">Nishiki Market snacks & a Gion lantern-lit walk (possible geisha sightings) before heading back to Osaka</div></div>
+      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">This is a packed single day — pick 3 highlights and go in geographic order to save backtracking. The reference guide below has a step-by-step route.</div></div>
     </div>
+    <a href="#ref-kyoto" class="ref-jump">📎 Open the Kyoto day-trip reference guide <span class="chev">↓</span></a>
   </div>
 
 </div>
@@ -558,62 +613,4 @@
   <div class="day-card">
     <div class="day-header hk-h">
       <div class="day-label">Hong Kong · Day 3 of 5 · July 2 (Thu)</div>
-      <div class="day-title">🌙 Kowloon & Night Markets</div>
-    </div>
-    <div class="activities">
-      <div class="activity"><div class="act-icon">🛒</div><div class="act-label">Late AM</div><div class="act-text">Mong Kok markets — Ladies Market, Jade Market, flower market</div></div>
-      <div class="activity"><div class="act-icon">🍜</div><div class="act-label">Lunch</div><div class="act-text">Wonton noodles at a local dai pai dong (~$10/person)</div></div>
-      <div class="activity"><div class="act-icon">🙏</div><div class="act-label">Afternoon</div><div class="act-text">Wong Tai Sin Temple (free) — colourful and culturally rich</div></div>
-      <div class="activity"><div class="act-icon">🌃</div><div class="act-label">Evening</div><div class="act-text">Avenue of Stars + Symphony of Lights harbour show (free, 8pm)</div></div>
-      <div class="activity"><div class="act-icon">🍽️</div><div class="act-label">Dinner</div><div class="act-text">Roast goose or Peking duck dinner (~$35/person)</div></div>
-    </div>
-  </div>
-
-  <!-- Day 16 Ocean Park -->
-  <div class="day-card">
-    <div class="day-header hk-h">
-      <div class="day-label">Hong Kong · Day 4 of 5 · July 3 (Fri)</div>
-      <div class="day-title">🎡 Ocean Park — Last Full Day!</div>
-    </div>
-    <div class="activities">
-      <div class="activity"><div class="act-icon">🎡</div><div class="act-label">All Day</div><div class="act-text">Ocean Park Hong Kong — giant pandas, cable car, roller coasters & aquarium (~$50/person). A brilliant last full day for the whole family!</div></div>
-      <div class="activity"><div class="act-icon">🍔</div><div class="act-label">Meals</div><div class="act-text">Eat inside the park — wide variety of food options (~$30/person)</div></div>
-      <div class="activity"><div class="act-icon">🍻</div><div class="act-label">Evening</div><div class="act-text">Final HK evening — last walk along the waterfront, pick up last-minute souvenirs</div></div>
-    </div>
-  </div>
-
-  <!-- Day 17 Depart -->
-  <div class="day-card">
-    <div class="day-header travel-h">
-      <div class="day-label">Day 17 · July 4 (Sat)</div>
-      <div class="day-title">✈️ Hong Kong → New York (via Taipei)</div>
-    </div>
-    <div class="activities">
-      <div class="activity"><div class="act-icon">🏨</div><div class="act-label">Morning</div><div class="act-text">Hotel checkout — last-minute shopping before heading to the airport</div></div>
-
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight 1</div><div class="act-text"><strong>2:05pm</strong> Departs Sat, Jul 4 · Hong Kong (HKG) Terminal 1 → <strong>3:55pm</strong> Arrives Sat, Jul 4 · Taipei (TPE) Terminal 1 · 1h 50m · China Airlines 910 · Economy (H) · </div></div>
-
-      <div class="activity"><div class="act-icon">⏱️</div><div class="act-label">Layover</div><div class="act-text">Layover in Taipei: 1h 35m</div></div>
-
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight 2</div><div class="act-text"><strong>5:30pm</strong> Departs Sat, Jul 4 · Taipei (TPE) Terminal 2 → <strong>8:50pm</strong> Arrives Sat, Jul 4 · New York (JFK) Terminal 4 · 15h 20m · China Airlines 12 · Economy (H) · </div></div>
-
-      <div class="activity"><div class="act-icon">🧾</div><div class="act-label">Total</div><div class="act-text">Total duration: 18h 45m (including layover)</div></div>
-    </div>
-  </div>
-
-</div>
-
-<!-- Budget section removed -->
-
-<!-- FOOTER TIPS -->
-<div class="footer">
-  <div style="background:#f0f7ff;border:1px solid #d0e4f8;border-radius:10px;padding:16px 20px;text-align:left;margin-bottom:24px;font-size:12px;color:#333;line-height:1.8;">
-    <strong style="display:block;margin-bottom:6px;font-size:13px;">🧳 General Tips</strong>
-    Book flights and teamLab Planets well in advance. · June is rainy season in Japan — pack compact umbrellas. · Get a <strong>Suica card</strong> at Tokyo airport for all train travel. · <strong>JR Pass</strong> (~$350/person) recommended for Shinkansen travel. · Ghibli Museum lottery opens 10th of each month — apply now at ghibli-museum.jp.
-  </div>
-  <strong>Japan & Hong Kong · June 18 – July 4, 2026</strong><br>
-  5 Travelers · 17 Days · Created with ❤️
-</div>
-
-</body>
-</html>
+      <div
