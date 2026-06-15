@@ -26,18 +26,8 @@
   html { scroll-behavior: smooth; }
 
   /* HERO */
-  .hero {
-    background: var(--tokyo);
-    color: white;
-    padding: 48px 32px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '✈';
-    position: absolute; right: 32px; top: 32px;
-    font-size: 80px; opacity: 0.08;
-  }
+  .hero { background: var(--tokyo); color: white; padding: 48px 32px 40px; position: relative; overflow: hidden; }
+  .hero::before { content: '\2708'; position: absolute; right: 32px; top: 32px; font-size: 80px; opacity: 0.08; }
   .hero-flag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--tokyo-accent); margin-bottom: 12px; font-weight: 500; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; line-height: 1.1; margin-bottom: 8px; }
   .hero-sub { color: rgba(255,255,255,0.7); font-size: 13px; margin-bottom: 24px; }
@@ -46,102 +36,35 @@
   .hero-arrow { color: rgba(255,255,255,0.4); font-size: 12px; }
 
   /* STATS BAR */
-  .stats {
-    background: var(--tokyo-accent);
-    display: flex; gap: 0;
-    overflow-x: auto;
-  }
-  .stat {
-    flex: 1; min-width: 80px;
-    text-align: center; padding: 12px 8px;
-    border-right: 1px solid rgba(0,0,0,0.1);
-  }
+  .stats { background: var(--tokyo-accent); display: flex; gap: 0; overflow-x: auto; }
+  .stat { flex: 1; min-width: 80px; text-align: center; padding: 12px 8px; border-right: 1px solid rgba(0,0,0,0.1); }
   .stat:last-child { border-right: none; }
   .stat-n { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--tokyo); line-height: 1; }
   .stat-l { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(26,39,68,0.7); margin-top: 2px; }
 
   /* BOOKING ALERT */
-  .book-alert {
-    background: #fff8e6; border-left: 4px solid #f0a500;
-    padding: 14px 20px; margin: 20px 16px 0;
-    border-radius: 0 8px 8px 0;
-    font-size: 12px; color: #5a3e00;
-  }
+  .book-alert { background: #fff8e6; border-left: 4px solid #f0a500; padding: 14px 20px; margin: 20px 16px 0; border-radius: 0 8px 8px 0; font-size: 12px; color: #5a3e00; }
   .book-alert strong { display: block; margin-bottom: 4px; font-size: 13px; }
   .book-items { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
   .book-item { background: #ffedb3; border-radius: 12px; padding: 3px 10px; font-size: 11px; font-weight: 500; }
 
   /* MAP LINKS */
-  .map-bar {
-    margin: 16px 16px 0;
-    display: flex; gap: 8px; flex-wrap: wrap;
-  }
-  .map-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 8px 14px; border-radius: 20px; text-decoration: none;
-    font-size: 12px; font-weight: 500; border: 1.5px solid;
-    transition: opacity 0.15s;
-  }
+  .map-bar { margin: 16px 16px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .map-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 20px; text-decoration: none; font-size: 12px; font-weight: 500; border: 1.5px solid; transition: opacity 0.15s; }
   .map-link:hover { opacity: 0.8; }
   .map-link.tokyo { background: #e8f0fe; color: #1a2744; border-color: #b8cef8; }
   .map-link.osaka { background: #eaf3e0; color: #1f3a1f; border-color: #b3d98a; }
 
   /* TAGGED TILE */
-  .tagged-grid {
-    margin: 16px 16px 0;
-    display: flex; gap: 10px; flex-wrap: wrap;
-  }
-  .tagged-tile {
-    flex: 1; min-width: 140px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .tagged-tile img {
-    width: 100%; height: 90px;
-    object-fit: cover; display: block;
-  }
-  .tagged-tile-label {
-    padding: 8px 10px;
-    font-size: 11px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 1px;
-    color: var(--muted);
-  }
-  .tagged-tile-tag {
-    display: inline-block;
-    background: var(--tokyo-accent);
-    color: var(--tokyo);
-    border-radius: 10px;
-    padding: 2px 8px;
-    font-size: 10px; font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 10px 10px;
-  }
-
-  /* SECTION HEADER */
-  .section-header {
-    padding: 28px 16px 12px;
-    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    font-weight: 500; color: var(--muted);
-  }
+  .tagged-grid { margin: 16px 16px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+  .tagged-tile { flex: 1; min-width: 140px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .tagged-tile img { width: 100%; height: 90px; object-fit: cover; display: block; }
+  .tagged-tile-label { padding: 8px 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  .tagged-tile-tag { display: inline-block; background: var(--tokyo-accent); color: var(--tokyo); border-radius: 10px; padding: 2px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 10px 10px; }
 
   /* DAY CARD */
-  .day-card {
-    margin: 0 16px 12px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--card);
-    scroll-margin-top: 16px;
-  }
-
-  .day-header {
-    padding: 14px 18px 12px;
-    position: relative;
-  }
+  .day-card { margin: 0 16px 12px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--card); scroll-margin-top: 16px; }
+  .day-header { padding: 14px 18px 12px; position: relative; }
   .day-header.tokyo-h { background: var(--tokyo); }
   .day-header.osaka-h { background: var(--osaka); }
   .day-header.kyoto-h { background: #2a1f3a; }
@@ -149,52 +72,20 @@
   .day-header.hk-h { background: var(--hk); }
   .day-header.travel-h { background: var(--travel); }
   .day-header.departure-h { background: #2a2a2a; }
-
-  .day-label {
-    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    font-weight: 500; margin-bottom: 4px;
-    opacity: 0.7;
-  }
+  .day-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 4px; opacity: 0.7; }
   .day-header.tokyo-h .day-label { color: var(--tokyo-accent); }
   .day-header.osaka-h .day-label { color: var(--osaka-accent); }
   .day-header.kyoto-h .day-label { color: #c9a8ff; }
   .day-header.nara-osaka-h .day-label { color: #a8d88a; }
   .day-header.hk-h .day-label { color: var(--hk-accent); }
   .day-header.travel-h .day-label, .day-header.departure-h .day-label { color: var(--travel-accent); }
-
-  .day-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px; font-weight: 700; color: white; line-height: 1.3;
-  }
-  .birthday-badge {
-    display: inline-block; background: #ff6b9d; color: white;
-    font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px;
-    margin-left: 6px; vertical-align: middle; font-family: 'DM Sans', sans-serif;
-  }
-  .fathers-badge {
-    display: inline-block; background: #4a90d9; color: white;
-    font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px;
-    margin-left: 6px; vertical-align: middle; font-family: 'DM Sans', sans-serif;
-  }
-
-  /* HOTEL BOX */
-  .hotel-box {
-    margin: 0 18px 0;
-    background: #f0f7ff; border-left: 3px solid #378add;
-    padding: 8px 12px; font-size: 12px;
-    border-radius: 0 6px 6px 0;
-  }
-  .hotel-name { font-weight: 600; color: #1a4a7a; font-size: 13px; }
-  .hotel-detail { color: #555; margin-top: 2px; }
+  .day-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: white; line-height: 1.3; }
+  .birthday-badge { display: inline-block; background: #ff6b9d; color: white; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; font-family: 'DM Sans', sans-serif; }
+  .fathers-badge { display: inline-block; background: #4a90d9; color: white; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; font-family: 'DM Sans', sans-serif; }
 
   /* ACTIVITY ROWS */
   .activities { padding: 4px 0 8px; }
-  .activity {
-    display: grid; grid-template-columns: 36px 90px 1fr;
-    align-items: baseline; padding: 7px 18px;
-    border-bottom: 1px solid var(--border);
-    gap: 0;
-  }
+  .activity { display: grid; grid-template-columns: 36px 90px 1fr; align-items: baseline; padding: 7px 18px; border-bottom: 1px solid var(--border); gap: 0; }
   .activity:last-child { border-bottom: none; }
   .activity.tip-row { background: #fffbf0; }
   .activity.alt-row { background: #f3f0fa; }
@@ -203,120 +94,59 @@
   .act-text { font-size: 13px; color: var(--text); line-height: 1.5; }
   .act-text.tip { color: #7a5a00; font-style: italic; }
   .act-text.alt { color: #5a3a8a; font-style: italic; }
-  .act-cost { font-size: 11px; color: #888; }
-
-  /* BIRTHDAY SPECIAL */
   .birthday-row .act-icon { font-size: 18px; }
   .birthday-row .act-text { font-weight: 500; color: #c0196e; }
 
-  /* RESTAURANT SPECIAL */
-  .restaurant-box {
-    margin: 8px 18px;
-    background: linear-gradient(135deg, #fff0f5 0%, #fff8e6 100%);
-    border: 1px solid #f0b8d0; border-radius: 8px;
-    padding: 12px 14px;
-  }
+  /* RESTAURANT / MIMARU */
+  .restaurant-box { margin: 8px 18px; background: linear-gradient(135deg, #fff0f5 0%, #fff8e6 100%); border: 1px solid #f0b8d0; border-radius: 8px; padding: 12px 14px; }
   .restaurant-name { font-weight: 700; font-size: 14px; color: #8b0040; }
   .restaurant-detail { font-size: 12px; color: #555; margin-top: 4px; line-height: 1.5; }
   .restaurant-book { font-size: 11px; color: #888; margin-top: 6px; }
-
-  /* MIMARU BOX */
-  .mimaru-box {
-    margin: 8px 18px 4px;
-    background: #f0f9f0; border-left: 3px solid #3a8a3a;
-    padding: 10px 12px; border-radius: 0 8px 8px 0;
-  }
+  .mimaru-box { margin: 8px 18px 4px; background: #f0f9f0; border-left: 3px solid #3a8a3a; padding: 10px 12px; border-radius: 0 8px 8px 0; }
   .mimaru-name { font-weight: 600; color: #1a4a1a; font-size: 13px; }
   .mimaru-stars { color: #f0a500; font-size: 11px; }
   .mimaru-detail { font-size: 11px; color: #555; margin-top: 3px; }
 
-  /* REFERENCE JUMP LINK (in day cards) */
-  .ref-jump {
-    display: flex; align-items: center; gap: 8px;
-    margin: 0 18px 12px; padding: 9px 14px;
-    background: #eef4ff; border: 1.5px dashed #9ab8ec; border-radius: 10px;
-    color: #1a4a7a; font-size: 12px; font-weight: 600; text-decoration: none;
-    transition: background 0.15s;
-  }
+  /* REFERENCE JUMP + SECTION */
+  .ref-jump { display: flex; align-items: center; gap: 8px; margin: 0 18px 12px; padding: 9px 14px; background: #eef4ff; border: 1.5px dashed #9ab8ec; border-radius: 10px; color: #1a4a7a; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.15s; }
   .ref-jump:hover { background: #dde9ff; }
   .ref-jump .chev { margin-left: auto; font-size: 14px; }
-
-  /* REFERENCE IMAGE SECTION */
   .ref-section { margin: 28px 16px; }
-  .ref-section-title {
-    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
-    color: var(--text); margin-bottom: 4px;
-  }
+  .ref-section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
   .ref-section-sub { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
-  .ref-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    overflow: hidden; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    scroll-margin-top: 16px;
-  }
-  .ref-card-head {
-    display: flex; justify-content: space-between; align-items: center; gap: 10px;
-    padding: 12px 16px; background: var(--osaka);
-  }
+  .ref-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); scroll-margin-top: 16px; }
+  .ref-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 16px; background: var(--osaka); }
   .ref-card-head.kyoto { background: #2a1f3a; }
   .ref-card-head.nara { background: #2a3320; }
   .ref-name { color: #fff; font-weight: 600; font-size: 14px; }
-  .ref-back {
-    color: #fff; font-size: 11px; text-decoration: none; font-weight: 600;
-    background: rgba(255,255,255,0.16); padding: 6px 12px; border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.28); white-space: nowrap;
-  }
+  .ref-back { color: #fff; font-size: 11px; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.16); padding: 6px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.28); white-space: nowrap; }
   .ref-back:hover { background: rgba(255,255,255,0.3); }
   .ref-card img { width: 100%; display: block; }
   .ref-figcap { padding: 10px 16px; font-size: 11px; color: var(--muted); }
 
-  /* BUDGET SECTION */
-  .budget-section { margin: 20px 16px; }
-  .budget-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .budget-header { background: var(--tokyo); color: white; padding: 14px 18px; font-weight: 600; font-size: 14px; }
-  .budget-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
-  .budget-col-h { padding: 8px 14px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border); }
-  .budget-row { display: contents; }
-  .budget-cell { padding: 8px 14px; border-bottom: 1px solid var(--border); font-size: 13px; }
-  .budget-cell.label { font-weight: 500; }
-  .budget-cell.total { font-weight: 700; color: var(--tokyo); font-size: 14px; background: #f7f4ef; }
-
-  /* FOOTER */
+  /* FOOTER + DIVIDER */
   .footer { padding: 32px 16px; text-align: center; color: var(--muted); font-size: 12px; }
   .footer strong { color: var(--text); }
   .to-top { display:inline-block; margin-top:14px; font-size:11px; font-weight:600; color:#1a4a7a; text-decoration:none; }
-
-  /* CITY DIVIDER */
-  .city-divider {
-    margin: 24px 16px 0;
-    display: flex; align-items: center; gap: 12px;
-  }
+  .city-divider { margin: 24px 16px 0; display: flex; align-items: center; gap: 12px; }
   .city-divider-line { flex: 1; height: 1px; background: var(--border); }
-  .city-divider-label {
-    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-    font-weight: 600; color: var(--muted);
-    white-space: nowrap;
-  }
+  .city-divider-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--muted); white-space: nowrap; }
 </style>
 </head>
 <body id="top">
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-flag">Family Trip · Summer 2026</div>
-  <h1>Japan &<br>Hong Kong</h1>
-  <div class="hero-sub">June 18 – July 4 · 5 Travelers · 2 Rooms · 17 Days</div>
+  <div class="hero-flag">Family Trip &middot; Summer 2026</div>
+  <h1>Japan &amp;<br>Hong Kong</h1>
+  <div class="hero-sub">June 18 &ndash; July 4 &middot; 5 Travelers &middot; 2 Rooms &middot; 17 Days</div>
   <div class="hero-route">
-    <span class="hero-city">✈️ NYC</span>
-    <span class="hero-arrow">→</span>
-    <span class="hero-city">🗼 Tokyo</span>
-    <span class="hero-arrow">→</span>
-    <span class="hero-city">⛩️ Osaka/Kyoto</span>
-    <span class="hero-arrow">→</span>
-    <span class="hero-city">🌆 Hong Kong</span>
-    <span class="hero-arrow">→</span>
-    <span class="hero-city">🛫 Taipei</span>
-    <span class="hero-arrow">→</span>
-    <span class="hero-city">✈️ NYC</span>
+    <span class="hero-city">&#9992;&#65039; NYC</span><span class="hero-arrow">&rarr;</span>
+    <span class="hero-city">&#128508; Tokyo</span><span class="hero-arrow">&rarr;</span>
+    <span class="hero-city">&#9962;&#65039; Osaka/Kyoto</span><span class="hero-arrow">&rarr;</span>
+    <span class="hero-city">&#127750; Hong Kong</span><span class="hero-arrow">&rarr;</span>
+    <span class="hero-city">&#128747; Taipei</span><span class="hero-arrow">&rarr;</span>
+    <span class="hero-city">&#9992;&#65039; NYC</span>
   </div>
 </div>
 
@@ -331,386 +161,269 @@
 
 <!-- BOOK AHEAD ALERT -->
 <div class="book-alert">
-  <strong>⚠️ Book These In Advance</strong>
+  <strong>&#9888;&#65039; Book These In Advance</strong>
   <div class="book-items">
-    <span class="book-item">🏰 Tokyo DisneySea — Jun 23 (buy tickets)</span>
-    <span class="book-item">🎨 teamLab Planets — Jun 22, 6pm</span>
-    <span class="book-item">🌇 Shibuya Sky — Jun 22, 2pm</span>
-    <span class="book-item">🎢 USJ + Express Pass — Jun 26</span>
-    <span class="book-item">🐶 Cinnamoroll Café — Jun 26, 5pm</span>
-    <span class="book-item">🎂 HK Birthday Dinner — reserve 2–3 wks</span>
-    <span class="book-item" style="opacity:.7;">↺ Alts: Ghibli lottery · Puroland · Kirby Café</span>
+    <span class="book-item">&#127984; Tokyo DisneySea &mdash; Jun 23 (buy tickets)</span>
+    <span class="book-item">&#127912; teamLab Planets &mdash; Jun 22, 6pm</span>
+    <span class="book-item">&#127751; Shibuya Sky &mdash; Jun 22, 2pm</span>
+    <span class="book-item">&#127922; USJ + Express Pass &mdash; Jun 26</span>
+    <span class="book-item">&#128054; Cinnamoroll Caf&eacute; &mdash; Jun 26, 5pm</span>
+    <span class="book-item">&#127874; HK Birthday Dinner &mdash; reserve 2&ndash;3 wks</span>
+    <span class="book-item" style="opacity:.7;">&#8635; Alts: Ghibli lottery &middot; Puroland &middot; Kirby Caf&eacute;</span>
   </div>
 </div>
 
 <!-- MAP LINKS -->
 <div class="map-bar">
-  <a href="https://www.google.com/maps/dir/Hotel+Metropolitan+Edmont+Tokyo/Uohide+Shibuya/Imperial+Palace+Tokyo/Senso-ji+Temple/Nakamise+Shopping+Street/Akihabara+Station/Cat+Street+Harajuku/Shibuya+Sky/Shibuya+Crossing/Shibuya+PARCO/Miyashita+Park/Don+Quijote+Shibuya/teamLab+Planets+TOKYO/Tokyo+DisneySea" target="_blank" class="map-link tokyo">🗺️ Open Tokyo Map (14 stops) ↗</a>
-  <a href="https://www.google.com/maps/dir/MIMARU+Osaka+Namba+Station/Kuromon+Ichiba+Market/Dotonbori+Osaka/Nara+Park+Japan/Todaiji+Temple+Nara/Byodoin+Temple+Uji/Universal+Studios+Japan+Osaka/Tombori+River+Cruise+Osaka/Cinnamoroll+Cafe+Namba/Osaka+Castle/Fushimi+Inari+Taisha+Kyoto/Kinkakuji+Kyoto/Arashiyama+Bamboo+Forest+Kyoto/Gion+District+Kyoto" target="_blank" class="map-link osaka">🗺️ Open Osaka/Kyoto/Nara Map (14 stops) ↗</a>
+  <a href="https://www.google.com/maps/dir/Hotel+Metropolitan+Edmont+Tokyo/Uohide+Shibuya/Imperial+Palace+Tokyo/Senso-ji+Temple/Nakamise+Shopping+Street/Akihabara+Station/Cat+Street+Harajuku/Shibuya+Sky/Shibuya+Crossing/Shibuya+PARCO/Miyashita+Park/Don+Quijote+Shibuya/teamLab+Planets+TOKYO/Tokyo+DisneySea" target="_blank" class="map-link tokyo">&#128506;&#65039; Open Tokyo Map (14 stops) &#8599;</a>
+  <a href="https://www.google.com/maps/dir/MIMARU+Osaka+Namba+Station/Kuromon+Ichiba+Market/Dotonbori+Osaka/Nara+Park+Japan/Todaiji+Temple+Nara/Byodoin+Temple+Uji/Universal+Studios+Japan+Osaka/Tombori+River+Cruise+Osaka/Cinnamoroll+Cafe+Namba/Osaka+Castle/Fushimi+Inari+Taisha+Kyoto/Kinkakuji+Kyoto/Arashiyama+Bamboo+Forest+Kyoto/Gion+District+Kyoto" target="_blank" class="map-link osaka">&#128506;&#65039; Open Osaka/Kyoto/Nara Map (14 stops) &#8599;</a>
 </div>
 
 <!-- TAGGED TILES -->
 <div class="tagged-grid">
-  <div class="tagged-tile">
-    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80" alt="Tokyo">
-    <div class="tagged-tile-label">Tokyo</div>
-    <span class="tagged-tile-tag">6 Days</span>
-  </div>
-    <div class="tagged-tile">
-      <img src="https://unsplash.com/photos/t3GrQGwFX84/download?force=true&w=400" alt="Osaka cherry blossoms">
-      <div class="tagged-tile-label">Osaka · Kyoto · Nara</div>
-      <span class="tagged-tile-tag">5 Days</span>
-    </div>
-  <div class="tagged-tile">
-    <img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=400&q=80" alt="Hong Kong">
-    <div class="tagged-tile-label">Hong Kong</div>
-    <span class="tagged-tile-tag">5 Days</span>
-  </div>
+  <div class="tagged-tile"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80" alt="Tokyo"><div class="tagged-tile-label">Tokyo</div><span class="tagged-tile-tag">6 Days</span></div>
+  <div class="tagged-tile"><img src="https://unsplash.com/photos/t3GrQGwFX84/download?force=true&w=400" alt="Osaka"><div class="tagged-tile-label">Osaka &middot; Kyoto &middot; Nara</div><span class="tagged-tile-tag">5 Days</span></div>
+  <div class="tagged-tile"><img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=400&q=80" alt="Hong Kong"><div class="tagged-tile-label">Hong Kong</div><span class="tagged-tile-tag">5 Days</span></div>
 </div>
 
 <!-- ===== DEPARTURE ===== -->
 <div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">Departure</div><div class="city-divider-line"></div></div>
-
 <div style="margin: 12px 16px 0;">
   <div class="day-card">
-    <div class="day-header departure-h">
-      <div class="day-label">Day 1 · June 18 (Thu)</div>
-      <div class="day-title">✈️ Depart New York</div>
-    </div>
+    <div class="day-header departure-h"><div class="day-label">Day 1 &middot; June 18 (Thu)</div><div class="day-title">&#9992;&#65039; Depart New York</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight</div><div class="act-text">NYC/Newark → Tokyo Narita (~14–15 hrs overnight flight)</div></div>
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight (JAL)</div><div class="act-text"><strong>1:35pm</strong> Departs Thu, Jun 18 · New York (JFK) Terminal 8 → <strong>4:40pm</strong> Arrives Fri, Jun 19 · Tokyo (HND) Terminal 3 · 14h 5m · Japan Airlines 5 · Economy (Q) · Total duration: 14h 5m</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Try to sleep on the plane — you arrive Day 2 morning Tokyo time.</div></div>
+      <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Flight (JAL)</div><div class="act-text"><strong>1:35pm</strong> Departs Thu, Jun 18 &middot; New York (JFK) T8 &rarr; <strong>4:40pm</strong> Arrives Fri, Jun 19 &middot; Tokyo (HND) T3 &middot; 14h 5m &middot; Japan Airlines 5 &middot; Economy (Q)</div></div>
+      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">Try to sleep on the plane &mdash; you arrive Jun 19 afternoon Tokyo time.</div></div>
     </div>
   </div>
 </div>
 
 <!-- ===== TOKYO ===== -->
-<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">🗼 Tokyo — 6 Days</div><div class="city-divider-line"></div></div>
-
+<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#128508; Tokyo &mdash; 6 Days</div><div class="city-divider-line"></div></div>
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
-  <!-- Jun 19 Arrive -->
   <div class="day-card" id="day-jun19">
-    <div class="day-header tokyo-h">
-      <div class="day-label">Tokyo · Day 1 of 6 · June 19 (Fri)</div>
-      <div class="day-title">🗼 Arrive Tokyo — Settle In & Explore</div>
-    </div>
+    <div class="day-header tokyo-h"><div class="day-label">Tokyo &middot; Day 1 of 6 &middot; June 19 (Fri)</div><div class="day-title">&#128508; Arrive Tokyo &mdash; Settle In &amp; Explore</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏨</div><div class="act-label">Check In</div><div class="act-text">Hotel Metropolitan Edmont Tokyo (~$150/night) — drop bags & settle in</div></div>
-      <div class="activity"><div class="act-icon">🚶</div><div class="act-label">Afternoon</div><div class="act-text">Arrive & explore the neighborhood at an easy pace — first konbini run, stretch the legs after the flight</div></div>
-      <div class="activity"><div class="act-icon">🍚</div><div class="act-label">Dinner</div><div class="act-text">Hunt down an <strong>ochoko-don / kaisendon</strong> spot — e.g. <strong>Uohide (魚秀)</strong> · 〒150-0031 Tokyo, Shibuya, Sakuragaokacho 15–17, 1F (~$20/person)</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Keep Day 1 light — jet lag hits hardest tonight. Grab Suica cards at the airport on the way in.</div></div>
+      <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Afternoon</div><div class="act-text">Arrive &mdash; go to Hotel Metropolitan Edmont (~$150/night), drop bags &amp; settle in</div></div>
+      <div class="activity"><div class="act-icon">&#128694;</div><div class="act-label">Evening</div><div class="act-text">Explore the neighborhood at an easy pace &mdash; first konbini run, stretch the legs</div></div>
+      <div class="activity"><div class="act-icon">&#127834;</div><div class="act-label">Dinner</div><div class="act-text">Find an <strong>ochoko-don</strong> spot &mdash; e.g. <strong>Uohide</strong> &middot; &#12306;150-0031 Tokyo, Shibuya, Sakuragaokacho 15&ndash;17, 1F (~$20/person)</div></div>
+      <div class="activity alt-row"><div class="act-icon">&#8635;</div><div class="act-label">Alternate</div><div class="act-text alt">Ginza &amp; Sanrio World Ginza for Hello Kitty merch; Uobei Shibuya conveyor-belt sushi.</div></div>
     </div>
   </div>
 
-  <!-- Jun 20 Imperial Palace + Akihabara -->
   <div class="day-card" id="day-jun20">
-    <div class="day-header tokyo-h">
-      <div class="day-label">Tokyo · Day 2 of 6 · June 20 (Sat)</div>
-      <div class="day-title">🏯 Imperial Palace & Akihabara</div>
-    </div>
+    <div class="day-header tokyo-h"><div class="day-label">Tokyo &middot; Day 2 of 6 &middot; June 20 (Sat)</div><div class="day-title">&#127983; Imperial Palace &amp; Akihabara</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏯</div><div class="act-label">Morning</div><div class="act-text">Imperial Palace East Gardens — easy walk from the hotel; moats, stone walls & gardens (free)</div></div>
-      <div class="activity"><div class="act-icon">🎮</div><div class="act-label">Afternoon</div><div class="act-text">Akihabara — anime shops, multi-floor arcades, gachapon halls & retro games (browse free; budget for capsules!)</div></div>
-      <div class="activity"><div class="act-icon">🍜</div><div class="act-label">Dinner</div><div class="act-text">Casual ramen or curry around Akihabara / near the hotel (~$20/person)</div></div>
-      <div class="activity alt-row"><div class="act-icon">↺</div><div class="act-label">Alternate</div><div class="act-text alt">Mount Fuji day trip — bus from Shinjuku to Fuji 5th Station (~$30/person). Swap in if the forecast is clear and you'd rather do Fuji.</div></div>
+      <div class="activity"><div class="act-icon">&#127983;</div><div class="act-label">Morning</div><div class="act-text">Imperial Palace &mdash; easy walk from the hotel; moats, stone walls &amp; East Gardens (free)</div></div>
+      <div class="activity"><div class="act-icon">&#127918;</div><div class="act-label">Afternoon</div><div class="act-text">Akihabara &mdash; anime shops, multi-floor arcades, gashapon &amp; retro games</div></div>
+      <div class="activity alt-row"><div class="act-icon">&#8635;</div><div class="act-label">Alternate</div><div class="act-text alt">Mount Fuji day trip &mdash; bus from Shinjuku to Fuji 5th Station (~$30/person). Swap in if the forecast is clear.</div></div>
     </div>
   </div>
 
-  <!-- Jun 21 Asakusa + Birthday + Father's Day -->
   <div class="day-card" id="day-jun21">
-    <div class="day-header tokyo-h">
-      <div class="day-label">Tokyo · Day 3 of 6 · June 21 (Sun)</div>
-      <div class="day-title">🎂 Asakusa & Twins Birthday <span class="birthday-badge">🎂 BIRTHDAY</span><span class="fathers-badge">👔 FATHER'S DAY</span></div>
-    </div>
+    <div class="day-header tokyo-h"><div class="day-label">Tokyo &middot; Day 3 of 6 &middot; June 21 (Sun)</div><div class="day-title">&#127874; Asakusa &amp; Twins Birthday <span class="birthday-badge">&#127874; BIRTHDAY</span><span class="fathers-badge">&#128085; FATHER'S DAY</span></div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">⛩️</div><div class="act-label">Morning</div><div class="act-text">Asakusa — Senso-ji Temple & Nakamise Street; melon pan, dango & ningyo-yaki snacks (free, arrive early before the crowds)</div></div>
-      <div class="activity"><div class="act-icon">🛶</div><div class="act-label">Midday</div><div class="act-text">Optional Sumida River stroll / riverside views of Tokyo Skytree, or relaxed shopping along Nakamise</div></div>
-      <div class="activity birthday-row"><div class="act-icon">🎂</div><div class="act-label">Birthday!</div><div class="act-text">Twins' birthday celebration dinner — pick somewhere fun (~$30/person) 🎈 · and a Father's Day toast 👔</div></div>
+      <div class="activity"><div class="act-icon">&#9962;&#65039;</div><div class="act-label">Morning</div><div class="act-text">Asakusa &mdash; Senso-ji Temple &amp; Nakamise Street; melon pan, dango &amp; ningyo-yaki snacks (free, arrive early)</div></div>
+      <div class="activity"><div class="act-icon">&#128330;</div><div class="act-label">Midday</div><div class="act-text">Sumida River stroll / riverside Skytree views, or relaxed Nakamise shopping</div></div>
+      <div class="activity birthday-row"><div class="act-icon">&#127874;</div><div class="act-label">Birthday!</div><div class="act-text">Twins' birthday celebration dinner (~$30/person) &#127880; &middot; and a Father's Day toast &#128085;</div></div>
     </div>
   </div>
 
-  <!-- Jun 22 Harajuku/Shibuya + teamLab -->
   <div class="day-card" id="day-jun22">
-    <div class="day-header tokyo-h">
-      <div class="day-label">Tokyo · Day 4 of 6 · June 22 (Mon)</div>
-      <div class="day-title">🌇 Harajuku → Shibuya & teamLab Planets</div>
-    </div>
+    <div class="day-header tokyo-h"><div class="day-label">Tokyo &middot; Day 4 of 6 &middot; June 22 (Mon)</div><div class="day-title">&#127751; Harajuku &rarr; Shibuya &amp; teamLab Planets</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🛍️</div><div class="act-label">Morning</div><div class="act-text">Harajuku — Takeshita Street & Kiddy Land, then walk down to Shibuya via <strong>Cat Street</strong> (boutiques & cafes)</div></div>
-      <div class="activity"><div class="act-icon">🌇</div><div class="act-label">2:00pm</div><div class="act-text">Shibuya Sky rooftop observation deck — 360° Tokyo views ($20/person, <strong>book ahead!</strong>)</div></div>
-      <div class="activity"><div class="act-icon">🚦</div><div class="act-label">Afternoon</div><div class="act-text">Shibuya Crossing — watch the scramble from Shibuya Scramble Square or the MAGNET rooftop · Shibuya PARCO (Nintendo/Pokemon/Jump) · Miyashita Park outdoor mall · Mega Don Quijote</div></div>
-      <div class="activity"><div class="act-icon">🎨</div><div class="act-label">6:00pm</div><div class="act-text"><strong>teamLab Planets TOKYO DMM</strong> — 6 Chome-1-16 Toyosu, Koto City, Tokyo 135-0061 — immersive barefoot digital art (~$30/person, <strong>book ahead, sells out!</strong>)</div></div>
-      <div class="activity alt-row"><div class="act-icon">↺</div><div class="act-label">Alternate</div><div class="act-text alt">Sanrio Puroland full day in Tama (~$40/person) — Hello Kitty, My Melody, Cinnamoroll. Swap in if you'd rather do the theme park.</div></div>
+      <div class="activity"><div class="act-icon">&#128717;&#65039;</div><div class="act-label">Morning</div><div class="act-text">Harajuku &mdash; Takeshita Street &amp; Kiddy Land, then walk to Shibuya via <strong>Cat Street</strong></div></div>
+      <div class="activity"><div class="act-icon">&#127751;</div><div class="act-label">2:00pm</div><div class="act-text">Shibuya Sky rooftop deck &mdash; 360&deg; views ($20/person, <strong>book ahead!</strong>)</div></div>
+      <div class="activity"><div class="act-icon">&#128682;</div><div class="act-label">Afternoon</div><div class="act-text">Watch the crossing from Shibuya Scramble Square or the MAGNET rooftop &middot; Shibuya PARCO &middot; Miyashita Park outdoor mall &middot; Mega Don Quijote</div></div>
+      <div class="activity"><div class="act-icon">&#127912;</div><div class="act-label">6:00pm</div><div class="act-text"><strong>teamLab Planets TOKYO DMM</strong> &mdash; 6 Chome-1-16 Toyosu, Koto City, Tokyo 135-0061 (~$30/person, <strong>book ahead, sells out!</strong>)</div></div>
+      <div class="activity alt-row"><div class="act-icon">&#8635;</div><div class="act-label">Alternate</div><div class="act-text alt">Sanrio Puroland full day in Tama (~$40/person). Swap in for the theme-park day.</div></div>
     </div>
   </div>
 
-  <!-- Jun 23 DisneySea -->
   <div class="day-card" id="day-jun23">
-    <div class="day-header tokyo-h">
-      <div class="day-label">Tokyo · Day 5 of 6 · June 23 (Tue)</div>
-      <div class="day-title">🏰 Tokyo DisneySea — Full Day</div>
-    </div>
+    <div class="day-header tokyo-h"><div class="day-label">Tokyo &middot; Day 5 of 6 &middot; June 23 (Tue)</div><div class="day-title">&#127984; Tokyo DisneySea &mdash; Full Day</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏰</div><div class="act-label">All Day</div><div class="act-text">Tokyo DisneySea — the only DisneySea in the world! Fantasy Springs (Frozen, Tangled, Peter Pan), Mediterranean Harbor & more (~$75/person, <strong>buy tickets ahead</strong>)</div></div>
-      <div class="activity"><div class="act-icon">🍔</div><div class="act-label">Meals</div><div class="act-text">In-park dining all day — gyoza dog, seasonal popcorn, themed treats (~$30/person)</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Use the Tokyo Disney Resort app for ride wait times & Premier Access. Arrive at opening for Fantasy Springs.</div></div>
-      <div class="activity alt-row"><div class="act-icon">↺</div><div class="act-label">Alternate</div><div class="act-text alt">Ghibli Museum, Mitaka (lottery at ghibli-museum.jp) + Ikebukuro (Pokemon Center, gachapon) & Kirby Café at Skytree. Swap in if you'd rather do the Ghibli/character day.</div></div>
+      <div class="activity"><div class="act-icon">&#127984;</div><div class="act-label">All Day</div><div class="act-text">Tokyo DisneySea &mdash; the only one in the world! Fantasy Springs (Frozen, Tangled, Peter Pan), Mediterranean Harbor &amp; more (~$75/person, <strong>buy tickets ahead</strong>)</div></div>
+      <div class="activity"><div class="act-icon">&#127828;</div><div class="act-label">Meals</div><div class="act-text">In-park dining all day &mdash; gyoza dog, seasonal popcorn, themed treats (~$30/person)</div></div>
+      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">Use the Tokyo Disney Resort app for wait times &amp; Premier Access. Arrive at opening for Fantasy Springs.</div></div>
+      <div class="activity alt-row"><div class="act-icon">&#8635;</div><div class="act-label">Alternate</div><div class="act-text alt">Ghibli Museum, Mitaka (lottery) + Ikebukuro (Pokemon Center) &amp; Kirby Caf&eacute; at Skytree.</div></div>
     </div>
   </div>
 
 </div>
 
 <!-- ===== OSAKA / KYOTO / NARA ===== -->
-<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">🚄 Osaka Base — 5 Days</div><div class="city-divider-line"></div></div>
-
+<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#128644; Osaka Base &mdash; 5 Days</div><div class="city-divider-line"></div></div>
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
-  <!-- Jun 24 DisneySea wrap + Travel to Osaka -->
   <div class="day-card" id="day-jun24">
-    <div class="day-header osaka-h">
-      <div class="day-label">Osaka · Day 1 of 5 · June 24 (Wed)</div>
-      <div class="day-title">🚄 Last Tokyo Morning & Travel to Osaka</div>
-    </div>
+    <div class="day-header osaka-h"><div class="day-label">Osaka &middot; Day 1 of 5 &middot; June 24 (Wed)</div><div class="day-title">&#128644; Last Tokyo Morning &amp; Travel to Osaka</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏰</div><div class="act-label">Morning</div><div class="act-text">Free morning — wander around before leaving Tokyo (squeeze in extra DisneySea time or last-minute shopping), then check out</div></div>
-      <div class="activity"><div class="act-icon">🚄</div><div class="act-label">2:00pm</div><div class="act-text">Shinkansen Tokyo → Osaka (~2h 30min, ~$130/person) — check into MIMARU Osaka Namba Station</div></div>
-      <div class="activity"><div class="act-icon">🍢</div><div class="act-label">Evening</div><div class="act-text">Kuromon Ichiba Market — sushi, wagyu skewers, fresh fruit & street food, ~5 min walk from the hotel (~$20/person)</div></div>
+      <div class="activity"><div class="act-icon">&#127984;</div><div class="act-label">Morning</div><div class="act-text">Wander around before leaving Tokyo &mdash; squeeze in extra DisneySea time or last-minute shopping, then check out</div></div>
+      <div class="activity"><div class="act-icon">&#128644;</div><div class="act-label">2:00pm</div><div class="act-text">Take the train Tokyo &rarr; Osaka (Shinkansen ~2h 30min, ~$130/person) &mdash; check into MIMARU Osaka Namba Station</div></div>
+      <div class="activity"><div class="act-icon">&#127790;</div><div class="act-label">Evening</div><div class="act-text">Wander around Kuromon Market &mdash; sushi, wagyu skewers, fresh fruit &amp; street food, ~5 min walk from the hotel (~$20/person)</div></div>
     </div>
     <div class="mimaru-box">
-      <div class="mimaru-name">🏨 MIMARU Osaka Namba Station</div>
-      <div class="mimaru-stars">★★★★★ 4.7 (544 reviews)</div>
-      <div class="mimaru-detail">3-6-24 Nipponbashi, Naniwa Ward, Osaka · +81 6-6567-8237</div>
-      <div class="mimaru-detail">Apartment-style suites · board games · coin laundry · 2 min walk to Namba Station · walking distance to Dotonbori & Kuromon Market</div>
+      <div class="mimaru-name">&#127976; MIMARU Osaka Namba Station</div>
+      <div class="mimaru-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 4.7 (544 reviews)</div>
+      <div class="mimaru-detail">3-6-24 Nipponbashi, Naniwa Ward, Osaka &middot; +81 6-6567-8237</div>
+      <div class="mimaru-detail">Apartment-style suites &middot; board games &middot; coin laundry &middot; 2 min to Namba Station &middot; walking distance to Dotonbori &amp; Kuromon</div>
     </div>
     <div style="height:12px;"></div>
   </div>
 
-  <!-- Jun 25 Nara + Uji -->
   <div class="day-card" id="day-jun25">
-    <div class="day-header nara-osaka-h">
-      <div class="day-label">Nara + Uji · Day 2 of 5 · June 25 (Thu)</div>
-      <div class="day-title">🦌 Nara Park & Uji Day Trip — with Uncle & Family</div>
-    </div>
+    <div class="day-header nara-osaka-h"><div class="day-label">Nara + Uji &middot; Day 2 of 5 &middot; June 25 (Thu)</div><div class="day-title">&#129420; Nara Park &amp; Uji Day Trip &mdash; with Uncle &amp; Family</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🦌</div><div class="act-label">Morning</div><div class="act-text">Osaka → Nara (~45 min, ~$8/person). Nara Park — feed the bowing deer! Todai-ji temple with the giant bronze Buddha ($6 entry)</div></div>
-      <div class="activity"><div class="act-icon">🍵</div><div class="act-label">Midday</div><div class="act-text">Continue to Uji — Byodo-in Temple (the ¥10-coin temple) & matcha everything along Byodo-in Omotesando; lunch en route (~$15/person)</div></div>
-      <div class="activity"><div class="act-icon">👨‍👩‍👧‍👦</div><div class="act-label">Family</div><div class="act-text">Day out together with Uncle & the family</div></div>
-      <div class="activity birthday-row"><div class="act-icon">🎂</div><div class="act-label">Evening</div><div class="act-text">Back to Osaka — Dotonbori dinner (kushikatsu, takoyaki) · Celebrate Tom's Birthday 🎂</div></div>
+      <div class="activity"><div class="act-icon">&#129420;</div><div class="act-label">Morning</div><div class="act-text">Nara Park and Uji day trip with Uncle and family &mdash; Osaka &rarr; Nara (~45 min); feed the bowing deer; Todai-ji giant Buddha ($6)</div></div>
+      <div class="activity"><div class="act-icon">&#127861;</div><div class="act-label">Midday</div><div class="act-text">Continue to Uji &mdash; Byodo-in Temple (the &yen;10-coin temple) &amp; matcha treats on Byodo-in Omotesando; lunch en route (~$15/person)</div></div>
+      <div class="activity birthday-row"><div class="act-icon">&#127874;</div><div class="act-label">Evening</div><div class="act-text">Back to Osaka &mdash; Dotonbori dinner (kushikatsu, takoyaki) &middot; Celebrate Tom's Birthday &#127874;</div></div>
     </div>
-    <a href="#ref-nara" class="ref-jump">📎 Open the Nara Park reference guide <span class="chev">↓</span></a>
+    <a href="#ref-nara" class="ref-jump">&#128206; Open the Nara Park reference guide <span class="chev">&darr;</span></a>
   </div>
 
-  <!-- Jun 26 USJ + Cruise + Cinnamoroll -->
   <div class="day-card" id="day-jun26">
-    <div class="day-header osaka-h">
-      <div class="day-label">Osaka · Day 3 of 5 · June 26 (Fri)</div>
-      <div class="day-title">🎢 Universal Studios, River Cruise & Cinnamoroll Café</div>
-    </div>
+    <div class="day-header osaka-h"><div class="day-label">Osaka &middot; Day 3 of 5 &middot; June 26 (Fri)</div><div class="day-title">&#127922; Universal Studios, River Cruise &amp; Cinnamoroll</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🎢</div><div class="act-label">Morning–PM</div><div class="act-text">Meet Uncle → Universal Studios Japan — Super Nintendo World, Harry Potter, Minion Park ($80/person, book ahead; Express Pass saves hours). Arrive at opening!</div></div>
-      <div class="activity"><div class="act-icon">🚤</div><div class="act-label">Late PM</div><div class="act-text">Tombori River Cruise / Osaka Wonder Cruise along the Dotonbori canal — relaxed loop past the Glico sign (~$10/person)</div></div>
-      <div class="activity"><div class="act-icon">🐶</div><div class="act-label">5:00pm</div><div class="act-text"><strong>Cinnamoroll Café</strong> — 1-5-14 Namba, Chuo Ward, Osaka City, Osaka 542-0076 (reserve ahead; themed sweets & drinks)</div></div>
-      <div class="activity"><div class="act-icon">🍽️</div><div class="act-label">Evening</div><div class="act-text">Dinner around Namba / Dotonbori (~$25/person)</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">Leave USJ by mid-afternoon to make the 5pm café — it's a ~25 min ride back to Namba.</div></div>
+      <div class="activity"><div class="act-icon">&#127922;</div><div class="act-label">Morning</div><div class="act-text">Meet uncle and go to Universal Studios Japan &mdash; Super Nintendo World, Harry Potter, Minion Park ($80/person, book ahead; Express Pass saves hours)</div></div>
+      <div class="activity"><div class="act-icon">&#128676;</div><div class="act-label">Afternoon</div><div class="act-text">Canal boat ride e.g. Tombori River Cruise / Osaka Wonder Cruise along the Dotonbori canal (~$10/person)</div></div>
+      <div class="activity"><div class="act-icon">&#128054;</div><div class="act-label">5:00pm</div><div class="act-text"><strong>Cinnamoroll Caf&eacute;</strong> &mdash; 1-5-14 Namba, Chuo Ward, Osaka City, Osaka 542-0076 (reserve ahead)</div></div>
+      <div class="activity"><div class="act-icon">&#127869;&#65039;</div><div class="act-label">Evening</div><div class="act-text">Eat dinner somewhere around Namba / Dotonbori (~$25/person)</div></div>
+      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">Leave USJ by mid-afternoon to make the 5pm caf&eacute; &mdash; it's a ~25 min ride back to Namba.</div></div>
     </div>
   </div>
 
-  <!-- Jun 27 Shopping & Osaka -->
   <div class="day-card" id="day-jun27">
-    <div class="day-header osaka-h">
-      <div class="day-label">Osaka · Day 4 of 5 · June 27 (Sat)</div>
-      <div class="day-title">🛍️ Shopping & Exploring Osaka</div>
-    </div>
+    <div class="day-header osaka-h"><div class="day-label">Osaka &middot; Day 4 of 5 &middot; June 27 (Sat)</div><div class="day-title">&#128717;&#65039; Shopping &amp; Exploring Osaka</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🛍️</div><div class="act-label">Daytime</div><div class="act-text">Explore Osaka — Shinsaibashi-suji covered arcade, Amerikamura, Pokemon Center Osaka & Den Den Town (anime & electronics, ~5 min from the hotel)</div></div>
-      <div class="activity"><div class="act-icon">🏯</div><div class="act-label">Optional</div><div class="act-text">Osaka Castle & park — grounds free, $6 inside for the city views (great if you want a sightseeing break from shopping)</div></div>
-      <div class="activity"><div class="act-icon">🍢</div><div class="act-label">Evening</div><div class="act-text">Back to Dotonbori — takoyaki, okonomiyaki, kushikatsu & the Glico Running Man (~$20/person)</div></div>
+      <div class="activity"><div class="act-icon">&#128717;&#65039;</div><div class="act-label">Daytime</div><div class="act-text">Shopping and exploring Osaka &mdash; Shinsaibashi-suji arcade, Amerikamura, Pokemon Center Osaka &amp; Den Den Town (anime &amp; electronics)</div></div>
+      <div class="activity"><div class="act-icon">&#127983;</div><div class="act-label">Optional</div><div class="act-text">Osaka Castle &amp; park &mdash; grounds free, $6 inside for the city views</div></div>
+      <div class="activity"><div class="act-icon">&#127790;</div><div class="act-label">Evening</div><div class="act-text">Back to Dotonbori &mdash; takoyaki, okonomiyaki, kushikatsu &amp; the Glico Running Man (~$20/person)</div></div>
     </div>
-    <a href="#ref-osaka" class="ref-jump">📎 Open the Osaka one-day reference guide <span class="chev">↓</span></a>
+    <a href="#ref-osaka" class="ref-jump">&#128206; Open the Osaka one-day reference guide <span class="chev">&darr;</span></a>
   </div>
 
-  <!-- Jun 28 Kyoto Day Trip -->
   <div class="day-card" id="day-jun28">
-    <div class="day-header kyoto-h">
-      <div class="day-label">Kyoto · Day 5 of 5 · June 28 (Sun)</div>
-      <div class="day-title">⛩️ Kyoto Day Trip</div>
-    </div>
+    <div class="day-header kyoto-h"><div class="day-label">Kyoto &middot; Day 5 of 5 &middot; June 28 (Sun)</div><div class="day-title">&#9962;&#65039; Kyoto Day Trip</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🚄</div><div class="act-label">Travel</div><div class="act-text">Osaka → Kyoto by train (~30 min, ~$5/person). Day trip only — luggage stays at MIMARU.</div></div>
-      <div class="activity"><div class="act-icon">⛩️</div><div class="act-label">Morning</div><div class="act-text">Fushimi Inari Shrine — hike the thousands of red torii gates (free, arrive early to beat crowds)</div></div>
-      <div class="activity"><div class="act-icon">🥇</div><div class="act-label">Midday</div><div class="act-text">Kinkaku-ji Golden Pavilion ($5) — and optional kimono rental for photos (~$30–50/person)</div></div>
-      <div class="activity"><div class="act-icon">🎋</div><div class="act-label">Afternoon</div><div class="act-text">Arashiyama Bamboo Grove (free) + Tenryu-ji Garden ($10); Iwatayama Monkey Park if energy allows (~$6)</div></div>
-      <div class="activity"><div class="act-icon">🏮</div><div class="act-label">Evening</div><div class="act-text">Nishiki Market snacks & a Gion lantern-lit walk (possible geisha sightings) before heading back to Osaka</div></div>
-      <div class="activity tip-row"><div class="act-icon">💡</div><div class="act-label">Tip</div><div class="act-text tip">This is a packed single day — pick 3 highlights and go in geographic order to save backtracking. The reference guide below has a step-by-step route.</div></div>
+      <div class="activity"><div class="act-icon">&#128644;</div><div class="act-label">Travel</div><div class="act-text">Kyoto day trip &mdash; Osaka &rarr; Kyoto by train (~30 min, ~$5/person). Luggage stays at MIMARU.</div></div>
+      <div class="activity"><div class="act-icon">&#9962;&#65039;</div><div class="act-label">Morning</div><div class="act-text">Fushimi Inari Shrine &mdash; hike the thousands of red torii gates (free, arrive early)</div></div>
+      <div class="activity"><div class="act-icon">&#129351;</div><div class="act-label">Midday</div><div class="act-text">Kinkaku-ji Golden Pavilion ($5) &mdash; optional kimono rental for photos (~$30&ndash;50/person)</div></div>
+      <div class="activity"><div class="act-icon">&#127883;</div><div class="act-label">Afternoon</div><div class="act-text">Arashiyama Bamboo Grove (free) + Tenryu-ji Garden ($10); Monkey Park if energy allows</div></div>
+      <div class="activity"><div class="act-icon">&#128330;</div><div class="act-label">Evening</div><div class="act-text">Nishiki Market snacks &amp; a Gion lantern-lit walk before heading back to Osaka</div></div>
     </div>
-    <a href="#ref-kyoto" class="ref-jump">📎 Open the Kyoto day-trip reference guide <span class="chev">↓</span></a>
+    <a href="#ref-kyoto" class="ref-jump">&#128206; Open the Kyoto day-trip reference guide <span class="chev">&darr;</span></a>
   </div>
 
 </div>
 
 <!-- ===== TRAVEL DAY ===== -->
-<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">✈️ Travel Day</div><div class="city-divider-line"></div></div>
-
+<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#9992;&#65039; Travel Day</div><div class="city-divider-line"></div></div>
 <div style="margin: 12px 16px 0;">
   <div class="day-card">
-    <div class="day-header travel-h">
-      <div class="day-label">Day 12 · June 29 (Mon)</div>
-      <div class="day-title">✈️ Fly Osaka → Hong Kong</div>
-    </div>
+    <div class="day-header travel-h"><div class="day-label">Day 12 &middot; June 29 (Mon)</div><div class="day-title">&#9992;&#65039; Fly Osaka &rarr; Hong Kong</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight</div><div class="act-text"><strong>Hong Kong Airlines</strong> · <br>
-        <span style="color:#1a4a7a;font-weight:500;">Departs 3:00pm → Arrives 6:25pm &nbsp;·&nbsp; Mon, Jun 29</span><br>
-        🛫 Osaka KIX – Kansai Intl. Terminal 1<br>
-        🛬 Hong Kong HKG – Hong Kong Intl. Terminal 1</div></div>
-      <div class="activity"><div class="act-icon">🏨</div><div class="act-label">Arrive HK</div><div class="act-text">Check in The Royal Garden Kowloon East, Hong Kong (~$140/night, 2 rooms)</div></div>
-      <div class="activity"><div class="act-icon">⛴️</div><div class="act-label">If Time</div><div class="act-text">Star Ferry across Victoria Harbour — best skyline view in Asia (free!)</div></div>
+      <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Flight</div><div class="act-text"><strong>Hong Kong Airlines</strong><br><span style="color:#1a4a7a;font-weight:500;">Departs 3:00pm &rarr; Arrives 6:25pm &middot; Mon, Jun 29</span><br>&#128747; Osaka KIX T1 &nbsp;&#128642;&nbsp; Hong Kong HKG T1</div></div>
+      <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Arrive HK</div><div class="act-text">Check in The Royal Garden Kowloon East (~$140/night, 2 rooms)</div></div>
+      <div class="activity"><div class="act-icon">&#9972;&#65039;</div><div class="act-label">If Time</div><div class="act-text">Star Ferry across Victoria Harbour &mdash; best skyline view in Asia (free!)</div></div>
     </div>
   </div>
 </div>
 
 <!-- ===== HONG KONG ===== -->
-<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">🌆 Hong Kong — 5 Days</div><div class="city-divider-line"></div></div>
-
+<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#127750; Hong Kong &mdash; 5 Days</div><div class="city-divider-line"></div></div>
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
-  <!-- Day 13 Manyee Birthday -->
   <div class="day-card">
-    <div class="day-header hk-h">
-      <div class="day-label">Hong Kong · Day 1 of 5 · June 30 (Tue)</div>
-      <div class="day-title">🎂 Manyee's 50th Birthday! — Victoria Peak <span class="birthday-badge">🎂 50TH!</span></div>
-    </div>
+    <div class="day-header hk-h"><div class="day-label">Hong Kong &middot; Day 1 of 5 &middot; June 30 (Tue)</div><div class="day-title">&#127874; Manyee's 50th Birthday! &mdash; Victoria Peak <span class="birthday-badge">&#127874; 50TH!</span></div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏔️</div><div class="act-label">Morning</div><div class="act-text">Victoria Peak Tram & Peak Tower — panoramic city views ($15 round trip)</div></div>
-      <div class="activity"><div class="act-icon">🥟</div><div class="act-label">Lunch</div><div class="act-text">Dim sum in Central — the real deal (~$20/person)</div></div>
-      <div class="activity"><div class="act-icon">🛍️</div><div class="act-label">Afternoon</div><div class="act-text">Walk through Central & Hollywood Road antique shops</div></div>
+      <div class="activity"><div class="act-icon">&#127956;&#65039;</div><div class="act-label">Morning</div><div class="act-text">Victoria Peak Tram &amp; Peak Tower &mdash; panoramic city views ($15 round trip)</div></div>
+      <div class="activity"><div class="act-icon">&#129375;</div><div class="act-label">Lunch</div><div class="act-text">Dim sum in Central &mdash; the real deal (~$20/person)</div></div>
+      <div class="activity"><div class="act-icon">&#128717;&#65039;</div><div class="act-label">Afternoon</div><div class="act-text">Walk through Central &amp; Hollywood Road antique shops</div></div>
     </div>
-    <div class="restaurant-box">
-      <div class="restaurant-name">🎂 Birthday Dinner:</div>
-      <div class="restaurant-detail">Birthday Restuarant<br>Birthday menus, traditional Birthday Bun, Peking duck & sharing plates.</div>
-      <div class="restaurant-book">📞 Book:  · Reserve 2–3 weeks ahead</div>
-    </div>
+    <div class="restaurant-box"><div class="restaurant-name">&#127874; Birthday Dinner:</div><div class="restaurant-detail">Birthday Restaurant<br>Birthday menus, traditional Birthday Bun, Peking duck &amp; sharing plates.</div><div class="restaurant-book">&#128222; Book: &middot; Reserve 2&ndash;3 weeks ahead</div></div>
     <div style="height:12px;"></div>
   </div>
 
-  <!-- Day 14 Big Buddha -->
   <div class="day-card">
-    <div class="day-header hk-h">
-      <div class="day-label">Hong Kong · Day 2 of 5 · July 1 (Wed)</div>
-      <div class="day-title">🪷 Big Buddha & Lantau Island</div>
-    </div>
+    <div class="day-header hk-h"><div class="day-label">Hong Kong &middot; Day 2 of 5 &middot; July 1 (Wed)</div><div class="day-title">&#129783; Big Buddha &amp; Lantau Island</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🪪</div><div class="act-label">9–10am</div><div class="act-text">HKID Appointment for Manyee — Wed Jul 1, 9:00–10:00am HK time. Confirmed booking.</div></div>
-      <div class="activity"><div class="act-icon">🚡</div><div class="act-label">Morning</div><div class="act-text">Ngong Ping Cable Car + Tian Tan Big Buddha (~$30/person round trip)</div></div>
-      <div class="activity"><div class="act-icon">🍱</div><div class="act-label">Lunch</div><div class="act-text">Vegetarian food near Po Lin Monastery (~$15/person)</div></div>
-      <div class="activity"><div class="act-icon">🏘️</div><div class="act-label">Afternoon</div><div class="act-text">Tai O stilt fishing village — authentic old Hong Kong</div></div>
-      <div class="activity"><div class="act-icon">⛴️</div><div class="act-label">Evening</div><div class="act-text">Star Ferry across Victoria Harbour — best skyline view in Asia (free!)</div></div>
+      <div class="activity"><div class="act-icon">&#129706;</div><div class="act-label">9&ndash;10am</div><div class="act-text">HKID Appointment for Manyee &mdash; Wed Jul 1, 9:00&ndash;10:00am HK time. Confirmed booking.</div></div>
+      <div class="activity"><div class="act-icon">&#128737;</div><div class="act-label">Morning</div><div class="act-text">Ngong Ping Cable Car + Tian Tan Big Buddha (~$30/person round trip)</div></div>
+      <div class="activity"><div class="act-icon">&#127857;</div><div class="act-label">Lunch</div><div class="act-text">Vegetarian food near Po Lin Monastery (~$15/person)</div></div>
+      <div class="activity"><div class="act-icon">&#127960;&#65039;</div><div class="act-label">Afternoon</div><div class="act-text">Tai O stilt fishing village &mdash; authentic old Hong Kong</div></div>
+      <div class="activity"><div class="act-icon">&#9972;&#65039;</div><div class="act-label">Evening</div><div class="act-text">Star Ferry across Victoria Harbour &mdash; best skyline view in Asia (free!)</div></div>
     </div>
   </div>
 
-  <!-- Day 15 Kowloon -->
   <div class="day-card">
-    <div class="day-header hk-h">
-      <div class="day-label">Hong Kong · Day 3 of 5 · July 2 (Thu)</div>
-      <div class="day-title">🌙 Kowloon & Night Markets</div>
-    </div>
+    <div class="day-header hk-h"><div class="day-label">Hong Kong &middot; Day 3 of 5 &middot; July 2 (Thu)</div><div class="day-title">&#127769; Kowloon &amp; Night Markets</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🛒</div><div class="act-label">Late AM</div><div class="act-text">Mong Kok markets — Ladies Market, Jade Market, flower market</div></div>
-      <div class="activity"><div class="act-icon">🍜</div><div class="act-label">Lunch</div><div class="act-text">Wonton noodles at a local dai pai dong (~$10/person)</div></div>
-      <div class="activity"><div class="act-icon">🙏</div><div class="act-label">Afternoon</div><div class="act-text">Wong Tai Sin Temple (free) — colourful and culturally rich</div></div>
-      <div class="activity"><div class="act-icon">🌃</div><div class="act-label">Evening</div><div class="act-text">Avenue of Stars + Symphony of Lights harbour show (free, 8pm)</div></div>
-      <div class="activity"><div class="act-icon">🍽️</div><div class="act-label">Dinner</div><div class="act-text">Roast goose or Peking duck dinner (~$35/person)</div></div>
+      <div class="activity"><div class="act-icon">&#128722;</div><div class="act-label">Late AM</div><div class="act-text">Mong Kok markets &mdash; Ladies Market, Jade Market, flower market</div></div>
+      <div class="activity"><div class="act-icon">&#127836;</div><div class="act-label">Lunch</div><div class="act-text">Wonton noodles at a local dai pai dong (~$10/person)</div></div>
+      <div class="activity"><div class="act-icon">&#128591;</div><div class="act-label">Afternoon</div><div class="act-text">Wong Tai Sin Temple (free) &mdash; colourful and culturally rich</div></div>
+      <div class="activity"><div class="act-icon">&#127747;</div><div class="act-label">Evening</div><div class="act-text">Avenue of Stars + Symphony of Lights harbour show (free, 8pm)</div></div>
+      <div class="activity"><div class="act-icon">&#127869;&#65039;</div><div class="act-label">Dinner</div><div class="act-text">Roast goose or Peking duck dinner (~$35/person)</div></div>
     </div>
   </div>
 
-  <!-- Day 16 Ocean Park -->
   <div class="day-card">
-    <div class="day-header hk-h">
-      <div class="day-label">Hong Kong · Day 4 of 5 · July 3 (Fri)</div>
-      <div class="day-title">🎡 Ocean Park — Last Full Day!</div>
-    </div>
+    <div class="day-header hk-h"><div class="day-label">Hong Kong &middot; Day 4 of 5 &middot; July 3 (Fri)</div><div class="day-title">&#127905; Ocean Park &mdash; Last Full Day!</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🎡</div><div class="act-label">All Day</div><div class="act-text">Ocean Park Hong Kong — giant pandas, cable car, roller coasters & aquarium (~$50/person). A brilliant last full day for the whole family!</div></div>
-      <div class="activity"><div class="act-icon">🍔</div><div class="act-label">Meals</div><div class="act-text">Eat inside the park — wide variety of food options (~$30/person)</div></div>
-      <div class="activity"><div class="act-icon">🍻</div><div class="act-label">Evening</div><div class="act-text">Final HK evening — last walk along the waterfront, pick up last-minute souvenirs</div></div>
+      <div class="activity"><div class="act-icon">&#127905;</div><div class="act-label">All Day</div><div class="act-text">Ocean Park Hong Kong &mdash; giant pandas, cable car, roller coasters &amp; aquarium (~$50/person)</div></div>
+      <div class="activity"><div class="act-icon">&#127828;</div><div class="act-label">Meals</div><div class="act-text">Eat inside the park &mdash; wide variety of food options (~$30/person)</div></div>
+      <div class="activity"><div class="act-icon">&#127867;</div><div class="act-label">Evening</div><div class="act-text">Final HK evening &mdash; last walk along the waterfront, last-minute souvenirs</div></div>
     </div>
   </div>
 
-  <!-- Day 17 Depart -->
   <div class="day-card">
-    <div class="day-header travel-h">
-      <div class="day-label">Day 17 · July 4 (Sat)</div>
-      <div class="day-title">✈️ Hong Kong → New York (via Taipei)</div>
-    </div>
+    <div class="day-header travel-h"><div class="day-label">Day 17 &middot; July 4 (Sat)</div><div class="day-title">&#9992;&#65039; Hong Kong &rarr; New York (via Taipei)</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">🏨</div><div class="act-label">Morning</div><div class="act-text">Hotel checkout — last-minute shopping before heading to the airport</div></div>
-
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight 1</div><div class="act-text"><strong>2:05pm</strong> Departs Sat, Jul 4 · Hong Kong (HKG) Terminal 1 → <strong>3:55pm</strong> Arrives Sat, Jul 4 · Taipei (TPE) Terminal 1 · 1h 50m · China Airlines 910 · Economy (H) · </div></div>
-
-      <div class="activity"><div class="act-icon">⏱️</div><div class="act-label">Layover</div><div class="act-text">Layover in Taipei: 1h 35m</div></div>
-
-      <div class="activity"><div class="act-icon">✈️</div><div class="act-label">Flight 2</div><div class="act-text"><strong>5:30pm</strong> Departs Sat, Jul 4 · Taipei (TPE) Terminal 2 → <strong>8:50pm</strong> Arrives Sat, Jul 4 · New York (JFK) Terminal 4 · 15h 20m · China Airlines 12 · Economy (H) · </div></div>
-
-      <div class="activity"><div class="act-icon">🧾</div><div class="act-label">Total</div><div class="act-text">Total duration: 18h 45m (including layover)</div></div>
+      <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Morning</div><div class="act-text">Hotel checkout &mdash; last-minute shopping before the airport</div></div>
+      <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Flight 1</div><div class="act-text"><strong>2:05pm</strong> HKG T1 &rarr; <strong>3:55pm</strong> Taipei (TPE) T1 &middot; 1h 50m &middot; China Airlines 910 &middot; Economy (H)</div></div>
+      <div class="activity"><div class="act-icon">&#9201;&#65039;</div><div class="act-label">Layover</div><div class="act-text">Layover in Taipei: 1h 35m</div></div>
+      <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Flight 2</div><div class="act-text"><strong>5:30pm</strong> Taipei (TPE) T2 &rarr; <strong>8:50pm</strong> New York (JFK) T4 &middot; 15h 20m &middot; China Airlines 12 &middot; Economy (H)</div></div>
+      <div class="activity"><div class="act-icon">&#129534;</div><div class="act-label">Total</div><div class="act-text">Total duration: 18h 45m (including layover)</div></div>
     </div>
   </div>
 
 </div>
 
-<!-- ===== REFERENCE ITINERARIES ===== -->
-<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">📎 Reference Guides</div><div class="city-divider-line"></div></div>
-
+<!-- ===== REFERENCE GUIDES ===== -->
+<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#128206; Reference Guides</div><div class="city-divider-line"></div></div>
 <div class="ref-section" id="reference">
-  <div class="ref-section-title">Kyoto · Nara · Osaka Reference Guides</div>
-  <div class="ref-section-sub">Detailed step-by-step day plans (from ChatGPT). Tap a day's 📎 link above to jump here, then use “Back” to return to that day.</div>
+  <div class="ref-section-title">Kyoto &middot; Nara &middot; Osaka Reference Guides</div>
+  <div class="ref-section-sub">Detailed step-by-step day plans. Tap a day's &#128206; link above to jump here, then use &ldquo;Back&rdquo; to return.</div>
 
-  <!-- Kyoto -->
   <div class="ref-card" id="ref-kyoto">
-    <div class="ref-card-head kyoto">
-      <span class="ref-name">⛩️ Kyoto Day Trip — for June 28</span>
-      <a href="#day-jun28" class="ref-back">↑ Back to Jun 28</a>
-    </div>
-    <a href="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_36%20PM.png" target="_blank">
-      <img src="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_36%20PM.png" alt="Kyoto day trip itinerary reference (from Osaka)">
-    </a>
-    <div class="ref-figcap">Kyoto day-trip route guide · tap image to open full size</div>
+    <div class="ref-card-head kyoto"><span class="ref-name">&#9962;&#65039; Kyoto Day Trip &mdash; for June 28</span><a href="#day-jun28" class="ref-back">&uarr; Back to Jun 28</a></div>
+    <a href="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_36%20PM.png" target="_blank"><img src="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_36%20PM.png" alt="Kyoto day trip itinerary reference"></a>
+    <div class="ref-figcap">Kyoto day-trip route guide &middot; tap image to open full size</div>
   </div>
 
-  <!-- Nara -->
   <div class="ref-card" id="ref-nara">
-    <div class="ref-card-head nara">
-      <span class="ref-name">🦌 Nara Park Day Trip — for June 25</span>
-      <a href="#day-jun25" class="ref-back">↑ Back to Jun 25</a>
-    </div>
-    <a href="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_54%20PM.png" target="_blank">
-      <img src="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_54%20PM.png" alt="Nara Park day trip itinerary reference (from Osaka)">
-    </a>
-    <div class="ref-figcap">Nara Park day-trip route guide · tap image to open full size</div>
+    <div class="ref-card-head nara"><span class="ref-name">&#129420; Nara Park Day Trip &mdash; for June 25</span><a href="#day-jun25" class="ref-back">&uarr; Back to Jun 25</a></div>
+    <a href="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_54%20PM.png" target="_blank"><img src="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_28_54%20PM.png" alt="Nara Park day trip itinerary reference"></a>
+    <div class="ref-figcap">Nara Park day-trip route guide &middot; tap image to open full size</div>
   </div>
 
-  <!-- Osaka -->
   <div class="ref-card" id="ref-osaka">
-    <div class="ref-card-head">
-      <span class="ref-name">🛍️ Osaka One-Day Family Itinerary — for June 27</span>
-      <a href="#day-jun27" class="ref-back">↑ Back to Jun 27</a>
-    </div>
-    <a href="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_47_20%20PM.png" target="_blank">
-      <img src="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_47_20%20PM.png" alt="Osaka one-day family itinerary reference">
-    </a>
-    <div class="ref-figcap">Osaka one-day family route guide · tap image to open full size</div>
+    <div class="ref-card-head"><span class="ref-name">&#128717;&#65039; Osaka One-Day Family Itinerary &mdash; for June 27</span><a href="#day-jun27" class="ref-back">&uarr; Back to Jun 27</a></div>
+    <a href="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_47_20%20PM.png" target="_blank"><img src="Attachments-chatgpt%20kyoto%20osaka%20itinerary/ChatGPT%20Image%20Jun%209%2C%202026%2C%2001_47_20%20PM.png" alt="Osaka one-day family itinerary reference"></a>
+    <div class="ref-figcap">Osaka one-day family route guide &middot; tap image to open full size</div>
   </div>
 </div>
 
-<!-- FOOTER TIPS -->
+<!-- FOOTER -->
 <div class="footer">
   <div style="background:#f0f7ff;border:1px solid #d0e4f8;border-radius:10px;padding:16px 20px;text-align:left;margin-bottom:24px;font-size:12px;color:#333;line-height:1.8;">
-    <strong style="display:block;margin-bottom:6px;font-size:13px;">🧳 General Tips</strong>
-    Book DisneySea, teamLab Planets, Shibuya Sky & USJ well in advance. · June is rainy season in Japan — pack compact umbrellas. · Get a <strong>Suica card</strong> at Tokyo airport for all train travel. · <strong>JR Pass</strong> (~$350/person) recommended for the Tokyo→Osaka Shinkansen. · Reserve the Cinnamoroll Café (Jun 26) and the HK birthday dinner ahead. · Reference day-plans for Nara, Osaka & Kyoto are linked from those days (📎) and collected above.
+    <strong style="display:block;margin-bottom:6px;font-size:13px;">&#129507; General Tips</strong>
+    Book DisneySea, teamLab Planets, Shibuya Sky &amp; USJ well in advance. &middot; June is rainy season &mdash; pack compact umbrellas. &middot; Get a <strong>Suica card</strong> at the airport. &middot; <strong>JR Pass</strong> (~$350/person) for the Tokyo&rarr;Osaka Shinkansen. &middot; Reserve the Cinnamoroll Caf&eacute; (Jun 26) &amp; HK birthday dinner ahead. &middot; Nara/Osaka/Kyoto reference guides are linked from those days (&#128206;) and collected above.
   </div>
-  <strong>Japan & Hong Kong · June 18 – July 4, 2026</strong><br>
-  5 Travelers · 17 Days · Created with ❤️
-  <br><a href="#top" class="to-top">↑ Back to top</a>
+  <strong>Japan &amp; Hong Kong &middot; June 18 &ndash; July 4, 2026</strong><br>
+  5 Travelers &middot; 17 Days &middot; Created with &#10084;&#65039;
+  <br><a href="#top" class="to-top">&uarr; Back to top</a>
 </div>
 
 </body>
