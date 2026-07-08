@@ -48,6 +48,7 @@
   .tagged-grid { margin: 16px 16px 0; display: flex; gap: 10px; flex-wrap: wrap; }
   .tagged-tile { flex: 1; min-width: 130px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
   .tagged-tile .swatch { height: 70px; display: flex; align-items: center; justify-content: center; font-size: 30px; }
+  .tagged-tile img { width: 100%; height: 70px; object-fit: cover; display: block; background: #e8e4dd; }
   .tagged-tile-label { padding: 8px 10px 2px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
   .tagged-tile-tag { display: inline-block; border-radius: 10px; padding: 2px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 4px 10px 10px; }
 
@@ -122,7 +123,7 @@
 <div class="hero">
   <div class="hero-flag">Fantasy Vacation &middot; Summer 2026</div>
   <h1>The Grand<br>Cross-Country &amp; China Run</h1>
-  <div class="hero-sub">July 3 &ndash; ~23 &middot; 6 Travelers &middot; 3 Rooms &middot; ~21 Days</div>
+  <div class="hero-sub">July 3 &ndash; ~26 &middot; 6 Travelers &middot; 3 Rooms &middot; ~24 Days</div>
   <div class="hero-route">
     <span class="hero-city">&#127968; NJ</span><span class="hero-arrow">&rarr;</span>
     <span class="hero-city">&#127968; Manhattan</span><span class="hero-arrow">&rarr;</span>
@@ -139,17 +140,16 @@
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat"><div class="stat-n">~21</div><div class="stat-l">Days</div></div>
+  <div class="stat"><div class="stat-n">~24</div><div class="stat-l">Days</div></div>
   <div class="stat"><div class="stat-n">6</div><div class="stat-l">People</div></div>
   <div class="stat"><div class="stat-n">8</div><div class="stat-l">Stops</div></div>
   <div class="stat"><div class="stat-n">2</div><div class="stat-l">Countries</div></div>
-  <div class="stat"><div class="stat-n">$4.2-6.2k</div><div class="stat-l">Per Person</div></div>
 </div>
 
 <!-- RATING -->
 <div class="rating-alert">
   <strong>&#11088; Overall Rating: 3 / 5 &mdash; Ambitious but Overpacked</strong>
-  A fun bucket-list mix (Americana road trip + a full China swing), but there's no rest day anywhere, several back-to-back travel days, and it now runs ~21 days once Chengdu and Shanghai are added &mdash; a solid three weeks, not two. See the Trip Verdict section at the bottom for the full breakdown.
+  A fun bucket-list mix (Americana road trip + a full China swing), but there's no rest day at the start and it now runs ~24 days with the Amtrak swap and Chengdu/Shanghai additions &mdash; over three and a half weeks, not two. See the Trip Verdict section at the bottom for the full breakdown.
 </div>
 
 <!-- BOOK AHEAD ALERT -->
@@ -157,7 +157,8 @@
   <strong>&#9888;&#65039; Book These In Advance</strong>
   <div class="book-items">
     <span class="book-item">&#128646; Hong Kong &rarr; Newark flights &mdash; Jul 3 (peak summer fares)</span>
-    <span class="book-item">&#128669; Grand Canyon Railway &mdash; one-way fare, Jul 8</span>
+    <span class="book-item">&#128646; Amtrak Lake Shore Limited + Southwest Chief &mdash; sleepers sell out early, coach fares rise closer to travel</span>
+    <span class="book-item">&#128669; Grand Canyon Railway &mdash; one-way fare, Jul 11</span>
     <span class="book-item">&#128664; One-way rental car (South Rim &rarr; San Diego drop)</span>
     <span class="book-item">&#127964;&#65039; Great Wall (Mutianyu) tour &mdash; Beijing</span>
     <span class="book-item">&#9992;&#65039; San Diego &rarr; Beijing flight</span>
@@ -170,13 +171,41 @@
 
 <!-- TAGGED TILES -->
 <div class="tagged-grid">
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#1a2744,#2e4270);">&#127968;</div><div class="tagged-tile-label">NJ / Manhattan</div><span class="tagged-tile-tag" style="background:var(--home-accent);color:var(--home);">4 Days</span></div>
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#7a3b12,#c96a2a);">&#127960;&#65039;</div><div class="tagged-tile-label">Grand Canyon</div><span class="tagged-tile-tag" style="background:var(--gc-accent);color:var(--gc);">3 Days</span></div>
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#14535c,#1f8a99);">&#127958;&#65039;</div><div class="tagged-tile-label">Joshua Tree / San Diego</div><span class="tagged-tile-tag" style="background:var(--socal-accent);color:var(--socal);">2 Days</span></div>
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#6b1a1a,#a83232);">&#127961;&#65039;</div><div class="tagged-tile-label">Beijing</div><span class="tagged-tile-tag" style="background:var(--beijing-accent);color:var(--beijing);">3 Days</span></div>
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#4a2416,#8a5030);">&#127960;&#65039;</div><div class="tagged-tile-label">Xi'an</div><span class="tagged-tile-tag" style="background:var(--xian-accent);color:var(--xian);">2 Days</span></div>
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#2f4a1f,#5c8a3a);">&#128060;</div><div class="tagged-tile-label">Chengdu</div><span class="tagged-tile-tag" style="background:#c9e0a0;color:#2f4a1f;">2 Days</span></div>
-  <div class="tagged-tile"><div class="swatch" style="background:linear-gradient(135deg,#1f3a4a,#3a6a8a);">&#127960;&#65039;</div><div class="tagged-tile-label">Shanghai</div><span class="tagged-tile-tag" style="background:#b8dcf2;color:#1f3a4a;">2 Days</span></div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Above_Gotham.jpg?width=400" alt="Manhattan skyline" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#1a2744,#2e4270);">&#127968;</div>
+    <div class="tagged-tile-label">NJ / Manhattan</div><span class="tagged-tile-tag" style="background:var(--home-accent);color:var(--home);">4 Days</span>
+  </div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Canyon_River_Tree_(165872763).jpeg?width=400" alt="Grand Canyon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#7a3b12,#c96a2a);">&#127960;&#65039;</div>
+    <div class="tagged-tile-label">Grand Canyon</div><span class="tagged-tile-tag" style="background:var(--gc-accent);color:var(--gc);">3 Days</span>
+  </div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/San_Diego_skyline_18_(cropped).jpg?width=400" alt="San Diego / Joshua Tree" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#14535c,#1f8a99);">&#127958;&#65039;</div>
+    <div class="tagged-tile-label">Joshua Tree / San Diego</div><span class="tagged-tile-tag" style="background:var(--socal-accent);color:var(--socal);">2 Days</span>
+  </div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Skyline_of_Beijing_CBD_from_the_southeast_(20210907094201).jpg?width=400" alt="Beijing" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#6b1a1a,#a83232);">&#127961;&#65039;</div>
+    <div class="tagged-tile-label">Beijing</div><span class="tagged-tile-tag" style="background:var(--beijing-accent);color:var(--beijing);">3 Days</span>
+  </div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/51216-Xian_(27961738311).jpg?width=400" alt="Xi'an" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#4a2416,#8a5030);">&#127960;&#65039;</div>
+    <div class="tagged-tile-label">Xi'an</div><span class="tagged-tile-tag" style="background:var(--xian-accent);color:var(--xian);">2 Days</span>
+  </div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grosser_Panda.jpg?width=400" alt="Chengdu panda" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#2f4a1f,#5c8a3a);">&#128060;</div>
+    <div class="tagged-tile-label">Chengdu</div><span class="tagged-tile-tag" style="background:#c9e0a0;color:#2f4a1f;">2 Days</span>
+  </div>
+  <div class="tagged-tile">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Huangpu_Park_20124-Shanghai_(32208802494).jpg?width=400" alt="Shanghai" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="swatch" style="display:none;background:linear-gradient(135deg,#1f3a4a,#3a6a8a);">&#127960;&#65039;</div>
+    <div class="tagged-tile-label">Shanghai</div><span class="tagged-tile-tag" style="background:#b8dcf2;color:#1f3a4a;">2 Days</span>
+  </div>
 </div>
 
 <!-- ===== ARRIVAL ===== -->
@@ -227,16 +256,43 @@
 
 </div>
 
-<!-- ===== TRAVEL DAY: TO GRAND CANYON ===== -->
-<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#9992;&#65039; Travel Day</div><div class="city-divider-line"></div></div>
-<div style="margin: 12px 16px 0;">
+<!-- ===== TRAVEL DAYS: AMTRAK TO ARIZONA ===== -->
+<div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#128646; Travel Days &mdash; Amtrak</div><div class="city-divider-line"></div></div>
+<div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
   <div class="day-card">
-    <div class="day-header travel-h"><div class="day-label">Day 5 &middot; July 7 (Tue)</div><div class="day-title">&#9992;&#65039; Fly to Arizona &rarr; Williams</div></div>
+    <div class="day-header travel-h"><div class="day-label">Day 5 &middot; July 7 (Tue)</div><div class="day-title">&#128646; Board the Lake Shore Limited &mdash; NYC &rarr; Chicago</div></div>
     <div class="activities">
-      <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Flight</div><div class="act-text">EWR &rarr; Phoenix (PHX) or Flagstaff (FLG), one-way (~$150&ndash;250/person)</div></div>
-      <div class="activity"><div class="act-icon">&#128663;</div><div class="act-label">Afternoon</div><div class="act-text">Drive/shuttle to Williams, AZ &mdash; ~2.5 hrs from PHX, or ~35 min from FLG</div></div>
-      <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Overnight</div><div class="act-text">Grand Canyon Railway Hotel, Williams (~$90&ndash;200/night)</div></div>
-      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">There's no direct train (or flight) from NYC to the Grand Canyon &mdash; the "Grand Canyon Railway" only runs Williams &harr; South Rim. Fly into PHX/FLG first, then connect here.</div></div>
+      <div class="activity"><div class="act-icon">&#128646;</div><div class="act-label">Afternoon</div><div class="act-text">Depart NYC Penn Station on the Lake Shore Limited, ~3:40pm (~$100&ndash;180/person, coach)</div></div>
+      <div class="activity"><div class="act-icon">&#127746;</div><div class="act-label">Overnight</div><div class="act-text">Overnight on board, coach seats (recline but don't fully flatten)</div></div>
+      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">There's no direct train from NYC to Arizona &mdash; this routes through Chicago, where you transfer to the Southwest Chief. Consider a roomette for the overnight legs if budget allows; coach means sleeping upright.</div></div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header travel-h"><div class="day-label">Day 6 &middot; July 8 (Wed)</div><div class="day-title">&#128646; Chicago Connection &rarr; Southwest Chief</div></div>
+    <div class="activities">
+      <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Morning</div><div class="act-text">Arrive Chicago Union Station, ~9:45am &mdash; luggage storage available for the layover</div></div>
+      <div class="activity"><div class="act-icon">&#127749;</div><div class="act-label">Midday</div><div class="act-text">~5 hr layover in Chicago &mdash; quick Loop walk, deep-dish lunch, or just relax at the station</div></div>
+      <div class="activity"><div class="act-icon">&#128646;</div><div class="act-label">Afternoon</div><div class="act-text">Board the Southwest Chief, departs ~3:15pm (~$150&ndash;300/person, coach)</div></div>
+      <div class="activity"><div class="act-icon">&#127746;</div><div class="act-label">Overnight</div><div class="act-text">Overnight on board, crossing Illinois/Iowa/Kansas</div></div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header travel-h"><div class="day-label">Day 7 &middot; July 9 (Thu)</div><div class="day-title">&#128646; Full Day Aboard &mdash; Plains to High Desert</div></div>
+    <div class="activities">
+      <div class="activity"><div class="act-icon">&#127964;&#65039;</div><div class="act-label">All Day</div><div class="act-text">Daytime stretch through Kansas, Colorado, and New Mexico &mdash; observation-style views from the coach windows</div></div>
+      <div class="activity"><div class="act-icon">&#127746;</div><div class="act-label">Overnight</div><div class="act-text">Second overnight on board, arriving Arizona before dawn</div></div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header travel-h"><div class="day-label">Day 8 &middot; July 10 (Fri)</div><div class="day-title">&#128669; Arrive Flagstaff/Williams Junction &rarr; Williams</div></div>
+    <div class="activities">
+      <div class="activity"><div class="act-icon">&#128669;</div><div class="act-label">Early AM</div><div class="act-text">Arrive Williams Junction (~4:56am) or Flagstaff (~5:01am) &mdash; groggy but arrived</div></div>
+      <div class="activity"><div class="act-icon">&#128663;</div><div class="act-label">Morning</div><div class="act-text">Amtrak Thruway bus/shuttle transfer to Williams, AZ (~35 min from Flagstaff)</div></div>
+      <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Daytime</div><div class="act-text">Rest and recover at the Grand Canyon Railway Hotel, Williams (~$90&ndash;200/night); explore the Route 66 town at an easy pace</div></div>
+      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">This swap adds about 3 days versus flying (Days 5&ndash;8 vs. a single flight day) &mdash; everything from here shifts later in the calendar. Build in this recovery day; two overnight coach legs back to back is rough without one.</div></div>
     </div>
   </div>
 </div>
@@ -246,7 +302,7 @@
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
   <div class="day-card">
-    <div class="day-header gc-h"><div class="day-label">Grand Canyon &middot; Day 1 of 2 &middot; July 8 (Wed)</div><div class="day-title">&#128669; Ride the Grand Canyon Railway to the South Rim</div></div>
+    <div class="day-header gc-h"><div class="day-label">Grand Canyon &middot; Day 1 of 2 &middot; July 11 (Sat)</div><div class="day-title">&#128669; Ride the Grand Canyon Railway to the South Rim</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#128669;</div><div class="act-label">Morning</div><div class="act-text">Board the Grand Canyon Railway in Williams &rarr; South Rim (2.25 hrs, $70&ndash;140/person)</div></div>
       <div class="activity"><div class="act-icon">&#127964;&#65039;</div><div class="act-label">Afternoon</div><div class="act-text">Explore South Rim viewpoints &mdash; Mather Point, Yavapai Point, rim trail walk</div></div>
@@ -256,7 +312,7 @@
   </div>
 
   <div class="day-card">
-    <div class="day-header gc-h"><div class="day-label">Grand Canyon &middot; Day 2 of 2 &middot; July 9 (Thu)</div><div class="day-title">&#127964;&#65039; Full Day at the South Rim</div></div>
+    <div class="day-header gc-h"><div class="day-label">Grand Canyon &middot; Day 2 of 2 &middot; July 12 (Sun)</div><div class="day-title">&#127964;&#65039; Full Day at the South Rim</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#127964;&#65039;</div><div class="act-label">All Day</div><div class="act-text">Rim trail hikes, shuttle bus to viewpoints, sunset at Hopi Point</div></div>
       <div class="activity"><div class="act-icon">&#127860;</div><div class="act-label">Meals</div><div class="act-text">Park dining (~$35/person/day)</div></div>
@@ -271,7 +327,7 @@
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
   <div class="day-card">
-    <div class="day-header socal-h"><div class="day-label">Day 8 &middot; July 10 (Fri)</div><div class="day-title">&#128663; Road Trip: Grand Canyon &rarr; Joshua Tree &rarr; San Diego</div></div>
+    <div class="day-header socal-h"><div class="day-label">Day 11 &middot; July 13 (Mon)</div><div class="day-title">&#128663; Road Trip: Grand Canyon &rarr; Joshua Tree &rarr; San Diego</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#128663;</div><div class="act-label">Morning</div><div class="act-text">Pick up rental car at Tusayan/South Rim (one-way drop fee applies)</div></div>
       <div class="activity"><div class="act-icon">&#127964;&#65039;</div><div class="act-label">Midday</div><div class="act-text">Drive to Joshua Tree NP (~4.5 hrs), explore a few hours ($30/vehicle entrance)</div></div>
@@ -282,7 +338,7 @@
   </div>
 
   <div class="day-card">
-    <div class="day-header socal-h"><div class="day-label">Day 9 &middot; July 11 (Sat)</div><div class="day-title">&#127958;&#65039; San Diego Full Day</div></div>
+    <div class="day-header socal-h"><div class="day-label">Day 12 &middot; July 14 (Tue)</div><div class="day-title">&#127958;&#65039; San Diego Full Day</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#127964;</div><div class="act-label">Morning</div><div class="act-text">Balboa Park &amp; museums</div></div>
       <div class="activity"><div class="act-icon">&#128048;</div><div class="act-label">Midday</div><div class="act-text">San Diego Zoo (~$70/person)</div></div>
@@ -297,10 +353,10 @@
 <div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#9992;&#65039; Travel Day</div><div class="city-divider-line"></div></div>
 <div style="margin: 12px 16px 0;">
   <div class="day-card">
-    <div class="day-header travel-h"><div class="day-label">Day 10 &middot; July 12 (Sun)</div><div class="day-title">&#9992;&#65039; Fly San Diego &rarr; Beijing</div></div>
+    <div class="day-header travel-h"><div class="day-label">Day 13 &middot; July 15 (Wed)</div><div class="day-title">&#9992;&#65039; Fly San Diego &rarr; Beijing</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Flight</div><div class="act-text">SAN &rarr; PEK, 1+ connection (no direct flights), ~18&ndash;20 hrs total travel</div></div>
-      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">Crosses the international date line &mdash; you'll land Jul 13&ndash;14 local time. There's no buffer day built in before the Great Wall trip, so expect jet lag to bite.</div></div>
+      <div class="activity tip-row"><div class="act-icon">&#128161;</div><div class="act-label">Tip</div><div class="act-text tip">Crosses the international date line &mdash; you'll land Jul 16&ndash;17 local time. There's no buffer day built in before the Great Wall trip, so expect jet lag to bite.</div></div>
     </div>
   </div>
 </div>
@@ -310,7 +366,7 @@
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
   <div class="day-card">
-    <div class="day-header beijing-h"><div class="day-label">Beijing &middot; Day 1 of 3 &middot; Jul 13&ndash;14</div><div class="day-title">&#127967;&#65039; Arrival &amp; Rest</div></div>
+    <div class="day-header beijing-h"><div class="day-label">Beijing &middot; Day 1 of 3 &middot; Jul 16&ndash;17</div><div class="day-title">&#127967;&#65039; Arrival &amp; Rest</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Arrival</div><div class="act-text">Check into hotel, rest &amp; adjust to the 15-hour time change</div></div>
       <div class="activity"><div class="act-icon">&#127960;&#65039;</div><div class="act-label">Evening</div><div class="act-text">Easy walk around Tiananmen Square/Wangfujing, if energy allows</div></div>
@@ -362,7 +418,7 @@
 <div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#9992;&#65039; Travel Day</div><div class="city-divider-line"></div></div>
 <div style="margin: 12px 16px 0;">
   <div class="day-card">
-    <div class="day-header travel-h"><div class="day-label">Day 16 &middot; ~July 18</div><div class="day-title">&#128646; High-Speed Rail Xi'an &rarr; Chengdu</div></div>
+    <div class="day-header travel-h"><div class="day-label">Day 19 &middot; ~July 21</div><div class="day-title">&#128646; High-Speed Rail Xi'an &rarr; Chengdu</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#128646;</div><div class="act-label">Midday</div><div class="act-text">High-speed rail Xi'an &rarr; Chengdu (3&ndash;4.5 hrs, ~$31&ndash;44/person, 2nd class)</div></div>
       <div class="activity"><div class="act-icon">&#127976;</div><div class="act-label">Evening</div><div class="act-text">Check into hotel, dinner and a stroll through Kuanzhai Alley's old-town lanes</div></div>
@@ -375,7 +431,7 @@
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
   <div class="day-card">
-    <div class="day-header" style="background:#2f4a1f;"><div class="day-label" style="color:#a8d88a;">Chengdu &middot; Day 1 of 2 &middot; ~July 19</div><div class="day-title">&#128060; Giant Panda Base</div></div>
+    <div class="day-header" style="background:#2f4a1f;"><div class="day-label" style="color:#a8d88a;">Chengdu &middot; Day 1 of 2 &middot; ~July 22</div><div class="day-title">&#128060; Giant Panda Base</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#128060;</div><div class="act-label">Early AM</div><div class="act-text">Chengdu Research Base of Giant Panda Breeding &mdash; pandas are most active in the morning ($8/person + ~$4.50/person for the on-site shuttle bus)</div></div>
       <div class="activity"><div class="act-icon">&#127860;</div><div class="act-label">Afternoon</div><div class="act-text">Rest, or wander Jinli Ancient Street (free)</div></div>
@@ -385,7 +441,7 @@
   </div>
 
   <div class="day-card">
-    <div class="day-header" style="background:#2f4a1f;"><div class="day-label" style="color:#a8d88a;">Chengdu &middot; Day 2 of 2 &middot; ~July 20</div><div class="day-title">&#127961;&#65039; Wuhou Shrine &amp; Fly to Shanghai</div></div>
+    <div class="day-header" style="background:#2f4a1f;"><div class="day-label" style="color:#a8d88a;">Chengdu &middot; Day 2 of 2 &middot; ~July 23</div><div class="day-title">&#127961;&#65039; Wuhou Shrine &amp; Fly to Shanghai</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#9962;&#65039;</div><div class="act-label">Morning</div><div class="act-text">Wuhou Shrine &amp; Jinli Street (~$8/person)</div></div>
       <div class="activity"><div class="act-icon">&#9992;&#65039;</div><div class="act-label">Afternoon</div><div class="act-text">Fly Chengdu (CTU) &rarr; Shanghai (PVG/SHA), one-way, ~2.5 hrs (~$150&ndash;300/person)</div></div>
@@ -400,7 +456,7 @@
 <div style="margin: 12px 16px 0; display: flex; flex-direction: column; gap: 12px;">
 
   <div class="day-card">
-    <div class="day-header" style="background:#1f3a4a;"><div class="day-label" style="color:#b8dcf2;">Shanghai &middot; Day 1 of 2 &middot; ~July 21</div><div class="day-title">&#127960;&#65039; The Bund &amp; Yu Garden</div></div>
+    <div class="day-header" style="background:#1f3a4a;"><div class="day-label" style="color:#b8dcf2;">Shanghai &middot; Day 1 of 2 &middot; ~July 24</div><div class="day-title">&#127960;&#65039; The Bund &amp; Yu Garden</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#127960;&#65039;</div><div class="act-label">Morning</div><div class="act-text">Yu Garden &amp; the surrounding bazaar (~$5/person)</div></div>
       <div class="activity"><div class="act-icon">&#127978;</div><div class="act-label">Afternoon</div><div class="act-text">Nanjing Road pedestrian street &mdash; shopping &amp; snacks</div></div>
@@ -409,7 +465,7 @@
   </div>
 
   <div class="day-card">
-    <div class="day-header" style="background:#1f3a4a;"><div class="day-label" style="color:#b8dcf2;">Shanghai &middot; Day 2 of 2 &middot; ~July 22</div><div class="day-title">&#127981; Shanghai Tower &amp; Fly Home</div></div>
+    <div class="day-header" style="background:#1f3a4a;"><div class="day-label" style="color:#b8dcf2;">Shanghai &middot; Day 2 of 2 &middot; ~July 25</div><div class="day-title">&#127981; Shanghai Tower &amp; Fly Home</div></div>
     <div class="activities">
       <div class="activity"><div class="act-icon">&#127981;</div><div class="act-label">Morning</div><div class="act-text">Shanghai Tower Observation Deck, Pudong &mdash; one of the world's tallest buildings ($27&ndash;50/person)</div></div>
       <div class="activity"><div class="act-icon">&#127960;&#65039;</div><div class="act-label">Midday</div><div class="act-text">French Concession stroll or Zhujiajiao water town day trip (~$10/person), then head to the airport</div></div>
@@ -424,37 +480,8 @@
 <!-- ===== TRIP VERDICT / BUDGET ===== -->
 <div class="city-divider"><div class="city-divider-line"></div><div class="city-divider-label">&#128202; Trip Verdict &amp; Budget</div><div class="city-divider-line"></div></div>
 <div class="ref-section" id="verdict">
-  <div class="ref-section-title">Cost Estimate</div>
-  <div class="ref-section-sub">Group of 6, mid-range budget, July/peak-season pricing. Actual costs move with booking lead time.</div>
-
-  <div class="ref-card">
-    <div class="ref-card-head"><span class="ref-name">&#128176; Budget Breakdown</span></div>
-    <div class="budget-wrap">
-      <table class="budget">
-        <tr><th>Category</th><th>Details</th><th style="text-align:right;">Est. Cost</th></tr>
-        <tr><td>International flight</td><td>Hong Kong &rarr; Newark, one-way, 3 cousins (Day 1 arrival)</td><td class="cost">$2,100 &ndash; $3,000</td></tr>
-        <tr><td>Domestic flight</td><td>Newark &rarr; Phoenix/Flagstaff, one-way, 6 travelers</td><td class="cost">$900 &ndash; $1,500</td></tr>
-        <tr><td>NYC-area transit</td><td>NJ Transit/PATH/subway, 3 day trips, 6 people</td><td class="cost">$400 &ndash; $650</td></tr>
-        <tr><td>Grand Canyon Railway</td><td>One-way coach-class tickets, 6 travelers</td><td class="cost">$400 &ndash; $850</td></tr>
-        <tr><td>Rental car</td><td>Grand Canyon &rarr; Joshua Tree &rarr; San Diego, ~5 days, 2 vehicles + drop fee</td><td class="cost">$1,000 &ndash; $1,600</td></tr>
-        <tr><td>Trans-Pacific flight</td><td>San Diego &rarr; Beijing, one-way, 6 travelers</td><td class="cost">$4,500 &ndash; $6,000</td></tr>
-        <tr><td>China high-speed rail</td><td>Beijing &rarr; Xi'an &rarr; Chengdu, 6 travelers, 2nd class</td><td class="cost">$600 &ndash; $774</td></tr>
-        <tr><td>Domestic China flight</td><td>Chengdu &rarr; Shanghai, one-way, 6 travelers</td><td class="cost">$900 &ndash; $1,800</td></tr>
-        <tr><td>International flight</td><td>Shanghai &rarr; Newark, one-way, 3 travelers (family)</td><td class="cost">$1,800 &ndash; $2,700</td></tr>
-        <tr><td>International flight</td><td>Shanghai &rarr; Hong Kong, one-way, 3 travelers (cousins heading home)</td><td class="cost">$240 &ndash; $450</td></tr>
-        <tr><td>Lodging &ndash; Williams, AZ</td><td>1 night, 2 rooms</td><td class="cost">$180 &ndash; $300</td></tr>
-        <tr><td>Lodging &ndash; Grand Canyon</td><td>2 nights, 2 rooms</td><td class="cost">$750 &ndash; $1,400</td></tr>
-        <tr><td>Lodging &ndash; San Diego</td><td>2 nights, 2 rooms</td><td class="cost">$900 &ndash; $1,300</td></tr>
-        <tr><td>Lodging &ndash; Beijing</td><td>3 nights, 3 rooms, 4-star</td><td class="cost">$750 &ndash; $1,500</td></tr>
-        <tr><td>Lodging &ndash; Xi'an</td><td>2 nights, 3 rooms</td><td class="cost">$400 &ndash; $700</td></tr>
-        <tr><td>Lodging &ndash; Chengdu</td><td>2 nights, 2 rooms</td><td class="cost">$300 &ndash; $450</td></tr>
-        <tr><td>Lodging &ndash; Shanghai</td><td>2 nights, 3 rooms</td><td class="cost">$650 &ndash; $900</td></tr>
-        <tr><td>Food</td><td>6 people &times; ~20&ndash;21 days, mid-range</td><td class="cost">$6,300 &ndash; $8,200</td></tr>
-        <tr><td>Activities</td><td>Met, Flushing, Great Wall tour, Beijing sights, Terracotta Warriors, Joshua Tree fee, SD Zoo/Balboa Park, Panda Base, Chengdu sights, Shanghai sights</td><td class="cost">$2,500 &ndash; $3,300</td></tr>
-        <tr class="total"><td>TOTAL (group of 6)</td><td>~$4,260 &ndash; $6,230 per person</td><td class="cost">$25,570 &ndash; $37,400</td></tr>
-      </table>
-    </div>
-  </div>
+  <div class="ref-section-title">Trip Verdict</div>
+  <div class="ref-section-sub">What's working, and what to fix before booking.</div>
 
   <div class="ref-card">
     <div class="ref-card-head green"><span class="ref-name">&#9989; What Works</span></div>
@@ -472,7 +499,7 @@
       <div class="ref-item"><span class="ico">&#128564;</span><span>Add one true rest day right after landing in Beijing, before the Great Wall trip &mdash; the 15-hour time change hits hard, and now there's an equally long haul (Shanghai&rarr;Newark) at the very end too.</span></div>
       <div class="ref-item"><span class="ico">&#128663;</span><span>Split the Grand Canyon &rarr; San Diego drive over two days, or fly Phoenix/Flagstaff &rarr; San Diego and treat Joshua Tree as a separate trip.</span></div>
       <div class="ref-item"><span class="ico">&#128721;</span><span>Book the Grand Canyon Railway one-way, the Panda Base tickets, and both Shanghai departure flights (family to Newark, cousins to Hong Kong) early &mdash; the group splits onto separate itineraries at the very end (already reflected above).</span></div>
-      <div class="ref-item"><span class="ico">&#128197;</span><span>This is now genuinely a ~21-day, 3-week trip. If two weeks is a hard limit, the cleanest cut is dropping either Chengdu/Shanghai or the Grand Canyon/Joshua Tree/San Diego leg entirely rather than rushing all of it.</span></div>
+      <div class="ref-item"><span class="ico">&#128197;</span><span>This is now genuinely a ~24-day trip, closer to 3.5 weeks than two. The Amtrak swap alone adds ~3 days over flying; if two weeks is a hard limit, the cleanest cuts are flying instead of training to Arizona, and/or dropping Chengdu/Shanghai or the Grand Canyon/Joshua Tree/San Diego leg.</span></div>
     </div>
   </div>
 </div>
@@ -481,10 +508,10 @@
 <div class="footer">
   <div style="background:#f0f7ff;border:1px solid #d0e4f8;border-radius:10px;padding:16px 20px;text-align:left;margin-bottom:24px;font-size:12px;color:#333;line-height:1.8;">
     <strong style="display:block;margin-bottom:6px;font-size:13px;">&#129507; General Tips</strong>
-    Book the Grand Canyon Railway, Great Wall tour, Panda Base tickets, one-way rental car &amp; all international flights well in advance. &middot; July is peak season for all these routes &mdash; fares run higher than shoulder-season pricing. &middot; The train doesn't carry cars &mdash; plan the rental car pickup for the South Rim, not Williams. &middot; No rest days are built in &mdash; consider adding one after the Beijing arrival. &middot; The group splits in Shanghai on the last day: family flies direct to Newark, cousins fly on to Hong Kong separately &mdash; book both well ahead.
+    Book the Amtrak legs, Grand Canyon Railway, Great Wall tour, Panda Base tickets, one-way rental car &amp; all international flights well in advance. &middot; July is peak season for all these routes &mdash; fares run higher than shoulder-season pricing. &middot; The train doesn't carry cars &mdash; plan the rental car pickup for the South Rim, not Williams. &middot; Two overnight Amtrak legs back to back is a lot &mdash; the Williams rest day helps, but consider a roomette instead of coach if budget allows. &middot; The group splits in Shanghai on the last day: family flies direct to Newark, cousins fly on to Hong Kong separately &mdash; book both well ahead.
   </div>
-  <strong>Fantasy Vacation &middot; July 3 &ndash; ~23, 2026</strong><br>
-  6 Travelers &middot; ~21 Days &middot; Rated 3/5 &middot; Created with &#10084;&#65039;
+  <strong>Fantasy Vacation &middot; July 3 &ndash; ~26, 2026</strong><br>
+  6 Travelers &middot; ~24 Days &middot; Rated 3/5 &middot; Created with &#10084;&#65039;
   <br><a href="#top" class="to-top">&uarr; Back to top</a>
 </div>
 
