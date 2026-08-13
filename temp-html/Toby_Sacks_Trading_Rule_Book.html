@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toby Sacks Trading Rule Book</title>
+<style>
+:root{
+  --bg:#07111f;--panel:#0d1b2d;--panel2:#11243a;--ink:#f5f7fb;--muted:#a9b7c8;
+  --gold:#f4c542;--red:#ff5c5c;--green:#38d996;--blue:#58a6ff;--line:#263b56;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 15% 0%,rgba(88,166,255,.13),transparent 32rem),var(--bg);color:var(--ink);line-height:1.5}
+.page{width:min(1180px,calc(100% - 32px));margin:32px auto 56px}
+.hero{border:1px solid var(--line);border-radius:28px;overflow:hidden;background:linear-gradient(145deg,#0b1829,#0e2137 60%,#10263f);box-shadow:0 28px 80px rgba(0,0,0,.28)}
+.hero-top{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;padding:44px;align-items:center}
+.eyebrow{display:inline-block;padding:8px 12px;border:1px solid #38506f;border-radius:999px;color:#d7e7fb;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+h1{margin:20px 0 14px;font-size:clamp(42px,7vw,86px);line-height:.9;letter-spacing:-.055em}
+.gold{color:var(--gold)}
+.subtitle{margin:0;color:#c8d5e6;font-size:clamp(17px,2vw,22px);max-width:760px}
+.badge{justify-self:end;width:min(100%,320px);border-radius:24px;padding:28px;background:rgba(3,10,18,.55);border:1px solid #334a67}
+.badge .small{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+.badge .big{font-size:34px;line-height:1.05;margin-top:8px;font-weight:900}
+.badge .warn{margin-top:18px;color:#ffe5a3;font-size:14px;border-top:1px solid #2d425d;padding-top:16px}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);background:#091422}
+.strip div{padding:18px 22px;text-align:center;border-right:1px solid var(--line);color:#c5d3e4;font-size:13px;font-weight:700}
+.strip div:last-child{border-right:0}.strip strong{color:white;font-size:16px;display:block}
+.section-title{margin:48px 0 18px;display:flex;justify-content:space-between;gap:20px;align-items:end}
+.section-title h2{margin:0;font-size:32px}.section-title p{margin:0;color:var(--muted);max-width:500px;text-align:right}
+.rules{display:grid;gap:18px}
+.rule{display:grid;grid-template-columns:110px 1fr 280px;min-height:190px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(180deg,rgba(17,36,58,.96),rgba(10,24,40,.98))}
+.num{display:flex;align-items:center;justify-content:center;font-size:64px;font-weight:950;border-right:1px solid var(--line);color:#07111f;background:var(--gold)}
+.rule.red .num{background:var(--red);color:white}.rule.blue .num{background:var(--blue)}.rule.green .num{background:var(--green)}
+.main{padding:28px 30px}.main h3{margin:0 0 10px;font-size:29px}.main p{margin:0;color:#c1cede;font-size:17px}
+.side{padding:24px;border-left:1px solid var(--line);background:rgba(3,11,20,.36);display:flex;flex-direction:column;justify-content:center}
+.tag{display:inline-block;width:max-content;padding:7px 10px;border-radius:999px;background:#182a40;border:1px solid #35506f;color:#d5e4f6;font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:12px}
+.action{font-size:17px;font-weight:800}.action span{color:var(--gold)}
+.grid{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:1px solid var(--line);border-radius:22px;background:rgba(12,27,45,.92);padding:26px}.card h3{margin:0 0 18px;font-size:23px}
+.check{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #203651}.check:last-child{border-bottom:0}
+.box{width:22px;height:22px;border:2px solid #6c83a0;border-radius:6px;flex:0 0 22px;margin-top:1px}.check span{display:block;color:var(--muted);font-size:14px}
+.stop{border-color:#5c3135;background:linear-gradient(180deg,rgba(73,23,28,.34),rgba(18,22,31,.96))}.stop h3{color:#ffb0b0}
+.stopline{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #4b2d35}.stopline:last-child{border-bottom:0}.x{color:var(--red);font-weight:950;font-size:20px}
+.mantra{margin-top:20px;border:1px solid #5b4f25;background:linear-gradient(90deg,rgba(244,197,66,.10),rgba(244,197,66,.03));border-radius:22px;padding:28px;text-align:center}
+.mantra .label{color:#d9c675;text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:900}.mantra blockquote{margin:10px auto 0;font-size:clamp(24px,4vw,42px);max-width:930px;line-height:1.12;font-weight:900}
+footer{margin-top:26px;color:#7f91a6;text-align:center;font-size:13px}
+@media(max-width:900px){.hero-top{grid-template-columns:1fr;padding:30px}.badge{justify-self:start}.strip{grid-template-columns:1fr 1fr}.rule{grid-template-columns:72px 1fr}.num{font-size:42px}.side{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}.grid{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.section-title p{text-align:left}}
+@media print{body{background:white}.hero,.rule,.card,.mantra{box-shadow:none;break-inside:avoid}body,.hero,.rule,.card,.mantra,.strip,.badge,.side{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<main class="page">
+<section class="hero">
+  <div class="hero-top">
+    <div>
+      <div class="eyebrow">Personal Trading Operating Manual</div>
+      <h1>TOBY SACKS<br><span class="gold">TRADING RULE BOOK</span></h1>
+      <p class="subtitle">Rules for the live trading account. Protect the account, trade only when the setup is there, and never let one impulsive decision undo disciplined work.</p>
+    </div>
+    <aside class="badge">
+      <div class="small">Account Mode</div>
+      <div class="big">LIVE<br>TRADING</div>
+      <div class="warn"><strong>These rules are mandatory.</strong><br>Do not improvise once money is live.</div>
+    </aside>
+  </div>
+  <div class="strip">
+    <div><strong>NO SCALPING</strong>Wait for structure</div>
+    <div><strong>CHECK MARKET PULSE</strong>Know the market first</div>
+    <div><strong>FOLLOW THE PATTERN</strong>Double top / bottom</div>
+    <div><strong>PROTECT EVERY TRADE</strong>Stops or trailing stop</div>
+  </div>
+</section>
+
+<div class="section-title">
+  <h2>Rules for Live Trading</h2>
+  <p>Read these before entering the first trade of the session. If one rule is broken, stop and reset.</p>
+</div>
+
+<section class="rules">
+  <article class="rule red">
+    <div class="num">01</div>
+    <div class="main">
+      <h3>DON'T SCALP TRADE</h3>
+      <p>Do not jump in and out because price is moving fast. No random clicks, boredom trades, revenge trades, or “just one quick scalp.” Wait for a setup you can clearly explain.</p>
+    </div>
+    <div class="side">
+      <div class="tag">Before Entry</div>
+      <div class="action">Ask: <span>“What is the setup?”</span><br>If the answer is unclear, do not trade.</div>
+    </div>
+  </article>
+
+  <article class="rule blue">
+    <div class="num">02</div>
+    <div class="main">
+      <h3>CHECK THE MARKET PULSE BEFORE TRADING</h3>
+      <p>Know what the market is doing first. Is it trending, stretched, ranging, breaking out, rejecting a level, or sitting in the middle of nowhere? The trade should fit the current market condition.</p>
+    </div>
+    <div class="side">
+      <div class="tag">Market Context</div>
+      <div class="action">Know the <span>direction, location, momentum and nearby levels</span> before risking money.</div>
+    </div>
+  </article>
+
+  <article class="rule green">
+    <div class="num">03</div>
+    <div class="main">
+      <h3>FOLLOW THE DOUBLE TOP / DOUBLE BOTTOM — THEN GET OUT</h3>
+      <p>When the setup is a double top or double bottom, trade the pattern you identified. Respect the neckline, entry, stop and intended exit. Do not turn a completed pattern trade into an unplanned hold.</p>
+    </div>
+    <div class="side">
+      <div class="tag">Pattern Discipline</div>
+      <div class="action">Trade the structure.<br><span>Take the planned exit.</span></div>
+    </div>
+  </article>
+
+  <article class="rule">
+    <div class="num">04</div>
+    <div class="main">
+      <h3>PUT LIMITS / STOPS ON EVERY TRADE</h3>
+      <p>Every live position must have defined protection and an exit plan. The only exception is when the trade is already being managed by an active trailing stop.</p>
+    </div>
+    <div class="side">
+      <div class="tag">Non-Negotiable</div>
+      <div class="action">No naked risk.<br><span>Stop / target, or active trailing stop.</span></div>
+    </div>
+  </article>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h3>30-Second Pre-Trade Check</h3>
+    <div class="check"><div class="box"></div><div><b>I am not scalping.</b><span>This is a defined setup, not an impulse trade.</span></div></div>
+    <div class="check"><div class="box"></div><div><b>I checked Market Pulse.</b><span>I understand the current market condition.</span></div></div>
+    <div class="check"><div class="box"></div><div><b>I know the pattern / reason for entry.</b><span>If trading a double top or bottom, the structure is clear.</span></div></div>
+    <div class="check"><div class="box"></div><div><b>My risk is protected.</b><span>Stop and target are placed, or an active trailing stop is managing the trade.</span></div></div>
+  </div>
+
+  <div class="card stop">
+    <h3>Automatic NO-TRADE Conditions</h3>
+    <div class="stopline"><div class="x">×</div><div><b>I feel the urge to “make something happen.”</b></div></div>
+    <div class="stopline"><div class="x">×</div><div><b>I have not checked Market Pulse.</b></div></div>
+    <div class="stopline"><div class="x">×</div><div><b>I cannot clearly identify the setup.</b></div></div>
+    <div class="stopline"><div class="x">×</div><div><b>I am about to enter without defined protection.</b></div></div>
+    <div class="stopline"><div class="x">×</div><div><b>I am changing the plan because of fear, greed, or FOMO.</b></div></div>
+  </div>
+</section>
+
+<section class="mantra">
+  <div class="label">Live Account Reminder</div>
+  <blockquote>“I do not need to trade. I need to wait for the right trade — then manage it correctly.”</blockquote>
+</section>
+
+<footer>Toby Sacks Trading Rule Book · Live Trading Account Rules</footer>
+</main>
+</body>
+</html>
