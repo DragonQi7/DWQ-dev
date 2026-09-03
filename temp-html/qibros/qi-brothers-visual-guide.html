@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive visual guide to the Qi Brothers Collection at the Harvard-Yenching Library.">
+  <title>The Qi Brothers Collection — Visual Guide</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14243a;
+      --muted: #5f6d7d;
+      --paper: #f4f7fb;
+      --surface: #ffffff;
+      --line: #d7e0ea;
+      --navy: #153c66;
+      --navy-deep: #0b2747;
+      --teal: #168a8a;
+      --teal-soft: #d8eeee;
+      --cinnabar: #c74731;
+      --cinnabar-soft: #f7dfda;
+      --gold: #c28b2c;
+      --gold-soft: #f6ebd2;
+      --blue-soft: #dce8f5;
+      --shadow: 0 18px 50px rgba(20, 36, 58, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(22, 138, 138, .10), transparent 24rem),
+        radial-gradient(circle at 92% 14%, rgba(199, 71, 49, .08), transparent 25rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    a { color: var(--navy); }
+    button, summary { font: inherit; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid rgba(22, 138, 138, .35); outline-offset: 3px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 247, 251, .90);
+      border-bottom: 1px solid rgba(21, 60, 102, .12);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      min-height: 62px;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand { font-weight: 750; letter-spacing: -.02em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 6px; }
+    .topbar nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: .88rem;
+    }
+    .topbar nav a:hover { background: var(--surface); color: var(--ink); }
+
+    main { overflow: hidden; }
+    .section, .hero {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .hero {
+      min-height: 650px;
+      padding: 82px 0 64px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--cinnabar);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.12;
+      letter-spacing: -.035em;
+    }
+    h1 { margin: 0; font-size: clamp(3rem, 7vw, 6.2rem); max-width: 10ch; }
+    h2 { margin: 0 0 16px; font-size: clamp(2.2rem, 4.3vw, 4.2rem); }
+    h3 { margin: 0 0 9px; font-size: 1.45rem; }
+    p { margin: 0 0 1rem; }
+
+    .lead {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.5vw, 1.3rem);
+    }
+
+    .plain-answer {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border-left: 5px solid var(--cinnabar);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .plain-answer strong { color: var(--cinnabar); }
+
+    .book-stack {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      perspective: 900px;
+    }
+    .book {
+      position: absolute;
+      width: min(440px, 88%);
+      height: 104px;
+      padding: 22px 28px;
+      color: white;
+      border-radius: 8px 18px 18px 8px;
+      box-shadow: 0 24px 35px rgba(11, 39, 71, .20);
+      transform-origin: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .book::after {
+      content: "";
+      position: absolute;
+      inset: 10px 12px 10px auto;
+      width: 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,.34);
+    }
+    .book span { font-weight: 780; font-size: 1.05rem; }
+    .book small { opacity: .78; text-align: right; }
+    .book.one { background: var(--navy-deep); transform: translateY(-120px) rotate(-5deg); }
+    .book.two { background: var(--teal); transform: translateY(-35px) rotate(3deg); }
+    .book.three { background: var(--cinnabar); transform: translateY(55px) rotate(-2deg); }
+    .book.four { background: #72531c; transform: translateY(145px) rotate(4deg); }
+
+    .section { padding: 90px 0; }
+    .section-intro { max-width: 730px; margin-bottom: 38px; color: var(--muted); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      padding: 28px 24px;
+      border-top: 5px solid var(--navy);
+      box-shadow: 0 8px 30px rgba(20,36,58,.06);
+    }
+    .stat:nth-child(2) { border-color: var(--teal); }
+    .stat:nth-child(3) { border-color: var(--cinnabar); }
+    .stat:nth-child(4) { border-color: var(--gold); }
+    .stat-value { display: block; font: 700 clamp(2.1rem, 4vw, 3.7rem)/1 Georgia, serif; letter-spacing: -.04em; }
+    .stat-label { display: block; margin-top: 10px; color: var(--muted); }
+
+    .definition-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 26px;
+    }
+    .definition {
+      padding: 26px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .definition.yes { border-top: 6px solid var(--teal); }
+    .definition.no { border-top: 6px solid var(--cinnabar); }
+    .definition ul { margin: 13px 0 0; padding-left: 1.2rem; }
+
+    .family-stage {
+      margin-top: 38px;
+      padding: 40px;
+      background: var(--navy-deep);
+      color: white;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+    .family-kicker { color: #8cd4d0; text-align: center; font-weight: 700; }
+    .family-root {
+      width: min(520px, 100%);
+      margin: 0 auto;
+      padding: 20px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 18px;
+      text-align: center;
+    }
+    .family-root strong { display: block; font-size: 1.2rem; }
+    .family-root small { color: #c2cfdd; }
+    .family-line {
+      width: 2px;
+      height: 38px;
+      margin: 0 auto;
+      background: #62bdb8;
+    }
+    .siblings {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .siblings::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 25%;
+      right: 25%;
+      height: 2px;
+      background: #62bdb8;
+    }
+    .person {
+      position: relative;
+      margin-top: 0;
+      padding: 34px 28px 28px;
+      background: white;
+      color: var(--ink);
+      border-radius: 18px;
+    }
+    .person::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      width: 2px;
+      height: 28px;
+      background: #62bdb8;
+      transform: translate(-50%, -100%);
+    }
+    .portrait-mark {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      color: white;
+      background: var(--cinnabar);
+      font: 700 1.35rem Georgia, serif;
+    }
+    .person:nth-child(2) .portrait-mark { background: var(--teal); }
+    .person .dates { color: var(--cinnabar); font-weight: 750; }
+    .person:nth-child(2) .dates { color: var(--teal); }
+    .role-list { margin: 15px 0 0; padding-left: 1.15rem; color: var(--muted); }
+    .descendant {
+      width: min(520px, 100%);
+      margin: 28px auto 0;
+      padding: 16px 20px;
+      border: 1px dashed rgba(255,255,255,.35);
+      border-radius: 14px;
+      color: #dfe8f0;
+      text-align: center;
+    }
+
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px;
+    }
+    .career { min-width: 0; }
+    .career-title { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; border-bottom: 2px solid var(--line); padding-bottom: 12px; }
+    .career-title span { color: var(--muted); }
+    .career ol { list-style: none; padding: 0; margin: 24px 0 0; }
+    .career li {
+      position: relative;
+      padding: 0 0 24px 34px;
+      border-left: 2px solid var(--line);
+    }
+    .career li:last-child { border-left-color: transparent; }
+    .career li::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cinnabar);
+      box-shadow: 0 0 0 5px var(--cinnabar-soft);
+    }
+    .career:nth-child(2) li::before { background: var(--teal); box-shadow: 0 0 0 5px var(--teal-soft); }
+    .year { display: block; font-weight: 800; }
+    .event-text { color: var(--muted); }
+
+    .journey-wrap {
+      padding: 44px 40px;
+      border-radius: 26px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .journey {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .journey::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 23px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cinnabar), var(--gold), var(--teal), var(--navy));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.3s ease;
+    }
+    .journey.in::before { transform: scaleX(1); }
+    .journey-step { position: relative; padding-top: 58px; opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; transition-delay: calc(var(--i) * 160ms); }
+    .journey.in .journey-step { opacity: 1; transform: none; }
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      border: 7px solid var(--surface);
+      border-radius: 50%;
+      background: var(--navy);
+      box-shadow: 0 0 0 2px var(--navy);
+      transform: translateX(-50%);
+    }
+    .journey-step strong { display: block; margin-bottom: 6px; color: var(--navy); }
+    .journey-step span { color: var(--muted); font-size: .93rem; }
+    .replay {
+      margin-top: 24px;
+      padding: 10px 15px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--navy);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .collection-bar {
+      display: flex;
+      width: 100%;
+      height: 64px;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--line);
+      margin: 34px 0 24px;
+    }
+    .bar-segment {
+      width: 0;
+      min-width: 0;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      overflow: hidden;
+      transition: width 1.1s cubic-bezier(.2,.75,.2,1);
+    }
+    .collection-bar.in .bar-segment { width: var(--share); }
+    .bar-segment:nth-child(1) { background: var(--gold); }
+    .bar-segment:nth-child(2) { background: var(--navy); }
+    .bar-segment:nth-child(3) { background: var(--teal); }
+    .bar-segment:nth-child(4) { background: var(--cinnabar); }
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .legend-item { display: grid; grid-template-columns: 12px 1fr; gap: 10px; align-items: start; }
+    .swatch { width: 12px; height: 12px; margin-top: 7px; border-radius: 3px; background: var(--gold); }
+    .legend-item:nth-child(2) .swatch { background: var(--navy); }
+    .legend-item:nth-child(3) .swatch { background: var(--teal); }
+    .legend-item:nth-child(4) .swatch { background: var(--cinnabar); }
+    .legend-item strong { display: block; }
+    .legend-item small { color: var(--muted); }
+
+    .materials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 42px;
+    }
+    .material {
+      min-height: 190px;
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .material-number { color: var(--cinnabar); font-weight: 900; letter-spacing: .08em; }
+    .material p { color: var(--muted); }
+
+    .thesis {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
+      padding: 48px;
+      border-radius: 28px;
+      background: var(--navy-deep);
+      color: white;
+    }
+    .thesis h2 { margin: 0; }
+    .scale { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .scale-side { min-height: 210px; padding: 24px; border-radius: 18px; background: rgba(255,255,255,.09); }
+    .scale-side strong { display: block; color: #8cd4d0; margin-bottom: 10px; }
+    .scale-side:last-child strong { color: #f6baac; }
+    .scale-side p { color: #dce6ef; }
+
+    .value-list {
+      counter-reset: value;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .value-item {
+      counter-increment: value;
+      position: relative;
+      padding: 24px 24px 24px 66px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .value-item::before {
+      content: counter(value, decimal-leading-zero);
+      position: absolute;
+      left: 20px;
+      top: 21px;
+      color: var(--cinnabar);
+      font: 700 1.2rem Georgia, serif;
+    }
+
+    .full-translation {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .full-translation > summary {
+      cursor: pointer;
+      padding: 24px 28px;
+      background: var(--navy-deep);
+      color: white;
+      font-weight: 800;
+      list-style: none;
+    }
+    .full-translation > summary::-webkit-details-marker { display: none; }
+    .full-translation > summary::after { content: "+"; float: right; font-size: 1.3rem; }
+    .full-translation[open] > summary::after { content: "−"; }
+    .article-body { max-width: 820px; margin: 0 auto; padding: 46px 34px 70px; }
+    .article-body h1 { max-width: none; font-size: 2.5rem; margin-top: 0; }
+    .article-body h2 { margin-top: 2.5rem; font-size: 2rem; }
+    .article-body h3 { margin-top: 2rem; font-size: 1.5rem; }
+    .article-body blockquote { margin: 1.5rem 0; padding: 1rem 1.4rem; border-left: 4px solid var(--teal); background: var(--teal-soft); }
+    .article-body code { overflow-wrap: anywhere; }
+    .article-body hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+
+    footer { padding: 50px 24px 70px; text-align: center; color: var(--muted); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 850px) {
+      .topbar nav { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 58px; }
+      .book-stack { min-height: 400px; }
+      .stats, .legend { grid-template-columns: repeat(2, 1fr); }
+      .siblings, .career-grid, .thesis, .value-list { grid-template-columns: 1fr; }
+      .siblings::before { left: 50%; right: auto; height: 100%; width: 2px; }
+      .person { margin-top: 26px; }
+      .person::before { display: none; }
+      .materials { grid-template-columns: repeat(2, 1fr); }
+      .journey { grid-template-columns: 1fr; gap: 10px; }
+      .journey::before { left: 13px; right: auto; top: 12px; bottom: 12px; width: 3px; height: auto; transform: scaleY(0); transform-origin: top; }
+      .journey.in::before { transform: scaleY(1); }
+      .journey-step { padding: 0 0 22px 52px; }
+      .journey-step::before { left: 14px; top: 2px; transform: translateX(-50%); }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .section, .hero { width: min(100% - 28px, 1180px); }
+      .hero { min-height: auto; gap: 30px; }
+      .stats, .definition-grid, .legend, .materials, .scale { grid-template-columns: 1fr; }
+      .family-stage, .journey-wrap, .thesis { padding: 28px 20px; border-radius: 20px; }
+      .collection-bar { height: 48px; }
+      .bar-segment { font-size: .8rem; }
+      .article-body { padding: 32px 20px 52px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal, .journey-step { opacity: 1; transform: none; }
+      .journey::before { transform: none; }
+      .collection-bar .bar-segment { width: var(--share); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Qi Brothers Collection</div>
+      <nav aria-label="Page sections">
+        <a href="#answer">What is it?</a>
+        <a href="#family">The brothers</a>
+        <a href="#journey">Journey</a>
+        <a href="#contents">Contents</a>
+        <a href="#translation">Full text</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="answer">
+      <div>
+        <p class="eyebrow">Harvard-Yenching Library · Cambridge, Massachusetts</p>
+        <h1>The Qi Brothers Collection</h1>
+        <p class="lead">A private library assembled around two Chinese scholar-official brothers—not a single artwork, not a painting, and not a set of books they personally wrote.</p>
+        <div class="plain-answer">
+          <strong>In plain English:</strong> it is a named group of historical materials that once belonged to the Qi family and is now preserved at the Harvard-Yenching Library, 2 Divinity Avenue, Cambridge, Massachusetts, USA.
+        </div>
+      </div>
+      <div class="book-stack" aria-label="A stylized stack representing the collection's main kinds of material">
+        <div class="book one"><span>Official records</span><small>taxes · law · administration</small></div>
+        <div class="book two"><span>Handwritten books</span><small>classics · history · literature</small></div>
+        <div class="book three"><span>Opera scores</span><small>gongche music notation</small></div>
+        <div class="book four"><span>Hand-drawn maps</span><small>waterways · tax stations</small></div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="numbers-heading">
+      <p class="eyebrow">What survived</p>
+      <h2 id="numbers-heading">One collection, many kinds of evidence</h2>
+      <div class="stats">
+        <div class="stat"><span class="stat-value" data-count="413">413</span><span class="stat-label">cataloged works after the 2006 inventory</span></div>
+        <div class="stat"><span class="stat-value" data-count="1206">1,206</span><span class="stat-label">physical volumes or fascicles</span></div>
+        <div class="stat"><span class="stat-value" data-count="51">51</span><span class="stat-label">hand-drawn waterway maps</span></div>
+        <div class="stat"><span class="stat-value" data-count="30">30+</span><span class="stat-label">opera and dramatic scores</span></div>
+      </div>
+      <div class="definition-grid">
+        <div class="definition yes">
+          <h3>It is</h3>
+          <ul>
+            <li>a private family library kept together as a named archival collection;</li>
+            <li>mostly manuscripts, copied books, working records, scores, and maps;</li>
+            <li>a window into government, commerce, education, music, and daily life.</li>
+          </ul>
+        </div>
+        <div class="definition no">
+          <h3>It is not</h3>
+          <ul>
+            <li>one painting or one illustrated album;</li>
+            <li>a collection authored entirely by the two brothers;</li>
+            <li>a perfectly documented library—the article says its precise origins remain uncertain.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="family" aria-labelledby="family-heading">
+      <p class="eyebrow">Family relationship</p>
+      <h2 id="family-heading">Two full brothers from the same Qi family</h2>
+      <p class="section-intro">Their ancestral home was in Changyi County, Shandong; the family was registered in Yitong, Jilin. The supplied article names the brothers and one later descendant, but does not provide a complete family tree.</p>
+      <div class="family-stage">
+        <p class="family-kicker">Known lineage from the article</p>
+        <div class="family-root">
+          <strong>The Qi family</strong>
+          <small>Ancestral home: Changyi, Shandong · registered home: Yitong, Jilin</small>
+        </div>
+        <div class="family-line" aria-hidden="true"></div>
+        <div class="siblings">
+          <article class="person">
+            <div class="portrait-mark" aria-hidden="true">YL</div>
+            <h3>Qi Yaolin</h3>
+            <div class="dates">1862–1949 · elder brother</div>
+            <ul class="role-list">
+              <li>Style name: Zhenyan; also written Yunyan</li>
+              <li><em>Jinshi</em> degree, 1895</li>
+              <li>Governor-level posts in Henan, Jilin, and Jiangsu</li>
+              <li>Later chaired the Yaohua Glass Company in Tianjin</li>
+            </ul>
+          </article>
+          <article class="person">
+            <div class="portrait-mark" aria-hidden="true">YS</div>
+            <h3>Qi Yaoshan</h3>
+            <div class="dates">1865–1954 · younger brother</div>
+            <ul class="role-list">
+              <li>Style name: Zhaoyan</li>
+              <li><em>Jinshi</em> degree, 1890</li>
+              <li>Governor of Zhejiang and later Shandong</li>
+              <li>Held cabinet-level posts in the Beijing government</li>
+            </ul>
+          </article>
+        </div>
+        <div class="descendant">Qi Zongmin — identified in the article as Qi Yaoshan’s granddaughter; she supplied biographical information to the author in 2010.</div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="careers-heading">
+      <p class="eyebrow">Parallel lives</p>
+      <h2 id="careers-heading">Scholar-officials across a regime change</h2>
+      <p class="section-intro">Both men passed the highest imperial examination and moved from Qing officialdom into prominent roles in the early Republic. Their government work helps explain why the collection contains so many administrative records.</p>
+      <div class="career-grid">
+        <article class="career">
+          <div class="career-title"><h3>Qi Yaolin</h3><span>elder</span></div>
+          <ol>
+            <li><span class="year">1862</span><span class="event-text">Born during the Tongzhi reign.</span></li>
+            <li><span class="year">1895</span><span class="event-text">Earned the <em>jinshi</em> degree and entered the Hanlin Academy.</span></li>
+            <li><span class="year">1898–1911</span><span class="event-text">Rose through county, prefectural, river, judicial, and provincial offices.</span></li>
+            <li><span class="year">1911–1920</span><span class="event-text">Served as governor or senior administrator in Henan, Jilin, and Jiangsu.</span></li>
+            <li><span class="year">1949</span><span class="event-text">Died in Beiping.</span></li>
+          </ol>
+        </article>
+        <article class="career">
+          <div class="career-title"><h3>Qi Yaoshan</h3><span>younger</span></div>
+          <ol>
+            <li><span class="year">1865</span><span class="event-text">Born during the Tongzhi reign.</span></li>
+            <li><span class="year">1890</span><span class="event-text">Earned the <em>jinshi</em> degree and entered central government service.</span></li>
+            <li><span class="year">1897–1911</span><span class="event-text">Held administrative, customs, education, military, and salt posts in Hubei.</span></li>
+            <li><span class="year">1917–1922</span><span class="event-text">Governor of Zhejiang and Shandong; later interior, agriculture, commerce, and education minister.</span></li>
+            <li><span class="year">1954</span><span class="event-text">Died in Taipei.</span></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="journey" aria-labelledby="journey-heading">
+      <div class="journey-wrap">
+        <p class="eyebrow">The collection’s journey</p>
+        <h2 id="journey-heading">From a Chinese family library to Harvard</h2>
+        <p class="section-intro">The transfer path is documented; the collection’s earlier formation is not. Dates before 1944 are estimates made by the article’s author.</p>
+        <div class="journey" aria-label="Timeline showing the collection's movement">
+          <div class="journey-step" style="--i:0"><strong>Late Qing–early Republic</strong><span>The family accumulates manuscripts, records, scores, and maps.</span></div>
+          <div class="journey-step" style="--i:1"><strong>About 1926–1932</strong><span>Wang Wenshan likely carries the books from China and deposits them at the Library of Congress.</span></div>
+          <div class="journey-step" style="--i:2"><strong>April 1944</strong><span>Felton Chow forwards a book list to Harvard librarian Kaiming Chiu.</span></div>
+          <div class="journey-step" style="--i:3"><strong>March–June 1945</strong><span>The purchase is completed; the Library of Congress transfers the collection to Harvard.</span></div>
+          <div class="journey-step" style="--i:4"><strong>2006</strong><span>Harvard reinventories it as 413 works in 1,206 volumes and adds machine-readable catalog records.</span></div>
+        </div>
+        <button class="replay" type="button" id="replayJourney">Replay journey</button>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contents" aria-labelledby="contents-heading">
+      <p class="eyebrow">Traditional four-part classification</p>
+      <h2 id="contents-heading">What is inside the collection?</h2>
+      <p class="section-intro">The 413 cataloged works divide into the four traditional Chinese bibliographic categories. History and literary collections together make up about three-quarters of the whole.</p>
+      <div class="collection-bar" role="img" aria-label="Classics 19 works, History 152, Masters 82, Literary Collections 160">
+        <div class="bar-segment" style="--share:4.6%" aria-hidden="true"></div>
+        <div class="bar-segment" style="--share:36.8%">152</div>
+        <div class="bar-segment" style="--share:19.9%">82</div>
+        <div class="bar-segment" style="--share:38.7%">160</div>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><span class="swatch"></span><div><strong>Classics · 19</strong><small>Canonical works and philology</small></div></div>
+        <div class="legend-item"><span class="swatch"></span><div><strong>History · 152</strong><small>Government, law, taxes, geography</small></div></div>
+        <div class="legend-item"><span class="swatch"></span><div><strong>Masters · 82</strong><small>Medicine, technology, trade, arts</small></div></div>
+        <div class="legend-item"><span class="swatch"></span><div><strong>Literary collections · 160</strong><small>Poetry, essays, academy papers, scores</small></div></div>
+      </div>
+
+      <div class="materials">
+        <article class="material"><span class="material-number">01</span><h3>Working government files</h3><p>Tax ledgers, handover registers, legal cases, military expenses, memorials, and official correspondence.</p></article>
+        <article class="material"><span class="material-number">02</span><h3>Opera scores</h3><p>More than thirty dramatic scores using <em>gongche</em> notation; some also include percussion notation.</p></article>
+        <article class="material"><span class="material-number">03</span><h3>Waterway maps</h3><p>Fifty-one hand-drawn sheets marking rivers, tax stations, responsible officials, and distances from provincial capitals.</p></article>
+        <article class="material"><span class="material-number">04</span><h3>Trade manuals</h3><p>Practical texts about pawnbroking, jade, furs, silver currency, jewelry, and commercial customs.</p></article>
+        <article class="material"><span class="material-number">05</span><h3>Technology manuscripts</h3><p>Illustrated works on machinery, naval mines, batteries, aircraft, and manufacturing processes.</p></article>
+        <article class="material"><span class="material-number">06</span><h3>Literary manuscripts</h3><p>Unpublished poetry collections and academy examination papers preserving editing and grading marks.</p></article>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="argument-heading">
+      <div class="thesis">
+        <div>
+          <p class="eyebrow">The article’s central argument</p>
+          <h2 id="argument-heading">Ordinary-looking records can become extraordinary evidence.</h2>
+        </div>
+        <div class="scale">
+          <div class="scale-side"><strong>As luxury rare books</strong><p>Many copies are rough, practical, and below the traditional standard of a fine or prestigious “rare edition.”</p></div>
+          <div class="scale-side"><strong>As historical documents</strong><p>They preserve how local government, commerce, schools, music, and daily work actually functioned—often in sources found nowhere else.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="value-heading">
+      <p class="eyebrow">Why scholars care</p>
+      <h2 id="value-heading">Six kinds of history preserved</h2>
+      <div class="value-list">
+        <div class="value-item"><strong>Biography and relationships</strong><br>Evidence about the Qi brothers and the networks surrounding late-Qing and early-Republican officials.</div>
+        <div class="value-item"><strong>Politics and institutions</strong><br>Records of government, finance, military affairs, law, salt administration, and modernization.</div>
+        <div class="value-item"><strong>Everyday social life</strong><br>Documents involving scholars, farmers, artisans, merchants, schools, temples, and businesses.</div>
+        <div class="value-item"><strong>Individual lives</strong><br>Traces of officials’ self-education, clerks’ training, and ordinary students’ academy experience.</div>
+        <div class="value-item"><strong>Literature and art</strong><br>Unpublished poetry, dramatic scripts, musical notation, calligraphy, painting, and refined amusements.</div>
+        <div class="value-item"><strong>China and the West</strong><br>The collection’s journey abroad records a larger twentieth-century story of war, loss, preservation, and cultural exchange.</div>
+      </div>
+    </section>
+
+    <section class="section" id="translation" aria-labelledby="translation-heading">
+      <p class="eyebrow">Reference</p>
+      <h2 id="translation-heading">Full English translation</h2>
+      <p class="section-intro">Open this section when you want the complete page-by-page text behind the visual explanation.</p>
+      <details class="full-translation">
+        <summary>Open the complete translation</summary>
+        <div class="article-body">
+          <h1 id="english-translation-of-the-supplied-pages">English Translation of the Supplied Pages</h1>
+<p>Translator’s note: <em>Guoxue</em> (國學) is rendered here as “Chinese Classical Studies.” Personal names are given in Hanyu Pinyin, except where an established English form appears in the source. Titles of obscure Chinese works are translated descriptively; these translations are not necessarily established published titles. The supplied scans now run continuously from the article’s opening on page 14 through its conclusion on page 28.</p>
+<h2 id="cover">Cover</h2>
+<p><strong>Chinese Classical Studies Quarterly</strong></p>
+<p>Title calligraphy by Gu Jiegang</p>
+<p>Du Zexun, Editor-in-Chief</p>
+<p>Issue 15</p>
+<p>Shandong People’s Publishing House</p>
+<h2 id="title-page">Title Page</h2>
+<p><strong>Chinese Classical Studies Quarterly</strong></p>
+<p>Sponsored by the Nishan Academy of Shandong University</p>
+<p>Du Zexun, Editor-in-Chief</p>
+<p>2019, Issue 3 (Overall Issue 15)</p>
+<p>Shandong People’s Publishing House, Jinan</p>
+<p>A national first-class publisher and one of China’s Top 100 Book Publishers</p>
+<h2 id="cataloging-and-publication-information">Cataloging and Publication Information</h2>
+<p><strong>Cataloging-in-Publication (CIP) Data</strong></p>
+<p><em>Chinese Classical Studies Quarterly: Issue 15</em> / edited by Du Zexun. — Jinan: Shandong People’s Publishing House, September 2019.</p>
+<p>ISBN 978-7-209-12121-7</p>
+<ol type="I">
+<li>① <em>Guo…</em>  II. ① Du…  III. ① Chinese classical studies—collected essays  IV. ① Z126.27-53</li>
+</ol>
+<p>China Library CIP verification no. (2019) 152718</p>
+<p><strong>Chinese Classical Studies Quarterly (Issue 15)</strong><br />
+<em>GUOXUE JIKAN</em></p>
+<p>Editor-in-Chief: Du Zexun</p>
+<p>Supervising organization: Shandong Publishing &amp; Media Co., Ltd.<br />
+Published and distributed by: Shandong People’s Publishing House<br />
+Publisher: Hu Changqing<br />
+Address: No. 165 Yingxiongshan Road, Jinan<br />
+Postal code: 250002<br />
+Telephone: Editorial Office, (0531) 82098914; Marketing Department, (0531) 82098027<br />
+Website: <a href="http://www.sd-book.com.cn">http://www.sd-book.com.cn</a><br />
+Printed and bound by: Shandong Xinhua Printing Co., Ltd.<br />
+Distributed by: Xinhua Bookstore</p>
+<p>Format: 16mo (169 × 239 mm)<br />
+Printing sheets: 17.5<br />
+Length: 343,000 Chinese characters<br />
+Edition: First edition, September 2019<br />
+Printing: First printing, September 2019<br />
+Print run: Copies 1–1,000<br />
+ISBN 978-7-209-12121-7<br />
+Price: RMB 32.00</p>
+<p>For problems involving printing or binding quality, please contact the publisher’s editorial office.</p>
+<h2 id="contents">Contents</h2>
+<h3 id="feature-articles">Feature Articles</h3>
+<p><strong>001</strong> “Evidence That <em>A Reply to Mr. Chen Ganyi Concerning Writings of the Tongcheng School</em> Was Ghostwritten for Qian Mocun” — Fan Xulun</p>
+<p><strong>014</strong> “A Brief Account of the Former Collection of the Two Qi Brothers at the Harvard-Yenching Library” — Le Yi</p>
+<p><strong>029</strong> “State-Building in the Early Zhou as Seen Through the Changing Meaning of ‘Xia’ in the ‘Documents of Zhou’ Section of the <em>Book of Documents</em>” — Li Yunzhuo</p>
+<p><strong>047</strong> “‘Seeking to Bring Order to the Inconsistencies of the Hundred Schools’: Zheng Xuan’s System of Scriptural Exegesis ‘Based on the <em>Rites of Zhou</em>’” — Li Xi</p>
+<p><strong>069</strong> “The Dispatch of Envoys and the Political Culture of the Southern Dynasties” — Wang Shifan</p>
+<p><strong>096</strong> “A Reexamination of Local Finance in the Northern Wei” — Wang Yudong</p>
+<p><strong>121</strong> “A Study of Tang, Song, and Yuan Editions of <em>The Literary Mind and the Carving of Dragons</em>” — Ma Ning</p>
+<p><strong>131</strong> “The <em>Zhou Family’s Record of Communications with the Unseen</em> and Six Dynasties Tales of the Strange” — Hao Caimei</p>
+<p><strong>146</strong> “Critical Corrections to the Collation and Punctuation of <em>The Order of Transmission of Daoist Scriptures and Ritual Methods</em>” — Liu Qi and Liu Zuguo</p>
+<p><strong>154</strong> “Cost Analysis and the Study of Legal Culture: Southern Song Law on Encroachment upon Land as Seen in <em>Enlightened Judgments by Celebrated Judges</em>” — Meng Qingyang</p>
+<p><strong>161</strong> “‘The Flavors of the Celestial Dynasty’ and ‘A Confucian Feast of the Eastern Country’: The Korean Heo Gyun’s <em>Gluttony at the Butcher’s Gate</em> and Cultural Exchange Between Korea and Ming China” — Xu Cheng</p>
+<hr />
+<h1 id="a-brief-account-of-the-former-collection-of-the-two-qi-brothers-at-the-harvard-yenching-library">A Brief Account of the Former Collection of the Two Qi Brothers at the Harvard-Yenching Library</h1>
+<p><strong>Le Yi</strong></p>
+<h2 id="page-14">Page 14</h2>
+<p>Among the Harvard-Yenching Library’s Chinese holdings are rare books of considerable value for the study of editions, as well as special collections that came from individual scholars and private collectors. Each of these collections forms a coherent body of its own. Because they combine their collectors’ scholarly insights with the historical circumstances of their time, they possess distinctive documentary value and deserve scholarly attention. The former collection of the brothers Qi Yaolin and Qi Yaoshan—hereafter, the “Qi Brothers Collection”—is one such body of material.¹</p>
+<h3 id="i">I</h3>
+<p>The Harvard-Yenching Library’s accession records show that the Qi Brothers Collection entered the library in June 1945. A review of the papers of Kaiming Chiu, the library’s first director, together with the Harvard-Yenching Library’s annual reports, reveals that the collection’s acquisition followed a rather circuitous course.</p>
+<p>From the outset of his tenure, Chiu displayed a discerning eye in purchasing books. In 1933, when he returned to Beiping and helped Yenching University establish its library, he was already attentive to acquiring private libraries.³ He received the support of the dean of Harvard’s Faculty of Arts and Sciences,⁴ because at that time the Chinese-Japanese Library of the Harvard-Yenching Institute was jointly administered by the Faculty of Arts and Sciences and the Harvard University Library.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>Hereafter abbreviated as the “Qi Brothers Collection.”</li>
+<li>Kaiming Chiu (Alfred Kaiming Chiu, 1898–1977), a native of Zhenhai, Zhejiang, graduated from the Boone Library School. In 1924 he went to the United States for advanced study in library science and economics. He served as director of the Harvard-Yenching Library from 1931 to 1965.</li>
+<li>Chiu wrote to George Henry Chase: “As for the purchase of books, I am working with the head of acquisitions at the Yenching University Library. I plan first to purchase some of the most important works—such as local gazetteers from the southern provinces, books on archaeology and art, encyclopedias, biographies, and so forth—to strengthen our holdings. If private collections do not contain too many duplicate copies, we may have an opportunity to acquire them.” (HYL Archives, “Letter of Alfred K’aiming Ch’iu to George Henry Chase,” November 15, 1930; Cheng Huanwen, ed., <em>Chronicle of Kaiming Chiu</em>, Guangxi Normal University Press, October 2008, p. 49.)</li>
+<li>George Henry Chase wrote to Chiu: “Your letter of November 15 arrived before winter. What you report about the purchase of books is good news to me. I am convinced that we have a great need for local gazetteers and books on archaeology, art, biography, and so forth, and that private libraries should be purchased, provided they do not supply too many duplicates.” (HYL Archives, “Letters of George Henry Chase to Alfred K’aiming Ch’iu,” December 23, 1930; Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, p. 50.)</li>
+</ol>
+<h2 id="page-15">Page 15</h2>
+<p>In July 1934, Professor Serge Elisséeff was formally appointed director of the Harvard-Yenching Institute and professor of Far Eastern languages at Harvard University. That same year, the relevant administrative system was reformed, and the director of the Chinese-Japanese Library came under the direct leadership of the Institute’s director. Through the joint efforts of Elisséeff and Kaiming Chiu, together with the strong support of the Institute’s board, the Harvard-Yenching Library’s holdings of Chinese books—including Manchu- and Tibetan-language works—as well as Japanese and Korean materials increased markedly. In China during the early 1930s, the clouds of war hung overhead and society was in turmoil. Many old and prominent families dispersed their collections of ancient books, creating opportunities for Chiu to acquire rare editions.</p>
+<p>In April 1944, Chiu received a letter from Felton Chow in Washington and encountered, for the first time, a list of books from the Qi Brothers Collection. According to the letter, Wang Wenshan, who had worked in China’s Ministry of Communications, had asked Chow to forward the list to Chiu and inquire whether the Harvard-Yenching Library might be interested in purchasing it. The books had been taken out of China by Wang roughly ten years earlier and deposited at the Library of Congress.¹</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>Elisséeff’s strong leadership laid a firm foundation for the Harvard-Yenching Institute, and the Harvard Chinese-Japanese Library immediately entered a period of growth. After he took office, its Western-language, Tibetan, Manchu, Mongolian, and later Korean collections were established one after another. During the eight years from July 1, 1934, to July 1, 1942, the Chinese-Japanese Library’s holdings doubled. (Alfred K’aiming Ch’iu, “The Harvard-Yenching Institute Library,” <em>The Far Eastern Quarterly</em>, vol. 14, no. 1 [November 1954], pp. 147–152; Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, p. 115.)</li>
+<li>After Professor Serge Elisséeff became director of the Harvard-Yenching Institute, the Chinese-Japanese Library’s administrative structure changed. Its director was no longer subject to the dual leadership of the Harvard University Librarian and the dean of the Faculty of Arts and Sciences, but reported directly to the Institute’s director and was responsible for managing and developing the library. (HYL Archives, <em>Chinese-Japanese Library of the Harvard-Yenching Institute at Harvard University: Report of the Librarian for 1963–1964</em>, p. 39.) With support from the trustees and Chiu’s professional discernment, the library began purchasing the best available editions of Chinese books. Chinese books were then inexpensive in comparison with Japanese materials, and many good editions had appeared on the market because of warfare. The library took full advantage of this opportunity. Its holdings consequently increased. (Serge Elisséeff, “The Chinese-Japanese Library of the Harvard-Yenching Institute,” <em>Harvard Library Bulletin</em>, vol. 10, no. 1 [Winter 1956], pp. 73–97; the foregoing is cited in Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, pp. 115–116.)</li>
+<li>Felton Chow of China Defense Supplies, Inc., Washington, wrote to Chiu: “When I left Chongqing in December 1943, Wang Wenshan of the Ministry of Communications gave me a book list. I knew that he wanted you to deal with the books in the United States, but he gave me no definite instructions. Wang has just contacted me and asks that you reply as to whether you would be willing to purchase the books on the list. When convenient, please let me know, and I can forward your letter to Wang.” (HYL Archives, “Letters of Felton Chow to Alfred Kaiming Ch’iu,” April 21, 1944; Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, p. 302.)</li>
+<li>Wang Wenshan (1901–?), a native of Hanchuan, Hubei, graduated from the library-science department of Boone University in Wuchang in 1923 and then became head of the library at Nankai University in Tianjin. He went to the United States in the winter of 1926 and earned a master’s degree in library science from Columbia University and master’s and doctoral degrees in political science from the University of Washington. He served for a time as China’s chargé d’affaires in the United States and, while in America, worked as a cataloger in the Chinese section of the Library of Congress. He returned to China in June 1932 and became director of the Tsinghua University Library. In October 1933 he became a commissioner of the National Defense Council in Nanjing. In December 1935 he became secretary-general of the National Resources Commission and concurrently director of its library. In July 1938 he became a division chief in the National Trade Commission; in early 1939 he transferred to the Ministry of Communications as director of its Personnel Department. He left the ministry in December 1943 to take a post with the China Industrial Service Association. (Based on Zhang Hongwei, “Remembering Wang Wenshan, a Second-Class Graduate of Boone’s Library Science Program,” <em>Library and Information Knowledge</em>, 2010, no. 4, pp. 125–128, and Yuan Jin, “National Government Gazette—Orders.”)</li>
+</ol>
+<h2 id="page-16">Page 16</h2>
+<p>Judging from Wang Wenshan’s career, he went to the United States to study in the winter of 1926 and worked there as a cataloger in the Chinese section of the Library of Congress. It may therefore be inferred that he took the Qi Brothers Collection out of China when he went abroad—sometime between 1926 and 1932—and deposited it at the Library of Congress.</p>
+<p>After receiving the letter and book list, Chiu consulted Elisséeff. Elisséeff sent the list to Yuan Tongli, then director of the National Library of Peiping, and asked for his opinion. At the time, Wang Zhongmin had been assigned by that library to help organize Chinese rare books at the Library of Congress. He therefore examined Wang Wenshan’s books and assessed them. He judged the collection to have some value and wrote to Chiu in February 1945 explaining the situation.¹</p>
+<p>The Qi family then used Wang Wenshan as intermediary and also retained Liu Yuwan of the China Institute of Pacific Relations² to handle, with full authority, the sale of the collection as a whole to the Harvard-Yenching Library. The library, in turn, appointed Kaiming Chiu as its fully authorized representative. The parties reached agreement, and the entire acquisition was completed in March 1945.³ In June 1945, the Library of Congress transferred the Qi Brothers Collection as a whole to the Harvard-Yenching Library. In his library report of October 1945, Chiu reviewed the acquisition in detail and briefly introduced the collection’s distinctive features and several representative works.</p>
+<p>According to Harvard-Yenching Library records, a short inventory was made when the collection entered the library. The handwritten list recorded more than five hundred works and used a simple system of classification and grading: “A,” “AA,” and “AAA” distinguished the quality of an edition; “M” signified a map; and “B” indicated that a book’s author was a government official. In 2006, the Harvard-Yenching Library reinventoried and reorganized the collection, removed items that could no longer be located, and consolidated certain entries. The final catalog contained 413 works in 1,206 volumes, all of which were converted into machine-readable records and entered into the Harvard University Library’s public catalog.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>Wang Zhongmin wrote to Chiu: “Over the past two weeks I have gone through, one by one, the batch of old books that Wang Wenshan wishes to sell.… Elisséeff wrote to Mr. Yuan Tongli asking him to take a look, and so I made the trip.” (HYL Archives, letter from Wang Zhongmin to Kaiming Chiu, February 3, 1945; Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, p. 308.)</li>
+<li>Liu Yuwan (1896–1966), a native of Yichang, Hubei, went to the United States after graduating from Tsinghua University in 1920 and returned to China in 1924. He became secretary-general of the National Reconstruction Commission in 1929, secretary of the China Institute of Pacific Relations in 1931, and executive secretary in 1933, serving until 1946. He concurrently held posts in the National Government’s Ministry of Communications, including assistant director of the General Affairs Department and head of the Personnel Section. (Shi Xinyi, “Liu Yuwan: From Religious Activist to Diplomat,” <em>World Affairs</em>, 2013, no. 18, pp. 62–63.)</li>
+<li>HYL Archives, “Letter of Alfred K’aiming Ch’iu to Arthur William Hummel,” March 6, 1945; Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, pp. 310–311.</li>
+</ol>
+<h2 id="page-17">Page 17</h2>
+<h3 id="ii">II</h3>
+<p>Qi Yaolin and Qi Yaoshan were born during the Tongzhi reign of the Qing and were full brothers, Yaolin being the elder. Both passed the <em>jinshi</em> metropolitan examination toward the end of the Qing and served as officials in different regions. After the Republic was founded, their respective ties to Yuan Shikai and Li Yuanhong led to their appointment in the new government. No complete biographical account of the Qi brothers survives, and no previous scholar has systematically organized or studied their lives.</p>
+<p>Research shows that the two most reliable sources for their biographies are <em>Complete Collection of Qing Officials’ Career Records</em> and the <em>Qi Family Genealogy of Yitong</em>. The former contains career accounts written by the brothers themselves and is extremely useful for studying their official service in the late Qing. The latter, compiled by Qi Yaolin, supplements the record of their careers during the Republican period. While investigating these materials in April 2010, the author was fortunate to receive help from Ms. Qi Zongmin, a descendant of the brothers, who supplied fairly detailed biographical leads in a letter.</p>
+<p>Another account appears in <em>Yitong Historical and Cultural Materials</em>, quoting the <em>Yitong Local Gazetteer</em>. That passage, however, incorrectly identifies the Qi brothers as Manchus and contains errors in several dates, so it is not sufficiently reliable. Other information is scattered through local gazetteers, Republican-era newspapers such as <em>Shen Bao</em>, and modern provincial reference compilations such as <em>Materials on Conditions in Shandong Province</em>, but these sources are neither detailed nor systematic. Appointment and dismissal orders in the Republican-era <em>Government Gazette</em> supplement information about the brothers’ official positions and can also be checked against the genealogy compiled by Qi Yaolin.</p>
+<p>Taken together, the surviving materials now permit a general view of the brothers’ lives. Brief chronological biographies of Qi Yaolin and Qi Yaoshan follow.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>The original catalog explains: “A” means “well written”; “AA” means “well written plus good [garbled English in the original]”; “AAA” means “rare or original”; “B” means “done by an official”; “M” means “maps”; “MB” means manuscript maps prepared by an official; and “C” indicates a manuscript diary. The English explanations contain several spelling errors, probably because the preliminary inventory was prepared hurriedly.</li>
+<li>Qin Guojing, <em>Complete Collection of Qing Officials’ Career Records</em>, 30 vols., East China Normal University Press, 1997.</li>
+<li>Qi Yaolin, <em>Qi Family Genealogy of Yitong</em>, Republican-period manuscript copy. Each half-page has nine lines of twenty-two characters, no ruling, double borders on all four sides, an unprinted center margin, and a single black fishtail. The block center gives the title above and the fascicle number below. Each person’s name and style name occupy the first line at the top; the brief biography begins on a separate line, indented by one character. Official appointments are listed in detail, but specific deeds are not described, so the entries remain short biographies. Information on wives, children, and daughters follows each biography. Ms. Qi Zongmin supplied relevant images from the book.</li>
+<li>Qi Zongmin is Qi Yaoshan’s granddaughter.</li>
+<li>“The Qi Brothers,” excerpted from the <em>Yitong Local Gazetteer</em> in <em>Yitong Historical and Cultural Materials</em>, 1989, no. 3, pp. 162–163.</li>
+</ol>
+<h2 id="page-18">Page 18</h2>
+<h3 id="qi-yaolin">Qi Yaolin</h3>
+<p>Style name Zhenyan, also written Yunyan; from Qixi Village, Changyi County, Yitong, Jilin Province.</p>
+<ul>
+<li><strong>1862 (Tongzhi 1):</strong> Born.</li>
+<li><strong>1888 (Guangxu 14):</strong> Placed on the supplementary examination list and became an instructor in Chinese studies at the Imperial-Clan School in Shengjing.</li>
+<li><strong>1893 (Guangxu 19):</strong> Earned the <em>juren</em> degree.</li>
+<li><strong>1895 (Guangxu 21):</strong> Earned the <em>jinshi</em> degree and was appointed a <em>shujishi</em> probationer in the Hanlin Academy.</li>
+<li><strong>1898 (Guangxu 24):</strong> Completed his Hanlin probation. In August, he was appointed magistrate of Quzhou County, Zhili.</li>
+<li><strong>1899 (Guangxu 25):</strong> Arrived in the province in February; became acting magistrate of Pingxiang County in May and magistrate of Quzhou County in September. He later went to Qingyuan County.</li>
+<li><strong>1901 (Guangxu 27):</strong> In December, former governor-general of Zhili Yuan Shikai recommended him for his good administration, and he received a commendation.</li>
+<li><strong>1902 (Guangxu 28):</strong> In June, he was recommended by former governor-general Yuan Shikai and, by imperial order, placed on record with the Grand Council.</li>
+<li><strong>1903 (Guangxu 29):</strong> Transferred in the intercalary fifth month to the magistracy of Xuanhua County. In July, on Yuan Shikai’s recommendation, he was presented to the ministry for an imperial audience and ordered to fill the next available substantive vacancy as prefect of an independent department in Zhili.</li>
+<li><strong>1904 (Guangxu 30):</strong> Became acting prefect of the independent department of Zunhua in February and received the substantive appointment in September.</li>
+<li><strong>1906 (Guangxu 32):</strong> Appointed prefect of Hejian in March.</li>
+<li><strong>1907 (Guangxu 33):</strong> Transferred to the prefecture of Baoding in May and became acting prefect of Tianjin in July.</li>
+<li><strong>1908 (Guangxu 34):</strong> Appointed intendant of the Yongding River in the first month; transferred to the Tianjin Circuit on February 17.</li>
+<li><strong>1909 (Xuantong 1):</strong> Promoted in November to judicial commissioner of Zhili, with the title later changed to provincial judicial commissioner.</li>
+<li><strong>1911 (Xuantong 3):</strong> Became financial commissioner of Jiangsu, then financial commissioner of Henan. In December, he was appointed governor of Henan, concurrently acting governor of Anhui, and also military governor of Henan.</li>
+<li><strong>1912 (Republican year 1):</strong> Served as minister of salt administration.</li>
+<li><strong>1913 (Republican year 2):</strong> In June, transferred to become civil governor and inspecting commissioner of Jilin and jointly administered military affairs there.</li>
+<li><strong>1914 (Republican year 3):</strong> Served as inspecting commissioner of Jiangsu and concurrently acting military governor and civil governor of Jiangsu.</li>
+<li><strong>1920 (Republican year 9):</strong> Impeached by the Jiangsu Provincial Assembly in June. He left the governorship in July and returned from Jiangsu to Tianjin at year’s end. He later became chairman of Tianjin’s Yaohua Glass Company.</li>
+<li><strong>Early 1949:</strong> Died in Beiping.</li>
+</ul>
+<h2 id="page-19">Page 19</h2>
+<h3 id="qi-yaoshan">Qi Yaoshan</h3>
+<p>Style name Zhaoyan; from Qixi Village, Changyi County, Yitong, Jilin Province.</p>
+<ul>
+<li><strong>1865 (Tongzhi 4):</strong> Born.</li>
+<li><strong>1889 (Guangxu 15):</strong> Earned the <em>juren</em> degree.</li>
+<li><strong>1890 (Guangxu 16):</strong> Earned the <em>jinshi</em> degree. Served as a secretary in the Grand Secretariat and acting reader.</li>
+<li><strong>1896 (Guangxu 22):</strong> Served as an assistant copyist and assistant examiner in the Imperial Genealogy Office. In December, filled a vacant secretaryship in the Grand Secretariat.</li>
+<li><strong>1897 (Guangxu 23):</strong> In May, qualified for selection as a subprefect, became an expectant prefect in Hubei, and received the honorary rank of salt transport commissioner.</li>
+<li><strong>1899 (Guangxu 25):</strong> Assigned by lot to Hubei in June and arrived in September.</li>
+<li><strong>1901 (Guangxu 27):</strong> Became acting prefect of Yichang in August.</li>
+</ul>
+<p>He was subsequently promoted to the Jing-Yi Circuit in Hubei and granted a peacock feather and second-rank status. He served as superintendent of the Jing-Yi-Sha customs stations and of Jianghan Customs, acting Hubei educational commissioner, and successively as secretary in the governor’s office, customs-checking official, director-general of the <em>baojia</em> bureau, administrative director of the mint, senior secretary and associate director of the postwar-affairs bureau, and administrative director of the military-training office.</p>
+<ul>
+<li><strong>Autumn 1907 (Guangxu 33):</strong> Served as chief judicial officer of the Southern Maneuvers, director-general of the Training Office, Foreign Affairs Bureau, and Military Administration Office; superintendent of the Military Medical School; director-general of the Houhu Land-Survey Bureau; supervisor of the Yichang Sichuan Salt Bureau; and superintendent of Jingzhou Middle School, Jingzhou School of Foreign Languages, Jingzhou Normal School, Jingzhou School of Arts and Crafts, Hankou Middle School, and Hankou Normal School.</li>
+<li><strong>January 1913 (Republican year 2):</strong> Became director of the Beijing Salt Administration Preparatory Office.</li>
+<li><strong>March 1914 (Republican year 3):</strong> Became a member of the Constitutional Convention.</li>
+<li><strong>1915 (Republican year 4):</strong> Became a member of the Council of State.</li>
+<li><strong>1917–1918 (Republican years 6–7):</strong> Served as governor of Zhejiang.</li>
+<li><strong>May 1920 (Republican year 9):</strong> Impeached by the Zhejiang Provincial Assembly; resigned by telegram and left Zhejiang. He later served as governor of Shandong.</li>
+<li><strong>May 1921 (Republican year 10):</strong> Became minister of the interior in the Beijing government and concurrently director-general of the Famine Relief Association. In June, he was placed in charge of Beijing municipal affairs; in July, became president of the Commercial Bank; and in December, became minister of agriculture and commerce while concurrently acting as minister of education.</li>
+<li><strong>1922 (Republican year 11):</strong> Concurrently chaired the Grain Survey Commission. He was relieved of the education portfolio in April and of the agriculture and commerce portfolio in June. After leaving office, he lived in Tianjin and served as president of the Agricultural and Commercial Bank.</li>
+<li><strong>1927 (Republican year 16):</strong> Became a member of the Political Deliberation Committee of Zhang Zuolin’s National Pacification Army government.</li>
+<li><strong>January 13, 1954:</strong> Died in Taipei at the age of ninety.</li>
+</ul>
+<h2 id="page-20">Page 20</h2>
+<h3 id="iii">III</h3>
+<p>The Harvard-Yenching Library’s Qi Brothers Collection does not consist of the brothers’ own writings, and no material has yet been found that explicitly explains the origins of their library. Preliminary research suggests that this batch is the most complete and substantial surviving portion of the brothers’ known collection. No catalog has yet been found showing that another institution or private individual possesses a comparable group of their books.¹</p>
+<p>Viewed as a whole, the editions in the collection date mostly from the late Qing and early Republican periods. Most noteworthy is the fact that only two items are printed editions from the Guangxu or Xuantong reigns; all the rest are authorial manuscripts, manuscript copies, hand-drawn maps, waterway charts, and similar materials. Such a high proportion of manuscripts is rare even in a private collection. Thirty items are clearly authorial manuscripts, more than three hundred are Qing manuscript copies, and more than sixty are early Republican copies. Among the Qing copies whose dates can presently be established, the earliest comes from the Jiaqing reign, while most of the others cluster in the late Qing, between 1821 and 1911.</p>
+<p>By content, the collection includes all four traditional bibliographic divisions: Classics, History, Masters, and Literary Collections. Using the classification standard of the <em>Detailed Index to the Comprehensive Catalog of Chinese Collectanea</em>, the author further divided the holdings as follows:</p>
+<ul>
+<li><strong>Classics:</strong> 19 works, covering the <em>Book of Changes</em>, <em>Book of Documents</em>, <em>Book of Songs</em>, <em>Rites of Zhou</em>, <em>Book of Rites</em>, <em>Zuo Tradition to the Spring and Autumn Annals</em>, Four Books, general discussions of the classics, and philology—nine subcategories in all. Most are manuscript copies of common works.</li>
+<li><strong>History:</strong> 152 works, covering standard histories, annalistic histories, miscellaneous histories, historical excerpts, historical criticism, biography, institutional works, calendars and seasonal observances, geography, and epigraphy—ten subcategories. Many concern local finance, statutes and precedents, memorials, official correspondence, and registers of officials.</li>
+<li><strong>Masters:</strong> 82 works, covering military texts, Daoism, allusions, Buddhism, crafts, calendrical science and mathematics, Confucian writings, occult arts, fiction, medicine, art, miscellaneous learning, and the philosophers of the Zhou and Qin—thirteen subcategories. The strongest concentrations are medicine, military technology, crafts, and trade.</li>
+<li><strong>Literary Collections:</strong> 160 works, covering individual collections, general anthologies, poetry and prose criticism, and lyric verse and drama—four subcategories. Many are musical scores, literary anthologies, and academy examination papers.</li>
+</ul>
+<p>From these two aspects—the dating and physical character of the editions—it may be inferred that the collection was deliberately accumulated over several decades. Yet no ownership mark left by either brother has been found: no private seal, collector’s colophon, or inscription. A fuller investigation of how the collection was formed must therefore combine analysis of the specific contents with the brothers’ lives, careers, and personal associations.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>The Tianjin Library holds one printed work by Qi Yaolin, <em>A Treatise on the Jin Canon</em>, in three manuscript volumes (P37858), and Qi Yaoshan’s <em>Statements of Local Revenue for the Fifth Fiscal Year of the Republic of China in Zhejiang Province</em>, one Republican-period letterpress volume (P30234).</li>
+<li>For a more detailed classification and bibliography, see the catalog appended to Le Yi and Liu Bo, eds., <em>A Collection of Rare Documents from the Former Collection of the Two Qi Brothers in the Harvard-Yenching Library</em>, National Library Press, April 2019.</li>
+</ol>
+<h2 id="page-21">Page 21</h2>
+<p>Both books were compiled by Li Kailin in the late Qing.</p>
+<p>Li’s style name was Shitao. He lived from the late Qing into the early Republican period and was a native of Taihu County, Anhui; no biography of him is known. In the early Republic, he served for a time as manager of the Jiangnan Book Bureau.¹ He was an accomplished scholar of the classics and participated in compiling the <em>Li Family Genealogy of Taihu County</em>.²</p>
+<p><em>Table Showing the Combined and Separate Texts of the Canon and Commentaries of the Book of Changes</em> comprises one fascicle in one case. Li compiled it in Guangxu 33 (1907). It is written in red and black ink, with fifteen lines of twenty-two characters; small characters appear in double lines in the same format. The main text has no dividing rules. “Book of Changes” is printed at the top of the block center. The printed frame measures 31.7 × 25 cm. At the end, a note by Li explains why he compiled the work.</p>
+<p>Li Kailin’s <em>Two Readings of the Book of Changes</em> is recorded in a number of catalogs; it was printed in Republican year 14 (1925). Comparison shows that its contents are essentially the same as those of the present manuscript, although the layout differs slightly. This manuscript begins with Zhu Xi’s Song-dynasty “Preface to the <em>Book of Changes</em>.” In <em>Two Readings</em>, that text was replaced by the Song scholar Cheng Yi’s “Preface to the <em>Commentary on the Book of Changes</em>,” and a “Table of Rhymes in the <em>Book of Changes</em>,” Li Kailin’s “Eulogy on <em>Two Readings of the Book of Changes</em>,” and a 1925 postscript by Cheng Xianjia were added. Every correction made in ink in this manuscript was incorporated into the printed <em>Two Readings</em>, demonstrating that the present copy is its first draft.</p>
+<p><em>Selected Passages from the Zuo Tradition</em> comprises four fascicles in one case. It is Li’s definitive compilation manuscript of Guangxu 22 (1896), with nine lines of twenty-five characters and no dividing rules. It has single borders on all four sides, an unprinted center margin, and a single black fishtail. The book title appears at the top of the block center, the section title in the middle, and “Zhibuzu Studio” at the bottom. The printed frame measures 18.6 × 12.6 cm. The text contains punctuation marks. On the lower half of the inner cover leaf is written: “Inscribed at Jigu Studio by the Qinhuai River on the day after the Flower Festival, in mid-spring of the <em>bingshen</em> year.” A table of contents precedes the text. At its end is Li’s preface of Guangxu 19 (1893), explaining the circumstances of compilation. No printed edition of this work has been recorded.</p>
+<p>The copying of both books is exceptionally fine. Their prefaces and postscripts show that Li chose his source texts with great care, paying close attention to fine editions. In editing their contents, he likewise discarded the coarse and selected the essential, cutting and arranging the material judiciously. This reveals the compiler’s care: without years of experience studying the classics, such precise distillation would not have been possible. For later readers of the <em>Book of Changes</em> and the <em>Zuo Tradition</em>, the two works may be called gateways to scholarship.</p>
+<h3 id="ii.history">II. History</h3>
+<p>Works in the History division account for roughly one-third of the Qi Brothers Collection and constitute its most distinctive component. In addition to some excerpts copied from the standard histories and miscellaneous historical writings, the items most deserving attention are original files of local governments from the late Qing and early Republic: official registers, tax documents, trade records, accounts of government disbursements, statutes and precedents, memorials, and official correspondence. Because the Republican-period files have already been reproduced in other series, only works dating from the Qing are introduced here.</p>
+<p>The official registers include <em>Register of Commissioned Junior Officers of the Yellow River Encampment</em>, <em>Register of Expectant Civil Officials</em>, <em>Register of Military Officers in Bannered Garrisons</em>, <em>Register of Civil Officials of the Grand Canal Administration</em>, and <em>Register of Capital Officials, Prefects, Subprefects, Assistant Prefects, Magistrates Selected Through the Grand Selection, Assistant Department Magistrates, Department Judges, and Other Officials</em>.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>See Yang Changjie, “The Jiangsu Government Book Bureau Amid the Late-Qing Turn Toward the World,” in the Editorial Group for the History of Modern Chinese Publishing, ed., <em>Proceedings of the Symposium on the History of Modern Chinese Publishing</em>, China Book Publishing House, 1990. The scan of the contributor’s name and article title is slightly indistinct.</li>
+<li>In Republican year 13 (1924), Li Kailin and others compiled the ten-<em>juan</em>, ten-volume <em>Li Family Genealogy of Taihu County</em>. See Sheng Qingyi, <em>Preliminary Catalog of Chinese Genealogical Materials Held by the Institute of Chinese Studies</em>, Taipei: United Daily News Cultural Foundation, Institute of Chinese Studies, 1982.</li>
+</ol>
+<h2 id="page-22">Page 22</h2>
+<p>The titles of the official registers were supplied during cataloging from labels pasted inside their covers. The registers are close in date and format: red ruling, seven lines per half-page, double borders on all four sides, an unprinted center margin, and a single red fishtail at the top. This indicates that official registers of the period followed a standardized printed format. Most list officials in various institutions from the Daoguang through Tongzhi reigns. Above some names are red stamps reading “ill,” “deceased,” “dismissed,” “appointed,” or “removed.” Beneath the “deceased” stamp one sometimes finds a red-paper label inscribed in ink, “died of illness.” Each name is followed by a brief career history. Properly organized, these records could significantly supplement the personnel files and biographical materials for late-Qing officials. All five kinds of register mentioned above are cataloged in <em>A Catalog of Chinese Rare Books in the Harvard-Yenching Library of Harvard University</em>.¹</p>
+<p>For local finance, there are documents known as “handover verification registers.” More than twenty were selected for facsimile reproduction, including <em>Record of the Verification of a Single-Office Handover Register Compiled in Rugao County During the Guangxu Reign</em> and <em>Queries on the Handover Register of Baoshan County During the Guangxu Reign</em>. Such registers were documents used when one local administration handed office over to its successor in the Ming and Qing. In the Qi Brothers Collection they concern mainly Jiangsu and Zhejiang, matching the regions in which the brothers served. Most consist of one fascicle, occasionally two or more, and most are red-ruled manuscript copies with seven to eleven lines per page. An official seal often appears at the beginning. Late-Qing seals are bilingual in Manchu and Chinese, whereas Republican-period seals are Chinese only. A typical opening title states that the incumbent official of a named place had investigated the term of a particular predecessor, from the year that predecessor assumed office through the day before he handed it over, and had prepared a verification register itemizing all regular and miscellaneous funds to be transferred, replenished, offset, reduced, or deleted. Ink corrections and transposition marks show that these were not final fair copies. The registers form an essentially continuous chronological series and are concentrated geographically. They are consequently rare first-hand materials for the economic history of Jiangsu and Zhejiang in the late Qing.</p>
+<p>Two trade-related works deserve mention: <em>Essential Knowledge for Trade</em> and <em>What One Must Know About the Pawn Business</em>. The first, one fascicle in one case, was compiled by Wang Bingyuan and is followed by <em>A Secret Record of Ingenious Conjuring Tricks</em>. Wang lived during the Qianlong reign. The second, also one fascicle in one case, was compiled by the Weishan Hall of Xin’an, Zhejiang, toward the end of the Qing. Because it mentions events in the fifth year of the Xianfeng reign, it must have been completed after that date. Its language is concise, clear, rhythmic, and engaging. Such popular texts originated and circulated among ordinary people. Although no formally printed edition is known, they have considerable value for the study of popular customs.</p>
+<p>Documents concerning the receipt and expenditure of government funds include <em>Account Book of Disbursements by the Tianjin Telegraph Bureau During the Guangxu Reign</em>, <em>Expense Ledgers of Academies, Temples, and Other Institutions in Jiangsu Counties at the End of the Qing</em>, and <em>Reimbursement Registers of the Jinling General Bureau of Military Supplies</em>. These illuminate late-Qing military expenditures and the operation of county academies, temples, and other institutions in Jiangsu.</p>
+<p>There are more than ten works on statutes and precedents, mostly Qing legal provisions and selected copies of adjudicated cases from various places. Examples include <em>Memorials Concerning Sichuan Bandits</em>, <em>Autumn-Assizes Regulations of the Daoguang Reign and Selected Provincial Cases</em>, <em>Copies of Sichuan Criminal Cases</em>, <em>Complete Autumn Case Files of Dongliu County for Republican Year 6</em>, and <em>Collected Judicial Records of Anhui Province</em>.</p>
+<p><strong>Note</strong></p>
+<ol>
+<li>Shen Jin, <em>A Catalog of Chinese Rare Books in the Harvard-Yenching Library of Harvard University: History Division</em>, vol. 2, Guangxi Normal University Press, 2011, pp. 785–788.</li>
+</ol>
+<h2 id="page-23">Page 23</h2>
+<p>Most of the legal works are in rough binding and use varying line formats. They were probably copied informally from county criminal-case documents. The originals from which the excerpts were made are now often lost, so the cases preserved in these copies offer rare material for research into Chinese legal history. The cases are also intricate and vividly written, giving them some literary interest.</p>
+<p>The collection also contains an appreciable number of memorials and official documents. Particularly valuable memorials include <em>Draft Memorials of Lord Yuan Duanmin</em>, <em>Mr. Yuan Wuqiao’s Draft Memorials on Military Affairs</em>, <em>Memorial Requesting the Establishment of an Ocean-Going Steamship Navy</em>, <em>Joint Memorial Files of the Xianfeng Reign</em>, <em>Copies of Memorials on Granary Rice and Related Matters from the Daoguang Reign</em>, <em>Draft Memorials on Salt Administration and Communications from Salt Commissioners, Governors-General, Governors, and Ministries During the Xianfeng Reign</em>, <em>Copies of Memorials by the Governors-General of Liangjiang During the Guangxu Reign</em>, and <em>Copies of Memorials and Official Letters from Jiangsu, Yunnan, and Other Provinces at the End of the Qing</em>. These late-Qing documents—especially those concerning the navy, military preparedness, and salt administration during the Daoguang, Xianfeng, and Guangxu reigns—were deliberately excerpted and collected. Their survival helps fill gaps in the corpus of late-Qing memorials.</p>
+<p>Among the official papers, noteworthy items include <em>Telegrams Exchanged in Connection with Li Hongzhang’s Promotion of a Navy</em>, <em>File on Refitting the Kangji as a Torpedo-Training Ship and Purchasing Additional Equipment</em>, and <em>Official Papers of the Jiangnan Arsenal</em>. All concern important enterprises of the late-Qing Self-Strengthening Movement and have value for related research.</p>
+<p>The History division of the Qi Brothers Collection contains <em>Waterway Maps of the Guangxu Reign</em>: fifty-one hand-drawn sheets in excellent condition, some in black and white and others in color. Some maps are inscribed as having been drawn on a particular date in Guangxu 30 (1904), and some bear the official seals of local offices or responsible commissioners. In addition to waterway topography, they mark <em>lijin</em> tax stations.</p>
+<p>These stations were local offices established by the Qing government after the Xianfeng reign to collect the <em>lijin</em> transit tax. The tax was levied at checkpoints on goods moving along major domestic land and water routes during the late Qing; it was generally one percent of the goods’ value.</p>
+<p>The waterway and <em>lijin</em>-station maps in the Qi Brothers Collection were carefully drawn by local tax bureaus. They record the courses of waterways, the locations of the various tax bureaus, and their distances from provincial capitals. The sheets vary in size, showing that no standard format governed mapmaking in these offices. Some explanations are written on red labels pasted to the maps to attract the reader’s attention. Most depict rivers in Jiangxi; investigation shows that they cover eighty percent of the province’s river system. The collection also includes a map of <em>lijin</em> stations in Fengshan County, Taiwan. These constitute first-hand sources for late-Qing local hydraulic and economic history.</p>
+<h3 id="iii.masters">III. Masters</h3>
+<p>The Masters division contains many works on craft and technology, several of which deserve attention. Books on machinery and manufacturing include <em>Complete Book of Craft Manufacture</em>, <em>Lessons on Naval Mines</em>, <em>Questions and Answers on Making Land Mines</em>, with <em>Questions and Answers on Making Batteries</em> appended, and <em>Illustrated Explanation of Aircraft</em>. Many contain detailed manufacturing flowcharts or diagrams of product construction. The copyists’ work is highly accomplished, with elegant writing and meticulous illustrations, while the contents display clear characteristics of their period.</p>
+<p>Other works concern everyday commercial goods, including <em>Manual of Jade and Furs</em>, <em>Manual of Silver Currency and Jewelry</em>, and <em>An Exacting Search for the Most Precious Objects</em>. Their authors were probably pawnshop owners active between the late Qing and early Republic, making the books rare sources for the study of the modern Chinese pawn trade.</p>
+<h2 id="page-24">Page 24</h2>
+<p>The “Secrets of Jewelry” section in <em>An Exacting Search for the Most Precious Objects</em> and the “Discussion of Jewelry” in <em>Manual of Silver Currency and Jewelry</em> contain the same material, although certain phrases and the order of sections differ. They may be records made by apprentices in different workshops.</p>
+<p>Few writings of this kind survive. The only other cataloged example currently known is a Qing manuscript of <em>A Treatise on Furs</em> in the National Library of China. Wang Zhenzhong of Fudan University’s Center for Historical Geography has written a specialized study, “The Business Culture of Huizhou Pawnbrokers in Jiangnan During the Qing,” discussing the contents, origins, and value of the works described above in the Harvard-Yenching Library.¹</p>
+<p>The Masters division also contains works of calligraphy and painting and books of refined amusements, reflecting their owner’s cultivated tastes. One item, <em>Copying the Authentic Calligraphy of Dong Wenmin</em>, was originally cataloged as an authentic work; because its authenticity later became disputed, the words “copying” were added. Specialists are invited to settle the question.</p>
+<h3 id="iv.literary-collections">IV. Literary Collections</h3>
+<p>Works in the Literary Collections division also make up roughly one-third of the Qi Brothers Collection. Particularly valuable are several individual Qing collections not cataloged elsewhere and a large number of dramatic and musical scores.</p>
+<p>Among the individual collections are five works by the late-Qing author Cheng Zuo: <em>Poems Preserved from Mingqiu Studio</em>, <em>Surviving Drafts from the Red-Sheep Calamity</em>, <em>Idle Chants from the Cold Office at Qiupu</em>, <em>The Sound of Cicadas in the Autumn Trees</em>, and <em>Chants from Worn-Broom Studio</em>; and Zhu Zhongxuan’s <em>Poems from Dandan Studio</em>. None is cataloged by another holding institution. All were reproduced in <em>Collected Ming and Qing Literary Works Held by the Harvard-Yenching Library</em>, so they are not discussed further here. Also worthy of attention are <em>Poems from Chuhui Studio</em>, <em>Poetry Drafts from Aiju Studio</em>, and <em>Poetry Manuscripts from Sanlun Study</em>, none of which appears in the <em>General Catalog of Individual Qing Collections</em> or in other institutional catalogs.²</p>
+<p><em>Poems Preserved from Mingqiu Studio</em>, also called <em>Poetry Record from Mingqiu Studio</em>, comprises nine fascicles. It is a Hengqin Caotang manuscript-format copy from the Qing (1821–1911), with eight lines of twenty-one characters per half-page; small characters appear in double lines. It has double borders on all four sides, an unprinted center margin, and a single black fishtail. “Hengqin Caotang” is printed at the bottom of the block center. The printed frame measures 15.9 × 10.3 cm. The contents comprise nineteen <em>juan</em> in nineteen fascicles, with the first through fourth containing the author’s own poems. The title at the end is <em>Poetry Record from Mingqiu Studio</em>. It bears a square intaglio seal reading “Seal of Cheng Zuo” and a square relief seal reading “Erqing.”</p>
+<p><em>Surviving Drafts from the Red-Sheep Calamity</em> is one fascicle, a Hengqin Caotang manuscript-format copy from the Qing (1881–1911). It has eight lines per half-page, with no fixed number of characters, double borders, an unprinted center margin, and a single yellow fishtail. “Hengqin Caotang” appears at the bottom of the block center. The frame measures 15.9 × 10.3 cm. The first volume contains five <em>juan</em>. Cheng Zuo’s original manuscript had four volumes; a fifth was later added. The title label bears the inscription “begun on the second day of the seventh month of the year Yisi.” From poems in the volume bearing titles such as “Written with Emotion on a Summer Day in Bingshen (1896)” and from poems composed in response to Zhang Wenhe in Guangxu 8 (1882), it is clear that Cheng Zuo was then serving as an official. The seals “Cheng Zuo” and “Erqing” appear on the book.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>Reprinted in Liu Dong, ed., <em>Chinese Scholarship</em>, vol. 25, Commercial Press, 2009, pp. 60–100.</li>
+<li>Cheng Zuo, style name Erqing, used the studio name Hengqin Caotang and lived during the Tongzhi and Guangxu reigns.</li>
+<li>Xu Yongming and Le Yi, eds., <em>Collected Ming and Qing Literary Works Held by the Harvard-Yenching Library of Harvard University</em>, Guangxi Normal University Press, 2017.</li>
+</ol>
+<h2 id="page-25">Page 25</h2>
+<p><em>Idle Chants from the Cold Office at Qiupu</em> is one fascicle, a Hengqin Caotang manuscript-format copy from the late Qing (1881–1911). It has eight lines of twenty characters; small characters appear in double lines. It has double borders on all four sides, an unprinted center margin, and a single yellow fishtail. “Hengqin Caotang” is printed at the bottom of the block center. The frame measures 15.8 × 10.2 cm. A pasted title slip appears at the end. The final title is “Written by Erqing, Master of Huanfengxuan.”</p>
+<p><em>The Sound of Cicadas in the Autumn Trees</em> comprises three fascicles and is a Hengqin Caotang manuscript-format copy from the late Qing (1885–1911). It has eight lines of twenty-one characters; the number of small characters per double line varies. It has double borders, an unprinted center margin, and a single yellow fishtail. “Hengqin Caotang” is printed at the bottom of the block center. The frame measures 15.6 × 10.2 cm. A green-ruled sheet occurs at the end of fascicle three; its frame measures 15.7 × 10.2 cm. The work was bound by gathering folded sheets into fascicles. A title slip is pasted at the end. Cheng Zuo’s original manuscript had four fascicles, but only three survive. The title slip bears “sealed above a stone table.” A poem in the book, “Joy at the Rain,” was composed in Guangxu 11 (1885). The volume ends with poems written in response to Zhang Wenhe in Guangxu 8 (1882), again indicating that Cheng Zuo was then in office. It bears the seals “Cheng Zuo” and “Erqing.”</p>
+<p><em>Chants from Worn-Broom Studio</em> is one fascicle, a Hengqin Caotang manuscript-format copy from the late Qing (1881–1911). It has eight lines per half-page with no fixed character count, double borders, an unprinted center margin, and a single yellow fishtail. “Hengqin Caotang” appears at the bottom of the block center. The frame measures 15.7 × 10.1 cm. A title slip is pasted at the end. The contents comprise four <em>juan</em> of poetry in the following order: poems written in response to Zhang Wenhe in Guangxu 3 (1877), poems on historical subjects from Guangxu 5 (1879), and poems composed at the Yamen of Li Shixian in Guangxu 7 (1881). The final title reads “Written by Erqing, Master of Huanfengxuan.” It bears a long rectangular relief seal reading “A Book for Reading in Leisure.”</p>
+<p>All five works above are authorial fair copies. None appears in the <em>General Catalog of Individual Qing Collections</em>. The collection also contains several other previously uncataloged works:</p>
+<p><em>Poems from Chuhui Studio</em>, by the Qing author Fu Xinbo, is one roughly bound manuscript fascicle from the late Qing (1887–1911), with eight lines of twenty-two characters and no ruling. The title appears at the beginning, followed by “Written by Fu Xinbo, Former Recluse of Mochou Lake.” The latest cyclical date in the fascicle is <em>dinghai</em>. A poem title states that only a few decades had passed “from the Xianfeng and Tongzhi reigns to the present,” showing that this <em>dinghai</em> year was Guangxu 13 (1887) and that the book was completed afterward.</p>
+<p><em>Poetry Drafts from Aiju Studio</em>, by the Qing author Li Shixi, is one Leyutang manuscript fascicle from the late Qing (1868–1911). It has eight lines of twenty characters; small characters follow the same single-line arrangement, and there is no ruling. It is bound in the “gold-inlaid-jade” style and contains red-ink circles. “Leyutang” is written horizontally on the cover label. The volume begins with the author’s preface dated Daoguang 28 (1848), ending: “All punctuation and criticism in these poems follows the written comments of Mr. Zhang, the distinguished judge of talent known as Sheng’an.” An author’s postscript dated Xianfeng 3 (1853) appears at the end. The table of contents bears the title <em>Newly Revised Poetry Drafts from Aiju Studio</em> and concludes: “Respectfully copied by Su Yungong beneath the north wall of Shuiyue Study in the first ten days of the third month, Tongzhi 7 (1868).”</p>
+<p><em>Poetry Manuscripts from Sanlun Study</em>, by the Qing author Xu Yintao, is one authorial manuscript fascicle dated Guangxu 19 (1893). It has six lines of eighteen characters; small characters appear in double lines of varying length, with no ruling. It contains ink corrections and transposition marks, marginal comments, and red circles. A long cover inscription states that the fascicle contains seventy mock examination poems composed for others, seven by the author himself, eight copied from earlier writers, and one additional regulated verse; it also says that later compositions were entered separately. Other inscriptions read “Draft manuscript of Xu Yintao, the Student Who Listens to Autumn” and “Begun in the first ten days of the second month of the <em>guisi</em> year, Guangxu [1893]; read by the Old Man of Fu’an Village, born on the Double Seventh.” Because the paper is damaged, only “Sanlun Study” survives from the title on the cover; “Poetry Manuscripts” has been supplied from the contents. The book bears six seals: “Listening to Autumn,” “Yintao,” “Refinement Does Not Depend on Being Known,” “Made After the Age of Eighty,” “The Ageless Old Man Born on the Double Seventh,” and “Born on the Double Seventh.”</p>
+<h2 id="page-26">Page 26</h2>
+<p>These writers and their books have become known to the world only because the Qi Brothers Collection was made public.¹</p>
+<p>The Literary Collections division also contains more than thirty dramatic scores with <em>gongche</em> notation; some even include percussion notation. It is exceptionally rare for one family to have assembled so many such scores. Yang Yinliu wrote in <em>A Short Introduction to Gongche Notation</em>: “Gongche notation is a form of musical notation widely used among the Chinese people. It has been used among the people for at least a thousand years, since the Tang dynasty. Yet even within gongche notation, its specific application differs by period, region, and musical genre.”² All of the gongche scores in the Qi Brothers Collection have been reproduced in facsimile. Further research is needed to determine the theatrical genres to which they belong.</p>
+<p>Another distinctive group in the Literary Collections division consists of late-Qing examination essays from academies: <em>Examination Papers of Zunjing Academy</em>, <em>Examination Papers of Wenzheng Academy</em>, <em>Examination Papers of Zhongshan Academy</em>, and compilations such as <em>Academy Essays, Classes A and B</em> and <em>Qing Academy Examination Papers</em>. The Zunjing, Wenzheng, and Zhongshan academies were all in Jiangning.³ Their examination paper was similar in format: red-ruled, with six lines of twenty-five characters. The paper used by Zunjing and Wenzheng academies bears the clear printer’s brand “Tongrenyu.” Each student’s work occupies a separate fascicle. The cover of each gives the date and names the county magistrate who graded it. These documents not only preserve late-Qing academy examination prose for reading; they also retain original traces of every stage—setting questions, grading, and fair-copying. They are first-hand evidence for studying late-Qing academy administration and its relationship with state schools.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li>Work on and use of the Qi Brothers Collection has included the preliminary catalog made upon accession; the 2006 inventory and detailed cataloging, whose data entered the Harvard University Library public catalog; descriptions of selected works in <em>A Catalog of Chinese Rare Books in the Harvard-Yenching Library</em>; digitization and online publication of more than thirty selected works; reproduction of some items in such collections as <em>Republican-Era Documents Held by the Harvard-Yenching Library</em> and <em>Collected Ming and Qing Literary Works Held by the Harvard-Yenching Library</em>; and the Harvard-Yenching Library’s commission to National Library Press to reproduce the collection as <em>A Collection of Rare Documents from the Former Collection of the Two Qi Brothers in the Harvard-Yenching Library</em>.</li>
+<li>Yang Yinliu, <em>A Short Introduction to Gongche Notation</em>, Music Publishing House, 1962.</li>
+<li>Li Tengfeng, <em>Dictionary of Chinese Academies</em>, Zhejiang Education Press, 1996. Zunjing Academy was in Jiangning, Jiangsu—now part of Nanjing. Established in Jiaqing 10 (1805), it was renamed the Provincial Superior Normal School at the end of the Guangxu reign and later became Liangjiang Superior Normal School. Wenzheng Academy, also in Jiangning, was founded in Daoguang 6 (1826) on the former site of Chongzheng Academy and was named in honor of Fang Bao, posthumously titled Wenzheng. Zhongshan Academy, founded in Yongzheng 11 (1733), was likewise in Jiangning and had an especially close relationship with the provincial school.</li>
+</ol>
+<h2 id="page-27">Page 27</h2>
+<h3 id="iv">IV</h3>
+<p>The Qi Brothers Collection at the Harvard-Yenching Library is rich in content and deserves serious consideration for the value it offers research and practical use.</p>
+<p>When Wang Zhongmin evaluated the collection in February 1945, he offered this preliminary judgment:</p>
+<blockquote>
+<p>“On the whole, the copying is crude and the contents are lowbrow. Viewed from another angle, however, it has a different kind of value. There are fifty or sixty dramatic scripts, all annotated in gongche characters; these were plainly textbooks used by theatrical troupes to train apprentices. There are also county magistrates’ handover registers, running accounts from county-gazetteer bureaus, and academy examination papers—all of which, several centuries from now, will surely become historical materials of the greatest importance. Pawnshops and native banks, moreover, are distinctive institutions within Chinese commerce.… If this batch of books is carefully preserved abroad, will it not become another set of Dunhuang manuscripts several centuries hence?”¹</p>
+</blockquote>
+<p>Wang’s assessment can be understood in two ways. From the perspective of traditional bibliography and edition studies, the Qi Brothers Collection falls far short of the standard for “rare books.” Placed in a broader historical context, however, it possesses distinctive documentary value.</p>
+<p>Compiling this collection gave us an opportunity to engage deeply with the Qi Brothers Collection. After a preliminary reading of the documents, its value may be summarized in six respects:</p>
+<ol>
+<li><p><strong>First-hand material for studying the lives and associations of the Qing father and son Xue Huan and Xue Huapei, and of the brothers Qi Yaolin and Qi Yaoshan across the dynastic transition.</strong> The collection was accumulated during the careers of two generations of officials from the late Qing through the early Republic. Every book accompanied its owner closely and can reveal information about him.</p>
+</li>
+<li><p><strong>Important historical material on Chinese politics, economics, military affairs, culture, and other fields from the late Qing to the early Republic.</strong> The collection bears characteristics imparted by its owners’ political careers and lives, and the events in which they participated were often historically significant. Moving from the particular to the general, study of these materials can help reconstruct nearly a century of history from late-Qing China through the early Republic.</p>
+</li>
+<li><p><strong>Rich evidence of social life among scholars, farmers, artisans, and merchants from the late Qing to the early Republic.</strong> Many items concern the operation and organization of government agencies at various levels, educational institutions, and economic organizations, offering a relatively comprehensive picture of society at the time.</p>
+</li>
+<li><p><strong>Vivid records of the personal lives of local officials, secretarial staff, and ordinary students from the late Qing to the early Republic.</strong> The collection preserves a considerable quantity of personal information: local officials’ self-education, professional training for secretarial staff, and the academy life of ordinary students all convey a vivid sense of lived experience.</p>
+</li>
+<li><p><strong>A supplement to the literary and artistic record of China from the late Qing to the early Republic.</strong> The personal literary collections and materials on drama and music provide an excellent supplement to the surviving literature and art of this turbulent period.</p>
+</li>
+</ol>
+<p><strong>Note</strong></p>
+<ol>
+<li>HYL Archives, letter from Wang Zhongmin to Kaiming Chiu, February 3, 1945; Cheng Huanwen, <em>Chronicle of Kaiming Chiu</em>, p. 308.</li>
+</ol>
+<h2 id="page-28">Page 28</h2>
+<ol start="6">
+<li><strong>Important testimony to Sino-Western cultural exchange in the early twentieth century.</strong> Created in China and accumulated over two generations, the Qi Brothers Collection witnessed war and major transformations in the social order before making its circuitous way to the West. Its history offers a relatively complete case study for research into early twentieth-century cultural exchange between China and the West.</li>
+</ol>
+<p>In 1945, writing to Arthur William Hummel, chief of the Library of Congress’s Division of Orientalia, about the Qi Brothers Collection, Kaiming Chiu lamented:</p>
+<blockquote>
+<p>“As a matter of fact, as a Chinese, I really do not care who buys these books—whether the Library of Congress or the Chinese-Japanese Library of the Harvard-Yenching Institute—because it remains an enormous loss to China.”¹</p>
+</blockquote>
+<p>Today, more than seventy years later, the Harvard-Yenching Library and National Library Press have collaborated to reproduce the Qi Brothers Collection and bring it once again before the world. It is hoped that more scholars will study these works and discover their value. Perhaps this may offer some small consolation to the librarians of an earlier generation.</p>
+<p><em>(Author’s affiliation: Fudan University Library)</em></p>
+<hr />
+<p>The difficult-to-read titles, names, and bibliographic details were checked against an online transcription of the article and its table of contents: <a href="https://www.sohu.com/a/306320515_717218">Le Yi and Liu Bo, eds., <em>A Collection of Rare Documents from the Former Collection of the Two Qi Brothers in the Harvard-Yenching Library</em></a>.</p>
+
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    Visual reading guide based on Le Yi’s article and the supplied pages from <em>Chinese Classical Studies Quarterly</em>, issue 15 (2019).
+  </footer>
+
+  <script>
+    (() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealTargets = document.querySelectorAll('.reveal, .journey, .collection-bar');
+
+      if (reduced || !('IntersectionObserver' in window)) {
+        revealTargets.forEach(el => el.classList.add('in'));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .16 });
+        revealTargets.forEach(el => observer.observe(el));
+      }
+
+      const journey = document.querySelector('.journey');
+      document.getElementById('replayJourney').addEventListener('click', () => {
+        journey.classList.remove('in');
+        if (reduced) {
+          journey.classList.add('in');
+          return;
+        }
+        requestAnimationFrame(() => requestAnimationFrame(() => journey.classList.add('in')));
+      });
+    })();
+  </script>
+</body>
+</html>
