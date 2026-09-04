@@ -63,8 +63,8 @@
       gap: 20px;
     }
 
-    .brand { font-weight: 750; letter-spacing: -.02em; }
-    .topbar nav { display: flex; flex-wrap: wrap; gap: 6px; }
+    .brand { font-weight: 750; letter-spacing: -.02em; white-space: nowrap; }
+    .topbar nav { display: flex; flex: 1; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
     .topbar nav a {
       color: var(--muted);
       text-decoration: none;
@@ -362,6 +362,22 @@
       color: var(--navy);
     }
     .reading-note strong { white-space: nowrap; }
+    .language-controls { display: flex; justify-content: flex-end; margin: -12px 0 26px; }
+    .language-toggle {
+      padding: 11px 17px;
+      border: 1px solid var(--navy);
+      border-radius: 999px;
+      color: white;
+      background: var(--navy);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .language-toggle:hover { transform: translateY(-1px); background: var(--cinnabar); border-color: var(--cinnabar); }
+    .language-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .page-language-toggle { flex: 0 0 auto; padding: 8px 14px; font-size: .88rem; }
+    html[lang="zh-Hant"] body { font-family: "Noto Serif TC", "Microsoft JhengHei", "PingFang TC", Georgia, serif; }
     .manuscript-gallery { display: grid; gap: 26px; }
     .manuscript-page {
       display: grid;
@@ -394,6 +410,19 @@
     .translation-list li { margin-bottom: 9px; color: var(--muted); }
     .translation-list strong { color: var(--ink); }
     .cropped-note { margin-top: 16px; padding: 13px 15px; border-left: 3px solid var(--gold); background: #fbf6e9; color: var(--muted); font-size: .9rem; }
+    .chinese-transcript {
+      margin-top: 16px;
+      padding: 20px;
+      border-radius: 14px;
+      background: #f5f1e8;
+      color: #25313b;
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+      font-size: 1.04rem;
+      line-height: 1.95;
+    }
+    .chinese-transcript p { margin: 0 0 12px; }
+    .chinese-transcript p:last-child { margin-bottom: 0; }
+    [hidden] { display: none !important; }
 
     .career-grid {
       display: grid;
@@ -752,6 +781,10 @@
       .archive-stats, .archive-flow, .scholar-cluster, .scholar-pair { grid-template-columns: 1fr; }
       .manuscript-page { padding: 16px; }
       .reading-note { align-items: flex-start; flex-direction: column; }
+      .language-controls { justify-content: stretch; }
+      .language-toggle { width: 100%; }
+      .topbar-inner { padding-inline: 14px; gap: 12px; }
+      .page-language-toggle { width: auto; min-width: 96px; }
       .collection-bar { height: 48px; }
       .bar-segment { font-size: .8rem; }
       .article-body { padding: 32px 20px 52px; }
@@ -780,6 +813,7 @@
         <a href="#contents">Contents</a>
         <a href="#translation">Full text</a>
       </nav>
+      <button class="language-toggle page-language-toggle" type="button" id="pageLanguageToggle" aria-pressed="false" aria-label="Switch the whole page to Traditional Chinese">中文</button>
     </div>
   </header>
 
@@ -933,8 +967,7 @@
       <h2 id="original-pages-heading">Original pages, with English translations</h2>
       <p class="section-intro">These photographs show handwritten biographical entries for Qi Yaolin and Qi Yaoshan, followed by part of Qi Yaoshan’s household record. The translation below keeps the historical offices and family relationships while grouping the densely written lists into readable English.</p>
       <div class="reading-note"><strong>How to read the pages</strong><span>The Chinese is written vertically. Begin with the column at the far right, read downward, and then move one column to the left. Click any photograph to view it at full size.</span></div>
-
-      <div class="manuscript-gallery">
+      <div class="manuscript-gallery" id="manuscriptGallery">
         <article class="manuscript-page">
           <figure class="scan-frame">
             <a href="assets/genealogy-pages/qi-yaolin-biography.jpg" target="_blank" rel="noopener"><img src="assets/genealogy-pages/qi-yaolin-biography.jpg" loading="lazy" alt="Photographed genealogy page containing Qi Yaolin's handwritten biography"></a>
@@ -943,8 +976,8 @@
           <div class="page-translation">
             <p class="translation-label">Image 1 · readable translation</p>
             <h3>Qi Yaolin, courtesy name Zhenyan</h3>
-            <p class="translation-summary">The entry compresses his birth, examination record, and long official career into a continuous list.</p>
-            <ul class="translation-list">
+            <p class="translation-summary" data-lang="en">The entry compresses his birth, examination record, and long official career into a continuous list.</p>
+            <ul class="translation-list" data-lang="en">
               <li><strong>Birth:</strong> Born in Yitong during the <em>yin</em> hour on the second day of the second lunar month in the first year of the Tongzhi reign—the cyclical year <em>renxu</em> (1862).</li>
               <li><strong>Examinations:</strong> Named on the supplementary examination list in the <em>wuzi</em> year (1888); served as a Chinese instructor at the school for members of the imperial clan; became a <em>juren</em> in the <em>guisi</em> year (1893) and a <em>jinshi</em> in the <em>yiwei</em> year (1895); then entered the Hanlin Academy as a probationary bachelor (<em>shujishi</em>).</li>
               <li><strong>County and prefectural service:</strong> After the 1898 Hanlin examination, he was selected for service in Zhili. He served in or administered Quzhou, Pingxiang, Qingyuan, Xuanhua, Zunhua, Hejian, Baoding, and Tianjin.</li>
@@ -952,6 +985,12 @@
               <li><strong>Jiangsu:</strong> The final offices listed are Jiangsu provincial governor, acting Jiangsu military governor, and governor of Jiangsu.</li>
               <li><strong>Death:</strong> Died in Beiping in early 1949.</li>
             </ul>
+            <div class="chinese-transcript" data-lang="zh" lang="zh-Hant" hidden>
+              <p><strong>耀琳，字震巖。</strong></p>
+              <p>生於同治元年壬戌二月初二日寅時，伊通府庠生。戊子副榜，歲京宗室學漢教習；癸巳舉人，乙未進士，翰林院庶吉士。</p>
+              <p>戊戌散館，選直隸曲周縣，署平鄉、清苑縣，調補宣化縣，升遵化直隸州。河間府，調保定府，署天津府；授永定河道，調天津道。直隸按察使，改提法使；江蘇布政使，河南布政使，河南巡撫兼署安徽巡撫，河南都督，吉林民政長、巡按使，會辦吉林軍務，江蘇巡按使兼代江蘇督軍，江蘇省長。</p>
+              <p>一九四九年初歿於北平。</p>
+            </div>
           </div>
         </article>
 
@@ -963,15 +1002,21 @@
           <div class="page-translation">
             <p class="translation-label">Image 2 · readable translation</p>
             <h3>Qi Yaoshan, courtesy name Zhaoyan</h3>
-            <p class="translation-summary">This first page records his birth, degrees, and a long series of posts held mainly in Hubei.</p>
-            <ul class="translation-list">
+            <p class="translation-summary" data-lang="en">This first page records his birth, degrees, and a long series of posts held mainly in Hubei.</p>
+            <ul class="translation-list" data-lang="en">
               <li><strong>Birth:</strong> Born in Yitong during the <em>zi</em> hour on the first day of the sixth lunar month in the fourth year of the Tongzhi reign—the cyclical year <em>yichou</em> (1865).</li>
               <li><strong>Examinations:</strong> Earned the provincial <em>juren</em> degree in the <em>yichou</em> year (1889) and the metropolitan <em>jinshi</em> degree in the <em>gengyin</em> year (1890).</li>
               <li><strong>Early appointments:</strong> Served as a secretary in the Grand Secretariat and acting reader, then qualified as a subprefect and became an expectant prefect in Hubei.</li>
               <li><strong>Hubei administration:</strong> Served as acting prefect of Yichang and held circuit, customs, educational, currency, military-training, foreign-affairs, and administrative posts, including supervision of the Jianghan Customs and Hubei’s educational administration.</li>
               <li><strong>Other responsibilities:</strong> The page lists work connected with provincial headquarters, the Huanghuazhou checkpoint, household registration, the currency bureau, military medical education, land measurement around Houhu, the Yichang salt bureau, and several schools.</li>
             </ul>
-            <p class="cropped-note">The last line continues onto the right-hand page in Image 3.</p>
+            <p class="cropped-note" data-lang="en">The last line continues onto the right-hand page in Image 3.</p>
+            <div class="chinese-transcript" data-lang="zh" lang="zh-Hant" hidden>
+              <p><strong>耀珊，字照巖。</strong></p>
+              <p>生於同治四年乙丑六月初一日子時，伊通府庠生。乙丑舉人，庚寅進士。內閣中書，署侍讀，截取同知，湖北候補知府，署宜昌府，記名道，荊宜道，荊宜沙關監督，漢黃德道，江漢關監督，署湖北提學使。</p>
+              <p>歷充撫署文案、黃花洲查卡保甲局總辦、銀幣局提調總辦、善後局總文案會辦總辦、督練處提調、丁未秋操南軍總執法官、教練處總辦、洋務局總辦、營務處總辦、軍醫學堂監督、後湖清丈局總辦、宜昌川鹽局督辦、荊州中學堂、方言學堂師……</p>
+              <p>末行接續至第三張照片。</p>
+            </div>
           </div>
         </article>
 
@@ -983,14 +1028,21 @@
           <div class="page-translation">
             <p class="translation-label">Image 3 · readable translation</p>
             <h3>Qi Yaoshan’s later career and household</h3>
-            <ul class="translation-list">
+            <ul class="translation-list" data-lang="en">
               <li><strong>Later national and provincial offices:</strong> The entry continues with oversight of normal, industrial, and secondary schools; director of the Salt Administration; member of the Constitutional Conference; member of the Political Council; governor of Zhejiang; governor of Shandong; minister of the interior; minister of agriculture and commerce; and president of the Agricultural and Commercial Bank.</li>
               <li><strong>Death:</strong> Died during the <em>shen</em> hour on the thirteenth day of the first lunar month of 1954, at the traditional counted age of ninety.</li>
               <li><strong>First wife:</strong> Lady Liu, eldest daughter of the licentiate Liu Jun. Born in 1868; she bore one son and one daughter. She died at the Yichang prefectural offices in Hubei in 1901, aged thirty-four, and was buried in the ancestral cemetery. She received the formal title “Lady.”</li>
               <li><strong>Second wife:</strong> Lady Zhu. Born in 1885; she bore two sons and one daughter. She died in 1957, at the traditional counted age of eighty-three.</li>
               <li><strong>Sons visible in the photograph:</strong> Zuyi (祖誼), Zufang (祖訪), and Zuliang (祖諒). The record says Zufang was adopted to continue the line of Qi Yaoshan’s full elder brother, Qi Yaolin. Zuliang was adopted into the line of another paternal uncle, whose name is outside the photographed area.</li>
             </ul>
-            <p class="cropped-note">Calendar dates and ages are translated as written. Traditional Chinese age-counting may be one year higher than modern Western age-counting.</p>
+            <p class="cropped-note" data-lang="en">Calendar dates and ages are translated as written. Traditional Chinese age-counting may be one year higher than modern Western age-counting.</p>
+            <div class="chinese-transcript" data-lang="zh" lang="zh-Hant" hidden>
+              <p><strong>耀珊仕歷續文：</strong>範學堂、工藝學堂、漢口中學、師範學堂監督，鹽務處處長，約法會議議員，參政院參政，浙江省長，山東省長，內務總長，農商總長，農商銀行總裁。</p>
+              <p>一九五四年甲午正月十三日申時卒，年九十歲。</p>
+              <p><strong>元配劉氏：</strong>庠士劉俊長女。生於同治七年戊辰八月十五日子時，生子一、女一。光緒二十七年辛丑十二月初八日未時卒於湖北宜昌府署，年三十四歲；葬於掃帚頂子北山之祖塋左，誥封夫人。</p>
+              <p><strong>續配朱氏：</strong>生於光緒十一年乙酉十一月初六日亥時，生子二、女一。一九五七年丁酉二月初二日申時卒，年八十三歲。</p>
+              <p><strong>子：</strong>祖誼；祖訪，出嗣胞伯父耀琳；祖諒，出嗣三胞叔……（下文超出照片範圍。）</p>
+            </div>
           </div>
         </article>
       </div>
@@ -1460,6 +1512,194 @@ Price: RMB 32.00</p>
           return;
         }
         requestAnimationFrame(() => requestAnimationFrame(() => journey.classList.add('in')));
+      });
+
+      const languageToggle = document.getElementById('pageLanguageToggle');
+      const englishPanels = document.querySelectorAll('#manuscriptGallery [data-lang="en"]');
+      const chinesePanels = document.querySelectorAll('#manuscriptGallery [data-lang="zh"]');
+      const fullTranslation = document.getElementById('translation');
+      const fullTranslationLink = document.querySelector('a[href="#translation"]');
+      const originalText = new WeakMap();
+      const zh = new Map(Object.entries({
+        "Qi Brothers Collection": "齊氏兄弟舊藏",
+        "What is it?": "這是什麼？",
+        "The brothers": "齊氏兄弟",
+        "Family archive": "家族檔案",
+        "Original pages": "家譜原頁",
+        "1920 crisis": "1920年危機",
+        "Journey": "流傳經過",
+        "Contents": "藏書內容",
+        "Full text": "全文翻譯",
+        "Harvard-Yenching Library · Cambridge, Massachusetts": "哈佛燕京圖書館 · 美國麻薩諸塞州劍橋市",
+        "The Qi Brothers Collection": "齊氏兄弟舊藏",
+        "A private library assembled around two Chinese scholar-official brothers—not a single artwork, not a painting, and not a set of books they personally wrote.": "這是一批圍繞兩位中國學者官員兄弟保存下來的私人藏書；它不是一件藝術品，不是一幅畫，也不是一套完全由兄弟二人親自撰寫的書。",
+        "In plain English:": "簡單地說：",
+        "it is a named group of historical materials that once belonged to the Qi family and is now preserved at the Harvard-Yenching Library, 2 Divinity Avenue, Cambridge, Massachusetts, USA.": "這是一批曾由齊氏家族收藏、如今以專藏形式保存在美國麻薩諸塞州劍橋市神學院路2號哈佛燕京圖書館的歷史資料。",
+        "Official records": "官府檔案", "taxes · law · administration": "稅務 · 法律 · 行政",
+        "Handwritten books": "手抄書", "classics · history · literature": "經學 · 史學 · 文學",
+        "Opera scores": "戲曲曲譜", "gongche music notation": "工尺譜記譜法",
+        "Hand-drawn maps": "手繪地圖", "waterways · tax stations": "水道 · 稅卡",
+        "What survived": "保存下來的規模", "One collection, many kinds of evidence": "一批藏書，多種歷史證據",
+        "cataloged works after the 2006 inventory": "2006年整理後著錄的書目種數",
+        "physical volumes or fascicles": "實體冊數", "hand-drawn waterway maps": "手繪水道圖",
+        "opera and dramatic scores": "戲曲與劇本曲譜",
+        "It is": "它是", "It is not": "它不是",
+        "a private family library kept together as a named archival collection;": "一批以專藏名義整體保存的家族私人藏書；",
+        "mostly manuscripts, copied books, working records, scores, and maps;": "主要包括稿本、抄本、辦公檔案、曲譜與地圖；",
+        "a window into government, commerce, education, music, and daily life.": "理解政府、商業、教育、音樂與日常生活的一扇窗口。",
+        "one painting or one illustrated album;": "一幅畫或一本圖畫冊；",
+        "a collection authored entirely by the two brothers;": "完全由齊氏兄弟二人撰寫的作品集；",
+        "a perfectly documented library—the article says its precise origins remain uncertain.": "一批來源完全清楚的藏書——文章指出，其最初形成經過仍不確定。",
+        "Family relationship": "家族關係", "Two full brothers from the same Qi family": "同一齊氏家族的一母同胞兄弟",
+        "Their ancestral home was in Changyi County, Shandong; the family was registered in Yitong, Jilin. The supplied article names the brothers and one later descendant, but does not provide a complete family tree.": "他們的祖籍在山東昌邑，戶籍在吉林伊通。所提供的文章記載了兄弟二人和一位後人，但沒有給出完整家譜。",
+        "Known lineage from the article": "文章所能確認的世系", "The Qi family": "齊氏家族",
+        "Ancestral home: Changyi, Shandong · registered home: Yitong, Jilin": "祖籍：山東昌邑 · 籍貫：吉林伊通",
+        "Qi Yaolin": "齊耀琳", "1862–1949 · elder brother": "1862–1949 · 兄長",
+        "YL": "琳", "YS": "珊",
+        "Style name: Zhenyan; also written Yunyan": "字震巖，亦作雲巖",
+        "Jinshi": "進士", "degree, 1895": "，1895年", "degree, 1890": "，1890年", "Governor-level posts in Henan, Jilin, and Jiangsu": "曾在河南、吉林、江蘇擔任省級長官",
+        "Later chaired the Yaohua Glass Company in Tianjin": "晚年主持天津耀華玻璃公司",
+        "Qi Yaoshan": "齊耀珊", "1865–1954 · younger brother": "1865–1954 · 弟弟", "Style name: Zhaoyan": "字照巖",
+        "Jinshi degree, 1890": "1890年中進士", "Governor of Zhejiang and later Shandong": "先後任浙江省長、山東省長",
+        "Held cabinet-level posts in the Beijing government": "曾在北京政府擔任內閣級職務",
+        "Qi Zongmin — identified in the article as Qi Yaoshan’s granddaughter; she supplied biographical information to the author in 2010.": "齊宗敏——文章稱她是齊耀珊的孫女；2010年她向作者提供了家族人物傳記資料。",
+        "A second family-history source": "另一種家族史料", "What the": "《", "tells us": "》告訴我們什麼",
+        "Yitong Qi Family Genealogy": "伊通齊氏家譜",
+        "A 2005 article by Zhang Wanyou describes a privately preserved family register titled Yitong Qi Family Genealogy. It is a handwritten, right-bound book—not a painting—and records seven generations of the family.": "張萬友2005年的文章介紹了一部私人保存的《伊通齊氏家譜》。它是一本右側線裝的手寫家譜，不是繪畫，記載了齊氏家族七代人。",
+        "A 2005 article by Zhang Wanyou describes a privately preserved family register titled": "張萬友2005年的文章介紹了一部私人保存的家譜，題為",
+        ". It is a handwritten, right-bound book—not a painting—and records seven generations of the family.": "。它是一本右側線裝的手寫家譜，不是繪畫，記載了齊氏家族七代人。",
+        "“Qi the Eighth Hanlin” explained": "「齊八翰林」是什麼意思",
+        "This was Qi Zhongjia’s nickname. He served in the Hanlin Academy and was the eighth-ranking son in his family. The phrase does not mean that there were eight Hanlin scholars.": "這是齊充甲的稱號。他曾任職翰林院，在家族同輩排行第八；這個稱呼並不是說齊家有八位翰林。",
+        "1 book": "1部家譜", "about 26.5 × 19.5 cm, with a dark-green cover": "約26.5 × 19.5公分，深綠色封面",
+        "7 generations": "7代", "linked through names, relationships, dates, education, careers, and residences": "以姓名、親屬關係、年代、教育、職業與居住地相連",
+        "4 jinshi": "4位進士", "uncle-and-nephew relatives who passed the highest imperial examination from 1890 to 1895": "1890至1895年間考中最高科舉功名的叔侄四人",
+        "How the family record is organized": "家譜的編排方式", "Five parts of the Qi family genealogy": "齊氏家譜的五個部分",
+        "Preface": "序言", "Explains why and when the genealogy was compiled and revised.": "說明編修家譜的目的、時間與經過。",
+        "Lineage chart": "世系圖", "Connects ancestors and descendants generation by generation.": "逐代連接祖先與後人。",
+        "Family register": "世系表", "Lists names, sex, birth information, education, work, office, and residence.": "記載姓名、性別、出生資料、教育、職業、官職與居住地。",
+        "Biographies": "傳志", "Records notable relatives’ names, offices, character, and major achievements.": "記載重要族人的姓名、官職、品行與主要事蹟。",
+        "Appendix": "附錄", "Preserves related documents, including a memorial written by Qi Zhongjia.": "保存相關文獻，包括齊充甲所寫的奏摺。",
+        "The four examination graduates highlighted in the article": "文章重點介紹的四位科舉進士",
+        "The source describes them as two men of the older generation and two nephews of the younger generation. This is a family cluster, not a complete lineage chart.": "資料將他們分為同一長輩世代的兩人，以及下一代的兩位侄輩。這只是家族中的一組人物，不是完整世系圖。",
+        "Older generation": "長輩世代", "Qi Zhongjia": "齊充甲", "Hanlin scholar; called “Qi the Eighth Hanlin”": "翰林，人稱「齊八翰林」",
+        "Qi Shenjia": "齊紳甲", "One of the four relatives who earned the jinshi degree": "齊氏四位進士之一",
+        "jinshi": "進士", "One of the four relatives who earned the": "齊氏四位", "degree": "之一",
+        "Younger generation · brothers": "晚一代 · 親兄弟", "Elder brother; later governor of Jiangsu": "兄長；後任江蘇省長", "Younger brother; later governor of Zhejiang": "弟弟；後任浙江省長",
+        "A culture of education": "重視教育的家風", "The article portrays the family as deeply committed to study, teaching, local schools, and helping students—including some from poor families.": "文章描寫齊家重視讀書、教學、興辦地方學校，也資助學生，其中包括貧寒子弟。",
+        "Women were recorded": "女性也被記錄", "Unlike many traditional genealogies that recorded only men, this one included daughters’ birth dates, education, marriages, spouses, and spouses’ occupations.": "不同於許多只記男性的傳統家譜，這部家譜也記錄女兒的出生日期、教育、婚姻、配偶及其職業。",
+        "Names show generations": "名字標示世代", "Later generations often shared a generation character, such as Yao (耀) or Zong (宗), helping readers identify a person’s place in the family.": "後代常共用一個輩分字，例如「耀」或「宗」，有助於判斷某人在家族中的世代位置。",
+        "Later generations often shared a generation character, such as": "後代常共用一個輩分字，例如", "Yao": "「耀」", "(耀) or": "或", "Zong": "「宗」", "(宗), helping readers identify a person’s place in the family.": "，有助於判斷某人在家族中的世代位置。",
+        "Use with care:": "使用時要審慎：",
+        "Zhang treats the genealogy as valuable evidence for descendants tracing their roots and for correcting errors in local histories. At the same time, it is a family-produced source with a strongly admiring tone. It contains no portraits, omits the clan rules found in many genealogies, and should be compared with official records and other independent evidence.": "張萬友認為，這部家譜對後人尋根及訂正地方志錯誤很有價值；但它畢竟是家族自行編寫的資料，語氣多有褒揚。譜中沒有肖像，也缺少許多家譜常見的族規，因此應與官府檔案及其他獨立史料互相核對。",
+        "Source summarized in clear English: Zhang Wanyou, “A Study of the Genealogical Archives of ‘Qi the Eighth Hanlin’” (2005), supplied pages 56–57. The unrelated archive-management article printed on the lower half of the second scan is not part of the Qi-family study.": "資料來源：張萬友〈「齊八翰林」家譜檔案的研究〉（2005），所提供的第56–57頁。第二張掃描下半部的檔案管理文章與齊氏家族研究無關。",
+        "Photographs from the family genealogy": "齊氏家譜照片", "Original pages, with English translations": "家譜原頁與白話說明",
+        "These photographs show handwritten biographical entries for Qi Yaolin and Qi Yaoshan, followed by part of Qi Yaoshan’s household record. The translation below keeps the historical offices and family relationships while grouping the densely written lists into readable English.": "這些照片包括齊耀琳與齊耀珊的手寫傳記，以及齊耀珊家庭記錄的一部分。說明保留歷史官職與親屬關係，並將密集的條目整理成較易閱讀的文字。",
+        "How to read the pages": "怎樣閱讀這些頁面", "The Chinese is written vertically. Begin with the column at the far right, read downward, and then move one column to the left. Click any photograph to view it at full size.": "文字為直排。從最右欄開始向下讀，再移到左邊一欄。點擊照片可查看原尺寸。",
+        "Image 1 · readable translation": "圖1 · 白話說明", "Qi Yaolin, courtesy name Zhenyan": "齊耀琳，字震巖",
+        "Image 2 · readable translation": "圖2 · 白話說明", "Qi Yaoshan, courtesy name Zhaoyan": "齊耀珊，字照巖",
+        "Image 3 · readable translation": "圖3 · 白話說明", "Qi Yaoshan’s later career and household": "齊耀珊後期仕歷與家庭",
+        "Genealogy entry for Qi Yaolin (耀琳). The handwritten notes in pencil appear to be later date conversions.": "齊耀琳家譜條目。鉛筆字似為後人換算的公曆年份。",
+        "Beginning of the genealogy entry for Qi Yaoshan (耀珊); the list continues onto the next photographed page.": "齊耀珊家譜條目的開頭；內容接續到下一張照片。",
+        "Continuation of Qi Yaoshan’s entry and part of his household record. Some text at the outer edges continues beyond the photographed area.": "齊耀珊條目的續頁及部分家庭記錄；外緣有些文字延伸到照片範圍之外。",
+        "Parallel lives": "兄弟仕途對照", "Scholar-officials across a regime change": "跨越王朝更替的學者官員",
+        "Both men passed the highest imperial examination and moved from Qing officialdom into prominent roles in the early Republic. Their government work helps explain why the collection contains so many administrative records.": "兄弟二人都考中最高科舉功名，並從清代官場轉入民國初年的重要職位。他們的官職經歷，也說明了藏書中為何保存大量行政檔案。",
+        "elder": "兄長", "younger": "弟弟", "Born during the Tongzhi reign.": "生於同治年間。",
+        "Earned the jinshi degree and entered the Hanlin Academy.": "考中進士，入翰林院。", "Earned the jinshi degree and entered central government service.": "考中進士，進入中央官署任職。",
+        "Earned the": "考中", "degree and entered the Hanlin Academy.": "，入翰林院。", "degree and entered central government service.": "，進入中央官署任職。",
+        "Rose through county, prefectural, river, judicial, and provincial offices.": "歷任縣、府、河務、司法及省級官職。",
+        "Served as governor or senior administrator in Henan, Jilin, and Jiangsu.": "在河南、吉林、江蘇任省長或高級行政官。",
+        "Died in Beiping.": "卒於北平。", "Held administrative, customs, education, military, and salt posts in Hubei.": "在湖北歷任行政、海關、教育、軍務與鹽務等職。",
+        "Governor of Zhejiang and Shandong; later interior, agriculture, commerce, and education minister.": "任浙江、山東省長，後任內務、農商及教育部門長官。", "Died in Taipei.": "卒於臺北。",
+        "A political crisis in Qi Yaolin’s career": "齊耀琳仕途中一次政治危機", "Why the Jiangsu Provincial Assembly impeached him": "江蘇省議會為何彈劾齊耀琳",
+        "In 1920, Jiangsu’s elected provincial assembly accused Governor Qi Yaolin of mishandling appointments, finances, and the assembly’s lawful decisions. The historian Zhu Ying argues that the charges had real substance—but that personal interests and political rivalry also intensified the campaign.": "1920年，江蘇省議會指控省長齊耀琳在人事、財政及執行議會合法決議方面處置不當。歷史學者朱英認為，指控確有事實依據，但個人利益與政治鬥爭也使衝突加劇。",
+        "What “impeachment” meant here:": "這裡的「彈劾」是什麼意思：",
+        "the assembly formally accused the provincial governor of unlawful conduct and asked the central government in Beijing to investigate and punish him. The assembly could accuse him, but it could not remove him by itself.": "省議會正式指控省長違法，並請北京中央政府調查懲處。省議會可以提出控告，卻不能自行免去省長職務。",
+        "Jiangsu Provincial Assembly": "江蘇省議會", "Claimed a legal duty to oversee provincial administration, budgets, property, and officials.": "主張依法監督全省行政、預算、公產與官員。",
+        "Who had the final authority?": "誰擁有最終權力？", "Governor Qi Yaolin": "省長齊耀琳", "Controlled the provincial administration and repeatedly resisted, delayed, or reinterpreted assembly decisions.": "掌握省政府，並屢次抵制、拖延或重新解釋議會決議。",
+        "The assembly’s four main accusations": "省議會的四項主要指控",
+        "Changing or ignoring assembly decisions": "更改或不理會議會決議", "It said Qi altered approved budgets, failed to carry out resolutions, and improperly handled provincial property.": "議會稱齊耀琳更改已通過的預算、不執行決議，並不當處置省有財產。",
+        "Tolerating gifts and misconduct": "縱容送禮與失職", "It accused him of accepting birthday gifts from subordinates and failing to investigate senior officials credibly accused of improper behavior.": "議會指控他收受部屬壽禮，且未認真調查被可靠指稱行為不當的高級官員。",
+        "Protecting poorly performing officials": "包庇失職官員", "The assembly said officials accused of abuse or corruption were shielded, rewarded, or transferred instead of being disciplined.": "議會稱，被控濫權或貪腐的官員未受懲處，反而得到庇護、獎勵或調任。",
+        "Weak financial accountability": "財政交代不清", "It alleged that county officials were not required to complete proper handovers of tax accounts and public funds.": "議會指稱，縣級官員未被要求妥善交接稅款帳目與公款。",
+        "How the confrontation escalated": "衝突如何升級", "June": "六月", "More than two-thirds of voting members approved an impeachment proposal against Qi.": "參與表決的議員中超過三分之二通過彈劾齊耀琳案。",
+        "August": "八月", "Ninety-five members requested an emergency session after Qi appointed the controversial Yu Jiqi as finance director.": "齊耀琳任命備受爭議的余際奇為財政廳長後，95名議員要求召開臨時會。",
+        "August–October": "八月至十月", "Qi refused the emergency meeting. The dispute expanded into a constitutional argument over the assembly’s right to convene.": "齊耀琳拒絕召集臨時會，爭議進一步變成省議會是否有權自行開會的憲政問題。",
+        "Autumn": "秋季", "The assembly passed another impeachment measure. Beijing sent an investigator, and Qi’s resignation was accepted.": "議會再次通過彈劾案；北京派員調查，並接受齊耀琳辭職。",
+        "December": "十二月", "After his resignation was announced, silk workers stormed the assembly and assaulted or abducted members, deepening the controversy over official responsibility.": "辭職消息公布後，絲業工人衝入議會，毆打或劫走議員，使官員責任問題更加尖銳。",
+        "Why the criticism was credible": "為何批評具有根據", "The article finds substantial evidence that Qi’s personnel choices, administrative decisions, and treatment of assembly resolutions helped create the crisis. His resistance also weakened the assembly’s authority.": "文章認為，有相當證據顯示齊耀琳的人事安排、行政決定及對議會決議的處理促成了危機；他的抵制也削弱了議會權威。",
+        "Why the story is more complicated": "為何事情並不單純", "Some legislators had unsuccessfully sought higher salaries and may have used impeachment partly to settle personal grievances. Nearly one-third did not support the first measure, and some later accusations lacked firm evidence.": "部分議員曾要求加薪未果，可能借彈劾發洩私怨。第一次彈劾有近三分之一議員不支持，後來某些指控也缺乏確鑿證據。",
+        "The author’s balanced conclusion:": "作者的平衡結論：", "Republican China had created provincial legislatures on paper, but they lacked stable authority and were limited by factionalism and uneven political practice. Even so, the Jiangsu and Zhejiang assemblies did exert real pressure: both Qi brothers ultimately left their governorships after impeachment campaigns.": "民國在制度上建立了省議會，但其權力並不穩定，又受派系與不成熟政治實踐限制。即便如此，江蘇、浙江兩省議會仍施加了實際壓力：齊氏兄弟最後都在彈劾風潮後離開省長職位。",
+        "Source summarized in clear English: Zhu Ying, “Conflict Between Provincial Assemblies and Governors during the Republican Period: The Jiangsu Provincial Assembly’s Impeachment of the Governor as a Case Study” (2007).": "資料來源：朱英〈民國時期省議會與省長之間的衝突——以江蘇省議會彈劾省長案為例〉（2007）。",
+        "The collection’s journey": "藏書的流傳經過", "From a Chinese family library to Harvard": "從中國家族藏書到哈佛",
+        "The transfer path is documented; the collection’s earlier formation is not. Dates before 1944 are estimates made by the article’s author.": "藏書轉移的路徑有文獻可查，但更早的形成經過並不清楚。1944年以前的日期是文章作者的推測。",
+        "Late Qing–early Republic": "晚清至民國初年", "The family accumulates manuscripts, records, scores, and maps.": "齊家逐步收藏稿本、檔案、曲譜與地圖。",
+        "About 1926–1932": "約1926–1932年", "Wang Wenshan likely carries the books from China and deposits them at the Library of Congress.": "王文山可能將書從中國帶出，寄存於美國國會圖書館。",
+        "April 1944": "1944年4月", "Felton Chow forwards a book list to Harvard librarian Kaiming Chiu.": "Felton Chow 將書目轉交哈佛館員裘開明。",
+        "March–June 1945": "1945年3月至6月", "The purchase is completed; the Library of Congress transfers the collection to Harvard.": "購藏完成；美國國會圖書館將藏書移交哈佛。",
+        "Harvard reinventories it as 413 works in 1,206 volumes and adds machine-readable catalog records.": "哈佛重新整理為413種、1,206冊，並建立機讀目錄。", "Replay journey": "重播流傳動畫",
+        "Traditional four-part classification": "傳統四部分類法", "What is inside the collection?": "藏書裡有什麼？",
+        "The 413 cataloged works divide into the four traditional Chinese bibliographic categories. History and literary collections together make up about three-quarters of the whole.": "413種書分為中國傳統目錄學的經、史、子、集四部；史部與集部合計約佔全藏四分之三。",
+        "Classics · 19": "經部 · 19種", "Canonical works and philology": "經典與文字訓詁", "History · 152": "史部 · 152種", "Government, law, taxes, geography": "政府、法律、稅務、地理",
+        "Masters · 82": "子部 · 82種", "Medicine, technology, trade, arts": "醫學、技術、商業、藝術", "Literary collections · 160": "集部 · 160種", "Poetry, essays, academy papers, scores": "詩文、書院課卷、曲譜",
+        "Working government files": "官府工作檔案", "Tax ledgers, handover registers, legal cases, military expenses, memorials, and official correspondence.": "稅冊、交代簿、訴訟案、軍費、奏摺與公文。",
+        "More than thirty dramatic scores using gongche notation; some also include percussion notation.": "三十多種使用工尺譜的戲曲曲譜；部分另有鑼鼓譜。",
+        "More than thirty dramatic scores using": "三十多種使用", "gongche": "工尺譜", "notation; some also include percussion notation.": "記譜的戲曲曲譜；部分另有鑼鼓譜。",
+        "Waterway maps": "水道圖", "Fifty-one hand-drawn sheets marking rivers, tax stations, responsible officials, and distances from provincial capitals.": "51幅手繪圖，標示河流、稅卡、負責官員及距省城里程。",
+        "Trade manuals": "商業手冊", "Practical texts about pawnbroking, jade, furs, silver currency, jewelry, and commercial customs.": "關於典當、玉器、皮貨、銀幣、珠寶與商業習俗的實用書。",
+        "Technology manuscripts": "技術稿本", "Illustrated works on machinery, naval mines, batteries, aircraft, and manufacturing processes.": "附圖說明機械、水雷、電池、飛機與製造流程的著作。",
+        "Literary manuscripts": "文學稿本", "Unpublished poetry collections and academy examination papers preserving editing and grading marks.": "未刊詩集與保留批改、評分痕跡的書院課卷。",
+        "The article’s central argument": "文章的核心論點", "Ordinary-looking records can become extraordinary evidence.": "看似普通的檔案，也能成為非凡的歷史證據。",
+        "As luxury rare books": "若以珍貴善本衡量", "Many copies are rough, practical, and below the traditional standard of a fine or prestigious “rare edition.”": "許多抄本製作粗樸、重在實用，達不到傳統上精善名貴的「善本」標準。",
+        "As historical documents": "若以歷史文獻衡量", "They preserve how local government, commerce, schools, music, and daily work actually functioned—often in sources found nowhere else.": "它們保存地方政府、商業、學校、音樂與日常工作實際運作的方式，而不少內容在別處無從尋得。",
+        "Why scholars care": "學者為何重視", "Six kinds of history preserved": "保存下來的六種歷史",
+        "Biography and relationships": "人物傳記與關係", "Evidence about the Qi brothers and the networks surrounding late-Qing and early-Republican officials.": "提供齊氏兄弟及晚清民初官員交往網絡的證據。",
+        "Politics and institutions": "政治與制度", "Records of government, finance, military affairs, law, salt administration, and modernization.": "保存政府、財政、軍事、法律、鹽務與近代化資料。",
+        "Everyday social life": "日常社會生活", "Documents involving scholars, farmers, artisans, merchants, schools, temples, and businesses.": "涉及士人、農民、工匠、商人、學校、寺廟與企業的文獻。",
+        "Individual lives": "個人生活", "Traces of officials’ self-education, clerks’ training, and ordinary students’ academy experience.": "留下官員自學、幕僚訓練與普通學生書院生活的痕跡。",
+        "Literature and art": "文學與藝術", "Unpublished poetry, dramatic scripts, musical notation, calligraphy, painting, and refined amusements.": "未刊詩文、戲曲、樂譜、書法、繪畫與文人雅玩。",
+        "China and the West": "中西交流", "The collection’s journey abroad records a larger twentieth-century story of war, loss, preservation, and cultural exchange.": "藏書流傳海外的經過，折射二十世紀戰爭、散失、保存與文化交流的更大歷史。",
+        "Reference": "參考資料", "Full English translation": "完整英文翻譯", "Open this section when you want the complete page-by-page text behind the visual explanation.": "此區僅在英文模式顯示，收錄視覺導讀所依據的逐頁英文翻譯。",
+        "Open the complete translation": "展開完整英文翻譯",
+        "Visual reading guide based on Le Yi’s article and the supplied pages from": "本視覺導讀依據樂怡的文章及所提供的",
+        ", issue 15 (2019).": "第15期（2019年）頁面製作。", "Chinese Classical Studies Quarterly": "《國學季刊》"
+      }));
+
+      const translatableRoots = [document.querySelector('.topbar'), ...document.querySelectorAll('main > section:not(#translation)'), document.querySelector('footer')];
+      const walkerOptions = { acceptNode(node) {
+        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        if (node.parentElement.closest('[data-lang]')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }};
+
+      const swapGuideText = (showChinese) => {
+        translatableRoots.forEach(root => {
+          if (!root) return;
+          const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, walkerOptions);
+          const nodes = [];
+          while (walker.nextNode()) nodes.push(walker.currentNode);
+          nodes.forEach(node => {
+            if (!originalText.has(node)) originalText.set(node, node.nodeValue);
+            const english = originalText.get(node);
+            const trimmed = english.trim();
+            const translated = zh.get(trimmed);
+            node.nodeValue = showChinese && translated
+              ? english.replace(trimmed, translated)
+              : english;
+          });
+        });
+      };
+
+      languageToggle.addEventListener('click', () => {
+        const showChinese = languageToggle.getAttribute('aria-pressed') !== 'true';
+        languageToggle.setAttribute('aria-pressed', String(showChinese));
+        languageToggle.textContent = showChinese ? 'English' : '中文';
+        languageToggle.setAttribute('aria-label', showChinese ? 'Switch the whole page to English' : 'Switch the whole page to Traditional Chinese');
+        document.documentElement.lang = showChinese ? 'zh-Hant' : 'en';
+        swapGuideText(showChinese);
+        englishPanels.forEach(panel => { panel.hidden = showChinese; });
+        chinesePanels.forEach(panel => { panel.hidden = !showChinese; });
+        fullTranslation.hidden = showChinese;
+        fullTranslationLink.hidden = showChinese;
       });
     })();
   </script>
