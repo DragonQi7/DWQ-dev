@@ -610,6 +610,18 @@ a.buybtn:hover,.pick a.buybtn:hover{background:#2F5D48;color:#FFFFFF;opacity:1}
 .setup-why{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
 html.hide-prices .pr{display:none!important}
 html:not(.hide-prices) .nopr{display:none!important}
+
+.gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:none;align-items:center;justify-content:center;padding:24px 16px}
+html.locked .gate{display:flex}
+html.locked .wrap{display:none}
+.gate-card{width:100%;max-width:400px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;text-align:center}
+.gate-card h2{font-family:var(--display);font-weight:400;font-size:26px;margin:0}
+.gate-card p{color:var(--muted);font-size:16px;margin:0}
+.gate-row{display:flex;gap:10px}
+.gate-row input{flex:1;min-width:0;font:inherit;font-size:24px;letter-spacing:.3em;text-align:center;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.gate-row input:focus-visible,.gate-row button:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.gate-row button{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:12px;padding:0 18px;background:var(--pine);color:var(--paper);cursor:pointer}
+.gate-err{color:var(--bad);font-size:15px;min-height:1.4em}
 </style>
 
 <script>
@@ -617,6 +629,23 @@ html:not(.hide-prices) .nopr{display:none!important}
 var SHOW_PRICES = false;
 if (!SHOW_PRICES) document.documentElement.classList.add('hide-prices');
 </script>
+<script>(function(){var ok=false;try{ok=localStorage.getItem('eb-inst-ok')==='1';}catch(e){}if(!ok)document.documentElement.classList.add('locked');})();</script>
+<div class="gate" id="gate">
+  <form class="gate-card" id="gate-form" novalidate>
+    <h2>East Branch Wifi Mesh · Installers</h2>
+    <p>Enter the access code to open the guide.<br>请输入访问码以打开指南。</p>
+    <div class="gate-row"><input id="gate-code" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="Access code"><button type="submit">Enter · 进入</button></div>
+    <span class="gate-err" id="gate-err" role="status"></span>
+  </form>
+</div>
+<script>(function(){
+  var f=document.getElementById('gate-form'), inp=document.getElementById('gate-code'), err=document.getElementById('gate-err');
+  if(document.documentElement.classList.contains('locked')) setTimeout(function(){try{inp.focus();}catch(e){}},50);
+  f.addEventListener('submit',function(ev){ev.preventDefault();
+    if(inp.value.trim()==='888'){document.documentElement.classList.remove('locked');try{localStorage.setItem('eb-inst-ok','1');}catch(e){}err.textContent='';window.dispatchEvent(new Event('resize'));}
+    else{err.textContent='That code isn\u2019t right. Try again. · 访问码不对，请再试一次。';inp.value='';inp.focus();}
+  });
+})();</script>
 <div class="wrap">
 <div class="langbar"><button type="button" class="langbtn" id="langbtn" aria-label="Switch language / 切换语言"><span data-l="en">English</span><span aria-hidden="true">/</span><span data-l="zh">中文</span></button></div>
 <header>
