@@ -693,8 +693,8 @@ html.locked .wrap{display:none}
   var phase=2;
   var Z=[
     {p:2,x:372,y:500,r:370,c:'#3E8C6E',en:'Garage & driveway',zh:'车库和车道',sub:['Good','良好'],lx:180,ly:600},
-    {p:1,x:650,y:670,r:150,c:'#3E8C6E',en:'House',zh:'房子',sub:['Strongest','最强'],lx:600,ly:560},
-    {p:1,x:745,y:705,r:150,c:'#3E8C6E',en:'Deck, lawn and pond',zh:'露台、草坪和池塘',sub:['Strong','强'],lx:880,ly:905},
+    {p:1,x:560,y:620,r:200,c:'#3E8C6E',en:'House',zh:'房子',sub:['Strongest','最强'],lx:600,ly:560},
+    {p:1,x:745,y:705,r:285,c:'#3E8C6E',en:'Deck, lawn and pond',zh:'露台、草坪和池塘',sub:['Strong','强'],lx:880,ly:905},
     {p:2,x:290,y:270,r:0,c:'#3E8C6E',en:'Bagua platform',zh:'八卦平台',sub:['Good, from device 3','良好，由 3 号覆盖'],lx:275,ly:395},
     {p:2,x:470,y:160,r:0,c:'#3E8C6E',en:'Pyramid',zh:'金字塔',sub:['Fair, from device 3','一般，由 3 号覆盖'],lx:650,ly:120}
   ];
@@ -783,7 +783,7 @@ html.locked .wrap{display:none}
       h+='<rect x="'+x0+'" y="'+y0+'" width="'+w+'" height="'+hh+'" rx="10" fill="#1F4435" stroke="#fff" stroke-width="2"/><text x="'+(x0+w/2)+'" y="'+(y0+26)+'" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">'+v[2]+'</text>';
       h+='<rect x="'+(d.x-22)+'" y="'+(d.y-22)+'" width="44" height="44" rx="10" fill="#1F4435" stroke="#fff" stroke-width="3"/><text x="'+d.x+'" y="'+(d.y+8)+'" text-anchor="middle" font-size="24" font-weight="700" fill="#fff">'+d.n+'</text>';});
     // LOCATION: light card, place name + signal strength, same style everywhere
-    var LP={'House':[655,555],'Deck, lawn and pond':[880,905],'Garage & driveway':[180,600],'Bagua platform':[140,372],'Pyramid':[690,170]};
+    var LP={'House':[655,555],'Deck, lawn and pond':[905,1005],'Garage & driveway':[180,600],'Bagua platform':[140,372],'Pyramid':[690,170]};
     Z.forEach(function(z){
       var t=zh?z.zh:z.en, s=zh?z.sub[1]:z.sub[0], p=LP[z.en], w=Math.round(Math.max(tw(t,21),tw(s,16)))+32;
       h+='<rect x="'+(p[0]-w/2)+'" y="'+(p[1]-32)+'" width="'+w+'" height="60" rx="8" fill="rgba(248,250,246,.94)" stroke="#2F5D48" stroke-width="2"/>';
