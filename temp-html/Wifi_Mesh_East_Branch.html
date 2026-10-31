@@ -209,6 +209,36 @@ html.locked .wrap{display:none}
 @media (prefers-reduced-motion:reduce){.led.pulse,.lane-dot{animation:none}}
 .appid{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em;background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:1px 6px;white-space:nowrap}
 .appline{display:block;font-size:14px;color:var(--muted);margin:2px 0 4px}
+
+/* connect */
+.cquick{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:2px solid var(--jade);border-radius:16px;padding:14px 18px}
+.cquick>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.ck{font-size:14px;color:var(--muted);min-width:72px}
+.cname{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:20px}
+.before{background:var(--signal-soft);border:1px solid var(--signal);border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:6px}
+.before ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:15.5px}
+#connect .devs{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px}
+#connect .devs .stepbtn{width:auto;flex:0 0 auto;font-size:15px;padding:8px 16px}
+.stepcount{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--jade)}
+.sttip{font-size:14.5px;color:var(--muted);min-height:1em}
+.sttip:empty{display:none}
+.stepnav2{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.stepdots{display:flex;gap:5px;flex-wrap:wrap}
+.stepdots button{width:30px;height:30px;padding:0;border-radius:50%;font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
+.stepdots button[aria-pressed="true"]{background:var(--btnbg);color:var(--btnfg);border-color:var(--btnbg)}
+.stepdots button:focus-visible,#st-prev:focus-visible,#st-next:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+#st-prev:disabled,#st-next:disabled{opacity:.4;cursor:default}
+.phone.wide{width:300px}
+.allsteps{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.allsteps summary{font-weight:700;cursor:pointer}
+.allsteps ol{margin:10px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:6px;font-size:15.5px}
+.allsteps li{cursor:pointer;border-radius:8px;padding:2px 6px}
+.allsteps li.cur{background:var(--chip)}
+.allsteps li b{display:block}
+.allsteps li span{color:var(--muted)}
+.after{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.after>div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.after>div>span{color:var(--muted);font-size:15px}
 </style>
 
 <script>(function(){var ok=false;try{ok=localStorage.getItem('eb-users-ok')==='1';}catch(e){}if(!ok)document.documentElement.classList.add('locked');})();</script>
@@ -228,8 +258,54 @@ html.locked .wrap{display:none}
 
 <header>
   <h1><span class="en">East Branch Wifi Mesh - User Guide</span><span class="zh">East Branch Wifi Mesh - 用户指南</span></h1>
-  <p class="lead"><span class="en">One Wi-Fi network, EastBranch Wifi, covers the house, the deck, the lawn by the pond, the garage, the Bagua platform and the pyramid. Connect once and your phone stays online as you walk around.</span><span class="zh">同一个 Wi-Fi 网络 EastBranch Wifi 覆盖房子、露台、池塘边的草坪、车库、八卦平台和金字塔。连接一次，走到哪里手机都会保持在线。</span></p>
+  <p class="lead"><span class="en">One Wi-Fi network, East Branch Mesh Wifi, covers the house, the deck, the lawn by the pond, the garage, the Bagua platform and the pyramid. Connect once and your phone stays online as you walk around.</span><span class="zh">同一个 Wi-Fi 网络 East Branch Mesh Wifi 覆盖房子、露台、池塘边的草坪、车库、八卦平台和金字塔。连接一次，走到哪里手机都会保持在线。</span></p>
 </header>
+
+<section id="connect">
+  <h2><span class="en">Connect to the Wi-Fi</span><span class="zh">连接 Wi-Fi</span></h2>
+  <div class="cquick">
+    <div><span class="ck"><span class="en">Network</span><span class="zh">网络名称</span></span><b class="cname">East Branch Mesh Wifi</b> <button type="button" class="copy" data-copy="East Branch Mesh Wifi"><span class="en">Copy</span><span class="zh">复制</span></button></div>
+    <div><span class="ck"><span class="en">Password</span><span class="zh">密码</span></span><span><span class="en">On the card at the front desk, or ask your host. Capitals count.</span><span class="zh">见前台的卡片，或询问主人。注意区分大小写。</span></span></div>
+  </div>
+  <div class="before">
+    <b><span class="en">Before you start</span><span class="zh">开始之前</span></b>
+    <ul>
+      <li><span class="en">Have the password ready. It is case-sensitive, so type capital letters exactly as on the card.</span><span class="zh">准备好密码。密码区分大小写，请按卡片上的大小写输入。</span></li>
+      <li><span class="en">Join once, from anywhere on the grounds. The same network name works in the house, on the deck, at the garage, the Bagua platform and the pyramid.</span><span class="zh">在场地任何地方连接一次即可。房子、露台、车库、八卦平台和金字塔都是同一个网络名称。</span></li>
+      <li><span class="en">Ignore names that start with Deco_ or the old Fios network. Only join East Branch Mesh Wifi.</span><span class="zh">不要连接以 Deco_ 开头的名称或旧的 Fios 网络，只连接 East Branch Mesh Wifi。</span></li>
+    </ul>
+  </div>
+  <div class="os devs" role="group" aria-label="Choose your device">
+    <button type="button" class="stepbtn" data-os="iphone" aria-pressed="true">iPhone</button>
+    <button type="button" class="stepbtn" data-os="ipad" aria-pressed="false">iPad</button>
+    <button type="button" class="stepbtn" data-os="android" aria-pressed="false"><span class="en">Android phone</span><span class="zh">安卓手机</span></button>
+    <button type="button" class="stepbtn" data-os="mac" aria-pressed="false">Mac</button>
+    <button type="button" class="stepbtn" data-os="win" aria-pressed="false"><span class="en">Windows PC</span><span class="zh">Windows 电脑</span></button>
+  </div>
+  <div class="steps">
+    <div class="phone" id="phone" aria-hidden="true"></div>
+    <div class="steptext">
+      <span class="stepcount" id="st-count"></span>
+      <h3 id="st-title"></h3>
+      <p id="st-text"></p>
+      <p class="sttip" id="st-tip"></p>
+      <div class="stepnav2">
+        <button type="button" class="stepbtn" id="st-prev"><span class="en">‹ Back</span><span class="zh">‹ 上一步</span></button>
+        <div class="stepdots" id="st-dots" role="group" aria-label="Steps"></div>
+        <button type="button" class="stepbtn" id="st-next"><span class="en">Next ›</span><span class="zh">下一步 ›</span></button>
+      </div>
+    </div>
+  </div>
+  <details class="allsteps" open>
+    <summary id="all-title"></summary>
+    <ol id="all-list"></ol>
+  </details>
+  <div class="after">
+    <div><b><span class="en">Join automatically next time</span><span class="zh">下次自动连接</span></b><span><span class="en">On iPhone and iPad, tap the ⓘ next to East Branch Mesh Wifi and turn on Auto-Join. On Windows, tick Connect automatically. Android and Mac do this by default.</span><span class="zh">在 iPhone 和 iPad 上，点 East Branch Mesh Wifi 旁边的 ⓘ，打开“自动加入”。在 Windows 上勾选“自动连接”。安卓和 Mac 默认会自动连接。</span></span></div>
+    <div><b><span class="en">Forget the old Fios network</span><span class="zh">忘记旧的 Fios 网络</span></b><span><span class="en">If your device keeps jumping to the old network, tap it in the Wi-Fi list and choose Forget This Network (or Forget). Then it stays on East Branch Mesh Wifi.</span><span class="zh">如果设备总是跳到旧网络，在 Wi-Fi 列表里点它，选择“忽略此网络”（或“忘记”）。之后就会一直连在 East Branch Mesh Wifi 上。</span></span></div>
+    <div><b><span class="en">Still can't connect?</span><span class="zh">还是连不上？</span></b><span><span class="en">See "If something isn't working" further down, or scan the QR code on the front-desk card with your camera.</span><span class="zh">请看下方“遇到问题怎么办”，或用相机扫描前台卡片上的二维码。</span></span></div>
+  </div>
+</section>
 
 
 
@@ -254,14 +330,14 @@ html.locked .wrap{display:none}
     <li><span class="tm">~11:50 AM</span><span class="dn">4</span><span><span class="en">Bagua platform</span><span class="zh">八卦平台</span></span></li>
     <li><span class="tm">~12:20 PM</span><span class="dn">5</span><span><span class="en">Pyramid</span><span class="zh">金字塔</span></span></li>
     <li><span class="tm">~12:40 PM</span><span></span><span><span class="en">Walk-around test at every location</span><span class="zh">在每个地点走一圈测试</span></span></li>
-    <li><span class="tm">~1:00 PM</span><span></span><span><span class="en">Done: everyone can join EastBranch Wifi</span><span class="zh">完成：所有人可以连接 EastBranch Wifi</span></span></li>
+    <li><span class="tm">~1:00 PM</span><span></span><span><span class="en">Done: everyone can join East Branch Mesh Wifi</span><span class="zh">完成：所有人可以连接 East Branch Mesh Wifi</span></span></li>
   </ol>
 
   <h3 class="sub"><span class="en">What to expect on install day</span><span class="zh">安装日注意事项</span></h3>
   <div class="expect">
     <div><b><span class="en">Internet off for 15–30 min</span><span class="zh">网络中断 15–30 分钟</span></b><span><span class="en">From about 10:30 AM, while the main unit is connected to the Fios router.</span><span class="zh">大约从上午 10:30 开始，主设备连接 Fios 路由器期间。</span></span></div>
     <div><b><span class="en">The old network name disappears</span><span class="zh">旧的网络名称会消失</span></b><span><span class="en">The current Fios Wi-Fi name is switched off and won't show up any more.</span><span class="zh">现在的 Fios Wi-Fi 名称会被关闭，不再出现。</span></span></div>
-    <div><b><span class="en">Everyone joins EastBranch Wifi</span><span class="zh">所有人改连 EastBranch Wifi</span></b><span><span class="en">Phones, laptops and other devices need to join the new network once, with the new password.</span><span class="zh">手机、电脑和其他设备需要用新密码连接一次新网络。</span></span></div>
+    <div><b><span class="en">Everyone joins East Branch Mesh Wifi</span><span class="zh">所有人改连 East Branch Mesh Wifi</span></b><span><span class="en">Phones, laptops and other devices need to join the new network once, with the new password.</span><span class="zh">手机、电脑和其他设备需要用新密码连接一次新网络。</span></span></div>
   </div>
 </section>
 
@@ -271,7 +347,7 @@ html.locked .wrap{display:none}
     <article class="net guest">
       <span class="who"><span class="en">Everyone</span><span class="zh">所有人</span></span>
       <dl class="kv">
-        <dt><span class="en">Network</span><span class="zh">网络名称</span></dt><dd>EastBranch Wifi <button type="button" class="copy" data-copy="EastBranch Wifi"><span class="en">Copy</span><span class="zh">复制</span></button></dd>
+        <dt><span class="en">Network</span><span class="zh">网络名称</span></dt><dd>East Branch Mesh Wifi <button type="button" class="copy" data-copy="East Branch Mesh Wifi"><span class="en">Copy</span><span class="zh">复制</span></button></dd>
         <dt><span class="en">Password</span><span class="zh">密码</span></dt><dd class="soft"><span class="en">On the card at the front desk, or ask your host.</span><span class="zh">见前台的卡片，或询问主人。</span></dd>
       </dl>
     </article>
@@ -279,27 +355,6 @@ html.locked .wrap{display:none}
   <p class="caption"><span class="en">There is only one network name, everywhere on the grounds. You won't see separate names for different areas or for 2.4 or 5 GHz: your phone picks the best one by itself.</span><span class="zh">整个场地只有一个网络名称。不同区域或 2.4、5 GHz 不会出现不同的名称：手机会自动选择最好的。</span></p>
 </section>
 
-<section>
-  <h2><span class="en">Connect in 4 taps</span><span class="zh">4 步连接</span></h2>
-  <div class="steps">
-    <div class="phone" id="phone" aria-hidden="true"></div>
-    <div class="steptext">
-      <div class="os" role="group" aria-label="Phone type">
-        <button type="button" class="stepbtn" data-os="ios" aria-pressed="true">iPhone</button>
-        <button type="button" class="stepbtn" data-os="android" aria-pressed="false">Android</button>
-      </div>
-      <div class="stepnav" role="group" aria-label="Steps">
-        <button type="button" class="stepbtn" data-st="0" aria-pressed="true">1</button>
-        <button type="button" class="stepbtn" data-st="1" aria-pressed="false">2</button>
-        <button type="button" class="stepbtn" data-st="2" aria-pressed="false">3</button>
-        <button type="button" class="stepbtn" data-st="3" aria-pressed="false">4</button>
-      </div>
-      <h3 id="st-title"></h3>
-      <p id="st-text"></p>
-      <p class="caption"><span class="en">Tap the numbers to move between steps.</span><span class="zh">点击数字切换步骤。</span></p>
-    </div>
-  </div>
-</section>
 
 <section>
   <h2><span class="en">Before and after</span><span class="zh">安装前后对比</span></h2>
@@ -332,7 +387,7 @@ html.locked .wrap{display:none}
     <article class="dev"><span class="dnum">4</span><div class="dico"><svg viewBox="0 0 40 56"><rect x="9" y="4" width="22" height="44" rx="11" fill="#fff" stroke="#D18A1F" stroke-width="2"/><rect x="11" y="46" width="18" height="6" rx="2" fill="#4A4F4C"/><circle cx="20" cy="12" r="3" fill="#D18A1F"/></svg></div><div><b>Deco 7 Outdoor BE5000 · <span class="en">Bagua platform</span><span class="zh">八卦平台</span></b><span class="appline"><span class="en">In the Deco app: Bagua · </span><span class="zh">Deco App 中：八卦平台 · </span><code class="appid">Deco_1AD3</code></span><span class="en">Mounted high at the Bagua platform, facing the garage. Covers the platform and passes the signal on to the pyramid.</span><span class="zh">装在八卦平台的高处，面向车库。覆盖平台，并把信号继续传到金字塔。</span></div></article>
     <article class="dev"><span class="dnum">5</span><div class="dico"><svg viewBox="0 0 40 56"><rect x="9" y="4" width="22" height="44" rx="11" fill="#fff" stroke="#D18A1F" stroke-width="2"/><rect x="11" y="46" width="18" height="6" rx="2" fill="#4A4F4C"/><circle cx="20" cy="12" r="3" fill="#D18A1F"/></svg></div><div><b>Deco 7 Outdoor BE5000 · <span class="en">pyramid</span><span class="zh">金字塔</span></b><span class="appline"><span class="en">In the Deco app: Pyramid · </span><span class="zh">Deco App 中：金字塔 · </span><code class="appid">Deco_1277</code></span><span class="en">Mounted high at the pyramid, facing the Bagua platform. Covers the pyramid area.</span><span class="zh">装在金字塔的高处，面向八卦平台。覆盖金字塔一带。</span></div></article>
   </div>
-  <p class="caption"><span class="en">The Deco_ names are what each unit is called in the Deco app, so you can tell which one is which. They are not separate Wi-Fi networks: everyone always joins EastBranch Wifi. </span><span class="zh">Deco_ 开头的名称是每台设备在 Deco App 中的名字，方便分辨是哪一台。它们不是单独的 Wi-Fi 网络：所有人都连接 EastBranch Wifi。</span><span class="en">Equipment: 1 × Deco BE25 2-pack (devices 1 and 2) and 3 × Deco 7 Outdoor BE5000 (model BE25-Outdoor; devices 3, 4 and 5). </span><span class="zh">设备：1 套 Deco BE25 两件装（1 号和 2 号），3 台 Deco 7 Outdoor BE5000（型号 BE25-Outdoor；3、4、5 号）。</span><span class="en">All five devices make one network with the same name and password. Indoor units are low, round white domes; outdoor units are tall white weatherproof cylinders.</span><span class="zh">五台设备组成同一个网络，名称和密码都一样。室内设备是低矮的白色圆顶；户外设备是高的白色防水圆柱。</span></p>
+  <p class="caption"><span class="en">The Deco_ names are what each unit is called in the Deco app, so you can tell which one is which. They are not separate Wi-Fi networks: everyone always joins East Branch Mesh Wifi. </span><span class="zh">Deco_ 开头的名称是每台设备在 Deco App 中的名字，方便分辨是哪一台。它们不是单独的 Wi-Fi 网络：所有人都连接 East Branch Mesh Wifi。</span><span class="en">Equipment: 1 × Deco BE25 2-pack (devices 1 and 2) and 3 × Deco 7 Outdoor BE5000 (model BE25-Outdoor; devices 3, 4 and 5). </span><span class="zh">设备：1 套 Deco BE25 两件装（1 号和 2 号），3 台 Deco 7 Outdoor BE5000（型号 BE25-Outdoor；3、4、5 号）。</span><span class="en">All five devices make one network with the same name and password. Indoor units are low, round white domes; outdoor units are tall white weatherproof cylinders.</span><span class="zh">五台设备组成同一个网络，名称和密码都一样。室内设备是低矮的白色圆顶；户外设备是高的白色防水圆柱。</span></p>
 </section>
 
 <section>
@@ -423,7 +478,7 @@ html.locked .wrap{display:none}
   <div class="fix">
     <details open><summary><span class="en">I can't connect, or the password is refused</span><span class="zh">连不上，或密码被拒绝</span></summary>
       <ol>
-        <li><span class="en">Check the network name: it should be EastBranch Wifi.</span><span class="zh">检查网络名称：应为 EastBranch Wifi。</span></li>
+        <li><span class="en">Check the network name: it should be East Branch Mesh Wifi.</span><span class="zh">检查网络名称：应为 East Branch Mesh Wifi。</span></li>
         <li><span class="en">Type the password again. It is case-sensitive.</span><span class="zh">重新输入密码。区分大小写。</span></li>
         <li><span class="en">If you were here before, "forget" the network in Wi-Fi settings, then join again.</span><span class="zh">如果之前来过，请在 Wi-Fi 设置里"忽略"该网络，再用新密码重新连接。</span></li>
       </ol>
@@ -479,58 +534,163 @@ html.locked .wrap{display:none}
   });});
 
   // steps
-  var os='ios', st=0;
+  var NM='East Branch Mesh Wifi';
+  var os='iphone', st=0;
+  function S_(scr,en,zh,tipEn,tipZh){return {scr:scr,en:en,zh:zh,tip:[tipEn||'',tipZh||'']};}
   var S={
-    ios:[
-      {en:['Open Settings','Tap the grey Settings app, then tap Wi-Fi.'],zh:['打开"设置"','点击灰色的"设置"应用，再点"无线局域网"。'],scr:'settings'},
-      {en:['Make sure Wi-Fi is on','The Wi-Fi switch at the top should be green.'],zh:['确认 Wi-Fi 已打开','顶部的 Wi-Fi 开关应为绿色。'],scr:'toggle'},
-      {en:['Tap EastBranch Wifi','Find EastBranch Wifi in the list and tap it.'],zh:['点击 EastBranch Wifi','在列表中找到 EastBranch Wifi 并点击。'],scr:'list'},
-      {en:['Enter the password','Type the password, then tap Join. A check mark means you are online.'],zh:['输入密码','输入密码，然后点"加入"。出现勾号就表示已连接。'],scr:'pass'}
+    iphone:[
+      S_('home',['Open Settings','On the Home Screen, tap the grey Settings app with the gear icon.'],['打开“设置”','在主屏幕上，点灰色齿轮图标的“设置”应用。'],"Can't find it? Swipe down on the Home Screen and type Settings.",'找不到？在主屏幕向下轻扫，输入“设置”搜索。'),
+      S_('settings',['Tap Wi-Fi','Wi-Fi is near the top of Settings, just under Airplane Mode.'],['点“无线局域网”','“无线局域网”在设置页顶部，“飞行模式”下面。']),
+      S_('toggle',['Turn Wi-Fi on','The switch next to Wi-Fi should be green. If it is grey, tap it once.'],['打开 Wi-Fi','“无线局域网”旁的开关应为绿色。如果是灰色，点一下。']),
+      S_('list',['Find East Branch Mesh Wifi','Wait a few seconds for the list under Networks to fill in. Scroll down if you need to.'],['找到 East Branch Mesh Wifi','等几秒钟，让“网络”下的列表加载出来。需要的话向下滚动。'],'Tap the name itself, not the ⓘ button beside it.','请点名称本身，不要点旁边的 ⓘ。'),
+      S_('pass',['Type the password','Type the password from the front-desk card exactly, then tap Join at the top right.'],['输入密码','按前台卡片准确输入密码，然后点右上角的“加入”。'],'Capitals count. Tap the eye icon, if shown, to check what you typed.','注意区分大小写。如有眼睛图标，可点开检查输入。'),
+      S_('done',['Check you are online','A blue check mark appears next to East Branch Mesh Wifi, and the Wi-Fi icon shows at the top of the screen. Open a web page to test.'],['确认已连接','East Branch Mesh Wifi 旁边出现蓝色勾号，屏幕顶部显示 Wi-Fi 图标。打开一个网页试试。'])
+    ],
+    ipad:[
+      S_('home',['Open Settings','On the Home Screen, tap the grey Settings app with the gear icon.'],['打开“设置”','在主屏幕上，点灰色齿轮图标的“设置”应用。'],"Can't find it? Swipe down on the Home Screen and type Settings.",'找不到？在主屏幕向下轻扫，输入“设置”搜索。'),
+      S_('settings',['Tap Wi-Fi in the left column','On iPad, Settings has two columns. Tap Wi-Fi in the left column; the networks appear on the right.'],['点左栏的“无线局域网”','iPad 的设置分左右两栏。点左栏的“无线局域网”，网络列表显示在右边。']),
+      S_('toggle',['Turn Wi-Fi on','The switch at the top of the right column should be green. If it is grey, tap it once.'],['打开 Wi-Fi','右栏顶部的开关应为绿色。如果是灰色，点一下。']),
+      S_('list',['Find East Branch Mesh Wifi','Wait a few seconds for the list under Networks to fill in, then tap East Branch Mesh Wifi.'],['找到 East Branch Mesh Wifi','等几秒钟让“网络”列表加载出来，然后点 East Branch Mesh Wifi。'],'iPads with cellular data may stay on cellular until you join. Joining Wi-Fi saves your data plan.','带蜂窝网络的 iPad 在连接 Wi-Fi 前可能一直用蜂窝数据。连上 Wi-Fi 可以省流量。'),
+      S_('pass',['Type the password','Type the password from the front-desk card exactly, then tap Join.'],['输入密码','按前台卡片准确输入密码，然后点“加入”。'],'Using a keyboard case? The password field works with it too.','用键盘保护套？也可以用它输入密码。'),
+      S_('done',['Check you are online','A blue check mark appears next to East Branch Mesh Wifi, and the Wi-Fi icon shows at the top right of the screen.'],['确认已连接','East Branch Mesh Wifi 旁边出现蓝色勾号，屏幕右上角显示 Wi-Fi 图标。'])
     ],
     android:[
-      {en:['Open Settings','Open Settings, then tap Network & internet (or Connections), then Wi-Fi.'],zh:['打开"设置"','打开"设置"，点"网络和互联网"（或"连接"），再点"Wi-Fi"。'],scr:'settings'},
-      {en:['Make sure Wi-Fi is on','Turn on the Wi-Fi switch at the top.'],zh:['确认 Wi-Fi 已打开','打开顶部的 Wi-Fi 开关。'],scr:'toggle'},
-      {en:['Tap EastBranch Wifi','Find EastBranch Wifi in the list and tap it.'],zh:['点击 EastBranch Wifi','在列表中找到 EastBranch Wifi 并点击。'],scr:'list'},
-      {en:['Enter the password','Type the password, then tap Connect. "Connected" appears under the name when you are online.'],zh:['输入密码','输入密码，然后点"连接"。名称下方显示"已连接"就表示成功。'],scr:'pass'}
+      S_('home',['Open Settings','Swipe up from the bottom of the Home Screen to see all apps, then tap Settings (the gear icon).'],['打开“设置”','从主屏幕底部向上滑动显示所有应用，然后点“设置”（齿轮图标）。'],'Shortcut: swipe down from the top and press and hold the Wi-Fi tile.','快捷方式：从顶部向下滑，长按 Wi-Fi 图块。'),
+      S_('settings',['Open the Wi-Fi settings','Tap Network & internet, then Internet (Google Pixel), or Connections, then Wi-Fi (Samsung). Other brands use similar names.'],['打开 Wi-Fi 设置','点“网络和互联网”再点“互联网”（Google Pixel），或点“连接”再点“WLAN/Wi-Fi”（三星）。其他品牌名称类似。']),
+      S_('toggle',['Turn Wi-Fi on','Turn on the Wi-Fi switch at the top of the screen.'],['打开 Wi-Fi','打开屏幕顶部的 Wi-Fi 开关。']),
+      S_('list',['Tap East Branch Mesh Wifi','Wait a few seconds for nearby networks to appear, then tap East Branch Mesh Wifi.'],['点 East Branch Mesh Wifi','等几秒钟让附近的网络出现，然后点 East Branch Mesh Wifi。']),
+      S_('pass',['Type the password','Type the password from the front-desk card exactly, then tap Connect.'],['输入密码','按前台卡片准确输入密码，然后点“连接”。'],'Tap the eye icon to show the password and check it.','点眼睛图标可显示密码，方便检查。'),
+      S_('done',['Check you are online','"Connected" appears under East Branch Mesh Wifi, and the Wi-Fi icon shows in the status bar at the top.'],['确认已连接','East Branch Mesh Wifi 下方显示“已连接”，顶部状态栏出现 Wi-Fi 图标。'],'If it says "Connected, no internet", see "If something isn\'t working" below.','如果显示“已连接，但无法访问互联网”，请看下方“遇到问题怎么办”。')
+    ],
+    mac:[
+      S_('mbar',['Click the Wi-Fi icon','Click the Wi-Fi fan icon in the menu bar at the top right of the screen.'],['点 Wi-Fi 图标','点屏幕右上角菜单栏里的扇形 Wi-Fi 图标。'],"No icon? Open the Apple menu → System Settings → Wi-Fi.",'没有图标？打开苹果菜单 → 系统设置 → Wi-Fi。'),
+      S_('mlist',['Turn Wi-Fi on and pick the network','Make sure the Wi-Fi switch is on (blue), then click East Branch Mesh Wifi in the list.'],['打开 Wi-Fi 并选择网络','确认 Wi-Fi 开关已打开（蓝色），然后在列表中点 East Branch Mesh Wifi。'],'Not listed? Click Other Networks to expand the list.','列表里没有？点“其他网络”展开。'),
+      S_('mpass',['Type the password','Type the password from the front-desk card exactly, then click Join.'],['输入密码','按前台卡片准确输入密码，然后点“加入”。'],'Tick Show password to check what you typed.','勾选“显示密码”可检查输入。'),
+      S_('mdone',['Check you are online','The Wi-Fi icon in the menu bar fills in, and East Branch Mesh Wifi shows a blue Wi-Fi symbol in the list.'],['确认已连接','菜单栏的 Wi-Fi 图标变为实心，列表中 East Branch Mesh Wifi 显示蓝色 Wi-Fi 图标。'])
+    ],
+    win:[
+      S_('wbar',['Click the network icon','Click the Wi-Fi or globe icon at the bottom right of the taskbar, next to the clock.'],['点网络图标','点任务栏右下角时钟旁边的 Wi-Fi 或地球图标。'],'Keyboard shortcut: Windows key + A.','键盘快捷键：Windows 键 + A。'),
+      S_('wtile',['Turn Wi-Fi on and open the list','Make sure the Wi-Fi tile is blue (on), then click the › arrow on the tile to see networks.'],['打开 Wi-Fi 并展开列表','确认 Wi-Fi 图块是蓝色（已打开），然后点图块上的 › 箭头查看网络。']),
+      S_('wlist',['Choose East Branch Mesh Wifi','Click East Branch Mesh Wifi, tick Connect automatically, then click Connect.'],['选择 East Branch Mesh Wifi','点 East Branch Mesh Wifi，勾选“自动连接”，然后点“连接”。']),
+      S_('wpass',['Type the password','Windows calls it the network security key. Type the password from the front-desk card exactly, then click Next.'],['输入密码','Windows 称之为“网络安全密钥”。按前台卡片准确输入密码，然后点“下一步”。']),
+      S_('wdone',['Check you are online','"Connected, secured" appears under East Branch Mesh Wifi. If Windows asks whether your PC should be discoverable, choose No.'],['确认已连接','East Branch Mesh Wifi 下方显示“已连接，安全”。如果 Windows 询问是否允许其他设备发现你的电脑，选择“否”。'])
     ]
   };
-  function phone(scr){
-    var zh=lang==='zh', h='<svg viewBox="0 0 210 400">';
-    h+='<rect x="4" y="4" width="202" height="392" rx="30" fill="#1E2A24"/><rect x="14" y="16" width="182" height="368" rx="22" fill="#F8FAF6"/>';
-    h+='<rect x="80" y="22" width="50" height="8" rx="4" fill="#1E2A24"/>';
-    function row(y,label,hi,extra){return '<rect x="24" y="'+y+'" width="162" height="40" rx="8" fill="'+(hi?'#DCEFE5':'#FFFFFF')+'" stroke="#C9D2C9"/><text x="36" y="'+(y+25)+'" font-size="14" fill="#1E2A24" font-weight="'+(hi?700:400)+'">'+label+'</text>'+(extra||'');}
-    function tap(x,y){return '<circle class="tapr" cx="'+x+'" cy="'+y+'" r="14" fill="none" stroke="#D18A1F" stroke-width="3"/>';}
-    var W='Wi-Fi';
-    if(scr==='settings'){
-      h+='<text x="30" y="68" font-size="20" font-weight="700" fill="#1E2A24">'+(zh?'设置':'Settings')+'</text>';
-      h+=row(90,zh?'飞行模式':'Airplane Mode')+row(136,os==='ios'?(zh?'无线局域网':'Wi-Fi'):(zh?'网络和互联网':'Network & internet'),true,tap(160,156))+row(182,'Bluetooth')+row(228,zh?'电池':'Battery');
-    } else if(scr==='toggle'){
-      h+='<text x="30" y="68" font-size="20" font-weight="700" fill="#1E2A24">'+W+'</text>';
-      h+='<rect x="24" y="90" width="162" height="44" rx="8" fill="#FFFFFF" stroke="#C9D2C9"/><text x="36" y="117" font-size="15" font-weight="700" fill="#1E2A24">'+W+'</text>';
-      h+='<rect x="130" y="100" width="44" height="24" rx="12" fill="#34C759"/><circle cx="162" cy="112" r="10" fill="#fff"/>'+tap(152,112);
-    } else if(scr==='list'){
-      h+='<text x="30" y="68" font-size="20" font-weight="700" fill="#1E2A24">'+W+'</text><text x="30" y="96" font-size="12" fill="#56655C">'+(zh?'网络':'NETWORKS')+'</text>';
-      h+=row(106,'EastBranch Wifi',true,tap(160,126))+row(152,'Neighbor-Home')+row(198,'Neighbor-5G');
+  var DEVNAME={iphone:['iPhone','iPhone'],ipad:['iPad','iPad'],android:['Android phone','安卓手机'],mac:['Mac','Mac'],win:['Windows PC','Windows 电脑']};
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function screen(scr){
+    var zh=lang==='zh', tab=os==='ipad', lap=(os==='mac'||os==='win');
+    var W=lap?300:(tab?300:210), H=lap?230:(tab?400:400);
+    var h='<svg viewBox="0 0 '+W+' '+H+'">';
+    var ink='#1E2A24', mut='#56655C', line='#C9D2C9', hi='#DCEFE5', acc='#D18A1F';
+    function tap(x,y){return '<circle class="tapr" cx="'+x+'" cy="'+y+'" r="13" fill="none" stroke="'+acc+'" stroke-width="3"/>';}
+    function txt(x,y,s,sz,wt,fill,anc){return '<text x="'+x+'" y="'+y+'" font-size="'+(sz||13)+'" font-weight="'+(wt||400)+'" fill="'+(fill||ink)+'"'+(anc?' text-anchor="'+anc+'"':'')+'>'+esc(s)+'</text>';}
+    function row(x,y,w,label,isHi,extra){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="34" rx="7" fill="'+(isHi?hi:'#FFFFFF')+'" stroke="'+line+'"/>'+txt(x+10,y+22,label,(tab&&w<150)?10.5:13,isHi?700:400)+(extra||'');}
+    function sw(x,y,on){return '<rect x="'+x+'" y="'+y+'" width="40" height="22" rx="11" fill="'+(on?'#34C759':'#C9D2C9')+'"/><circle cx="'+(on?x+29:x+11)+'" cy="'+(y+11)+'" r="9" fill="#fff"/>';}
+    function check(cx,cy,c){return '<g class="pulse"><circle cx="'+cx+'" cy="'+cy+'" r="20" fill="'+(c||'#3E8C6E')+'"/><path d="M'+(cx-10)+' '+cy+'l7 7 13-14" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';}
+    function wifiIcon(x,y,c){return '<path d="M'+(x-9)+' '+(y-3)+'a13 13 0 0 1 18 0M'+(x-5)+' '+(y+1)+'a7 7 0 0 1 10 0" stroke="'+(c||ink)+'" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="'+x+'" cy="'+(y+5)+'" r="2" fill="'+(c||ink)+'"/>';}
+    var nets=[NM,'Neighbor-Home','Neighbor-5G','Deco_A587'];
+    if(!lap){
+      // device frame
+      h+='<rect x="4" y="4" width="'+(W-8)+'" height="'+(H-8)+'" rx="'+(tab?22:30)+'" fill="#1E2A24"/><rect x="14" y="16" width="'+(W-28)+'" height="'+(H-32)+'" rx="'+(tab?14:22)+'" fill="#F8FAF6"/>';
+      if(!tab) h+='<rect x="80" y="22" width="50" height="8" rx="4" fill="#1E2A24"/>';
+      var X=24, CW=W-48;
+      if(scr==='home'){
+        var cols=tab?5:4, gap=tab?50:42, x0=tab?36:30, y0=60;
+        var labels=zh?['照片','相机','邮件','时钟','地图','天气','备忘录','设置','音乐','日历','信息','提醒']:['Photos','Camera','Mail','Clock','Maps','Weather','Notes','Settings','Music','Calendar','Messages','Reminders'];
+        for(var i=0;i<(tab?15:12);i++){var cx=x0+(i%cols)*gap, cy=y0+Math.floor(i/cols)*58, isS=(i===7);
+          h+='<rect x="'+cx+'" y="'+cy+'" width="34" height="34" rx="9" fill="'+(isS?'#8E8E93':['#7FC8A9','#BFD7EA','#F2C462','#E8B4A0'][i%4])+'"/>';
+          if(isS) h+='<circle cx="'+(cx+17)+'" cy="'+(cy+17)+'" r="9" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="4 3"/><circle cx="'+(cx+17)+'" cy="'+(cy+17)+'" r="3" fill="#fff"/>'+tap(cx+17,cy+17);
+          h+=txt(cx+17,cy+46,labels[i%labels.length],8.5,isS?700:400,ink,'middle');}
+      } else if(scr==='settings'){
+        if(tab){
+          h+='<line x1="120" y1="20" x2="120" y2="'+(H-20)+'" stroke="'+line+'"/>'+txt(26,48,zh?'设置':'Settings',15,700);
+          h+=row(22,60,92,zh?'飞行模式':'Airplane')+row(22,100,92,zh?'无线局域网':'Wi-Fi',true,tap(98,117))+row(22,140,92,'Bluetooth')+row(22,180,92,zh?'电池':'Battery');
+          h+=txt(132,48,'Wi-Fi',15,700)+txt(132,80,zh?'← 选择左栏的无线局域网':'← Pick Wi-Fi on the left',10,400,mut);
+        } else {
+          h+=txt(30,62,zh?'设置':'Settings',19,700);
+          var lab=os==='android'?(zh?'网络和互联网':'Network & internet'):(zh?'无线局域网':'Wi-Fi');
+          h+=row(X,80,CW,zh?'飞行模式':'Airplane Mode')+row(X,120,CW,lab,true,tap(X+CW-22,137))+row(X,160,CW,'Bluetooth')+row(X,200,CW,zh?'电池':'Battery');
+        }
+      } else if(scr==='toggle'||scr==='list'||scr==='pass'||scr==='done'){
+        var LX=tab?132:X, LW=tab?W-156:CW;
+        if(tab){h+='<line x1="120" y1="20" x2="120" y2="'+(H-20)+'" stroke="'+line+'"/>'+txt(26,48,zh?'设置':'Settings',15,700)+row(22,60,92,zh?'飞行模式':'Airplane')+row(22,100,92,zh?'无线局域网':'Wi-Fi',true)+row(22,140,92,'Bluetooth');}
+        if(scr==='pass'){
+          h+=txt(LX+4,56,zh?'输入密码':'Enter password for',11,400,mut)+txt(LX+4,74,NM,tab?11.5:13,700);
+          h+='<rect x="'+LX+'" y="86" width="'+LW+'" height="36" rx="7" fill="#fff" stroke="#3E8C6E" stroke-width="2"/>'+txt(LX+10,110,'••••••••',16);
+          var bl=os==='android'?(zh?'连接':'Connect'):(zh?'加入':'Join');
+          h+='<rect x="'+(LX+LW-70)+'" y="136" width="70" height="30" rx="15" fill="#1F4435"/>'+txt(LX+LW-35,156,bl,13,700,'#fff','middle')+tap(LX+LW-35,151);
+          h+='<rect x="'+LX+'" y="190" width="'+LW+'" height="'+(tab?120:150)+'" rx="8" fill="#E1E9E2"/>';
+          var keys='QWERTYUIOP'; for(var k=0;k<10;k++){var kw=(LW-22)/10;h+='<rect x="'+(LX+6+k*(kw+1))+'" y="200" width="'+(kw-1)+'" height="24" rx="4" fill="#fff"/>'+txt(LX+6+k*(kw+1)+kw/2,216,keys[k],9,600,ink,'middle');}
+        } else {
+          h+=txt(LX+4,62,'Wi-Fi',tab?15:19,700);
+          h+='<rect x="'+LX+'" y="76" width="'+LW+'" height="36" rx="7" fill="#fff" stroke="'+line+'"/>'+txt(LX+10,99,'Wi-Fi',13,700)+sw(LX+LW-50,83,true)+(scr==='toggle'?tap(LX+LW-30,94):'');
+          if(scr==='toggle'){h+=txt(LX+4,140,zh?'开关为绿色 = 已打开':'Green switch = on',11,400,mut);}
+          else {
+            var y=128; h+=txt(LX+4,y,(scr==='done'?NM:(zh?'网络':'NETWORKS')),10.5,700,mut); y+=10;
+            if(scr==='done'){h+='<rect x="'+LX+'" y="'+y+'" width="'+LW+'" height="34" rx="7" fill="#fff" stroke="'+line+'"/><path d="M'+(LX+10)+' '+(y+17)+'l5 5 9-10" stroke="#0A84FF" stroke-width="2.6" fill="none" stroke-linecap="round"/>'+txt(LX+30,y+22,NM,tab?10.5:12,700); y+=60; h+=check(LX+LW/2,y+20)+txt(LX+LW/2,y+62,zh?'已连接':'Connected',13,700,'#3E8C6E','middle');}
+            else nets.forEach(function(n,i){var isN=(i===0); h+=row(LX,y+i*40,LW,n,isN,isN?tap(LX+LW-14,y+17):wifiIcon(LX+LW-18,y+17,mut)); });
+          }
+        }
+        if(scr==='done') h+=wifiIcon(tab?W-40:W-46,32,'#3E8C6E');
+      }
+    } else if(os==='mac'){
+      h+='<rect x="20" y="8" width="260" height="168" rx="10" fill="#1E2A24"/><rect x="28" y="16" width="244" height="152" rx="4" fill="#F8FAF6"/><path d="M6 182h288l-14 14H20z" fill="#9AA69F"/>';
+      h+='<rect x="28" y="16" width="244" height="14" fill="#E6ECE6"/>'+txt(34,27,'',9,700)+'<path d="M36 19c2 0 3 1 3 3s-2 4-3 4-3-2-3-4 1-3 3-3z" fill="'+ink+'"/>'+txt(254,27,'12:00',8,600,ink,'end');
+      var mx=212; h+=wifiIcon(mx,24,scr==='mdone'?'#0A84FF':ink);
+      if(scr==='mbar') h+=tap(mx,23);
+      if(scr==='mlist'||scr==='mdone'){
+        h+='<rect x="120" y="32" width="146" height="130" rx="8" fill="#fff" stroke="'+line+'"/>'+txt(128,48,'Wi-Fi',10,700)+sw(226,38,true);
+        [NM,'Neighbor-Home','Neighbor-5G'].forEach(function(n,i){var y=60+i*22, isN=i===0; h+='<rect x="124" y="'+y+'" width="138" height="20" rx="4" fill="'+(isN?hi:'#fff')+'"/>'+'<circle cx="134" cy="'+(y+10)+'" r="6" fill="'+(isN&&scr==='mdone'?'#0A84FF':'#E1E9E2')+'"/>'+txt(144,y+14,n,8.5,isN?700:400)+(isN&&scr==='mlist'?tap(250,y+10):'');});
+        h+=txt(128,140,zh?'其他网络…':'Other Networks…',8.5,400,mut);
+        if(scr==='mdone') h+=check(76,110)+txt(76,146,zh?'已连接':'Connected',10,700,'#3E8C6E','middle');
+      }
+      if(scr==='mpass'){
+        h+='<rect x="60" y="40" width="180" height="116" rx="10" fill="#fff" stroke="'+line+'"/>'+wifiIcon(150,58,'#0A84FF');
+        h+=txt(150,80,(zh?'输入密码：':'Enter the password for'),8.5,400,mut,'middle')+txt(150,92,NM,9,700,ink,'middle');
+        h+='<rect x="74" y="100" width="152" height="18" rx="4" fill="#fff" stroke="#0A84FF"/>'+txt(80,113,'••••••••',10);
+        h+='<rect x="186" y="128" width="40" height="18" rx="5" fill="#0A84FF"/>'+txt(206,141,zh?'加入':'Join',9,700,'#fff','middle')+tap(206,137);
+      }
     } else {
-      h+='<text x="30" y="58" font-size="14" fill="#56655C">'+(zh?'输入密码':'Enter password for')+'</text><text x="30" y="80" font-size="17" font-weight="700" fill="#1E2A24">EastBranch Wifi</text>';
-      h+='<rect x="24" y="92" width="162" height="40" rx="8" fill="#FFFFFF" stroke="#3E8C6E" stroke-width="2"/><text x="36" y="118" font-size="18" fill="#1E2A24">••••••••</text>';
-      h+='<rect x="24" y="150" width="162" height="40" rx="20" fill="#1F4435"/><text x="105" y="176" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">'+(os==='ios'?(zh?'加入':'Join'):(zh?'连接':'Connect'))+'</text>'+tap(105,170);
-      h+='<g class="pulse"><circle cx="105" cy="250" r="26" fill="#3E8C6E"/><path d="M92 250l9 9 17-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';
-      h+='<text x="105" y="300" font-size="14" fill="#3E8C6E" font-weight="700" text-anchor="middle">'+(zh?'已连接':'Connected')+'</text>';
+      h+='<rect x="20" y="8" width="260" height="168" rx="10" fill="#1E2A24"/><rect x="28" y="16" width="244" height="152" rx="4" fill="#E9EEF5"/><path d="M6 182h288l-14 14H20z" fill="#9AA69F"/>';
+      h+='<rect x="28" y="154" width="244" height="14" fill="#DCE3EC"/><rect x="142" y="157" width="16" height="9" rx="2" fill="#0A6CD6"/>'+txt(266,164,'12:00',7.5,600,ink,'end');
+      h+=wifiIcon(232,161,scr==='wdone'?'#0A6CD6':ink);
+      if(scr==='wbar') h+=tap(232,161);
+      if(scr!=='wbar'){
+        h+='<rect x="128" y="24" width="138" height="126" rx="8" fill="#fff" stroke="'+line+'"/>';
+        if(scr==='wtile'){h+='<rect x="136" y="32" width="58" height="34" rx="6" fill="#0A6CD6"/>'+wifiIcon(152,49,'#fff')+txt(166,53,'Wi-Fi',8,700,'#fff')+txt(186,53,'›',12,700,'#fff')+tap(186,49)+'<rect x="200" y="32" width="58" height="34" rx="6" fill="#E9EEF5"/>'+txt(229,53,'Bluetooth',7.5,600,ink,'middle');}
+        else {
+          h+=txt(136,40,'‹  Wi-Fi',9,700);
+          if(scr==='wlist'){h+='<rect x="132" y="48" width="130" height="60" rx="5" fill="'+hi+'"/>'+wifiIcon(146,62,ink)+txt(158,66,NM,8,700)+'<rect x="140" y="76" width="9" height="9" rx="2" fill="#0A6CD6"/><path d="M142 80l2 2 4-4" stroke="#fff" stroke-width="1.5" fill="none"/>'+txt(154,84,zh?'自动连接':'Connect automatically',7.2)+'<rect x="206" y="90" width="50" height="14" rx="4" fill="#0A6CD6"/>'+txt(231,100,zh?'连接':'Connect',7.5,700,'#fff','middle')+tap(231,97)+txt(136,124,'Neighbor-Home',8,400,mut);}
+          if(scr==='wpass'){h+=wifiIcon(146,62,ink)+txt(158,66,NM,8,700)+txt(136,84,zh?'输入网络安全密钥':'Enter the network security key',7,400,mut)+'<rect x="136" y="90" width="122" height="16" rx="3" fill="#fff" stroke="#0A6CD6"/>'+txt(141,102,'••••••••',9)+'<rect x="206" y="114" width="50" height="14" rx="4" fill="#0A6CD6"/>'+txt(231,124,zh?'下一步':'Next',7.5,700,'#fff','middle')+tap(231,121);}
+          if(scr==='wdone'){h+='<rect x="132" y="48" width="130" height="30" rx="5" fill="'+hi+'"/>'+wifiIcon(146,62,'#0A6CD6')+txt(158,62,NM,8,700)+txt(158,73,zh?'已连接，安全':'Connected, secured',7,400,'#3E8C6E')+check(76,100)+txt(76,136,zh?'已连接':'Connected',10,700,'#3E8C6E','middle');}
+        }
+      }
     }
     h+='</svg>'; return h;
   }
   function renderStep(){
-    var s=S[os][st], t=s[lang==='zh'?'zh':'en'];
-    document.getElementById('st-title').textContent=(st+1)+' · '+t[0];
+    var zh=lang==='zh', L=S[os]; if(st>=L.length) st=L.length-1;
+    var s=L[st], t=s[zh?'zh':'en'];
+    document.getElementById('st-count').textContent=(zh?'第 '+(st+1)+' 步，共 '+L.length+' 步':'Step '+(st+1)+' of '+L.length)+' · '+DEVNAME[os][zh?1:0];
+    document.getElementById('st-title').textContent=t[0];
     document.getElementById('st-text').textContent=t[1];
-    document.getElementById('phone').innerHTML=phone(s.scr);
-    document.querySelectorAll('[data-st]').forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.st===st?'true':'false');});
+    document.getElementById('st-tip').textContent=s.tip[zh?1:0]?((zh?'提示：':'Tip: ')+s.tip[zh?1:0]):'';
+    var ph=document.getElementById('phone'); ph.className='phone'+((os==='ipad'||os==='mac'||os==='win')?' wide':''); ph.innerHTML=screen(s.scr);
+    var d=''; L.forEach(function(_,i){d+='<button type="button" data-st="'+i+'" aria-pressed="'+(i===st)+'" aria-label="'+(zh?'第 '+(i+1)+' 步':'Step '+(i+1))+'">'+(i+1)+'</button>';});
+    var dots=document.getElementById('st-dots'); dots.innerHTML=d;
+    dots.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){st=+b.dataset.st;renderStep();});});
+    document.getElementById('st-prev').disabled=st===0; document.getElementById('st-next').disabled=st===L.length-1;
+    document.getElementById('all-title').textContent=zh?('全部步骤：'+DEVNAME[os][1]):('All steps for '+DEVNAME[os][0]);
+    var ol=''; L.forEach(function(x,i){var tt=x[zh?'zh':'en'];ol+='<li data-i="'+i+'"'+(i===st?' class="cur"':'')+'><b></b><span></span></li>';});
+    var lst=document.getElementById('all-list'); lst.innerHTML=ol;
+    lst.querySelectorAll('li').forEach(function(li){var x=L[+li.dataset.i][zh?'zh':'en']; li.querySelector('b').textContent=x[0]; li.querySelector('span').textContent=x[1]; li.addEventListener('click',function(){st=+li.dataset.i;renderStep();});});
     document.querySelectorAll('[data-os]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.os===os?'true':'false');});
     renderMap();
   }
-  document.querySelectorAll('[data-st]').forEach(function(b){b.addEventListener('click',function(){st=+b.dataset.st;renderStep();});});
-  document.querySelectorAll('[data-os]').forEach(function(b){b.addEventListener('click',function(){os=b.dataset.os;renderStep();});});
+  document.getElementById('st-prev').addEventListener('click',function(){if(st>0){st--;renderStep();}});
+  document.getElementById('st-next').addEventListener('click',function(){if(st<S[os].length-1){st++;renderStep();}});
+  document.querySelectorAll('[data-os]').forEach(function(b){b.addEventListener('click',function(){os=b.dataset.os;st=0;renderStep();});});
 
   // map
   var phase=2;
