@@ -240,6 +240,7 @@ html.locked .wrap{display:none}
 .after>div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px}
 .after>div>span{color:var(--muted);font-size:15px}
 .feat>.fcard:first-child{grid-column:1/-1}
+.sig{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--jade);color:#fff}
 </style>
 
 <script>(function(){var ok=false;try{ok=localStorage.getItem('eb-users-ok')==='1';}catch(e){}if(!ok)document.documentElement.classList.add('locked');})();</script>
@@ -429,10 +430,10 @@ html.locked .wrap{display:none}
 <section>
   <h2><span class="en">Test results</span><span class="zh">测试结果</span></h2>
   <div class="tbl"><table class="stable">
-    <thead><tr><th><span class="en">Location</span><span class="zh">地点</span></th><th><span class="en">Download (Mbps)</span><span class="zh">下载 (Mbps)</span></th><th><span class="en">Upload (Mbps)</span><span class="zh">上传 (Mbps)</span></th><th><span class="en">Signal</span><span class="zh">信号</span></th></tr></thead>
-    <tbody><tr><td><span class="en">House</span><span class="zh">房子</span></td><td class="n">—</td><td class="n">—</td><td>—</td></tr><tr><td><span class="en">Deck, lawn and pond</span><span class="zh">露台、草坪和池塘</span></td><td class="n">—</td><td class="n">—</td><td>—</td></tr><tr><td><span class="en">Garage & driveway</span><span class="zh">车库和车道</span></td><td class="n">—</td><td class="n">—</td><td>—</td></tr><tr><td><span class="en">Bagua platform</span><span class="zh">八卦平台</span></td><td class="n">—</td><td class="n">—</td><td>—</td></tr><tr><td><span class="en">Pyramid</span><span class="zh">金字塔</span></td><td class="n">—</td><td class="n">—</td><td>—</td></tr></tbody>
+    <thead><tr><th><span class="en">Location</span><span class="zh">地点</span></th><th><span class="en">Download (Mbps)</span><span class="zh">下载 (Mbps)</span></th><th><span class="en">Upload (Mbps)</span><span class="zh">上传 (Mbps)</span></th><th><span class="en">Ping (ms)</span><span class="zh">延迟 (ms)</span></th><th><span class="en">Signal</span><span class="zh">信号</span></th></tr></thead>
+    <tbody><tr><td><span class="en">House</span><span class="zh">房子</span></td><td class="n">80</td><td class="n">15</td><td class="n">12</td><td><span class="sig"><span class="en">Strong</span><span class="zh">强</span></span></td></tr><tr><td><span class="en">Deck, lawn and pond</span><span class="zh">露台、草坪和池塘</span></td><td class="n">79</td><td class="n">14</td><td class="n">13</td><td><span class="sig"><span class="en">Strong</span><span class="zh">强</span></span></td></tr><tr><td><span class="en">Garage & driveway</span><span class="zh">车库和车道</span></td><td class="n">78</td><td class="n">12</td><td class="n">14</td><td><span class="sig"><span class="en">Strong</span><span class="zh">强</span></span></td></tr><tr><td><span class="en">Bagua platform</span><span class="zh">八卦平台</span></td><td class="n">76</td><td class="n">10</td><td class="n">16</td><td><span class="sig"><span class="en">Strong</span><span class="zh">强</span></span></td></tr><tr><td><span class="en">Pyramid</span><span class="zh">金字塔</span></td><td class="n">75</td><td class="n">9</td><td class="n">17</td><td><span class="sig"><span class="en">Strong</span><span class="zh">强</span></span></td></tr></tbody>
   </table></div>
-  <p class="caption"><span class="en">Measured with a phone at each location after installation on October 23. Results will be filled in then.</span><span class="zh">10 月 23 日安装后，用手机在每个地点测量。届时会填写结果。</span></p>
+  <p class="caption"><span class="en">Placeholder results: about 75–80 Mbps download, 9–15 Mbps upload, ping under 18 ms and a strong signal at every location. Replace each row with the speed test measured there.</span><span class="zh">暂定结果：各地点下载约 75–80 Mbps，上传 9–15 Mbps，延迟低于 18 ms，信号强。请用各地点实测的数据替换。</span></p>
 </section>
 
 <section>
