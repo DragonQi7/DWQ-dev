@@ -241,6 +241,8 @@ html.locked .wrap{display:none}
 .after>div>span{color:var(--muted);font-size:15px}
 .feat>.fcard:first-child{grid-column:1/-1}
 .sig{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--jade);color:#fff}
+.topr{display:flex;align-items:center;gap:12px;margin-left:auto}
+.created{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 </style>
 
 <script>(function(){var ok=false;try{ok=localStorage.getItem('eb-users-ok')==='1';}catch(e){}if(!ok)document.documentElement.classList.add('locked');})();</script>
@@ -255,7 +257,8 @@ html.locked .wrap{display:none}
 <div class="wrap">
 <div class="top">
   <span class="eyebrow">Wifi Mesh · East Branch · <span class="en">Users Guide</span><span class="zh">使用指南</span></span>
-  <button type="button" class="langbtn" id="lang" aria-label="Switch language / 切换语言"><span class="en">中文</span><span class="zh">English</span></button>
+  <div class="topr"><span class="created"><span class="en">Created September 30, 2026</span><span class="zh">创建于 2026 年 9 月 30 日</span></span>
+  <button type="button" class="langbtn" id="lang" aria-label="Switch language / 切换语言"><span class="en">中文</span><span class="zh">English</span></button></div>
 </div>
 
 <header>
